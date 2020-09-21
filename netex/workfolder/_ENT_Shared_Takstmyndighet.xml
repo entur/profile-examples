@@ -52,7 +52,7 @@
 				<roles>
 					<ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:1" version="1">
 					<DataRoleType>owns</DataRoleType>
-					<ResponsibleOrganisationRef ref="NOG:Organisation:VYG"/>
+					<ResponsibleOrganisationRef ref="NSB:Authority:NSB"/> <!-- NOG:Organisation:VYG -->
 					</ResponsibilityRoleAssignment>
 				</roles>
 				</ResponsibilitySet>
@@ -65,7 +65,7 @@
 				<roles>
 					<ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:2" version="1">
 					<DataRoleType>owns</DataRoleType>
-					<ResponsibleOrganisationRef ref="NOG:Organisation:SJN"/>
+					<ResponsibleOrganisationRef ref="SJN:Authority:SJN"/> <!-- NOG:Organisation:SJN -->
 					</ResponsibilityRoleAssignment>
 				</roles>
 				</ResponsibilitySet>
