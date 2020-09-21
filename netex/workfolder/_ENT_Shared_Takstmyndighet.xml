@@ -75,25 +75,32 @@
             <commonSections>
                 <CommonSection version="1" id="ENT:CommonSection:VY-Vest" responsibilitySetRef="ENT:ResponsibilitySet:VYG">
                     <ValidBetween>
-                        <FromDate></FromDate>
-                        <ToDate></ToDate>
+                        <FromDate>2019-12-15</FromDate>
                     </ValidBetween>
                     <Name>Vy Oslo S - Kongsberg</Name>
                     <ShortName>VY1</ShortName>
                     <Description>Fellestrekning</Description>
-                    <pointsOnSection></pointsOnSection>
+                    <pointsOnSection>
                         <PointOnSection order="1" version="1" id="ENT:PointOnSection:OSL-VY-Vest">
                             <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:OSL"/>
                         </PointOnSection>
-                        <PointOnSection order="2" version="1" id="ENT:PointOnSection:KBG-VY-Vest">
+                        <PointOnSection order="2" version="1" id="ENT:PointOnSection:LYS-VY-Vest">
+                            <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LYS"/>
+                        </PointOnSection>
+                        <PointOnSection order="3" version="1" id="ENT:PointOnSection:ASR-VY-Vest">
+                            <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:ASR"/>
+                        </PointOnSection>
+                        <PointOnSection order="4" version="1" id="ENT:PointOnSection:DRM-VY-Vest">
+                            <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:DRM"/>
+                        </PointOnSection>
+                        <PointOnSection order="5" version="1" id="ENT:PointOnSection:KBG-VY-Vest">
                             <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:KBG"/>
                         </PointOnSection>
                     </pointsOnSection>
                 </CommonSection>
                 <CommonSection version="1" id="ENT:CommonSection:VY-Nord" responsibilitySetRef="ENT:ResponsibilitySet:VYG">
                     <ValidBetween>
-                        <FromDate>2020-06-01</FromDate>
-                        <ToDate>2021-06-01</ToDate>
+                        <FromDate>2020-06-07</FromDate>
                     </ValidBetween>
                     <Name>Vy Oslo S - Lillehammer</Name>
                     <ShortName>VY2</ShortName>
@@ -139,11 +146,10 @@
                 </CommonSection>
                 <CommonSection version="1" id="ENT:CommonSection:SJN-Nord" responsibilitySetRef="ENT:ResponsibilitySet:SJN">
                     <ValidBetween>
-                        <FromDate>2020-06-01</FromDate>
-                        <ToDate>2021-06-01</ToDate>
+                        <FromDate>2020-06-07</FromDate>
                     </ValidBetween>
                     <Name>SJN Oslo S - Lillehammer</Name>
-                    <ShortName>SJN1</ShortName>
+                    <ShortName>SJ1</ShortName>
                     <Description>Fellesstrekning og takstsamarbeid</Description>
                     <pointsOnSection>
                         <PointOnSection order="1" version="1" id="ENT:PointOnSection:DOM-SJN-Nord">
@@ -198,6 +204,45 @@
               <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:HSS">
                   <Name>Hunderfossen</Name>
               </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:LYS">
+                  <Name>Lysaker</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:ASR">
+                  <Name>Asker</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:DRM">
+                  <Name>Drammen</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:MLV">
+                  <Name>Moelv</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:BRD">
+                  <Name>Brumunddal</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:HMR">
+                  <Name>Hamar</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:STG">
+                  <Name>Stange</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:TAN">
+                  <Name>Tangen</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:EVL">
+                  <Name>Eidsvoll</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:EVV">
+                  <Name>Eidsvoll Verk</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:GAR">
+                  <Name>Oslo Lufthavn (Gardermoen)</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:KLO">
+                  <Name>Kløfta</Name>
+              </ScheduledStopPoint>
+              <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:LLS">
+                  <Name>Lillestrøm</Name>
+              </ScheduledStopPoint>
           </scheduledStopPoints>
           <stopAssignments>
             <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:OSL">
@@ -235,6 +280,58 @@
               <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:HSS">
                   <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:HSS" version="1"/>
                   <StopPlaceRef ref="NSR:StopPlace:274"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:LYS">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LYS" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:157"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:ASR">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:ASR" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:418"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:DRM">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:DRM" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:11"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:MLV">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:MLV" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:191"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:BRD">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:BRD" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:542"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:HMR">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:HMR" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:219"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:STG">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:STG" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:708"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:TAN">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:TAN" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:646"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:EVL">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:EVL" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:159"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:EVV">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:EVV" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:166"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:GAR">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:GAR" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:269"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:KLO">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:KLO" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:553"/>
+              </PassengerStopAssignment>
+              <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:LLS">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LLS" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:451"/>
               </PassengerStopAssignment>
           </stopAssignments>
         </ServiceFrame>
