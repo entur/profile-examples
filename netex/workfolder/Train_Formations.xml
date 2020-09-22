@@ -150,40 +150,37 @@
 </vehicleTypes>
 ...
 <ServiceJourney version="0" id="GOA:ServiceJourney:701">
-	<TrainRef ref="GOA:Train:73A-A">
-		<parts>
-			<!-- Using parts to be able to change VehicleOrientation -->
-			<JourneyPart version="1" id="GOA:JourneyPart:A">
-				<StartTime>00:00:00</StartTime>
-				<EndTime>23:59:59</EndTime>
-				<VehicleOrientation>true</VehicleOrientation>
-			</JourneyPart>
-		</parts>
-	</TrainRef>
+	<TrainRef ref="GOA:Train:73A-A"/>
+	<parts>
+		<!-- Using parts to be able to change VehicleOrientation -->
+		<JourneyPart version="1" id="GOA:JourneyPart:A">
+			<StartTime>00:00:00</StartTime>
+			<EndTime>23:59:59</EndTime>
+			<VehicleOrientation>true</VehicleOrientation>
+		</JourneyPart>
+	</parts>
 </ServiceJourney>
 <ServiceJourney version="0" id="GOA:ServiceJourney:702">
-	<TrainRef ref="GOA:Train:73A-A">
-		<parts>
-			<JourneyPart version="1" id="GOA:JourneyPart:A">
-				<StartTime>00:00:00</StartTime>
-				<EndTime>23:59:59</EndTime>
-				<VehicleOrientation>false</VehicleOrientation>
-			</JourneyPart>
-		</parts>
-		<!-- Running reversed, order is switched and the wagons have <OperationalOrientation>backwards</OperationalOrientation> -->
-	</TrainRef>
+	<TrainRef ref="GOA:Train:73A-A"/>
+	<parts>
+		<JourneyPart version="1" id="GOA:JourneyPart:A">
+			<StartTime>00:00:00</StartTime>
+			<EndTime>23:59:59</EndTime>
+			<VehicleOrientation>false</VehicleOrientation>
+		</JourneyPart>
+	</parts>
+	<!-- Running reversed, order is switched and the wagons have <OperationalOrientation>backwards</OperationalOrientation> -->
 </ServiceJourney>
 <ServiceJourney version="0" id="GOA:ServiceJourney:702">
-	<TrainRef ref="GOA:Train:73A-B">
-		<!-- ReversedOrientation defined in the train element (Alternative) -->
-		<parts>
-			<JourneyPart version="1" id="GOA:JourneyPart:A">
-				<StartTime>00:00:00</StartTime>
-				<EndTime>23:59:59</EndTime>
-				<VehicleOrientation>true</VehicleOrientation>
-			</JourneyPart>
-		</parts>
-	</TrainRef>
+	<TrainRef ref="GOA:Train:73A-B"/>
+	<!-- ReversedOrientation defined in the train element (Alternative) -->
+	<parts>
+		<JourneyPart version="1" id="GOA:JourneyPart:A">
+			<StartTime>00:00:00</StartTime>
+			<EndTime>23:59:59</EndTime>
+			<VehicleOrientation>true</VehicleOrientation>
+		</JourneyPart>
+	</parts>
 </ServiceJourney>
 <ServiceJourney version="0" id="GOA:ServiceJourney:703">
 	<TrainRef ref="GOA:Train:73A-A"/>
