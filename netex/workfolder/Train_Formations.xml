@@ -1,20 +1,25 @@
 <Train version="0" id="GOA:Train:73A-A">
           <components>
+		    <ReversedOrientation>true</ReversedOrientation> <!-- Train can operate in reversed direction and order -->
             <TrainComponent version="0" id="GOA:TrainComponent:BFM73A" order="1">
+			  <PublicCode>1</PublicCode>
               <Label>BFM73A</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:BFM73A"/>
+              <TrainElementRef version="1" ref="NTO:LogicalElement:TYPE-73A-BFM-STANDARD-GOA"/>
             </TrainComponent>
             <TrainComponent version="0" id="GOA:TrainComponent:BMU73A" order="2">
+			  <PublicCode>2</PublicCode>
               <Label>BMU73A</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:BMU73A"/>
+              <TrainElementRef version="1" ref="NTO:LogicalElement:TYPE-73A-BMU-STANDARD-GOA"/>
             </TrainComponent>
             <TrainComponent version="0" id="GOA:TrainComponent:BFR73A" order="3">
+			  <PublicCode>3</PublicCode>
               <Label>BFR73A</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:BFR73A"/>
+              <TrainElementRef version="1" ref="NTO:LogicalElement:TYPE-73A-BFR-STANDARD-GOA"/>
             </TrainComponent>
             <TrainComponent version="0" id="GOA:TrainComponent:BM73A" order="4">
+			  <PublicCode>4</PublicCode>
               <Label>BM73A</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:BM73A"/>
+              <TrainElementRef version="1" ref="NTO:LogicalElement:TYPE-73A-BM-KOMFORT-GOA"/>
             </TrainComponent>
           </components>
         </Train>
@@ -22,20 +27,24 @@
 <Train version="0" id="GOA:Train:73A-B">
           <components>
             <TrainComponent version="0" id="GOA:TrainComponent:BM73A" order="1">
+			  <PublicCode>1</PublicCode>
               <Label>BM73A</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:BM73A"/>
+              <TrainElementRef version="1" ref="NTO:LogicalElement:TYPE-73A-BM-KOMFORT-GOA"/>
             </TrainComponent>
             <TrainComponent version="0" id="GOA:TrainComponent:BFR73A" order="2">
+			  <PublicCode>2</PublicCode>
               <Label>BFR73A</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:BFR73A"/>
+              <TrainElementRef version="1" ref="NTO:LogicalElement:TYPE-73A-BFR-STANDARD-GOA"/>
             </TrainComponent>
             <TrainComponent version="0" id="GOA:TrainComponent:BMU73A" order="3">
+			  <PublicCode>3</PublicCode>
               <Label>BMU73A</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:BMU73A"/>
+              <TrainElementRef version="1" ref="NTO:LogicalElement:TYPE-73A-BMU-STANDARD-GOA"/>
             </TrainComponent>
             <TrainComponent version="0" id="GOA:TrainComponent:BFM73A" order="4">
+			  <PublicCode>4</PublicCode>
               <Label>BFM73A</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:BFM73A"/>
+              <TrainElementRef version="1" ref="NTO:LogicalElement:TYPE-73A-BFM-STANDARD-GOA"/>
             </TrainComponent>
           </components>
         </Train>
@@ -43,75 +52,120 @@
 
 <Train version="0" id="GOA:Train:Type7-N-A">
           <components>
+			<!--
             <TrainComponent version="0" id="GOA:TrainComponent:EL18" order="1">
               <Label>EL18</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:EL18"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:EL18"/>
             </TrainComponent>
+			-->
             <TrainComponent version="0" id="GOA:TrainComponent:A7-1" order="2">
+			  <PublicCode>1</PublicCode>
               <Label>A7-1</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:A7-1"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:A7-1"/>
+			  <OperationalOrientation>forwards</OperationalOrientation> <!-- Each wagon can be individually orientated  -->
             </TrainComponent>
             <TrainComponent version="0" id="GOA:TrainComponent:B7-5" order="3">
+			  <PublicCode>2</PublicCode>
               <Label>B7-5</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:B7-5"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:B7-5"/>
             </TrainComponent>
             <TrainComponent version="0" id="GOA:TrainComponent:BC7-1" order="4">
+			  <PublicCode>3</PublicCode>
               <Label>BC7-1</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:BC7-1"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:BC7-1"/>
             </TrainComponent>
 			 <TrainComponent version="0" id="GOA:TrainComponent:FR7-3" order="5">
+			  <PublicCode>4</PublicCode>
               <Label>FR7-3</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:FR7-3"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:FR7-3"/>
             </TrainComponent>
 			 <TrainComponent version="0" id="GOA:TrainComponent:WLAB2-1" order="6">
+			  <PublicCode>5</PublicCode>
               <Label>WLAB2-1</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:WLAB2-1"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:WLAB2-1"/>
             </TrainComponent>
 			 <TrainComponent version="0" id="GOA:TrainComponent:WLAB2-2" order="7">
+			  <PublicCode>6</PublicCode>
               <Label>WLAB2-2</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:WLAB2-2"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:WLAB2-2"/>
             </TrainComponent>
 			<TrainComponent version="0" id="GOA:TrainComponent:WLAB2-3" order="8">
+			  <PublicCode>7</PublicCode>
               <Label>WLAB2-3</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:WLAB2-3"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:WLAB2-3"/>
             </TrainComponent>
           </components>
         </Train>
 </vehicleTypes>
 <Train version="0" id="GOA:Train:Type7-N-B">
           <components>
+			<!--
             <TrainComponent version="0" id="GOA:TrainComponent:EL18" order="1">
               <Label>EL18</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:EL18"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:EL18"/>
             </TrainComponent>
+			-->
             <TrainComponent version="0" id="GOA:TrainComponent:WLAB2-3" order="2">
+			  <PublicCode>7</PublicCode>											<!-- Showing reversed where PublicCode does not equal the order -->
               <Label>WLAB2-3</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:WLAB2-3"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:WLAB2-3-SLEEPER"/>
             </TrainComponent>
             <TrainComponent version="0" id="GOA:TrainComponent:WLAB2-2" order="3">
+			  <PublicCode>6</PublicCode>
               <Label>WLAB2-2</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:WLAB2-2"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:WLAB2-2-SLEEPER"/>
             </TrainComponent>
             <TrainComponent version="0" id="GOA:TrainComponent:WLAB2-1" order="4">
+			  <PublicCode>5</PublicCode>
               <Label>WLAB2-1</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:WLAB2-1"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:WLAB2-1-SLEEPER"/>
             </TrainComponent>
-			 <TrainComponent version="0" id="GOA:TrainComponent:FR7-3" order="5">
+			 <TrainComponent version="0" id="GOA:TrainComponent:FR7-3" order="5"> <!-- Might not have any publicCode -->
               <Label>FR7-3</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:FR7-3"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:FR7-3-RESTAURANT"/>
             </TrainComponent>
 			 <TrainComponent version="0" id="GOA:TrainComponent:BC7-1" order="6">
+			  <PublicCode>3</PublicCode>
               <Label>BC7-1</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:BC7-1"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:BC7-1-STANDARD"/>
             </TrainComponent>
 			 <TrainComponent version="0" id="GOA:TrainComponent:B7-5" order="7">
+			  <PublicCode>2</PublicCode>
               <Label>B7-5</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:B7-5"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:B7-5-STANDARD"/> <!-- Template used -->
             </TrainComponent>
 			<TrainComponent version="0" id="GOA:TrainComponent:A7-1" order="8">
+			  <PublicCode>1</PublicCode>
               <Label>A7-1</Label>
-              <TrainElementRef version="0" ref="NTO:TrainElement:A7-1"/>
+              <TrainElementRef version="0" ref="NTO:LogicalElement:A7-1-KOMFORT-GOA"/> <!-- Special komfort wagong just for Go-Ahead -->
             </TrainComponent>
           </components>
         </Train>
 </vehicleTypes>
+...
+<ServiceJourney version="0" id="GOA:ServiceJourney:701">
+	<TrainRef ref="GOA:Train:73A-A">
+        <VehicleOrientation>true</VehicleOrientation> <!-- Running normal -->
+	</TrainRef>
+</ServiceJourney>
+<ServiceJourney version="0" id="GOA:ServiceJourney:702">
+	<TrainRef ref="GOA:Train:73A-A">
+        <VehicleOrientation>false</VehicleOrientation> <!-- Running reversed, order is switched and the wagons have <OperationalOrientation>backwards</OperationalOrientation> -->
+	</TrainRef>
+</ServiceJourney>
+<ServiceJourney version="0" id="GOA:ServiceJourney:702">
+	<TrainRef ref="GOA:Train:73A-B">				  <!-- ReversedOrientation defined in the train element (Alternative) -->
+        <VehicleOrientation>true</VehicleOrientation> 
+	</TrainRef>
+</ServiceJourney>
+<ServiceJourney version="0" id="GOA:ServiceJourney:703">
+	<TrainRef ref="GOA:Train:73A-A"/>
+    <parts>												<!-- Changing direction mid journey (Kristiansand) -->
+		<JourneyPart version="1" id="GOA:JourneyPart:X">
+		<VehicleOrientation>true</VehicleOrientation>
+		</JourneyPart>
+		<JourneyPart version="1" id="GOA:JourneyPart:Y">
+		<VehicleOrientation>false</VehicleOrientation>
+		</JourneyPart>
+	</parts>
+</ServiceJourney>
