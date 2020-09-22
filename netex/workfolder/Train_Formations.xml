@@ -172,9 +172,13 @@
 	<parts>
 		<!-- Changing direction mid journey (Kristiansand) -->
 		<JourneyPart version="1" id="GOA:JourneyPart:X">
+			<StartTime>00:00:00</StartTime>
+			<EndTime>11:11:11</EndTime>
 			<VehicleOrientation>true</VehicleOrientation>
 		</JourneyPart>
 		<JourneyPart version="1" id="GOA:JourneyPart:Y">
+			<StartTime>11:11:11</StartTime>
+			<EndTime>23:59:59</EndTime>
 			<VehicleOrientation>false</VehicleOrientation>
 		</JourneyPart>
 	</parts>
