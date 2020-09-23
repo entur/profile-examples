@@ -84,16 +84,25 @@
                         <PointOnSection order="1" version="1" id="ENT:PointOnSection:OSL-VY-Vest">
                             <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:OSL"/>
                         </PointOnSection>
-                        <PointOnSection order="2" version="1" id="ENT:PointOnSection:LYS-VY-Vest">
+			<PointOnSection order="2" version="1" id="ENT:PointOnSection:OSL-VY-Vest">
+                            <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:NTH"/>
+                        </PointOnSection>
+			<PointOnSection order="3" version="1" id="ENT:PointOnSection:OSL-VY-Vest">
+                            <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:SKO"/>
+                        </PointOnSection>
+                        <PointOnSection order="4" version="1" id="ENT:PointOnSection:LYS-VY-Vest">
                             <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LYS"/>
                         </PointOnSection>
-                        <PointOnSection order="3" version="1" id="ENT:PointOnSection:ASR-VY-Vest">
+			<PointOnSection order="5" version="1" id="ENT:PointOnSection:LYS-VY-Vest">
+                            <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:SV"/>
+                        </PointOnSection>
+                        <PointOnSection order="6" version="1" id="ENT:PointOnSection:ASR-VY-Vest">
                             <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:ASR"/>
                         </PointOnSection>
-                        <PointOnSection order="4" version="1" id="ENT:PointOnSection:DRM-VY-Vest">
+                        <PointOnSection order="7" version="1" id="ENT:PointOnSection:DRM-VY-Vest">
                             <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:DRM"/>
                         </PointOnSection>
-                        <PointOnSection order="5" version="1" id="ENT:PointOnSection:KBG-VY-Vest">
+                        <PointOnSection order="8" version="1" id="ENT:PointOnSection:KBG-VY-Vest">
                             <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:KBG"/>
                         </PointOnSection>
                     </pointsOnSection>
@@ -243,6 +252,15 @@
               <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:LLS">
                   <Name>Lillestrøm</Name>
               </ScheduledStopPoint>
+		<ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:NTH">
+                  <Name>Nationaltheatret</Name>
+              </ScheduledStopPoint>
+		<ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:SKO">
+                  <Name>Skøyen</Name>
+              </ScheduledStopPoint>
+		<ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:SV">
+                  <Name>Sandvika</Name>
+              </ScheduledStopPoint>
           </scheduledStopPoints>
           <stopAssignments>
             <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:OSL">
@@ -332,6 +350,18 @@
               <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:LLS">
                   <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LLS" version="1"/>
                   <StopPlaceRef ref="NSR:StopPlace:451"/>
+              </PassengerStopAssignment>
+		  <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:NTH">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:NTH" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:288"/>
+              </PassengerStopAssignment>
+		  <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:SKO">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:SKO" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:152"/>
+              </PassengerStopAssignment>
+		  <PassengerStopAssignment order="0" version="1" id="ENT:PassengerStopAssignment:SV">
+                  <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:SV" version="1"/>
+                  <StopPlaceRef ref="NSR:StopPlace:610"/>
               </PassengerStopAssignment>
           </stopAssignments>
         </ServiceFrame>
