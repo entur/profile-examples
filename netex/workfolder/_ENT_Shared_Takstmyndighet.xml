@@ -77,7 +77,7 @@
 					<commonSections>
 						<CommonSection version="1" id="ENT:CommonSection:VY-Vest" responsibilitySetRef="ENT:ResponsibilitySet:VYG">
 							<ValidBetween>
-								<FromDate>2019-12-15</FromDate>
+								<FromDate>2019-12-15T00:00:00</FromDate>
 							</ValidBetween>
 							<Name>Vy Oslo S - Kongsberg</Name>
 							<ShortName>VY1</ShortName>
@@ -114,7 +114,7 @@
 						</CommonSection>
 						<CommonSection version="1" id="ENT:CommonSection:VY-Nord" responsibilitySetRef="ENT:ResponsibilitySet:VYG">
 							<ValidBetween>
-								<FromDate>2020-06-07</FromDate>
+								<FromDate>2020-06-07T00:00:00</FromDate>
 							</ValidBetween>
 							<Name>Vy Oslo S - Lillehammer</Name>
 							<ShortName>VY2</ShortName>
@@ -123,44 +123,44 @@
 								<PointOnSection order="1" version="1" id="ENT:PointOnSection:LHM-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LHM"/>
 								</PointOnSection>
-								<PointOnSection order="1" version="1" id="ENT:PointOnSection:MLV-VY-Nord">
+								<PointOnSection order="2" version="1" id="ENT:PointOnSection:MLV-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:MLV"/>
 								</PointOnSection>
-								<PointOnSection order="1" version="1" id="ENT:PointOnSection:BRD-VY-Nord">
+								<PointOnSection order="3" version="1" id="ENT:PointOnSection:BRD-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:BRD"/>
 								</PointOnSection>
-								<PointOnSection order="1" version="1" id="ENT:PointOnSection:HMR-VY-Nord">
+								<PointOnSection order="4" version="1" id="ENT:PointOnSection:HMR-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:HMR"/>
 								</PointOnSection>
-								<PointOnSection order="1" version="1" id="ENT:PointOnSection:STG-VY-Nord">
+								<PointOnSection order="5" version="1" id="ENT:PointOnSection:STG-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:STG"/>
 								</PointOnSection>
-								<PointOnSection order="1" version="1" id="ENT:PointOnSection:TAN-VY-Nord">
+								<PointOnSection order="6" version="1" id="ENT:PointOnSection:TAN-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:TAN"/>
 								</PointOnSection>
-								<PointOnSection order="1" version="1" id="ENT:PointOnSection:EVL-VY-Nord">
+								<PointOnSection order="7" version="1" id="ENT:PointOnSection:EVL-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:EVL"/>
 								</PointOnSection>
-								<PointOnSection order="1" version="1" id="ENT:PointOnSection:EVV-VY-Nord">
+								<PointOnSection order="8" version="1" id="ENT:PointOnSection:EVV-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:EVV"/>
 								</PointOnSection>
-								<PointOnSection order="1" version="1" id="ENT:PointOnSection:GAR-VY-Nord">
+								<PointOnSection order="9" version="1" id="ENT:PointOnSection:GAR-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:GAR"/>
 								</PointOnSection>
-								<PointOnSection order="1" version="1" id="ENT:PointOnSection:KLO-VY-Nord">
+								<PointOnSection order="10" version="1" id="ENT:PointOnSection:KLO-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:KLO"/>
 								</PointOnSection>
-								<PointOnSection order="1" version="1" id="ENT:PointOnSection:LLS-VY-Nord">
+								<PointOnSection order="11" version="1" id="ENT:PointOnSection:LLS-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LLS"/>
 								</PointOnSection>
-								<PointOnSection order="2" version="1" id="ENT:PointOnSection:OSL-VY-Nord">
+								<PointOnSection order="12" version="1" id="ENT:PointOnSection:OSL-VY-Nord">
 									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:OSL"/>
 								</PointOnSection>
 							</pointsOnSection>
 						</CommonSection>
 						<CommonSection version="1" id="ENT:CommonSection:SJN-Nord" responsibilitySetRef="ENT:ResponsibilitySet:SJN">
 							<ValidBetween>
-								<FromDate>2020-06-07</FromDate>
+								<FromDate>2020-06-07T00:00:00</FromDate>
 							</ValidBetween>
 							<Name>SJN Oslo S - Lillehammer</Name>
 							<ShortName>SJ1</ShortName>
