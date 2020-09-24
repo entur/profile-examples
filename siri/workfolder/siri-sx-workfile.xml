@@ -182,6 +182,77 @@
                             </AffectedVehicleJourney>
                         </VehicleJourneys>
                     </Affects>
+                    
+                    
+                    
+                    <PublishingActions>    
+                        
+                        <!-- Online, regular channels -->
+                        <PublishToWebAction>
+                            <ActionStatus>open</ActionStatus>
+                            <ActionData>
+                                <Name>Web</Name>
+                                <Type>Web-action</Type>
+                                <Value>Web alert text</Value>
+                                <Prompt>The train is delayed</Prompt> 
+                            </ActionData>
+                        </PublishToWebAction>
+                        
+                        <!-- If necessary to distinguish mobile apps from other (web) clients (no publishTo) and mobile app  -->
+                        <PublishToMobileAction>
+                            <ActionStatus>closed</ActionStatus>
+                            <ActionData>
+                                <Name>Mobile</Name>
+                                <Type>Mobile-action</Type>
+                                <Value>Mobile web and app alert text</Value>
+                                <Prompt>Train delayed</Prompt> 
+                            </ActionData>
+                        </PublishToMobileAction>
+                        
+                        
+                        
+                        <!-- 
+                            Generic example of full type usage 
+                            (PublishToAlertsAction = published via alert services, e.g. sms/email/app-notification) 
+                            NB: Multiple actions OF THE SAME TYPE is allowed sucessively, but ORDER between different action types is strictly fixed per XSD
+                        -->
+                        <PublishToAlertsAction>
+                            <ActionStatus>closed</ActionStatus> <!-- "open" / "published" -->
+                            <ActionData>
+                                <Name>text</Name> <!-- Name of action data (Mandatory! NB: Space or other special characters are NOT allowed) -->
+                                <Type>text</Type> <!-- Data type of action data. (Mandatory! NB: Space or other special characters are NOT allowed) -->
+                                <Value>text1</Value> <!-- Value for action (!?) (Mandatory to have at least one, having multiple is allowed) -->
+                                <Value>text2</Value>
+                                <Prompt>Displaytext</Prompt> <!-- (not mandatory in XML, must be made mandatory in profile) --> 
+                            </ActionData>
+                        </PublishToAlertsAction>
+                        
+                        
+                        
+                        <!-- Stop place monitor -->
+                        <PublishToDisplayAction>
+                            <ActionStatus>published</ActionStatus>
+                            <ActionData>
+                                <Name>Monitor</Name>
+                                <Type>Monitor-action</Type>
+                                <Value>Monitor alert text</Value>
+                                <Prompt>Approaching train is delayed</Prompt> 
+                            </ActionData>
+                        </PublishToDisplayAction>
+                        
+                        <!-- Stop place monitor -->
+                        <!-- NB: PublicAnnouncementSystem defined in SIRI as equipment, but its PublishingAction is not specified/implemented -->
+                        <ManualAction>
+                            <ActionStatus>published</ActionStatus>
+                            <ActionData>
+                                <Name>PublicAnnouncementSystem</Name>
+                                <Type>PublicAnnouncementSystem-action</Type>
+                                <Value>Public announcement system alert</Value>
+                                <Prompt>Approaching train from X (heading) towards Y (via Z) is delayed</Prompt> 
+                            </ActionData>
+                        </ManualAction>
+                        
+                    </PublishingActions>
                 </PtSituationElement>
             </Situations>
         </SituationExchangeDelivery>
