@@ -39,16 +39,19 @@ NeTEx frames:
 			
 			<frames>
 				<SiteFrame version="1" id="NSR:SiteFrame:1">
+					
 					<!-- Remark: StopPlace ID from the National Stop Registry (NSR) in Norway -->
 					<stopPlaces>
 						<StopPlace version="1" id="NSR:StopPlace:12345678">
 							<Name>Bryn Skole (Ole Deviks vei)</Name>
+							
 							<Centroid>
 								<Location srsName="WGS84" id="NSR:Location:1">
 									<Longitude>59.913915</Longitude>
 									<Latitude>10.824609</Latitude>
 								</Location>
 							</Centroid>
+							
 							<AccessibilityAssessment version="1" id="NSR:AccessibilityAssessment:1">
 								<MobilityImpairedAccess>unknown</MobilityImpairedAccess>
 								<limitations>
@@ -65,14 +68,14 @@ NeTEx frames:
 									</Suitability>
 								</suitabilities>
 							</AccessibilityAssessment>
-
+							
 							<placeEquipments>
 								<GeneralSign id="NSR:GeneralSign:1" version="1">
 									<PrivateCode>512</PrivateCode>
 									<SignContentType>transportMode</SignContentType>
 								</GeneralSign>
 							</placeEquipments>
-
+							
 							<TransportMode>bus</TransportMode>
 							<StopPlaceType>onstreetBus</StopPlaceType>
 

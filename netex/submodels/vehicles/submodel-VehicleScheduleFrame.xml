@@ -73,7 +73,7 @@
                             <StartPointRef ref="RUT:ScheduledStopPoint:1"/>
                             <EndPointRef ref="RUT:ScheduledStopPoint:2"/>
                             <journeys>
-                                <DeadRunRef version="1" ref="RUT:DeadRun:1"/>
+                                <DeadRunRef version="1" ref="RUT:DeadRun:1" />
                                 <VehicleJourneyRef ref="RUT:ServiceJourney:2" />
                                 <DeadRunRef ref="RUT:DeadRun:3"/>
                                 <VehicleJourneyRef ref="RUT:ServiceJourney:4" />

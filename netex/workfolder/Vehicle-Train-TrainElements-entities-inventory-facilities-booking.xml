@@ -279,6 +279,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
           </capacities>
           <facilities>
             <ServiceFacilitySet id="VYT:ServiceFacilitySet" version="1">
+              <CateringFacilityList>foodVendingMachine</CateringFacilityList>
               <accommodations>
                 <Accommodation id="x" version="y">
                   <Name>dummy</Name>
@@ -297,6 +298,15 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
 
 
         <Train version="1" id="NMR:Train:Flirt-2">
+          <satisfiesFacilityRequirements>
+            <FacilityRequirement id="2" version="v">
+              <facilitySets>
+                <ServiceFacilitySet version="f" id="f">
+                  <CateringFacilityList>bar</CateringFacilityList>
+                </ServiceFacilitySet>
+              </facilitySets>
+            </FacilityRequirement>
+          </satisfiesFacilityRequirements>
           <components>
             <TrainComponent version="1" id="NMR:TrainComponent:BMa74" order="1">
               <Label>BMa74</Label>
@@ -360,7 +370,10 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
           <VehicleTypeRef ref="ref"></VehicleTypeRef>
           -->
           <actualVehicleEquipments>
-            <AssistanceServiceRef ref="ref"/>
+            <AssistanceServiceRef ref="EXT:AssistanceService:ext"/>
+            <CateringService id="NMR:CateringService:1" version="1">
+              <ServiceList>bar</ServiceList>
+            </CateringService>
           </actualVehicleEquipments>
         </Vehicle>
 
@@ -807,7 +820,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
             <DatedServiceJourney version="1" id="NSB:DatedServiceJourney:1-3922-61-date-2020-12-31">
               <JourneyPatternRef ref="NSB:JourneyPattern:1-1105" version="1"/>
 
-              <TrainRef ref="NMR:Train:Flirt-2"/> <!-- SJN just as a technical example due to defined within this file -->
+              <TrainRef ref="NMR:Train:Flirt-2" /> <!-- SJN just as a technical example due to defined within this file -->
 
               <parts>
                 <JourneyPartRef ref="NSB:JourneyPart:1" version="1"/>
@@ -816,6 +829,29 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
               <ServiceJourneyRef ref="NSB:ServiceJourney:1-3922-61"/>
               <OperatingDayRef ref="NSB:OperatingDay:2020-12-31"/>
             </DatedServiceJourney>
+
+            
+            
+            
+            <ServiceJourney id="NSB:ServiceJourney:1-test" version="1">
+              <TrainRef ref="GOA:Train:1-test"/>
+              <parts>
+                <!-- Changing direction mid journey (Kristiansand) -->
+                <JourneyPart version="1" id="GOA:JourneyPart:X">
+                  <StartTime>00:00:00</StartTime>
+                  <EndTime>11:11:11</EndTime>
+                  <VehicleOrientation>true</VehicleOrientation>
+                </JourneyPart>
+                <JourneyPart version="1" id="GOA:JourneyPart:Y">
+                  <StartTime>11:11:11</StartTime>
+                  <EndTime>23:59:59</EndTime>
+                  <VehicleOrientation>false</VehicleOrientation>
+                </JourneyPart>
+              </parts>
+            </ServiceJourney>
+
+
+
 
 
           </vehicleJourneys>
