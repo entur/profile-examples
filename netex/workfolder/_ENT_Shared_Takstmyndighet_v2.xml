@@ -58,15 +58,21 @@
 							</roles>
 						</ResponsibilitySet>
 						<ResponsibilitySet id="ENT:ResponsibilitySet:SJN" version="1">
-							<ValidBetween>
-								<FromDate/>
-								<ToDate/>
-							</ValidBetween>
 							<Name>Ansvarlig takstmyndighet SJN</Name>
 							<roles>
 								<ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:2" version="1">
 									<DataRoleType>owns</DataRoleType>
 									<ResponsibleOrganisationRef ref="SJN:Authority:SJN"/>
+									<!-- NOG:Organisation:SJN -->
+								</ResponsibilityRoleAssignment>
+							</roles>
+						</ResponsibilitySet>
+						<ResponsibilitySet id="ENT:ResponsibilitySet:ENT" version="1">
+							<Name>Ansvarlig takstmyndighet ingen</Name>
+							<roles>
+								<ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:3" version="1">
+									<DataRoleType>owns</DataRoleType>
+									<ResponsibleOrganisationRef ref="ENT:Authority:ENT"/>
 									<!-- NOG:Organisation:SJN -->
 								</ResponsibilityRoleAssignment>
 							</roles>
@@ -180,7 +186,7 @@
                                     <Value>1</Value>
                                 </KeyValue>
                             </keyList>
-							<Name>SJN Oslo S - Lillehammer</Name>
+							<Name>SJN Dombås - Lillehammer</Name>
 							<ShortName>SJ1</ShortName>
 							<Description>Takstsamarbeid</Description>
 							<pointsOnSection>
@@ -214,7 +220,7 @@
                             <keyList>
                                 <KeyValue>
                                     <Key>Priority</Key>
-                                    <Value>1</Value>
+                                    <Value>2</Value>
                                 </KeyValue>
                             </keyList>
                             <Name>Vy Lillehammer - Kongsberg</Name>
@@ -353,6 +359,70 @@
                                 </PointOnSection>
                             </pointsOnSection>
                         </CommonSection>
+						<CommonSection version="1" id="ENT:CommonSection:SJN-VY-Aggregert" responsibilitySetRef="ENT:ResponsibilitySet:ENT">
+							<ValidBetween>
+								<FromDate>2020-06-07T00:00:00</FromDate>
+							</ValidBetween>
+                            <keyList>
+                                <KeyValue>
+                                    <Key>Priority</Key>
+                                    <Value>3</Value>
+                                </KeyValue>
+                            </keyList>
+							<Name>SJN Dombås - Lillehammer | Kongsberg - Oslo </Name>
+							<ShortName>SJ1</ShortName>
+							<Description>Gjennomgående salgspakke innenfor fellesområdet</Description>
+							<pointsOnSection>
+								<PointOnSection order="1" version="1" id="ENT:PointOnSection:DOM-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:DOM"/>
+								</PointOnSection>
+								<PointOnSection order="2" version="1" id="ENT:PointOnSection:OTA-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:OTA"/>
+								</PointOnSection>
+								<PointOnSection order="3" version="1" id="ENT:PointOnSection:VIN-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:VIN"/>
+								</PointOnSection>
+								<PointOnSection order="4" version="1" id="ENT:PointOnSection:RBU-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:RBU"/>
+								</PointOnSection>
+								<PointOnSection order="5" version="1" id="ENT:PointOnSection:KVI-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:KVI"/>
+								</PointOnSection>
+								<PointOnSection order="6" version="1" id="ENT:PointOnSection:HSS-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:HSS"/>
+								</PointOnSection>
+								<PointOnSection order="7" version="1" id="ENT:PointOnSection:LHM-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LHM"/>
+								</PointOnSection>
+								<PointOnSection order="8" version="1" id="ENT:PointOnSection:OSL-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:OSL"/>
+								</PointOnSection>
+								<PointOnSection order="9" version="1" id="ENT:PointOnSection:NTH-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:NTH"/>
+								</PointOnSection>
+								<PointOnSection order="10" version="1" id="ENT:PointOnSection:SKO-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:SKO"/>
+								</PointOnSection>
+								<PointOnSection order="11" version="1" id="ENT:PointOnSection:LYS-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LYS"/>
+								</PointOnSection>
+								<PointOnSection order="12" version="1" id="ENT:PointOnSection:SV-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:SV"/>
+								</PointOnSection>
+								<PointOnSection order="13" version="1" id="ENT:PointOnSection:ASR-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:ASR"/>
+								</PointOnSection>
+								<PointOnSection order="14" version="1" id="ENT:PointOnSection:DRM-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:DRM"/>
+								</PointOnSection>
+								<PointOnSection order="15" version="1" id="ENT:PointOnSection:HOK-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:HOK"/>
+								</PointOnSection>
+								<PointOnSection order="16" version="1" id="ENT:PointOnSection:KBG-SJN-VY-Aggregert">
+									<ScheduledStopPointRef ref="ENT:ScheduledStopPoint:KBG"/>
+								</PointOnSection>
+							</pointsOnSection>
+						</CommonSection>
                 </commonSections>
 					<scheduledStopPoints>
 						<ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:LHM">
