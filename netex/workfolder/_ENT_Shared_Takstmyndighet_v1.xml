@@ -1,4 +1,9 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- 
+	Gjenkjente fellesstrekninger (faktisk, men ikke definert, fellesstrekning mellom Dombås og Lillehammer (kunne i praksis fjernet SJ)
+-->
+
 <PublicationDelivery version="1.11:NO-NeTEx-networktimetable:1.3" xmlns="http://www.netex.org.uk/netex" xmlns:gis="http://www.opengis.net/gml/3.2" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex file:///C:/NeTEx-nk_may_2019/xsd/NeTEx_publication.xsd">
 	<PublicationTimestamp>2020-09-02T14:35:45.39</PublicationTimestamp>
 	<ParticipantRef>RB</ParticipantRef>
