@@ -339,7 +339,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
 
         <CompoundTrain id="NMR:CompoundTrain:1" version="1">
           <components>
-            <TrainInCompoundTrain id="NMR:TrainInCompoundTrain:1" version="1">
+            <TrainInCompoundTrain id="NMR:TrainInCompoundTrain:1" version="1" order="1">
               <TrainRef ref="NMR:Train:Flirt-1" version="1"/>
               <OperationalOrientation>forwards</OperationalOrientation>
               <ReversedOrientation>false</ReversedOrientation>
@@ -558,14 +558,14 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
             <RoutePoint version="1" id="NSB:RoutePoint:1">
               <projections>
                 <PointProjection version="1" id="ENT:PointProjection:1">
-                  <ProjectToPointRef version="1" ref="ENT:ScheduledStopPoint:1"/>
+                  <ProjectToPointRef version="1" ref="NSR:ScheduledStopPoint:1"/>
                 </PointProjection>
               </projections>
             </RoutePoint>
             <RoutePoint version="1" id="NSB:RoutePoint:2">
               <projections>
                 <PointProjection version="1" id="ENT:PointProjection:2">
-                  <ProjectToPointRef version="1" ref="ENT:ScheduledStopPoint:1"/>
+                  <ProjectToPointRef version="1" ref="NSR:ScheduledStopPoint:1"/>
                 </PointProjection>
               </projections>
             </RoutePoint>
@@ -634,23 +634,64 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
           </lines>
 
           <scheduledStopPoints>
-            <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:1">
+            <ScheduledStopPoint version="1" id="NSR:ScheduledStopPoint:1">
             </ScheduledStopPoint>
-            <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:2"/>
+            <ScheduledStopPoint version="1" id="NSR:ScheduledStopPoint:2"/>
           </scheduledStopPoints>
+
+
 
           <stopAssignments>
             <PassengerStopAssignment version="1" id="ENT:PassengerStopAssignment:1" order="1">
-              <ScheduledStopPointRef version="1" ref="ENT:ScheduledStopPoint:1"/>
+              <ScheduledStopPointRef  ref="NSR:ScheduledStopPoint:1" version="1"/>
               <StopPlaceRef version="1" ref="NSR:StopPlace:1"/>
               <QuayRef version="1" ref="NSR:Quay:1"/>
             </PassengerStopAssignment>
             <PassengerStopAssignment version="1" id="ENT:PassengerStopAssignment:2" order="2">
-              <ScheduledStopPointRef version="1" ref="ENT:ScheduledStopPoint:2"/>
+              <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:2" version="1"/>
               <StopPlaceRef version="1" ref="NSR:StopPlace:1"/>
               <QuayRef version="1" ref="NSR:Quay:1"/>
             </PassengerStopAssignment>
+            
+            
+            <!-- TrainComponentAssignment -->
+            <!-- 1) Assignment of specific TrainComponent -->
+            <TrainStopAssignment id="ENT:TrainStopAssignment:1" version="1" order="1">
+              <BoardingUse>false</BoardingUse>
+              <AlightingUse>false</AlightingUse>
+              <ScheduledStopPointRef  ref="NSR:ScheduledStopPoint:1" version="1"/>
+              <TrainComponentRef ref="NMR:TrainComponent:BMb74" version="1"/>   
+            </TrainStopAssignment>
+            <!-- 2) Assignment of specific TrainComponent in specific Train -->
+            <TrainStopAssignment id="ENT:TrainStopAssignment:2" version="1" order="2">
+              <BoardingUse>false</BoardingUse>
+              <AlightingUse>false</AlightingUse>
+              <ScheduledStopPointRef  ref="NSR:ScheduledStopPoint:1" version="1"/>
+              <TrainRef ref="NMR:Train:Flirt-1" version="1"/>
+              <TrainComponentRef ref="NMR:TrainComponent:BMb74" version="1"/>   
+            </TrainStopAssignment>
+            <!-- 3) Assignment of whole Train -->
+            <TrainStopAssignment id="ENT:TrainStopAssignment:3" version="1" order="3">
+              <BoardingUse>false</BoardingUse>
+              <AlightingUse>false</AlightingUse>
+              <ScheduledStopPointRef  ref="NSR:ScheduledStopPoint:1" version="1"/>
+              <TrainRef ref="NMR:Train:Flirt-1" version="1"/>
+            </TrainStopAssignment>
+            <!-- 4) Assignment of specific TrainInCompoundTrain (which in itself has the reference the Train/VehicleType) -->
+            <TrainStopAssignment id="ENT:TrainStopAssignment:4" version="1" order="4">
+              <BoardingUse>false</BoardingUse>
+              <AlightingUse>false</AlightingUse>
+              <ScheduledStopPointRef  ref="NSR:ScheduledStopPoint:1" version="1"/>
+              <TrainRef ref="NMR:TrainInCompoundTrain:1" /> <!-- FAIL!! -->
+              
+              <!-- 
+                Need TrainInCompoundTrainRef w/ order-attribute!
+              -->
+              
+            </TrainStopAssignment>
           </stopAssignments>
+          
+          
 
           <journeyPatterns>
             <JourneyPattern version="1" id="NSB:JourneyPattern:1-1105">
@@ -680,6 +721,11 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                   <ForAlighting>false</ForAlighting>
                 </StopPointInJourneyPattern>
                 <StopPointInJourneyPattern order="3" version="1"
+                  id="NSB:StopPointInJourneyPattern:1-1105-3">
+                  <ScheduledStopPointRef ref="NSB:ScheduledStopPoint:760141301"/>
+                  <ForAlighting>false</ForAlighting>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern order="4" version="1"
                   id="NSB:StopPointInJourneyPattern:1-1105-3">
                   <ScheduledStopPointRef ref="NSB:ScheduledStopPoint:760141301"/>
                   <ForAlighting>false</ForAlighting>
