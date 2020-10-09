@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+Conceptual example for representing hierarchical organisation structures in NeTEx
+-->
+
 <PublicationDelivery 
   xmlns="http://www.netex.org.uk/netex" 
   xmlns:gml="http://www.opengis.net/gml/3.2" 
@@ -25,7 +30,7 @@
                     <Description>Entur AS</Description>
                 </Codespace>
                 
-                <!-- Supplerende info for Eksempel 1: Vy-konsernet -->
+                <!-- Supplementary information for EXAMPLE 1: Vy-group (business concern / umbrella organisation) -->
                 <Codespace id="vyg">
                     <Xmlns>VYG</Xmlns>
                     <XmlnsUrl>http://www.rutebanken.org/ns/vyg</XmlnsUrl>
@@ -51,8 +56,8 @@
                     <XmlnsUrl>http://www.rutebanken.org/ns/vyb</XmlnsUrl>
                     <Description>Vy Buss (Sverige) AB</Description>
                 </Codespace>
-
-                <!-- Supplerende info for Eksempel 2: Ruter# og underleverandører -->
+                
+                <!-- Supplementary information for EXAMPLE 2: Ruter# and subsidiaries/sub-vendors -->
                 <Codespace id="rut">
                     <Xmlns>RUT</Xmlns>
                     <XmlnsUrl>http://www.rutebanken.org/ns/rut</XmlnsUrl>
@@ -68,12 +73,12 @@
             
             <organisations>
 
-                <!-- ======================== -->
-                <!-- Eksempel 1: Vy-konsernet -->
-                <!-- ======================== -->
+                <!-- =================== -->
+                <!-- EXAMPLE 1: Vy-group -->
+                <!-- =================== -->
 
                 <OtherOrganisation id="NOG:OtherOrganisation:Samferdselsdepartementet" version="1">
-                    <!-- Organisasjonsnummer -->
+                    <!-- "Organisasjonsnummer" (official organisation code in the Norwegian "Enhetsregisteret" (brreg.no) -->
                     <CompanyNumber>972 417 904</CompanyNumber>
                     <Name>Samferdselsdepartementet</Name>
                     <LegalName>SAMFERDSELSDEPARTEMENTET</LegalName>
@@ -87,7 +92,7 @@
 
                 <!-- add responsibilities to this organization by using responsibiltySetRef -->
                 <GeneralOrganisation id="NOG:GeneralOrganisation:Vygruppen" version="1" responsibilitySetRef="NOG:ResponsibilitySet:InnsendingRutedata">
-                    <!-- Organisasjonsnummer -->
+                    <!-- "Organisasjonsnummer" (official organisation code in the Norwegian "Enhetsregisteret" (brreg.no) -->
                     <CompanyNumber>984 661 177</CompanyNumber>
                     <Name>Vygruppen</Name>
                     <LegalName>VYGRUPPEN AS</LegalName>
@@ -95,7 +100,9 @@
                     <ContactDetails>
                         <Url>https://www.vy.no/vygruppen/kontakt-oss</Url>
                     </ContactDetails>
-                    <!-- MANGLER RELEVANT OrganisationTypeEnum; legg inn "group", "parent" og/eller "businessConcern" i NeTEx -->
+                    <!-- NB: -->
+                    <!-- RELEVANT OrganisationTypeEnum ; should probably have "group", "parent" and/or "businessConcern" -->
+                    <!-- (should probably exten enum set in NeTEx) -->
                     <OrganisationType>other</OrganisationType>
                     <parts>
                         <OrganisationPart id="NOG:OrganizationPart:2" version="1">
@@ -182,7 +189,7 @@
                 </GeneralOrganisation>
 
                 <Operator id="NOG:Operator:VYT" version="1">
-                    <!-- Organisasjonsnummer -->
+                    <!-- "Organisasjonsnummer" (official organisation code in the Norwegian "Enhetsregisteret" (brreg.no) -->
                     <CompanyNumber>917 374 988</CompanyNumber>
                     <Name>Vy Tog</Name>
                     <LegalName>VY TOG AS</LegalName>
@@ -200,7 +207,7 @@
                 </Operator>
 
                 <Operator id="NOG:Operator:GJB" version="1">
-                    <!-- Organisasjonsnummer -->
+                    <!-- "Organisasjonsnummer" (official organisation code in the Norwegian "Enhetsregisteret" (brreg.no) -->
                     <CompanyNumber>987 831 278</CompanyNumber>
                     <Name>Vy Gjøvikbanen</Name>
                     <LegalName>VY GJØVIKBANEN AS</LegalName>
@@ -210,7 +217,6 @@
                     <PrivateContactDetails>
                         <Phone>23 15 00 00</Phone>
                     </PrivateContactDetails>
-
                     <Address>
                         <AddressLine1>Schweigaards gate 23</AddressLine1>
                         <Town>Oslo</Town>
@@ -220,7 +226,7 @@
                 </Operator>
 
                 <Operator id="NOG:Operator:VYX" version="1">
-                    <!-- Organisasjonsnummer -->
+                    <!-- "Organisasjonsnummer" (official organisation code in the Norwegian "Enhetsregisteret" (brreg.no) -->
                     <CompanyNumber>917 374 988</CompanyNumber>
                     <Name>Vy Buss</Name>
                     <LegalName>VY BUSS AS</LegalName>
@@ -245,7 +251,8 @@
                 </Operator>
 
                 <Operator id="NOG:Operator:VYB" version="1">
-                    <!-- Organisasjonsnummer (svensk), datterselskap av Vy Buss AS -->
+                    <!-- NB: Swedish company subsidiary of Vy Buss AS, thus CompanyNumber is from Swedish public service datafront allabolag.se -->
+                    <!-- (uncertain if this should be ok as official entry in a Norwegian registry, or rather rely on brreg.no for company numbers) -->
                     <CompanyNumber>556429-0319</CompanyNumber>
                     <Name>Vy Buss AB</Name>
                     <LegalName>VY BUSS AB</LegalName>
@@ -269,12 +276,12 @@
 
 
 
-                <!-- ================================================== -->
-                <!-- Eksempel 2: Ruter# med Unibuss som underleverandør -->
-                <!-- ================================================== -->
+                <!-- =============================================== -->
+                <!-- EXAMPLE 1: Ruter# with Unibuss as subcontractor -->
+                <!-- =============================================== -->
 
                 <Authority id="NOG:Authority:Ruter" version="1">
-                    <!-- Organisasjonsnummer -->
+                    <!-- "Organisasjonsnummer" (official organisation code in the Norwegian "Enhetsregisteret" (brreg.no) -->
                     <CompanyNumber>991609407</CompanyNumber>
                     <Name>Ruter#</Name>
                     <LegalName>RUTER AS</LegalName>
@@ -293,7 +300,7 @@
 
 
                 <OtherOrganisation id="NOG:OtherOrganisation:OsloKommune" version="1">
-                    <!-- Organisasjonsnummer -->
+                    <!-- "Organisasjonsnummer" (official organisation code in the Norwegian "Enhetsregisteret" (brreg.no) -->
                     <CompanyNumber>958 935 420</CompanyNumber>
                     <Name>Samferdselsdepartementet</Name>
                     <LegalName>SAMFERDSELSDEPARTEMENTET</LegalName>
@@ -306,7 +313,7 @@
                 </OtherOrganisation>
 
                 <GeneralOrganisation id="NOG:GeneralOrganisation:Sporveien" version="1">
-                    <!-- Organisasjonsnummer -->
+                    <!-- "Organisasjonsnummer" (official organisation code in the Norwegian "Enhetsregisteret" (brreg.no) -->
                     <CompanyNumber>915 070 434</CompanyNumber>
                     <Name>Sporveien</Name>
                     <LegalName>SPORVEIEN AS</LegalName>
@@ -323,8 +330,8 @@
                     </parts>
                 </GeneralOrganisation>
 
-                <!-- Unibuss er innleid og kjører (for eksempelets skyld) KUN ruter på vegne av Ruter# 
-                    (med data levert i RUT codespace) -->
+                <!-- Unibuss is hired as a subcontractor and ONLY runs (in context of this example) services on behalf of Ruter#, with their data within the RUT codespace    
+                    (in reality Unibuss is a subcontractor of multiple authorities/operators, thus their data may be delived in multiple codespaces) -->
                 <Operator version="1" id="NOG:Operator:UNI">
                     <!-- Organisasjonsnummer -->
                     <CompanyNumber>985615616</CompanyNumber>

@@ -339,7 +339,8 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
 
         <CompoundTrain id="NMR:CompoundTrain:1" version="1">
           <components>
-            <TrainInCompoundTrain id="NMR:TrainInCompoundTrain:1" version="1" order="1">
+            <!-- ALTERNATIVE (if order is relevant): TrainInCompoundTrain id="NMR:TrainInCompoundTrain:1" version="1" order="1" -->
+            <TrainInCompoundTrain id="NMR:TrainInCompoundTrain:1" version="1">
               <TrainRef ref="NMR:Train:Flirt-1" version="1"/>
               <OperationalOrientation>forwards</OperationalOrientation>
               <ReversedOrientation>false</ReversedOrientation>
