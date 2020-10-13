@@ -387,6 +387,9 @@
                   <ArrivalTime>08:30:00</ArrivalTime>
                 </TimetabledPassingTime>           
               </passingTimes>
+              <facilities>
+                <ServiceFacilitySetRef ref="VYG:ServiceFacilitySet:1" version="0"/>
+              </facilities>
             </ServiceJourney>
             
             
@@ -417,6 +420,9 @@
                   <ArrivalTime>08:00:00</ArrivalTime>
                 </TimetabledPassingTime>               
               </passingTimes>
+              <facilities>
+                <ServiceFacilitySetRef ref="VYG:ServiceFacilitySet:1" version="0"/>
+              </facilities>
             </ServiceJourney>
             
             
@@ -428,6 +434,7 @@
                 </KeyValue>
               </keyList>
               <PrivateCode>41</PrivateCode>
+              
               <TransportMode>bus</TransportMode>
               <TransportSubmode>
                 <BusSubmode>railReplacementBus</BusSubmode>
@@ -443,6 +450,9 @@
                   <ArrivalTime>08:40:00</ArrivalTime>
                 </TimetabledPassingTime> 
               </passingTimes>
+              <facilities>
+                <ServiceFacilitySetRef ref="VYG:ServiceFacilitySet:1" version="0"/>
+              </facilities>
             </ServiceJourney>
             
             
@@ -469,6 +479,9 @@
                   <ArrivalTime>09:00:00</ArrivalTime>
                 </TimetabledPassingTime> 
               </passingTimes>
+              <facilities>
+                <ServiceFacilitySetRef ref="VYG:ServiceFacilitySet:1" version="0"/>
+              </facilities>
             </ServiceJourney>
             
             
@@ -495,6 +508,9 @@
                   <ArrivalTime>08:46:00</ArrivalTime>
                 </TimetabledPassingTime> 
               </passingTimes>
+              <facilities>
+                <ServiceFacilitySetRef ref="VYG:ServiceFacilitySet:1" version="0"/>
+              </facilities>
             </ServiceJourney>
             
             
