@@ -164,7 +164,8 @@ Conceptual example for representing hierarchical organisation structures in NeTE
                             <Name>Innsending av rutedata for VY Gruppen</Name>
                             <roles>
                                 <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:11" version="1">
-                                    <DataRoleType>creates</DataRoleType>
+                                    <DataRoleType>aggregates</DataRoleType>
+                                    <StakeholderRoleType>EntityLegalOwnership</StakeholderRoleType>
                                     <ResponsibleOrganisationRef ref="NOG:Operator:VYT" version="1"/>
                                     <!--ResponsibleAreaRef ref="NOG:AdministrativeZone:Tog" version="1"/-->
                                 </ResponsibilityRoleAssignment>
@@ -224,7 +225,7 @@ Conceptual example for representing hierarchical organisation structures in NeTE
                     </Address>
                     <OperatorActivities>passenger</OperatorActivities>
                 </Operator>
-
+                
                 <Operator id="NOG:Operator:VYX" version="1">
                     <!-- "Organisasjonsnummer" (official organisation code in the Norwegian "Enhetsregisteret" (brreg.no) -->
                     <CompanyNumber>917 374 988</CompanyNumber>
@@ -249,6 +250,8 @@ Conceptual example for representing hierarchical organisation structures in NeTE
                     </Address>
                     <OperatorActivities>passenger</OperatorActivities>
                 </Operator>
+                
+                
 
                 <Operator id="NOG:Operator:VYB" version="1">
                     <!-- NB: Swedish company subsidiary of Vy Buss AS, thus CompanyNumber is from Swedish public service datafront allabolag.se -->
@@ -272,7 +275,6 @@ Conceptual example for representing hierarchical organisation structures in NeTE
                     </Address>
                     <OperatorActivities>passenger</OperatorActivities>
                 </Operator>
-
 
 
 
@@ -356,6 +358,69 @@ Conceptual example for representing hierarchical organisation structures in NeTE
                         <Url>https://ruter.no/fa-hjelp/kontakt-oss/</Url>
                     </CustomerServiceContactDetails>
                 </Operator>
+                
+                
+                <!-- ************************************************************************************************************************************** -->
+                
+                
+                <!-- ##### -->
+                <!-- Dummy data only used for display of element structuring -->
+                <!-- ##### -->
+                <OtherOrganisation id="NOG:OtherOrganisation:TEST" version="1">
+                    <CompanyNumber>test</CompanyNumber>
+                    <Name>text</Name>
+                    <LegalName>test</LegalName>
+                    <Description>test</Description>
+                    <ContactDetails>
+                        <Url>https://www.text.org</Url>
+                    </ContactDetails>
+                    <PrivateContactDetails>
+                        <Phone>123456789</Phone>
+                    </PrivateContactDetails>
+                    
+                    <parts>
+                        <!-- (see Operator below) -->
+                        <DepartmentRef ref="NOG:Department:TEST" version="1"/>                        
+                        <OrganisationPart id="NOG:OrganizationPart:TEST" version="1">
+                            <OperatorRef ref="NOG:Operator:TEST" version="1"/> <!-- ignore the circle referencing -->
+                        </OrganisationPart>
+                    </parts>
+                </OtherOrganisation>
+                
+                
+                <Operator id="NOG:Operator:TEST" version="1">
+                    <CompanyNumber>test</CompanyNumber>
+                    <Name>text</Name>
+                    <LegalName>test</LegalName>
+                    <Description>test</Description>
+                    <ContactDetails>
+                        <Url>https://www.text.org</Url>
+                    </ContactDetails>
+                    <PrivateContactDetails>
+                        <Phone>123456789</Phone>
+                    </PrivateContactDetails>
+                    <departments>
+                        <!-- 
+                            7.4.7.5.4 
+                            Department Model Element
+                            An ORGANISATION PART specific to a purpose and/or organisational structure 
+                        -->
+                        <Department id="NOG:Department:TEST" version="1">
+                            <Name>test</Name>
+                            <units>
+                                <!--
+                                   7.4.7.5.3 OrganisationalUnit – Model Element
+                                   An ORGANISATION PART to which a set of responsibilities in a public transport company for
+                                   planning and control is assigned.
+                                 -->
+                                <OrganisationalUnitRef ref="NOG:OrganizationPart:TEST" version="1"/>
+                                <!-- sample (unlikely to be used currently) -->
+                                <!-- Question: Does it make sense to define OrganisationalUnit _without_ its ResponsibilitySet/-Role also defined? --> 
+                            </units>
+                        </Department>
+                    </departments>
+                </Operator>
+                
 
             </organisations>
         </ResourceFrame>
