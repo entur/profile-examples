@@ -380,9 +380,9 @@ Conceptual example for representing hierarchical organisation structures in NeTE
                     
                     <parts>
                         <!-- (see Operator below) -->
-                        <DepartmentRef ref="NOG:Department:TEST" version="1"/>                        
+                        <DepartmentRef ref="NOG:Department:TEST" version="1"/>
                         <OrganisationPart id="NOG:OrganizationPart:TEST" version="1">
-                            <OperatorRef ref="NOG:Operator:TEST" version="1"/> <!-- ignore the circle referencing -->
+                            <OperatorRef ref="NOG:Operator:TEST" version="1"/> <!-- please ignore the circle referencing -->
                         </OrganisationPart>
                     </parts>
                 </OtherOrganisation>
@@ -413,7 +413,7 @@ Conceptual example for representing hierarchical organisation structures in NeTE
                                    An ORGANISATION PART to which a set of responsibilities in a public transport company for
                                    planning and control is assigned.
                                  -->
-                                <OrganisationalUnitRef ref="NOG:OrganizationPart:TEST" version="1"/>
+                                <OrganisationalUnitRef ref="NOG:OrganizationPart:TEST" version="1"/> <!-- please ignore the circle referencing -->
                                 <!-- sample (unlikely to be used currently) -->
                                 <!-- Question: Does it make sense to define OrganisationalUnit _without_ its ResponsibilitySet/-Role also defined? --> 
                             </units>
