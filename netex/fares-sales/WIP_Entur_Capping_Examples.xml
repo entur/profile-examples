@@ -44,6 +44,10 @@
                 <ValidableElement id="CCC:ValidableElement:SingleTripArea1" version="1">
                     <Name lang="nob">Enkeltreise Område 1</Name>
                 </ValidableElement>
+                <!-- Rather model as SingleTrip + 24H timeband? -->
+                <ValidableElement id="CCC:ValidableElement:24Hours" version="1">
+                    <Name lang="nob">24 timers billett</Name>
+                </ValidableElement>
             </validableElements>
 
 
@@ -306,48 +310,108 @@
                 
                 <!-- KRIS -->
                 
-                <CappedDiscountRight id="CCC:CappedDiscountRight:5" version="1">
+                <!-- 
+                    "alternative" approach to structuring, POC to test if real life use-cases can be arranged simpler / more intutive
+                    (most comments from "CCC:CappedDiscountRight:1" have been removed for better readability)
+                    
+                    Rather than using LimitingRule with fixed max amount, use the actual PreassignedFareProducts as both product and (max) price "upgrade" for the capping
+                    
+                    
+                    NB:                    
+                    The the PreassignedFareProduct now owns the reference to the CappedDiscountRight with CappingRule(s) defining capping thresholds and which
+                    new (Preassigned)FareProduct the capping should lead to
+                    However, it may be more intuitive to model this relation the other way around, where the CappedDiscountRight - CappingRule 
+                    
+                    Have not (yet) found this/these relation(s) to be clearly documented in the spec, 
+                    thus a best-effort POC to investigate options to examine what requires the least amount of redundant data.
+                -->
+                
+                
+                <PreassignedFareProduct id="CCC:PreassignedFareProduct:SingleTicketCapped" version="1">
+                    <Name lang="nob">
+                        Enkeltbillett Vestfold 
+                        med capping iht. Kravspec Vestfold/Telemark pkt 32:
+                        
+                        Alle salg av kategoriene på enkeltbillett Voksen, Honnør og Barn 
+                        skal lede inn til en Beste Pris kategori for periodebillett, 
+                        definert på registrert alder
+                    </Name>
+                    <CappedDiscountRightRef ref="CCC:CappedDiscountRight:BesteprisVestfold" version="1"/>
+                    <!-- skal trolig fjernes, misforstod trolig capping-reglene, 
+                        hypotese at i stedet mulig med generiske CappingRules og at pristak ("LimitingRule sort of") styres av FareTable per UserProfile -->
+                    <!--GenericParameterAssignmentInContext>
+                        <limitations>
+                            <UserProfileRef ref="CCC:UserProfile:Child" version="1"/>
+                        </limitations>
+                    </GenericParameterAssignmentInContext-->
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                    </accessRightsInProduct>
+                    <ProductType>singleTrip</ProductType>
+                </PreassignedFareProduct>
+                
+                <PreassignedFareProduct id="CCC:PreassignedFareProduct:24HoursCapped" version="1">
+                    <Name lang="nob">24 timers capped billett Vestfold</Name>
+                    <CappedDiscountRightRef ref="CCC:CappedDiscountRight:BesteprisVestfold" version="1"/>
+                    <!-- skal trolig fjernes, misforstod trolig capping-reglene, 
+                        hypotese at i stedet mulig med generiske CappingRules og at pristak ("LimitingRule sort of") styres av FareTable per UserProfile -->
+                    <!--GenericParameterAssignmentInContext>
+                        <limitations>
+                            <UserProfileRef ref="CCC:UserProfile:Adult" version="1"/>
+                        </limitations>
+                    </GenericParameterAssignmentInContext-->
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="CCC:ValidableElement:24Hours" version="1"/>
+                    </accessRightsInProduct>
+                    <ProductType>dayPass</ProductType>
+                </PreassignedFareProduct>
+                
+                <CappedDiscountRight id="CCC:CappedDiscountRight:BesteprisVestfold" version="1">
                     <Name lang="nob">Bestepris Vestfold</Name>
-                    <cappingRules>                        
-                        <CappingRule id="CCC:CappingRule:5-1" version="1">
+                    <cappingRules>
+                        
+                        <!-- 1) first level capping after reaching cost of 24 hour ticket --> 
+                        <CappingRule id="CCC:CappingRule:BesteprisVestfold-1" version="1">
                             <Name>Makspris pr 24 timer</Name>
-                            <!-- Limit on how much money to spend in this rule before moving to next (?) -->
-                            <LimitingRuleRef ref="CCC:LimitingRule:MaxPerDayAdult" version="1"/>
-                            <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
-                            
+                            <!-- LimitingRuleRef ref="CCC:LimitingRule:MaxPerDayAdult" version="1"/ -->
                             <CappingPeriod>day</CappingPeriod>
-                            
-                            <!-- Is this the product that has a cap on cost ?-->
-                            <!-- PREASSIGNED FARE PRODUCT whose prices set cap for this product.-->
+                            <!-- 
+                                Although the spec _unintuitively_ states that the PreassignedFareProductRef = "PREASSIGNED FARE PRODUCT whose prices set cap for this product."
+                                this is rather used (intuitively) as the capping threshold!
+                                Ref. 
+                                7.6.2.4.6 CappingRule – Model Element (page 368)
+                                "A capping limit for a given time interval, where **the capping is expressed by another product**. 
+                            -->
                             <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:24Timers" version="1"/>
-                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                            <!--ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/--> <!-- already defined by the PreassignedFareProduct -->
                             <validityParameterAssignments>
                                 <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:5-1" version="1">
                                     <limitations>
-                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:24Hours" version="1"/>
-                                        <UserProfileRef ref="CCC:UserProfile:Adult" version="1"/>
+                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:24Hours" version="1"/> <!-- only related to the capping, thus necessary -->
+                                        <!--UserProfileRef ref="CCC:UserProfile:Adult" version="1"/ --> <!-- rather have generic CappingRule -->
                                     </limitations>
                                 </GenericParameterAssignment>
                             </validityParameterAssignments>
                         </CappingRule>
-                        <CappingRule id="CCC:CappingRule:5-2" version="1">
+                        
+                        <!-- 2) second level capping after reaching cost of 7 day ticket -->
+                        <CappingRule id="CCC:CappingRule:BesteprisVestfold-2" version="1">
                             <Name>Makspris pr 7 dager</Name>
-                            <!-- Limit on how much money to spend in this rule before moving to next (?) -->
-                            <LimitingRuleRef ref="CCC:LimitingRule:MaxPer7DaysAdult" version="1"/>
-                            <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            <!--LimitingRuleRef ref="CCC:LimitingRule:MaxPer7DaysAdult" version="1"/-->
                             <CappingPeriod>week</CappingPeriod>
                             <!-- Is this the product that has a cap on cost -->
                             <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:7DayTicket" version="1"/>
-                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                            <!--ValidableElementRef ref="CCC:ValidableElement:24Hours" version="1"/--> <!-- already defined by the PreassignedFareProduct -->
                             <validityParameterAssignments>
                                 <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:5-2" version="1">
                                     <limitations>
-                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:24Hours" version="1"/>
-                                        <UserProfileRef ref="CCC:UserProfile:Adult" version="1"/>
+                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:7Days" version="1"/>
+                                        <UserProfileRef ref="CCC:UserProfile:Adult" version="1"/> <!-- because capping requires even child/young to reach this price/LimitingRule before capping applies -->
                                     </limitations>
                                 </GenericParameterAssignment>
                             </validityParameterAssignments>
                         </CappingRule>
+                        
                     </cappingRules>
                     
                 </CappedDiscountRight>
@@ -356,31 +420,47 @@
             
             
             <fareTables>
-                
-                <FareTable id="ENT:FareTable:1" version="1">
-                    <!--pricesFor>
-                        <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip1Zone"/>
-                        <UserProfileRef ref="ENT:UserProfile:ReducedFare" />
-                        <UserProfileRef ref="ENT:UserProfile:NormalFare"  />
-                        <UserProfileRef ref="ENT:UserProfile:StudentFare" />
-                    </pricesFor-->
+                <FareTable id="ENT:FareTable:1" version="1">  
+                    <pricesFor>
+                        <UserProfileRef ref="CCC:UserProfile:Child" version="1" />
+                    </pricesFor>
                     
                     <prices>
-                        <FareProductPrice id="CCC:FareProductPrice:1" version="1">
+                        <FareProductPrice id="CCC:PreassignedFareProduct:1" version="1">
                             <Amount>34</Amount>
-                            <CappingRulePriceRef ref=""></CappingRulePriceRef>
+                            <CappingRulePriceRef ref="CCC:CappingRulePrice:1" version="1"/>
                             <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:24Timers" version="1"/>
                         </FareProductPrice>
+                    </prices>
+                </FareTable>
+                
+                
+                <FareTable id="ENT:FareTable:2" version="1">  
+                    <pricesFor>
+                        <UserProfileRef ref="CCC:UserProfile:Adult" version="1" />
+                    </pricesFor>
+                    
+                    <prices>
                         <FareProductPrice id="CCC:FareProductPrice:2" version="1">
+                            <Amount>34</Amount>
+                            <CappingRulePriceRef ref="CCC:CappingRulePrice:2" version="1"/>
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:24HoursCapped" version="1"/>
+                        </FareProductPrice>
+                        <FareProductPrice id="CCC:FareProductPrice:3" version="1">
                             <Amount>170</Amount>
                             <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:7DayTicket" version="1"/>
-                        </FareProductPrice>                       
+                        </FareProductPrice>
+                        
                         <CappingRulePrice id="CCC:CappingRulePrice:1" version="1">
-                            
+                            <Amount>80</Amount>
                             <!-- FareProductPriceRef ref="ref"></FareProductPriceRef -->
                         </CappingRulePrice>
+                        <CappingRulePrice id="CCC:CappingRulePrice:2" version="1">
+                            <Amount>170</Amount>
+                            <!-- FareProductPriceRef ref="ref"></FareProductPriceRef -->
+                        </CappingRulePrice>                        
                         
-                        
+                        <!-- dummy data -->
                         <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:1" version="1">
                             <Amount>2.80</Amount>
                             <DistanceMatrixElementRef ref="ENT:DistanceMatrixElemENT:TariffZones" />
@@ -395,34 +475,11 @@
                         </GeographicalUnitPrice>
                     </prices>
                     
-                    <!--
-                    <cells>
-                        <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:9">
-                            <Amount>41</Amount>
-                            <Currency>SEK</Currency>
-                            <FareStructureElementRef version="1" ref="ENT:FareStructureElement:120minZone2SL"/>
-                        </FareStructureElementPrice>
-                        <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:10">
-                            <Amount>57</Amount>
-                            <Currency>SEK</Currency>
-                            <FareStructureElementRef version="1" ref="ENT:FareStructureElement:150minZone12SL"/>
-                        </FareStructureElementPrice>
-                        <GeographicalIntervalPrice version="1" id="ENT:GeographicalIntervalPrice:7">
-                            <Amount>16</Amount>
-                            <Currency>SEK</Currency>
-                            <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:1zone"/>
-                        </GeographicalIntervalPrice>
-                        <GeographicalIntervalPrice version="1" id="ENT:GeographicalIntervalPrice:8">
-                            <Amount>32</Amount>
-                            <Currency>SEK</Currency>
-                            <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:2zones"/>
-                        </GeographicalIntervalPrice>
-                    </cells>
-                    -->
                 </FareTable>
                 
                 
-                
+                <!-- (dummy data set, however should preferably use <prices> rather than <cells> for referencing, despite official CEN examples using the latter) -->
+                <!-- 
                 <FareTable id="ENT:FareTable:DUMMY-EXAMPLE" version="1">
                     <pricesFor>
                         <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip1Zone"/>
@@ -434,17 +491,7 @@
                     <prices>
                         <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:2_80" version="1">
                             <Amount>2.80</Amount>
-                            <!-- ALTERNATIVELY: The FareTable refers the fare structure it prices -->
                             <DistanceMatrixElementRef ref="ENT:DistanceMatrixElemENT:TariffZones" />
-                        </DistanceMatrixElementPrice>
-                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:3_20" version="1">
-                            <Amount>3.20</Amount>
-                        </DistanceMatrixElementPrice>
-                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:4_10" version="1">
-                            <Amount>4.10</Amount>
-                        </DistanceMatrixElementPrice>
-                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:5_70" version="1">
-                            <Amount>5.70</Amount>
                         </DistanceMatrixElementPrice>
                         
                         <SalesOfferPackagePrice id="ENT:SalesOfferPackagePrice:6_66" version="1">
@@ -456,7 +503,6 @@
                         </GeographicalUnitPrice>
                     </prices>
                     
-                    <!--
                     <cells>
                         <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:9">
                             <Amount>41</Amount>
@@ -479,9 +525,11 @@
                             <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:2zones"/>
                         </GeographicalIntervalPrice>
                     </cells>
-                    -->
                 </FareTable>
+                -->
+                
             </fareTables>
+            
 
             <!-- A Sales offer package is something that can actually be purchased 
             
