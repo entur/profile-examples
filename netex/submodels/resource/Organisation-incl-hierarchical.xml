@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- 
-Conceptual example for representing hierarchical organisation structures in NeTEx
+
+Conceptual example for testing how to represent organisation structures and hierarchies in NeTEx
+
+REMARK: Currently very much a work in progress!
+
 -->
 
 <PublicationDelivery 
@@ -101,8 +105,8 @@ Conceptual example for representing hierarchical organisation structures in NeTE
                         <Url>https://www.vy.no/vygruppen/kontakt-oss</Url>
                     </ContactDetails>
                     <!-- NB: -->
-                    <!-- RELEVANT OrganisationTypeEnum ; should probably have "group", "parent" and/or "businessConcern" -->
-                    <!-- (should probably exten enum set in NeTEx) -->
+                    <!-- RELEVANT OrganisationTypeEnum ; may be relevant to have "group", "parent" and/or "businessConcern" -->
+                    <!-- (enumeration set in NeTEx should be extended?) -->
                     <OrganisationType>other</OrganisationType>
                     <parts>
                         <OrganisationPart id="NOG:OrganizationPart:2" version="1">
@@ -360,7 +364,9 @@ Conceptual example for representing hierarchical organisation structures in NeTE
                 </Operator>
                 
                 
+                
                 <!-- ************************************************************************************************************************************** -->
+                
                 
                 
                 <!-- ##### -->
