@@ -38,7 +38,7 @@
             </PricingParameterSet>
 
             <validableElements>
-                <ValidableElement id="CCC:ValidableElement:SingleTripArea" version="1">
+                <ValidableElement id="CCC:ValidableElement:SingleTrip" version="1">
                     <Name lang="nob">Enkeltreise Område 1</Name>
                 </ValidableElement>
             </validableElements>
@@ -263,7 +263,7 @@
                             <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
                             <CappingPeriod>week</CappingPeriod>
                             <!-- Is this the product that has a cap on cost -->
-                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:7DaysTicket" version="1"/>
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:7DayTicket" version="1"/>
                             <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
                             
                             <validityParameterAssignments>
