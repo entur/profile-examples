@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:ns2="http://www.opengis.net/gml/3.2" version="1.11:NO-NeTEx-fares:0.9">
+
+    <PublicationTimestamp>2020-09-01T12:00:00</PublicationTimestamp>
+    <ParticipantRef>NOR_EXAMPLES</ParticipantRef>
+    <dataObjects>
+
+        <FareFrame id="CCC:FareFrame:1" version="1">
+
+            <PricingParameterSet id="CCC:PricingParameterSet" version="1">
+                <pricingRules>
+                    <LimitingRule id="CCC:LimitingRule:MaxPerDayAdult" version="1">
+                        <MaximumLimitPrice>80</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="CCC:LimitingRule:MaxPer7DayskAdult" version="1">
+                        <MaximumLimitPrice>240</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="CCC:LimitingRule:MaxPer30DaysAdult" version="1">
+                        <MaximumLimitPrice>740</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="CCC:LimitingRule:MaxPer180DaysAdult" version="1">
+                        <MaximumLimitPrice>3700</MaximumLimitPrice>
+                    </LimitingRule>
+
+                </pricingRules>
+            </PricingParameterSet>
+
+            <validableElements>
+                <ValidableElement id="CCC:ValidableElement:SingleTripArea1" version="1">
+                    <Name lang="nob">Enkeltreise Område </Name>
+                </ValidableElement>
+            </validableElements>
+
+
+            <usageParameters>
+                <!-- Boat has different age limits that bus/rest of network -->
+                <UserProfile id="CCC:UserProfile:AdultBus" version="1">
+                    <Name lang="nob">Voksen</Name>
+                    <Description>Voksen</Description>
+                    <MinimumAge>18</MinimumAge>
+                    <MaximumAge>66</MaximumAge>
+                </UserProfile>
+
+
+                <!-- Other usage parameters -->
+                <Transferability id="CCC:Transferability:TransferableSingleConcurrentUser" version="1">
+                    <CanTransfer>true</CanTransfer>
+                    <HasTransferFee>false</HasTransferFee>
+                    <SharedUsage>singleUser</SharedUsage>
+                </Transferability>
+                <Transferability id="CCC:Transferability:NoTransfer" version="1">
+                    <CanTransfer>false</CanTransfer>
+                </Transferability>
+                <FrequencyOfUse id="CCC:FrequencyOfUse:Unlimited" version="1">
+                    <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                </FrequencyOfUse>
+                <FrequencyOfUse id="CCC:FrequencyOfUse:Single" version="1">
+                    <FrequencyOfUseType>single</FrequencyOfUseType>
+                </FrequencyOfUse>
+                <UsageValidityPeriod id="CCC:UsageValidityPeriod:24Hours" version="1">
+                    <StandardDuration>PT24H</StandardDuration>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="CCC:UsageValidityPeriod:7Days" version="1">
+                    <StandardDuration>P7D</StandardDuration>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="CCC:UsageValidityPeriod:30Days" version="1">
+                    <StandardDuration>P30D</StandardDuration>
+                </UsageValidityPeriod>
+
+            </usageParameters>
+
+
+            <fareProducts>
+
+                <PreassignedFareProduct id="CCC:PreassignedFareProduct:SingleTicket" version="1">
+                    <Name lang="nob">Enkeltbillett Vestfold</Name>
+                    <!-- The regular product -->
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+
+                <CappedDiscountRight id="CCC:CappedDiscountRight:1" version="1">
+                    <Name lang="nob">Enkeltbillett Vestfold/BestePris</Name>
+                    <!-- The Capped discount right that is included when a 
+                        new capping scheme is started(?) -->
+
+                    <cappingRules>
+                        <CappingRule id="CCC:CappingRule:1" version="1">
+                            <Name>Makspris pr 24 timer</Name>
+                            <!-- Limit on how much money to spend in this rule before moving to next (?) -->
+                            <LimitingRuleRef ref="CCC:LimitingRule:MaxPerDayAdult" version="1"/>
+                            <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            <CappingPeriod>day</CappingPeriod>
+                            <!-- Is this the product that has a cap on cost -->
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:SingleTicket" version="1"/>
+                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:1" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:24Hours" version="1"/>
+                                        <UserProfileRef ref="CCC:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </CappingRule>
+                        <CappingRule id="CCC:CappingRule:2" version="1">
+                            <Name>Makspris pr 7 dager</Name>
+                            <!-- Limit on how much money to spend in this rule before moving to next (?) -->
+                            <LimitingRuleRef ref="CCC:LimitingRule:MaxPerDayAdult" version="1"/>
+                            <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            <CappingPeriod>week</CappingPeriod>
+                            <!-- Is this the product that has a cap on cost -->
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:SingleTicket" version="1"/>
+                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:2" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:24Hours" version="1"/>
+                                        <UserProfileRef ref="CCC:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </CappingRule>
+                    </cappingRules>
+
+
+
+                </CappedDiscountRight>
+            </fareProducts>
+
+            <!-- A Sales offer package is something that can actually be purchased 
+            
+                These are a skeleton of what is required to be reported to the National Access Point according to the ITS directive. 
+       
+            -->
+            <salesOfferPackages>
+
+
+                <!-- Single ticket bus -->
+                <SalesOfferPackage id="CCC:SalesOfferPackage:SingleTicketBus" version="1">
+                    <Name lang="nob">Enkeltbillett</Name>
+                    <alternativeNames>
+                        <AlternativeName>
+                            <Name lang="eng">Single ticket</Name>
+                        </AlternativeName>
+                    </alternativeNames>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="CCC:SalesOfferPackageElement:SingleTicketBus" version="1" order="1">
+                            <Name lang="nob">Enkeltbillett</Name>
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:SingleTicket" version="1"/>
+
+                            <!-- Only included for illustration purposes -->
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment id="CCC:GenericParameterAssignment:1-SingleTicket" version="1" order="0">
+                                    <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                                    <!--                                    <limitations>
+                                    </limitations>
+                                    <validityParameters>
+                                    </validityParameters>-->
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+        </FareFrame>
+    </dataObjects>
+</PublicationDelivery>
