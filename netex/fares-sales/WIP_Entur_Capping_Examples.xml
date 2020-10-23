@@ -22,12 +22,24 @@
                         <MaximumLimitPrice>3700</MaximumLimitPrice>
                     </LimitingRule>
 
+
+                    <LimitingRule id="CCC:LimitingRule:MaxPer7DaysYoung" version="1">
+                        <MaximumLimitPrice>100</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="CCC:LimitingRule:MaxPer7DaysYoungAdult" version="1">
+                        <MaximumLimitPrice>150</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="CCC:LimitingRule:MaxPer7DaysElderly" version="1">
+                        <MaximumLimitPrice>130</MaximumLimitPrice>
+                    </LimitingRule>
+                    
+
                 </pricingRules>
             </PricingParameterSet>
 
             <validableElements>
-                <ValidableElement id="CCC:ValidableElement:SingleTripArea1" version="1">
-                    <Name lang="nob">Enkeltreise Område </Name>
+                <ValidableElement id="CCC:ValidableElement:SingleTripArea" version="1">
+                    <Name lang="nob">Enkeltreise Område 1</Name>
                 </ValidableElement>
             </validableElements>
 
@@ -40,8 +52,37 @@
                     <MinimumAge>18</MinimumAge>
                     <MaximumAge>66</MaximumAge>
                 </UserProfile>
-
-
+                
+                <UserProfile id="CCC:UserProfile:Child" version="1">
+                    <Name lang="nob">Barn</Name>
+                    <MinimumAge>6</MinimumAge>
+                    <MaximumAge>17</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="CCC:UserProfile:Young" version="1">
+                    <Name lang="nob">Vestfoldkortet Ung</Name>
+                    <MinimumAge>6</MinimumAge>
+                    <MaximumAge>19</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="CCC:UserProfile:YoungAdult" version="1">
+                    <Name lang="nob">Vestfoldkortet UngVoksen</Name>
+                    <MinimumAge>20</MinimumAge>
+                    <MaximumAge>29</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="CCC:UserProfile:AdultVestfoldkort" version="1">
+                    <Name lang="nob">Vestfoldkortet Voksen</Name>
+                    <MinimumAge>30</MinimumAge>
+                    <MaximumAge>66</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="CCC:UserProfile:Elderly" version="1">
+                    <Name lang="nob">Barn</Name>
+                    <MinimumAge>67</MinimumAge>
+                </UserProfile>
+                
+                
                 <!-- Other usage parameters -->
                 <Transferability id="CCC:Transferability:TransferableSingleConcurrentUser" version="1">
                     <CanTransfer>true</CanTransfer>
@@ -58,6 +99,7 @@
                     <FrequencyOfUseType>single</FrequencyOfUseType>
                 </FrequencyOfUse>
                 <UsageValidityPeriod id="CCC:UsageValidityPeriod:24Hours" version="1">
+                    <UsageTrigger>fulfilment</UsageTrigger>
                     <StandardDuration>PT24H</StandardDuration>
                 </UsageValidityPeriod>
                 <UsageValidityPeriod id="CCC:UsageValidityPeriod:7Days" version="1">
@@ -103,29 +145,54 @@
                         new capping scheme is started(?) -->
 
                     <cappingRules>
-                        
+                                                
                         <!-- How to describe?
-                            1) Capping based on amount
+                            1) Capping based on amount vs
                             2) Capping based on number of purchases of (one or more) specific PreassignedFareProducts 
+                            3) Different user profiles?
+                            4) How to tell that even if you are paying using "Barn" fares, the capping level for 24hr is the same as adult (80kr),
+                                 and you also receive an Adult access right, not a 24hr child ticket ( which does not exist)
                         
                         -->
                         
                         
                         <CappingRule id="CCC:CappingRule:1" version="1">
+                            
                             <Name>Makspris pr 24 timer</Name>
                             <!-- Limit on how much money to spend in this rule before moving to next (?) -->
-                            <LimitingRuleRef ref="CCC:LimitingRule:MaxPerDayAdult" version="1"/>
-                            <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                             <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            
+                            <fareTables>
+                                <FareTable id="CCC:FareTable:24Hour" version="any">
+                                    <Name>Makspris 24 timer</Name>
+                                    <cells>
+                                        <!-- Does not matter which UserProfile -->
+                                        <Cell version="1" order="1" id="CCC:Cell:1">
+                                            <CellPrice>
+                                                <Name>Makspris 24 timer</Name>
+                                                <!-- Sets the capping price/limit -->
+                                                <LimitingRuleRef ref="CCC:LimitingRule:MaxPerDayAdult" version="1"/>
+                                            </CellPrice>
+                                            
+                                            <!-- The type of element we are considering -->
+                                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                                            <!-- The period to consider / look back --> 
+                                            <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:24Hours" version="1"/>
+                                        </Cell>
+                                    </cells>
+                                </FareTable>
+                            </fareTables>
+                            
                             
                             <CappingPeriod>day</CappingPeriod>
-                            
-                            
                             
                             <!-- Is this the product that has a cap on cost ?-->
                             <!-- PREASSIGNED FARE PRODUCT whose prices set cap for this product.-->
                             <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:24Timers" version="1"/>
                             <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                            <!-- Parameter assignments to apply to issued access right? -->
                             <validityParameterAssignments>
+                                <!-- Capping is only to Adult fare -->
                                 <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:1" version="1">
                                     <limitations>
                                         <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:24Hours" version="1"/>
@@ -134,20 +201,97 @@
                                 </GenericParameterAssignment>
                             </validityParameterAssignments>
                         </CappingRule>
+                       
                         <CappingRule id="CCC:CappingRule:2" version="1">
                             <Name>Makspris pr 7 dager</Name>
-                            <!-- Limit on how much money to spend in this rule before moving to next (?) -->
-                            <LimitingRuleRef ref="CCC:LimitingRule:MaxPer7DaysAdult" version="1"/>
+
+                            <fareTables>
+                                <FareTable id="CCC:FareTable:7Days" version="any">
+                                    <Name>Makspris 7 timer</Name>
+                                    <cells>
+                                        <Cell version="1" order="1" id="CCC:Cell:2">
+                                            <CellPrice>
+                                                <Name>Makspris 7 dager Voksen</Name>
+                                                <LimitingRuleRef ref="CCC:LimitingRule:MaxPer7DaysAdult" version="1"/>
+                                            </CellPrice>
+                                            <!-- The type of element we are considering -->
+                                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                                            <!-- The period to consider / look back --> 
+                                            <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:7Days" version="1"/>
+                                            <!-- Adult 30-66 -->
+                                            <UserProfileRef ref="CCC:UserProfile:AdultVestfoldkort" version="1"/>
+                                        </Cell>
+                                        <Cell version="1" order="1" id="CCC:Cell:3">
+                                            <CellPrice>
+                                                <Name>Makspris 7 dager Ung</Name>
+                                                <LimitingRuleRef ref="CCC:LimitingRule:MaxPer7DaysYoung" version="1"/>
+                                            </CellPrice>
+                                            <!-- The type of element we are considering -->
+                                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                                            <!-- The period to consider / look back --> 
+                                            <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:7Days" version="1"/>
+                                            <!-- Young 6-19 -->
+                                            <UserProfileRef ref="CCC:UserProfile:Young" version="1"/>
+                                        </Cell>
+                                        <Cell version="1" order="1" id="CCC:Cell:4">
+                                            <CellPrice>
+                                                <Name>Makspris 7 dager UngVoksen</Name>
+                                                <LimitingRuleRef ref="CCC:LimitingRule:MaxPer7DaysYoungAdult" version="1"/>
+                                            </CellPrice>
+                                            <!-- The type of element we are considering -->
+                                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                                            <!-- The period to consider / look back --> 
+                                            <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:7Days" version="1"/>
+                                            <!-- Young 6-19 -->
+                                            <UserProfileRef ref="CCC:UserProfile:YoungAdult" version="1"/>
+                                        </Cell>
+                                        <Cell version="1" order="1" id="CCC:Cell:5">
+                                            <CellPrice>
+                                                <Name>Makspris 7 dager Honnør</Name>
+                                                <LimitingRuleRef ref="CCC:LimitingRule:MaxPer7DaysElderly" version="1"/>
+                                            </CellPrice>
+                                            <!-- The type of element we are considering -->
+                                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                                            <!-- The period to consider / look back --> 
+                                            <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:7Days" version="1"/>
+                                            <!-- Young 6-19 -->
+                                            <UserProfileRef ref="CCC:UserProfile:Elderly" version="1"/>
+                                        </Cell>
+                                    </cells>
+                                </FareTable>
+                            </fareTables>
                             <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
                             <CappingPeriod>week</CappingPeriod>
                             <!-- Is this the product that has a cap on cost -->
-                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:7DayTicket" version="1"/>
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:7DaysTicket" version="1"/>
                             <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                            
                             <validityParameterAssignments>
+                            <!-- Either one of these must be assigned to the resulting ticket -->   
+                                <!-- TODO how to find correct parameter assignment to apply?
+                                            Implicit based on age eligibility? --> 
                                 <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:2" version="1">
                                     <limitations>
-                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:24Hours" version="1"/>
+                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:7Days" version="1"/>
+                                        <UserProfileRef ref="CCC:UserProfile:Young" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                                <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:3" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:7Days" version="1"/>
+                                        <UserProfileRef ref="CCC:UserProfile:YoungAdult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                                <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:4" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:7Days" version="1"/>
                                         <UserProfileRef ref="CCC:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                                <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:5" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:7Days" version="1"/>
+                                        <UserProfileRef ref="CCC:UserProfile:Elderly" version="1"/>
                                     </limitations>
                                 </GenericParameterAssignment>
                             </validityParameterAssignments>
