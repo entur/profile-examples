@@ -12,7 +12,7 @@
                     <LimitingRule id="CCC:LimitingRule:MaxPerDayAdult" version="1">
                         <MaximumLimitPrice>80</MaximumLimitPrice>
                     </LimitingRule>
-                    <LimitingRule id="CCC:LimitingRule:MaxPer7DayskAdult" version="1">
+                    <LimitingRule id="CCC:LimitingRule:MaxPer7DaysAdult" version="1">
                         <MaximumLimitPrice>240</MaximumLimitPrice>
                     </LimitingRule>
                     <LimitingRule id="CCC:LimitingRule:MaxPer30DaysAdult" version="1">
@@ -33,8 +33,8 @@
 
 
             <usageParameters>
-                <!-- Boat has different age limits that bus/rest of network -->
-                <UserProfile id="CCC:UserProfile:AdultBus" version="1">
+                
+                <UserProfile id="CCC:UserProfile:Adult" version="1">
                     <Name lang="nob">Voksen</Name>
                     <Description>Voksen</Description>
                     <MinimumAge>18</MinimumAge>
@@ -79,21 +79,51 @@
                         <AccessRightInProductRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
                     </accessRightsInProduct>
                 </PreassignedFareProduct>
-
+                
+                <PreassignedFareProduct id="CCC:PreassignedFareProduct:24Timers" version="1">
+                    <Name lang="nob">24 Timers Vestfold</Name>
+                    <!-- The regular product -->
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+                
+                <PreassignedFareProduct id="CCC:PreassignedFareProduct:7DayTicket" version="1">
+                    <Name lang="nob">7 dagers Vestfold</Name>
+                    <!-- The regular product -->
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+            
+                
                 <CappedDiscountRight id="CCC:CappedDiscountRight:1" version="1">
-                    <Name lang="nob">Enkeltbillett Vestfold/BestePris</Name>
-                    <!-- The Capped discount right that is included when a 
+                    <Name lang="nob">Bestepris Vestfold</Name>
+                    <!-- The Capped discount right that is included/added to the account when a 
                         new capping scheme is started(?) -->
 
                     <cappingRules>
+                        
+                        <!-- How to describe?
+                            1) Capping based on amount
+                            2) Capping based on number of purchases of (one or more) specific PreassignedFareProducts 
+                        
+                        -->
+                        
+                        
                         <CappingRule id="CCC:CappingRule:1" version="1">
                             <Name>Makspris pr 24 timer</Name>
                             <!-- Limit on how much money to spend in this rule before moving to next (?) -->
                             <LimitingRuleRef ref="CCC:LimitingRule:MaxPerDayAdult" version="1"/>
                             <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            
                             <CappingPeriod>day</CappingPeriod>
-                            <!-- Is this the product that has a cap on cost -->
-                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:SingleTicket" version="1"/>
+                            
+                            
+                            
+                            <!-- Is this the product that has a cap on cost ?-->
+                            <!-- PREASSIGNED FARE PRODUCT whose prices set cap for this product.-->
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:24Timers" version="1"/>
                             <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
                             <validityParameterAssignments>
                                 <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:1" version="1">
@@ -107,11 +137,11 @@
                         <CappingRule id="CCC:CappingRule:2" version="1">
                             <Name>Makspris pr 7 dager</Name>
                             <!-- Limit on how much money to spend in this rule before moving to next (?) -->
-                            <LimitingRuleRef ref="CCC:LimitingRule:MaxPerDayAdult" version="1"/>
+                            <LimitingRuleRef ref="CCC:LimitingRule:MaxPer7DaysAdult" version="1"/>
                             <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
                             <CappingPeriod>week</CappingPeriod>
                             <!-- Is this the product that has a cap on cost -->
-                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:SingleTicket" version="1"/>
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:7DayTicket" version="1"/>
                             <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
                             <validityParameterAssignments>
                                 <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:2" version="1">
