@@ -488,6 +488,7 @@
 							<priceGroups>
 								<PriceGroupRef ref=""></PriceGroupRef>
 							</priceGroups>
+							<!--
 							<fareTables>
 								<FareTable id="faretable-1" version="1">
 									<cells>
@@ -499,6 +500,7 @@
 								<StandardFareTableRef ref=""></StandardFareTableRef>
 								<FareTableRef ref=""></FareTableRef>
 							</fareTables>
+							-->
 							<salesOfferPackageElements>
 								<SalesOfferPackageElementRef ref="test"/>
 							</salesOfferPackageElements>
