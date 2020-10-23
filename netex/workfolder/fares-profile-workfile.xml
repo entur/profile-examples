@@ -482,6 +482,10 @@
                             <Amount>5.70</Amount>
                         </DistanceMatrixElementPrice>
                         
+                        <SalesOfferPackagePrice id="ENT:SalesOfferPackagePrice:6_66" version="1">
+                            <Amount>6.66</Amount>
+                        </SalesOfferPackagePrice>
+                        
                         <GeographicalUnitPrice id="ENT:GeographicalUnitPrice:2_80" version="1">
                             <Amount>2.80</Amount>
                         </GeographicalUnitPrice>
@@ -577,6 +581,9 @@
             <salesOfferPackages>
                 <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip1Zone" version="1">              
                     <Name lang="en">Single trip within one zone</Name>
+                    <prices>
+                        <SalesOfferPackagePriceRef ref="ref"/>
+                    </prices>
                     <salesOfferPackageElements>
                         <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip1Zone" version="1" order="1">
                             <Name lang="en">Single trip valid within one fare zone valid for one hour</Name>
@@ -621,6 +628,8 @@
             <distributionAssignments>
                 <DistributionAssignment id="ENT:DistributionAssignment:1" version="1" order="1">
                     <Name>test</Name>
+                    <DistributionChannelType>mobileDevice</DistributionChannelType>
+                    <AllowedInChannel>false</AllowedInChannel>
                 </DistributionAssignment>
             </distributionAssignments>
         </FareFrame>

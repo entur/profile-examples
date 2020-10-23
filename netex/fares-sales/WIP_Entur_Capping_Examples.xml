@@ -39,6 +39,9 @@
 
             <validableElements>
                 <ValidableElement id="CCC:ValidableElement:SingleTrip" version="1">
+                    <Name lang="nob">Enkeltreise</Name>
+                </ValidableElement>
+                <ValidableElement id="CCC:ValidableElement:SingleTripArea1" version="1">
                     <Name lang="nob">Enkeltreise Område 1</Name>
                 </ValidableElement>
             </validableElements>
@@ -82,7 +85,7 @@
                     <MinimumAge>67</MinimumAge>
                 </UserProfile>
                 
-                
+
                 <!-- Other usage parameters -->
                 <Transferability id="CCC:Transferability:TransferableSingleConcurrentUser" version="1">
                     <CanTransfer>true</CanTransfer>
@@ -297,11 +300,188 @@
                             </validityParameterAssignments>
                         </CappingRule>
                     </cappingRules>
-
-
-
                 </CappedDiscountRight>
+                
+                
+                
+                <!-- KRIS -->
+                
+                <CappedDiscountRight id="CCC:CappedDiscountRight:5" version="1">
+                    <Name lang="nob">Bestepris Vestfold</Name>
+                    <cappingRules>                        
+                        <CappingRule id="CCC:CappingRule:5-1" version="1">
+                            <Name>Makspris pr 24 timer</Name>
+                            <!-- Limit on how much money to spend in this rule before moving to next (?) -->
+                            <LimitingRuleRef ref="CCC:LimitingRule:MaxPerDayAdult" version="1"/>
+                            <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            
+                            <CappingPeriod>day</CappingPeriod>
+                            
+                            <!-- Is this the product that has a cap on cost ?-->
+                            <!-- PREASSIGNED FARE PRODUCT whose prices set cap for this product.-->
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:24Timers" version="1"/>
+                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:5-1" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:24Hours" version="1"/>
+                                        <UserProfileRef ref="CCC:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </CappingRule>
+                        <CappingRule id="CCC:CappingRule:5-2" version="1">
+                            <Name>Makspris pr 7 dager</Name>
+                            <!-- Limit on how much money to spend in this rule before moving to next (?) -->
+                            <LimitingRuleRef ref="CCC:LimitingRule:MaxPer7DaysAdult" version="1"/>
+                            <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            <CappingPeriod>week</CappingPeriod>
+                            <!-- Is this the product that has a cap on cost -->
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:7DayTicket" version="1"/>
+                            <ValidableElementRef ref="CCC:ValidableElement:SingleTrip" version="1"/>
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment order="1" id="CCC:GenericParameterAssignment:5-2" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="CCC:UsageValidityPeriod:24Hours" version="1"/>
+                                        <UserProfileRef ref="CCC:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </CappingRule>
+                    </cappingRules>
+                    
+                </CappedDiscountRight>
+                
             </fareProducts>
+            
+            
+            <fareTables>
+                
+                <FareTable id="ENT:FareTable:1" version="1">
+                    <!--pricesFor>
+                        <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip1Zone"/>
+                        <UserProfileRef ref="ENT:UserProfile:ReducedFare" />
+                        <UserProfileRef ref="ENT:UserProfile:NormalFare"  />
+                        <UserProfileRef ref="ENT:UserProfile:StudentFare" />
+                    </pricesFor-->
+                    
+                    <prices>
+                        <FareProductPrice id="CCC:FareProductPrice:1" version="1">
+                            <Amount>34</Amount>
+                            <CappingRulePriceRef ref=""></CappingRulePriceRef>
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:24Timers" version="1"/>
+                        </FareProductPrice>
+                        <FareProductPrice id="CCC:FareProductPrice:2" version="1">
+                            <Amount>170</Amount>
+                            <PreassignedFareProductRef ref="CCC:PreassignedFareProduct:7DayTicket" version="1"/>
+                        </FareProductPrice>                       
+                        <CappingRulePrice id="CCC:CappingRulePrice:1" version="1">
+                            
+                            <!-- FareProductPriceRef ref="ref"></FareProductPriceRef -->
+                        </CappingRulePrice>
+                        
+                        
+                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:1" version="1">
+                            <Amount>2.80</Amount>
+                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElemENT:TariffZones" />
+                        </DistanceMatrixElementPrice>
+                        
+                        <SalesOfferPackagePrice id="ENT:SalesOfferPackagePrice:1" version="1">
+                            <Amount>6.66</Amount>
+                        </SalesOfferPackagePrice>
+                        
+                        <GeographicalUnitPrice id="ENT:GeographicalUnitPrice:1" version="1">
+                            <Amount>2.80</Amount>
+                        </GeographicalUnitPrice>
+                    </prices>
+                    
+                    <!--
+                    <cells>
+                        <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:9">
+                            <Amount>41</Amount>
+                            <Currency>SEK</Currency>
+                            <FareStructureElementRef version="1" ref="ENT:FareStructureElement:120minZone2SL"/>
+                        </FareStructureElementPrice>
+                        <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:10">
+                            <Amount>57</Amount>
+                            <Currency>SEK</Currency>
+                            <FareStructureElementRef version="1" ref="ENT:FareStructureElement:150minZone12SL"/>
+                        </FareStructureElementPrice>
+                        <GeographicalIntervalPrice version="1" id="ENT:GeographicalIntervalPrice:7">
+                            <Amount>16</Amount>
+                            <Currency>SEK</Currency>
+                            <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:1zone"/>
+                        </GeographicalIntervalPrice>
+                        <GeographicalIntervalPrice version="1" id="ENT:GeographicalIntervalPrice:8">
+                            <Amount>32</Amount>
+                            <Currency>SEK</Currency>
+                            <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:2zones"/>
+                        </GeographicalIntervalPrice>
+                    </cells>
+                    -->
+                </FareTable>
+                
+                
+                
+                <FareTable id="ENT:FareTable:DUMMY-EXAMPLE" version="1">
+                    <pricesFor>
+                        <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip1Zone"/>
+                        <UserProfileRef ref="ENT:UserProfile:ReducedFare" />
+                        <UserProfileRef ref="ENT:UserProfile:NormalFare"  />
+                        <UserProfileRef ref="ENT:UserProfile:StudentFare" />
+                    </pricesFor>
+                    
+                    <prices>
+                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:2_80" version="1">
+                            <Amount>2.80</Amount>
+                            <!-- ALTERNATIVELY: The FareTable refers the fare structure it prices -->
+                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElemENT:TariffZones" />
+                        </DistanceMatrixElementPrice>
+                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:3_20" version="1">
+                            <Amount>3.20</Amount>
+                        </DistanceMatrixElementPrice>
+                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:4_10" version="1">
+                            <Amount>4.10</Amount>
+                        </DistanceMatrixElementPrice>
+                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:5_70" version="1">
+                            <Amount>5.70</Amount>
+                        </DistanceMatrixElementPrice>
+                        
+                        <SalesOfferPackagePrice id="ENT:SalesOfferPackagePrice:6_66" version="1">
+                            <Amount>6.66</Amount>
+                        </SalesOfferPackagePrice>
+                        
+                        <GeographicalUnitPrice id="ENT:GeographicalUnitPrice:2_80" version="1">
+                            <Amount>2.80</Amount>
+                        </GeographicalUnitPrice>
+                    </prices>
+                    
+                    <!--
+                    <cells>
+                        <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:9">
+                            <Amount>41</Amount>
+                            <Currency>SEK</Currency>
+                            <FareStructureElementRef version="1" ref="ENT:FareStructureElement:120minZone2SL"/>
+                        </FareStructureElementPrice>
+                        <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:10">
+                            <Amount>57</Amount>
+                            <Currency>SEK</Currency>
+                            <FareStructureElementRef version="1" ref="ENT:FareStructureElement:150minZone12SL"/>
+                        </FareStructureElementPrice>
+                        <GeographicalIntervalPrice version="1" id="ENT:GeographicalIntervalPrice:7">
+                            <Amount>16</Amount>
+                            <Currency>SEK</Currency>
+                            <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:1zone"/>
+                        </GeographicalIntervalPrice>
+                        <GeographicalIntervalPrice version="1" id="ENT:GeographicalIntervalPrice:8">
+                            <Amount>32</Amount>
+                            <Currency>SEK</Currency>
+                            <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:2zones"/>
+                        </GeographicalIntervalPrice>
+                    </cells>
+                    -->
+                </FareTable>
+            </fareTables>
 
             <!-- A Sales offer package is something that can actually be purchased 
             
