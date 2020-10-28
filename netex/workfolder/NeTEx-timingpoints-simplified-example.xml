@@ -51,7 +51,10 @@
 			<frames>
 				<ResourceFrame version="1" id="UNI:ResourceFrame:1">
 					<organisations>
-
+						<Authority version="1" id="RUT:Authority:Ruter">
+							<CompanyNumber>1</CompanyNumber>
+							<Name>Ruter</Name>
+						</Authority>
 						<Operator version="1" id="RUT:Operator:Unibuss">
 							<CompanyNumber>2</CompanyNumber>
 							<Name>Unibuss</Name>
