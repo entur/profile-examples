@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- === Simple Timetable  Example for illustrating ScheduledStopPoint vs TimingPoint === -->
-<!-- Based on example for timetable showing route 1x morning express in Oslo -->
 
 <PublicationDelivery 
 	version="1.11:NO-NeTEx-networktimetable:1.3"
