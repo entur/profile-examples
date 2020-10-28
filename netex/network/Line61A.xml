@@ -18,15 +18,15 @@
             <ValidBetween></ValidBetween>
 
             <codespaces>
-                <!-- Codespace for Ruter -->
-                <Codespace id="ruter">
-                    <Xmlns>RUT</Xmlns>
-                    <XmlnsUrl>http://www.ruter.no/</XmlnsUrl>
-                </Codespace>
-                <!-- Codespace for national stop place registry -->
                 <Codespace id="nsr">
                     <Xmlns>NSR</Xmlns>
-                    <XmlnsUrl>http://www.rutebanken.no/nasjonltstoppestedregister</XmlnsUrl>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+                    <Description>Nasjonalt StoppestedRegister</Description>
+                </Codespace>
+                <Codespace id="rut">
+                    <Xmlns>RUT</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/rut</XmlnsUrl>
+                    <Description>Ruter#</Description>
                 </Codespace>
             </codespaces>
 

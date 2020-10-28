@@ -22,22 +22,25 @@
 			<codespaces>
 				<Codespace id="nsr">
 					<Xmlns>NSR</Xmlns>
-					<XmlnsUrl>http://www.rutebanken.no/nasjonltstoppestedregister</XmlnsUrl>
+					<XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+					<Description>Nasjonalt StoppestedRegister</Description>
 				</Codespace>
-				<Codespace id="unibuss">
-					<Xmlns>UNI</Xmlns>
-					<XmlnsUrl>www.unibuss.no</XmlnsUrl>
-				</Codespace>
-				<Codespace id="ruter">
+				<Codespace id="rut">
 					<Xmlns>RUT</Xmlns>
-					<XmlnsUrl>www.ruter.no</XmlnsUrl>
+					<XmlnsUrl>http://www.rutebanken.org/ns/rut</XmlnsUrl>
+					<Description>Ruter#</Description>
+				</Codespace>
+				<Codespace id="uni">
+					<Xmlns>UNI</Xmlns>
+					<XmlnsUrl>http://www.rutebanken.org/ns/uni</XmlnsUrl>
+					<Description>Unibuss</Description>
 				</Codespace>
 			</codespaces>
 
 			<!-- ===FRAME DEFAULTS=== -->
 			<FrameDefaults>
 				<!-- Alle elementer med id-attributt blir prefixet med dette codespacet (dvs "unibuss") -->
-				<DefaultCodespaceRef ref="unibuss"/>
+				<DefaultCodespaceRef ref="uni"/>
 				<DefaultLocale>
 					<DefaultLanguage>no</DefaultLanguage>
 				</DefaultLocale>
@@ -472,34 +475,6 @@
 							<QuayRef ref="NSR:Quay:holtet-QUAYID"/>
 						</PassengerStopAssignment>
 					</stopAssignments>
-					
-					
-					<!-- KUN TEST -->
-					<!--
-					<timingLinks>
-						<TimingLink version="test" id="slettmeg">
-							<Distance>1</Distance>
-							<projections>
-								<LinkSequenceProjection version="test" id="projection">
-									<gml:LineString srsName="WGS84" gml:id="nyprojection">
-										<gml:pos>59.894780 10.804309</gml:pos>
-										<gml:pos>59.892531 10.804000</gml:pos>
-										<gml:pos>59.888996 10.805961</gml:pos>
-										<gml:pos>59.887608 10.806368</gml:pos>
-										<gml:pos>59.886410 10.800586</gml:pos>
-										<gml:pos>59.885832 10.792943</gml:pos>
-										<gml:pos>59.885392 10.788938</gml:pos>
-										<gml:pos>59.885630 10.784435</gml:pos>
-										<gml:pos>59.883864 10.783759</gml:pos>
-										<gml:pos>59.881872 10.783770</gml:pos>
-									</gml:LineString>
-								</LinkSequenceProjection>
-							</projections>
-							<FromPointRef ref="invalid"></FromPointRef>
-							<ToPointRef ref="invalid"></ToPointRef>
-						</TimingLink>
-					</timingLinks>
-					-->
 					
 					
 					<!-- ===JOURNEY PATTERNs=== -->
