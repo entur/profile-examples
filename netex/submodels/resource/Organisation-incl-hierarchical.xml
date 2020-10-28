@@ -86,7 +86,7 @@ REMARK: Currently very much a work in progress!
                     <CompanyNumber>972 417 904</CompanyNumber>
                     <Name>Samferdselsdepartementet</Name>
                     <LegalName>SAMFERDSELSDEPARTEMENTET</LegalName>
-                    <OrganisationType>statutoryBody</OrganisationType>
+                    <OrganisationType>statutoryBody authority other</OrganisationType>
                     <parts>
                         <OrganisationPart id="NOG:OrganizationPart:1" version="1">
                             <GeneralOrganisationRef ref="NOG:GeneralOrganisation:Vygruppen" version="1"/>
@@ -192,6 +192,7 @@ REMARK: Currently very much a work in progress!
                         </ResponsibilitySet>
                     </ownResponsibilitySets>
                 </GeneralOrganisation>
+                
 
                 <Operator id="NOG:Operator:VYT" version="1">
                     <!-- "Organisasjonsnummer" (official organisation code in the Norwegian "Enhetsregisteret" (brreg.no) -->
@@ -202,7 +203,6 @@ REMARK: Currently very much a work in progress!
                     <ContactDetails>
                         <Url>https://www.vy.no/kundeservice/hjelp-og-kontakt?item=2699</Url>
                     </ContactDetails>
-                    <OrganisationType>operator</OrganisationType>
                     <Address>
                         <AddressLine1>Schweigaards gate 23</AddressLine1>
                         <Town>Oslo</Town>
@@ -366,6 +366,17 @@ REMARK: Currently very much a work in progress!
                 
                 
                 <!-- ************************************************************************************************************************************** -->
+                
+                
+                
+                
+                <Authority id="NOG:Authority:TEST" version="1">
+                    <parts>
+                        <OrganisationPart id="NOG:OrganizationPart:PART" version="1">
+                            <Name>Testpart</Name>
+                        </OrganisationPart>
+                    </parts>
+                </Authority>
                 
                 
                 
