@@ -189,6 +189,21 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
           <PublicCode>Sete 6</PublicCode>
           <TypeOfEquipmentRef version="1" ref="NMR:TypeOfEquipment:RegularSeating"/>
         </SeatingEquipment>
+        
+        
+        <!-- Proof-of-concept : Wheelchair information -->
+        <AccessVehicleEquipment version="1" id="NMR:AccessVehicleEquipment:1">
+          <Hoist>true</Hoist>
+          <Ramp>true</Ramp>
+          <AssistanceNeeded>rampRequired</AssistanceNeeded>
+          <AssistedBoardingLocation>boardOnlyAtSpecifiedPositions</AssistedBoardingLocation>
+        </AccessVehicleEquipment>
+        <WheelchairVehicleEquipment version="1" id="NMR:WheelchairVehicleEquipment:1">
+          <AccessVehicleEquipmentRef ref="NMR:AccessVehicleEquipment:1" version="1"/>
+          <HasWheelChairSpaces>true</HasWheelChairSpaces>
+          <NumberOfWheelchairAreas>5</NumberOfWheelchairAreas>
+          <CompanionSeat>true</CompanionSeat>
+        </WheelchairVehicleEquipment>
       </equipments>
 
 
