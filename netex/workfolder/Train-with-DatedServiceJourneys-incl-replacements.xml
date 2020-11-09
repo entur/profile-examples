@@ -697,6 +697,12 @@
               <LuggageCarriageFacilityList>cyclesAllowedInVan</LuggageCarriageFacilityList>
               <ServiceReservationFacilityList>noReservationsPossible</ServiceReservationFacilityList>
             </ServiceFacilitySet>
+            <ServiceFacilitySet id="VYG:ServiceFacilitySet:2" version="0">
+              <NuisanceFacilityList>noAnimals</NuisanceFacilityList>
+            </ServiceFacilitySet>
+            <ServiceFacilitySet id="VYG:ServiceFacilitySet:3" version="0">
+              <NuisanceFacilityList> <!-- insert "animalsAllowed here --> </NuisanceFacilityList>
+            </ServiceFacilitySet>
           </serviceFacilitySets>
           
           <noticeAssignments>
