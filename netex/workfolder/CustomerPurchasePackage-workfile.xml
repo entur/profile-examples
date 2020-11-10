@@ -13,7 +13,15 @@
         
         
         <FareFrame id="ENT:FareFrame:1" version="1">
-<!-- PLACEHOLDER -->            
+            <usageParameters>
+                <UserProfile id="ENT:UserProfile:StandardFare" version="1">
+                    <DiscountBasis>none</DiscountBasis>
+                </UserProfile>
+                
+                <UsageValidityPeriod id="ENT:UsageValidityPeriod:30-dager" version="1">
+                    <StandardDuration>P30D</StandardDuration>
+                </UsageValidityPeriod>
+            </usageParameters>
         </FareFrame>
 
 
@@ -26,19 +34,43 @@
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:1" version="1" order="1">
                             <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:1"/>
+                            <!-- <PreassignedFareProduct> indirekte referert, og man trenger ikke angi eksplisitt? -->  
                             
-                            <!-- <PreassignedFareProduct> indirekte referert, og man trenger ikke angi eksplisitt -->  
                             
                             <elementAccesses>
                                 <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1">
-                                    
                                     <MarkedAs>activated</MarkedAs>
-                                    
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:1" version="1" order="1">
-                                            <!-- <ValidableElementRef> indirekte referert, likevel angi eksplisitt for ParameterAssignment? -->
+                                            <ValidableElementRef ref="VYT:ValidableElement:Manedskort-Drammen-Lillehammer"/>
                                             <limitations>
-                                                <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1" />
+                                                <UsageValidityPeriod id="VYT:UsageValidityPeriod:1" version="1">
+                                                    <StartDate>2020-11-10</StartDate>
+                                                    <StartTime>14:00:00</StartTime>
+                                                    <EndDate>2020-12-10</EndDate>
+                                                    <EndTime>13:59:59</EndTime>
+                                                </UsageValidityPeriod>
+                                                <UserProfileRef ref="ENT:UserProfile:1" />
+                                            </limitations>
+                                            <validityParameters>
+                                                <OperatorRef ref="VYT:Operator:VYT"></OperatorRef>
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                </CustomerPurchasePackageElementAccess>
+                                
+                                <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1">    
+                                    <MarkedAs>activated</MarkedAs>
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:2" version="1" order="1">
+                                            <ValidableElementRef ref="GOA:ValidableElement:Manedskort-Drammen-Lillehammer"/>
+                                            <limitations>
+                                                <UsageValidityPeriod id="GOA:UsageValidityPeriod:1" version="1">
+                                                    <StartDate>2020-11-10</StartDate>
+                                                    <StartTime>14:00:00</StartTime>
+                                                    <EndDate>2020-12-10</EndDate>
+                                                    <EndTime>13:59:59</EndTime>
+                                                </UsageValidityPeriod>
                                                 <UserProfileRef ref="ENT:UserProfile:1" />
                                             </limitations>
                                             <validityParameters>
@@ -49,16 +81,29 @@
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
                             
+                            
                             <validityParameterAssignments>
-                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:2" version="1" order="1">
-                                    <!-- CHECK: <ValidableElementRef> indirekte referert, likevel angi eksplisitt for ParameterAssignment? -->
-                                    <DistanceMatrixElementInverseRef ref=""></DistanceMatrixElementInverseRef>
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:1" version="1" order="1">
+                                    <ValidableElementRef ref="VYT:ValidableElement:Manedskort-Drammen-Lillehammer"/>
+                                    <DistanceMatrixElementRef ref="VYT:DistanceMatrixElement:Drammen-Lillehammer"/>
                                     <limitations>
-                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1"/>
-                                        <UserProfileRef ref="ENT:UserProfile:NormalFare"/>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-dager" version="1"/>
+                                        <UserProfileRef ref="ENT:UserProfile:StandardFare" version="1"/>
                                     </limitations>
                                     <validityParameters>
-                                        <PassengerSeatRef ref="VYT:PassengerSeat:1" />
+                                        <OperatorRef ref="VYT:Operator:VYT"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                <CustomerPurchaseParameterAssignment id="GOA:CustomerPurchaseParameterAssignment:1" version="1" order="1">
+                                    <ValidableElementRef ref="GOA:ValidableElement:Manedskort-Oslo-Lillehammer"/>
+                                    <DistanceMatrixElementRef ref="GOA:DistanceMatrixElement:Oslo-Lillehammer"/>
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-dager" version="1"/>
+                                        <UserProfileRef ref="ENT:UserProfile:StandardFare" version="1"/>
+                                    </limitations>
+                                    <validityParameters>
+                                        <OperatorRef ref="GOA:Operator:GOA"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
