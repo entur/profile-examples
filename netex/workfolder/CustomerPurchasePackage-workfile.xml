@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex"
+  xmlns:gis="http://www.opengis.net/gml/3.2" 
+  xmlns:siri="http://www.siri.org.uk/siri"
+  version="1.14:NO-NeTEx-fares:0.9">
+    
+    <PublicationTimestamp>2020-07-22T12:00:00</PublicationTimestamp>
+    <ParticipantRef>RUT</ParticipantRef>
+    <dataObjects>
+
+        <SalesTransactionFrame id="ENT:SalesTransactionFrame:1" version="1">
+            <customerPurchasePackages>
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SingleTrip1ZoneActivated" version="1">
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip1Zone"/>
+                    <CustomerRef ref="ref"/>
+                    <CustomerAccountRef ref="ref"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SingleTrip1ZoneActivated" version="1" order="1">
+                            <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:SingleTrip1Zone"/>
+                            
+                            <!-- CHECK: <PreassignedFareProduct> indirekte referert, og man trenger ikke angi eksplisitt -->  
+                            
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1" created="2020-07-22T11:00:00">
+                                    
+                                    <MarkedAs>activated</MarkedAs>
+                                    
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:1" version="1" order="1">
+                                            <!-- CHECK: <ValidableElementRef> indirekte referert, likevel angi eksplisitt for ParameterAssignment? -->
+                                            <limitations>
+                                                <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1" />
+                                                <UserProfileRef ref="ENT:UserProfile:NormalFare" />
+                                            </limitations>
+                                            <validityParameters>
+                                                <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" />
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:2" version="1" order="1">
+                                    <!-- CHECK: <ValidableElementRef> indirekte referert, likevel angi eksplisitt for ParameterAssignment? -->
+                                    <DistanceMatrixElementInverseRef ref=""></DistanceMatrixElementInverseRef>
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1"/>
+                                        <UserProfileRef ref="ENT:UserProfile:NormalFare"/>
+                                        <EntitlementGivenRef ref="entitlement"/>
+                                        <EntitlementRequiredRef ref="ent(ur)"/>
+                                    </limitations>
+                                    <validityParameters>
+                                        <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" />
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                    </customerPurchasePackageElements>
+                    <prices>
+                        <CustomerPurchasePackagePrice id="ENT:CustomerPurchasePackagePrice:1" version="1">
+                            <Amount>10</Amount>
+                        </CustomerPurchasePackagePrice>
+                    </prices>
+                </CustomerPurchasePackage>
+            </customerPurchasePackages>
+
+        </SalesTransactionFrame>
+ 
+    </dataObjects>
+</PublicationDelivery>
