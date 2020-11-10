@@ -7,41 +7,48 @@
   xmlns:siri="http://www.siri.org.uk/siri"
   version="1.14:NO-NeTEx-fares:0.9">
     
-    <PublicationTimestamp>2020-07-22T12:00:00</PublicationTimestamp>
+    <PublicationTimestamp>2020-11-10T13:37:00</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
     <dataObjects>
+        
+        
+        <FareFrame id="ENT:FareFrame:1" version="1">
+<!-- PLACEHOLDER -->            
+        </FareFrame>
+
 
         <SalesTransactionFrame id="ENT:SalesTransactionFrame:1" version="1">
             <customerPurchasePackages>
-                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SingleTrip1ZoneActivated" version="1">
-                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip1Zone"/>
-                    <CustomerRef ref="ref"/>
-                    <CustomerAccountRef ref="ref"/>
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:1" version="1">
+                    <SalesOfferPackageRef ref="VYT:SalesofferPackage:1"/>
+                    <CustomerRef ref="ENT:Customer:1"/>
+                    <CustomerAccountRef ref="ENT:CustomerAccount:1"/>
                     <customerPurchasePackageElements>
-                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SingleTrip1ZoneActivated" version="1" order="1">
-                            <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:SingleTrip1Zone"/>
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:1" version="1" order="1">
+                            <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:1"/>
                             
-                            <!-- CHECK: <PreassignedFareProduct> indirekte referert, og man trenger ikke angi eksplisitt -->  
+                            <!-- <PreassignedFareProduct> indirekte referert, og man trenger ikke angi eksplisitt -->  
                             
                             <elementAccesses>
-                                <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1" created="2020-07-22T11:00:00">
+                                <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1">
                                     
                                     <MarkedAs>activated</MarkedAs>
                                     
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:1" version="1" order="1">
-                                            <!-- CHECK: <ValidableElementRef> indirekte referert, likevel angi eksplisitt for ParameterAssignment? -->
+                                            <!-- <ValidableElementRef> indirekte referert, likevel angi eksplisitt for ParameterAssignment? -->
                                             <limitations>
                                                 <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1" />
-                                                <UserProfileRef ref="ENT:UserProfile:NormalFare" />
+                                                <UserProfileRef ref="ENT:UserProfile:1" />
                                             </limitations>
                                             <validityParameters>
-                                                <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" />
+                                                <PassengerSeatRef ref="VYT:PassengerSeat:1" />
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
+                            
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:2" version="1" order="1">
                                     <!-- CHECK: <ValidableElementRef> indirekte referert, likevel angi eksplisitt for ParameterAssignment? -->
@@ -49,21 +56,21 @@
                                     <limitations>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1"/>
                                         <UserProfileRef ref="ENT:UserProfile:NormalFare"/>
-                                        <EntitlementGivenRef ref="entitlement"/>
-                                        <EntitlementRequiredRef ref="ent(ur)"/>
                                     </limitations>
                                     <validityParameters>
-                                        <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" />
+                                        <PassengerSeatRef ref="VYT:PassengerSeat:1" />
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>
+                    <!--
                     <prices>
                         <CustomerPurchasePackagePrice id="ENT:CustomerPurchasePackagePrice:1" version="1">
                             <Amount>10</Amount>
                         </CustomerPurchasePackagePrice>
                     </prices>
+                    -->
                 </CustomerPurchasePackage>
             </customerPurchasePackages>
 
