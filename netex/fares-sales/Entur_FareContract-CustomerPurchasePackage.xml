@@ -1537,5 +1537,144 @@
                 </CustomerPurchasePackage>
             </customerPurchasePackages>
         </SalesTransactionFrame>
+        
+        
+        <SalesTransactionFrame id="XXX:SalesTransactionFrame:PRE-Case2" version="1">
+            
+            <customerAccounts>
+                <CustomerAccount id="XXX:CustomerAccount:PRE-2" version="1"></CustomerAccount>
+            </customerAccounts>
+            
+            <fareContracts>
+                
+                
+                <FareContract id="XXX:FareContract:2" version="1">
+                    
+                    <Name>Periodebillett 30 dager ungdom</Name>
+                    <fareContractEntries>
+                        
+                        <SalesTransaction version="1" id="XXX:SalesTransaction:PRE-4">
+                            <Name>Test sale</Name>
+                            <Date>2018-09-06T01:07:00</Date>
+                            <Amount>400</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Referanse til customer purchase packages -->
+                                <CustomerPurchasePackageRef ref="XXX:CustomerPurchasePackage:PRE-2" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                    </fareContractEntries>
+                    
+                </FareContract>
+            </fareContracts>
+            
+            
+            <customerPurchasePackages>
+                <CustomerPurchasePackage id="XXX:CustomerPurchasePackage:PRE-2" version="1">
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="XXX:SalesOfferPackageElement:PRE-2" version="1" order="1">
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess id="XXX:CustomerPurchaseParameterAssignment:2" version="1" created="2019-01-01T00:00:00">
+                                    <MarkedAs>activated</MarkedAs>
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment id="XXX:CustomerPurchaseParameterAssignment:PRE-22" version="1" order="1">
+                                            <ValidableElementRef ref="XXX:ValidableElement:PRE-YouthPass"/>  <!-- Redundant to the one defined in XXElementAccess above, requirement might be removed in Netex profile later -->
+                                            
+                                            <limitations>
+                                                <!-- Result of activation of XXX:UsageValidityPeriod:PRddE-2 -->
+                                                <UsageValidityPeriod id="XXX:UsageValidityPeriod:PRE-2" version="1">
+                                                    <StartDate>2020-09-04</StartDate>
+                                                    <StartTime>12:00:00</StartTime>
+                                                    <EndDate>2020-10-04</EndDate>
+                                                    <EndTime>12:00:00</EndTime>
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment id="XXX:CustomerPurchaseParameterAssignment:PRE-23" version="1" order="1">
+                                    <ValidableElementRef ref="XXX:ValidableElement:PRE-YouthPass"/>
+                                    <limitations>
+                                        <!-- Example of UVP that is pre activated and ready to be used / no validation is required at boarding.
+                                        With specifieds start and end date-->
+                                        <UsageValidityPeriod id="XXX:UsageValidityPeriod:PRddE-2" version="1">
+                                            <UsageTrigger>specifiedStartDate</UsageTrigger>
+                                            <ActivationMeans>noneRequired</ActivationMeans>
+                                            
+                                            <!-- NOTE: These 4 fields are combined into 2 fields in the protobuf version -->
+                                            <StartDate>2020-09-04</StartDate>
+                                            <StartTime>12:00:00</StartTime>
+                                            <EndDate>2020-10-04</EndDate>
+                                            <EndTime>12:00:00</EndTime>
+                                        </UsageValidityPeriod>
+                                    </limitations>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                    </customerPurchasePackageElements>
+                  
+                </CustomerPurchasePackage>
+
+
+
+                <CustomerPurchasePackage id="XXX:CustomerPurchasePackage:PRE-2lll" version="1">
+                   <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="XXX:SalesOfferPackageElement:PRE-l2" version="1" order="1">
+                            
+                            <SalesOfferPackageElementRef ref="XXX:SalesOfferPackageElement:PRE-PeriodTicketYouth30Days" version="1"/>
+                            
+                            
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess id="XXX:CustomerPurchaseParameterAssignment:2" version="1" created="2019-01-01T00:00:00">
+                                    <MarkedAs>activated</MarkedAs>
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment id="XXX:CustomerPurchaseParameterAssignment:PRE-,,22" version="1" order="1">
+                                            <ValidableElementRef ref="XXX:ValidableElement:PRE-YouthPass"/>  <!-- Redundant to the one defined in XXElementAccess above, requirement might be removed in Netex profile later -->
+                                            <limitations>
+                                                <!-- Result of activation of XXX:UsageValidityPeriod:PRE-dd4..42 -->
+                                                <UsageValidityPeriod id="XXX:UsageValidityPeriod:PRE-442" version="1">
+                                                    <!-- Actual means of activation -->
+                                                        <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                                    <!-- NOTE: These 4 fields are combined into 2 fields in the protobuf version -->
+                                                    <StartDate>2020-09-04</StartDate>
+                                                    <StartTime>12:00:00</StartTime>
+                                                    <EndDate>2020-10-04</EndDate>
+                                                    <EndTime>12:00:00</EndTime>
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment id="XXX:CustomerPurchaseParameterAssignment:PREmm-23" version="1" order="1">
+                                    <ValidableElementRef ref="XXX:ValidableElement:PRE-YouthPass"/>
+                                    <limitations>
+                                        <!-- Example of access right that needs to be activated (USAGE TRIGGER) by using an activation device (MOBILE DEVICE).
+                                       When activated the usage validity period is 90minutes-->
+                                        <UsageValidityPeriod id="XXX:UsageValidityPeriod:PRE-dd4..42" version="1">
+                                            <UsageTrigger>activation</UsageTrigger>
+                                            <StandardDuration>PT90M</StandardDuration>
+                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                    
+                                        </UsageValidityPeriod>
+                                        <UserProfileRef ref="XXX:UserProfile:PRE-Youth"/>
+                                        <UsageValidityPeriodRef ref="XXX:UsageValidityPeriod:PRE-30Days"/>
+                                    </limitations>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                    </customerPurchasePackageElements>
+                
+                </CustomerPurchasePackage>
+            </customerPurchasePackages>
+        </SalesTransactionFrame>
+        
     </dataObjects>
 </PublicationDelivery>
