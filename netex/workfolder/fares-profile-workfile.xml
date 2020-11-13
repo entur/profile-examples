@@ -608,7 +608,7 @@
                             <Name lang="en">Single trip valid within two fare zones valid for one and a halv hours</Name>
                             <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip2Zones" version="1"/>
                             <validityParameterAssignments>
-                                <GenericParameterAssignment id="ENT:GenericParameterAssignment:11" version="1" order="0">v
+                                <GenericParameterAssignment id="ENT:GenericParameterAssignment:11" version="1" order="0">
                                     <limitations>
                                         <TransferabilityRef ref="ENT:Transferability:1" version="1"/>
                                         <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1" version="1"/>
