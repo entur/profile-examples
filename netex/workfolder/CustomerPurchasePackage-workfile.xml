@@ -14,10 +14,6 @@
         
         <FareFrame id="ENT:FareFrame:1" version="1">
             <usageParameters>
-                <UserProfile id="ENT:UserProfile:StandardFare" version="1">
-                    <DiscountBasis>none</DiscountBasis>
-                </UserProfile>
-                
                 <UsageValidityPeriod id="ENT:UsageValidityPeriod:30-dager" version="1">
                     <StandardDuration>P30D</StandardDuration>
                 </UsageValidityPeriod>
@@ -34,8 +30,7 @@
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:1" version="1" order="1">
                             <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:1"/>
-                            <!-- <PreassignedFareProduct> indirekte referert, og man trenger ikke angi eksplisitt? -->  
-                            
+                            <!-- <PreassignedFareProduct> refererenced indirectly / not of high relevance in this specific use case -->  
                             
                             <elementAccesses>
                                 <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1">
@@ -74,7 +69,7 @@
                                                 <UserProfileRef ref="ENT:UserProfile:1" />
                                             </limitations>
                                             <validityParameters>
-                                                <PassengerSeatRef ref="VYT:PassengerSeat:1" />
+                                                <!-- Placeholder -->
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
                                     </validityParameterAssignments>
@@ -87,6 +82,7 @@
                                     <ValidableElementRef ref="VYT:ValidableElement:Manedskort-Drammen-Lillehammer"/>
                                     <DistanceMatrixElementRef ref="VYT:DistanceMatrixElement:Drammen-Lillehammer"/>
                                     <limitations>
+                                        <FrequencyOfUseRef ref=""/>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-dager" version="1"/>
                                         <UserProfileRef ref="ENT:UserProfile:StandardFare" version="1"/>
                                     </limitations>
@@ -95,7 +91,18 @@
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                                 
-                                <CustomerPurchaseParameterAssignment id="GOA:CustomerPurchaseParameterAssignment:1" version="1" order="1">
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:2" version="1" order="1">
+                                    <ValidableElementRef ref="VYT:ValidableElement:Manedskort-Drammen-Lillehammer"/>
+                                    <DistanceMatrixElementRef ref="VYT:DistanceMatrixElement:Drammen-Lillehammer"/>
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-dager" version="1"/>
+                                    </limitations>
+                                    <validityParameters>
+                                        <OperatorRef ref="VYT:Operator:VYT"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                <CustomerPurchaseParameterAssignment id="GOA:CustomerPurchaseParameterAssignment:3" version="1" order="1">
                                     <ValidableElementRef ref="GOA:ValidableElement:Manedskort-Oslo-Lillehammer"/>
                                     <DistanceMatrixElementRef ref="GOA:DistanceMatrixElement:Oslo-Lillehammer"/>
                                     <limitations>

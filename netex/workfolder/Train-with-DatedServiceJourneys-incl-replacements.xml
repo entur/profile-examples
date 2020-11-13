@@ -210,7 +210,9 @@
           
           
           <scheduledStopPoints>
-            <ScheduledStopPoint version="0" id="VYG:ScheduledStopPoint:1"/> <!-- Oslo S -->
+            <ScheduledStopPoint version="0" id="VYG:ScheduledStopPoint:1">
+              <TimingPointStatus>secondaryTimingPoint</TimingPointStatus>
+            </ScheduledStopPoint> <!-- Oslo S -->
             <ScheduledStopPoint version="0" id="VYG:ScheduledStopPoint:2"/> <!-- Nationaltheatret -->
             <ScheduledStopPoint version="0" id="VYG:ScheduledStopPoint:3"/> <!-- Sandvika -->
             <ScheduledStopPoint version="0" id="VYG:ScheduledStopPoint:4"/> <!-- Asker -->

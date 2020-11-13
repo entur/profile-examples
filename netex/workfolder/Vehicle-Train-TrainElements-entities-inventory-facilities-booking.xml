@@ -372,6 +372,22 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
           </components>
         </CompoundTrain>
 
+
+
+        <!-- VARELAGER test-references -->
+        
+        <Train version="0" nameOfClass="Bus" id="NSB:train:Dovrebussen">
+          <components>
+            <TrainComponent version="0" id="NSB:TrainComponent:DOVREBUSSEN-LOWER" order="1" created="2020-10-06T12:30:00" changed="2020-10-06T13:30:00">
+              <TrainElementRef ref="PEN:LogicalElement:SETRA-S431DT-LOWER" versionRef="2"/>
+            </TrainComponent>
+            <TrainComponent version="0" id="NSB:TrainComponent:DOVREBUSSEN-UPPER" order="2" created="2020-10-06T12:30:00" changed="2020-10-06T13:30:00">
+              <TrainElementRef ref="PEN:LogicalElement:SETRA-S431DT-UPPER" versionRef="3"/>
+            </TrainComponent>
+          </components>
+        </Train>
+
+
       </vehicleTypes>
 
 
@@ -386,6 +402,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
           <VehicleTypeRef ref="ref"></VehicleTypeRef>
           -->
           <actualVehicleEquipments>
+            <AccessEquipmentRef ref="EXT:AccessEquipment:ext"/>
             <AssistanceServiceRef ref="EXT:AssistanceService:ext"/>
             <CateringService id="NMR:CateringService:1" version="1">
               <ServiceList>bar</ServiceList>
@@ -409,10 +426,10 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
           </capacities>
 
           <!-- Accomodation related facilities: NeTEx part 3 - ﻿7.4.2.3 Fare Facility (page 111) -->
-
           <facilities>
             <ServiceFacilitySet id="NMR:ServiceFacilityList:1" version="1">
               <CateringFacilityList>foodVendingMachine beverageVendingMachine</CateringFacilityList>
+              <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
               <AccommodationFacilityList>seating</AccommodationFacilityList>
               <!--accommodations>
                 <Accommodation id="ENT:Accomodation:1" version="1">
@@ -431,7 +448,6 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
             Trengs en -PassengerSeating equipment- AMENITY / CONVENIENCE / COMPLIANCE (i.e. BOOKABLE feature) -->
 
           <equipments>
-
             <!-- gruppe -->
             <SeatingEquipmentRef version="1" ref="NMR:SeatingEquipment:Group1"/>
             <!-- vanlige seter -->

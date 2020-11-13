@@ -195,9 +195,6 @@
                 <!-- Either as separate GenericParamaterAssignment(s) -->
                 <FareStructureElement id="ENT:FareStructureElement:1" version="1">
                     <TariffBasis>discount</TariffBasis>
-                    <fareStructureElementsInSequence>
-                        <FareStructureElementInSequence></FareStructureElementInSequence>
-                    </fareStructureElementsInSequence>                    
                     <validityParameterAssignments>
                         <GenericParameterAssignment id="ENT:GenericParameterAssignment:1" version="1" order="0">
                             <limitations>
@@ -210,6 +207,10 @@
                             <TimeIntervalRef ref="ENT:TimeInterval:60min" version="1"/>
                             <GeographicalIntervalRef ref="ref"/>
                             <QualityStructureFactorRef ref="ref"/>
+                            <IncludesGroupingType>XOR</IncludesGroupingType>
+                            <includes>
+                                <GenericParameterAssignmentInContext/>
+                            </includes>
                         </GenericParameterAssignment>
                     </validityParameterAssignments>
                     <prices>
@@ -376,7 +377,6 @@
                     </companionProfiles>
                 </GroupTicket>
                 <CompanionProfile id="ENT:CompanionProfile:1" version="1">
-                    
                     <CompanionRelationshipType></CompanionRelationshipType>
                     <MaximumNumberOfPersons>1</MaximumNumberOfPersons>
                     <DiscountBasis>none</DiscountBasis>
@@ -395,6 +395,7 @@
                     TODO
                 -->
                 
+                
                 <EntitlementGiven id="test" version="1">
                     <CappedDiscountRightRef ref="ref"/>
                 </EntitlementGiven>
@@ -404,6 +405,7 @@
             </usageParameters>
             
             <fareProducts>
+                
                 <PreassignedFareProduct id="ENT:PreassignedFareProduct:1" version="1">
                     <Name>PreassignedFareProduct</Name>
                     <PrivateCode></PrivateCode>
@@ -540,12 +542,12 @@
                     <typesOfTravelDocument>
                         <TypeOfTravelDocumentRef ref="ref"/>
                     </typesOfTravelDocument>
-                    <canIssueTypesOfTravelDocument>
+                    <!-- canIssueTypesOfTravelDocument>
                         <TypeOfTravelDocumentRef ref="ENT:TypeOfTravelDocument:abtSmartphoneToken"/>
                     </canIssueTypesOfTravelDocument>
                     <canReuseTypesOfTravelDocument>
                         <TypeOfTravelDocumentRef ref="ENT:TypeOfTravelDocument:abtSmartphoneToken"/>
-                    </canReuseTypesOfTravelDocument>
+                    </canReuseTypesOfTravelDocument -->
                 </FulfilmentMethod>
             </fulfilmentMethods>
             
@@ -606,7 +608,7 @@
                             <Name lang="en">Single trip valid within two fare zones valid for one and a halv hours</Name>
                             <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip2Zones" version="1"/>
                             <validityParameterAssignments>
-                                <GenericParameterAssignment id="ENT:GenericParameterAssignment:11" version="1" order="0">
+                                <GenericParameterAssignment id="ENT:GenericParameterAssignment:11" version="1" order="0">v
                                     <limitations>
                                         <TransferabilityRef ref="ENT:Transferability:1" version="1"/>
                                         <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1" version="1"/>
@@ -735,9 +737,12 @@
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:2" version="1" order="1">
                                     <!-- CHECK: <ValidableElementRef> indirekte referert, likevel angi eksplisitt for ParameterAssignment? -->
+                                    <DistanceMatrixElementInverseRef ref=""></DistanceMatrixElementInverseRef>
                                     <limitations>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1" version="1"/>
                                         <UserProfileRef ref="ENT:UserProfile:NormalFare" version="1"/>
+                                        <EntitlementGivenRef ref="entitlement"></EntitlementGivenRef>
+                                        <EntitlementRequiredRef ref="ent(ur)"></EntitlementRequiredRef>
                                     </limitations>
                                     <validityParameters>
                                         <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" />
