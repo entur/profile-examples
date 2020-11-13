@@ -82,7 +82,7 @@
                                     <ValidableElementRef ref="VYT:ValidableElement:Manedskort-Drammen-Lillehammer"/>
                                     <DistanceMatrixElementRef ref="VYT:DistanceMatrixElement:Drammen-Lillehammer"/>
                                     <limitations>
-                                        <FrequencyOfUseRef ref=""/>
+                                        <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1-ext"/>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-dager" version="1"/>
                                         <UserProfileRef ref="ENT:UserProfile:StandardFare" version="1"/>
                                     </limitations>
