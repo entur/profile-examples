@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
+
+QUESTION TO CEN:
+
+
+We have a use-case where we in a CustomerPurchasePackageElementAccess would like to "access" and a specific ValidableElement instance, as the same ValidableElement is already assigned various limitations and validityParameters in multiple CustomerPurchaseParameterAssignments. I.e. how can we best refer to * a particular instance of this ValidableElement *? 
+
+See e.g. simplifyed example:
+https://github.com/entur/profile-examples/blob/master/netex/workfolder/CustomerPurchasePackage-workfile.xml
+
+One alternative is having ValidableElements for all potential use scenarios (most likely not feasible) or to have added a CustomerPurchaseParameterAssignmentRef to the CustomerPurchasePackageElementAccess (solves the issue, thechnically, but possibly not quite in line with the intention of the modeling).
+
+Or are we approaching this problem in an awkward manner?
+
+-->
 
 <PublicationDelivery 
   xmlns="http://www.netex.org.uk/netex"
