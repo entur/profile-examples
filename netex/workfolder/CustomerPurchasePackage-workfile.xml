@@ -8,17 +8,49 @@
   version="1.14:NO-NeTEx-fares:0.9">
     
     <PublicationTimestamp>2020-11-10T13:37:00</PublicationTimestamp>
-    <ParticipantRef>RUT</ParticipantRef>
+    <ParticipantRef>ENT</ParticipantRef>
     <dataObjects>
         
         
         <FareFrame id="ENT:FareFrame:1" version="1">
+            <distanceMatrixElements>
+                <DistanceMatrixElement id="ENT:DistanceMatrixElement:Drammen-Dombas" version="1">
+                    <StartStopPointRef ref="Drammen"/>
+                    <EndStopPointRef ref="Dombas"/>
+                </DistanceMatrixElement>
+                <DistanceMatrixElement id="ENT:DistanceMatrixElement:Oslo-Lillehammer" version="1">
+                    <StartStopPointRef ref="Oslo"/>
+                    <EndStopPointRef ref="Lillehammer"/>
+                </DistanceMatrixElement>
+            </distanceMatrixElements>
+            
+            <validableElements>
+                <ValidableElement id="VYT:ValidableElement:30days-Drammen-Dombas" version="1">
+                    <Name>Monthly pass within two stops</Name>
+                    <fareStructureElements>
+                        <FareStructureElementRef ref=""></FareStructureElementRef>
+                    </fareStructureElements>
+                </ValidableElement>
+                <!-- alternative proposal? -->
+                <!-- 
+                <ValidableElement id="GOA:ValidableElement:30days-Oslo-Lillehammer" version="1">
+                    <Name>Monthly pass within two stops</Name>
+                    <Description>Common section with VYT on which VYT tickets are valid</Description>
+                </ValidableElement>
+                -->
+            </validableElements>
+            
             <usageParameters>
-                <UsageValidityPeriod id="ENT:UsageValidityPeriod:30-dager" version="1">
+                <UsageValidityPeriod id="ENT:UsageValidityPeriod:30-days" version="1">
                     <StandardDuration>P30D</StandardDuration>
                 </UsageValidityPeriod>
+                <UserProfile id="ENT:UserProfile:StandardFare" version="1">
+                    <UserType>anyone</UserType>
+                    <DiscountBasis>none</DiscountBasis>
+                </UserProfile>
             </usageParameters>
         </FareFrame>
+
 
 
         <SalesTransactionFrame id="ENT:SalesTransactionFrame:1" version="1">
@@ -30,6 +62,7 @@
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:1" version="1" order="1">
                             <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:1"/>
+                            
                             <!-- <PreassignedFareProduct> refererenced indirectly / not of high relevance in this specific use case -->  
                             
                             <elementAccesses>
@@ -37,7 +70,8 @@
                                     <MarkedAs>activated</MarkedAs>
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:1" version="1" order="1">
-                                            <ValidableElementRef ref="VYT:ValidableElement:Manedskort-Drammen-Lillehammer"/>
+                                            <ValidableElementRef ref="VYT:ValidableElement:30days-Drammen-Dombas" version="1"/>
+                                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElement:Drammen-Dombas" version="1"/>
                                             <limitations>
                                                 <UsageValidityPeriod id="VYT:UsageValidityPeriod:1" version="1">
                                                     <StartDate>2020-11-10</StartDate>
@@ -54,11 +88,12 @@
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
                                 
-                                <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1">    
-                                    <MarkedAs>activated</MarkedAs>
+                                <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:2" version="1">    
+                                    <MarkedAs>marked</MarkedAs> <!-- "validated" -->
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:2" version="1" order="1">
-                                            <ValidableElementRef ref="GOA:ValidableElement:Manedskort-Drammen-Lillehammer"/>
+                                            <ValidableElementRef ref="VYT:ValidableElement:30days-Drammen-Dombas" version="1"/>
+                                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElement:Oslo-Lillehammer" version="1"/>
                                             <limitations>
                                                 <UsageValidityPeriod id="GOA:UsageValidityPeriod:1" version="1">
                                                     <StartDate>2020-11-10</StartDate>
@@ -69,7 +104,7 @@
                                                 <UserProfileRef ref="ENT:UserProfile:1" />
                                             </limitations>
                                             <validityParameters>
-                                                <!-- Placeholder -->
+                                                <OperatorRef ref="GOA:Operator:GOA"/>
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
                                     </validityParameterAssignments>
@@ -77,13 +112,14 @@
                             </elementAccesses>
                             
                             
+                            
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:1" version="1" order="1">
-                                    <ValidableElementRef ref="VYT:ValidableElement:Manedskort-Drammen-Lillehammer"/>
-                                    <DistanceMatrixElementRef ref="VYT:DistanceMatrixElement:Drammen-Lillehammer"/>
+                                    <ValidableElementRef ref="VYT:ValidableElement:30days-Drammen-Dombas" version="1"/>
+                                    <DistanceMatrixElementRef ref="ENT:DistanceMatrixElement:Oslo-Lillehammer" version="1"/>
                                     <limitations>
-                                        <FrequencyOfUseRef ref=""/>
-                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-dager" version="1"/>
+                                        <FrequencyOfUseRef ref="unlimited"/>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-days" version="1"/>
                                         <UserProfileRef ref="ENT:UserProfile:StandardFare" version="1"/>
                                     </limitations>
                                     <validityParameters>
@@ -92,37 +128,36 @@
                                 </CustomerPurchaseParameterAssignment>
                                 
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:2" version="1" order="1">
-                                    <ValidableElementRef ref="VYT:ValidableElement:Manedskort-Drammen-Lillehammer"/>
-                                    <DistanceMatrixElementRef ref="VYT:DistanceMatrixElement:Drammen-Lillehammer"/>
+                                    <ValidableElementRef ref="VYT:ValidableElement:30days-Drammen-Dombas"/>
+                                    <DistanceMatrixElementRef ref="ENT:DistanceMatrixElement:Oslo-Lillehammer"/>
                                     <limitations>
-                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-dager" version="1"/>
-                                    </limitations>
-                                    <validityParameters>
-                                        <OperatorRef ref="VYT:Operator:VYT"/>
-                                    </validityParameters>
-                                </CustomerPurchaseParameterAssignment>
-                                
-                                <CustomerPurchaseParameterAssignment id="GOA:CustomerPurchaseParameterAssignment:3" version="1" order="1">
-                                    <ValidableElementRef ref="GOA:ValidableElement:Manedskort-Oslo-Lillehammer"/>
-                                    <DistanceMatrixElementRef ref="GOA:DistanceMatrixElement:Oslo-Lillehammer"/>
-                                    <limitations>
-                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-dager" version="1"/>
+                                        <FrequencyOfUseRef ref="unlimited"/>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-days" version="1"/>
                                         <UserProfileRef ref="ENT:UserProfile:StandardFare" version="1"/>
                                     </limitations>
                                     <validityParameters>
                                         <OperatorRef ref="GOA:Operator:GOA"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
+                                
+                                <!-- alternative proposal? -->
+                                <!--
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:3" version="1" order="1">
+                                    <ValidableElementRef ref="GOA:ValidableElement:30days-Oslo-Lillehammer" version="1"/>
+                                    <DistanceMatrixElementRef ref="ENT:DistanceMatrixElement:Oslo-Lillehammer"/>
+                                    <limitations>
+                                        <FrequencyOfUseRef ref="unlimited"/>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:30-days" version="1"/>
+                                        <UserProfileRef ref="ENT:UserProfile:StandardFare" version="1"/>
+                                    </limitations>
+                                    <validityParameters>
+                                        <OperatorRef ref="GOA:Operator:GOA"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                                -->
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>
-                    <!--
-                    <prices>
-                        <CustomerPurchasePackagePrice id="ENT:CustomerPurchasePackagePrice:1" version="1">
-                            <Amount>10</Amount>
-                        </CustomerPurchasePackagePrice>
-                    </prices>
-                    -->
                 </CustomerPurchasePackage>
             </customerPurchasePackages>
 
