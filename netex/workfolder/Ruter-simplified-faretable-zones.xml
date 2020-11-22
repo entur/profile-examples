@@ -285,8 +285,7 @@
                 <!-- ALTERNATIVE 1: One FareTable per Geographical and Time interval -->
                 <FareTable id="RUT:FareTable:SingleTicket-1-zone" version="1">
                     
-                    <Name>Fare table for SINGLE TICKET 1 zone</Name>
-                    <Description>https://www.RUT.fi/en/tickets/single-tickets | https://www.RUT.fi/en/tickets/season-tickets</Description>                 
+                    <Name>Fare table for SINGLE TICKET 1 zone</Name>                 
                     
                     <!-- 
                         NB: 
@@ -366,8 +365,7 @@
                 <!-- ALTERNATIVE 2: A FareTable for the whole set of SINGLE TICKET fares with Geographical and Time interval ref per Cell-->
                 <FareTable id="RUT:FareTable:SingleTicket-2-zone" version="1">
                     
-                    <Name>Fare table for SINGLE TICKET multiple zones</Name>
-                    <Description>https://www.RUT.fi/en/tickets/single-tickets | https://www.RUT.fi/en/tickets/season-tickets</Description>                 
+                    <Name>Fare table for SINGLE TICKET multiple zones</Name>                 
                     
                     <pricesFor>
                         <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
