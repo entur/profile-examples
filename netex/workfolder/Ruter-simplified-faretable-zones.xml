@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Highly simplified example for FareTable with static pricing in NeTEx based on Ruter# zones and tariffs for the greater Oslo/Viken region in Norway
+    
+    https://ruter.no/kjop-billett/billetter-og-priser/
+-->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex"
+  xmlns:gis="http://www.opengis.net/gml/3.2" 
+  xmlns:siri="http://www.siri.org.uk/siri"
+  version="1.10:NO-NeTEx-fares:0.9">
+    
+    <PublicationTimestamp>2020-08-15T12:00:00</PublicationTimestamp>
+    <ParticipantRef>RUT</ParticipantRef>
+    <dataObjects>
+        
+        
+        <!-- UNFINISHED EXAMPLE - RUTER FARE TABLE FOR OSLO ZONES --> 
+
+
+        <!-- Organisation data (incomplete, only used for example purposes) -->
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            <organisations>
+                <GeneralOrganisation id="ENT:GeneralOrganisation:Entur" version="1">
+                    <Name>Entur</Name>
+                    <ContactDetails>
+                        <Url>https://www.entur.org</Url>
+                    </ContactDetails>
+                    <OrganisationType>statutoryBody</OrganisationType>
+                </GeneralOrganisation>
+                
+                <Authority id="RUT:Authority:Ruter" version="1">
+                    <Name>Ruter</Name>
+                    <ContactDetails>
+                        <Url>https://ruter.no/</Url>
+                    </ContactDetails>
+                </Authority>
+            </organisations>
+        </ResourceFrame>
+        
+
+
+        <!-- Tariff Zones definitions (in Norway managed in NSR, the National Stopplace Registry) -->
+        <SiteFrame id="RUT:SiteFrame:1" version="1">
+            <validityConditions>
+                <AvailabilityCondition id="RUT:AvailabilityCondition:2" version="1">
+                    <FromDate>2020-01-01T00:00:00</FromDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            
+            <Description>https://ruter.no/kjop-billett/soner/</Description>
+            
+            <tariffZones>
+                <TariffZone id="RUT:TariffZone:1" version="1">
+                    <Name>1</Name>
+                    <Description>Oslo, Fornebu, Lørenskog</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:2V" version="1">
+                    <Name>2V</Name>
+                    <Description>Sandvika, Asker</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:3V" version="1">
+                    <Name>3V</Name>
+                    <Description>Slemmestad</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:4V" version="1">
+                    <Name>4V</Name>
+                    <Description>Tofte</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:5V" version="1">
+                    <Name>5V</Name>
+                    <Description>Drammen, Lier</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:2S" version="1">
+                    <Name>2S</Name>
+                    <Description>Kolbotn, Ski, Ås, Drøbak, Enebakk</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:3S" version="1">
+                    <Name>3S</Name>
+                    <Description>Vestby, Son</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:2O" version="1">
+                    <Name>2Ø</Name>
+                    <Description>Lillestrøm, Nittedal</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:3O" version="1">
+                    <Name>3Ø</Name>
+                    <Description>Fetsund, Frogner, Aurskog, Bjørkelangen</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:4O" version="1">
+                    <Name>4Ø</Name>
+                    <Description>(Trøgstad)</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:4SO" version="1">
+                    <Name>4SØ</Name>
+                    <Description>(Rømskog)</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:4N" version="1">
+                    <Name>4N</Name>
+                    <Description>Oslo Lufthavn (Gardermoen), Jessheim, Årnes, Dal, Maura, Eidsvoll, Hurdal</Description>
+                </TariffZone>
+            </tariffZones> 
+        </SiteFrame>
+        
+        
+
+        <FareFrame id="RUT:FareFrame:1" version="1">
+            <validityConditions>
+                <AvailabilityCondition id="RUT:AvailabilityCondition:1" version="1">
+                    <FromDate>2020-01-01T00:00:00</FromDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            
+            
+            <!-- Spec: ﻿7.5.3.4.3 GeographicalInterval – Model Element 
+                "A geographical interval specifying access rights for the FARE STRUCTURE ELEMENTs within the range of this interval: '20-5 km', '4-6 zones', etc." 
+            (page 126) -->
+            <geographicalIntervals>
+                <GeographicalInterval id="RUT:GeographicalInterval:1" version="1">
+                    <NumberOfUnits>1</NumberOfUnits>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="RUT:GeographicalInterval:2" version="1">
+                    <NumberOfUnits>2</NumberOfUnits>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="RUT:GeographicalInterval:3" version="1">
+                    <NumberOfUnits>3</NumberOfUnits>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="RUT:GeographicalInterval:4" version="1">
+                    <NumberOfUnits>4</NumberOfUnits>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="RUT:GeographicalInterval:all" version="1">
+                    <NumberOfUnits>0</NumberOfUnits> <!-- all zones, i.e. unlimited -->
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+            </geographicalIntervals>
+
+
+            
+            <!-- ﻿7.5.4.4.3 TimeInterval – Model Element
+                A time-based interval specifying access rights for the FARE STRUCTURE ELEMENTs within the range of this interval: “0-1 hours,” “1-3 days”, etc
+            (page 134) -->
+            <timeIntervals>
+                <!-- Single ticket intervals (first sone purchase is valid for 60 min, each additional sone gives +30 min up to max 180 min which equals valid for "all sones") -->
+                <TimeInterval id="RUT:TimeInterval:60min" version="1">
+                    <Description>One zone</Description>
+                    <Duration>PT60M</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:90min" version="1">
+                    <Description>Two zones</Description>
+                    <Duration>PT90M</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:120min" version="1">
+                    <Description>Three zones</Description>
+                    <Duration>PT120M</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:150min" version="1">
+                    <Description>Two zones</Description>
+                    <Duration>PT150M</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:180min" version="1"> <!-- all zones -->
+                    <Description>All zones</Description>
+                    <Duration>PT180M</Duration>
+                </TimeInterval>
+                
+                <!-- Period ticket intervals -->
+                <TimeInterval id="RUT:TimeInterval:24h" version="1">
+                    <Duration>PT24H</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:7days" version="1">
+                    <Duration>P7D</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:30days" version="1">
+                    <Duration>P30D</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:360days" version="1">
+                    <Duration>P360D</Duration>
+                </TimeInterval>
+            </timeIntervals>
+            
+
+            
+            <usageParameters>
+                <UserProfile id="RUT:UserProfile:Adult" version="1">
+                    <Name>"Voksen" (full fare)</Name>
+                    <UserType>adult</UserType>
+                    <ProofRequired>noneRequired</ProofRequired>
+                    <DiscountBasis>none</DiscountBasis>
+                </UserProfile>
+                
+                <UserProfile id="RUT:UserProfile:Child-less-than-6" version="1">
+                    <Name>Child less than 6 years old (free)</Name>
+                    <UserType>child</UserType>
+                    <MinimumAge>6</MinimumAge>
+                    <MaximumAge>17</MaximumAge>
+                    <ProofRequired>other</ProofRequired>
+                    <DiscountBasis>free</DiscountBasis>
+                </UserProfile>
+                <UserProfile id="RUT:UserProfile:Child-6-17" version="1">
+                    <Name>Child / youth between 6 and 17 year old (free)</Name>
+                    <UserType>youngPerson</UserType>
+                    <ProofRequired>other</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                
+                <!-- Pupil and student entitles the same discount -->
+                <UserProfile id="RUT:UserProfile:Pupil" version="1">
+                    <Name>Pupil less than 20 years old or student</Name>
+                    <Description>Only valid for 30 day period pass</Description>
+                    <UserType>schoolPupil</UserType>
+                    <MaximumAge>20</MaximumAge>
+                    <ProofRequired>studentCard</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                <UserProfile id="RUT:UserProfile:Student" version="1">
+                    <Name>Student / work practitioner less than 30 years old</Name>
+                    <Description>Only valid for 30 day period pass</Description>
+                    <UserType>student</UserType>
+                    <MaximumAge>30</MaximumAge>
+                    <ProofRequired>studentCard</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                
+                <!-- Senior, SeniorCompanion, Disabled and DisabledCompanionentitles the same discount -->
+                <UserProfile id="RUT:UserProfile:Senior" version="1">
+                    <Name>Senior citizen</Name>
+                    <Description>Discount also valid for spouse or registered partner of qualified traveller</Description>
+                    <UserType>senior</UserType>
+                    <MaximumAge>67</MaximumAge>
+                    <ProofRequired>other</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                <CompanionProfile id="RUT:CompanionProfile:SeniorCompanion" version="1">
+                    <Name>Senior citizen spouse or registered partner</Name>
+                    <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                </CompanionProfile>
+                <UserProfile id="RUT:UserProfile:Disabled" version="1">
+                    <Name>Qualified disability</Name>
+                    <Description>Discount also valid for spouse or registered partner of qualified traveller</Description>
+                    <UserType>disabled</UserType>
+                    <ProofRequired>medicalDocument</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                <CompanionProfile id="RUT:CompanionProfile:DisabledCompanion" version="1">
+                    <Name>Companion of traveller with qualified disability</Name>
+                    <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                    <DiscountBasis>discount</DiscountBasis>
+                </CompanionProfile>
+                
+                <UserProfile id="RUT:UserProfile:Youth" version="1">
+                    <Name>Pupil less than 20 years old or student</Name>
+                    <Description>Only valid for 7 and 30 day period passes</Description>
+                    <UserType>youngPerson</UserType>
+                    <MinimumAge>18</MinimumAge>
+                    <MaximumAge>19</MaximumAge>
+                    <ProofRequired>identityDocument</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                
+                <UserProfile id="RUT:UserProfile:Military" version="1">
+                    <Name>Military (in draft service only)</Name>
+                    <Description>Only valid for single ticket</Description>
+                    <UserType>military</UserType>
+                    <ProofRequired>other</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+            </usageParameters>
+            
+            
+            
+            
+            
+            <!-- ﻿7.7.3.4.1 FareTable – Model Element
+                A grouping of prices that may be associated with various combinations fare elements such as the
+                DISTANCE MATRIX ELEMENT, FARE STRUCTURE ELEMENT, GEOGRAPHICAL INTERVAL, TIME INTERVAL, USAGE PARAMETER, etc.
+            (page 419) -->
+            
+            <fareTables>
+                
+                <!-- ALTERNATIVE 1: One FareTable per Geographical and Time interval -->
+                <FareTable id="RUT:FareTable:SingleTicket-1-zone" version="1">
+                    
+                    <Name>Fare table for SINGLE TICKET 1 zone</Name>
+                    <Description>https://www.RUT.fi/en/tickets/single-tickets | https://www.RUT.fi/en/tickets/season-tickets</Description>                 
+                    
+                    <!-- 
+                        NB: 
+                            Antakelig behov for presisering:
+                                1) DistanceMatrixElement for ALLE GJELDENDE kombinasjoner av TariffZone 
+                                2a) ENTEN <prizedFor> alle disse TariffZone ELLER
+                                2b) Gruppere disse i GroupOfDistanceMatrixElements og ha en GroupOfDistanceMatrixElementsRef per Cell
+                            
+                            
+                            Ikke gjort i dette eksempel pga denne struktureringen passer trolig ikke for eksport fra Pris/Produkt register? 
+                     -->
+                    
+                    <pricesFor>
+                        <GeographicalIntervalRef ref="RUT:GeographicalInterval:1" version="1"/>
+                        <TimeIntervalRef ref="RUT:TimeInterval:60min" version="1"/>
+                    </pricesFor>
+                    
+                    <cells>
+                        <Cell id="RUT:Cell:1-1" version="1" order="1">
+                            <Name>Adult for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>37</Amount>
+                            </CellPrice>
+                            <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:1-2" version="1" order="2">
+                            <Name>Child-6-17 for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>19</Amount>
+                            </CellPrice>
+                            <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:1-3" version="1" order="3">
+                            <Name>Pupil or Student for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>37</Amount>
+                            </CellPrice>
+                            <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Student" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:1-4" version="1" order="4">
+                            <Name>Senior or Disabled or their companion for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>19</Amount>
+                            </CellPrice>
+                            <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:SeniorCompanion" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:DisabledCompanion" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:1-5" version="1" order="5">
+                            <Name>Youth for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>37</Amount>
+                            </CellPrice>
+                            <UserProfileRef ref="RUT:UserProfile:Youth" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:1-6" version="1" order="6">
+                            <Name>Military for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>19</Amount>
+                            </CellPrice>
+                            <UserProfileRef ref="RUT:UserProfile:Military" version="1"/>
+                        </Cell>
+                        
+                        <!-- 
+                            Could be simplified further by merging Cells with the same CellPrice, but currently duplicated to reflect:
+                            https://ruter.no/kjop-billett/billetter-og-priser/enkeltbillett/ 
+                        -->
+                        
+                    </cells>
+                </FareTable>
+                
+                
+                
+                
+                <!-- ALTERNATIVE 2: A FareTable for the whole set of SINGLE TICKET fares with Geographical and Time interval ref per Cell-->
+                <FareTable id="RUT:FareTable:SingleTicket-2-zone" version="1">
+                    
+                    <Name>Fare table for SINGLE TICKET 2 zones</Name>
+                    <Description>https://www.RUT.fi/en/tickets/single-tickets | https://www.RUT.fi/en/tickets/season-tickets</Description>                 
+                    
+                    <pricesFor>
+                        <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                        <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                    </pricesFor>
+                    
+                    <cells>
+                        
+                        <!-- TWO ZONES -->
+                        <Cell id="RUT:Cell:2-1" version="1" order="1">
+                            <Name>Adult for 2 zones</Name>
+                            <CellPrice>
+                                <Amount>61</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:2-2" version="1" order="2">
+                            <Name>Child-6-17 for 2 zones</Name>
+                            <CellPrice>
+                                <Amount>31</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:2-3" version="1" order="3">
+                            <Name>Pupil or Student for 2 zones</Name>
+                            <CellPrice>
+                                <Amount>61</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Student" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:2-4" version="1" order="4">
+                            <Name>Senior or Disabled or their companion for 2 zones</Name>
+                            <CellPrice>
+                                <Amount>31</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:SeniorCompanion" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:DisabledCompanion" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:2-5" version="1" order="5">
+                            <Name>Youth for 2 zones</Name>
+                            <CellPrice>
+                                <Amount>61</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Youth" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:2-6" version="1" order="6">
+                            <Name>Military for 2 zones</Name>
+                            <CellPrice>
+                                <Amount>31</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Military" version="1"/>
+                        </Cell>
+                        
+                        
+                        <!-- THREE ZONES -->
+                        <Cell id="RUT:Cell:3-1" version="1" order="1">
+                            <Name>Adult for 3 zones</Name>
+                            <CellPrice>
+                                <Amount>85</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:3-2" version="1" order="2">
+                            <Name>Child-6-17 for 3 zones</Name>
+                            <CellPrice>
+                                <Amount>43</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:3-3" version="1" order="3">
+                            <Name>Pupil or Student for 3 zones</Name>
+                            <CellPrice>
+                                <Amount>85</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Student" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:3-4" version="1" order="4">
+                            <Name>Senior or Disabled or their companion for 3 zones</Name>
+                            <CellPrice>
+                                <Amount>43</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:SeniorCompanion" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:DisabledCompanion" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:3-5" version="1" order="5">
+                            <Name>Youth for 3 zones</Name>
+                            <CellPrice>
+                                <Amount>85</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Youth" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:3-6" version="1" order="6">
+                            <Name>Military for 3 zones</Name>
+                            <CellPrice>
+                                <Amount>43</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Military" version="1"/>
+                        </Cell>
+                    </cells>  
+                </FareTable>
+                
+            </fareTables>
+                      
+        </FareFrame>
+    </dataObjects>
+</PublicationDelivery>
