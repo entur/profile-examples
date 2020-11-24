@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- fareTables export -->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex"
+  xmlns:gis="http://www.opengis.net/gml/3.2" 
+  xmlns:siri="http://www.siri.org.uk/siri"
+  version="1.14:NO-NeTEx-fares:0.8">
+    
+    <PublicationTimestamp>2020-11-24T13:37:00</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <dataObjects>
+        
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+
+            <organisations>
+                <GeneralOrganisation id="ENT:GeneralOrganisation:Entur" version="1">
+                    <Name>Entur</Name>
+                    <ContactDetails>
+                        <Url>https://www.entur.org</Url>
+                    </ContactDetails>
+                    <OrganisationType>statutoryBody</OrganisationType>
+                </GeneralOrganisation>
+                <Authority id="ENT:Authority:X" version="1">
+                    <Name>name</Name>
+                    <OrganisationType>authority</OrganisationType>
+                </Authority>
+            </organisations>
+        </ResourceFrame>
+
+
+
+        <FareFrame id="ENT:FareFrame:1" version="1">
+            <validityConditions>
+                <AvailabilityCondition id="ENT:AvailabilityCondition:1" version="1">
+                    <FromDate>2020-11-22T00:00:00</FromDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            
+            <PricingParameterSet id="ENT:PricingParameterSet:1" version="1">
+                <pricingServices>
+                    <PricingService id="ENT:PricingService:PoP" version="1">
+                        <Name>PoP (Pris og Produkt)</Name>
+                        <OrganisationRef ref="ENT:GeneralOrganisation:Entur" version="1"/>
+                        <Url>https://pop.entur.org/</Url>
+                    </PricingService>
+                </pricingServices>
+            </PricingParameterSet>
+            
+            
+            <fareTables>
+                <FareTable version="SJN:Version:PFP-StandardFullFlex-1" id="SJN:FareTable:StandardFullFlex">
+                    <Name>Name</Name>
+                    <cells>
+                        <Cell version="SJN:Version:PFP-StandardFullFlex-1" id="SJN:Cell:StandardFullFlexStudentDiscount" order="0">
+                            <Name>Name</Name>
+                            <FareProductPrice version="SJN:Version:PFP-StandardFullFlex-1" id="SJN:FareProductPrice:StandardFullFlexStudentDiscount">
+                                <Name>Name</Name>
+                                <Amount>0</Amount>
+                                <!--Discount/-->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="SJN:UserProfile:Student"/>
+                            <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:StandardFullFlex"/>
+                        </Cell>
+                        <Cell version="SJN:Version:PFP-StandardFullFlex-1" id="SJN:Cell:StandardFullFlexChildDiscount" order="0">
+                            <Name>Name</Name>
+
+                            <FareProductPrice version="SJN:Version:PFP-StandardFullFlex-1" id="SJN:FareProductPrice:StandardFullFlexChildDiscount">
+                                <Name>Name</Name>
+                                <Amount>0</Amount>
+                                <!--Discount/-->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="SJN:UserProfile:Child"/>
+                            <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:StandardFullFlex"/>
+                        </Cell>
+                    </cells>
+                </FareTable>
+
+                
+                <FareTable version="KOL:Version:FT-Ending" id="KOL:FareTable:7dayPass">
+                    <Name>Name</Name>
+                    <cells>
+                        <Cell version="KOL:Version:FT-Ending" id="KOL:Cell:7DaysAdult1Zones" order="0">
+                            <Name>Name</Name>
+                            <FareProductPrice version="KOL:Version:FT-Ending" id="KOL:FareProductPrice:7DaysAdult1Zones">
+                                <Name>Name</Name>
+                                <Amount>280.00</Amount>
+                                <!--Discount/-->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <GeographicalIntervalRef ref="KOL:GeographicalInterval:1ZonesPeriodTicket"/>
+                            <FareStructureElementRef ref="KOL:FareStructureElement:ZONEInterval7Days"/>
+                        </Cell>
+                        <Cell version="KOL:Version:FT-Ending" id="KOL:Cell:7DaysChild1Zones" order="0">
+                            <Name>Name</Name>
+                            <FareProductPrice version="KOL:Version:FT-Ending" id="KOL:FareProductPrice:7DaysChild1Zones">
+                                <Name>Name</Name>
+                                <Amount>140.00</Amount>
+                                <!--Discount/-->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <GeographicalIntervalRef ref="KOL:GeographicalInterval:1ZonesPeriodTicket"/>
+                            <FareStructureElementRef ref="KOL:FareStructureElement:ZONEInterval7Days"/>
+                        </Cell>
+                    </cells>
+                </FareTable>
+            </fareTables>
+            
+        </FareFrame>
+
+
+
+        <SalesTransactionFrame id="ENT:SalesTransactionFrame:1" version="1">
+            <validityConditions>
+                <AvailabilityCondition id="ENT:AvailabilityCondition:2" version="1">
+                    <FromDate>2020-11-22T00:00:00</FromDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            
+            <!-- PLACEHOLDER -->
+
+        </SalesTransactionFrame>
+ 
+    </dataObjects>
+</PublicationDelivery>
+
