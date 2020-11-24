@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Siri 
+  xmlns="http://www.siri.org.uk/siri" 
+  xmlns:acsb="http://www.ifopt.org.uk/acsb" 
+  xmlns:datex2="http://datex2.eu/schema/2_0RC1/2_0" 
+  xmlns:ifopt="http://www.ifopt.org.uk/ifopt" 
+  version="2.0">
+    <ServiceDelivery>
+        <ResponseTimestamp>2018-02-11T11:29:31</ResponseTimestamp>
+        <ProducerRef>NSB</ProducerRef>
+        <SituationExchangeDelivery version="2.0">
+            <ResponseTimestamp>2018-02-11T11:29:31</ResponseTimestamp>
+            <ValidUntil>2018-02-11T11:29:31</ValidUntil>
+            <Situations>
+                <PtSituationElement>
+                    <CreationTime>2020-11-24T11:29:31</CreationTime>
+                    <ParticipantRef>ENT</ParticipantRef>
+                    <SituationNumber>ENT:SituationNumber:1234</SituationNumber>
+                    <Version>1</Version>
+                    <Source>
+                        <SourceType>directReport</SourceType>
+                    </Source>
+                    <Progress>open</Progress>
+                    <ValidityPeriod>
+                        <StartTime>2020-11-24T18:00:00+01:00</StartTime>
+                        <EndTime>2020-11-25T06:00:00+01:00</EndTime>
+                    </ValidityPeriod>
+                    <ValidityPeriod>
+                        <StartTime>2020-11-25T18:00:00+01:00</StartTime>
+                        <EndTime>2020-11-26T06:00:00+01:00</EndTime>
+                    </ValidityPeriod>
+                    <ValidityPeriod>
+                        <StartTime>2020-11-26T18:00:00+01:00</StartTime>
+                        <EndTime>2020-11-27T06:00:00+01:00</EndTime>
+                    </ValidityPeriod>
+                    <ValidityPeriod>
+                        <StartTime>2020-11-27T18:00:00+01:00</StartTime>
+                        <EndTime>2020-11-28T06:00:00+01:00</EndTime>
+                    </ValidityPeriod>
+                    <UndefinedReason/>
+                    <Priority>18</Priority>
+                    <ReportType>general</ReportType>
+                    <Summary xml:lang="NO">Bygget er stengt på kveldstid</Summary>
+                    <Affects>
+                        <StopPlaces>
+                            <AffectedStopPlace>
+                                <StopPointRef>NSR:StopPlace:337</StopPointRef>
+                            </AffectedStopPlace>
+                        </StopPlaces>
+                    </Affects>
+                </PtSituationElement>
+            </Situations>
+        </SituationExchangeDelivery>
+    </ServiceDelivery>
+</Siri>
