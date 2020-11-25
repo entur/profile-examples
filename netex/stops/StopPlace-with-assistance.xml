@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+	==== Example of simplified stop with AssistanceFacility / AssistanceService ====== 
+-->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="1.11:NO-NeTEx-stops:1:14">
+
+	<PublicationTimestamp>2020-11-25T09:11:00</PublicationTimestamp>
+	<ParticipantRef>NSR</ParticipantRef>
+	
+	<dataObjects>
+		<SiteFrame version="1" id="NSR:SiteFrame:1">
+			<stopPlaces>
+
+				<StopPlace id="NSR:StopPlace:59872" version="3">
+					<ValidBetween>
+						<FromDate>2019-06-17T09:31:27</FromDate>
+					</ValidBetween>
+					<Name lang="no">Oslo S</Name>
+					<Description lang="no">Parent StopPlace for area Oslo Sentralstasjon (all available transport modes)</Description>
+					<Centroid>
+						<Location>
+							<Longitude>10.753051</Longitude>
+							<Latitude>59.910357</Latitude>
+						</Location>
+					</Centroid>
+					<alternativeNames>
+						<AlternativeName version="2" id="NSR:AlternativeName:2983">
+							<NameType>alias</NameType>
+							<Name lang="nor">Oslo Sentralstasjon</Name>
+						</AlternativeName>
+						<AlternativeName version="2" id="NSR:AlternativeName:2984">
+							<NameType>translation</NameType>
+							<Name lang="eng">Oslo Central Station</Name>
+						</AlternativeName>
+					</alternativeNames>
+					
+					<!-- General listing of available AssistanceFacilities (see bottom of XML for reusable set) -->
+					<facilities>
+						<SiteFacilitySetRef ref="NSR:SiteFacilitySet:1" version="1"/>
+						<SiteFacilitySet id="NSR:SiteFacilitySet:2-embedded-copy" version="1">
+							<AssistanceFacilityList>personalAssistance boardingAssistance wheechairAssistance unaccompaniedMinorAssistance information</AssistanceFacilityList>
+						</SiteFacilitySet>
+					</facilities>
+					
+					<TopographicPlaceRef ref="KVE:TopographicPlace:0301"/>
+					
+					<!-- Available (bookable) assistance service -->
+					<localServices>
+						<AssistanceBookingService id="NSR:AssistanceBookingService:1" version="1">
+							<OutOfService>false</OutOfService> <!-- unnecessary? -->
+							<AssistanceAvailability>availableIfBooked</AssistanceAvailability>
+							<WheelchairBookingRequired>true</WheelchairBookingRequired> <!-- redundant -->
+							<!-- alle felter i BookingContact er gyldige iht profil -->
+							<BookingContact>
+								<ContactPerson>Name</ContactPerson> <!-- unnecessary? -->
+								<Email>mail@domain.no</Email>
+								<Phone>+47 xx xx xx xx</Phone>
+								<Url>https://assistance.entur.org</Url>
+								<FurtherDetails>Probably not going to be used</FurtherDetails>
+							</BookingContact>
+							<BookingArrangements>
+								<BookingContact>
+									<!-- TROLIG MER RIKTIG Å LEGGE DEN HER DERSOM MAN _ALLTID_ SKAL KREVE BOOKING-->
+								</BookingContact>
+								<!-- felter listet i profil for booking av fleksibel transport -->
+								<BookingMethods>callOffice online</BookingMethods>
+								<BookWhen>advanceOnly</BookWhen>
+								<!-- <BuyWhen></BuyWhen> Neppe relevant -->
+								<LatestBookingTime>01:23:45</LatestBookingTime>
+								<MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
+								<BookingNote>Fritekst kan heller her enn i egen Notice</BookingNote>
+							</BookingArrangements>
+							<VehicleMode>all</VehicleMode> <!-- relevant? -->
+							<OperatorRef ref="ref"/> <!-- relevant med operator-spesifikk? -->
+							<!-- Fritekst-Notice (neppe relevant i denne omgang) -->
+							<noticeAssignments>
+								<NoticeAssignment id="NSR:NoticeAssignment:1" version="1" order="1">
+									<Notice id="NSR:Notice:1" version="1">
+										<Text>Fritekst</Text>
+									</Notice>
+								</NoticeAssignment>
+							</noticeAssignments>
+						</AssistanceBookingService>
+					</localServices>
+					
+					<tariffZones>
+						<TariffZoneRef ref="HED:TariffZone:2100"/>
+						<TariffZoneRef ref="OPP:TariffZone:2100"/>
+						<TariffZoneRef ref="INN:TariffZone:2100"/>
+						<TariffZoneRef ref="BRA:TariffZone:311"/>
+						<TariffZoneRef ref="RUT:TariffZone:1"/>
+					</tariffZones>
+					<Weighting>interchangeAllowed</Weighting>
+				</StopPlace>
+
+
+				<StopPlace id="NSR:StopPlace:337" version="39">
+					<Name lang="nor">Oslo S</Name>
+					<Description lang="nor">railStation part (sub-StopPlace) of Oslo Sentralstasjon</Description>
+					<Centroid>
+						<Location>
+							<Longitude>10.753276</Longitude>
+							<Latitude>59.910925</Latitude>
+						</Location>
+					</Centroid>
+					<AccessibilityAssessment version="39" id="NSR:AccessibilityAssessment:337">
+						<MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+						<limitations>
+							<AccessibilityLimitation version="4" id="110771">
+								<WheelchairAccess>true</WheelchairAccess>
+								<StepFreeAccess>true</StepFreeAccess>
+								<EscalatorFreeAccess>unknown</EscalatorFreeAccess>
+								<LiftFreeAccess>unknown</LiftFreeAccess>
+								<AudibleSignalsAvailable>unknown</AudibleSignalsAvailable>
+							</AccessibilityLimitation>
+						</limitations>
+					</AccessibilityAssessment>
+					<TopographicPlaceRef ref="KVE:TopographicPlace:0301"/>
+					<ParentSiteRef ref="NSR:StopPlace:59872" version="3"/>
+					<placeEquipments id="NSR:PlaceEquipment:50447">
+						<SanitaryEquipment version="1" id="80995">
+							<Gender>both</Gender>
+							<SanitaryFacilityList/>
+							<PaymentMethods/>
+						</SanitaryEquipment>
+						<WaitingRoomEquipment version="1" id="80996">
+							<StepFree>true</StepFree>
+							<Heated>true</Heated>
+						</WaitingRoomEquipment>
+						<TicketingEquipment version="1" id="80997">
+							<VehicleModes/>
+							<TicketMachines>true</TicketMachines>
+							<NumberOfMachines>17</NumberOfMachines>
+							<TicketingFacilityList/>
+							<TicketOffice>false</TicketOffice>
+							<PaymentMethods/>
+							<TicketTypesAvailable/>
+							<ScopeOfTicketsAvailable/>
+						</TicketingEquipment>
+					</placeEquipments>
+					<TransportMode>rail</TransportMode>
+					<StopPlaceType>railStation</StopPlaceType>
+					<Weighting>preferredInterchange</Weighting>
+					<!-- 
+					<quays>...</quays>
+					-->
+				</StopPlace>
+
+			</stopPlaces>
+			
+			<siteFacilitySets>
+				<SiteFacilitySet id="NSR:SiteFacilitySet:1" version="1">
+					<AssistanceFacilityList>personalAssistance boardingAssistance wheechairAssistance unaccompaniedMinorAssistance information</AssistanceFacilityList>
+				</SiteFacilitySet>
+			</siteFacilitySets>
+			
+		</SiteFrame>
+	</dataObjects>
+</PublicationDelivery>
