@@ -4,9 +4,7 @@
 
 <PublicationDelivery 
   xmlns="http://www.netex.org.uk/netex"
-  xmlns:gis="http://www.opengis.net/gml/3.2" 
-  xmlns:siri="http://www.siri.org.uk/siri"
-  version="1.14:NO-NeTEx-fares:0.8">
+  version="1.11:NO-NeTEx-fares:0.8">
     
     <PublicationTimestamp>2020-11-24T13:37:00</PublicationTimestamp>
     <ParticipantRef>ENT</ParticipantRef>
