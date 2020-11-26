@@ -51,6 +51,7 @@
                 <SalesOfferPackage version="NSB:Version:V1" id="NSB:SalesPackage:Reservation">
                     <Name>Reservasjonsprodukter</Name>
                     
+                    <!-- SalesOfferPackage embedded distributionAssignments-->
                     <distributionAssignments>
                         <DistributionAssignment version="missing" id="NSB:DistributionAssignment:ReservationInternationalSales" order="0">
                             <DistributionChannelRef ref="ENT:DistributionChannel:InternationalSales"/>
@@ -106,6 +107,19 @@
                     </salesOfferPackageElements>
                 </SalesOfferPackage>
             </salesOfferPackages>
+            
+            <!-- decoupled distributionAssignments-->
+            <distributionAssignments>
+                <DistributionAssignment version="missing" id="NSB:DistributionAssignment:ReservationInternationalSales2" order="0">
+                    <DistributionChannelRef ref="ENT:DistributionChannel:InternationalSales"/>
+                </DistributionAssignment>
+                <DistributionAssignment version="missing" id="NSB:DistributionAssignment:ReservationMobileTerminal2" order="0">
+                    <DistributionChannelRef ref="ENT:DistributionChannel:MobileTerminal"/>
+                </DistributionAssignment>
+                <DistributionAssignment version="missing" id="NSB:DistributionAssignment:Reservation2" order="0">
+                    <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+                </DistributionAssignment>
+            </distributionAssignments>
         </FareFrame>
 
 
