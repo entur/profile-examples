@@ -50,6 +50,19 @@
             <salesOfferPackages>
                 <SalesOfferPackage version="NSB:Version:V1" id="NSB:SalesPackage:Reservation">
                     <Name>Reservasjonsprodukter</Name>
+                    
+                    <distributionAssignments>
+                        <DistributionAssignment version="missing" id="NSB:DistributionAssignment:ReservationInternationalSales" order="0">
+                            <DistributionChannelRef ref="ENT:DistributionChannel:InternationalSales"/>
+                        </DistributionAssignment>
+                        <DistributionAssignment version="missing" id="NSB:DistributionAssignment:ReservationMobileTerminal" order="0">
+                            <DistributionChannelRef ref="ENT:DistributionChannel:MobileTerminal"/>
+                        </DistributionAssignment>
+                        <DistributionAssignment version="missing" id="NSB:DistributionAssignment:Reservation" order="0">
+                            <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+                        </DistributionAssignment>
+                    </distributionAssignments>
+                    
                     <salesOfferPackageElements>
                         <SalesOfferPackageElement version="NSB:Version:V1" id="NSB:SalesPackageElement:Reservation" order="0">
                             <PreassignedFareProductRef ref="NSB:SupplementProduct:Reservation"/>
@@ -93,19 +106,6 @@
                     </salesOfferPackageElements>
                 </SalesOfferPackage>
             </salesOfferPackages>
-            
-            <distributionAssignments>
-                <DistributionAssignment version="missing" id="NSB:DistributionAssignment:ReservationInternationalSales" order="0">
-                    <DistributionChannelRef ref="ENT:DistributionChannel:InternationalSales"/>
-                </DistributionAssignment>
-                <DistributionAssignment version="missing" id="NSB:DistributionAssignment:ReservationMobileTerminal" order="0">
-                    <DistributionChannelRef ref="ENT:DistributionChannel:MobileTerminal"/>
-                </DistributionAssignment>
-                <DistributionAssignment version="missing" id="NSB:DistributionAssignment:Reservation" order="0">
-                    <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
-                </DistributionAssignment>
-            </distributionAssignments>
-            
         </FareFrame>
 
 
