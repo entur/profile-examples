@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!-- 
-==== Stoppested med Taxi-skilt (for bruk av taxi/buss) ======
+    ==== StopPlace for taxi including taxistand-sign ======
 -->
+
 <PublicationDelivery
   version="1.09:NO-NeTEx-stops:1.3" 
   xmlns="http://www.netex.org.uk/netex"
@@ -19,14 +21,19 @@
                     <Covered>outdoors</Covered>
                     <placeEquipments>
                         <GeneralSign id="NSR:GeneralSign:1" version="1">
-                            <!-- 514 Holdeplass for drosje (oppstillingsplass) -->
+                            <!-- 514 = Stop sign type code for TaxiStand ("drosjeoppstillingsplass") -->
                             <PrivateCode>514</PrivateCode>
                             <SignContentType>transportMode</SignContentType>
                         </GeneralSign>
                     </placeEquipments>
-                    <TransportMode>bus</TransportMode>
                     
-                    <!-- TODO -->
+                    <!-- 
+                        TODO: 
+                        Taxi is missing from both VehicleModeEnumeration (TransportMode for StopPlace) and StopTypeEnumeration 
+                    -->
+                    <TransportMode>other</TransportMode>
+                    <!-- TransportMode>taxi</TransportMode -->
+                    <StopPlaceType>other</StopPlaceType>
                     <!-- StopPlaceType>taxiStand</StopPlaceType -->
                     
                     <quays>
@@ -37,7 +44,7 @@
                                     <Latitude>59.928687</Latitude>
                                 </Location>
                             </Centroid>
-                            <!-- Minimumskrav for UU-informasjon -->
+                            <!-- Minimum requirement for UU-information -->
                             <AccessibilityAssessment version="1" id="NSR:AccessibilityAssessment:1">
                                 <MobilityImpairedAccess>true</MobilityImpairedAccess>
                                 <limitations>
