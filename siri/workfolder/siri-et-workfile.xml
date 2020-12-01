@@ -26,6 +26,7 @@
                     <!-- Cancellation>true</Cancellation -->
                     
                     
+                    
                     <!-- Potensiell referanse til erstatningstransport (lagt på is, gir liten reell verdi med dagens semi-manuelle arbeidsflyt):
                         - <Replacement(Transport)s>
                             <Replacement(Transport)>
@@ -36,7 +37,6 @@
                                 <VehicleMode>
                     -->
                     
-                    
                     <ExtraJourney>false</ExtraJourney>
                     <JourneyPatternRef>placeholder</JourneyPatternRef>
                     <VehicleMode>bus</VehicleMode>
@@ -46,6 +46,9 @@
                     <DestinationName>placeholder</DestinationName>
                     <OperatorRef>31</OperatorRef>
                     <ServiceFeatureRef>placeholder</ServiceFeatureRef>
+                    
+                    <JourneyNote>x</JourneyNote>
+                    
                     <PublicContact>
                         <PhoneNumber>00000000</PhoneNumber>
                         <Url>http://www.placeholder.net</Url>
@@ -324,7 +327,42 @@
                             <NumberOfStopsAway>1</NumberOfStopsAway-->
                         </EstimatedCall>
                     </EstimatedCalls>
+                    
                     <IsCompleteStopSequence>true</IsCompleteStopSequence>
+                    
+                    <JourneyRelations>
+                        <JourneyRelation>
+                            <JourneyRelationType>ReplacedByJourney</JourneyRelationType>
+                            <CallInfo>
+                                <StopPointRef>NSR:ScheduledStopPoint:IDX</StopPointRef>
+                            </CallInfo>
+                            <RelatedJourney>
+                                <LineRef>RUT:Line:ID</LineRef>
+                            </RelatedJourney>
+                        </JourneyRelation>
+                        <JourneyRelation>
+                            <JourneyRelationType>ReplacedByJourney</JourneyRelationType>
+                            <CallInfo>
+                                <StopPointRef>NSR:ScheduledStopPoint:IDY</StopPointRef>
+                            </CallInfo>
+                            <RelatedJourney>
+                                <OperatorRef>RUT:OperatorUNI</OperatorRef>
+                            </RelatedJourney>
+                        </JourneyRelation>
+                        <JourneyRelation>
+                            <JourneyRelationType>ReplacedByJourney</JourneyRelationType>
+                            <CallInfo>
+                                <StopPointRef>NSR:ScheduledStopPoint:IDZ</StopPointRef>
+                            </CallInfo>
+                            <RelatedJourney>
+                                <FramedVehicleJourneyRef>
+                                    <DataFrameRef>2020-12-12</DataFrameRef>
+                                    <DatedVehicleJourneyRef>VYT:DatedVehicleJourney:Next-Departure</DatedVehicleJourneyRef>
+                                </FramedVehicleJourneyRef>
+                            </RelatedJourney>
+                        </JourneyRelation>
+                    </JourneyRelations>
+
                 </EstimatedVehicleJourney>
                 
             </EstimatedJourneyVersionFrame>
