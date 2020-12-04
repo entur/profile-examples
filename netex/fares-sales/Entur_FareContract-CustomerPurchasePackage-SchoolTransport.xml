@@ -110,21 +110,29 @@
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SchoolTransport" version="1" order="1">
                             
+                            
+                            <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:SchoolTransport" />
                             <elementAccesses>
                                 <CustomerPurchasePackageElementAccess></CustomerPurchasePackageElementAccess>
                             </elementAccesses>
                             
-                            <!-- SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:SchoolTransport" /-->
-
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:1" order="1">
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
                                     <limitations>
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:TwiceADay" version="1" >
+                                            <FrequencyOfUseType>twiceADay</FrequencyOfUseType>
+                                            <MaximalFrequency>2</MaximalFrequency>
+                                            <FrequencyInterval>P1D</FrequencyInterval>
+                                        </FrequencyOfUse>
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:190" version="1" >
+                                            <FrequencyOfUseType>limited</FrequencyOfUseType>
+                                            <MaximalFrequency>190</MaximalFrequency>
+                                        </FrequencyOfUse>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:90Min" version="1">
-                                            
-                                            <UsageTrigger>startOutboundRide</UsageTrigger>
+                                           <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
                                             <StandardDuration>PT90M</StandardDuration>
                                             <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
@@ -135,7 +143,6 @@
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
                                         <TariffZoneRef ref="ENT:TariffZone:SkolekretsX"/>
                                     </validityParameters>
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:180Rides"/> <!-- 180 rides pr year -->
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
