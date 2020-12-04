@@ -19,10 +19,10 @@
             <qualityStructureFactors>
                 <QualityStructureFactor id="SKY:QualityStructureFactor:180" version="1">
                     <Name>180 validations per year</Name>
+                    <Value>180</Value>
                 </QualityStructureFactor>
                 <QualityStructureFactor id="SKY:QualityStructureFactor:2" version="1">
                     <Name>2 trips per day</Name>
-                    <Factor>trips</Factor>
                     <Value>2</Value>
                 </QualityStructureFactor>
             </qualityStructureFactors> 
