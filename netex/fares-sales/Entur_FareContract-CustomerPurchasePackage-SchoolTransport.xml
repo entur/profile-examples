@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery version="1.08:NO-NeTEx-fares:1.0" xmlns="http://www.netex.org.uk/netex">
+    <PublicationTimestamp>2018-09-04T12:00:00</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <dataObjects>
+
+        <!-- Reference data START -->
+
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            <organisations>
+                <Authority id="ENT:Authority:ENT" version="1">
+                    <Name>Entur School Transport Service Inc</Name>
+                </Authority>
+            </organisations>
+        </ResourceFrame>
+
+        <FareFrame id="ENT:FareFrame:1" version="1">
+            <validableElements>
+                <ValidableElement id="ENT:ValidableElement:SingleTrip" version="1">
+                    <Name>Enkelttur Entur</Name>
+                </ValidableElement>
+            </validableElements>
+
+
+            <usageParameters>
+                <UserProfile id="ENT:UserProfile:Pupil" version="1">
+                    <Name lang="no">Skolelev</Name>
+                    <ProofRequired>identityDocument</ProofRequired> <!-- Skolekort -->
+                </UserProfile>
+            </usageParameters>
+
+
+            <fareProducts>
+                <AmountOfPriceUnitProduct id="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1">
+                    <Name lang="no">Skolekort med fast antall reiser</Name>
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                    </accessRightsInProduct>
+                </AmountOfPriceUnitProduct>
+             </fareProducts>
+
+
+            <salesOfferPackages>
+                <SalesOfferPackage id="ENT:SalesOfferPackage:SchoolCarnet" version="1">
+                    <Name lang="no">Skolekort Bergen</Name>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SchoolCarnet" version="1" order="1">
+                            <Name lang="no">Skolekort</Name>
+                            <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+
+       
+        </FareFrame>
+
+
+
+        <SalesTransactionFrame id="ENT:SalesTransactionFrame:Case1" version="1">
+
+            <customerAccounts>
+                <CustomerAccount id="ENT:CustomerAccount:1" version="1"> </CustomerAccount>
+            </customerAccounts>
+
+            <fareContracts>
+                <FareContract id="ENT:FareContract:1" version="1">
+
+                    <Name>Skolekort Bergen</Name>
+                    <StartDate>2020-09-06T01:07:00</StartDate>
+                    <EndDate>2021-09-07T01:07:00</EndDate>
+                    <fareContractEntries>
+                        <!-- Dummy, only way in official netex to get a cpp in is via SalesTransaction -->
+                        <SalesTransaction version="1" id="ENT:SalesTransaction:1">
+                            <Name>Kjøp Skoleskyss</Name>
+                            <Date>2018-09-06T01:07:00</Date>
+                            <Amount>10000</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Referanse til customer purchase packages -->
+                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:SchoolTransport" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                    </fareContractEntries>
+
+                </FareContract>
+            </fareContracts>
+
+
+            <customerPurchasePackages>
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SchoolTransport" version="1">
+                    <!-- Governs validity of the whole CPP -->
+                    <validityConditions>
+                        <AvailabilityConditionRef ref="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021"/>
+                    </validityConditions>
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SchoolTransport" />
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SchoolTransport" version="1" order="1">
+                            
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess></CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:SchoolTransport" />
+
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:1" order="1">
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
+                                    <limitations>
+                                        <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:90Min" version="1">
+                                            
+                                            <UsageTrigger>startOutboundRide</UsageTrigger>
+                                            <UsageEnd>standardDuration</UsageEnd>
+                                            <StandardDuration>PT90M</StandardDuration>
+                                            <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                        </UsageValidityPeriod>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
+                                        <TariffZoneRef ref="ENT:TariffZone:SkolekretsX"/>
+                                    </validityParameters>
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:180Rides"/> <!-- 180 rides pr year -->
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>
+            </customerPurchasePackages>
+
+
+        </SalesTransactionFrame>
+
+     
+    </dataObjects>
+</PublicationDelivery>
