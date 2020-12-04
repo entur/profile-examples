@@ -15,6 +15,19 @@
         </ResourceFrame>
 
         <FareFrame id="ENT:FareFrame:1" version="1">
+            
+            <qualityStructureFactors>
+                <QualityStructureFactor id="SKY:QualityStructureFactor:180" version="1">
+                    <Name>180 validations per year</Name>
+                </QualityStructureFactor>
+                <QualityStructureFactor id="SKY:QualityStructureFactor:10" version="1">
+                    <Name>2 trips per day</Name>
+                    <Factor>trips</Factor>
+                    <Value>2</Value>
+                </QualityStructureFactor>
+            </qualityStructureFactors> 
+            
+            
             <validableElements>
                 <ValidableElement id="ENT:ValidableElement:SingleTrip" version="1">
                     <Name>Enkelttur Entur</Name>
@@ -51,8 +64,7 @@
                     </salesOfferPackageElements>
                 </SalesOfferPackage>
             </salesOfferPackages>
-
-       
+            
         </FareFrame>
 
 
@@ -102,7 +114,7 @@
                                 <CustomerPurchasePackageElementAccess></CustomerPurchasePackageElementAccess>
                             </elementAccesses>
                             
-                            <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:SchoolTransport" />
+                            <!-- SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:SchoolTransport" /-->
 
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:1" order="1">
