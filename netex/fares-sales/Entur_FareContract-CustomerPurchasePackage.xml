@@ -33,7 +33,20 @@
                     <Duration>PT1H</Duration>
                 </TimeInterval>
             </timeIntervals>
-
+            
+            
+            <qualityStructureFactors>
+                <QualityStructureFactor id="SKY:QualityStructureFactor:180" version="1">
+                    <Name>180 validations per year</Name>
+                </QualityStructureFactor>
+                <QualityStructureFactor id="SKY:QualityStructureFactor:10" version="1">
+                    <Name>2 trips per day</Name>
+                    <Factor>trips</Factor>
+                    <Value>2</Value>
+                </QualityStructureFactor>
+            </qualityStructureFactors> 
+            
+            
             <validableElements>
                 <ValidableElement id="VYT:ValidableElement:SingleTrip" version="1">
                     <Name>Enkelttur VY</Name>
