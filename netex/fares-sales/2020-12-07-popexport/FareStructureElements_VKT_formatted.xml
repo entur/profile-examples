@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:50.444</PublicationTimestamp>
+  <ParticipantRef>VKT</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="VKT:FareFrame:VKT" version="any">
+      <fareStructureElements>
+        <FareStructureElement id="VKT:FareStructureElement:c97693cb" version="VKT:Version:V1">
+          <Name>Sonetabell – enkeltbillett</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="VKT:GeographicalInterval:c8acd80b"/>
+            <GeographicalIntervalRef ref="VKT:GeographicalInterval:32918674"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VKT:GenericParameterAssignment:d51580ea" version="VKT:Version:V1">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VKT:GenericParameterAssignment:c0b8cd98" version="VKT:Version:V1">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+      </fareStructureElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

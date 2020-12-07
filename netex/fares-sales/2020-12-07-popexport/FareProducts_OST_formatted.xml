@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:06.002</PublicationTimestamp>
+  <ParticipantRef>OST</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="OST:FareFrame:OST" version="any">
+      <fareProducts>
+        <PreassignedFareProduct id="OST:PreassignedFareProduct:f9525f56" version="OST:Version:V1">
+          <Name>Enkeltbillett</Name>
+          <ChargingMomentRef ref="OST:ChargingMoment:7d040764"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="OST:AccessRightInProduct:172c506f" version="OST:Version:V1">
+              <Name>Enkeltbillett</Name>
+              <ValidableElementRef ref="OST:ValidableElement:cd6661c2"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="OST:PreassignedFareProduct:1149fbd0" version="OST:Version:V1">
+          <Name>Nedre Glomma Enkeltbillett</Name>
+          <ChargingMomentRef ref="OST:ChargingMoment:bb903160"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="OST:AccessRightInProduct:e8dd6d5d" version="OST:Version:V1">
+              <Name>Nedre Glomma Enkeltbillett</Name>
+              <ValidableElementRef ref="OST:ValidableElement:3915bb26"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

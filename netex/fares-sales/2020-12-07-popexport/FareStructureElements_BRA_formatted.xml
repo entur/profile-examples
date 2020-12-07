@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:53.822</PublicationTimestamp>
+  <ParticipantRef>BRA</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="BRA:FareFrame:BRA" version="any">
+      <fareStructureElements>
+        <FareStructureElement id="BRA:FareStructureElement:de3aaa7e" version="BRA:Version:V1">
+          <Name>Sonetabell - bybillett</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:32a1c58c"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="BRA:GenericParameterAssignment:0c2c1830" version="BRA:Version:V1">
+              <Name>Sonetabell - bybillett</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="BRA:GenericParameterAssignment:c49a5dc1" version="BRA:Version:V1">
+              <Name>Sonetabell - bybillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="BRA:FareStructureElement:243b523c" version="BRA:Version:V1">
+          <Name>Sonetabell – enkeltbillett</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:048eb8ef"/>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:2b47d8bc"/>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:8c23cc7a"/>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:df6a9326"/>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:12b73d9e"/>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:56f219e5"/>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:243efb73"/>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:45489492"/>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:8e827496"/>
+            <GeographicalIntervalRef ref="BRA:GeographicalInterval:0a9c9199"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="BRA:GenericParameterAssignment:25819ce5" version="BRA:Version:V1">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="BRA:GenericParameterAssignment:d90b6456" version="BRA:Version:V1">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+      </fareStructureElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

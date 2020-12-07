@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:18.785</PublicationTimestamp>
+  <ParticipantRef>VYT</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="VYT:FareFrame:VYT" version="any">
+      <salesOfferPackages>
+        <SalesOfferPackage id="VYT:SalesPackage:SingleTicket" version="VYT:Version:SP-SingleTicket-1">
+          <Name>Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:SingleTicket" version="VYT:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:SingleTicket"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlatFareSingleTicket" version="VYT:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleSingleTicket" version="VYT:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NonReservableBicycleSingleTicket" version="VYT:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:WheelchairSingleTicket" version="VYT:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:SeatReservationSingleTicket" version="VYT:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PushChairSingleTicket" version="VYT:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:SmallAnimalSingleTicket" version="VYT:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:LargeAnimalSingleTicket" version="VYT:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:PlusRefundable" version="VYT:Version:SP-PlusRefundable-1">
+          <Name>Pluss Refunderbar</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusRefundable" version="VYT:Version:SP-PlusRefundable-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:PlusRefundable"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlatFarePlusRefundable" version="VYT:Version:SP-PlusRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicyclePlusRefundable" version="VYT:Version:SP-PlusRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NonReservableBicyclePlusRefundable" version="VYT:Version:SP-PlusRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:FlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+          <Name>Flex Refunderbar</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:FlexRefundable"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlatFareFlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NonReservableBicycleFlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:WheelchairFlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NoPetsAllowedFlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FamilyAreaFlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PushChairFlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:SmallAnimalFlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:LargeAnimalFlexRefundable" version="VYT:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:LowFare" version="VYT:Version:SP-LowFare-1">
+          <Name>Lavpris</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:LowFare" version="VYT:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:LowFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlatFareLowFare" version="VYT:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleLowFare" version="VYT:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NonReservableBicycleLowFare" version="VYT:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:WheelchairLowFare" version="VYT:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NoPetsAllowedLowFare" version="VYT:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FamilyAreaLowFare" version="VYT:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PushChairLowFare" version="VYT:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:SmallAnimalLowFare" version="VYT:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:LargeAnimalLowFare" version="VYT:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:Plus" version="VYT:Version:SP-Plus-1">
+          <Name>Pluss</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:Plus" version="VYT:Version:SP-Plus-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:Plus"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlatFarePlus" version="VYT:Version:SP-Plus-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicyclePlus" version="VYT:Version:SP-Plus-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NonReservableBicyclePlus" version="VYT:Version:SP-Plus-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:Flex" version="VYT:Version:SP-Flex-1">
+          <Name>Flex</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:Flex" version="VYT:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:Flex"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlatFareFlex" version="VYT:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlex" version="VYT:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NonReservableBicycleFlex" version="VYT:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:WheelchairFlex" version="VYT:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NoPetsAllowedFlex" version="VYT:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FamilyAreaFlex" version="VYT:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PushChairFlex" version="VYT:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:SmallAnimalFlex" version="VYT:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:LargeAnimalFlex" version="VYT:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:Sleep" version="VYT:Version:SP-Sleep-1">
+          <Name>Sove</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:Sleep" version="VYT:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:Sleep"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:HandicapsleeperSleep" version="VYT:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlatFareSleep" version="VYT:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleSleep" version="VYT:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NonReservableBicycleSleep" version="VYT:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:SleepRefundable" version="VYT:Version:SP-SleepRefundable-1">
+          <Name>Sove Refunderbar</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:SleepRefundable" version="VYT:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:SleepRefundable"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:HandicapsleeperSleepRefundable" version="VYT:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlatFareSleepRefundable" version="VYT:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleSleepRefundable" version="VYT:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:NonReservableBicycleSleepRefundable" version="VYT:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:FlexR-SinglT" version="VYT:Version:SP-FlexR-SinglT-1">
+          <Name>Flex Refunderbar og Enkeltbillett kombinert</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytSeatReservation" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytBicycleFlatFare" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytSleepUpgrade" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SleepUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytPlusUpgrade" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:PlusUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytBicycle" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytNonReservBicycle" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytWheelchair" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytNoPetsAllowed" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytFamilyArea" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytPushChair" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytSmallAnimal" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytLargeAnimal" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytSingleTicket" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:SingleTicket"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:FlexR-SinglT-VytFlexRefundable" version="VYT:Version:SP-FlexR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:FlexRefundable"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:PlusR-SinglT" version="VYT:Version:SP-PlusR-SinglT-1">
+          <Name>Pluss Refunderbar og Enkeltbillett kombinert</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusR-SinglT-VytSeatReservation" version="VYT:Version:SP-PlusR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusR-SinglT-VytBicycleFlatFare" version="VYT:Version:SP-PlusR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusR-SinglT-VytBicycle" version="VYT:Version:SP-PlusR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusR-SinglT-VytNonReservBicycle" version="VYT:Version:SP-PlusR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusR-SinglT-VytWheelchair" version="VYT:Version:SP-PlusR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusR-SinglT-VytPushChair" version="VYT:Version:SP-PlusR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusR-SinglT-VytSmallAnimal" version="VYT:Version:SP-PlusR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusR-SinglT-VytLargeAnimal" version="VYT:Version:SP-PlusR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusR-SinglT-VytSingleTicket" version="VYT:Version:SP-PlusR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:SingleTicket"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusR-SinglT-VytPlusRefundable" version="VYT:Version:SP-PlusR-SinglT-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:PlusRefundable"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:30Days" version="VYT:Version:SP-30Days-1">
+          <Name>30 dager</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:30daysPassSeatReservation30Days" version="VYT:Version:SP-30Days-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:30daysPassSeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:30Days" version="VYT:Version:SP-30Days-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:30Days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:7Days" version="VYT:Version:SP-7Days-1">
+          <Name>7 dager</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:7daysPassSeatReservation7Days" version="VYT:Version:SP-7Days-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:7daysPassSeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:7Days" version="VYT:Version:SP-7Days-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:7Days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:365Days" version="VYT:Version:SP-365Days-1">
+          <Name>365 dager</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:365daysPassSeatReservation365Days" version="VYT:Version:SP-365Days-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:365daysPassSeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:365Days" version="VYT:Version:SP-365Days-1">
+              <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:365Days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="VYT:SalesPackage:Reservation" version="VYT:Version:SP-Reservation-1">
+          <Name>Reservasjonsprodukter</Name>
+          <distributionAssignments>
+            <DistributionAssignment order="0" id="VYT:DistributionAssignment:ReservationENTSalesAndService" version="VYT:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="VYT:DistributionAssignment:ReservationENTMobileTerminal" version="VYT:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="VYT:DistributionAssignment:ReservationMobileTerminal" version="VYT:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="VYT:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+          </distributionAssignments>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:Handicapsleeper" version="VYT:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:Wheelchair" version="VYT:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:SleepUpgrade" version="VYT:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SleepUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:SeatReservation" version="VYT:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:PlusUpgrade" version="VYT:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:PlusUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:LargeAnimal" version="VYT:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:BicycleFlatFare" version="VYT:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:Bicycle" version="VYT:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="VYT:SalesPackageElement:Reservation" version="VYT:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="VYT:SupplementProduct:Reservation"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

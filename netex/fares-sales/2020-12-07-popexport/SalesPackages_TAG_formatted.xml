@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:47.681</PublicationTimestamp>
+  <ParticipantRef>TAG</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="TAG:FareFrame:TAG" version="any">
+      <salesOfferPackages>
+        <SalesOfferPackage id="TAG:SalesPackage:Tagkompaniet" version="TAG:Version:V1">
+          <Name>Tågkompaniet billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="TAG:SalesPackageElement:Tagkompaniet" version="TAG:Version:V1">
+              <PreassignedFareProductRef ref="TAG:PreassignedFareProduct:Tagkompaniet"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="TAG:SalesPackage:Nabotog" version="TAG:Version:V1">
+          <Name>Nabotog billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="TAG:SalesPackageElement:Nabotog" version="TAG:Version:V1">
+              <PreassignedFareProductRef ref="TAG:PreassignedFareProduct:Nabotog"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

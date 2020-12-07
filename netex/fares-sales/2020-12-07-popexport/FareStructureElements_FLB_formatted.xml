@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:31.581</PublicationTimestamp>
+  <ParticipantRef>FLB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="FLB:FareFrame:FLB" version="any">
+      <fareStructureElements>
+        <FareStructureElement id="FLB:FareStructureElement:FlamsbanaDME" version="FLB:Version:V1">
+          <Name>Flåmsbana</Name>
+          <distanceMatrixElements>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR484"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR484"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR466"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR326"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR326"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR231"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR457ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR45ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR457ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR448ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR45ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR457ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR222"/>
+          </distanceMatrixElements>
+        </FareStructureElement>
+        <FareStructureElement id="FLB:FareStructureElement:PointToPoint" version="FLB:Version:FSE-PointToPoint-Summer2020">
+          <Name/>
+          <distanceMatrixElements>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR484"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR484"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR466"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR326"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR326"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR231"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR457ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR45ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR457ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR448ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR45ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR457ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR222"/>
+          </distanceMatrixElements>
+        </FareStructureElement>
+        <FareStructureElement id="FLB:FareStructureElement:PointToPoint" version="FLB:Version:FSE-PointToPoint-Winter2020">
+          <Name/>
+          <distanceMatrixElements>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR484"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR484"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR466"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR326"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR326"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR231"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR457"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR457ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR45ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR457ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR466ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR484ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR448ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR45ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR457ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR231ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaNSR326ToNSR222"/>
+          </distanceMatrixElements>
+        </FareStructureElement>
+        <FareStructureElement id="FLB:FareStructureElement:FlamsbanaRoundTrip" version="FLB:Version:FSE-FlamsbanaRoundTrip-Summer2020">
+          <Name/>
+          <distanceMatrixElements>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR326ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR326ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR326ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR466ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR466ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR466ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR231ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR231ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR231ToNSR45"/>
+          </distanceMatrixElements>
+        </FareStructureElement>
+        <FareStructureElement id="FLB:FareStructureElement:FlamsbanaRoundTrip" version="FLB:Version:FSE-FlamsbanaRoundTrip-Winter2020">
+          <Name/>
+          <distanceMatrixElements>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR326ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR326ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR326ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR466ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR466ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR466ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR231ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR231ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR231ToNSR45"/>
+          </distanceMatrixElements>
+        </FareStructureElement>
+        <FareStructureElement id="FLB:FareStructureElement:FlamsbanaRoundTrip" version="FLB:Version:FSE-FlamsbanaRoundTrip-1">
+          <Name/>
+          <distanceMatrixElements>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR326ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR326ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR326ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR466ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR466ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR466ToNSR45"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR231ToNSR222"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR231ToNSR448"/>
+            <DistanceMatrixElementRef ref="FLB:DistanceMatrixElement:FlamsbanaRoundTripNSR231ToNSR45"/>
+          </distanceMatrixElements>
+        </FareStructureElement>
+      </fareStructureElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

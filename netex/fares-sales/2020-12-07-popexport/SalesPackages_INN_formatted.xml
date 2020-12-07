@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:00.554</PublicationTimestamp>
+  <ParticipantRef>INN</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="INN:FareFrame:INN" version="any">
+      <salesOfferPackages>
+        <SalesOfferPackage id="INN:SalesPackage:06203368" version="INN:Version:V1">
+          <Name>Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="INN:SalesPackageElement:9f938958" version="INN:Version:V1">
+              <PreassignedFareProductRef ref="INN:PreassignedFareProduct:bfe28897"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

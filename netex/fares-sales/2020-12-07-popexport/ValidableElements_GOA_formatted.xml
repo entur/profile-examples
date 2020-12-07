@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:53.404</PublicationTimestamp>
+  <ParticipantRef>GOA</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="GOA:FareFrame:GOA" version="any">
+      <validableElements>
+        <ValidableElement id="GOA:ValidableElement:StandardFlexible" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:StandardFlexibleLine" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:StandardFlexibleUsageValidityPeriod" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:KomfortFlexible" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:KomfortFlexibleLine" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:KomfortFlexibleUsageValidityPeriod" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:StandardExchangeable" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:StandardExchangeableUsageValidityPeriod" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:KomfortExchangeable" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:KomfortExchangeableUsageValidityPeriod" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:StandardNonFlexible" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:StandardNonFlexibleUsageValidityPeriod" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:KomfortNonFlexible" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:KomfortNonFlexibleUsageValidityPeriod" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:Sleeper" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:Sleeper" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:SleeperReserving" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:SleeperBerth" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:SleeperBerthReserving" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:AddChild" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:AddChildReserving" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:Stroller" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:StrollerLuggageAllowance" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:StrollerCompulsoryRes" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:LargePet" version="GOA:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GOA:FareStructureElement:LargePet"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:LargePetLuggageAllowance" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:SmallPet" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:SmallPetReservations" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:SmallPetLuggageAllowance" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:BikeReservation" version="GOA:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GOA:FareStructureElement:BikeReservation"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:BikeReservationLuggageAllowance" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:SpecialBaggage" version="GOA:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GOA:FareStructureElement:SpecialBaggage"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:SpecialBaggageLuggageAllowance" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:Wheelchair" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:WheelchairReservations" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:WheelchairLuggageAllowance" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:NoPetsAllowed" version="GOA:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:NoPetsAllowedCompulsoryRes" version="GOA:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:7days" version="GOA:Version:Ve7days-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GOA:FareStructureElement:7days"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:7daysLine" version="GOA:Version:Ve7days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:7daysAllowedAuthority" version="GOA:Version:Ve7days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:7daysTransportSubMode" version="GOA:Version:Ve7days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:7daysStartDate" version="GOA:Version:Ve7days-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:30days" version="GOA:Version:Ve30days-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GOA:FareStructureElement:30days"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:30daysStartDate" version="GOA:Version:Ve30days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:30daysTransportSubMode" version="GOA:Version:Ve30days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:30daysAllowedAuthority" version="GOA:Version:Ve30days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:30daysLine" version="GOA:Version:Ve30days-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:365days" version="GOA:Version:Ve365days-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GOA:FareStructureElement:365days"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:365daysTransportSubMode" version="GOA:Version:Ve365days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:365daysAllowedAuthority" version="GOA:Version:Ve365days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:365daysLine" version="GOA:Version:Ve365days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:365daysStartDate" version="GOA:Version:Ve365days-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:KomfortNattFlexible" version="GOA:Version:VE-KomfortNattFlexible-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:KomfortNattFlexibleLine" version="GOA:Version:VE-KomfortNattFlexible-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:KomfortNattFlexibleTransportSubMode" version="GOA:Version:VE-KomfortNattFlexible-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:KomfortNattFlexibleAllowedAuthority" version="GOA:Version:VE-KomfortNattFlexible-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:KomfortNattNonFlexible" version="GOA:Version:VE-KomfortNattNonFlexib-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GOA:FareStructureElement:KomfortNattBasicTEN"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:KomfortNattNonFlexibleAllowedAuthority" version="GOA:Version:VE-KomfortNattNonFlexib-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:KomfortNattNonFlexibleLine" version="GOA:Version:VE-KomfortNattNonFlexib-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:KomfortNattNonFlexibleTransportSubMode" version="GOA:Version:VE-KomfortNattNonFlexib-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:Reservation" version="GOA:Version:VE-Reservation-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:ReservationReserving" version="GOA:Version:VE-Reservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:SeatUpgrade" version="GOA:Version:VE-SeatUpgrade-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:SeatUpgradeReserving" version="GOA:Version:VE-SeatUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:UpgradeAndNextSeatFree" version="GOA:Version:VE-UpgradeAndNextSeatFree-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:UpgradeAndNextSeatFreeNetworkValidity" version="GOA:Version:VE-UpgradeAndNextSeatFree-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:UpgradeAndNextSeatFreeReserving" version="GOA:Version:VE-UpgradeAndNextSeatFree-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:FamilyArea" version="GOA:Version:ValidableElement-FamilyArea-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:ReservingFamilyArea" version="GOA:Version:ValidableElement-FamilyArea-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:FamilyAreaAllowedAuthority" version="GOA:Version:ValidableElement-FamilyArea-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:FamilyAreaTransportSubMode" version="GOA:Version:ValidableElement-FamilyArea-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GOA:ValidableElement:NonReservableBicycle" version="GOA:Version:VE-NonReservableBicycle-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GOA:FareStructureElement:NonReservableBicycle"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:NonReservableBicycleAllowedAuthority" version="GOA:Version:VE-NonReservableBicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

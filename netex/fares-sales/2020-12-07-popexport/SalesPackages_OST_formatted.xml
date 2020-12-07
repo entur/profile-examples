@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:05.404</PublicationTimestamp>
+  <ParticipantRef>OST</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="OST:FareFrame:OST" version="any">
+      <salesOfferPackages>
+        <SalesOfferPackage id="OST:SalesPackage:d92b4d8d" version="OST:Version:V1">
+          <Name>Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="OST:SalesPackageElement:f69fd379" version="OST:Version:V1">
+              <PreassignedFareProductRef ref="OST:PreassignedFareProduct:f9525f56"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="OST:SalesPackage:c398568f" version="OST:Version:V1">
+          <Name>Nedre Glomma Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="OST:SalesPackageElement:d8c0f0b4" version="OST:Version:V1">
+              <PreassignedFareProductRef ref="OST:PreassignedFareProduct:1149fbd0"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

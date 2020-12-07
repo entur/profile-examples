@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:49.303</PublicationTimestamp>
+  <ParticipantRef>OPP</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="OPP:FareFrame:OPP" version="any">
+      <fareStructureElements>
+        <FareStructureElement id="OPP:FareStructureElement:c2505afb" version="OPP:Version:V1">
+          <Name>Sonetabell – enkeltbillett</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="OPP:GeographicalInterval:18ce18ab"/>
+            <GeographicalIntervalRef ref="OPP:GeographicalInterval:4aca3f39"/>
+            <GeographicalIntervalRef ref="OPP:GeographicalInterval:5d2ecce4"/>
+            <GeographicalIntervalRef ref="OPP:GeographicalInterval:c7e4e9a8"/>
+            <GeographicalIntervalRef ref="OPP:GeographicalInterval:6d2a3d73"/>
+            <GeographicalIntervalRef ref="OPP:GeographicalInterval:46e06b0c"/>
+            <GeographicalIntervalRef ref="OPP:GeographicalInterval:4dc1313f"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="OPP:GenericParameterAssignment:54f57e94" version="OPP:Version:V1">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="OPP:GenericParameterAssignment:93c0834f" version="OPP:Version:V1">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+      </fareStructureElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

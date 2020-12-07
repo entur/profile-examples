@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:20.350</PublicationTimestamp>
+  <ParticipantRef>VYT</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="VYT:FareFrame:VYT" version="any">
+      <validableElements>
+        <ValidableElement id="VYT:ValidableElement:SingleTicket" version="VYT:Version:VE-SingleTicket-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="VYT:FareStructureElement:TEN"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:SingleTicketLine" version="VYT:Version:VE-SingleTicket-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:SingleTicketAllowedAuthority" version="VYT:Version:VE-SingleTicket-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:PlusRefundable" version="VYT:Version:VE-PlusRefundable-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:PlusRefundableAllowedAuthority" version="VYT:Version:VE-PlusRefundable-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:PlusRefundableLine" version="VYT:Version:VE-PlusRefundable-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:FlexRefundable" version="VYT:Version:VE-FlexRefundable-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:FlexRefundableLine" version="VYT:Version:VE-FlexRefundable-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:FlexRefundableAllowedAuthority" version="VYT:Version:VE-FlexRefundable-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:FlexRefundableNotIncludedInFareSection" version="VYT:Version:VE-FlexRefundable-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:LowFare" version="VYT:Version:VE-LowFare-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:LowFareLine" version="VYT:Version:VE-LowFare-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:LowFareAllowedAuthority" version="VYT:Version:VE-LowFare-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:Plus" version="VYT:Version:VE-Plus-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:PlusAllowedAuthority" version="VYT:Version:VE-Plus-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:PlusLine" version="VYT:Version:VE-Plus-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:Flex" version="VYT:Version:VE-Flex-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:FlexLine" version="VYT:Version:VE-Flex-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:FlexAllowedAuthority" version="VYT:Version:VE-Flex-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:Sleep" version="VYT:Version:VE-Sleep-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:SleepAllowedAuthority" version="VYT:Version:VE-Sleep-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:SleepRefundable" version="VYT:Version:VE-SleepRefundable-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="VYT:FareStructureElement:SleepRefundable"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:SleepRefundableAllowedAuthority" version="VYT:Version:VE-SleepRefundable-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:LargeAnimal" version="VYT:Version:VE-LargeAnimal-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="VYT:FareStructureElement:LargeAnimal"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:LargeAnimalAllowedAuthority" version="VYT:Version:VE-LargeAnimal-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:InterchangingLargeAnimal" version="VYT:Version:VE-LargeAnimal-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:SmallAnimal" version="VYT:Version:VE-SmallAnimal-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:SmallAnimalAllowedAuthority" version="VYT:Version:VE-SmallAnimal-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservingSmallAnimal" version="VYT:Version:VE-SmallAnimal-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:PushChair" version="VYT:Version:VE-PushChair-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:PushChairAllowedAuthority" version="VYT:Version:VE-PushChair-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservingPushChair" version="VYT:Version:VE-PushChair-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:FamilyArea" version="VYT:Version:VE-FamilyArea-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservingFamilyArea" version="VYT:Version:VE-FamilyArea-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:FamilyAreaAllowedAuthority" version="VYT:Version:VE-FamilyArea-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:FamilyAreaTransportSubMode" version="VYT:Version:VE-FamilyArea-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:NoPetsAllowed" version="VYT:Version:VE-NoPetsAllowed-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservingNoPetsAllowed" version="VYT:Version:VE-NoPetsAllowed-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:NoPetsAllowedAllowedAuthority" version="VYT:Version:VE-NoPetsAllowed-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:NoPetsAllowedTransportSubMode" version="VYT:Version:VE-NoPetsAllowed-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:SeatReservation" version="VYT:Version:VE-SeatReservation-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:SeatReservationTransportSubMode" version="VYT:Version:VE-SeatReservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservingSeatReservation" version="VYT:Version:VE-SeatReservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:SeatReservationAllowedAuthority" version="VYT:Version:VE-SeatReservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:Wheelchair" version="VYT:Version:VE-Wheelchair-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:WheelchairAllowedAuthority" version="VYT:Version:VE-Wheelchair-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservingWheelchair" version="VYT:Version:VE-Wheelchair-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:NonReservableBicycle" version="VYT:Version:VE-NonReservableBicycle-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="VYT:FareStructureElement:NonReservableBicycle"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:NonReservableBicycleAllowedAuthority" version="VYT:Version:VE-NonReservableBicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:Bicycle" version="VYT:Version:VE-Bicycle-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="VYT:FareStructureElement:Bicycle"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:BicycleAllowedAuthority" version="VYT:Version:VE-Bicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:InterchangingBicycle" version="VYT:Version:VE-Bicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:PlusUpgrade" version="VYT:Version:VE-PlusUpgrade-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:PlusUpgradeAllowedAuthority" version="VYT:Version:VE-PlusUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservingPlusUpgrade" version="VYT:Version:VE-PlusUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:PlusUpgradeTransportSubMode" version="VYT:Version:VE-PlusUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:SleepUpgrade" version="VYT:Version:VE-SleepUpgrade-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:SleepUpgradeAllowedAuthority" version="VYT:Version:VE-SleepUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:SleepUpgradeTransportSubMode" version="VYT:Version:VE-SleepUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservingSleepUpgrade" version="VYT:Version:VE-SleepUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:BicycleFlatFare" version="VYT:Version:VE-BicycleFlatFare-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="VYT:FareStructureElement:BicycleFlatFare"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:BicycleFlatFareAllowedAuthority" version="VYT:Version:VE-BicycleFlatFare-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:InterchangingBicycleFlatFare" version="VYT:Version:VE-BicycleFlatFare-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:Handicapsleeper" version="VYT:Version:VE-Handicapsleeper-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:HandicapsleeperAllowedAuthority" version="VYT:Version:VE-Handicapsleeper-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservingHandicapsleeper" version="VYT:Version:VE-Handicapsleeper-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:30Days" version="VYT:Version:VE-30Days-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="VYT:FareStructureElement:30DaysTEN"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:30DaysAllowedAuthority" version="VYT:Version:VE-30Days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:30DaysLine" version="VYT:Version:VE-30Days-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:7Days" version="VYT:Version:VE-7Days-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="VYT:FareStructureElement:7DaysTEN"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:7DaysAllowedAuthority" version="VYT:Version:VE-7Days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:7DaysLine" version="VYT:Version:VE-7Days-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:365Days" version="VYT:Version:VE-365Days-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="VYT:FareStructureElement:365DaysTEN"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:365DaysAllowedAuthority" version="VYT:Version:VE-365Days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:365DaysLine" version="VYT:Version:VE-365Days-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:30daysPassSeatReservation" version="VYT:Version:VE-30daysPassSeatReserv-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:Reserving30daysPassSeatReservation" version="VYT:Version:VE-30daysPassSeatReserv-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:30daysPassSeatReservationTransportSubMode" version="VYT:Version:VE-30daysPassSeatReserv-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:30daysPassSeatReservationAllowedAuthority" version="VYT:Version:VE-30daysPassSeatReserv-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:7daysPassSeatReservation" version="VYT:Version:VE-7daysPassSeatReserva-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:Reserving7daysPassSeatReservation" version="VYT:Version:VE-7daysPassSeatReserva-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:7daysPassSeatReservationAllowedAuthority" version="VYT:Version:VE-7daysPassSeatReserva-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:7daysPassSeatReservationTransportSubMode" version="VYT:Version:VE-7daysPassSeatReserva-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:365daysPassSeatReservation" version="VYT:Version:VE-365daysPassSeatReser-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:365daysPassSeatReservationTransportSubMode" version="VYT:Version:VE-365daysPassSeatReser-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:365daysPassSeatReservationAllowedAuthority" version="VYT:Version:VE-365daysPassSeatReser-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:Reserving365daysPassSeatReservation" version="VYT:Version:VE-365daysPassSeatReser-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="VYT:ValidableElement:Reservation" version="VYT:Version:VE-Reservation-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservingReservation" version="VYT:Version:VE-Reservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservationAllowedAuthority" version="VYT:Version:VE-Reservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="VYT:GenericParameterAssignment:ReservationTransportSubMode" version="VYT:Version:VE-Reservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

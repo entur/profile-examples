@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:51.843</PublicationTimestamp>
+  <ParticipantRef>GOA</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="GOA:FareFrame:GOA" version="any">
+      <salesOfferPackages>
+        <SalesOfferPackage id="GOA:SalesPackage:StandardFlexible" version="GOA:Version:V1">
+          <Name>Fleks</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:FamilyAreaStandardFlexible" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardFlexibleNoPetsAllowed" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardFlexibleWheelchair" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardFlexibleSpecialBaggage" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SpecialBaggage"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardFlexibleBikeReservation" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardFlexibleSmallPet" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SmallPet"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardFlexibleLargePet" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:LargePet"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardFlexibleStroller" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Stroller"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardFlexible" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:PreassignedFareProduct:StandardFlexible"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:FlexibleAddChild" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:AddChild"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:SleeperFlexibleBerth" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SleeperBerth"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:SleeperFlexible" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:KomfortFlexible" version="GOA:Version:V1">
+          <Name>Komfort Fleks</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortFlexibleNoPetsAllowed" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortFlexibleWheelchair" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortFlexibleSpecialBaggage" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SpecialBaggage"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortFlexibleBikeReservation" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortFlexibleSmallPet" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SmallPet"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortFlexibleLargePet" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:LargePet"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortFlexible" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:PreassignedFareProduct:KomfortFlexible"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortFlexibleStroller" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Stroller"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:StandardExchangeable" version="GOA:Version:SpStandardExchangeable1">
+          <Name>Semi-Fleks</Name>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:KomfortExchangeable" version="GOA:Version:SpKomfortExchangeable1">
+          <Name>Komfort Semi-Fleks</Name>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:StandardNonFlexible" version="GOA:Version:V1">
+          <Name>Lavpris</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:FamilyAreaStandardNonFlexible" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardNonFlexibleNoPetsAllowed" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardNonFlexibleWheelchair" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardNonFlexibleSpecialBaggage" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SpecialBaggage"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardNonFlexibleBikeReservation" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardNonFlexibleSmallPet" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SmallPet"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardNonFlexible" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:PreassignedFareProduct:StandardNonFlexible"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardNonFlexibleStroller" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Stroller"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:NonFlexibleAddChild" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:AddChild"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:SleeperNonFlexibleBerth" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SleeperBerth"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:SleeperNonFlexible" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:StandardNonFlexibleLargePet" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:LargePet"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:KomfortNonFlexible" version="GOA:Version:V1">
+          <Name>Komfort Lavpris</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortNonFlexibleNoPetsAllowed" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortNonFlexibleWheelchair" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortNonFlexibleSpecialBaggage" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SpecialBaggage"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortNonFlexibleSmallPet" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SmallPet"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortNonFlexibleLargePet" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:LargePet"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortNonFlexible" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:PreassignedFareProduct:KomfortNonFlexible"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortNonFlexibleBikeReservation" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortNonFlexibleStroller" version="GOA:Version:V1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Stroller"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:7days" version="GOA:Version:Spk7days-1">
+          <Name>7-dagersbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:7days" version="GOA:Version:Spk7days-1">
+              <PreassignedFareProductRef ref="GOA:PreassignedFareProduct:7days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:30days" version="GOA:Version:Spk30days-1">
+          <Name>30-dagersbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:30days" version="GOA:Version:Spk30days-1">
+              <PreassignedFareProductRef ref="GOA:PreassignedFareProduct:30days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:365days" version="GOA:Version:Spk365days-1">
+          <Name>365-dagersbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:365days" version="GOA:Version:Spk365days-1">
+              <PreassignedFareProductRef ref="GOA:PreassignedFareProduct:365days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:KomfortNattFlexible" version="GOA:Version:SP-KomfortNattFlexible-1">
+          <Name>Komfort Fleks Natt</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortNattFlexible" version="GOA:Version:SP-KomfortNattFlexible-1">
+              <PreassignedFareProductRef ref="GOA:PreassignedFareProduct:KomfortNattFlexible"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:KomfortNattNonFlexible" version="GOA:Version:SP-KomfortNattNonFlexib-1">
+          <Name>Komfort Lavpris Natt</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:KomfortNattNonFlexible" version="GOA:Version:SP-KomfortNattNonFlexib-1">
+              <PreassignedFareProductRef ref="GOA:PreassignedFareProduct:KomfortNattNonFlexible"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:SupplementProducts" version="GOA:Version:SupplementProductsV1">
+          <Name/>
+          <distributionAssignments>
+            <DistributionAssignment order="0" id="GOA:DistributionAssignment:SupplementProductsENTSalesAndService" version="GOA:Version:SupplementProductsV1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="GOA:DistributionAssignment:SupplementProductsGOAMobileTerminal" version="GOA:Version:SupplementProductsV1">
+              <DistributionChannelRef ref="GOA:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+          </distributionAssignments>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:NonReservableBicycleSupplementProducts" version="GOA:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:SPUpgradeAndNextSeatFree" version="GOA:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:UpgradeAndNextSeatFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:SPSeatUpgrade" version="GOA:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SeatUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:SPLargePet" version="GOA:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:LargePet"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:SPBikeReservation" version="GOA:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:SPSleeper" version="GOA:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GOA:SalesPackage:Reservation" version="GOA:Version:SP-Reservation-1">
+          <Name>Reservasjonsprodukter</Name>
+          <distributionAssignments>
+            <DistributionAssignment order="0" id="GOA:DistributionAssignment:ReservationMobileTerminalGOA" version="GOA:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="GOA:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="GOA:DistributionAssignment:ReservationMobileTerminal" version="GOA:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="GOA:DistributionAssignment:ReservationSalesAndService" version="GOA:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="GOA:DistributionAssignment:ReservationInternationalSales" version="GOA:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:InternationalSales"/>
+            </DistributionAssignment>
+          </distributionAssignments>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:Reservation-AddChild" version="GOA:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:AddChild"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:Reservation-SleeperBerth" version="GOA:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SleeperBerth"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:ReservationSupplementSleeper" version="GOA:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:ReservationSupplementUpgradeAndNextSeatFree" version="GOA:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:UpgradeAndNextSeatFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:ReservationSupplementSeatUpgrade" version="GOA:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:SeatUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GOA:SalesPackageElement:ReservationSupplementReservation" version="GOA:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="GOA:SupplementProduct:Reservation"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

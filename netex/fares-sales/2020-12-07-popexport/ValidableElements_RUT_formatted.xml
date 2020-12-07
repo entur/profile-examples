@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:42.669</PublicationTimestamp>
+  <ParticipantRef>RUT</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="RUT:FareFrame:RUT" version="any">
+      <validableElements>
+        <ValidableElement id="RUT:ValidableElement:RuterSingleTicket" version="RUT:Version:V1">
+          <Name>Ruter Enkeltbillett</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="RUT:FareStructureElement:ZONEInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:ValidityPerZone" version="RUT:Version:Feb2019">
+              <Name>Ruter Enkeltbillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="RUT:ValidableElement:SupplementaryTicket" version="RUT:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="RUT:FareStructureElement:SupplementaryTicket"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:ValidityPerZoneSup" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="RUT:ValidableElement:Ruter30Days" version="RUT:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="RUT:FareStructureElement:ZONEInterval30Days"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="RUT:ValidableElement:Ruter7Days" version="RUT:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="RUT:FareStructureElement:ZONEInterval7Days"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="RUT:ValidableElement:Ruter24Hours" version="RUT:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="RUT:FareStructureElement:ZONEInterval24Hours"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="RUT:ValidableElement:Ruter365Days" version="RUT:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="RUT:FareStructureElement:ZONEInterval365Days"/>
+          </fareStructureElements>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

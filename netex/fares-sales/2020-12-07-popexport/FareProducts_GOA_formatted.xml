@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:52.536</PublicationTimestamp>
+  <ParticipantRef>GOA</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="GOA:FareFrame:GOA" version="any">
+      <fareProducts>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:StandardFlexible" version="GOA:Version:V1">
+          <Name>Fleks</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:StandardFlexible" version="GOA:Version:V1">
+              <Name>Fleks</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:StandardFlexible"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:KomfortFlexible" version="GOA:Version:Komfort2019">
+          <Name>Komfort Fleks</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:KomfortFlexible" version="GOA:Version:V1">
+              <Name>Komfort Fleks</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:KomfortFlexible"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:StandardExchangeable" version="GOA:Version:PfpStandardExchangeable1">
+          <Name>Semi-Fleks</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:StandardExchangeable" version="GOA:Version:V1">
+              <Name>Semi-Fleks</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:StandardExchangeable"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:KomfortExchangeable" version="GOA:Version:PfpKomfortExchangeable1">
+          <Name>Komfort Semi-Fleks</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:KomfortExchangeable" version="GOA:Version:V1">
+              <Name>Komfort Semi-Fleks</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:KomfortExchangeable"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:StandardNonFlexible" version="GOA:Version:V1">
+          <Name>Lavpris</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:StandardNonFlexible" version="GOA:Version:V1">
+              <Name>Lavpris</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:StandardNonFlexible"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:KomfortNonFlexible" version="GOA:Version:Komfort2019">
+          <Name>Komfort Lavpris</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:KomfortNonFlexible" version="GOA:Version:V1">
+              <Name>Komfort Lavpris</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:KomfortNonFlexible"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="GOA:SupplementProduct:Sleeper" version="GOA:Version:V1">
+          <Name>Sove</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:Sleeper" version="GOA:Version:V1">
+              <Name>Sove</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:Sleeper"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:SleeperBerth" version="GOA:Version:V1">
+          <Name>Ekstra voksen i sovekupé</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AddessRightInProduct:SleeperBerth" version="GOA:Version:V1">
+              <Name>Ekstra voksen i sovekupé</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:SleeperBerth"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:AddChild" version="GOA:Version:V1">
+          <Name>Barn i sovekupé</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AddessRightInProduct:AddChild" version="GOA:Version:V1">
+              <Name>Barn i sovekupé</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:AddChild"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:Stroller" version="GOA:Version:V1">
+          <Name>Barnevogn forhåndsbestilt</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:Stroller" version="GOA:Version:V1">
+              <Name>Barnevogn forhåndsbestilt</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:Stroller"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:LargePet" version="GOA:Version:V1">
+          <Name>Hund over 40 cm</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:LargePet" version="GOA:Version:V1">
+              <Name>Hund over 40 cm</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:LargePet"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:SmallPet" version="GOA:Version:V1">
+          <Name>Lite kjæledyr</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:SmallPet" version="GOA:Version:V1">
+              <Name>Lite kjæledyr</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:SmallPet"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:Wheelchair" version="GOA:Version:V1">
+          <Name>Rullestol</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:Wheelchair" version="GOA:Version:V1">
+              <Name>Rullestol</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:Wheelchair"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:NoPetsAllowed" version="GOA:Version:V1">
+          <Name>Dyrefri</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:NoPetsAllowed" version="GOA:Version:V1">
+              <Name>Dyrefri</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:NoPetsAllowed"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:BikeReservation" version="GOA:Version:V1">
+          <Name>Sykkel forhåndsbestilt</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:BikeReservation" version="GOA:Version:V1">
+              <Name>Sykkel forhåndsbestilt</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:BikeReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:SpecialBaggage" version="GOA:Version:V1">
+          <Name>Spesialbagasje</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:SpecialBaggage" version="GOA:Version:V1">
+              <Name>Spesialbagasje</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:SpecialBaggage"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:KomfortNattFlexible" version="GOA:Version:PFP-KomfortNattFlexible-1">
+          <Name>Komfort Fleks Natt</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:KomfortNattFlexible" version="GOA:Version:PFP-KomfortNattFlexible-1">
+              <Name>Komfort Fleks Natt</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:KomfortNattFlexible"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:KomfortNattNonFlexible" version="GOA:Version:PFP-KomfortNattNonFlexib-1">
+          <Name>Komfort Lavpris Natt</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:KomfortNattNonFlexible" version="GOA:Version:PFP-KomfortNattNonFlexib-1">
+              <Name>Komfort Lavpris Natt</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:KomfortNattNonFlexible"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:7days" version="GOA:Version:Pfp7days-1">
+          <Name>7-dagersbillett</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:7days" version="GOA:Version:Pfp7days-1">
+              <Name>7-dagersbillett</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:7days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:30days" version="GOA:Version:Pfp30days-1">
+          <Name>30-dagersbillett</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:30days" version="GOA:Version:Pfp30days-1">
+              <Name>30-dagersbillett</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:30days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GOA:PreassignedFareProduct:365days" version="GOA:Version:Pfp365days-1">
+          <Name>365-dagersbillett</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:365days" version="GOA:Version:Pfp365days-1">
+              <Name>365-dagersbillett</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:365days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="GOA:SupplementProduct:Reservation" version="GOA:Version:SUP-Reservation-1">
+          <Name>Plassavgift - standard</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:Reservation" version="GOA:Version:SUP-Reservation-1">
+              <Name>Plassavgift - standard</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:Reservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:SeatUpgrade" version="GOA:Version:SUP-SeatUpgrade-1">
+          <Name>Plassavgift - komfort</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:SeatUpgrade" version="GOA:Version:SUP-SeatUpgrade-1">
+              <Name>Plassavgift - komfort</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:SeatUpgrade"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:UpgradeAndNextSeatFree" version="GOA:Version:SUP-UpgradeAndNextSeatFree-1">
+          <Name>Plassavgift - komfort natt</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:UpgradeAndNextSeatFree" version="GOA:Version:SUP-UpgradeAndNextSeatFree-1">
+              <Name>Plassavgift - komfort natt</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:UpgradeAndNextSeatFree"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GOA:SupplementProduct:FamilyArea" version="GOA:Version:SupplementProduct-FamilyArea-1">
+          <Name>Familie</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:FamilyArea" version="GOA:Version:SupplementProduct-FamilyArea-1">
+              <Name>Familie</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:FamilyArea"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SaleDiscountRight id="GOA:SaleDiscountRight:Komfort" version="GOA:Version:SDR-Komfort-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="GOA:SaleDiscountRight:KomfortNatt" version="GOA:Version:SDR-KomfortNatt-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SupplementProduct id="GOA:SupplementProduct:NonReservableBicycle" version="GOA:Version:SUP-NonReservableBicycle-1">
+          <Name>Sykkel uten plass</Name>
+          <ChargingMomentRef ref="GOA:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GOA:AccessRightInProduct:NonReservableBicycle" version="GOA:Version:SUP-NonReservableBicycle-1">
+              <Name>Sykkel uten plass</Name>
+              <ValidableElementRef ref="GOA:ValidableElement:NonReservableBicycle"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

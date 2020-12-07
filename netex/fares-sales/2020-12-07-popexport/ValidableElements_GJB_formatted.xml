@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:44.901</PublicationTimestamp>
+  <ParticipantRef>GJB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="GJB:FareFrame:GJB" version="any">
+      <validableElements>
+        <ValidableElement id="GJB:ValidableElement:NSBGjovikbanen" version="GJB:Version:V1">
+          <Name>Gjøvikbanen</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GJB:FareStructureElement:TENInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:GjovikbanenAllowInterchanging" version="GJB:Version:V1">
+              <Name>Gjøvikbanen</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:LowFare" version="GJB:Version:VE-LowFare-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:LowFareSubmodes" version="GJB:Version:VE-LowFare-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:LowFareReserving" version="GJB:Version:VE-LowFare-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:SingleTicket" version="GJB:Version:VE-SingleTicket-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GJB:FareStructureElement:TENInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:SingleTicketLine" version="GJB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:SingleTicketReserving" version="GJB:Version:VE-SingleTicket-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:7dayPass" version="GJB:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GJB:FareStructureElement:P7TENInterval"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:30dayPass" version="GJB:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GJB:FareStructureElement:P30TENInterval"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:30dayPassRuterZone1" version="GJB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:30dayPassRuterZone1Unlimited" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:30dayPassRuterZone1UsageValidityPeriod" version="GJB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:BicycleReservation" version="GJB:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GJB:FareStructureElement:TENInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:BicycleReserving" version="GJB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:BicycleLuggageAllowance" version="GJB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:7dayPassRuterZone1" version="GJB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:7dayPassRuterZone1UsageValidityPeriod" version="GJB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:MiniPrice" version="GJB:Version:MiniPrice">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:MiniPriceUsageValidityPeriod" version="GJB:Version:MiniPrice">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:LargeAnimal" version="GJB:Version:ValidableElement-LargeAnimal-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GJB:FareStructureElement:LargeAnimal"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:LargeAnimalAllowedAuthority" version="GJB:Version:ValidableElement-LargeAnimal-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:InterchangingLargeAnimal" version="GJB:Version:ValidableElement-LargeAnimal-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:7dayPassSeatReservation" version="GJB:Version:VE-7dayPassSeatReservat-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:Reserving7dayPassSeatReservation" version="GJB:Version:VE-7dayPassSeatReservat-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:7dayPassSeatReservationAllowedAuthority" version="GJB:Version:VE-7dayPassSeatReservat-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:30dayPassSeatReservation" version="GJB:Version:VE-30dayPassSeatReserva-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:30dayPassSeatReservationAllowedAuthority" version="GJB:Version:VE-30dayPassSeatReserva-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:Reserving30dayPassSeatReservation" version="GJB:Version:VE-30dayPassSeatReserva-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:365dayPassSeatReservation" version="GJB:Version:VE-365dayPassSeatReserv-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:365dayPassSeatReservationAllowedAuthority" version="GJB:Version:VE-365dayPassSeatReserv-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:Reserving365dayPassSeatReservation" version="GJB:Version:VE-365dayPassSeatReserv-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:NonReservableBicycle" version="GJB:Version:VE-NonReservableBicycle-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GJB:FareStructureElement:NonReservableBicycle"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:NonReservableBicycleAllowedAuthority" version="GJB:Version:VE-NonReservableBicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:GjbRuterTransfer7days" version="GJB:Version:VE-GjbRuterTransfer7day-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:GjbRuterTransfer7daysUsageValidityPeriod" version="GJB:Version:VE-GjbRuterTransfer7day-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:GjbRuterTransfer30days" version="GJB:Version:VE-GjbRuterTransfer30day-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:GjbRuterTransfer30daysUsageValidityPeriod" version="GJB:Version:VE-GjbRuterTransfer30day-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:37.610</PublicationTimestamp>
+  <ParticipantRef>RUT</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="RUT:FareFrame:RUT" version="any">
+      <fareStructureElements>
+        <FareStructureElement id="RUT:FareStructureElement:ZONEInterval" version="RUT:Version:V1">
+          <Name>Ruter sone intervall</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:1zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:4zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:5zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:6zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:7zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:8zone"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:AllowedZones" version="RUT:Version:V1">
+              <Name>Ruter sone intervall</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:Eligibility" version="RUT:Version:V1">
+              <Name>Ruter sone intervall</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:Inspection" version="RUT:Version:V1">
+              <Name>Ruter sone intervall</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:AllowedInterchange" version="RUT:Version:V1">
+              <Name>Ruter sone intervall</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="RUT:FareStructureElement:ZONEInterval24Hours" version="RUT:Version:V1">
+          <Name/>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:1zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:4zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:5zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:6zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:7zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:8zone"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:24HoursAllowedZones" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:24HoursAllowedInterchange" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:24HoursEligibility" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="RUT:FareStructureElement:ZONEInterval7Days" version="RUT:Version:V1">
+          <Name/>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:1zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:4zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:5zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:6zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:7zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:8zone"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:7DaysAllowedZones" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:7DaysAllowedInterchange" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:7DaysEligibility" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="RUT:FareStructureElement:ZONEInterval30Days" version="RUT:Version:V1">
+          <Name/>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:1zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:4zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:5zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:6zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:7zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:8zone"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:30DaysAllowedZones" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:30DaysAllowedInterchange" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:30DaysEligibility" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="RUT:FareStructureElement:ZONEInterval365Days" version="RUT:Version:V1">
+          <Name/>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:1zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:4zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:5zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:6zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:7zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:8zone"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:365DaysAllowedZones" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:365DaysAllowedInterchange" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:365DaysEligibility" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="RUT:FareStructureElement:SupplementaryTicket" version="RUT:Version:V1">
+          <Name/>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:1Zone"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2Zones"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3Zones"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:4Zones"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:5Zones"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:6Zones"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:7Zones"/>
+            <GeographicalIntervalRef ref="RUT:GeographicalInterval:8Zones"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:AllowedInterchangeSupplementary" version="RUT:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="RUT:GenericParameterAssignment:SupplementaryTicketEligibility" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+      </fareStructureElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

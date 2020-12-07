@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:59.262</PublicationTimestamp>
+  <ParticipantRef>SOF</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="SOF:FareFrame:SOF" version="any">
+      <fareProducts>
+        <PreassignedFareProduct id="SOF:PreassignedFareProduct:d8293800" version="SOF:Version:V1">
+          <Name>Bybuss i Førde og Florø</Name>
+          <ChargingMomentRef ref="SOF:ChargingMoment:292a04cd"/>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SOF:PreassignedFareProduct:f95a0af1" version="SOF:Version:V1">
+          <Name>Bybuss i Førde og Florø - natt</Name>
+          <ChargingMomentRef ref="SOF:ChargingMoment:5bf0fe6d"/>
+        </PreassignedFareProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

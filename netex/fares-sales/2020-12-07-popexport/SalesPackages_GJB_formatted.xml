@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:43.430</PublicationTimestamp>
+  <ParticipantRef>GJB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="GJB:FareFrame:GJB" version="any">
+      <salesOfferPackages>
+        <SalesOfferPackage id="GJB:SalesPackage:NSBGjovikbanen" version="GJB:Version:V1">
+          <Name>Gjøvikbanen billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:LargeAnimalNSBGjovikbanen" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:BicycleReservation" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:BicycleReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:SeatReservation" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:NSBGjovikbanen" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:PreassignedFareProduct:NSBGjovikbanen"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GJB:SalesPackage:LowFare" version="GJB:Version:SP-LowFare-1">
+          <Name>Lavpris billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:LargeAnimalLowFare" version="GJB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:LowFare-BicycleReservation" version="GJB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:BicycleReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:LowFare-SeatReservation" version="GJB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:LowFare" version="GJB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="GJB:PreassignedFareProduct:LowFare"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GJB:SalesPackage:SingleTicket" version="GJB:Version:SP-SingleTicket-1">
+          <Name>Gjøvikbanen Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:LargeAnimalSingleTicket" version="GJB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:SingleTicket-BicycleReservation" version="GJB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:BicycleReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:SingleTicket-SeatReservation" version="GJB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:SingleTicket" version="GJB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="GJB:PreassignedFareProduct:SingleTicket"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GJB:SalesPackage:7dayPass" version="GJB:Version:V1">
+          <Name/>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:GjbRuterTransfer7days" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:GjbRuterTransfer7days"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:7dayPassRuterZone1" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:7dayPassRuterZone1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:7dayPass" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:PreassignedFareProduct:7dayPass"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:7dayPassSeatReservation7dayPass" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:7dayPassSeatReservation"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GJB:SalesPackage:30dayPass" version="GJB:Version:V1">
+          <Name/>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:GjbRuterTransfer30days" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:GjbRuterTransfer30days"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:30dayPass" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:PreassignedFareProduct:30dayPass"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:30dayPassSeatReservation30dayPass" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:30dayPassSeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:30dayPassRuterZone1" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:30dayPassRuterZone1"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GJB:SalesPackage:Reservation" version="NSB:Version:V1">
+          <Name/>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GJB:SalesPackage:MiniPrice" version="GJB:Version:MiniPrice">
+          <Name>Minipris billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:LargeAnimalMiniPrice" version="GJB:Version:MiniPrice">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:MiniPrice" version="GJB:Version:MiniPrice">
+              <PreassignedFareProductRef ref="GJB:PreassignedFareProduct:MiniPrice"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GJB:SalesPackage:SupplementProducts" version="GJB:Version:SupplementProductsV1">
+          <Name/>
+          <distributionAssignments>
+            <DistributionAssignment order="0" id="GJB:DistributionAssignment:SupplementProductsGJBMobileTerminal" version="GJB:Version:SupplementProductsV1">
+              <DistributionChannelRef ref="GJB:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="GJB:DistributionAssignment:SupplementProductsNSBMobileTerminal" version="GJB:Version:SupplementProductsV1">
+              <DistributionChannelRef ref="NSB:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="GJB:DistributionAssignment:SupplementProductsNSBApp" version="GJB:Version:SupplementProductsV1">
+              <DistributionChannelRef ref="NSB:DistributionChannel:App"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="GJB:DistributionAssignment:SupplementProductsENTSalesAndService" version="GJB:Version:SupplementProductsV1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="GJB:DistributionAssignment:SupplementProductsNSBWeb" version="GJB:Version:SupplementProductsV1">
+              <DistributionChannelRef ref="NSB:DistributionChannel:Web"/>
+            </DistributionAssignment>
+          </distributionAssignments>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:NonReservableBicycleSupplementProducts" version="GJB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:SPSeatReservation" version="GJB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:SupplementProducts-LargeAnimal" version="GJB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:SupplementProducts-BicycleReservation" version="GJB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:BicycleReservation"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

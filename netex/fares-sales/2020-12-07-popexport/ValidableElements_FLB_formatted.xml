@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:46.965</PublicationTimestamp>
+  <ParticipantRef>FLB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="FLB:FareFrame:FLB" version="any">
+      <validableElements>
+        <ValidableElement id="FLB:ValidableElement:Flamsbana" version="FLB:Version:V1">
+          <Name>Flåmsbana</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="FLB:FareStructureElement:PointToPoint"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="FLB:ValidableElement:FlamsbanaRoundTrip" version="FLB:Version:VE-FlamsbanaRoundTrip-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="FLB:FareStructureElement:FlamsbanaRoundTrip"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="FLB:GenericParameterAssignment:FlamsbanaRoundTripAllowedAuthority" version="FLB:Version:VE-FlamsbanaRoundTrip-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="FLB:ValidableElement:NonReservableBicycle" version="FLB:Version:VE-NonReservableBicycle-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="FLB:GenericParameterAssignment:NonReservableBicycleLine" version="FLB:Version:VE-NonReservableBicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="FLB:GenericParameterAssignment:NonReservableBicycleAllowedAuthority" version="FLB:Version:VE-NonReservableBicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

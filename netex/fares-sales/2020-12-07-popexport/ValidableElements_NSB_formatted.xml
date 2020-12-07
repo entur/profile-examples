@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:40.412</PublicationTimestamp>
+  <ParticipantRef>NSB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="NSB:FareFrame:NSB" version="any">
+      <validableElements>
+        <ValidableElement id="NSB:ValidableElement:Ordinary" version="NSB:Version:V1">
+          <Name>Ordinær</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:TENInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:GreaterOrEqualNSB" version="NSB:Version:V1">
+              <Name>Ordinær</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:OrdinaryBergensbanen" version="NSB:Version:V1">
+              <Name>Ordinær</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:OrdinaryAllowInterchanging" version="NSB:Version:V1">
+              <Name>Ordinær</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:MiniPrice" version="NSB:Version:V1">
+          <Name>Minipris for Ordinær</Name>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:BicycleReserving" version="NSB:Version:V1">
+          <Name>Tilleggsprodukt sykkel</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:TENInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:LuggageAllowanceBicycleReserving" version="NSB:Version:V1">
+              <Name>Tilleggsprodukt sykkel</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Telemark" version="NSB:Version:V1">
+          <Name>Lokal Telemark</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:TelemarkDME"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:FlexRefundable" version="NSB:Version:VE-FlexRefundable-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:FlexRefundableNotStopPlaceStorlien" version="NSB:Version:VE-FlexRefundable-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:FlexRefundableSubmodes" version="NSB:Version:VE-FlexRefundable-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:PlusRefundable" version="NSB:Version:VE-PlusRefundable-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PlusRefundableLine" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Flex" version="NSB:Version:VE-Flex-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:FlexSubmodes" version="NSB:Version:VE-Flex-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Plus" version="NSB:Version:VE-Plus-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PlusLine" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PlusSupportInterchanging" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:LowFare" version="NSB:Version:VE-LowFare-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ParentSubmodeLowFare" version="NSB:Version:VE-LowFare-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SingleTicket" version="NSB:Version:VE-SingleTicket-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:TENInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SingleTicketRestrictedLines" version="NSB:Version:VE-SingleTicket-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ParentSubmodeSingleTicket" version="NSB:Version:VE-SingleTicket-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SingleTicketNoReservationPossibleVe" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SingleTicketAllowInterchanging" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SleepRefundable" version="NSB:Version:VE-SleepRefundable-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:SleepRefundable"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SleepRefundableLine" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Sleep" version="NSB:Version:VE-Sleep-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SleepLine" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Bergensbanen" version="NSB:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:TENIntervalBergensbanen"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:BergensbanenPeakSeason" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:BergensbanenNightRail" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:InterchangingBergensbanen" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SeatReservationReservingBergensbanen" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Trondelag" version="NSB:Version:V1">
+          <Name>Ordinær Trøndelag</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:Trondelag"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:TrondelagAllowedAuthority" version="NSB:Version:V1">
+              <Name>Ordinær Trøndelag</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:TrondelagAllowInterchanging" version="NSB:Version:V1">
+              <Name>Ordinær Trøndelag</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Raumabanen" version="NSB:Version:V1">
+          <Name>Raumabanen</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:Raumabanen"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:RaumabanenPeak" version="NSB:Version:V1">
+          <Name>Raumabanen</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:RaumabanenPeakDME"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:7dayPass" version="NSB:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:P7TENInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:7dayPassZones" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:7dayPassStartDateOrLine" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:30dayPass" version="NSB:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:P30TenInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassStartDateOrLine" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GOA:GenericParameterAssignment:30dayPassSkyssZoneRestriction" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassZones" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:365dayPass" version="NSB:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:P365TENInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:365dayPassStartDateOrLine" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:365dayPassZones" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SeatUpgrade" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SeatUpgradeReserving" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:365dayPass" version="GJB:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="GJB:FareStructureElement:P365TENInterval"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:NSBSkyss30dayPass" version="NSB:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:SkyssP30TENInterval"/>
+          </fareStructureElements>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:30dayPassRuterZone1" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassRuterZone1Unlimited" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassRuterZone1UsageValidityPeriod" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:FamilyArea" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:FamilyAreaReserving" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:NoPetsAllowed" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:NoPetsAllowedReserving" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:TravelPassBusHedmark" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:TravelPassBusHedmarkUnlimited" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:TravelPassBusHedmarkUsageValidityPeriod" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:BicycleFlatFare" version="NSB:Version:VE-BicycleFlatFare-2">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:BicycleFlatFareLuggageAllowance" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:BicycleFlatFareReserving" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:BicycleFlatFareSingleRide" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:PushChairReservation" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PushChairReservationLuggageAllowance" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PushChairReservationReserving" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PushChairReservationSingleRide" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:LargeAnimal" version="NSB:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:TENInterval"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:LargeAnimalLuggageAllowance" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:LargeAnimalSingleRide" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SmallAnimal" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SmallAnimalReserving" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SmallAnimalLuggageAllowance" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SmallAnimalSingleRide" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Sleeper" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Sleeper" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SleeperReserving" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SeatAsAccommodation" version="NSB:Version:V1">
+          <Name>Komfort Natt</Name>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SeatAsAccommodationNetworkValidity" version="NSB:Version:V1">
+              <Name>Komfort Natt</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SeatAsAccommodationReserving" version="NSB:Version:V1">
+              <Name>Komfort Natt</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:WheelChairReservation" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:WheelChairReservationSingleRide" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Reservation" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservationReserving" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Reservation" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="GJB:ValidableElement:SeatReservation" version="GJB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:SeatReservationRestriction" version="GJB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="GJB:GenericParameterAssignment:SeatReservationReserving" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SpecialOffer" version="NSB:Version:SpecialOfferV2">
+          <Name>Kampanjebillett</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:SpecialOffer"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SpecialOfferInterchanging" version="NSB:Version:SpecialOfferV2">
+              <Name>Kampanjebillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:PremiumSeat" version="NSB:Version:PremiumSeat2019">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PremiumSeatReserving" version="NSB:Version:PremiumSeat2019">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SeatReservation" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SeatReservationReserving" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SleeperBerth" version="NSB:Version:BerthChild2019">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SleeperBerthReserving" version="NSB:Version:BerthChild2019">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:AdditionalChild" version="NSB:Version:BerthChild2019">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:AdditionalChildReserving" version="NSB:Version:BerthChild2019">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:7dayPassRuterZone1" version="NSB:Version:V1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:7dayPassRuterZone1UsageValidityPeriod" version="NSB:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:HandicapSleeper" version="NSB:Version:VEHandicapSleeper1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:HandicapSleeperReservationReserving" version="NSB:Version:VEHandicapSleeper1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:HandicapSleeperGroupticket" version="NSB:Version:VEHandicapSleeper1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Bicycle" version="NSB:Version:ValidableElementBicycle-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:Bicycle"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:BicycleAllowedAuthority" version="NSB:Version:ValidableElementBicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:InterchangingBicycle" version="NSB:Version:ValidableElementBicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:LargeAnimal-1" version="NSB:Version:ValidableElementLargeAnimal-1-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:LargeAnimal-1"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:LargeAnimal-1AllowedAuthority" version="NSB:Version:ValidableElementLargeAnimal-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:InterchangingLargeAnimal-1" version="NSB:Version:ValidableElementLargeAnimal-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SeatReservation-1" version="NSB:Version:ValidableElementSeatReservation-1-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SeatReservation-1TransportSubMode" version="NSB:Version:ValidableElementSeatReservation-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SeatReservation-1AllowedAuthority" version="NSB:Version:ValidableElementSeatReservation-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservingSeatReservation-1" version="NSB:Version:ValidableElementSeatReservation-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SmallAnimal-1" version="NSB:Version:ValidableElementSmallAnimal-1-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SmallAnimal-1AllowedAuthority" version="NSB:Version:ValidableElementSmallAnimal-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservingSmallAnimal-1" version="NSB:Version:ValidableElementSmallAnimal-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:FamilyArea-1" version="NSB:Version:ValidableElementFamilyArea-1-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservingFamilyArea-1" version="NSB:Version:ValidableElementFamilyArea-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:FamilyArea-1TransportSubMode" version="NSB:Version:ValidableElementFamilyArea-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:FamilyArea-1AllowedAuthority" version="NSB:Version:ValidableElementFamilyArea-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:NoPetsAllowed-1" version="NSB:Version:ValidableElementNoPetsAllowed-1-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:NoPetsAllowed-1AllowedAuthority" version="NSB:Version:ValidableElementNoPetsAllowed-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:NoPetsAllowed-1TransportSubMode" version="NSB:Version:ValidableElementNoPetsAllowed-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservingNoPetsAllowed-1" version="NSB:Version:ValidableElementNoPetsAllowed-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Wheelchair-1" version="NSB:Version:ValidableElementWheelchair-1-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Wheelchair-1TransportSubMode" version="NSB:Version:ValidableElementWheelchair-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Wheelchair-1AllowedAuthority" version="NSB:Version:ValidableElementWheelchair-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservingWheelchair-1" version="NSB:Version:ValidableElementWheelchair-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:PushChair" version="NSB:Version:ValidableElementPushChair-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservingPushChair" version="NSB:Version:ValidableElementPushChair-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PushChairAllowedAuthority" version="NSB:Version:ValidableElementPushChair-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Handicapsleeper-1" version="NSB:Version:ValidableElementHandicapsleeper-1-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Handicapsleeper-1TransportSubMode" version="NSB:Version:ValidableElementHandicapsleeper-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservingHandicapsleeper-1" version="NSB:Version:ValidableElementHandicapsleeper-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Handicapsleeper-1AllowedAuthority" version="NSB:Version:ValidableElementHandicapsleeper-1-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:Telemark30days" version="NSB:Version:VE-Telemark30days-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:Telemark30days"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Telemark30daysAllowedAuthority" version="NSB:Version:VE-Telemark30days-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Telemark30daysLine" version="NSB:Version:VE-Telemark30days-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:7dayPassBrakarTransfer" version="NSB:Version:VE-7dayPassBrakarTransfer-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:7dayPassBrakarTransferFrequencyOfUse" version="NSB:Version:VE-7dayPassBrakarTransfer-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:7dayPassBrakarTransferUsageValidityPeriod" version="NSB:Version:VE-7dayPassBrakarTransfer-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:30dayPassBrakarTransfer" version="NSB:Version:VE-30dayPassBrakarTransfer-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassBrakarTransferFrequencyOfUse" version="NSB:Version:VE-30dayPassBrakarTransfer-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassBrakarTransferUsageValidityPeriod" version="NSB:Version:VE-30dayPassBrakarTransfer-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:HandicapSleeperFree" version="NSB:Version:VEHandicapSleeperFree1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:HandicapSleeperFreeReservationReserving" version="NSB:Version:VEHandicapSleeperFree1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:HandicapSleeperFreeGroupticket" version="NSB:Version:VEHandicapSleeperFree1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SleepUpgrade" version="NSB:Version:VE-SleepUpgrade-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SleepUpgradeAllowedAuthority" version="NSB:Version:VE-SleepUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservingSleepUpgrade" version="NSB:Version:VE-SleepUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SleepUpgradeTransportSubMode" version="NSB:Version:VE-SleepUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:PlusUpgrade" version="NSB:Version:VE-PlusUpgrade-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservingPlusUpgrade" version="NSB:Version:VE-PlusUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PlusUpgradeAllowedAuthority" version="NSB:Version:VE-PlusUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PlusUpgradeTransportSubMode" version="NSB:Version:VE-PlusUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:PlusUpgradeLine" version="NSB:Version:VE-PlusUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:SleeperBerthUpgrade" version="NSB:Version:VE-SleeperBerthUpgrade-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SleeperBerthUpgradeTransportSubMode" version="NSB:Version:VE-SleeperBerthUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:ReservingSleeperBerthUpgrade" version="NSB:Version:VE-SleeperBerthUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:SleeperBerthUpgradeAllowedAuthority" version="NSB:Version:VE-SleeperBerthUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:NonReservableBicycle" version="NSB:Version:VE-NonReservableBicycle-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="NSB:FareStructureElement:NonReservableBicycle"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:NonReservableBicycleAllowedAuthority" version="NSB:Version:VE-NonReservableBicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:7dayPassSeatReservation" version="NSB:Version:VE-7dayPassSeatReservat-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:7dayPassSeatReservationAllowedAuthority" version="NSB:Version:VE-7dayPassSeatReservat-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Reserving7dayPassSeatReservation" version="NSB:Version:VE-7dayPassSeatReservat-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:30dayPassSeatReservation" version="NSB:Version:VE-30dayPassSeatReserva-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassSeatReservationAllowedAuthority" version="NSB:Version:VE-30dayPassSeatReserva-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Reserving30dayPassSeatReservation" version="NSB:Version:VE-30dayPassSeatReserva-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:365dayPassSeatReservation" version="NSB:Version:VE-365dayPassSeatReserv-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:365dayPassSeatReservationAllowedAuthority" version="NSB:Version:VE-365dayPassSeatReserv-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:Reserving365dayPassSeatReservation" version="NSB:Version:VE-365dayPassSeatReserv-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:30dayPassHedmarkTransfer" version="NSB:Version:VE-30dayPassHedmarkTransfer-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassHedmarkTransferFrequencyOfUse" version="NSB:Version:VE-30dayPassHedmarkTransfer-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassHedmarkTransferUsageValidityPeriod" version="NSB:Version:VE-30dayPassHedmarkTransfer-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:TelemarkTransfer30day" version="NSB:Version:VE-TelemarkTransfer30day-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:TelemarkTransfer30dayFrequencyOfUse" version="NSB:Version:VE-TelemarkTransfer30day-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:TelemarkTransfer30dayUsageValidityPeriod" version="NSB:Version:VE-TelemarkTransfer30day-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:30dayPassVestfold" version="NSB:Version:VE-30dayPassVestfold-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassVestfoldFrequencyOfUse" version="NSB:Version:VE-30dayPassVestfold-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:30dayPassVestfoldUsageValidityPeriod" version="NSB:Version:VE-30dayPassVestfold-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:NsbOstfoldTransfer30days" version="NSB:Version:VE-NsbOstfoldTransfer30day-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:NsbOstfoldTransfer30daysUsageValidityPeriod" version="NSB:Version:VE-NsbOstfoldTransfer30day-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="NSB:ValidableElement:NsbOstfoldTransfer7days" version="NSB:Version:VE-NsbOstfoldTransfer7day-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="NSB:GenericParameterAssignment:NsbOstfoldTransfer7daysUsageValidityPeriod" version="NSB:Version:VE-NsbOstfoldTransfer7day-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

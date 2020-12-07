@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:21.052</PublicationTimestamp>
+  <ParticipantRef>SKY</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="SKY:FareFrame:SKY" version="any">
+      <salesOfferPackages>
+        <SalesOfferPackage id="SKY:SalesPackage:aafa0b12" version="SKY:Version:9cd63bd9-f97b-45d1-9575-7486d821c3d0">
+          <Name>Enkeltbillett sone A</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SKY:SalesPackageElement:a9fa57d1" version="SKY:Version:9cd63bd9-f97b-45d1-9575-7486d821c3d0">
+              <PreassignedFareProductRef ref="SKY:PreassignedFareProduct:5567d21e"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SKY:SalesPackage:16d42dc3" version="SKY:Version:92b81846-bbff-416b-b502-fd61f3e2674f">
+          <Name>24 timer</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SKY:SalesPackageElement:d69bad5f" version="SKY:Version:92b81846-bbff-416b-b502-fd61f3e2674f">
+              <PreassignedFareProductRef ref="SKY:PreassignedFareProduct:16bfcc8b"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SKY:SalesPackage:c05556fe" version="SKY:Version:7e2f9af4-1e42-4672-a85b-f7ec3ab512ef">
+          <Name>Periodebillett 7 dager</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SKY:SalesPackageElement:a3f33542" version="SKY:Version:7e2f9af4-1e42-4672-a85b-f7ec3ab512ef">
+              <PreassignedFareProductRef ref="SKY:PreassignedFareProduct:12a25102"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SKY:SalesPackage:0f1205e1" version="SKY:Version:5f47019b-3f98-480f-9ee1-9a50775e89d5">
+          <Name>Periodebillett 30 dager</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SKY:SalesPackageElement:1fbfe778" version="SKY:Version:5f47019b-3f98-480f-9ee1-9a50775e89d5">
+              <PreassignedFareProductRef ref="SKY:PreassignedFareProduct:d06d1d91"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SKY:SalesPackage:ecbbf636" version="SKY:Version:4097038d-7208-480a-b9d3-316bcb35876e">
+          <Name>Periodebillett 180 dager</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SKY:SalesPackageElement:fa4acb0f" version="SKY:Version:4097038d-7208-480a-b9d3-316bcb35876e">
+              <PreassignedFareProductRef ref="SKY:PreassignedFareProduct:bdf822f1"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SKY:SalesPackage:cd41b7ff" version="SKY:Version:35688ea7-b1c8-4792-be88-dfe5bb0f9f86">
+          <Name>Periodebillett 30 dager ungdom</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SKY:SalesPackageElement:1846ffa5" version="SKY:Version:35688ea7-b1c8-4792-be88-dfe5bb0f9f86">
+              <PreassignedFareProductRef ref="SKY:PreassignedFareProduct:50c26d81"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

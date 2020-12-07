@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:55.174</PublicationTimestamp>
+  <ParticipantRef>OST</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="OST:FareFrame:OST" version="any">
+      <fareStructureElements>
+        <FareStructureElement id="OST:FareStructureElement:7323a542" version="OST:Version:V1">
+          <Name>Sonetabell - enkeltbillett</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="OST:GeographicalInterval:04d5c13c"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="OST:GenericParameterAssignment:93a2857f" version="OST:Version:V1">
+              <Name>Sonetabell - enkeltbillett</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="OST:GenericParameterAssignment:c8e5bf4b" version="OST:Version:V1">
+              <Name>Sonetabell - enkeltbillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="OST:FareStructureElement:675bab0d" version="OST:Version:V1">
+          <Name>Sonetabell - Nedre Glomma enkeltbillett</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="OST:GeographicalInterval:59b24235"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="OST:GenericParameterAssignment:f151865b" version="OST:Version:V1">
+              <Name>Sonetabell - Nedre Glomma enkeltbillett</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="OST:GenericParameterAssignment:420b6d7c" version="OST:Version:V1">
+              <Name>Sonetabell - Nedre Glomma enkeltbillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+      </fareStructureElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

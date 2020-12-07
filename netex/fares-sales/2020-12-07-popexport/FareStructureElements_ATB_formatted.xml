@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:59.728</PublicationTimestamp>
+  <ParticipantRef>ATB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="ATB:FareFrame:ATB" version="any">
+      <fareStructureElements>
+        <FareStructureElement id="ATB:FareStructureElement:3ea469eb" version="ATB:Version:V1">
+          <Name>Sonetabell – enkeltbillett</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="ATB:GeographicalInterval:ca598f24"/>
+            <GeographicalIntervalRef ref="ATB:GeographicalInterval:2zones"/>
+            <GeographicalIntervalRef ref="ATB:GeographicalInterval:3zones"/>
+            <GeographicalIntervalRef ref="ATB:GeographicalInterval:4zones"/>
+            <GeographicalIntervalRef ref="ATB:GeographicalInterval:5zones"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:f2dcbb80" version="ATB:Version:V1">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:3d88dee3" version="ATB:Version:V1">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+      </fareStructureElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

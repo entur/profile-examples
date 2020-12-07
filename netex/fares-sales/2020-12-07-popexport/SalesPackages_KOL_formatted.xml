@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:49.699</PublicationTimestamp>
+  <ParticipantRef>KOL</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="KOL:FareFrame:KOL" version="any">
+      <salesOfferPackages>
+        <SalesOfferPackage id="KOL:SalesPackage:7dayPass" version="KOL:Version:V1">
+          <Name>Kolumbus 7 dager</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="KOL:SalesPackageElement:7dayPass" version="KOL:Version:V1">
+              <PreassignedFareProductRef ref="KOL:PreassignedFareProduct:7dayPass"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="KOL:SalesPackage:30dayPass" version="KOL:Version:V1">
+          <Name>Kolumbus 30 dager</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="KOL:SalesPackageElement:30dayPass" version="KOL:Version:V1">
+              <PreassignedFareProductRef ref="KOL:PreassignedFareProduct:30dayPass"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="KOL:SalesPackage:365dayPass" version="KOL:Version:V1">
+          <Name>Kolumbus 365 dager</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="KOL:SalesPackageElement:365dayPass" version="KOL:Version:V1">
+              <PreassignedFareProductRef ref="KOL:PreassignedFareProduct:365dayPass"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="KOL:SalesPackage:24H" version="KOL:Version:V1">
+          <Name>Kolumbus 24 timer</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="KOL:SalesPackageElement:24H" version="KOL:Version:V1">
+              <PreassignedFareProductRef ref="KOL:PreassignedFareProduct:24H"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="KOL:SalesPackage:YouthPass" version="KOL:Version:V1">
+          <Name>Ungdomsbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="KOL:SalesPackageElement:YouthPass" version="KOL:Version:V1">
+              <PreassignedFareProductRef ref="KOL:PreassignedFareProduct:YouthPass"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="KOL:SalesPackage:Enkeltbillett" version="KOL:Version:V2">
+          <Name>Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="KOL:SalesPackageElement:Enkeltbillett" version="KOL:Version:V2">
+              <PreassignedFareProductRef ref="KOL:PreassignedFareProduct:Enkeltbillett"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:37.712</PublicationTimestamp>
+  <ParticipantRef>NSB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="NSB:FareFrame:NSB" version="any">
+      <salesOfferPackages>
+        <SalesOfferPackage id="NSB:SalesPackage:Ordinary" version="NSB:Version:V1">
+          <Name>Ordinær</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:OrdinarySupplementHandicapSleeperFreeReserv" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PremiumSeatOrdinary" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PremiumSeat"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:OrdinarySupplementWheelChairReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:SeatReservationForNSBOrdinary" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:OrdinarySupplementHandicapSleeperReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatAsAccommodation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatAsAccommodation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatUpgrade" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleReserving" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleReserving"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Ordinary" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Ordinary"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SmallAnimal" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:LargeAnimal" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PushChairReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChairReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:NoPetsAllowed" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FamilyArea" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleFlatFare" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Sleeper" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:MiniPrice" version="NSB:Version:V1">
+          <Name>Minipris</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPriceSupplementHandicapSleeperReservation" version="NSB:Version:V1">
+              <TypeOfTravelDocumentRef ref=""/>
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPriceSupplementHandicapSleeperFreeReserv" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPriceSeatReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPriceBicycleFlatFare" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPriceSeatUpgrade" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniSeatAsAccommodation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatAsAccommodation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniBicycleReserving" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleReserving"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPriceSupplementWheelChairReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPriceSmallAnimal" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPriceLargeAnimal" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPricePushChairReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChairReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPriceNoPetsAllowed" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPriceFamilyArea" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniPrice" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:MiniPrice"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:MiniSleeper" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:Telemark" version="NSB:Version:V1">
+          <Name>Lokal Telemark</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Telemark" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Telemark"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:FlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+          <Name>Flex Refunderbar</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRefundableBicycleFlatFare" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHcFree-FlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHc-FlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatUpgrade-1-FlexRef" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:AdditionalChild-1" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:AdditionalChild-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperBerth-1" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleeperBerth-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Sleeper-1" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PushChairFlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Wheelchair-1FlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:NoPetsAllowed-1FlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FamilyArea-1FlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SmallAnimal-1FlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:LargeAnimal-1FlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleFlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRefundable" version="NSB:Version:SP-FlexRefundable-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:FlexRefundable"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:PlusRefundable" version="NSB:Version:SP-PlusRefundable-1">
+          <Name>Plus Refunderbar Billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PlusRefundableBicycleFlatFare" version="NSB:Version:SP-PlusRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PlusRefundable" version="NSB:Version:SP-PlusRefundable-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:PlusRefundable"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicyclePlusRefundable" version="NSB:Version:SP-PlusRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:Flex" version="NSB:Version:SP-Flex-1">
+          <Name>Flex</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexBicycleFlatFare" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHcFree-Flex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHc-Flex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatUpgrade-1-Flex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:AdditionalChild-1" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:AdditionalChild-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperBerth-1" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleeperBerth-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Sleeper-1" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PushChairFlex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Wheelchair-1Flex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:NoPetsAllowed-1Flex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:LargeAnimal-1Flex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FamilyArea-1Flex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SmallAnimal-1Flex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleFlex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Flex" version="NSB:Version:SP-Flex-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Flex"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:Plus" version="NSB:Version:SP-Plus-1">
+          <Name>Plus Billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PlusBicycleFlatFare" version="NSB:Version:SP-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicyclePlus" version="NSB:Version:SP-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Plus" version="NSB:Version:SP-Plus-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Plus"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:LowFare" version="NSB:Version:SP-LowFare-1">
+          <Name>Lavpris</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:LowFareBicycleFlatFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHcFree-LowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHc-LowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PushChairLowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Wheelchair-1LowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:NoPetsAllowed-1LowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FamilyArea-1LowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SmallAnimal-1LowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatReservation-1LowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatReservation-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:LargeAnimal-1LowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleLowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:LowFare" version="NSB:Version:SP-LowFare-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:LowFare"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:SingleTicket" version="NSB:Version:SP-SingleTicket-1">
+          <Name>Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket" version="NSB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:SingleTicket"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PushChairSingleTicket" version="NSB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Wheelchair-1SingleTicket" version="NSB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SmallAnimal-1SingleTicket" version="NSB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatReservation-1SingleTicket" version="NSB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatReservation-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:LargeAnimal-1SingleTicket" version="NSB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleSingleTicket" version="NSB:Version:SP-SingleTicket-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:SleepRefundable" version="NSB:Version:SP-SleepRefundable-1">
+          <Name>Sove Refunderbar</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleepRefundableBicycleFlatFare" version="NSB:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHcFree-SleepRefundable" version="NSB:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHc-SleepRefundable" version="NSB:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleepRefundable" version="NSB:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:SleepRefundable"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Handicapsleeper-1SleepRefundable" version="NSB:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PushChairSleepRefundable" version="NSB:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleSleepRefundable" version="NSB:Version:SP-SleepRefundable-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:Sleep" version="NSB:Version:SP-Sleep-1">
+          <Name>Sove</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleepBicycleFlatFare" version="NSB:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHc-Sleep" version="NSB:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHcFree-Sleep" version="NSB:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Sleep" version="NSB:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Sleep"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Handicapsleeper-1Sleep" version="NSB:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PushChairSleep" version="NSB:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleSleep" version="NSB:Version:SP-Sleep-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:Bergensbanen" version="NSB:Version:V1">
+          <Name>Ordinær billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PremiumSeat" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PremiumSeat"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:WheelchairBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SmallAnimalBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PushChairReservationBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChairReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:NoPetsAllowedBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FamilyAreaBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:LargeAnimalBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatAsAccommodationBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatAsAccommodation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleReservingBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleReserving"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Bergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Bergensbanen"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleFlatFareBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatUpgradeBergensbanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:Trondelag" version="NSB:Version:V1">
+          <Name>Ordinær Trøndelag</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleFlatFareTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:HandicapsleeperTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:AdditionalChildTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:AdditionalChild"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperBerthTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleeperBerth"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatReservationTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PremiumSeatTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PremiumSeat"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PushChairReservationTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChairReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:NoPetsAllowedTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatAsAccommodationTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatAsAccommodation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatUpgradeTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:BicycleReservingTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleReserving"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FamilyAreaTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:WheelchairTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SmallAnimalTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Trondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Trondelag"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:LargeAnimalTrondelag" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:Raumabanen" version="NSB:Version:V1">
+          <Name>Ordinær billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Raumabanen" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Raumabanen"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:RaumabanenPeak" version="NSB:Version:V1">
+          <Name>Ordinær billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:RaumabanenPeak" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:RaumabanenPeak"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:7dayPass" version="NSB:Version:V1">
+          <Name/>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:NsbOstfoldTransfer7days" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NsbOstfoldTransfer7days"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:7dayPassSeatReservation7dayPass" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:7dayPassSeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:7dayPassBrakarTransfer" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:7dayPassBrakarTransfer"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:7dayPassRuterZone1" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:7dayPassRuterZone1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:7dayPass" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:7dayPass"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:30dayPass" version="NSB:Version:V1">
+          <Name/>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:NsbOstfoldTransfer30days" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NsbOstfoldTransfer30days"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:30dayPassVestfold" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:30dayPassVestfold"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Transfer30dayPass" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:TelemarkTransfer30day"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:30dayPassHedmarkTransfer" version="NSB:Version:SUP-30dayPassHedmarkTransfer-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:30dayPassHedmarkTransfer"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:30dayPassSeatReservation30dayPass" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:30dayPassSeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:30dayPassBrakarTransfer" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:30dayPassBrakarTransfer"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:30dayPass" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:30dayPass"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:30dayPassRuterZone1" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:30dayPassRuterZone1"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:365dayPass" version="NSB:Version:V1">
+          <Name/>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:365dayPassSeatReservation365dayPass" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:365dayPassSeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:365dayPass" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:365dayPass"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="GJB:SalesPackage:365dayPass" version="GJB:Version:V1">
+          <Name/>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:365dayPass" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:PreassignedFareProduct:365dayPass"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="GJB:SalesPackageElement:365dayPassSeatReservation365dayPass" version="GJB:Version:V1">
+              <PreassignedFareProductRef ref="GJB:SupplementProduct:365dayPassSeatReservation"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:NSBSkyss30dayPass" version="NSB:Version:V1">
+          <Name/>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:NSBSkyss30dayPass" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:NSBSkyss30dayPass"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:Reservation" version="NSB:Version:V1">
+          <Name>Reservasjonsprodukter</Name>
+          <distributionAssignments>
+            <DistributionAssignment order="0" id="NSB:DistributionAssignment:ReservationMobileTerminal" version="NSB:Version:V1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="NSB:DistributionAssignment:Reservation" version="NSB:Version:V1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="NSB:DistributionAssignment:ReservationInternationalSales" version="NSB:Version:V1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:InternationalSales"/>
+            </DistributionAssignment>
+          </distributionAssignments>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleepUpgradeReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleepUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHcFree-Reservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHc-Reservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Reservation-AdditionalChild" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:AdditionalChild"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Reservation-SleeperBerth" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleeperBerth"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Reservation-Sleeper" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatReservation-1Reservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatReservation-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatAsAccommodationReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatAsAccommodation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatUpgradeReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperBerthUpgradeReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleeperBerthUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PlusUpgradeReservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PlusUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Reservation" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Reservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationSupplementSeatUpgrade-1" version="NSB:Version:V1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade-1"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:SpecialOffer" version="NSB:Version:SpecialOfferV2">
+          <Name>Kampanjebillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOffer" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:SpecialOffer"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:AdditionalChildSpecialOffer" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:AdditionalChild"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperBerthSpecialOffer" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleeperBerth"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferSupplementWheelChairReservation" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferSeatReservation" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferSmallAnimal" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferLargeAnimal" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferPushChairReservation" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChairReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferNoPetsAllowed" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferFamilyArea" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferSleeper" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferSeatUpgrade" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferSeatAsAccomodation" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatAsAccommodation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferBicycleReserving" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleReserving"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SpecialOfferBicycleFlatFare" version="NSB:Version:SpecialOfferV2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:SupplementProducts" version="NSB:Version:SupplementProductsV1">
+          <Name/>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SPBicycleFlatFare" version="NSB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHcFree-SupplementProducts" version="NSB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHc-SupplementProducts" version="NSB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SPLargeAnimal" version="NSB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SPSeatAsAccommodation" version="NSB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatAsAccommodation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SPSleeper" version="NSB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SPSeatUpgrade" version="NSB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SPBicycleReserving" version="NSB:Version:SupplementProductsV1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleReserving"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:SingleTicket-FlexRef" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+          <Name>Flex Refunderbar og Enkeltbillett kombinert</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-FlexRefBicycleFlatFare" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHcFree-SingleTicket-FlexRef" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHc-SingleTicket-FlexRef" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-FlexRef-NoPetsAllowed-1" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-FlexRef-LargeAnimal-1" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-FlexRef-PushChair" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-FlexRef-Wheelchair-1" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-FlexRef-FamilyArea-1" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-FlexRef-Bicycle" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-FlexRef-SmallAnimal-1" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatReservation-1-SingleTicketFlexRef" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatReservation-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatUpgrade-1-SingleTicketFlexRef" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:AdditionalChild-1-SingleTicketFlexRef" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:AdditionalChild-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperBerth-1-SingleTicketFlexRef" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleeperBerth-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Sleeper-1-SingleTicketFlexRef" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicketFlexRefThroughFare" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:SingleTicket"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRefSingleTicketThroughFare" version="NSB:Version:SP-SingleTicket-FlexRef-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:FlexRefundable"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:SingleTicket-PlusRef" version="NSB:Version:SP-SingleTicket-PlusRef-1">
+          <Name>Pluss Refunderbar og Enkeltbillett kombinert</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-PlusRefBicycleFlatFare" version="NSB:Version:SP-SingleTicket-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-PlusRef-Wheelchair-1" version="NSB:Version:SP-SingleTicket-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-PlusRef-SmallAnimal-1" version="NSB:Version:SP-SingleTicket-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-PlusRef-PushChair" version="NSB:Version:SP-SingleTicket-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-PlusRef-Bicycle" version="NSB:Version:SP-SingleTicket-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatReservation-1-SingleTicketPlusRef" version="NSB:Version:SP-SingleTicket-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatReservation-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicketPlusRefThroughFare" version="NSB:Version:SP-SingleTicket-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:SingleTicket"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SingleTicket-PlusRef-LargeAnimal-1" version="NSB:Version:SP-SingleTicket-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PlusRefSingleTicketThroughFare" version="NSB:Version:SP-SingleTicket-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:PlusRefundable"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:FlexRef-PlusRef" version="NSB:Version:SP-FlexRef-PlusRef-1">
+          <Name>Flex Refunderbar og Pluss Refunderbar kombinert</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRef-PlusRefBicycleFlatFare" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHcFree-FlexRef-PlusRef" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHc-FlexRef-PlusRef" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRef-PlusRef-NoPetsAllowed-1" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRef-PlusRef-LargeAnimal-1" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRef-PlusRef-PushChair" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRef-PlusRef-Wheelchair-1" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRef-PlusRef-FamilyArea-1" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRef-PlusRef-Bicycle" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRef-PlusRef-SmallAnimal-1" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatUpgrade-1-FlexRefPlusRef" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:AdditionalChild-1-FlexRefPlusRef" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:AdditionalChild-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperBerth-1-FlexRefPlusRef" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleeperBerth-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Sleeper-1-FlexRefPlusRef" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexRefPlusRefThroughFare" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:FlexRefundable"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PlusRefFlexRefThroughFare" version="NSB:Version:SP-FlexRef-PlusRef-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:PlusRefundable"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:Flex-Plus" version="NSB:Version:SP-Flex-Plus-1">
+          <Name>Flex og Pluss kombinert</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Flex-PlusBicycleFlatFare" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:BicycleFlatFare"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHcFree-Flex-Plus" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:HandicapsleeperFree"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:ReservationHc-Flex-Plus" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Handicapsleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Flex-Plus-NoPetsAllowed-1" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NoPetsAllowed-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Flex-Plus-LargeAnimal-1" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Flex-Plus-PushChair" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Flex-Plus-Wheelchair-1" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Wheelchair-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Flex-Plus-FamilyArea-1" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:FamilyArea-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Flex-Plus-Bicycle" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Flex-Plus-SmallAnimal-1" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SmallAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SeatUpgrade-1-FlexPlus" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:AdditionalChild-1-FlexPlus" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:AdditionalChild-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperBerth-1-FlexPlus" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleeperBerth-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PlusFlexThroughFare" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Plus"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:FlexPlusThroughFare" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Flex"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Sleeper-1-FlexPlus" version="NSB:Version:SP-Flex-Plus-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Sleeper-1"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:Telemark30days" version="NSB:Version:SP-Telemark30days-1">
+          <Name>30-dagersbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:TransferTelemark30days" version="NSB:Version:SP-Telemark30days-1">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:TelemarkTransfer30day"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:Telemark30days" version="NSB:Version:SP-Telemark30days-1">
+              <PreassignedFareProductRef ref="NSB:PreassignedFareProduct:Telemark30days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="NSB:SalesPackage:SupplementProducts" version="NSB:Version:SP-SupplementProducts-2">
+          <Name/>
+          <distributionAssignments>
+            <DistributionAssignment order="0" id="NSB:DistributionAssignment:SupplementProductsGJBMobileTerminal" version="NSB:Version:SP-SupplementProducts-2">
+              <DistributionChannelRef ref="GJB:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="NSB:DistributionAssignment:SupplementProductsNSBMobileTerminal" version="NSB:Version:SP-SupplementProducts-2">
+              <DistributionChannelRef ref="NSB:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="NSB:DistributionAssignment:SupplementProductsNSBApp" version="NSB:Version:SP-SupplementProducts-2">
+              <DistributionChannelRef ref="NSB:DistributionChannel:App"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="NSB:DistributionAssignment:SupplementProductsNSBWeb" version="NSB:Version:SP-SupplementProducts-2">
+              <DistributionChannelRef ref="NSB:DistributionChannel:Web"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="NSB:DistributionAssignment:SupplementProductsENTSalesAndService" version="NSB:Version:SP-SupplementProducts-2">
+              <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+            </DistributionAssignment>
+          </distributionAssignments>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:PlusUpgradeSupplementProducts" version="NSB:Version:SP-SupplementProducts-2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:PlusUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleepUpgradeSupplementProducts" version="NSB:Version:SP-SupplementProducts-2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleepUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SupplementProducts-SeatUpgrade-1" version="NSB:Version:SP-SupplementProducts-2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatUpgrade-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SupplementProducts-SeatReservation-1" version="NSB:Version:SP-SupplementProducts-2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SeatReservation-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SupplementProducts-LargeAnimal-1" version="NSB:Version:SP-SupplementProducts-2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:LargeAnimal-1"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SupplementProducts-Bicycle" version="NSB:Version:SP-SupplementProducts-2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:Bicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:NonReservableBicycleSupplementProducts" version="NSB:Version:SP-SupplementProducts-2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="NSB:SalesPackageElement:SleeperBerthUpgradeSupplementProducts" version="NSB:Version:SP-SupplementProducts-2">
+              <PreassignedFareProductRef ref="NSB:SupplementProduct:SleeperBerthUpgrade"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:44.164</PublicationTimestamp>
+  <ParticipantRef>GJB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="GJB:FareFrame:GJB" version="any">
+      <fareProducts>
+        <SupplementProduct id="GJB:SupplementProduct:BicycleReservation" version="GJB:Version:V1">
+          <Name>Sykkel</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:BicycleReservation" version="GJB:Version:V1">
+              <Name>Sykkel</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:BicycleReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="GJB:PreassignedFareProduct:NSBGjovikbanen" version="GJB:Version:V1">
+          <Name>Gjøvikbanen</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:NSBGjovikbanen" version="GJB:Version:V1">
+              <Name>Gjøvikbanen</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:NSBGjovikbanen"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="GJB:SupplementProduct:SeatReservation" version="GJB:Version:V1">
+          <Name>Reserver sete</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:SeatReservation" version="GJB:Version:V1">
+              <Name>Reserver sete</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:SeatReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="GJB:PreassignedFareProduct:7dayPass" version="GJB:Version:7DayPass">
+          <Name>7 dager</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:7dayPass" version="GJB:Version:V1">
+              <Name>7 dager</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:7dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GJB:PreassignedFareProduct:30dayPass" version="GJB:Version:30DayPass">
+          <Name>30 dager</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:30dayPass" version="GJB:Version:V1">
+              <Name>30 dager</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:30dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GJB:PreassignedFareProduct:365dayPass" version="GJB:Version:365DayPass">
+          <Name>365 dager</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:365dayPass" version="GJB:Version:V1">
+              <Name>365 dager</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:365dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="GJB:SupplementProduct:7dayPassRuterZone1" version="GJB:Version:V1">
+          <Name>Overgang i Ruter sone 1</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:7dayPassRuterZone1" version="GJB:Version:V1">
+              <Name>Overgang i Ruter sone 1</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:7dayPassRuterZone1"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="GJB:PreassignedFareProduct:MiniPrice" version="GJB:Version:MiniPrice">
+          <Name>Minipris</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:MiniPrice" version="GJB:Version:MiniPrice">
+              <Name>Minipris</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:MiniPrice"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="GJB:SupplementProduct:LargeAnimal" version="GJB:Version:SupplementProduct-LargeAnimal-1">
+          <Name>Hund over 40 cm</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:LargeAnimal" version="GJB:Version:SupplementProduct-LargeAnimal-1">
+              <Name>Hund over 40 cm</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:LargeAnimal"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="GJB:PreassignedFareProduct:LowFare" version="GJB:Version:PFP-LowFare-1">
+          <Name>Lavpris</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:LowFare" version="GJB:Version:PFP-LowFare-1">
+              <Name>Lavpris</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:LowFare"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="GJB:PreassignedFareProduct:SingleTicket" version="GJB:Version:PFP-SingleTicket-1">
+          <Name>Gjøvikbanen Enkeltbillett</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:SingleTicket" version="GJB:Version:PFP-SingleTicket-1">
+              <Name>Gjøvikbanen Enkeltbillett</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:SingleTicket"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="GJB:SupplementProduct:7dayPassSeatReservation" version="GJB:Version:SUP-7dayPassSeatReservat-1">
+          <Name>7-dager setereservasjon</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:7dayPassSeatReservation" version="GJB:Version:SUP-7dayPassSeatReservat-1">
+              <Name>7-dager setereservasjon</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:7dayPassSeatReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GJB:SupplementProduct:30dayPassSeatReservation" version="GJB:Version:SUP-30dayPassSeatReserva-1">
+          <Name>30-dager setereservasjon</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:30dayPassSeatReservation" version="GJB:Version:SUP-30dayPassSeatReserva-1">
+              <Name>30-dager setereservasjon</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:30dayPassSeatReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GJB:SupplementProduct:365dayPassSeatReservation" version="GJB:Version:SUP-365dayPassSeatReserv-1">
+          <Name>365-dager setereservasjon</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:365dayPassSeatReservation" version="GJB:Version:SUP-365dayPassSeatReserv-1">
+              <Name>365-dager setereservasjon</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:365dayPassSeatReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GJB:SupplementProduct:NonReservableBicycle" version="GJB:Version:SUP-NonReservableBicycle-1">
+          <Name>Sykkel uten plass</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:NonReservableBicycle" version="GJB:Version:SUP-NonReservableBicycle-1">
+              <Name>Sykkel uten plass</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:NonReservableBicycle"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GJB:SupplementProduct:GjbRuterTransfer7days" version="GJB:Version:SUP:GjbRuterTransfer7day-1">
+          <Name>Ruter sone 1</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:GjbRuterTransfer7days" version="GJB:Version:SUP:GjbRuterTransfer7day-1">
+              <Name>Ruter sone 1</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:GjbRuterTransfer7days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="GJB:SupplementProduct:GjbRuterTransfer30days" version="GJB:Version:SUP:GjbRuterTransfer30day-1">
+          <Name>Ruter sone 1</Name>
+          <ChargingMomentRef ref="GJB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="GJB:AccessRightInProduct:GjbRuterTransfer30days" version="GJB:Version:SUP:GjbRuterTransfer30day-1">
+              <Name>Ruter sone 1</Name>
+              <ValidableElementRef ref="GJB:ValidableElement:GjbRuterTransfer30days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

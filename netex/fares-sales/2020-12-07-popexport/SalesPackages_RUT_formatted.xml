@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:12:41.174</PublicationTimestamp>
+  <ParticipantRef>RUT</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="RUT:FareFrame:RUT" version="any">
+      <salesOfferPackages>
+        <SalesOfferPackage id="RUT:SalesPackage:RuterSingleTicket" version="RUT:Version:V1">
+          <Name>Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="RUT:SalesPackageElement:RuterSingleTicket" version="RUT:Version:V1">
+              <PreassignedFareProductRef ref="RUT:PreassignedFareProduct:RuterSingleTicket"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="RUT:SalesPackage:Ruter30Days" version="RUT:Version:V1">
+          <Name>30-dagersbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="RUT:SalesPackageElement:Ruter30Days" version="RUT:Version:V1">
+              <PreassignedFareProductRef ref="RUT:PreassignedFareProduct:Ruter30Days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="RUT:SalesPackage:Ruter7Days" version="RUT:Version:V1">
+          <Name>7-dagersbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="RUT:SalesPackageElement:Ruter7Days" version="RUT:Version:V1">
+              <PreassignedFareProductRef ref="RUT:PreassignedFareProduct:Ruter7Days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="RUT:SalesPackage:Ruter24Hours" version="RUT:Version:V1">
+          <Name>24-timersbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="RUT:SalesPackageElement:Ruter24Hours" version="RUT:Version:V1">
+              <PreassignedFareProductRef ref="RUT:PreassignedFareProduct:Ruter24Hours"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="RUT:SalesPackage:Ruter365Days" version="RUT:Version:V1">
+          <Name>365-dagersbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="RUT:SalesPackageElement:Ruter365Days" version="RUT:Version:V1">
+              <PreassignedFareProductRef ref="RUT:PreassignedFareProduct:Ruter365Days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="RUT:SalesPackage:SupplementaryTicket" version="RUT:Version:SupplementaryTicket">
+          <Name/>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="RUT:SalesPackageElement:SupplementaryTicket" version="RUT:Version:SupplementaryTicket">
+              <PreassignedFareProductRef ref="RUT:PreassignedFareProduct:SupplementaryTicket"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

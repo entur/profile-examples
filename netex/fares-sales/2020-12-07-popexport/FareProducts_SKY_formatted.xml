@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-04T11:13:21.689</PublicationTimestamp>
+  <ParticipantRef>SKY</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="SKY:FareFrame:SKY" version="any">
+      <fareProducts>
+        <PreassignedFareProduct id="SKY:PreassignedFareProduct:5567d21e" version="SKY:Version:010ab6b1-2a0f-487a-9843-06fc41f00882">
+          <Name>Enkeltbillett sone A</Name>
+          <ChargingMomentRef ref="SKY:ChargingMoment:59f99a24"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SKY:AccessRightInProduct:53440a16" version="SKY:Version:010ab6b1-2a0f-487a-9843-06fc41f00882">
+              <Name>Enkeltbillett sone A</Name>
+              <ValidableElementRef ref="SKY:ValidableElement:fcfa00fb"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SKY:PreassignedFareProduct:16bfcc8b" version="SKY:Version:0f17b10f-90af-42d6-b589-0a17a71cecff">
+          <Name>24 timer</Name>
+          <ChargingMomentRef ref="SKY:ChargingMoment:1a7eaf2f"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SKY:AccessRightInProduct:723f8dca" version="SKY:Version:0f17b10f-90af-42d6-b589-0a17a71cecff">
+              <Name>24 timer</Name>
+              <ValidableElementRef ref="SKY:ValidableElement:3b6f685e"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SKY:PreassignedFareProduct:12a25102" version="SKY:Version:38ad5f64-b2af-444b-b160-4373ce1cdfe7">
+          <Name>Periodebillett 7 dager</Name>
+          <ChargingMomentRef ref="SKY:ChargingMoment:69698d43"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SKY:AccessRightInProduct:c5a7e669" version="SKY:Version:38ad5f64-b2af-444b-b160-4373ce1cdfe7">
+              <Name>Periodebillett 7 dager</Name>
+              <ValidableElementRef ref="SKY:ValidableElement:3421f9d9"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SKY:PreassignedFareProduct:d06d1d91" version="SKY:Version:9a7b8e4f-7477-4805-983e-0f8d006475d5">
+          <Name>Periodebillett 30 dager</Name>
+          <ChargingMomentRef ref="SKY:ChargingMoment:56472f45"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SKY:AccessRightInProduct:fbe78410" version="SKY:Version:9a7b8e4f-7477-4805-983e-0f8d006475d5">
+              <Name>Periodebillett 30 dager</Name>
+              <ValidableElementRef ref="SKY:ValidableElement:dd4bc898"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SKY:PreassignedFareProduct:bdf822f1" version="SKY:Version:b8c5b831-7f35-4edc-ba78-b18fdf6486d5">
+          <Name>Periodebillett 180 dager</Name>
+          <ChargingMomentRef ref="SKY:ChargingMoment:9722be96"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SKY:AccessRightInProduct:c762cb64" version="SKY:Version:b8c5b831-7f35-4edc-ba78-b18fdf6486d5">
+              <Name>Periodebillett 180 dager</Name>
+              <ValidableElementRef ref="SKY:ValidableElement:01867c4b"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SKY:PreassignedFareProduct:50c26d81" version="SKY:Version:f928cbfd-087d-4a63-a20c-8dec5172ae2c">
+          <Name>Periodebillett 30 dager ungdom</Name>
+          <ChargingMomentRef ref="SKY:ChargingMoment:c5d536a7"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SKY:AccessRightInProduct:885fbe39" version="SKY:Version:f928cbfd-087d-4a63-a20c-8dec5172ae2c">
+              <Name>Periodebillett 30 dager ungdom</Name>
+              <ValidableElementRef ref="SKY:ValidableElement:1143a8bc"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>
