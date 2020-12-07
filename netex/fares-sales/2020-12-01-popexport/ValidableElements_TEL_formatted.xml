@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:19.941</PublicationTimestamp>
+  <ParticipantRef>TEL</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="TEL:FareFrame:TEL" version="TEL">
+      <validableElements>
+        <ValidableElement id="TEL:ValidableElement:7a7bce32" version="TEL:Version:V1">
+          <Name>Navn</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="TEL:FareStructureElement:f2029a6f"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="TEL:GenericParameterAssignment:b70988cb" version="TEL:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="TEL:GenericParameterAssignment:0c8b752a" version="TEL:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="TEL:GenericParameterAssignment:5791fb30" version="TEL:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="TEL:ValidableElement:5a19bd4a" version="TEL:Version:V1">
+          <Name>Navn</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="TEL:FareStructureElement:f2029a6f"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="TEL:GenericParameterAssignment:42c85522" version="TEL:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="TEL:GenericParameterAssignment:e0babb46" version="TEL:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="TEL:GenericParameterAssignment:3be00852" version="TEL:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

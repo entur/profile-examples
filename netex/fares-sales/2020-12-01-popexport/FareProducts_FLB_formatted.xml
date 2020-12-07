@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:05:52.151</PublicationTimestamp>
+  <ParticipantRef>FLB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="FLB:FareFrame:FLB" version="FLB">
+      <fareProducts>
+        <PreassignedFareProduct id="FLB:PreassignedFareProduct:Flamsbana" version="FLB:Version:V1">
+          <Name>Flåmsbana</Name>
+          <ChargingMomentRef ref="FLB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="FLB:AccessRightInProduct:Flamsbana" version="FLB:Version:V1">
+              <Name>Flåmsbana</Name>
+              <ValidableElementRef ref="FLB:ValidableElement:Flamsbana"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="FLB:PreassignedFareProduct:FlamsbanaRoundTrip" version="FLB:Version:PFP-FlamsbanaRoundTrip-1">
+          <Name>Flåmsbana t/r</Name>
+          <ChargingMomentRef ref="FLB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="FLB:AccessRightInProduct:FlamsbanaRoundTrip" version="FLB:Version:PFP-FlamsbanaRoundTrip-1">
+              <Name>Flåmsbana t/r</Name>
+              <ValidableElementRef ref="FLB:ValidableElement:FlamsbanaRoundTrip"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="FLB:SupplementProduct:NonReservableBicycle" version="FLB:Version:SUP-NonReservableBicycle-1">
+          <Name>Sykkel uten plass</Name>
+          <ChargingMomentRef ref="FLB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="FLB:AccessRightInProduct:NonReservableBicycle" version="FLB:Version:SUP-NonReservableBicycle-1">
+              <Name>Sykkel uten plass</Name>
+              <ValidableElementRef ref="FLB:ValidableElement:NonReservableBicycle"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

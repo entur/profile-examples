@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:16.856</PublicationTimestamp>
+  <ParticipantRef>ATB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="ATB:FareFrame:ATB" version="ATB">
+      <fareProducts>
+        <PreassignedFareProduct id="ATB:PreassignedFareProduct:d45f6232" version="ATB:Version:V1">
+          <Name>Enkeltbillett</Name>
+          <ChargingMomentRef ref="ATB:ChargingMoment:b67d9506"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="ATB:AccessRightInProduct:26ce3e5e" version="ATB:Version:V1">
+              <Name>Enkeltbillett</Name>
+              <ValidableElementRef ref="ATB:ValidableElement:735d4761"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

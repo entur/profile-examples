@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:03.663</PublicationTimestamp>
+  <ParticipantRef>OPP</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="OPP:FareFrame:OPP" version="OPP">
+      <validableElements>
+        <ValidableElement id="OPP:ValidableElement:c59ac26f" version="OPP:Version:V1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="OPP:FareStructureElement:c2505afb"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="OPP:GenericParameterAssignment:bd9120f0" version="OPP:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="OPP:GenericParameterAssignment:d355919b" version="OPP:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="OPP:GenericParameterAssignment:914bd102" version="OPP:Version:V1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

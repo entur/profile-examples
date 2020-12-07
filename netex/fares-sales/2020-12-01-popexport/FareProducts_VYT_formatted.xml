@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:26.929</PublicationTimestamp>
+  <ParticipantRef>VYT</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="VYT:FareFrame:VYT" version="VYT">
+      <fareProducts>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:LowFare" version="VYT:Version:PFP-LowFare-1">
+          <Name>Lavpris</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:LowFare" version="VYT:Version:PFP-LowFare-1">
+              <Name>Lavpris</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:LowFare"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:PlusRefundable" version="VYT:Version:PFP-PlusRefundable-1">
+          <Name>Pluss Refunderbar</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:PlusRefundable" version="VYT:Version:PFP-PlusRefundable-1">
+              <Name>Pluss Refunderbar</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:PlusRefundable"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:SingleTicket" version="VYT:Version:PFP-SingleTicket-1">
+          <Name>Enkeltbillett</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:SingleTicket" version="VYT:Version:PFP-SingleTicket-1">
+              <Name>Enkeltbillett</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:SingleTicket"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:FlexRefundable" version="VYT:Version:PFP-FlexRefundable-1">
+          <Name>Flex Refunderbar</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:FlexRefundable" version="VYT:Version:PFP-FlexRefundable-1">
+              <Name>Flex Refunderbar</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:FlexRefundable"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:Plus" version="VYT:Version:PFP-Plus-1">
+          <Name>Pluss</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:Plus" version="VYT:Version:PFP-Plus-1">
+              <Name>Pluss</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:Plus"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:Flex" version="VYT:Version:PFP-Flex-1">
+          <Name>Flex</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:Flex" version="VYT:Version:PFP-Flex-1">
+              <Name>Flex</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:Flex"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SaleDiscountRight id="VYT:SaleDiscountRight:Sleep" version="VYT:Version:SDR-Sleep-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:Sleep" version="VYT:Version:PFP-Sleep-1">
+          <Name>Sove</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:Sleep" version="VYT:Version:PFP-Sleep-1">
+              <Name>Sove</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:Sleep"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:SleepRefundable" version="VYT:Version:PFP-SleepRefundable-1">
+          <Name>Sove Refunderbar</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:SleepRefundable" version="VYT:Version:PFP-SleepRefundable-1">
+              <Name>Sove Refunderbar</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:SleepRefundable"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="VYT:SupplementProduct:LargeAnimal" version="VYT:Version:SUP-LargeAnimal-1">
+          <Name>Hund over 40 cm</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:LargeAnimal" version="VYT:Version:SUP-LargeAnimal-1">
+              <Name>Hund over 40 cm</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:LargeAnimal"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:SmallAnimal" version="VYT:Version:SUP-SmallAnimal-1">
+          <Name>Lite kjæledyr</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:SmallAnimal" version="VYT:Version:SUP-SmallAnimal-1">
+              <Name>Lite kjæledyr</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:SmallAnimal"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:PushChair" version="VYT:Version:SUP-PushChair-1">
+          <Name>Barnevogn</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:PushChair" version="VYT:Version:SUP-PushChair-1">
+              <Name>Barnevogn</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:PushChair"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:FamilyArea" version="VYT:Version:SUP-FamilyArea-1">
+          <Name>Familie</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:FamilyArea" version="VYT:Version:SUP-FamilyArea-1">
+              <Name>Familie</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:FamilyArea"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:NoPetsAllowed" version="VYT:Version:SUP-NoPetsAllowed-1">
+          <Name>Dyrefri</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:NoPetsAllowed" version="VYT:Version:SUP-NoPetsAllowed-1">
+              <Name>Dyrefri</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:NoPetsAllowed"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:SeatReservation" version="VYT:Version:SUP-SeatReservation-1">
+          <Name>Reserver sete</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:SeatReservation" version="VYT:Version:SUP-SeatReservation-1">
+              <Name>Reserver sete</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:SeatReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:Wheelchair" version="VYT:Version:SUP-Wheelchair-1">
+          <Name>Rullestol</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:Wheelchair" version="VYT:Version:SUP-Wheelchair-1">
+              <Name>Rullestol</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:Wheelchair"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:NonReservableBicycle" version="VYT:Version:SUP-NonReservableBicycle-1">
+          <Name>Sykkel uten plass</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:NonReservableBicycle" version="VYT:Version:SUP-NonReservableBicycle-1">
+              <Name>Sykkel uten plass</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:NonReservableBicycle"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:Bicycle" version="VYT:Version:SUP-Bicycle-1">
+          <Name>Sykkel</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:Bicycle" version="VYT:Version:SUP-Bicycle-1">
+              <Name>Sykkel</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:Bicycle"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:PlusUpgrade" version="VYT:Version:SUP-PlusUpgrade-1">
+          <Name>Pluss Oppgradering</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:PlusUpgrade" version="VYT:Version:SUP-PlusUpgrade-1">
+              <Name>Pluss Oppgradering</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:PlusUpgrade"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:SleepUpgrade" version="VYT:Version:SUP-SleepUpgrade-1">
+          <Name>Sove Oppgradering</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:SleepUpgrade" version="VYT:Version:SUP-SleepUpgrade-1">
+              <Name>Sove Oppgradering</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:SleepUpgrade"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:BicycleFlatFare" version="VYT:Version:SUP-BicycleFlatFare-1">
+          <Name>Sykkel</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:BicycleFlatFare" version="VYT:Version:SUP-BicycleFlatFare-1">
+              <Name>Sykkel</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:BicycleFlatFare"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="VYT:SupplementProduct:Handicapsleeper" version="VYT:Version:SUP-Handicapsleeper-1">
+          <Name>Sove rullestol</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:Handicapsleeper" version="VYT:Version:SUP-Handicapsleeper-1">
+              <Name>Sove rullestol</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:Handicapsleeper"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:30Days" version="VYT:Version:PFP-30Days-1">
+          <Name>30 dager</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:30Days" version="VYT:Version:PFP-30Days-1">
+              <Name>30 dager</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:30Days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:7Days" version="VYT:Version:PFP-7Days-1">
+          <Name>7 dager</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:7Days" version="VYT:Version:PFP-7Days-1">
+              <Name>7 dager</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:7Days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:365Days" version="VYT:Version:PFP-365Days-1">
+          <Name>365 dager</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="VYT:AccessRightInProduct:365Days" version="VYT:Version:PFP-365Days-1">
+              <Name>365 dager</Name>
+              <ValidableElementRef ref="VYT:ValidableElement:365Days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SaleDiscountRight id="VYT:SaleDiscountRight:Plus" version="VYT:Version:SDR-Plus-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="VYT:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

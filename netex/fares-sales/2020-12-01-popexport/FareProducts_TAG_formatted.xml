@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:05:54.191</PublicationTimestamp>
+  <ParticipantRef>TAG</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="TAG:FareFrame:TAG" version="TAG">
+      <fareProducts>
+        <PreassignedFareProduct id="TAG:PreassignedFareProduct:Tagkompaniet" version="TAG:Version:V1">
+          <Name>Tågkompaniet</Name>
+          <ChargingMomentRef ref="TAG:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="TAG:AccessRightInProduct:Tagkompaniet" version="TAG:Version:V1">
+              <Name>Tågkompaniet</Name>
+              <ValidableElementRef ref="TAG:ValidableElement:Tagkompaniet"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="TAG:PreassignedFareProduct:Nabotog" version="TAG:Version:V1">
+          <Name>Nabotog</Name>
+          <ChargingMomentRef ref="TAG:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="TAG:AccessRightInProduct:Nabotog" version="TAG:Version:V1">
+              <Name>Nabotog</Name>
+              <ValidableElementRef ref="TAG:ValidableElement:Nabotog"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

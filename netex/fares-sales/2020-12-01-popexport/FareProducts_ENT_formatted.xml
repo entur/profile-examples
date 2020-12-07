@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:22.923</PublicationTimestamp>
+  <ParticipantRef>ENT</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="ENT:FareFrame:ENT" version="ENT">
+      <fareProducts>
+        <SaleDiscountRight id="ENT:SaleDiscountRight:PassHolder" version="ENT:Version:V1">
+          <Name>Interrail/Eurail</Name>
+          <ChargingMomentRef ref="ENT:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="ENT:SaleDiscountRight:GenerellFritid" version="ENT:Version:SDR-GenerellFritid-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="ENT:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="ENT:SaleDiscountRight:ReservasjonsavgifterA" version="ENT:Version:SDR-Reservasjonsavgifter-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="ENT:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="ENT:SaleDiscountRight:ReservasjonsavgifterB" version="ENT:Version:SDR-Reservasjonsavgifter-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="ENT:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="ENT:SaleDiscountRight:Periode" version="ENT:Version:SDR-Periode-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="ENT:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="ENT:SaleDiscountRight:Nullbillett" version="ENT:Version:SDR-Nullbillett-1">
+          <Name>Nullbillettrabatt</Name>
+          <ChargingMomentRef ref="ENT:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

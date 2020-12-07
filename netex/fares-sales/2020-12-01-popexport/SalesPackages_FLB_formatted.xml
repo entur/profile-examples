@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:05:51.406</PublicationTimestamp>
+  <ParticipantRef>FLB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="FLB:FareFrame:FLB" version="FLB">
+      <salesOfferPackages>
+        <SalesOfferPackage id="FLB:SalesPackage:Flamsbana" version="FLB:Version:V1">
+          <Name>Flåmsbana</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="FLB:SalesPackageElement:Flamsbana" version="FLB:Version:V1">
+              <PreassignedFareProductRef ref="FLB:PreassignedFareProduct:Flamsbana"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="FLB:SalesPackageElement:NonReservableBicycleFlamsbana" version="FLB:Version:V1">
+              <PreassignedFareProductRef ref="FLB:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="FLB:SalesPackage:FlamsbanaRoundTrip" version="FLB:Version:SP-FlamsbanaRoundTrip-1">
+          <Name>Flåmsbana Rundtur</Name>
+          <distributionAssignments>
+            <DistributionAssignment order="0" id="FLB:DistributionAssignment:SalesAndService" version="FLB:Version:SP-FlamsbanaRoundTrip-1">
+              <DistributionChannelRef ref="FLB:DistributionChannel:SalesAndService"/>
+            </DistributionAssignment>
+          </distributionAssignments>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="FLB:SalesPackageElement:FlamsbanaRoundTrip" version="FLB:Version:SP-FlamsbanaRoundTrip-1">
+              <PreassignedFareProductRef ref="FLB:PreassignedFareProduct:FlamsbanaRoundTrip"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:05:56.173</PublicationTimestamp>
+  <ParticipantRef>KOL</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="KOL:FareFrame:KOL" version="KOL">
+      <fareProducts>
+        <PreassignedFareProduct id="KOL:PreassignedFareProduct:7dayPass" version="KOL:Version:V1">
+          <Name>Kolumbus 7 dager</Name>
+          <ChargingMomentRef ref="KOL:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="KOL:AccessRightInProduct:7dayPass" version="KOL:Version:V1">
+              <Name>Kolumbus 7 dager</Name>
+              <ValidableElementRef ref="KOL:ValidableElement:7dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="KOL:PreassignedFareProduct:30dayPass" version="KOL:Version:V1">
+          <Name>Kolumbus 30 dager</Name>
+          <ChargingMomentRef ref="KOL:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="KOL:AccessRightInProduct:30dayPass" version="KOL:Version:V1">
+              <Name>Kolumbus 30 dager</Name>
+              <ValidableElementRef ref="KOL:ValidableElement:30dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="KOL:PreassignedFareProduct:365dayPass" version="KOL:Version:V1">
+          <Name>Kolumbus 365 dager</Name>
+          <ChargingMomentRef ref="KOL:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="KOL:AccessRightInProduct:365dayPass" version="KOL:Version:V1">
+              <Name>Kolumbus 365 dager</Name>
+              <ValidableElementRef ref="KOL:ValidableElement:365dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="KOL:PreassignedFareProduct:24H" version="KOL:Version:V1">
+          <Name>Kolumbus 24 timer</Name>
+          <ChargingMomentRef ref="KOL:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="KOL:AccessRightInProduct:24H" version="KOL:Version:V1">
+              <Name>Kolumbus 24 timer</Name>
+              <ValidableElementRef ref="KOL:ValidableElement:24H"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="KOL:PreassignedFareProduct:YouthPass" version="KOL:Version:V1">
+          <Name>Ungdomsbillett</Name>
+          <ChargingMomentRef ref="KOL:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="KOL:AccessRightInProduct:YouthPass" version="KOL:Version:V1">
+              <Name>Ungdomsbillett</Name>
+              <ValidableElementRef ref="KOL:ValidableElement:YouthPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="KOL:PreassignedFareProduct:Enkeltbillett" version="KOL:Version:V2">
+          <Name>Enkeltbillett</Name>
+          <ChargingMomentRef ref="KOL:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="KOL:AccessRightInProduct:Enkeltbillett" version="KOL:Version:V2">
+              <Name>Enkeltbillett</Name>
+              <ValidableElementRef ref="KOL:ValidableElement:Enkeltbillett"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

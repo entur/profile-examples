@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:07:06.738</PublicationTimestamp>
+  <ParticipantRef>TEL</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="TEL:FareFrame:TEL" version="TEL">
+      <fareStructureElements>
+        <FareStructureElement id="TEL:FareStructureElement:f2029a6f" version="TEL:Version:V1">
+          <Name>Sonetabell – enkeltbillett</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="TEL:GeographicalInterval:dcef3ce3"/>
+            <GeographicalIntervalRef ref="TEL:GeographicalInterval:f7981e68"/>
+            <GeographicalIntervalRef ref="TEL:GeographicalInterval:31f3c93e"/>
+            <GeographicalIntervalRef ref="TEL:GeographicalInterval:d902dd9a"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="TEL:GenericParameterAssignment:29db5d04" version="TEL:Version:V1">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="TEL:GenericParameterAssignment:add93c3e" version="TEL:Version:V1">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+      </fareStructureElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

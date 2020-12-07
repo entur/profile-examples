@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:16.182</PublicationTimestamp>
+  <ParticipantRef>ATB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="ATB:FareFrame:ATB" version="ATB">
+      <salesOfferPackages>
+        <SalesOfferPackage id="ATB:SalesPackage:61a6dff1" version="ATB:Version:a237c610-3b2d-4e99-b447-9a5524a06f6b">
+          <Name>Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="ATB:SalesPackageElement:b6f3607e" version="ATB:Version:a237c610-3b2d-4e99-b447-9a5524a06f6b">
+              <PreassignedFareProductRef ref="ATB:PreassignedFareProduct:d45f6232"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

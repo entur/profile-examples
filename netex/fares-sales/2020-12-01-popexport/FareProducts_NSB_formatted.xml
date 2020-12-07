@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:05:44.552</PublicationTimestamp>
+  <ParticipantRef>NSB</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="NSB:FareFrame:NSB" version="NSB">
+      <fareProducts>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:CustomerCard" version="NSB:Version:V1">
+          <Name>Kundekort</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SupplementProduct id="NSB:SupplementProduct:SeatUpgrade" version="NSB:Version:V1">
+          <Name>Komfort</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SeatUpgrade" version="NSB:Version:V1">
+              <Name>Komfort</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SeatUpgrade"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:SeatReservation" version="NSB:Version:SeatReservation2019">
+          <Name>Reserver sete</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SeatReservation" version="NSB:Version:V1">
+              <Name>Reserver sete</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SeatReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:30dayPassRuterZone1" version="NSB:Version:V1">
+          <Name>Overgang i Ruter sone 1</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:30dayPassRuterZone1" version="NSB:Version:V1">
+              <Name>Overgang i Ruter sone 1</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:30dayPassRuterZone1"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:FamilyArea" version="NSB:Version:V1">
+          <Name>Familie</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:FamilyArea" version="NSB:Version:V1">
+              <Name>Familie</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:FamilyArea"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:NoPetsAllowed" version="NSB:Version:V1">
+          <Name>Dyrefri</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:NoPetsAllowed" version="NSB:Version:V1">
+              <Name>Dyrefri</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:NoPetsAllowed"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:TravelPassBusHedmark" version="NSB:Version:V1">
+          <Name>Overgang buss Hedmark</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:TravelPassBusHedmark" version="NSB:Version:V1">
+              <Name>Overgang buss Hedmark</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:TravelPassBusHedmark"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:PushChairReservation" version="NSB:Version:V1">
+          <Name>Barnevogn</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:PushChairReservation" version="NSB:Version:V1">
+              <Name>Barnevogn</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:PushChairReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:LargeAnimal" version="NSB:Version:V1">
+          <Name>Hund over 40 cm</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:LargeAnimal" version="NSB:Version:V1">
+              <Name>Hund over 40 cm</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:LargeAnimal"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:SmallAnimal" version="NSB:Version:V1">
+          <Name>Lite kjæledyr</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SmallAnimal" version="NSB:Version:V1">
+              <Name>Lite kjæledyr</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SmallAnimal"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:Wheelchair" version="NSB:Version:V1">
+          <Name>Rullestol</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:WheelChairReservation" version="NSB:Version:V1">
+              <Name>Rullestol</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:WheelChairReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:SeatAsAccommodation" version="NSB:Version:V1">
+          <Name>Komfort Natt</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SeatAsAccommodation" version="NSB:Version:V1">
+              <Name>Komfort Natt</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SeatAsAccommodation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:Reservation" version="NSB:Version:V1">
+          <Name>Ordinær Reservasjon</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Reservation" version="NSB:Version:V1">
+              <Name>Ordinær Reservasjon</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Reservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:BicycleReserving" version="NSB:Version:V1">
+          <Name>Sykkel</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:BicycleReserving" version="NSB:Version:V1">
+              <Name>Sykkel</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:BicycleReserving"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:BicycleFlatFare" version="NSB:Version:SUP-BicycleFlatFare-2">
+          <Name>Sykkel</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:BicycleFlatFare" version="NSB:Version:V1">
+              <Name>Sykkel</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:BicycleFlatFare"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:PremiumSeat" version="NSB:Version:PremiumSeat2019">
+          <Name/>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:PremiumSeat" version="NSB:Version:PremiumSeat2019">
+              <Name/>
+              <ValidableElementRef ref="NSB:ValidableElement:PremiumSeat"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:Sleeper" version="NSB:Version:V1">
+          <Name>Sove</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Sleeper" version="NSB:Version:V1">
+              <Name>Sove</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Sleeper"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:Ordinary" version="NSB:Version:V1">
+          <Name>Ordinær</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Ordinary" version="NSB:Version:V1">
+              <Name>Ordinær</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Ordinary"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:MiniPrice" version="NSB:Version:V1">
+          <Name>Minipris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:MiniPrice" version="NSB:Version:V1">
+              <Name>Minipris</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:MiniPrice"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:Bergensbanen" version="NSB:Version:V1">
+          <Name>Ordinær</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Bergensbanen" version="NSB:Version:V1">
+              <Name>Ordinær</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Bergensbanen"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="NSB:SupplementProduct:SleeperBerth" version="NSB:Version:BerthChild2019">
+          <Name>Ekstra voksen i sovekupé</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SleeperBerth" version="NSB:Version:BerthChild2019">
+              <Name>Ekstra voksen i sovekupé</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SleeperBerth"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:AdditionalChild" version="NSB:Version:BerthChild2019">
+          <Name>Barn i sovekupé</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:AdditionalChild" version="NSB:Version:BerthChild2019">
+              <Name>Barn i sovekupé</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:AdditionalChild"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:Telemark" version="NSB:Version:V1">
+          <Name>Lokal Telemark</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Telemark" version="NSB:Version:V1">
+              <Name>Lokal Telemark</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Telemark"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:Trondelag" version="NSB:Version:V1">
+          <Name>Ordinær Trøndelag</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Trondelag" version="NSB:Version:V1">
+              <Name>Ordinær Trøndelag</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Trondelag"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:Raumabanen" version="NSB:Version:V1">
+          <Name>Raumabanen</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Raumabanen" version="NSB:Version:V1">
+              <Name>Raumabanen</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Raumabanen"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:RaumabanenPeak" version="NSB:Version:V1">
+          <Name>Raumabanen</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:RaumabanenPeak" version="NSB:Version:V1">
+              <Name>Raumabanen</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:RaumabanenPeak"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:7dayPass" version="NSB:Version:7DayPass">
+          <Name>7 dager</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:7dayPass" version="NSB:Version:V1">
+              <Name>7 dager</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:7dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:30dayPass" version="NSB:Version:30DayPass">
+          <Name>30 dager</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:30dayPass" version="NSB:Version:V1">
+              <Name>30 dager</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:30dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:365dayPass" version="NSB:Version:365DayPass">
+          <Name>365 dager</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:365dayPass" version="NSB:Version:V1">
+              <Name>365 dager</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:365dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:NSBSkyss30dayPass" version="NSB:Version:V1">
+          <Name/>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:NSBSkyss30dayPass" version="NSB:Version:V1">
+              <Name/>
+              <ValidableElementRef ref="NSB:ValidableElement:NSBSkyss30dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:SpecialOffer" version="NSB:Version:SpecialOfferV2">
+          <Name>Kampanjebillett</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SpecialOffer" version="NSB:Version:SpecialOfferV2">
+              <Name>Kampanjebillett</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SpecialOffer"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="NSB:SupplementProduct:7dayPassRuterZone1" version="NSB:Version:V1">
+          <Name>Overgang i Ruter sone 1</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:7dayPassRuterZone1" version="NSB:Version:V1">
+              <Name>Overgang i Ruter sone 1</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:7dayPassRuterZone1"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:Handicapsleeper" version="NSB:Version:SUPHandicapSleeper1">
+          <Name>Sove rullestol</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:HandicapSleeperReservation" version="NSB:Version:SUPHandicapSleeper1">
+              <Name>Sove rullestol</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:HandicapSleeper"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:FlexRefundable" version="NSB:Version:PFP-FlexRefundable-1">
+          <Name>Flex Refunderbar</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:FlexRefundable" version="NSB:Version:PFP-FlexRefundable-1">
+              <Name>Flex Refunderbar</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:FlexRefundable"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:PlusRefundable" version="NSB:Version:PFP-PlusRefundable-1">
+          <Name>Pluss Refunderbar</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:PlusRefundable" version="NSB:Version:PFP-PlusRefundable-1">
+              <Name>Pluss Refunderbar</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:PlusRefundable"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:Flex" version="NSB:Version:PFP-Flex-1">
+          <Name>Flex</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Flex" version="NSB:Version:PFP-Flex-1">
+              <Name>Flex</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Flex"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:Plus" version="NSB:Version:PFP-Plus-1">
+          <Name>Pluss</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Plus" version="NSB:Version:PFP-Plus-1">
+              <Name>Pluss</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Plus"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:LowFare" version="NSB:Version:PFP-LowFare-1">
+          <Name>Lavpris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:LowFare" version="NSB:Version:PFP-LowFare-1">
+              <Name>Lavpris</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:LowFare"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:SingleTicket" version="NSB:Version:PFP-SingleTicket-1">
+          <Name>Enkeltbillett</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SingleTicket" version="NSB:Version:PFP-SingleTicket-1">
+              <Name>Enkeltbillett</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SingleTicket"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="NSB:SupplementProduct:LargeAnimal-1" version="NSB:Version:SupplementProductLargeAnimal-1-1">
+          <Name>Hund over 40 cm</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:LargeAnimal-1" version="NSB:Version:SupplementProductLargeAnimal-1-1">
+              <Name>Hund over 40 cm</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:LargeAnimal-1"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:SeatReservation-1" version="NSB:Version:SupplementProductSeatReservation-1-1">
+          <Name>Reserver sete</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SeatReservation-1" version="NSB:Version:SupplementProductSeatReservation-1-1">
+              <Name>Reserver sete</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SeatReservation-1"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:SmallAnimal-1" version="NSB:Version:SupplementProductSmallAnimal-1-1">
+          <Name>Lite kjæledyr</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SmallAnimal-1" version="NSB:Version:SupplementProductSmallAnimal-1-1">
+              <Name>Lite kjæledyr</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SmallAnimal-1"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:FamilyArea-1" version="NSB:Version:SupplementProductFamilyArea-1-1">
+          <Name>Familie</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:FamilyArea-1" version="NSB:Version:SupplementProductFamilyArea-1-1">
+              <Name>Familie</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:FamilyArea-1"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:NoPetsAllowed-1" version="NSB:Version:SupplementProductNoPetsAllowed-1-1">
+          <Name>Dyrefri</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:NoPetsAllowed-1" version="NSB:Version:SupplementProductNoPetsAllowed-1-1">
+              <Name>Dyrefri</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:NoPetsAllowed-1"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:Wheelchair-1" version="NSB:Version:SupplementProductWheelchair-1-1">
+          <Name>Rullestol</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Wheelchair-1" version="NSB:Version:SupplementProductWheelchair-1-1">
+              <Name>Rullestol</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Wheelchair-1"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:PushChair" version="NSB:Version:SupplementProductPushChair-1">
+          <Name>Barnevogn</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:PushChair" version="NSB:Version:SupplementProductPushChair-1">
+              <Name>Barnevogn</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:PushChair"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:Handicapsleeper-1" version="NSB:Version:SupplementProductHandicapsleeper-1-1">
+          <Name>Sove rullestol</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Handicapsleeper-1" version="NSB:Version:SupplementProductHandicapsleeper-1-1">
+              <Name>Sove rullestol</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Handicapsleeper-1"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:Sleep" version="NSB:Version:PFP-Sleep-1">
+          <Name>Sove</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:MiniSleep" version="NSB:Version:PFP-Sleep-1">
+              <Name>Sove</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Sleep"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:SleepRefundable" version="NSB:Version:PFP-SleepRefundable-1">
+          <Name>Sove Refunderbar</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Sleep" version="NSB:Version:PFP-SleepRefundable-1">
+              <Name>Sove Refunderbar</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SleepRefundable"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="NSB:SupplementProduct:Sleeper-1" version="NSB:Version:SUP-Sleeper-1">
+          <Name>Sove</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Sleeper-1" version="NSB:Version:SUP-Sleeper-1">
+              <Name>Sove</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Sleeper"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:SleeperBerth-1" version="NSB:Version:SUP-SleeperBerth-1">
+          <Name>Ekstra voksen i sovekupé</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SleeperBerth-1" version="NSB:Version:SUP-SleeperBerth-1">
+              <Name>Ekstra voksen i sovekupé</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SleeperBerth"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:AdditionalChild-1" version="NSB:Version:SUP-AdditionalChild-1">
+          <Name>Barn i sovekupé</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:AdditionalChild-1" version="NSB:Version:SUP-AdditionalChild-1">
+              <Name>Barn i sovekupé</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:AdditionalChild"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:SeatUpgrade-1" version="NSB:Version:SUP-SeatUpgrade-1">
+          <Name>Komfort</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SeatUpgrade-1" version="NSB:Version:SUP-SeatUpgrade-1">
+              <Name>Komfort</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SeatUpgrade"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:Bicycle" version="NSB:Version:SupplementProductBicycle-1">
+          <Name>Sykkel</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Bicycle" version="NSB:Version:SupplementProductBicycle-1">
+              <Name>Sykkel</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Bicycle"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="NSB:PreassignedFareProduct:Telemark30days" version="NSB:Version:PFP-Telemark30days-1">
+          <Name>30-dagersbillett</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:Telemark30days" version="NSB:Version:PFP-Telemark30days-1">
+              <Name>30-dagersbillett</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:Telemark30days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="NSB:SupplementProduct:7dayPassBrakarTransfer" version="NSB:Version:SUP-7dayPassBrakarTransfer-1">
+          <Name>Overgang til Brakar 1 sone</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:7dayPassBrakarTransfer" version="NSB:Version:VE-7dayPassBrakarTransfer-1">
+              <Name>Overgang til Brakar 1 sone</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:7dayPassBrakarTransfer"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:30dayPassBrakarTransfer" version="NSB:Version:SUP-30dayPassBrakarTransfer-1">
+          <Name>Brakar buss</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:30dayPassBrakarTransfer" version="NSB:Version:VE-30dayPassBrakarTransfer-1">
+              <Name>Brakar buss</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:30dayPassBrakarTransfer"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:HandicapsleeperFree" version="NSB:Version:SUPHandicapSleeperFree1">
+          <Name>Sove rullestol</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:HandicapSleeperFreeReservation" version="NSB:Version:SUPHandicapSleeperFree1">
+              <Name>Sove rullestol</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:HandicapSleeperFree"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:SleepUpgrade" version="NSB:Version:SUP-SleepUpgrade-1">
+          <Name>Sove oppgradering</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SleepUpgrade" version="NSB:Version:SUP-SleepUpgrade-1">
+              <Name>Sove oppgradering</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SleepUpgrade"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:PlusUpgrade" version="NSB:Version:SUP-PlusUpgrade-1">
+          <Name>Pluss oppgradering</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:PlusUpgrade" version="NSB:Version:SUP-PlusUpgrade-1">
+              <Name>Pluss oppgradering</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:PlusUpgrade"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:SleeperBerthUpgrade" version="NSB:Version:SUP-SleeperBerthUpgrade-1">
+          <Name>Ekstra voksen i sovekupé oppgradering</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:SleeperBerthUpgrade" version="NSB:Version:SUP-SleeperBerthUpgrade-1">
+              <Name>Ekstra voksen i sovekupé oppgradering</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:SleeperBerthUpgrade"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:Plus" version="NSB:Version:SDR-Plus-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:Sleep" version="NSB:Version:SDR-Sleep-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SupplementProduct id="NSB:SupplementProduct:7dayPassSeatReservation" version="NSB:Version:SUP-7dayPassSeatReservat-1">
+          <Name>7-dager setereservasjon</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:7dayPassSeatReservation" version="NSB:Version:SUP-7dayPassSeatReservat-1">
+              <Name>7-dager setereservasjon</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:7dayPassSeatReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:30dayPassSeatReservation" version="NSB:Version:SUP-30dayPassSeatReserva-1">
+          <Name>30-dager setereservasjon</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:30dayPassSeatReservation" version="NSB:Version:SUP-30dayPassSeatReserva-1">
+              <Name>30-dager setereservasjon</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:30dayPassSeatReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:365dayPassSeatReservation" version="NSB:Version:SUP-365dayPassSeatReserv-1">
+          <Name>365-dager setereservasjon</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:365dayPassSeatReservation" version="NSB:Version:SUP-365dayPassSeatReserv-1">
+              <Name>365-dager setereservasjon</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:365dayPassSeatReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:30dayPassHedmarkTransfer" version="NSB:Version:SUP-30dayPassHedmarkTransfer-1">
+          <Name>Buss Innlandstrafikk</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:30dayPassHedmarkTransfer" version="NSB:Version:VE-30dayPassHedmarkTransfer-1">
+              <Name>Buss Innlandstrafikk</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:30dayPassHedmarkTransfer"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:NonReservableBicycle" version="NSB:Version:SUP-NonReservableBicycle-1">
+          <Name>Sykkel uten plass</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:NonReservableBicycle" version="NSB:Version:SUP-NonReservableBicycle-1">
+              <Name>Sykkel uten plass</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:NonReservableBicycle"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:TelemarkTransfer30day" version="NSB:Version:SUP-TelemarkTransfer30day-1">
+          <Name>Buss Grenland/Notodden</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:TelemarkTransfer30day" version="NSB:Version:VE-TelemarkTransfer30day-1">
+              <Name>Buss Grenland/Notodden</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:TelemarkTransfer30day"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:30dayPassVestfold" version="NSB:Version:SUP-30dayPassVestfold-1">
+          <Name>Vestfoldkortet</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:30dayPassVestfold" version="NSB:Version:VE-30dayPassVestfold-1">
+              <Name>Vestfoldkortet</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:30dayPassVestfold"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:NsbOstfoldTransfer30days" version="NSB:Version:SUP-NsbOstfoldTransfer30day-1">
+          <Name>Buss Østfold kollektivtrafikk</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:NsbOstfoldTransfer30days" version="NSB:Version:SUP-NsbOstfoldTransfer30day-1">
+              <Name>Buss Østfold kollektivtrafikk</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:NsbOstfoldTransfer30days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="NSB:SupplementProduct:NsbOstfoldTransfer7days" version="NSB:Version:SUP-NsbOstfoldTransfer7day-1">
+          <Name>Øsftfold Sonetillegg</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="NSB:AccessRightInProduct:NsbOstfoldTransfer7days" version="NSB:Version:SUP-NsbOstfoldTransfer7day-1">
+              <Name>Øsftfold Sonetillegg</Name>
+              <ValidableElementRef ref="NSB:ValidableElement:NsbOstfoldTransfer7days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice010" version="NSB:Version:SDR-BestPrice010-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice020" version="NSB:Version:SDR-BestPrice020-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice030" version="NSB:Version:SDR-BestPrice030-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice040" version="NSB:Version:SDR-BestPrice040-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice050" version="NSB:Version:SDR-BestPrice050-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice060" version="NSB:Version:SDR-BestPrice060-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice070" version="NSB:Version:SDR-BestPrice070-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice074" version="NSB:Version:SDR-BestPrice074-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice080" version="NSB:Version:SDR-BestPrice080-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice090" version="NSB:Version:SDR-BestPrice090-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SaleDiscountRight id="NSB:SaleDiscountRight:BestPrice100" version="NSB:Version:SDR-BestPrice100-1">
+          <Name>Bestepris</Name>
+          <ChargingMomentRef ref="NSB:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

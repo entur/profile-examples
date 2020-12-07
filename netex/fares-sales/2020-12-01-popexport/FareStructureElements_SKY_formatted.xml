@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:07:11.759</PublicationTimestamp>
+  <ParticipantRef>SKY</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="SKY:FareFrame:SKY" version="SKY">
+      <fareStructureElements>
+        <FareStructureElement id="SKY:FareStructureElement:fec07f44" version="SKY:Version:9b26338a-0be7-4661-a268-1fd278d3bddb">
+          <Name>Sonetabell – enkeltbillett</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:0bd43db2"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:477b5d04" version="SKY:Version:9b26338a-0be7-4661-a268-1fd278d3bddb">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:f622e128" version="SKY:Version:9b26338a-0be7-4661-a268-1fd278d3bddb">
+              <Name>Sonetabell – enkeltbillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="SKY:FareStructureElement:cbeaf179" version="SKY:Version:0315dfa5-cc6d-443d-b0fe-f70a17e7929f">
+          <Name>Sonetabell - periodebillett 24 timer</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:4bf109ca"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:1968cde9" version="SKY:Version:0315dfa5-cc6d-443d-b0fe-f70a17e7929f">
+              <Name>Sonetabell - periodebillett 24 timer</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:7d08ae81" version="SKY:Version:0315dfa5-cc6d-443d-b0fe-f70a17e7929f">
+              <Name>Sonetabell - periodebillett 24 timer</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="SKY:FareStructureElement:1c5b2882" version="SKY:Version:bc229137-48c2-4ed2-bb86-edbce34fe893">
+          <Name>Sonetabell - periodebillett 7 dager</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:6157fc82"/>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:4967085e"/>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:ddcd18ef"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:3bc80060" version="SKY:Version:bc229137-48c2-4ed2-bb86-edbce34fe893">
+              <Name>Sonetabell - periodebillett 7 dager</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:3e3de232" version="SKY:Version:bc229137-48c2-4ed2-bb86-edbce34fe893">
+              <Name>Sonetabell - periodebillett 7 dager</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="SKY:FareStructureElement:c5e624c1" version="SKY:Version:02dead59-434c-4d87-b717-d9d45b9a552f">
+          <Name>Sonetabell - periodebillett 30 dager</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:653aec92"/>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:faf6d84b"/>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:3bdc4dd7"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:a6b34c7c" version="SKY:Version:02dead59-434c-4d87-b717-d9d45b9a552f">
+              <Name>Sonetabell - periodebillett 30 dager</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:269445cc" version="SKY:Version:02dead59-434c-4d87-b717-d9d45b9a552f">
+              <Name>Sonetabell - periodebillett 30 dager</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="SKY:FareStructureElement:8de20e12" version="SKY:Version:33971d80-2705-4be7-b66c-2165d310d8e3">
+          <Name>Sonetabell - periodebillett 180 dager</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:2715779b"/>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:3bdfae1d"/>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:b8064d18"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:84e9fcc7" version="SKY:Version:33971d80-2705-4be7-b66c-2165d310d8e3">
+              <Name>Sonetabell - periodebillett 180 dager</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:c1789df1" version="SKY:Version:33971d80-2705-4be7-b66c-2165d310d8e3">
+              <Name>Sonetabell - periodebillett 180 dager</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="SKY:FareStructureElement:28b24356" version="SKY:Version:9db6b418-dbdf-45f3-9d9d-572e37cd17c8">
+          <Name>Fastpris - periodebillett 30 dager ungdom</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:604a58d9"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:40e2b740" version="SKY:Version:9db6b418-dbdf-45f3-9d9d-572e37cd17c8">
+              <Name>Fastpris - periodebillett 30 dager ungdom</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:fbafe606" version="SKY:Version:9db6b418-dbdf-45f3-9d9d-572e37cd17c8">
+              <Name>Fastpris - periodebillett 30 dager ungdom</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+        <FareStructureElement id="SKY:FareStructureElement:d891c271" version="SKY:Version:199f640e-42b8-40e4-934f-715a34b8f058">
+          <Name>Fastpris - periodebillett 30 dager ungdom</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="SKY:GeographicalInterval:2923eb7f"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:95037646" version="SKY:Version:199f640e-42b8-40e4-934f-715a34b8f058">
+              <Name>Fastpris - periodebillett 30 dager ungdom</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:0b2e78ad" version="SKY:Version:199f640e-42b8-40e4-934f-715a34b8f058">
+              <Name>Fastpris - periodebillett 30 dager ungdom</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+      </fareStructureElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:09.683</PublicationTimestamp>
+  <ParticipantRef>BRA</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="BRA:FareFrame:BRA" version="BRA">
+      <fareProducts>
+        <PreassignedFareProduct id="BRA:PreassignedFareProduct:4c23346d" version="BRA:Version:temporary">
+          <Name/>
+          <ChargingMomentRef ref="BRA:ChargingMoment:d9e48dc8"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="BRA:AccessRightInProduct:3662b179" version="BRA:Version:V1">
+              <Name/>
+              <ValidableElementRef ref="BRA:ValidableElement:42309e86"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="BRA:PreassignedFareProduct:a5046e69" version="BRA:Version:V1">
+          <Name>Enkeltbillett</Name>
+          <ChargingMomentRef ref="BRA:ChargingMoment:25b0a09a"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="BRA:AccessRightInProduct:eb65b48b" version="BRA:Version:V1">
+              <Name>Enkeltbillett</Name>
+              <ValidableElementRef ref="BRA:ValidableElement:5b4c2709"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="BRA:PreassignedFareProduct:bcedff9f" version="BRA:Version:V1">
+          <Name>Bybillett</Name>
+          <ChargingMomentRef ref="BRA:ChargingMoment:3f230fda"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="BRA:AccessRightInProduct:2dd261c6" version="BRA:Version:V1">
+              <Name>Bybillett</Name>
+              <ValidableElementRef ref="BRA:ValidableElement:acb8ceb9"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

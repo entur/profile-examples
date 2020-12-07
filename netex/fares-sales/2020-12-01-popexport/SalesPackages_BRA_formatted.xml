@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:08.963</PublicationTimestamp>
+  <ParticipantRef>BRA</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="BRA:FareFrame:BRA" version="BRA">
+      <salesOfferPackages>
+        <SalesOfferPackage id="BRA:SalesPackage:1a8b63ef" version="BRA:Version:V1">
+          <Name>Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="BRA:SalesPackageElement:de481045" version="BRA:Version:V1">
+              <PreassignedFareProductRef ref="BRA:PreassignedFareProduct:a5046e69"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="BRA:SalesPackage:df0533c6" version="BRA:Version:V1">
+          <Name>Bybillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="BRA:SalesPackageElement:8dbb3a32" version="BRA:Version:V1">
+              <PreassignedFareProductRef ref="BRA:PreassignedFareProduct:bcedff9f"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="BRA:SalesPackage:fdcd4a21" version="BRA:Version:temporary">
+          <Name/>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

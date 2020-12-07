@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:14.623</PublicationTimestamp>
+  <ParticipantRef>SJN</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="SJN:FareFrame:SJN" version="SJN">
+      <fareProducts>
+        <PreassignedFareProduct id="SJN:PreassignedFareProduct:StandardFullFlex" version="SJN:Version:PFP-StandardFullFlex-1">
+          <Name>Standard refunderbar</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:StandardFullFlex" version="SJN:Version:PFP-StandardFullFlex-1">
+              <Name>Standard refunderbar</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:StandardFullFlex"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="SJN:SupplementProduct:SmallAnimal" version="SJN:Version:SUP-SmallAnimal-1">
+          <Name>Lite kjæledyr</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:SmallAnimal" version="SJN:Version:SUP-SmallAnimal-1">
+              <Name>Lite kjæledyr</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:SmallAnimal"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:LargeAnimal" version="SJN:Version:SUP-LargeAnimal-1">
+          <Name>Hund over 40 cm</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:LargeAnimal" version="SJN:Version:SUP-LargeAnimal-1">
+              <Name>Hund over 40 cm</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:LargeAnimal"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:PushChair" version="SJN:Version:SUP-PushChair-1">
+          <Name>Barnevogn</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:PushChair" version="SJN:Version:SUP-PushChair-1">
+              <Name>Barnevogn</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:PushChair"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:Sleeper" version="SJN:Version:SUP-Sleeper-1">
+          <Name>Sove</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:Sleeper" version="SJN:Version:SUP-Sleeper-1">
+              <Name>Sove</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:Sleeper"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="SJN:PreassignedFareProduct:Standard" version="SJN:Version:PFP-Standard-1">
+          <Name>Standard</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:Standard" version="SJN:Version:PFP-Standard-1">
+              <Name>Standard</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:Standard"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SJN:PreassignedFareProduct:Premium" version="SJN:Version:PFP-Premium-1">
+          <Name>Premium</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:Premium" version="SJN:Version:PFP-Premium-1">
+              <Name>Premium</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:Premium"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SJN:PreassignedFareProduct:PremiumFullFlex" version="SJN:Version:PFP-PremiumFullFlex-1">
+          <Name>Premium refunderbar</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:PremiumFullFlex" version="SJN:Version:PFP-PremiumFullFlex-1">
+              <Name>Premium refunderbar</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:PremiumFullFlex"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="SJN:SupplementProduct:BikeReservation" version="SJN:Version:SUP-BikeReservation-1">
+          <Name>Sykkel</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:BikeReservation" version="SJN:Version:SUP-BikeReservation-1">
+              <Name>Sykkel</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:BikeReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:FamilyArea" version="SJN:Version:SupplementProduct-FamilyArea-1">
+          <Name>Familie</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:FamilyArea" version="SJN:Version:SupplementProduct-FamilyArea-1">
+              <Name>Familie</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:FamilyArea"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:NoPetsAllowed" version="SJN:Version:SupplementProduct-NoPetsAllowed-1">
+          <Name>Dyrefri</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:NoPetsAllowed" version="SJN:Version:SupplementProduct-NoPetsAllowed-1">
+              <Name>Dyrefri</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:NoPetsAllowed"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:SleeperBerth" version="SJN:Version:SupplementProduct-SleeperBerth-1">
+          <Name>Ekstra voksen i sovekupé</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:SleeperBerth" version="SJN:Version:SupplementProduct-SleeperBerth-1">
+              <Name>Ekstra voksen i sovekupé</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:SleeperBerth"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:AdditionalChild" version="SJN:Version:SupplementProduct-AdditionalChild-1">
+          <Name>Barn i sovekupé</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:AdditionalChild" version="SJN:Version:SupplementProduct-AdditionalChild-1">
+              <Name>Barn i sovekupé</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:AdditionalChild"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="SJN:PreassignedFareProduct:Nabotog" version="SJN:Version:PFP-Nabotog-1">
+          <Name>Lokalbillett</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:Nabotog" version="SJN:Version:PFP-Nabotog-1">
+              <Name>Lokalbillett</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:Nabotog"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SJN:PreassignedFareProduct:Trondelag" version="SJN:Version:PFP-Trondelag-1">
+          <Name>Lokalbillett</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:Trondelag" version="SJN:Version:PFP-Trondelag-1">
+              <Name>Lokalbillett</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:Trondelag"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="SJN:SupplementProduct:Reservation" version="SJN:Version:SUP-Reservation-1">
+          <Name>Plassavgift - standard</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:Reservation" version="SJN:Version:SUP-Reservation-1">
+              <Name>Plassavgift - standard</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:Reservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="SJN:PreassignedFareProduct:30dayPass" version="SJN:Version:PFP-30dayPass-1">
+          <Name>Standard 30 dagers-billett</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:30dayPass" version="SJN:Version:PFP-30dayPass-1">
+              <Name>Standard 30 dagers-billett</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:30dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SJN:PreassignedFareProduct:365dayPass" version="SJN:Version:PFP-365dayPass-1">
+          <Name>Standard 365 dagers-billett</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:365dayPass" version="SJN:Version:PFP-365dayPass-1">
+              <Name>Standard 365 dagers-billett</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:365dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="SJN:PreassignedFareProduct:7dayPass" version="SJN:Version:PFP-7dayPass-1">
+          <Name>Standard 7 dagers-billett</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:7dayPass" version="SJN:Version:PFP-7dayPass-1">
+              <Name>Standard 7 dagers-billett</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:7dayPass"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SaleDiscountRight id="SJN:SaleDiscountRight:Premium" version="SJN:Version:SDR-Premium-1">
+          <Name>Personalbillettrabatt</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+        </SaleDiscountRight>
+        <SupplementProduct id="SJN:SupplementProduct:SjAtbTransfer30days" version="SJN:Version:SUP:SjAtbTransfer30day-1">
+          <Name>AtB Sonetillegg</Name>
+          <ChargingMomentRef ref="ENT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:SjAtbTransfer30days" version="SJN:Version:SUP:SjAtbTransfer30day-1">
+              <Name>AtB Sonetillegg</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:SjAtbTransfer30days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:SjAtbTransfer7days" version="SJN:Version:SUP:SjAtbTransfer7day-1">
+          <Name>AtB Sonetillegg</Name>
+          <ChargingMomentRef ref="ENT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:SjAtbTransfer7days" version="SJN:Version:SUP:SjAtbTransfer7day-1">
+              <Name>AtB Sonetillegg</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:SjAtbTransfer7days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <PreassignedFareProduct id="SJN:PreassignedFareProduct:Kombinasjonsbillett" version="SJN:Version:PFP-Kombinasjonsbillett-1">
+          <Name>Kombinasjonsbillett</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:Kombinasjonsbillett" version="SJN:Version:PFP-Kombinasjonsbillett-1">
+              <Name>Kombinasjonsbillett</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:Kombinasjonsbillett"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <SupplementProduct id="SJN:SupplementProduct:PremiumSeatReservation" version="SJN:Version:SUP-PremiumSeatReservati-1">
+          <Name>Premium sete</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:PremiumSeatReservation" version="SJN:Version:SUP-PremiumSeatReservati-1">
+              <Name>Premium sete</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:PremiumSeatReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:PremiumUpgrade" version="SJN:Version:SUP-PremiumUpgrade-1">
+          <Name>Oppgradering til premium</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:PremiumUpgrade" version="SJN:Version:SUP-PremiumUpgrade-1">
+              <Name>Oppgradering til premium</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:PremiumUpgrade"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:NonReservableBicycle" version="SJN:Version:SUP-NonReservableBicycle-1">
+          <Name>Sykkel uten plass</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:NonReservableBicycle" version="SJN:Version:SUP-NonReservableBicycle-1">
+              <Name>Sykkel uten plass</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:NonReservableBicycle"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+        <SupplementProduct id="SJN:SupplementProduct:SleeperReservation" version="SJN:Version:SUP-SleeperReservation-1">
+          <Name>Sove</Name>
+          <ChargingMomentRef ref="SJN:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="SJN:AccessRightInProduct:SleeperReservation" version="SJN:Version:SUP-SleeperReservation-1">
+              <Name>Sove</Name>
+              <ValidableElementRef ref="SJN:ValidableElement:SleeperReservation"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </SupplementProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

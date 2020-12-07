@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:15.497</PublicationTimestamp>
+  <ParticipantRef>SJN</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="SJN:FareFrame:SJN" version="SJN">
+      <validableElements>
+        <ValidableElement id="SJN:ValidableElement:StandardFullFlex" version="SJN:Version:VE-StandardFullFlex-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:StandardFullFlexAllowedAuthority" version="SJN:Version:VE-StandardFullFlex-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:NotStandardFullFlexLineAndStorlien" version="SJN:Version:VE-StandardFullFlex-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:StandardFullFlexLine" version="SJN:Version:VE-StandardFullFlex-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:BikeReservation" version="SJN:Version:VE-BikeReservation-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SJN:FareStructureElement:StandardFullFlexBasicTEN"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:BikeReservationTransportSubMode" version="SJN:Version:VE-BikeReservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:BikeReservationAllowedAuthority" version="SJN:Version:VE-BikeReservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:SmallAnimal" version="SJN:Version:VE-SmallAnimal-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SmallAnimalAllowedAuthority" version="SJN:Version:VE-SmallAnimal-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:LargeAnimal" version="SJN:Version:VE-LargeAnimal-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SJN:FareStructureElement:StandardFullFlexBasicTEN"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:LargeAnimalAllowedAuthority" version="SJN:Version:VE-LargeAnimal-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:LargeAnimalTransportSubMode" version="SJN:Version:VE-LargeAnimal-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:PushChair" version="SJN:Version:VE-PushChair-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservingPushChair" version="SJN:Version:VE-PushChair-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PushChairTransportSubMode" version="SJN:Version:VE-PushChair-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PushChairAllowedAuthority" version="SJN:Version:VE-PushChair-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:Sleeper" version="SJN:Version:VE-Sleeper-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SleeperAllowedAuthority" version="SJN:Version:VE-Sleeper-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservingSleeper" version="SJN:Version:VE-Sleeper-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SleeperTransportSubMode" version="SJN:Version:VE-Sleeper-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:Standard" version="SJN:Version:VE-Standard-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:StandardTransportSubMode" version="SJN:Version:VE-Standard-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:StandardLine" version="SJN:Version:VE-Standard-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:StandardAllowedAuthority" version="SJN:Version:VE-Standard-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:Premium" version="SJN:Version:VE-Premium-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumAllowedAuthority" version="SJN:Version:VE-Premium-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumLine" version="SJN:Version:VE-Premium-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumTransportSubMode" version="SJN:Version:VE-Premium-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:PremiumFullFlex" version="SJN:Version:VE-PremiumFullFlex-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumFullFlexLine" version="SJN:Version:VE-PremiumFullFlex-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumFullFlexAllowedAuthority" version="SJN:Version:VE-PremiumFullFlex-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:FamilyArea" version="SJN:Version:ValidableElement-FamilyArea-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservingFamilyArea" version="SJN:Version:ValidableElement-FamilyArea-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:FamilyAreaAllowedAuthority" version="SJN:Version:ValidableElement-FamilyArea-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:FamilyAreaTransportSubMode" version="SJN:Version:ValidableElement-FamilyArea-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:NoPetsAllowed" version="SJN:Version:ValidableElement-NoPetsAllowed-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:NoPetsAllowedTransportSubMode" version="SJN:Version:ValidableElement-NoPetsAllowed-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:NoPetsAllowedAllowedAuthority" version="SJN:Version:ValidableElement-NoPetsAllowed-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservingNoPetsAllowed" version="SJN:Version:ValidableElement-NoPetsAllowed-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:SleeperBerth" version="SJN:Version:ValidableElement-SleeperBerth-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SleeperBerthAllowedDistributionChannel" version="SJN:Version:ValidableElement-SleeperBerth-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SleeperBerthTransportSubMode" version="SJN:Version:ValidableElement-SleeperBerth-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SleeperBerthAllowedAuthority" version="SJN:Version:ValidableElement-SleeperBerth-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservingSleeperBerth" version="SJN:Version:ValidableElement-SleeperBerth-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:AdditionalChild" version="SJN:Version:ValidableElement-AdditionalChild-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:AdditionalChildAllowedAuthority" version="SJN:Version:ValidableElement-AdditionalChild-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:AdditionalChildAllowedDistributionChannel" version="SJN:Version:ValidableElement-AdditionalChild-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservingAdditionalChild" version="SJN:Version:ValidableElement-AdditionalChild-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:AdditionalChildTransportSubMode" version="SJN:Version:ValidableElement-AdditionalChild-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:Nabotog" version="SJN:Version:VE-Nabotog-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SJN:FareStructureElement:NabotogBasicTEN"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:NabotogLineAndStorlien" version="SJN:Version:VE-Nabotog-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:NabotogAllowedAuthority" version="SJN:Version:VE-Nabotog-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:Trondelag" version="SJN:Version:VE-Trondelag-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SJN:FareStructureElement:Trondelag"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:TrondelagAllowedAuthority" version="SJN:Version:VE-Trondelag-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:Reservation" version="SJN:Version:VE-Reservation-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservationAllowedAuthority" version="SJN:Version:VE-Reservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservingReservation" version="SJN:Version:VE-Reservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservationTransportSubMode" version="SJN:Version:VE-Reservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:30dayPass" version="SJN:Version:VE-30dayPass-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SJN:FareStructureElement:30dayPass"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:30dayPassAllowedAuthority" version="SJN:Version:VE-30dayPass-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:30dayPassZoneRestriction" version="SJN:Version:VE-30dayPass-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:365dayPass" version="SJN:Version:VE-365dayPass-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SJN:FareStructureElement:365dayPass"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:365dayPassAllowedAuthority" version="SJN:Version:VE-365dayPass-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:365dayPassZoneRestriction" version="SJN:Version:VE-365dayPass-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:7dayPass" version="SJN:Version:VE-7dayPass-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SJN:FareStructureElement:7dayPass"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:7dayPassAllowedAuthority" version="SJN:Version:VE-7dayPass-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:7dayPassZoneRestriction" version="SJN:Version:VE-7dayPass-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:SjAtbTransfer30days" version="SJN:Version:VE-SjAtbTransfer30day-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SjAtbTransfer30daysUsageValidityPeriod" version="SJN:Version:VE-SjAtbTransfer30day-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:SjAtbTransfer7days" version="SJN:Version:VE-SjAtbTransfer7day-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SjAtbTransfer7daysUsageValidityPeriod" version="SJN:Version:VE-SjAtbTransfer7day-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:NonReservableBicycle" version="SJN:Version:VE-NonReservableBicycle-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SJN:FareStructureElement:NonReservableBicycle"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:NonReservableBicycleAllowedAuthority" version="SJN:Version:VE-NonReservableBicycle-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:Kombinasjonsbillett" version="SJN:Version:VE-Kombinasjonsbillett-1">
+          <Name/>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SJN:FareStructureElement:30dayPass"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:KombinasjonsbillettAllowedAuthority" version="SJN:Version:VE-Kombinasjonsbillett-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:PremiumSeatReservation" version="SJN:Version:VE-PremiumSeatReservati-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumSeatReservationTransportSubMode" version="SJN:Version:VE-PremiumSeatReservati-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservingPremiumSeatReservation" version="SJN:Version:VE-PremiumSeatReservati-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumSeatReservationLine" version="SJN:Version:VE-PremiumSeatReservati-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumSeatReservationAllowedAuthority" version="SJN:Version:VE-PremiumSeatReservati-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:PremiumUpgrade" version="SJN:Version:VE-PremiumUpgrade-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservingPremiumUpgrade" version="SJN:Version:VE-PremiumUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumUpgradeAllowedAuthority" version="SJN:Version:VE-PremiumUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumUpgradeTransportSubMode" version="SJN:Version:VE-PremiumUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:PremiumUpgradeLine" version="SJN:Version:VE-PremiumUpgrade-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SJN:ValidableElement:SleeperReservation" version="SJN:Version:VE-SleeperReservation-1">
+          <Name/>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SleeperReservationAllowedAuthority" version="SJN:Version:VE-SleeperReservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:ReservingSleeperReservation" version="SJN:Version:VE-SleeperReservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SleeperReservationTransportSubMode" version="SJN:Version:VE-SleeperReservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SJN:GenericParameterAssignment:SleeperReservationLine" version="SJN:Version:VE-SleeperReservation-1">
+              <Name/>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

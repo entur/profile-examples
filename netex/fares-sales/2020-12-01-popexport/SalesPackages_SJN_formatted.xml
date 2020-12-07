@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:13.947</PublicationTimestamp>
+  <ParticipantRef>SJN</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="SJN:FareFrame:SJN" version="SJN">
+      <salesOfferPackages>
+        <SalesOfferPackage id="SJN:SalesPackage:Trondelag" version="SJN:Version:SP-Trondelag-1">
+          <Name>Lokalbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:BicycleTrondelag" version="SJN:Version:SP-Trondelag-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Trondelag-Sleeper" version="SJN:Version:SP-Trondelag-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Trondelag-SleeperBerth" version="SJN:Version:SP-Trondelag-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:SleeperBerth"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Trondelag-AdditionalChild" version="SJN:Version:SP-Trondelag-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:AdditionalChild"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Trondelag-FamilyArea" version="SJN:Version:SP-Trondelag-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Trondelag-NoPetsAllowed" version="SJN:Version:SP-Trondelag-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Trondelag" version="SJN:Version:SP-Trondelag-1">
+              <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:Trondelag"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SmallAnimalTrondelag" version="SJN:Version:SP-Trondelag-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:LargeAnimalTrondelag" version="SJN:Version:SP-Trondelag-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:PushChairTrondelag" version="SJN:Version:SP-Trondelag-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:30dayPass" version="SJN:Version:SP-30dayPass-1">
+          <Name>Standard 30 dagers-billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:30dayPass" version="SJN:Version:SP-30dayPass-1">
+              <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:30dayPass"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SjAtbTransfer30days" version="SJN:Version:SP-30dayPass-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:SjAtbTransfer30days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:365dayPass" version="SJN:Version:SP-365dayPass-1">
+          <Name>Standard 365 dagers-billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:365dayPass" version="SJN:Version:SP-365dayPass-1">
+              <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:365dayPass"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:7dayPass" version="SJN:Version:SP-7dayPass-1">
+          <Name>Standard 7 dagers-billett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:7dayPass" version="SJN:Version:SP-7dayPass-1">
+              <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:7dayPass"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SjAtbTransfer7days" version="SJN:Version:SP-7dayPass-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:SjAtbTransfer7days"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:StandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+          <Name>Standard refunderbar</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:StandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:StandardFullFlex"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:BikeReservationStandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SmallAnimalStandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:LargeAnimalStandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:PushChairStandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SleeperStandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:FamilyAreaStandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:NoPetsAllowedStandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SleeperBerthStandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:SleeperBerth"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:AdditionalChildStandardFullFlex" version="SJN:Version:SP-StandardFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:AdditionalChild"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:PremiumFullFlex" version="SJN:Version:SP-PremiumFullFlex-1">
+          <Name>Premium refunderbar</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SleeperPremiumFullFlex" version="SJN:Version:SP-PremiumFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:PremiumFullFlex" version="SJN:Version:SP-PremiumFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:PremiumFullFlex"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:BikeReservationPremiumFullFlex" version="SJN:Version:SP-PremiumFullFlex-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:Standard" version="SJN:Version:SP-Standard-1">
+          <Name>Standard</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Standard" version="SJN:Version:SP-Standard-1">
+              <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:Standard"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:BikeReservationStandard" version="SJN:Version:SP-Standard-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SmallAnimalStandard" version="SJN:Version:SP-Standard-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:SmallAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:LargeAnimalStandard" version="SJN:Version:SP-Standard-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:PushChairStandard" version="SJN:Version:SP-Standard-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:PushChair"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SleeperStandard" version="SJN:Version:SP-Standard-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:FamilyAreaStandard" version="SJN:Version:SP-Standard-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:FamilyArea"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:NoPetsAllowedStandard" version="SJN:Version:SP-Standard-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:NoPetsAllowed"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SleeperBerthStandard" version="SJN:Version:SP-Standard-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:SleeperBerth"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:AdditionalChildStandard" version="SJN:Version:SP-Standard-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:AdditionalChild"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:Premium" version="SJN:Version:SP-Premium-1">
+          <Name>Premium</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Premium" version="SJN:Version:SP-Premium-1">
+              <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:Premium"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:BikeReservationPremium" version="SJN:Version:SP-Premium-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SleeperPremium" version="SJN:Version:SP-Premium-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:Nabotog" version="SJN:Version:SP-Nabotog-1">
+          <Name>Lokalbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Nabotog" version="SJN:Version:SP-Nabotog-1">
+              <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:Nabotog"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:Reservation" version="SJN:Version:SP-Reservation-1">
+          <Name>Reservasjonsprodukter</Name>
+          <distributionAssignments>
+            <DistributionAssignment order="0" id="SJN:DistributionAssignment:ReservationSJNMobileTerminal" version="SJN:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="SJN:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="SJN:DistributionAssignment:ReservationMobileTerminal" version="SJN:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="SJN:DistributionAssignment:ReservationSalesAndService" version="SJN:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="SJN:DistributionAssignment:ReservationInternationalSales" version="SJN:Version:SP-Reservation-1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:InternationalSales"/>
+            </DistributionAssignment>
+          </distributionAssignments>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Reservation" version="SJN:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:Reservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Reservation-Sleeper" version="SJN:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Reservation-SleeperBerth" version="SJN:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:SleeperBerth"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Reservation-AdditionalChild" version="SJN:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:AdditionalChild"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:PremiumSeatReservationReservation" version="SJN:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:PremiumSeatReservation"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SleeperReservationReservation" version="SJN:Version:SP-Reservation-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:SleeperReservation"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:SupplementProducts" version="SJN:Version:SP-SupplementProducts-1">
+          <Name/>
+          <distributionAssignments>
+            <DistributionAssignment order="0" id="SJN:DistributionAssignment:SupplementProductsENTMobileTerminal" version="SJN:Version:SP-SupplementProducts-1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="SJN:DistributionAssignment:SupplementProductsSJNMobileTerminal" version="SJN:Version:SP-SupplementProducts-1">
+              <DistributionChannelRef ref="SJN:DistributionChannel:MobileTerminal"/>
+            </DistributionAssignment>
+          </distributionAssignments>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:NonReservableBicycleSupplementProducts" version="SJN:Version:SP-SupplementProducts-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:NonReservableBicycle"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:PremiumUpgradeSupplementProducts" version="SJN:Version:SP-SupplementProducts-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:PremiumUpgrade"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:LargeAnimalSupplementProducts" version="SJN:Version:SP-SupplementProducts-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:LargeAnimal"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:SleeperSupplementProducts" version="SJN:Version:SP-SupplementProducts-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:Sleeper"/>
+            </SalesOfferPackageElement>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:BikeReservationSupplementProducts" version="SJN:Version:SP-SupplementProducts-1">
+              <PreassignedFareProductRef ref="SJN:SupplementProduct:BikeReservation"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SJN:SalesPackage:Kombinasjonsbillett" version="SJN:Version:SP-Kombinasjonsbillett-1">
+          <Name>Kombinasjonsbillett</Name>
+          <distributionAssignments>
+            <DistributionAssignment order="0" id="SJN:DistributionAssignment:KombinasjonsbillettENTApp" version="SJN:Version:SP-Kombinasjonsbillett-1">
+              <DistributionChannelRef ref="ENT:DistributionChannel:App"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="SJN:DistributionAssignment:KombinasjonsbillettSJNApp" version="SJN:Version:SP-Kombinasjonsbillett-1">
+              <DistributionChannelRef ref="SJN:DistributionChannel:App"/>
+            </DistributionAssignment>
+            <DistributionAssignment order="0" id="SJN:DistributionAssignment:KombinasjonsbillettNSBApp" version="SJN:Version:SP-Kombinasjonsbillett-1">
+              <DistributionChannelRef ref="NSB:DistributionChannel:App"/>
+            </DistributionAssignment>
+          </distributionAssignments>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SJN:SalesPackageElement:Kombinasjonsbillett" version="SJN:Version:SP-Kombinasjonsbillett-1">
+              <PreassignedFareProductRef ref="SJN:PreassignedFareProduct:Kombinasjonsbillett"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

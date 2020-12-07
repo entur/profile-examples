@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:29.877</PublicationTimestamp>
+  <ParticipantRef>SKY</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="SKY:FareFrame:SKY" version="SKY">
+      <validableElements>
+        <ValidableElement id="SKY:ValidableElement:fcfa00fb" version="SKY:Version:4fa9246f-7c46-4a39-9819-b42aeed4f8eb">
+          <Name>Navn</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SKY:FareStructureElement:fec07f44"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:1aa32ad4" version="SKY:Version:4fa9246f-7c46-4a39-9819-b42aeed4f8eb">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:ea42bbed" version="SKY:Version:4fa9246f-7c46-4a39-9819-b42aeed4f8eb">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:fe88dc79" version="SKY:Version:4fa9246f-7c46-4a39-9819-b42aeed4f8eb">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SKY:ValidableElement:3b6f685e" version="SKY:Version:4bbc9b57-61e6-42e7-9b84-48c317269bf0">
+          <Name>Navn</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SKY:FareStructureElement:cbeaf179"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:84b1220f" version="SKY:Version:4bbc9b57-61e6-42e7-9b84-48c317269bf0">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:b31a9fde" version="SKY:Version:4bbc9b57-61e6-42e7-9b84-48c317269bf0">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:32f207b7" version="SKY:Version:4bbc9b57-61e6-42e7-9b84-48c317269bf0">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SKY:ValidableElement:3421f9d9" version="SKY:Version:1e7a1f57-7498-4c9b-a588-abccf993ce62">
+          <Name>Navn</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SKY:FareStructureElement:1c5b2882"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:bdcb967e" version="SKY:Version:1e7a1f57-7498-4c9b-a588-abccf993ce62">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:8e32ee80" version="SKY:Version:1e7a1f57-7498-4c9b-a588-abccf993ce62">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:ec680012" version="SKY:Version:1e7a1f57-7498-4c9b-a588-abccf993ce62">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SKY:ValidableElement:dd4bc898" version="SKY:Version:e9a31053-5daf-4de5-8c28-96c818da9ec5">
+          <Name>Navn</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SKY:FareStructureElement:c5e624c1"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:590f3b38" version="SKY:Version:e9a31053-5daf-4de5-8c28-96c818da9ec5">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:cce0e6c4" version="SKY:Version:e9a31053-5daf-4de5-8c28-96c818da9ec5">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:46067ad5" version="SKY:Version:e9a31053-5daf-4de5-8c28-96c818da9ec5">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SKY:ValidableElement:01867c4b" version="SKY:Version:5caf6409-3e3d-4fbd-bb97-3fad5cf8edb8">
+          <Name>Navn</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SKY:FareStructureElement:8de20e12"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:aeed4e2c" version="SKY:Version:5caf6409-3e3d-4fbd-bb97-3fad5cf8edb8">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:efd9bfe0" version="SKY:Version:5caf6409-3e3d-4fbd-bb97-3fad5cf8edb8">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:38aeaf06" version="SKY:Version:5caf6409-3e3d-4fbd-bb97-3fad5cf8edb8">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="SKY:ValidableElement:1143a8bc" version="SKY:Version:3d6848da-d682-4d02-8326-fd7bb29dab34">
+          <Name>Navn</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="SKY:FareStructureElement:28b24356"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:3e3fa980" version="SKY:Version:3d6848da-d682-4d02-8326-fd7bb29dab34">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:36b59b1c" version="SKY:Version:3d6848da-d682-4d02-8326-fd7bb29dab34">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="SKY:GenericParameterAssignment:973b4281" version="SKY:Version:3d6848da-d682-4d02-8326-fd7bb29dab34">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:04.488</PublicationTimestamp>
+  <ParticipantRef>SOF</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="SOF:FareFrame:SOF" version="SOF">
+      <salesOfferPackages>
+        <SalesOfferPackage id="SOF:SalesPackage:6d6b51b7" version="SOF:Version:V1">
+          <Name>Bybuss - natt</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SOF:SalesPackageElement:b4eaa6f3" version="SOF:Version:V1">
+              <PreassignedFareProductRef ref="SOF:PreassignedFareProduct:f95a0af1"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+        <SalesOfferPackage id="SOF:SalesPackage:014a2df4" version="SOF:Version:V1">
+          <Name>Bybuss</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="SOF:SalesPackageElement:5d0ef7d7" version="SOF:Version:V1">
+              <PreassignedFareProductRef ref="SOF:PreassignedFareProduct:d8293800"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

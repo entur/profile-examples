@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:05:47.560</PublicationTimestamp>
+  <ParticipantRef>RUT</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="RUT:FareFrame:RUT" version="RUT">
+      <fareProducts>
+        <PreassignedFareProduct id="RUT:PreassignedFareProduct:RuterSingleTicket" version="RUT:Version:V1">
+          <Name>Enkeltbillett</Name>
+          <ChargingMomentRef ref="RUT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="RUT:AccessRightInProduct:RuterSingleTicket" version="RUT:Version:V1">
+              <Name>Enkeltbillett</Name>
+              <ValidableElementRef ref="RUT:ValidableElement:RuterSingleTicket"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="RUT:PreassignedFareProduct:SupplementaryTicket" version="RUT:Version:V1">
+          <Name>Billett for ekstra soner</Name>
+          <ChargingMomentRef ref="RUT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="RUT:AccessRightInProduct:SupplementaryTicket" version="RUT:Version:V1">
+              <Name>Billett for ekstra soner</Name>
+              <ValidableElementRef ref="RUT:ValidableElement:SupplementaryTicket"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="RUT:PreassignedFareProduct:Ruter30Days" version="RUT:Version:V1">
+          <Name>30-dagersbillett</Name>
+          <ChargingMomentRef ref="RUT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="RUT:AccessRightInProduct:Ruter30Days" version="RUT:Version:V1">
+              <Name>30-dagersbillett</Name>
+              <ValidableElementRef ref="RUT:ValidableElement:Ruter30Days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="RUT:PreassignedFareProduct:Ruter7Days" version="RUT:Version:V1">
+          <Name>7-dagersbillett</Name>
+          <ChargingMomentRef ref="RUT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="RUT:AccessRightInProduct:Ruter7Days" version="RUT:Version:V1">
+              <Name>7-dagersbillett</Name>
+              <ValidableElementRef ref="RUT:ValidableElement:Ruter7Days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="RUT:PreassignedFareProduct:Ruter24Hours" version="RUT:Version:V1">
+          <Name>24-timersbillett</Name>
+          <ChargingMomentRef ref="RUT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="RUT:AccessRightInProduct:Ruter24Hours" version="RUT:Version:V1">
+              <Name>24-timersbillett</Name>
+              <ValidableElementRef ref="RUT:ValidableElement:Ruter24Hours"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+        <PreassignedFareProduct id="RUT:PreassignedFareProduct:Ruter365Days" version="RUT:Version:V1">
+          <Name>365-dagersbillett</Name>
+          <ChargingMomentRef ref="RUT:ChargingMoment:Prepaid"/>
+          <accessRightsInProduct>
+            <AccessRightInProduct order="0" id="RUT:AccessRightInProduct:Ruter365Days" version="RUT:Version:V1">
+              <Name>365-dagersbillett</Name>
+              <ValidableElementRef ref="RUT:ValidableElement:Ruter365Days"/>
+            </AccessRightInProduct>
+          </accessRightsInProduct>
+        </PreassignedFareProduct>
+      </fareProducts>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

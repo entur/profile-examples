@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:13.195</PublicationTimestamp>
+  <ParticipantRef>OST</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="OST:FareFrame:OST" version="OST">
+      <validableElements>
+        <ValidableElement id="OST:ValidableElement:cd6661c2" version="OST:Version:V1">
+          <Name>Navn</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="OST:FareStructureElement:7323a542"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="OST:GenericParameterAssignment:c7772c19" version="OST:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="OST:GenericParameterAssignment:7ca1b28e" version="OST:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="OST:GenericParameterAssignment:21c99f50" version="OST:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+        <ValidableElement id="OST:ValidableElement:3915bb26" version="OST:Version:V1">
+          <Name>Navn</Name>
+          <fareStructureElements>
+            <FareStructureElementRef ref="OST:FareStructureElement:675bab0d"/>
+          </fareStructureElements>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="OST:GenericParameterAssignment:1b7e5a4f" version="OST:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="OST:GenericParameterAssignment:0b515932" version="OST:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="OST:GenericParameterAssignment:6ea2123b" version="OST:Version:V1">
+              <Name>Navn</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </ValidableElement>
+      </validableElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

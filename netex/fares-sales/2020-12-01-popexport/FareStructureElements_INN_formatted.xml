@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:57.131</PublicationTimestamp>
+  <ParticipantRef>INN</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="INN:FareFrame:INN" version="INN">
+      <fareStructureElements>
+        <FareStructureElement id="INN:FareStructureElement:a3b63a84" version="INN:Version:V1">
+          <Name>Sonetabell - enkeltbillett</Name>
+          <geographicalIntervals>
+            <GeographicalIntervalRef ref="INN:GeographicalInterval:71461a3e"/>
+            <GeographicalIntervalRef ref="INN:GeographicalInterval:fd43bae5"/>
+            <GeographicalIntervalRef ref="INN:GeographicalInterval:3452c07a"/>
+            <GeographicalIntervalRef ref="INN:GeographicalInterval:e815fb18"/>
+            <GeographicalIntervalRef ref="INN:GeographicalInterval:6fd43055"/>
+            <GeographicalIntervalRef ref="INN:GeographicalInterval:2d597486"/>
+            <GeographicalIntervalRef ref="INN:GeographicalInterval:591c7f88"/>
+          </geographicalIntervals>
+          <validityParameterAssignments>
+            <GenericParameterAssignment order="0" id="INN:GenericParameterAssignment:cac5f07a" version="INN:Version:V1">
+              <Name>Sonetabell - enkeltbillett</Name>
+            </GenericParameterAssignment>
+            <GenericParameterAssignment order="0" id="INN:GenericParameterAssignment:770d4a83" version="INN:Version:V1">
+              <Name>Sonetabell - enkeltbillett</Name>
+            </GenericParameterAssignment>
+          </validityParameterAssignments>
+        </FareStructureElement>
+      </fareStructureElements>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>

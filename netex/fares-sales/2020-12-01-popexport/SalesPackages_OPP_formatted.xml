@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+  <PublicationTimestamp>2020-12-01T12:06:02.116</PublicationTimestamp>
+  <ParticipantRef>OPP</ParticipantRef>
+  <dataObjects>
+    <FareFrame id="OPP:FareFrame:OPP" version="OPP">
+      <salesOfferPackages>
+        <SalesOfferPackage id="OPP:SalesPackage:43dba7d7" version="OPP:Version:V1">
+          <Name>Enkeltbillett</Name>
+          <salesOfferPackageElements>
+            <SalesOfferPackageElement order="0" id="OPP:SalesPackageElement:9fd2650b" version="OPP:Version:V1">
+              <PreassignedFareProductRef ref="OPP:PreassignedFareProduct:ce3a5f90"/>
+            </SalesOfferPackageElement>
+          </salesOfferPackageElements>
+        </SalesOfferPackage>
+      </salesOfferPackages>
+    </FareFrame>
+  </dataObjects>
+</PublicationDelivery>
