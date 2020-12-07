@@ -17,15 +17,16 @@
         <FareFrame id="ENT:FareFrame:1" version="1">
             
             <qualityStructureFactors>
-                <QualityStructureFactor id="SKY:QualityStructureFactor:180" version="1">
-                    <Name>180 validations per year</Name>
-                    <Value>180</Value>
+                <QualityStructureFactor id="SKY:QualityStructureFactor:190" version="1">
+                    <Name>190 validations per year</Name>
+                    <Value>190</Value>
                 </QualityStructureFactor>
-                <QualityStructureFactor id="SKY:QualityStructureFactor:2" version="1">
-                    <Name>2 trips per day</Name>
-                    <Value>2</Value>
+                <QualityStructureFactor id="SKY:QualityStructureFactor:95" version="1">
+                    <Name>95 validations per year</Name>
+                    <Value>35</Value>
                 </QualityStructureFactor>
             </qualityStructureFactors> 
+            
             
             
             <validableElements>
@@ -113,7 +114,13 @@
                             
                             <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:SchoolTransport" />
                             <elementAccesses>
-                                <CustomerPurchasePackageElementAccess></CustomerPurchasePackageElementAccess>
+                                <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:FirstUsage">
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:S1" version="1" order="1">
+                                            
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
                             
                             <validityParameterAssignments>
@@ -121,18 +128,40 @@
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
                                     <limitations>
+                                        <!-- Problem: Is it number of Use within an activation period? Or number of activations
+                                        
+                                        Netex part 3: FREQUENCY OF USE describes the limitation of an access right, 
+                                        depending on frequency of use during a VALIDITY PERIOD. 
+                                        For instance, a product is offered at a special fare if it 
+                                        is used more than 50 times in a month;
+                                        
+                                        The FREQUENCY OF USE parameter specifies how frequently trips may be made.
+                                        
+                                        The limits of usage frequency for a FARE PRODUCT (or one of its components) or a SALES OFFER
+PACKAGE during a specific VALIDITY PERIOD. There may be different tariffs depending on how often the
+right is consumed during the period.
+
+3.53
+frequency of use
+(Travel Usage Parameters MODEL)
+limits of usage frequency for a FARE PRODUCT (or one of its components) or a SALES OFFER PACKAGE during a specific VALIDITY PERIOD
+Note 1 to entry: There may be different tariffs depending on how often the right is consumed during the period
+
+
+TransModel: 
+5.15.1.142 FREQUENCY OF USE 4712
+(Part 5 - Fare Management (FM)::AR Access Rights Description MODEL::AR Access Right Parameters MODEL 4713 ::AR Travel Usage Parameters MODEL::FREQUENCY OF USE) 4714
+The limits of usage frequency for a FARE PRODUCT (or one of its components) or a SALES OFFER 4715 PACKAGE during a specific VALIDITY PERIOD.
+                                        -->
+                                        <!-- Can only activate 2 a day -->
                                         <FrequencyOfUse id="ENT:FrequencyOfUse:TwiceADay" version="1" >
                                             <FrequencyOfUseType>twiceADay</FrequencyOfUseType>
                                             <MaximalFrequency>2</MaximalFrequency>
                                             <FrequencyInterval>P1D</FrequencyInterval>
                                         </FrequencyOfUse>
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:190" version="1" >
-                                            <FrequencyOfUseType>limited</FrequencyOfUseType>
-                                            <MaximalFrequency>190</MaximalFrequency>
-                                        </FrequencyOfUse>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:90Min" version="1">
-                                           <UsageTrigger>startOutboundRide</UsageTrigger>
+                                            <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
                                             <StandardDuration>PT90M</StandardDuration>
                                             <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
@@ -143,6 +172,8 @@
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
                                         <TariffZoneRef ref="ENT:TariffZone:SkolekretsX"/>
                                     </validityParameters>
+                                    <!-- Limits total activations -->
+                                    <QualityStructureFactorRef ref="SKY:QualityStructureFactor:190"/>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
