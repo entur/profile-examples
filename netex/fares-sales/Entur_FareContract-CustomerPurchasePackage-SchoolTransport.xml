@@ -103,6 +103,7 @@
 
             <customerPurchasePackages>
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SchoolTransport" version="1">
+                    
                     <!-- Governs validity of the whole CPP -->
                     <validityConditions>
                         <AvailabilityConditionRef ref="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021"/>
@@ -138,20 +139,20 @@
                                         The FREQUENCY OF USE parameter specifies how frequently trips may be made.
                                         
                                         The limits of usage frequency for a FARE PRODUCT (or one of its components) or a SALES OFFER
-PACKAGE during a specific VALIDITY PERIOD. There may be different tariffs depending on how often the
-right is consumed during the period.
+                                        PACKAGE during a specific VALIDITY PERIOD. There may be different tariffs depending on how often the
+                                        right is consumed during the period.
 
-3.53
-frequency of use
-(Travel Usage Parameters MODEL)
-limits of usage frequency for a FARE PRODUCT (or one of its components) or a SALES OFFER PACKAGE during a specific VALIDITY PERIOD
-Note 1 to entry: There may be different tariffs depending on how often the right is consumed during the period
-
-
-TransModel: 
-5.15.1.142 FREQUENCY OF USE 4712
-(Part 5 - Fare Management (FM)::AR Access Rights Description MODEL::AR Access Right Parameters MODEL 4713 ::AR Travel Usage Parameters MODEL::FREQUENCY OF USE) 4714
-The limits of usage frequency for a FARE PRODUCT (or one of its components) or a SALES OFFER 4715 PACKAGE during a specific VALIDITY PERIOD.
+                                        3.53
+                                        frequency of use
+                                        (Travel Usage Parameters MODEL)
+                                        limits of usage frequency for a FARE PRODUCT (or one of its components) or a SALES OFFER PACKAGE during a specific VALIDITY PERIOD
+                                        Note 1 to entry: There may be different tariffs depending on how often the right is consumed during the period
+                                        
+                                        
+                                        TransModel: 
+                                        5.15.1.142 FREQUENCY OF USE 4712
+                                        (Part 5 - Fare Management (FM)::AR Access Rights Description MODEL::AR Access Right Parameters MODEL 4713 ::AR Travel Usage Parameters MODEL::FREQUENCY OF USE) 4714
+                                        The limits of usage frequency for a FARE PRODUCT (or one of its components) or a SALES OFFER 4715 PACKAGE during a specific VALIDITY PERIOD.
                                         -->
                                         <!-- Can only activate 2 a day -->
                                         <FrequencyOfUse id="ENT:FrequencyOfUse:TwiceADay" version="1" >
