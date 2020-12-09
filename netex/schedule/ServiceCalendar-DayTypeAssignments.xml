@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!-- === Basic Service Calendar datatype example === -->
+
 <PublicationDelivery
-  version="1.0"
   xmlns="http://www.netex.org.uk/netex"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:gml="http://www.opengis.net/gml/3.2"
-  xmlns:siri="http://www.siri.org.uk/siri">
+  xmlns:siri="http://www.siri.org.uk/siri"
+  version="1.10:NO-NeTEx-networktimetable:1:14">
 	
 	<PublicationTimestamp>2016-06-28T12:00:00.0Z</PublicationTimestamp>
 	<ParticipantRef>NSR</ParticipantRef>
 	<dataObjects>
-		<CompositeFrame version="1" id="NSR:CompositeFrame:1">
+		<CompositeFrame version="1" id="ENT:CompositeFrame:1">
 			<frames>
 				
-				<ServiceCalendarFrame version="1" id="NSR:ServiceCalendarFrame:default">
+				<ServiceCalendarFrame version="1" id="ENT:ServiceCalendarFrame:1">
 					<dayTypes>
-						<DayType version="1" id="NSR:DayType:uke">
-							<Name>Ukedager</Name>
+						<DayType version="1" id="ENT:DayType:Week">
+							<Name>Weekdays</Name>
 							<properties>
 								<PropertyOfDay>
 									<DaysOfWeek>Weekdays</DaysOfWeek>
 								</PropertyOfDay>
 							</properties>
 						</DayType>
-						<DayType version="1" id="NSR:DayType:helg">
-							<Name>Helg</Name>
+						<DayType version="1" id="ENT:DayType:Weekend">
+							<Name>Weekend</Name>
 							<properties>
 								<PropertyOfDay>
 									<DaysOfWeek>Weekend</DaysOfWeek>
 								</PropertyOfDay>
 							</properties>
 						</DayType>
-						<DayType version="1" id="NSR:DayType:jul">
-							<Name>Julen</Name>
+						<DayType version="1" id="ENT:DayType:Christmas">
+							<Name>Christmas eve</Name>
 							<properties>
 								<PropertyOfDay>
 									<DayOfYear>--12-24</DayOfYear>
@@ -42,8 +44,8 @@
 								</PropertyOfDay>
 							</properties>
 						</DayType>
-						<DayType version="1" id="NSR:DayType:romjul">
-							<Name>Romjulen</Name>
+						<DayType version="1" id="ENT:DayType:Holidays">
+							<Name>Christmas holidays</Name>
 							<properties>
 								<PropertyOfDay>
 									<DayOfYear>--12-26</DayOfYear>
@@ -62,8 +64,8 @@
 								</PropertyOfDay>
 							</properties>
 						</DayType>
-						<DayType version="1" id="NSR:DayType:nyttar">
-							<Name>Nyttår</Name>
+						<DayType version="1" id="ENT:DayType:NewYearsEve">
+							<Name>New years eve</Name>
 							<properties>
 								<PropertyOfDay>
 									<DayOfYear>--12-31</DayOfYear>
@@ -76,92 +78,92 @@
 					</dayTypes>
 					
 					<operatingPeriods>
-						<OperatingPeriod version="1" id="NSR:OperatingPeriod:desember-for-jul">
+						<OperatingPeriod version="1" id="ENT:OperatingPeriod:DecemberNormal">
 							<FromDate>2016-12-01T00:00:00</FromDate>
 							<ToDate>2016-12-23T24:00:00</ToDate>
 						</OperatingPeriod>
-						<OperatingPeriod version="1" id="NSR:OperatingPeriod:jul">
+						<OperatingPeriod version="1" id="ENT:OperatingPeriod:Christmas">
 							<FromDate>2016-12-24T00:00:00</FromDate>
 							<ToDate>2016-12-26T24:00:00</ToDate>
 						</OperatingPeriod>
-						<OperatingPeriod version="1" id="NSR:OperatingPeriod:romjul">
+						<OperatingPeriod version="1" id="ENT:OperatingPeriod:Holidays">
 							<FromDate>2016-12-27T00:00:00</FromDate>
 							<ToDate>2016-12-30T24:00:00</ToDate>
 						</OperatingPeriod>
-						<OperatingPeriod version="1" id="NSR:OperatingPeriod:nyttar">
+						<OperatingPeriod version="1" id="ENT:OperatingPeriod:NewYearsEve">
 							<FromDate>2016-12-31T00:00:00</FromDate>
 							<ToDate>2017-01-01T24:00:00</ToDate>
 						</OperatingPeriod>
 					</operatingPeriods>
 					
 					<dayTypeAssignments>
-						<!-- Før jul -->
-						<DayTypeAssignment version="1" order="1" id="NSR:DayTypeAssignment:desember-for-jul:1">
-							<OperatingPeriodRef version="1" ref="NSR:OperatingPeriod:desember-for-jul"/>
-							<DayTypeRef version="1" ref="NSR:DayType:uke"/>
+						<!-- Before Christmas -->
+						<DayTypeAssignment version="1" order="1" id="ENT:DayTypeAssignment:DecemberNormal:1">
+							<OperatingPeriodRef version="1" ref="ENT:OperatingPeriod:DecemberNormal"/>
+							<DayTypeRef version="1" ref="ENT:DayType:Week"/>
 						</DayTypeAssignment>
-						<DayTypeAssignment version="1" order="1" id="NSR:DayTypeAssignment:desember-for-jul:2">
-							<OperatingPeriodRef version="1" ref="NSR:OperatingPeriod:desember-for-jul"/>
-							<DayTypeRef version="1" ref="NSR:DayType:helg"/>
+						<DayTypeAssignment version="1" order="1" id="ENT:DayTypeAssignment:DecemberNormal:2">
+							<OperatingPeriodRef version="1" ref="ENT:OperatingPeriod:DecemberNormal"/>
+							<DayTypeRef version="1" ref="ENT:DayType:Weekend"/>
 						</DayTypeAssignment>
-						<!-- Julen -->
-						<DayTypeAssignment version="1" order="1" id="NSR:DayTypeAssignment:jul">
-							<OperatingPeriodRef ref="NSR:OperatingPeriod:jul"/>
-							<DayTypeRef version="1" ref="NSR:DayType:jul"/>
+						<!-- Chrstimas eve -->
+						<DayTypeAssignment version="1" order="1" id="ENT:DayTypeAssignment:Christmas">
+							<OperatingPeriodRef ref="ENT:OperatingPeriod:Christmas"/>
+							<DayTypeRef version="1" ref="ENT:DayType:Christmas"/>
 						</DayTypeAssignment>
-						<!-- Romjulen -->
-						<DayTypeAssignment version="1" order="1" id="NSR:DayTypeAssignment:romjul">
-							<OperatingPeriodRef ref="NSR:OperatingPeriod:romjul"/>
-							<DayTypeRef version="1" ref="NSR:DayType:romjul"/>
+						<!-- Chrstimas holidays -->
+						<DayTypeAssignment version="1" order="1" id="ENT:DayTypeAssignment:Holidays">
+							<OperatingPeriodRef ref="ENT:OperatingPeriod:Holidays"/>
+							<DayTypeRef version="1" ref="ENT:DayType:Holidays"/>
 						</DayTypeAssignment>
-						<!-- Nyttår -->
-						<DayTypeAssignment version="1" order="1" id="NSR:DayTypeAssignment:nyttar">
-							<OperatingPeriodRef ref="NSR:OperatingPeriod:nyttar"/>
-							<DayTypeRef version="1" ref="NSR:DayType:nyttar"/>
+						<!-- New years eve -->
+						<DayTypeAssignment version="1" order="1" id="ENT:DayTypeAssignment:NewYearsEve">
+							<OperatingPeriodRef ref="ENT:OperatingPeriod:NewYearsEve"/>
+							<DayTypeRef version="1" ref="ENT:DayType:NewYearsEve"/>
 						</DayTypeAssignment>
 					</dayTypeAssignments>
 				</ServiceCalendarFrame>
 
 
-				<TimetableFrame version="1" id="NSR:TimetableFrame:desember-for-jul">
-					<ServiceCalendarFrameRef version="1" ref="NSR:ServiceCalendarFrame:default"/>
+				<TimetableFrame version="1" id="ENT:TimetableFrame:1">
+					<ServiceCalendarFrameRef version="1" ref="ENT:ServiceCalendarFrame:1"/>
 					<vehicleJourneys>
-						<ServiceJourney version="1" id="NSR:ServiceJourney:0700">
+						<ServiceJourney version="1" id="ENT:ServiceJourney:0700">
 							<dayTypes>
-								<DayTypeRef version="1" ref="NSR:DayType:uke"/>
-								<DayTypeRef version="1" ref="NSR:DayType:helg"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Week"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Weekend"/>
 							</dayTypes>
 						</ServiceJourney>
 						
-						<ServiceJourney version="1" id="NSR:ServiceJourney:0800">
+						<ServiceJourney version="1" id="ENT:ServiceJourney:0800">
 							<dayTypes>
-								<DayTypeRef version="1" ref="NSR:DayType:helg"/>
-								<DayTypeRef version="1" ref="NSR:DayType:jul"/>
-								<DayTypeRef version="1" ref="NSR:DayType:romjul"/>
-								<DayTypeRef version="1" ref="NSR:DayType:nyttar"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Weekend"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Christmas"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Holidays"/>
+								<DayTypeRef version="1" ref="ENT:DayType:NewYearsEve"/>
 							</dayTypes>
 						</ServiceJourney>
 						
-						<ServiceJourney version="1" id="NSR:ServiceJourney:0900">
+						<ServiceJourney version="1" id="ENT:ServiceJourney:0900">
 							<dayTypes>
-								<DayTypeRef version="1" ref="NSR:DayType:uke"/>
-								<DayTypeRef version="1" ref="NSR:DayType:jul"/>
-								<DayTypeRef version="1" ref="NSR:DayType:nyttar"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Week"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Christmas"/>
+								<DayTypeRef version="1" ref="ENT:DayType:NewYearsEve"/>
 							</dayTypes>
 						</ServiceJourney>
 						
-						<ServiceJourney version="1" id="NSR:ServiceJourney:1200">
+						<ServiceJourney version="1" id="ENT:ServiceJourney:1200">
 							<dayTypes>
-								<DayTypeRef version="1" ref="NSR:DayType:jul"/>
-								<DayTypeRef version="1" ref="NSR:DayType:romjul"/>
-								<DayTypeRef version="1" ref="NSR:DayType:nyttar"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Christmas"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Holidays"/>
+								<DayTypeRef version="1" ref="ENT:DayType:NewYearsEve"/>
 							</dayTypes>
 						</ServiceJourney>
 						
-						<ServiceJourney version="1" id="NSR:ServiceJourney:1600">
+						<ServiceJourney version="1" id="ENT:ServiceJourney:1600">
 							<dayTypes>
-								<DayTypeRef version="1" ref="NSR:DayType:uke"/>
-								<DayTypeRef version="1" ref="NSR:DayType:helg"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Week"/>
+								<DayTypeRef version="1" ref="ENT:DayType:Weekend"/>
 							</dayTypes>
 						</ServiceJourney>
 					</vehicleJourneys>

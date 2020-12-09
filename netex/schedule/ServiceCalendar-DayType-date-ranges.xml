@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- === Service Calendar example for Date ranges and UicOperatingperiods === -->
+
+<PublicationDelivery
+  xmlns="http://www.netex.org.uk/netex"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:siri="http://www.siri.org.uk/siri"
+  version="1.10:NO-NeTEx-networktimetable:1:14">
+	
+	<PublicationTimestamp>2020-12-04T12:00:00</PublicationTimestamp>
+	<ParticipantRef>ENT</ParticipantRef>
+	
+	<dataObjects>
+		<CompositeFrame version="1" id="ENT:CompositeFrame:1">
+			<validityConditions>
+				<AvailabilityCondition id="ENT:AvailabilityCondition:1" version="1">
+					<!-- Start date of validity bits, first bit represents this date -->
+					<FromDate>2020-08-17T00:00:00</FromDate>
+					<!-- Only necessary to validate that enough validity bits are present -->
+					<ToDate>2020-12-31T23:59:59</ToDate>
+					<ValidDayBits>
+						1111100 <!-- week 34 -->
+						1111100 <!-- week 35 -->
+						1111100 <!-- week 36 -->
+						1111100 <!-- week 37 -->
+						1111100 <!-- week 38 -->
+						1111100 <!-- week 39 -->
+						1111100 <!-- week 40 -->
+						1111100 <!-- week 41 -->
+						1111100 <!-- week 42 -->
+						1111100 <!-- week 43 -->
+						1111100 <!-- week 44 -->
+						1111100 <!-- week 45 -->
+						1111100 <!-- week 46 -->
+						1111100 <!-- week 47 -->
+						1111100 <!-- week 48 -->
+						1111100 <!-- week 49 -->
+						1111100 <!-- week 50 -->
+						1111100 <!-- week 51 -->
+						1111100 <!-- week 52 -->
+						1111 <!-- week 53 -->
+					</ValidDayBits>
+					
+					<!-- not used i.e. not explicitly referenced (added for completeness) -->
+					<timebands>
+						<Timeband id="SKY:Timeband:1" version="1">
+							<StartTime>06:39:00</StartTime>
+							<EndTime>21:12:00</EndTime>
+						</Timeband>
+					</timebands>
+				</AvailabilityCondition>
+			</validityConditions>
+			
+			
+			<frames>
+				
+				<ServiceCalendarFrame id="ENT:ServiceCalendarFrame:1" version="1">
+					<validityConditions>
+						<AvailabilityCondition id="ENT:AvailabilityCondition:2" version="1">
+							<FromDate>2016-12-01T00:00:00</FromDate>
+							<ToDate>2016-12-23T24:00:00</ToDate>
+						</AvailabilityCondition>
+						<AvailabilityCondition id="ENT:AvailabilityCondition:3" version="1">
+							<FromDate>2016-12-24T00:00:00</FromDate>
+							<ToDate>2016-12-25T24:00:00</ToDate>
+						</AvailabilityCondition>
+					</validityConditions>
+					
+					<ServiceCalendar id="ENT:ServiceCalendar:1" version="1">
+						<Name>Sample date range service calendar</Name>
+						<FromDate>2020-08-17</FromDate>
+						<ToDate>2020-12-31</ToDate>
+						
+						<dayTypes>
+							<DayType version="1" id="ENT:DayType:Weekdays">
+								<validityConditions>
+									<AvailabilityConditionRef ref="AvailabilityCondition:1"/>
+								</validityConditions>
+								<Name>Weekday</Name>
+								<properties>
+									<PropertyOfDay>
+										<DaysOfWeek>Weekdays</DaysOfWeek>
+									</PropertyOfDay>
+								</properties>
+							</DayType>
+							<DayType version="1" id="ENT:DayType:Weekends">
+								<validityConditions>
+									<AvailabilityConditionRef ref="AvailabilityCondition:2"/>
+								</validityConditions>
+								<Name>Weekend</Name>
+								<properties>
+									<PropertyOfDay>
+										<DaysOfWeek>Weekend</DaysOfWeek>
+									</PropertyOfDay>
+								</properties>
+							</DayType>
+							<DayType version="1" id="ENT:DayType:Holiday">
+								<validityConditions>
+									<AvailabilityConditionRef ref="AvailabilityCondition:3"/>
+								</validityConditions>
+								<Name>Holiday</Name>
+								<properties>
+									<PropertyOfDay>
+										<HolidayTypes>NationalHoliday</HolidayTypes>
+									</PropertyOfDay>
+								</properties>
+							</DayType>
+						</dayTypes>
+						
+						<!-- not used (added for demo of dataset) -->
+						<timebands>
+							<Timeband id="ENT:Timeband:Morning" version="1">
+								<StartTime>07:00:00</StartTime>
+								<EndTime>09:00:00</EndTime>
+							</Timeband>
+							<Timeband id="ENT:Timeband:Afternoon" version="1">
+								<StartTime>12:00:00</StartTime>
+								<EndTime>16:00:00</EndTime>
+							</Timeband>
+						</timebands>
+						
+						<operatingPeriods>
+							<UicOperatingPeriod>
+								<!-- Start date of validity bits, first bit represents this date -->
+								<FromDate>2020-08-17T00:00:00</FromDate>
+								<!-- Only necessary to validate that enough validity bits are present -->
+								<ToDate>2020-12-31T23:59:59</ToDate>
+								<ValidDayBits>
+									1111100 <!-- week 34 -->
+									1111100 <!-- week 35 -->
+									1111100 <!-- week 36 -->
+									1111100 <!-- week 37 -->
+									1111100 <!-- week 38 -->
+									1111100 <!-- week 39 -->
+									1111100 <!-- week 40 -->
+									1111100 <!-- week 41 -->
+									1111100 <!-- week 42 -->
+									1111100 <!-- week 43 -->
+									1111100 <!-- week 44 -->
+									1111100 <!-- week 45 -->
+									1111100 <!-- week 46 -->
+									1111100 <!-- week 47 -->
+									1111100 <!-- week 48 -->
+									1111100 <!-- week 49 -->
+									1111100 <!-- week 50 -->
+									1111100 <!-- week 51 -->
+									1111100 <!-- week 52 -->
+									1111 <!-- week 53 -->
+								</ValidDayBits>
+							</UicOperatingPeriod>
+						</operatingPeriods>
+						
+					</ServiceCalendar>
+					
+					<!-- 
+						Individual objects can also be defined outside of scope of the ServiceCalendar wrapper:
+					-->
+					<dayTypes>
+						<DayType id="ENT:DayType:1" version="1">
+							<properties>
+								<PropertyOfDay>
+									<DaysOfWeek>Everyday</DaysOfWeek>
+								</PropertyOfDay>
+							</properties>
+						</DayType>
+					</dayTypes>
+					<operatingDays>
+						<OperatingDay id="ENT:OperatingDay:1" version="1">
+							<CalendarDate>2020-01-01</CalendarDate>
+						</OperatingDay>
+					</operatingDays>
+					<operatingPeriods>
+						<OperatingPeriod id="ENT:OperatingPeriod:1" version="1">
+							<FromOperatingDayRef ref="ENT:OperatingDay:1" version="1"/>
+						</OperatingPeriod>
+						<UicOperatingPeriod id="ENT:UicOperatingPeriod:1" version="1">
+							<FromOperatingDayRef ref="ENT:OperatingDay:1" version="1"/>
+							<ValidDayBits>101</ValidDayBits>
+						</UicOperatingPeriod>
+					</operatingPeriods>
+					
+				</ServiceCalendarFrame>
+				
+				
+				
+				<!-- Dummy timetable data (for completeness) -->
+				
+				<TimetableFrame id="ENT:TimetableFrame:1" version="1">
+					<vehicleJourneys>
+						<ServiceJourney id="ENT:ServiceJourney:0700" version="1">
+							<dayTypes>
+								<DayTypeRef ref="ENT:DayType:Weekdays" version="1"/>
+								<DayTypeRef ref="ENT:DayType:Weekends" version="1"/>
+							</dayTypes>
+						</ServiceJourney>
+					</vehicleJourneys>
+				</TimetableFrame>
+				
+				<TimetableFrame id="ENT:TimetableFrame:2" version="1">
+					<vehicleJourneys>
+						<ServiceJourney id="ENT:ServiceJourney:0800" version="1">
+							<dayTypes>
+								<DayTypeRef ref="ENT:DayType:Holiday" version="1"/>
+							</dayTypes>
+						</ServiceJourney>
+					</vehicleJourneys>
+				</TimetableFrame>
+				
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
