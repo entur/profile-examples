@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PublicationDelivery version="1.08:NO-NeTEx-fares:1.0" xmlns="http://www.netex.org.uk/netex">
-    <PublicationTimestamp>2018-09-04T12:00:00</PublicationTimestamp>
+
+<!-- 
+    Example of Norwegian school period pass,
+    with alternative approaches to structuring CustomerPurchasePackages.
+-->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  version="1.10:NO-NeTEx-fares:0.9">
+    
+    <PublicationTimestamp>2020-12-04T12:34:56</PublicationTimestamp>
     <ParticipantRef>ENT</ParticipantRef>
+ 
     <dataObjects>
 
         <!-- Reference data START -->
@@ -14,8 +24,10 @@
             </organisations>
         </ResourceFrame>
 
+
+
         <FareFrame id="ENT:FareFrame:1" version="1">
-          
+
             <timeIntervals>
                 <TimeInterval id="ENT:TimeInterval:SchoolMorning" version="1">
                     <StartTime>07:00:00</StartTime>
@@ -32,7 +44,8 @@
                     <Duration>PT90M</Duration>
                 </TimeInterval>
             </timeIntervals>
-            
+
+
             <qualityStructureFactors>
                 <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
                     <Name>Single activation</Name>
@@ -49,10 +62,9 @@
                     <Factor>activation</Factor>
                     <Value>380</Value>
                 </QualityStructureFactor>
-            </qualityStructureFactors> 
-            
-            
-            
+            </qualityStructureFactors>
+
+
             <validableElements>
                 <ValidableElement id="ENT:ValidableElement:SingleTrip" version="1">
                     <Name>Enkelttur Entur</Name>
@@ -63,7 +75,8 @@
             <usageParameters>
                 <UserProfile id="ENT:UserProfile:Pupil" version="1">
                     <Name lang="no">Skolelev</Name>
-                    <ProofRequired>identityDocument</ProofRequired> <!-- Skolekort -->
+                    <ProofRequired>identityDocument</ProofRequired>
+                    <!-- Skolekort -->
                 </UserProfile>
             </usageParameters>
 
@@ -104,8 +117,8 @@
                     </salesOfferPackageElements>
                 </SalesOfferPackage>
             </salesOfferPackages>
-            
         </FareFrame>
+
 
 
         <ServiceCalendarFrame id="ENT:ServiceCalendarFrame:1" version="1">
@@ -153,161 +166,170 @@
                             1111100 <!-- week 52 -->
                             1111 <!-- week 53 -->
                         </ValidDayBits>
-                        
                     </UicOperatingPeriod>
                 </operatingPeriods>
-                
             </ServiceCalendar>
         </ServiceCalendarFrame>
+
 
 
         <SalesTransactionFrame id="ENT:SalesTransactionFrame:Case1" version="1">
 
             <customerAccounts>
-                <CustomerAccount id="ENT:CustomerAccount:1" version="1"> </CustomerAccount>
+                <CustomerAccount id="ENT:CustomerAccount:1" version="1">
+                    <!-- Dummy data (unused placeholder) -->
+                </CustomerAccount>
             </customerAccounts>
 
             <fareContracts>
                 <FareContract id="ENT:FareContract:1" version="1">
-
                     <Name>Skolekort Bergen</Name>
                     <StartDate>2020-09-06T01:07:00</StartDate>
                     <EndDate>2021-09-07T01:07:00</EndDate>
                     <fareContractEntries>
-                        <!-- Dummy, only way in official netex to get a cpp in is via SalesTransaction -->
+                        <!-- Dummy, only way in official netex to get a CPP in is via SalesTransaction -->
                         <SalesTransaction version="1" id="ENT:SalesTransaction:1">
                             <Name>Kjøp Skoleskyss</Name>
-                            <Date>2018-09-06T01:07:00</Date>
+                            <Date>2020-09-06T01:07:00</Date>
                             <Amount>10000</Amount>
                             <Currency>NOK</Currency>
                             <PaymentMethod>debitCard</PaymentMethod>
                             <customerPurchasePackages>
-                                <!-- Referanse til customer purchase packages -->
+                                <!-- Reference to customer purchase packages -->
                                 <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:SchoolTransport" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
                     </fareContractEntries>
-
                 </FareContract>
             </fareContracts>
 
 
+
+            <!-- 
+                === SCHOOL TRANSPORT SAMPLE ===
+            -->
             <customerPurchasePackages>
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SchoolTransport" version="1">
-                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SchoolTransport" />
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SchoolTransport"/>
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SchoolTransport" version="1" order="1">
                             <validityParameterAssignments>
+                                
+                                <!-- School transport: ALTERNATIVE 1 for recording access right parameter -->
+                                
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleår" order="1">
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolMorning" version="1" >
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolMorning" version="1">
                                             <Name>1 trip in the morning</Name>
                                             <FrequencyOfUseType>single</FrequencyOfUseType>
                                             <MaximalFrequency>1</MaximalFrequency>
-                                            <FrequencyInterval>P1D</FrequencyInterval> <!-- TODO how to specify start of day? / operating day? -->
+                                            <FrequencyInterval>P1D</FrequencyInterval>
+                                            <!-- TODO how to specify start of day? / operating day? -->
                                             <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
                                         </FrequencyOfUse>
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoon" version="1" >
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoon" version="1">
                                             <Name>1 trip in the afternoon</Name>
                                             <FrequencyOfUseType>single</FrequencyOfUseType>
                                             <MaximalFrequency>1</MaximalFrequency>
                                             <FrequencyInterval>P1D</FrequencyInterval>
                                             <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
                                         </FrequencyOfUse>
-                                        
+
                                         <!-- These 2 FrequencyOfUse below is only necessary if the overall school calendar availabilityCondition is 
                                             not strict enough. A use case is children with 2 homes, one requiring school transport and one that does not -->
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:MorningTotalCount" version="1" >
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:MorningTotalCount" version="1">
                                             <Name>Maximum 190 trips in the morning to school in a year</Name>
                                             <FrequencyOfUseType>limited</FrequencyOfUseType>
                                             <MaximalFrequency>190</MaximalFrequency>
                                             <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
                                         </FrequencyOfUse>
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonTotalCount" version="1" >
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonTotalCount" version="1">
                                             <Name>Maximum 190 trips home from school in a year</Name>
                                             <FrequencyOfUseType>limited</FrequencyOfUseType>
                                             <MaximalFrequency>190</MaximalFrequency>
                                             <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
                                         </FrequencyOfUse>
-                                        
+
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
+
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:90Min" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
                                             <StandardDuration>PT90M</StandardDuration>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                            <!-- TODO must be list and include useOfValidator -->
                                         </UsageValidityPeriod>
                                     </limitations>
-                                    
+
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <temporalValidityParameters>
-                                        <!-- TODO  add to Netex -->
-                                        <ServiceCalendarRef ref="SKY:SchoolCalendar:SchoolCalendarBergen2020-2021"/>
+                                        <!-- FIX: Has been added as Pull Request (https://github.com/NeTEx-CEN/NeTEx/pull/136) but not yet merged -->
+                                        <!--ServiceCalendarRef ref="SKY:SchoolCalendar:SchoolCalendarBergen2020-2021"/ -->
                                     </temporalValidityParameters>
                                     <validityParameters>
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
                                         <TariffZoneRef ref="ENT:TariffZone:SkolekretsX"/>
                                     </validityParameters>
-                                    
+
                                 </CustomerPurchaseParameterAssignment>
 
 
-                                <!-- ALTERNATIVE 2 for recording access right parameter -->
-                                
+                                <!-- School transport: ALTERNATIVE 2 for recording access right parameter -->
+
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        
+
                                         <!-- Limit to -->
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolMorningV2-1" version="1" >
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolMorningV2-1" version="1">
                                             <Name>1 trip in the morning</Name>
                                             <FrequencyOfUseType>single</FrequencyOfUseType>
                                             <MaximalFrequency>1</MaximalFrequency>
-                                            <FrequencyInterval>P1D</FrequencyInterval> <!-- TODO how to specify start of day? / operating day? -->
+                                            <FrequencyInterval>P1D</FrequencyInterval>
+                                            <!-- TODO how to specify start of day? / operating day? -->
                                             <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
                                         </FrequencyOfUse>
                                         <!-- Limit to -->
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonV2-1" version="1" >
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonV2-1" version="1">
                                             <Name>1 trip in the afternoon</Name>
                                             <FrequencyOfUseType>single</FrequencyOfUseType>
                                             <MaximalFrequency>1</MaximalFrequency>
                                             <FrequencyInterval>P1D</FrequencyInterval>
                                             <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
                                         </FrequencyOfUse>
-                                        
+
                                         <!-- These 2 FrequencyOfUse below is only necessary if the overall school calendar availabilityCondition is 
                                             not strict enough. A use case is children with 2 homes, one requiring school transport and one that does not -->
                                         <!-- Limit to -->
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:MorningTotalCountV2-1" version="1" >
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:MorningTotalCountV2-1" version="1">
                                             <Name>Maximum 190 trips in the morning to school in a year</Name>
                                             <FrequencyOfUseType>limited</FrequencyOfUseType>
                                             <MaximalFrequency>190</MaximalFrequency>
                                             <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
                                         </FrequencyOfUse>
                                         <!-- Limit to -->
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonTotalCountV2-1" version="1" >
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonTotalCountV2-1" version="1">
                                             <Name>Maximum 190 trips home from school in a year</Name>
                                             <FrequencyOfUseType>limited</FrequencyOfUseType>
                                             <MaximalFrequency>190</MaximalFrequency>
                                             <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
                                         </FrequencyOfUse>
-                                        
+
                                         <!-- No trigger, does not change, cannot be actvated -->
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:SchoolYear-1" version="1">
                                             <StartDate>2020-08-21</StartDate>
                                             <EndDate>2020-12-31</EndDate>
                                         </UsageValidityPeriod>
                                     </limitations>
-                                    <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected.
-                                    -->
+                                    <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected. -->
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <temporalValidityParameters>
-                                        <!-- TODO  add to Netex -->
-                                        <ServiceCalendarRef ref="SKY:SchoolCalendar:SchoolCalendarBergen2020-2021"/>
+                                        <!-- FIX: Has been added as Pull Request (https://github.com/NeTEx-CEN/NeTEx/pull/136) but not yet merged -->
+                                        <!--ServiceCalendarRef ref="SKY:SchoolCalendar:SchoolCalendarBergen2020-2021"/ -->
                                     </temporalValidityParameters>
                                 </CustomerPurchaseParameterAssignment>
 
@@ -321,16 +343,15 @@
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
                                             <StandardDuration>PT90M</StandardDuration>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                            <!-- TODO must be list and include useOfValidator -->
                                         </UsageValidityPeriod>
                                     </limitations>
-                                    <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected.
-                                    -->
+                                    <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected. -->
                                     <!-- Number of activations possible -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:380" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-                               
-                                
+
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-3" order="1">
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
@@ -338,8 +359,7 @@
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
                                     </limitations>
-                                    <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected.
-                                    -->
+                                    <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected. -->
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
@@ -348,47 +368,43 @@
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
-                        
+
                     </customerPurchasePackageElements>
-                    
-                    
-                    
-                    
                 </CustomerPurchasePackage>
 
 
+
+                <!-- 
+                    === Regular period pass (REFERENCE SAMPLE ONLY - Incomplete and not all assumptions are fledged out into actual parameters)  ===
+                --> 
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:PeriodPass" version="1">
-                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:PeriodPass" />
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:PeriodPass"/>
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:PeriodPass" version="1" order="1">
-                          
-                          <elementAccesses>
-                              
-                              <CustomerPurchasePackageElementAccess>
-                                  <MarkedAs>activated</MarkedAs>
-                                  
-                                  <validityParameterAssignments>
-                                      <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassVm2" order="1">
-                                          
-                                          <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                                          <limitations>
-                                              <UsageValidityPeriod id="ENT:UsageValidityPeriod:30DaysV2" version="1">
-                                                 <StartDate>2020-01-01</StartDate>
+
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>activated</MarkedAs>
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassVm2" order="1">
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <limitations>
+                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:30DaysV2" version="1">
+                                                  <StartDate>2020-01-01</StartDate>
                                                   <StartTime>00:00:00</StartTime>
                                                   <EndDate>2020-02-01</EndDate>
                                                   <EndTime>00:00:00</EndTime>
-                                              </UsageValidityPeriod>
-                                          </limitations>
-                                            
-                                      </CustomerPurchaseParameterAssignment>
-                                  </validityParameterAssignments>
-                              </CustomerPurchasePackageElementAccess>
-                              
-                          </elementAccesses>
-                            
-                            
-                            <!-- ATTEMPT 1 -->
-                            
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+
+
+                            <!-- Regular period pass: ALETERNATIVE 1 
+                                - Single parameter assignment with implications on how FrequencyOfUse and UsageValidityPeriod has implication on Access->UsageValidityPeriod-->
+
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPass" order="1">
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
@@ -396,53 +412,58 @@
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
-                             
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:Unlimited" version="1" >
-                                            <Name>1 30day period</Name>
+
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:Unlimited" version="1">
+                                            <Name>30day period</Name>
                                             <FrequencyOfUseType>limited</FrequencyOfUseType>
                                             <MaximalFrequency>1</MaximalFrequency>
                                         </FrequencyOfUse>
-                                        
+
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:30Days" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
                                             <StandardDuration>P30D</StandardDuration>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                            <!-- TODO must be list and include useOfValidator -->
                                         </UsageValidityPeriod>
                                     </limitations>
-                                    
+
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
                                         <TariffZoneRef ref="ENT:TariffZone:SkolekretsX"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
-                            
-                            
-                            <!-- ATTEMPT 2 - split into several parameter assignments -->
 
-                                  <!-- Activation of whole period -->
+
+                                <!-- Regular period pass: ALTERNATIVE 2 
+                                    - split into several parameter assignments 
+                                    (per activation, assuming e.g. first activation triggers validity period start/end and one triggers 90 min validity within period) -->
+
+                                <!-- Activation of whole period -->
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassV2" order="1">
-                                    
+
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
-                                        
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:UnlimitedV2" version="1" >
-                                            <Name>1 30day period</Name>
-                                            <FrequencyOfUseType>unlimited</FrequencyOfUseType> <!-- CHANGE -->
+
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:UnlimitedV2" version="1">
+                                            <Name>30day period</Name>
+                                            <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                                            <!-- CHANGE -->
                                         </FrequencyOfUse>
-                                        
+
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:30DalysV2k" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
                                             <StandardDuration>P30D</StandardDuration>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                            <!-- TODO must be list and include useOfValidator -->
                                         </UsageValidityPeriod>
                                     </limitations>
-                                    
+
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
@@ -450,38 +471,40 @@
                                     </validityParameters>
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-                                
+
                                 <!-- Validation required every 90 minutes -->
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassV233" order="1">
-                                    
+
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:UnlimitedV332" version="1" >
-                                            <FrequencyOfUseType>single</FrequencyOfUseType> <!-- Only one activation for each period -->
-                                       <!--     <FrequencyInterval>PT90M</FrequencyInterval> implicit from UVP below -->
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:UnlimitedV332" version="1">
+                                            <FrequencyOfUseType>single</FrequencyOfUseType>
+                                            <!-- Only one activation for each period -->
+                                            <!--     <FrequencyInterval>PT90M</FrequencyInterval> implicit from UVP below -->
                                         </FrequencyOfUse>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:30DalysV233k" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
                                             <StandardDuration>PT90M</StandardDuration>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                            <!-- TODO must be list and include useOfValidator -->
                                         </UsageValidityPeriod>
                                     </limitations>
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    <!--QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/ --> <!-- unlimited within boundary of 30 days? -->
                                 </CustomerPurchaseParameterAssignment>
 
                                 <!-- The actual access right -->
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassV2333" order="1">
-                                    
+
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
                                     </limitations>
-                                    
+
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
@@ -490,20 +513,12 @@
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
-                        
+
                     </customerPurchasePackageElements>
-                    
-                    
-                    
-                    
                 </CustomerPurchasePackage>
-                
-
             </customerPurchasePackages>
-
 
         </SalesTransactionFrame>
 
-     
     </dataObjects>
 </PublicationDelivery>
