@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Example-implementation for simple flexible line with unrestricted transport within an area.
+-->
+
 <PublicationDelivery 
-  version="1.08:NO-NeTEx-networktimetable:1.3"
   xmlns="http://www.netex.org.uk/netex" 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:gml="http://www.opengis.net/gml/3.2">
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  version="1.10:NO-NeTEx-networktimetable:1.4">
 
 	<PublicationTimestamp>2018-05-28T08:00:00</PublicationTimestamp>
 	<ParticipantRef>FIN</ParticipantRef>
@@ -43,7 +48,7 @@
 							</ContactDetails>
 							<OrganisationType>authority</OrganisationType>
 						</Authority>
-						<!-- Teoretisk eksempel (da reell Operator er ukjent) -->
+						<!-- Theoretical example (Operator-to-be not known at time of setting up example) -->
 						<Operator version="1" id="FIN:Operator:Flexx">
 							<CompanyNumber>00000000</CompanyNumber>
 							<Name>Flexx</Name>
@@ -58,20 +63,21 @@
 				</ResourceFrame>
 
 
-				<!-- Referanser til stoppestedregisteret (SiteFrame kun tatt med for eksempelets lesbarhet) -->
+				<!-- References to the Norwegian National Stop Registry (NSR) - External data, only included for readability -->
 				<SiteFrame version="1" id="FIN:SiteFrame:1">
 					<stopPlaces>
 						<StopPlace version="1" id="NRI:StopPlace:761083330">
 							<Name>Gamvik</Name>
 							<quays>
 								<Quay version="1" id="NSR:Quay:97371"/>
-								<!-- Quay i motsatt retning brukes ikke i dette eksempelet -->
+								<!-- Quay in oposite direction is not used for this dataset -->
 							</quays>
 						</StopPlace>
 						<StopPlace version="1" id="NRI:StopPlace:761083333">
 							<Name lang="NO-NB">Mehamn</Name>
 							<quays>
 								<Quay version="1" id="NSR:Quay:97379"/>
+								<!-- Quay in oposite direction is not used for this dataset -->
 							</quays>
 						</StopPlace>
 					</stopPlaces>
@@ -140,6 +146,7 @@
 							<BookWhen>advanceAndDayOfTravel</BookWhen>
 							<LatestBookingTime>21:00:00</LatestBookingTime>
 							<MinimumBookingPeriod>PT2H</MinimumBookingPeriod>
+							<!-- Copied from Authority info pamphlet, therefore Norwegian text --> 
 							<BookingNote>
 								Du kan bestille reise med Flexxruter ved å lage deg en brukerprofil på 
 								http://finnmark.flexx.no/, og bestille på den aktuelle ruten.
@@ -203,8 +210,9 @@
 
 
 					<notices>
-						<!-- Fotnote som gjelder generelt for Flexx Finnmark -->
+						<!-- Fotnote with general info on the Flexx Finnmark service -->
 						<Notice version="1" id="FIN:Notice:Flexx">
+							<!-- Copied from Authority info pamphlet, therefore Norwegian text -->
 							<Text>
 								I Finnmark er det innført bestillingsruter på noen strekninger som tradisjonelt har hatt for lavt 
 								passasjergrunnlag til å kjøre ordinær rutebuss. Denne ordningen kalles Flexx, og vil gradvis bli 
@@ -217,8 +225,9 @@
 								Husk å sjekke bestillingsfristen som gjelder for din aktuelle rute – den kan variere. 
 							</Text>
 						</Notice>
-						<!-- Fotnote som gjelder for booking -->
+						<!-- Fotnote related to booking -->
 						<Notice version="1" id="FIN:Notice:Booking">
+							<!-- Copied from Authority info pamphlet, therefore Norwegian text -->
 							<Text>
 								Plass må bestilles senest 2 timer før avreise på www.flexx.no eller tlf 75 77 18 88
 								Plass for avganger før kl. 09.00 må bestilles på www.flexx.no eller tlf 75 77 18 88 innen kl. 21.00 kvelden før avreise
@@ -226,6 +235,7 @@
 							</Text>
 						</Notice>
 						<Notice version="1" id="FIN:Notice:Interchange">
+							<!-- Copied from Authority info pamphlet, therefore Norwegian text -->
 							<Text>
 								Mehamn 10.45 har korresponderende rute
 							</Text>
@@ -240,8 +250,7 @@
 							<NoticeRef version="1" ref="FIN:Notice:Booking"/>
 							<NoticedObjectRef version="1" ref="FIN:FlexibleLine:809"/>
 						</NoticeAssignment>
-						<NoticeAssignment version="1" id="FIN:NoticeAssignment:Interchange"
-							order="0">
+						<NoticeAssignment version="1" id="FIN:NoticeAssignment:Interchange" order="0">
 							<NoticeRef version="1" ref="FIN:Notice:Interchange"/>
 							<NoticedObjectRef version="1" ref="FIN:ServiceJourney:1"/>
 						</NoticeAssignment>

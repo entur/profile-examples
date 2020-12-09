@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Example-implementation for simple flexible line with unrestricted transport within an area.
+  Example-implementation for simple flexible line with unrestricted transport within an area.
 -->
 
 <PublicationDelivery
-        version="1.08:NO-NeTEx-networktimetable:1.3"
         xmlns="http://www.netex.org.uk/netex"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:gml="http://www.opengis.net/gml/3.2">
+        xmlns:gml="http://www.opengis.net/gml/3.2"
+        version="1.10:NO-NeTEx-networktimetable:1.4">
 
     <PublicationTimestamp>2018-09-01T16:00:00Z</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
-    <Description>Bestillingslinje</Description>
+    <Description>On-demand Line example</Description>
     <dataObjects>
         <!-- =========================================== -->
         <CompositeFrame version="1" created="2018-09-01T16:00:00Z" id="RUT:CompositeFrame:01">
@@ -22,8 +22,7 @@ Example-implementation for simple flexible line with unrestricted transport with
                 </AvailabilityCondition>
             </validityConditions>
             <codespaces>
-                <!-- Codespace for Ruter -->
-                <Codespace id="ruter">
+                <Codespace id="rut">
                     <Xmlns>RUT</Xmlns>
                     <XmlnsUrl>http://www.rutebanken.org/ns/rut</XmlnsUrl>
                 </Codespace>
@@ -56,13 +55,12 @@ Example-implementation for simple flexible line with unrestricted transport with
 
 
                 <SiteFrame version="1" id="RUT:SiteFrame:1">
-
                     <flexibleStopPlaces>
                         <FlexibleStopPlace version="1" id="RUT:FlexibleStopPlace:ID-HANABORG-NORD">
-                            <Name>Fleksisone for linje 1</Name>
+                            <Name>Flexi-zone for Line 1</Name>
                             <Description>
-                                Bestillingslinjen kjøres i området Øvre Grønlia og Hanaborglia (Hanaborg nord)
-                                men har ikke fast trasé.
+                                On-demand servcie running in the area between Øvre Grønlia and Hanaborglia (Hanaborg nord),
+                                no fixed journey pattern.
                             </Description>
                             <TransportMode>bus</TransportMode>
                             <areas>
@@ -88,7 +86,7 @@ Example-implementation for simple flexible line with unrestricted transport with
 
                 <ServiceFrame version="1" id="RUT:ServiceFrame:1">
                     <Network version="1" id="RUT:Network:RuterBestillingslinjer">
-                        <Name>Ruter bestillingslinjer</Name>
+                        <Name>Ruter# on-demand services</Name>
                         <AuthorityRef version="1" ref="RUT:Authority:Ruter"/>
                     </Network>
 
@@ -139,7 +137,7 @@ Example-implementation for simple flexible line with unrestricted transport with
                             <BookingMethods>callOffice</BookingMethods>
                             <BookWhen>untilPreviousDay</BookWhen>
                             <LatestBookingTime>12:00:00</LatestBookingTime>
-                            <BookingNote>
+                            <BookingNote> <!-- (booking information copied from service description, therefore in Norwegian) -->
                                 Slik bestiller du transport med linje 1:
                                 Bestill transport på tlf. 04144 innen kl. 12 hverdagen i forveien.
                                 Prisene er som på vanlig rutebuss, og Ruters kort og billetter gjelder.
@@ -156,7 +154,7 @@ Example-implementation for simple flexible line with unrestricted transport with
 
                     <scheduledStopPoints>
                         <ScheduledStopPoint version="1" id="RUT:ScheduledStopPoint:ID-HANABORG_ST-NORD">
-                            <Name>Fleksi-sone Hanaborg nord</Name>
+                            <Name>Flexi-zone Hanaborg nord</Name>
                         </ScheduledStopPoint>
                     </scheduledStopPoints>
 
@@ -187,6 +185,7 @@ Example-implementation for simple flexible line with unrestricted transport with
                     </journeyPatterns>
 
                     <notices>
+                        <!-- (notices copied from service description, therefore in Norwegian) -->
                         <!-- Notice applied to the entire Line -->
                         <Notice version="1" id="RUT:Notice:1">
                             <Text>
