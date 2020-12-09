@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Simplified XML samples to illustrate various ways of structuring 
+    CustomerPurchasePackages with ParameterAssignments and ElementAccesses
+-->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  version="1.10:NO-NeTEx-fares:0.9">
+    
+    <PublicationTimestamp>2020-12-04T12:34:56</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+ 
+    <dataObjects>
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            <organisations>
+                <Authority id="ENT:Authority:ENT" version="1">
+                    <!-- placeholder -->
+                </Authority>
+            </organisations>
+        </ResourceFrame>
+
+
+
+        <FareFrame id="ENT:FareFrame:1" version="1">
+
+            <timeIntervals>
+                <TimeInterval id="ENT:TimeInterval:Morning" version="1">
+                    <StartTime>07:00:00</StartTime>
+                    <EndTime>09:00:00</EndTime>
+                </TimeInterval>
+                <TimeInterval id="ENT:TimeInterval:Afternoon" version="1">
+                    <StartTime>12:00:00</StartTime>
+                    <EndTime>18:00:00</EndTime>
+                </TimeInterval>
+                <TimeInterval id="ENT:TimeInterval:90Min" version="1">
+                    <Duration>PT90M</Duration>
+                </TimeInterval>
+            </timeIntervals>
+
+
+            <qualityStructureFactors>
+                <FareDemandFactor id="ENT:FareDemandFactor:1" version="1">
+                    <FareDemandType>middle</FareDemandType> <!-- "school" -->
+                    <!-- 
+                        Should also allow 
+                          1) TimeIntervalRef 
+                          and 
+                          2) ServiceCalendar(variousObjects)Ref 
+                        in this Factor? 
+                    -->
+                </FareDemandFactor>
+                <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
+                    <Name>One activation</Name>
+                    <Factor>activation</Factor>
+                    <Value>1</Value>
+                </QualityStructureFactor>
+                <QualityStructureFactor id="ENT:QualityStructureFactor:2" version="1">
+                    <Name>Two validations</Name>
+                    <Factor>validation</Factor>
+                    <Value>2</Value>
+                </QualityStructureFactor>
+            </qualityStructureFactors>
+
+
+            <validableElements>
+                <ValidableElement id="ENT:ValidableElement:1" version="1">
+                    <!-- placeholder -->
+                </ValidableElement>
+            </validableElements>
+
+
+            <usageParameters>
+                <UserProfile id="ENT:UserProfile:1" version="1">
+                    <!-- placeholder -->
+                </UserProfile>
+            </usageParameters>
+
+
+            <fareProducts>
+                <PreassignedFareProduct id="ENT:PreassignedFareProduct:1" version="1">
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="ENT:ValidableElement:1" version="1"/>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+                
+                <AmountOfPriceUnitProduct id="ENT:AmountOfPriceUnitProduct:1" version="1">
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="ENT:ValidableElement:1" version="1"/>
+                    </accessRightsInProduct>
+                </AmountOfPriceUnitProduct>
+            </fareProducts>
+
+
+            <salesOfferPackages>
+                <SalesOfferPackage id="ENT:SalesOfferPackage:1" version="1">
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:1" version="1" order="1">
+                            <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:1" version="1"/>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+        </FareFrame>
+
+
+
+        <ServiceCalendarFrame id="ENT:ServiceCalendarFrame:1" version="1">
+            <operatingPeriods>
+                <UicOperatingPeriod id="ENT:UicOperatingPeriod:1" version="1">
+                    <FromDate>2020-01-01T00:00:00</FromDate>
+                    <ToDate>2020-12-31T23:59:59</ToDate>
+                    <ValidDayBits>
+                        1111100 <!-- first sample week -->
+                        1111100 <!-- second sample week etc. -->
+                    </ValidDayBits>
+                </UicOperatingPeriod>
+            </operatingPeriods>
+        </ServiceCalendarFrame>
+
+
+
+        <SalesTransactionFrame id="ENT:SalesTransactionFrame:Case1" version="1">
+
+
+
+            <customerPurchasePackages>
+
+                <!-- ALTERNATIVE 1 -->
+                
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:1" version="1">
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:1"/>
+                    <customerPurchasePackageElements>
+                        
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Access_Consumption" version="1" order="1">
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1" created="2020-12-09T13:37:00">
+                                    <ValidableElementRef ref="RUT:ValidableElement:1" />
+                                    <MarkedAs>activated</MarkedAs>
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:A-1" version="1" order="1">
+                                            <LimitationGroupingType>AND</LimitationGroupingType>
+                                            <limitations>
+                                                <!-- FrequencyOfUseRef ref="ENT:FrequencyOfUse:TotalCount"/ -->
+                                                <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:60Min" version="1"/>
+                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:Next60min" version="1" derivedFromObjectRef="ENT:UsageValidityPeriod:60Min">
+                                                    <Name>Next 60 minutes</Name>
+                                                    <StartDate>2020-12-09</StartDate>
+                                                    <StartTime>13:37:00</StartTime>
+                                                    <EndDate>2020-12-09</EndDate>
+                                                    <EndTime>14:37:00</EndTime>
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                    
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                        </CustomerPurchasePackageElement>
+                        
+                        
+                        <CustomerPurchasePackageElement  id="ENT:CustomerPurchasePackageElement:Policy" version="1" order="1">
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:P-1" version="1" order="1">
+                                    <ValidableElementRef ref="ENT:ValidableElement:1" version="1"/>
+                                    <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:1" version="1"/>
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:TotalCount" version="1">
+                                            <Name>Maximum 2 trips</Name>
+                                            <FrequencyOfUseType>limited</FrequencyOfUseType>
+                                            <MaximalFrequency>2</MaximalFrequency>
+                                            <TimeIntervalRef ref="ENT:TimeInterval:Morning" version="1"/>
+                                        </FrequencyOfUse>
+
+                                        <UserProfileRef ref="ENT:UserProfile:1" version="1"/>
+
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:60Min" version="1">
+                                            <UsageTrigger>startOutboundRide</UsageTrigger>
+                                            <UsageEnd>standardDuration</UsageEnd>
+                                            <StandardDuration>PT60M</StandardDuration>
+                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                            <!-- TODO must be list and include useOfValidator -->
+                                        </UsageValidityPeriod>
+                                    </limitations>
+
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <temporalValidityParameters>
+                                        <!-- UicOperatingPeriodRef ref="ENT:UicOperatingPeriod:1" version="1"/ -->
+                                    </temporalValidityParameters>
+                                    <validityParameters>
+                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
+                                    </validityParameters>
+
+                                </CustomerPurchaseParameterAssignment>
+
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>
+
+                <!-- ALTERNATIVE 2 -->
+                
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:2" version="1">
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:1"/>
+                    <customerPurchasePackageElements>
+                        
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Access_Consumption2" version="1" order="1">
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1" created="2020-12-09T13:37:00">
+                                    <ValidableElementRef ref="RUT:ValidableElement:1" />
+                                    <MarkedAs>activated</MarkedAs>
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:A-2" version="1" order="1">
+                                            <LimitationGroupingType>AND</LimitationGroupingType>
+                                            <limitations>
+                                                <!-- FrequencyOfUseRef ref="ENT:FrequencyOfUse:TotalCount2"/ -->
+                                                <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:60Min2" version="1"/>
+                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:Next60min2" version="1" derivedFromObjectRef="ENT:CustomerPurchasePackageElement:Policy2">
+                                                    <Name>Next 60 minutes</Name>
+                                                    <StartDate>2020-12-09</StartDate>
+                                                    <StartTime>13:37:00</StartTime>
+                                                    <EndDate>2020-12-09</EndDate>
+                                                    <EndTime>14:37:00</EndTime>
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                    
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                        </CustomerPurchasePackageElement>
+                        
+                        
+                        <CustomerPurchasePackageElement  id="ENT:CustomerPurchasePackageElement:Policy2" version="1" order="1">
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:P-2" version="1" order="1">
+                                    <ValidableElementRef ref="ENT:ValidableElement:1" version="1"/>
+                                    <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:1" version="1"/>
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:TotalCount2" version="1">
+                                            <Name>Maximum 2 trips</Name>
+                                            <FrequencyOfUseType>limited</FrequencyOfUseType>
+                                            <MaximalFrequency>2</MaximalFrequency>
+                                            <TimeIntervalRef ref="ENT:TimeInterval:Morning" version="1"/>
+                                        </FrequencyOfUse>
+                                        
+                                        <UserProfileRef ref="ENT:UserProfile:1" version="1"/>
+                                        
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:60Min2" version="1">
+                                            <UsageTrigger>startOutboundRide</UsageTrigger>
+                                            <UsageEnd>standardDuration</UsageEnd>
+                                            <StandardDuration>PT60M</StandardDuration>
+                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                            <!-- TODO must be list and include useOfValidator -->
+                                        </UsageValidityPeriod>
+                                    </limitations>
+                                    
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <temporalValidityParameters>
+                                        <!-- UicOperatingPeriodRef ref="ENT:UicOperatingPeriod:1" version="1"/ -->
+                                    </temporalValidityParameters>
+                                    <validityParameters>
+                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
+                                    </validityParameters>
+                                    
+                                </CustomerPurchaseParameterAssignment>
+                                
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                        
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>
+                
+            </customerPurchasePackages>
+
+        </SalesTransactionFrame>
+
+    </dataObjects>
+</PublicationDelivery>
