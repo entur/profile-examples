@@ -16,13 +16,21 @@
       </validityConditions>
       <!-- ====================== CodeSpaces ====================== -->
       <codespaces>
-        <Codespace id="ENT">
+        <Codespace id="ent">
           <Xmlns>ENT</Xmlns>
           <XmlnsUrl>http://www.rutebanken.org/ns/ent</XmlnsUrl>
         </Codespace>
         <Codespace id="nsr">
           <Xmlns>NSR</Xmlns>
           <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+        </Codespace>
+        <Codespace id="nto">
+          <Xmlns>NTO</Xmlns>
+          <XmlnsUrl>http://www.rutebanken.org/ns/nto</XmlnsUrl>
+        </Codespace>
+        <Codespace id="goa">
+          <Xmlns>GOA</Xmlns>
+          <XmlnsUrl>http://www.rutebanken.org/ns/goa</XmlnsUrl>
         </Codespace>
       </codespaces>
       <!-- ====================== Defaults ====================== -->
@@ -90,11 +98,11 @@
               <ReversingDirection>true</ReversingDirection>
               <components>
                 <TrainInCompoundTrain id="GOA:TrainInCompoundTrain:1" version="1" order="1">
-                  <TrainRef ref="GOA:Train:73A"/>
+                  <TrainRef ref="GOA:Train:73A" version="1"/>
                   <OperationalOrientation>forwards</OperationalOrientation>
                 </TrainInCompoundTrain>
                 <TrainInCompoundTrain id="GOA:TrainInCompoundTrain:2" version="1" order="2">
-                  <TrainRef ref="GOA:Train:73A"/>
+                  <TrainRef ref="GOA:Train:73A" version="1"/>
                   <OperationalOrientation>forwards</OperationalOrientation>
                 </TrainInCompoundTrain>
               </components>
@@ -393,9 +401,11 @@
             <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:ASR">
               <Name>Asker stasjon</Name>
             </ScheduledStopPoint>
+            <!--
             <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:ASR-BUS-708">
               <Name>Asker stasjon - BUS</Name>
             </ScheduledStopPoint>
+            -->
             <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:ASR-2">
               <Name>Asker stasjon</Name>
             </ScheduledStopPoint>
@@ -762,9 +772,11 @@
             <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:LYS">
               <Name>Lysaker stasjon</Name>
             </ScheduledStopPoint>
+            <!--
             <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:LYS-BUS-265">
               <Name>Lysaker stasjon - BUS</Name>
             </ScheduledStopPoint>
+            -->
             <ScheduledStopPoint version="1" id="ENT:ScheduledStopPoint:LYS-4">
               <Name>Lysaker stasjon</Name>
             </ScheduledStopPoint>
@@ -1241,11 +1253,13 @@
               <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:ASR" version="1"/>
               <QuayRef ref="NSR:Quay:695"/>
             </PassengerStopAssignment>
+            <!-- Unresolved Quay ID "NSR:Quay:708" in Chouette
             <PassengerStopAssignment order="5" version="1"
               id="ENT:PassengerStopAssignment:ASR-BUS-708">
               <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:ASR-BUS-708" version="1"/>
               <QuayRef ref="NSR:Quay:708"/>
             </PassengerStopAssignment>
+            -->
             <PassengerStopAssignment order="6" version="1" id="ENT:PassengerStopAssignment:ASR-2">
               <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:ASR-2" version="1"/>
               <QuayRef ref="NSR:Quay:700"/>
@@ -1760,11 +1774,13 @@
               <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LYS" version="1"/>
               <QuayRef ref="NSR:Quay:246"/>
             </PassengerStopAssignment>
+            <!-- Unresolved Quay ID "NSR:Quay:265" in Chouette
             <PassengerStopAssignment order="127" version="1"
               id="ENT:PassengerStopAssignment:LYS-BUS-265">
               <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LYS-BUS-265" version="1"/>
               <QuayRef ref="NSR:Quay:265"/>
             </PassengerStopAssignment>
+            -->
             <PassengerStopAssignment order="128" version="1" id="ENT:PassengerStopAssignment:LYS-4">
               <ScheduledStopPointRef ref="ENT:ScheduledStopPoint:LYS-4" version="1"/>
               <QuayRef ref="NSR:Quay:246"/>

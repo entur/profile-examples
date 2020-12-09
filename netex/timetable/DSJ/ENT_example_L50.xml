@@ -18,13 +18,21 @@
       </validityConditions>
       <!-- ====================== CodeSpaces ====================== -->
       <codespaces>
-        <Codespace id="ENT">
+        <Codespace id="ent">
           <Xmlns>ENT</Xmlns>
           <XmlnsUrl>http://www.rutebanken.org/ns/ent</XmlnsUrl>
         </Codespace>
         <Codespace id="nsr">
           <Xmlns>NSR</Xmlns>
           <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+        </Codespace>
+        <Codespace id="nto">
+          <Xmlns>NTO</Xmlns>
+          <XmlnsUrl>http://www.rutebanken.org/ns/nto</XmlnsUrl>
+        </Codespace>
+        <Codespace id="goa">
+          <Xmlns>GOA</Xmlns>
+          <XmlnsUrl>http://www.rutebanken.org/ns/goa</XmlnsUrl>
         </Codespace>
       </codespaces>
       <!-- ====================== Defaults ====================== -->
@@ -403,7 +411,8 @@
                   <Value>771</Value>
                 </KeyValue>
               </keyList>
-              <VehicleTypeRef ref="GOA:Train:73A"/>
+              <!-- TODO: Legg inn igjen senere, er feil i typehierarki for VehicleType (som Train og CompoundTrain er) i importvalidatoren -->
+              <!--VehicleTypeRef ref="GOA:Train:73A"/-->
               <parts>
                 <JourneyPart id="GOA:JourneyPart:1" version="1">
                   <StartTime>00:00:00</StartTime>
@@ -564,10 +573,12 @@
                 <TimetabledPassingTime version="0" id="ENT:TimetabledPassingTime:740-SSE">
                   <StopPointInJourneyPatternRef ref="ENT:StopPointInJourneyPattern:L50-139-26" version="0"/>
                   <ArrivalTime>14:50:00</ArrivalTime>
+                  <DepartureTime>14:51:00</DepartureTime>
                 </TimetabledPassingTime>
                 <TimetabledPassingTime version="0" id="ENT:TimetabledPassingTime:741-JAAT">
                   <StopPointInJourneyPatternRef ref="ENT:StopPointInJourneyPattern:L50-139-27" version="0"/>
                   <ArrivalTime>14:58:00</ArrivalTime>
+                  <DepartureTime>14:59:00</DepartureTime>
                 </TimetabledPassingTime>
                 <TimetabledPassingTime version="0" id="ENT:TimetabledPassingTime:742-STV">
                   <StopPointInJourneyPatternRef ref="ENT:StopPointInJourneyPattern:L50-139-28" version="0"/>
@@ -935,10 +946,12 @@
                 <TimetabledPassingTime version="0" id="ENT:TimetabledPassingTime:740-SSE-6">
                   <StopPointInJourneyPatternRef ref="ENT:StopPointInJourneyPattern:L50-139-26" version="0"/>
                   <ArrivalTime>14:50:00</ArrivalTime>
+                  <DepartureTime>14:51:00</DepartureTime>
                 </TimetabledPassingTime>
                 <TimetabledPassingTime version="0" id="ENT:TimetabledPassingTime:741-JAAT-6">
                   <StopPointInJourneyPatternRef ref="ENT:StopPointInJourneyPattern:L50-139-27" version="0"/>
                   <ArrivalTime>14:58:00</ArrivalTime>
+                  <DepartureTime>14:59:00</DepartureTime>
                 </TimetabledPassingTime>
                 <TimetabledPassingTime version="0" id="ENT:TimetabledPassingTime:742-STV-6">
                   <StopPointInJourneyPatternRef ref="ENT:StopPointInJourneyPattern:L50-139-28" version="0"/>
