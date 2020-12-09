@@ -37,9 +37,6 @@
                     <StartTime>12:00:00</StartTime>
                     <EndTime>18:00:00</EndTime>
                 </TimeInterval>
-                <TimeInterval id="ENT:TimeInterval:30D" version="1">
-                    <Duration>P30D</Duration>
-                </TimeInterval>
                 <TimeInterval id="ENT:TimeInterval:90Min" version="1">
                     <Duration>PT90M</Duration>
                 </TimeInterval>
@@ -47,11 +44,6 @@
 
 
             <qualityStructureFactors>
-                <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
-                    <Name>Single activation</Name>
-                    <Factor>activation</Factor>
-                    <Value>1</Value>
-                </QualityStructureFactor>
                 <QualityStructureFactor id="ENT:QualityStructureFactor:190" version="1">
                     <Name>190 activations</Name>
                     <Factor>activation</Factor>
@@ -88,12 +80,6 @@
                         <AccessRightInProductRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                     </accessRightsInProduct>
                 </AmountOfPriceUnitProduct>
-                <PreassignedFareProduct id="ENT:PreassignedFareProduct:PeriodPass" version="1">
-                    <Name lang="no">Månedskort 30 dager</Name>
-                    <accessRightsInProduct>
-                        <AccessRightInProductRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                    </accessRightsInProduct>
-                </PreassignedFareProduct>
             </fareProducts>
 
 
@@ -104,15 +90,6 @@
                         <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SchoolCarnet" version="1" order="1">
                             <Name lang="no">Skolekort</Name>
                             <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
-                        </SalesOfferPackageElement>
-                    </salesOfferPackageElements>
-                </SalesOfferPackage>
-                <SalesOfferPackage id="ENT:SalesOfferPackage:PeriodPass" version="1">
-                    <Name lang="no">Skolekort Bergen</Name>
-                    <salesOfferPackageElements>
-                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:PeriodPass" version="1" order="1">
-                            <Name lang="no">Skolekort</Name>
-                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                         </SalesOfferPackageElement>
                     </salesOfferPackageElements>
                 </SalesOfferPackage>
@@ -347,7 +324,6 @@
                                             <!-- TODO must be list and include useOfValidator -->
                                         </UsageValidityPeriod>
                                     </limitations>
-                                    <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected. -->
                                     <!-- Number of activations possible -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:380" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
@@ -372,150 +348,6 @@
                     </customerPurchasePackageElements>
                 </CustomerPurchasePackage>
 
-
-
-                <!-- 
-                    === Regular period pass (REFERENCE SAMPLE ONLY - Incomplete and not all assumptions are fledged out into actual parameters)  ===
-                --> 
-                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:PeriodPass" version="1">
-                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:PeriodPass"/>
-                    <customerPurchasePackageElements>
-                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:PeriodPass" version="1" order="1">
-
-                            <elementAccesses>
-                                <CustomerPurchasePackageElementAccess>
-                                    <MarkedAs>activated</MarkedAs>
-                                    <validityParameterAssignments>
-                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassVm2" order="1">
-                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                                            <limitations>
-                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:30DaysV2" version="1">
-                                                  <StartDate>2020-01-01</StartDate>
-                                                  <StartTime>00:00:00</StartTime>
-                                                  <EndDate>2020-02-01</EndDate>
-                                                  <EndTime>00:00:00</EndTime>
-                                                </UsageValidityPeriod>
-                                            </limitations>
-                                        </CustomerPurchaseParameterAssignment>
-                                    </validityParameterAssignments>
-                                </CustomerPurchasePackageElementAccess>
-                            </elementAccesses>
-
-
-                            <!-- Regular period pass: ALETERNATIVE 1 
-                                - Single parameter assignment with implications on how FrequencyOfUse and UsageValidityPeriod has implication on Access->UsageValidityPeriod-->
-
-                            <validityParameterAssignments>
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPass" order="1">
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                                    <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
-                                    <LimitationGroupingType>AND</LimitationGroupingType>
-                                    <limitations>
-                                        <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
-
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:Unlimited" version="1">
-                                            <Name>30day period</Name>
-                                            <FrequencyOfUseType>limited</FrequencyOfUseType>
-                                            <MaximalFrequency>1</MaximalFrequency>
-                                        </FrequencyOfUse>
-
-                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:30Days" version="1">
-                                            <UsageTrigger>startOutboundRide</UsageTrigger>
-                                            <UsageEnd>standardDuration</UsageEnd>
-                                            <StandardDuration>P30D</StandardDuration>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
-                                            <!-- TODO must be list and include useOfValidator -->
-                                        </UsageValidityPeriod>
-                                    </limitations>
-
-                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
-                                    <validityParameters>
-                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
-                                        <TariffZoneRef ref="ENT:TariffZone:SkolekretsX"/>
-                                    </validityParameters>
-                                </CustomerPurchaseParameterAssignment>
-
-
-                                <!-- Regular period pass: ALTERNATIVE 2 
-                                    - split into several parameter assignments 
-                                    (per activation, assuming e.g. first activation triggers validity period start/end and one triggers 90 min validity within period) -->
-
-                                <!-- Activation of whole period -->
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassV2" order="1">
-
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                                    <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
-                                    <LimitationGroupingType>AND</LimitationGroupingType>
-                                    <limitations>
-                                        <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
-
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:UnlimitedV2" version="1">
-                                            <Name>30day period</Name>
-                                            <FrequencyOfUseType>unlimited</FrequencyOfUseType>
-                                            <!-- CHANGE -->
-                                        </FrequencyOfUse>
-
-                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:30DalysV2k" version="1">
-                                            <UsageTrigger>startOutboundRide</UsageTrigger>
-                                            <UsageEnd>standardDuration</UsageEnd>
-                                            <StandardDuration>P30D</StandardDuration>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
-                                            <!-- TODO must be list and include useOfValidator -->
-                                        </UsageValidityPeriod>
-                                    </limitations>
-
-                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
-                                    <validityParameters>
-                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
-                                        <TariffZoneRef ref="ENT:TariffZone:SkolekretsX"/>
-                                    </validityParameters>
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
-                                </CustomerPurchaseParameterAssignment>
-
-                                <!-- Validation required every 90 minutes -->
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassV233" order="1">
-
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                                    <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
-                                    <LimitationGroupingType>AND</LimitationGroupingType>
-                                    <limitations>
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:UnlimitedV332" version="1">
-                                            <FrequencyOfUseType>single</FrequencyOfUseType>
-                                            <!-- Only one activation for each period -->
-                                            <!--     <FrequencyInterval>PT90M</FrequencyInterval> implicit from UVP below -->
-                                        </FrequencyOfUse>
-                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:30DalysV233k" version="1">
-                                            <UsageTrigger>startOutboundRide</UsageTrigger>
-                                            <UsageEnd>standardDuration</UsageEnd>
-                                            <StandardDuration>PT90M</StandardDuration>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
-                                            <!-- TODO must be list and include useOfValidator -->
-                                        </UsageValidityPeriod>
-                                    </limitations>
-                                    <!--QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/ --> <!-- unlimited within boundary of 30 days? -->
-                                </CustomerPurchaseParameterAssignment>
-
-                                <!-- The actual access right -->
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassV2333" order="1">
-
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                                    <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
-                                    <LimitationGroupingType>AND</LimitationGroupingType>
-                                    <limitations>
-                                        <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
-                                    </limitations>
-
-                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
-                                    <validityParameters>
-                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
-                                        <TariffZoneRef ref="ENT:TariffZone:SkolekretsX"/>
-                                    </validityParameters>
-                                </CustomerPurchaseParameterAssignment>
-                            </validityParameterAssignments>
-                        </CustomerPurchasePackageElement>
-
-                    </customerPurchasePackageElements>
-                </CustomerPurchasePackage>
             </customerPurchasePackages>
 
         </SalesTransactionFrame>
