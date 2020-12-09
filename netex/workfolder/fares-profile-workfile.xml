@@ -5,15 +5,139 @@
   xmlns="http://www.netex.org.uk/netex"
   xmlns:gis="http://www.opengis.net/gml/3.2" 
   xmlns:siri="http://www.siri.org.uk/siri"
-  version="1.14:NO-NeTEx-fares:0.9">
+  version="1.12:NO-NeTEx-fares:0.9">
     
     <PublicationTimestamp>2020-07-22T12:00:00</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
     <dataObjects>
         
+        <!--
+        <GeneralFrame version="001" id="AURIGE:TypeOfFrame:NETEX_COMMUN-Le-Corbusier:LOC">
+            <Name>Frame NETEX_COMMUN Le Corbusier</Name>
+            <Description>Frame NETEX_COMMUN pour l'exemple d'arrêt Le Corbusier</Description>
+            <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_COMMUN">version="1.01:FR-NETEX_COMMUN-1.0"</TypeOfFrameRef>
+            <members modificationSet="all">
+                <TypeOfFrame version="1.01:FR-NETEX_COMMUN-1.0" 
+        -->
         
         <!-- Non-compliant organisation data included only for readability of example -->
-        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+        <ResourceFrame id="SKY:ResourceFrame:1" version="1">
+            <contentValidityConditions>
+                <!--ValidDuring >
+                    <DaysOfWeek>Monday Friday</DaysOfWeek>
+                </ValidDuring-->
+                
+                <AvailabilityCondition id="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021" version="1">
+                    <Name>Gyldighet Skolerute Bergen 2020-2021</Name>
+                    <!-- Start date of validity bits, first bit represents this date -->
+                    <FromDate>2020-08-17T00:00:00</FromDate>
+                    <!-- Only necessary to validate that enough validity bits are present -->
+                    <ToDate>2021-06-18T00:00:00</ToDate>
+                    <!-- Must have validity bits for each single day -->
+                    <ValidDayBits>
+                        1111100 <!-- week 34 -->
+                        1111100 <!-- week 35 -->
+                        1111100 <!-- week 36 -->
+                        1111100 <!-- week 37 -->
+                        1111100 <!-- week 38 -->
+                        1111100 <!-- week 39 -->
+                        1111100 <!-- week 40 -->
+                        1111100 <!-- week 41 -->
+                        1111100 <!-- week 42 -->
+                        1111100 <!-- week 43 -->
+                        1111100 <!-- week 44 -->
+                        1111100 <!-- week 45 -->
+                        1111100 <!-- week 46 -->
+                        1111100 <!-- week 47 -->
+                        1111100 <!-- week 48 -->
+                        1111100 <!-- week 49 -->
+                        1111100 <!-- week 50 -->
+                        1111100 <!-- week 51 -->
+                        1111100 <!-- week 52 -->
+                        1111 <!-- week 53 -->
+                    </ValidDayBits>
+                    <timebands>
+                        <!-- Could also be 2 timebands - morning and afternoon -->
+                        <Timeband id="SKY:Timeband:SchoolHours" version="1">
+                            <StartTime>06:30:00</StartTime>
+                            <EndTime>18:30:00</EndTime>
+                        </Timeband>
+                    </timebands>
+                </AvailabilityCondition>
+                
+                <!-- Week day based - IRRELEVANT (better to express with PropertyOfDay -->
+                <ValidDuring id="ENT:ValidDuring:1" version="1">
+                    <FromDate>2020-01-01T00:00:00</FromDate>
+                    <ToDate>2021-01-01T00:00:00</ToDate>
+                    <Days>YYYYYNN</Days>
+                </ValidDuring>
+                
+                
+                <AvailabilityCondition id="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021-DEPRECATED" version="1">
+                    <Name>Skolerute Bergen 2020-2021</Name>
+                    <WithConditionRef ref="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021-EnkeltdagerUnntatt" version="1"/>
+                    <dayTypes>
+                        <DayType id="SKY:DayType:PRE-GeneralSchoolDay" version="1">
+                            <properties>
+                                <!-- Multiple PropertyOfDay(s) are ORed together -->
+                                <PropertyOfDay>
+                                    <DaysOfWeek>Weekdays</DaysOfWeek>
+                                </PropertyOfDay>
+                            </properties>
+                            <timebands>
+                                <Timeband id="SKY:Timeband:SchoolHours2" version="1">
+                                    <StartTime>06:30:00</StartTime>
+                                    <EndTime>18:30:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </DayType>
+                    </dayTypes>
+                    <!--operatingPeriods>
+                        <OperatingPeriod id="SKY:OperatingPeriod:SommerTilHoest" version="1">
+                            <FromDate>2020-08-17T00:00:00</FromDate>
+                            <ToDate>2020-10-03T00:00:00</ToDate>
+                        </OperatingPeriod>
+                        <OperatingPeriod id="SKY:OperatingPeriod:HoestTilJul" version="1">
+                            <FromDate>2020-10-12T00:00:00</FromDate>
+                            <ToDate>2020-12-22T00:00:00</ToDate>
+                        </OperatingPeriod>
+                        <OperatingPeriod id="SKY:OperatingPeriod:JulTilVintererie" version="1">
+                            <FromDate>2021-01-02T00:00:00</FromDate>
+                            <ToDate>2021-03-01T00:00:00</ToDate>
+                        </OperatingPeriod>
+                        <OperatingPeriod id="SKY:OperatingPeriod:VinterferieTilPaaske" version="1">
+                            <FromDate>2020-03-07T00:00:00</FromDate>
+                            <ToDate>2020-03-29T00:00:00</ToDate>
+                        </OperatingPeriod>
+                        <OperatingPeriod id="SKY:OperatingPeriod:PaaskeTilSommerferie" version="1">
+                            <FromDate>2020-04-06T00:00:00</FromDate>
+                            <ToDate>2020-06-19T00:00:00</ToDate>
+                        </OperatingPeriod>
+                    </operatingPeriods-->
+                </AvailabilityCondition>
+                <AvailabilityCondition id="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021-EnkeltdagerUnntatt" version="1">
+                    <IsAvailable>false</IsAvailable>
+                    <operatingDays>
+                        <!-- include all excluded single days here, list is partial -->
+                        <OperatingDay id="SKY:OperatingDay:2020-09-07" version="1">
+                            <CalendarDate>2020-09-07</CalendarDate>
+                        </OperatingDay>
+                        <OperatingDay id="SKY:OperatingDay:2021-05-17" version="1">
+                            <CalendarDate>2021-05-17</CalendarDate>
+                        </OperatingDay>
+                    </operatingDays>
+                </AvailabilityCondition>
+            </contentValidityConditions>
+        </ResourceFrame>
+        
+        
+        <ResourceFrame id="ENT:ResourceFrame:2" version="1">
+            <typesOfValue>
+                <TypeOfCustomerAccount id="ENT:TypeOfCustomerAccount:1" version="1">
+                    <Name>Customer account 1</Name>
+                </TypeOfCustomerAccount>
+            </typesOfValue> 
+            
             <organisations>
                 <GeneralOrganisation id="ENT:GeneralOrganisation:Entur" version="1">
                     <Name>Entur</Name>
@@ -73,6 +197,47 @@
         <TimetableFrame id="ENT:TimetableFrame:1" version="1">
             <!-- only included as NeTEx frame structure reference -->
         </TimetableFrame>
+        
+        <ServiceCalendarFrame id="ENT:ServiceCalendarFrame:1" version="1">
+            <ServiceCalendar id="ENT:ServiceCalendar:1" version="1">
+                <operatingPeriods>
+                    <OperatingPeriod id="ENT:OperatingPeriod:1" version="1">
+                        <Name>Placeholder</Name>
+                        <FromDate>2020-08-17T00:00:00</FromDate>
+                        <ToDate>2021-06-18T00:00:00</ToDate>
+                    </OperatingPeriod>
+                    
+                    <UicOperatingPeriod id="ENT:UicOperatingPeriod:1" version="1">
+                        <!-- Start date of validity bits, first bit represents this date -->
+                        <FromDate>2020-08-17T00:00:00</FromDate>
+                        <!-- Only necessary to validate that enough validity bits are present -->
+                        <ToDate>2021-06-18T00:00:00</ToDate>
+                        <ValidDayBits>
+                            1111100 <!-- week 34 -->
+                            1111100 <!-- week 35 -->
+                            1111100 <!-- week 36 -->
+                            1111100 <!-- week 37 -->
+                            1111100 <!-- week 38 -->
+                            1111100 <!-- week 39 -->
+                            1111100 <!-- week 40 -->
+                            1111100 <!-- week 41 -->
+                            1111100 <!-- week 42 -->
+                            1111100 <!-- week 43 -->
+                            1111100 <!-- week 44 -->
+                            1111100 <!-- week 45 -->
+                            1111100 <!-- week 46 -->
+                            1111100 <!-- week 47 -->
+                            1111100 <!-- week 48 -->
+                            1111100 <!-- week 49 -->
+                            1111100 <!-- week 50 -->
+                            1111100 <!-- week 51 -->
+                            1111100 <!-- week 52 -->
+                            1111 <!-- week 53 -->
+                        </ValidDayBits>
+                    </UicOperatingPeriod>
+                </operatingPeriods>
+            </ServiceCalendar>
+        </ServiceCalendarFrame>
 
 
 
@@ -133,6 +298,9 @@
             <geographicalStructureFactors>
                 <GeographicalStructureFactor id="ENT:GeographicalStructureFactor:1" version="1">
                     <Name>GeographicalStructureFactor</Name>
+                    <NumberOfUnits>1</NumberOfUnits>
+                </GeographicalStructureFactor>
+                <GeographicalStructureFactor id="ENT:GeographicalStructureFactor:2" version="1">
                 </GeographicalStructureFactor>
             </geographicalStructureFactors>
             
@@ -147,6 +315,23 @@
                 </TimeInterval>
             </timeIntervals>
             
+            
+            
+            <qualityStructureFactors>
+                <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
+                    <BrandingRef ref="ENT:Branding:1" changed="2020-12-08T10:00:00"/>
+                    <Factor>trips</Factor>
+                    <Value>2</Value>
+                </QualityStructureFactor>
+                <QualityStructureFactor id="SKY:QualityStructureFactor:180" version="1">
+                    <Name>180 validations per year</Name>
+                </QualityStructureFactor>
+                <QualityStructureFactor id="SKY:QualityStructureFactor:10" version="1">
+                    <Name>2 trips per day</Name>
+                    <Factor>trips</Factor>
+                    <Value>2</Value>
+                </QualityStructureFactor>
+            </qualityStructureFactors>     
             
             
             
@@ -186,14 +371,29 @@
                         <DistanceMatrixElementPriceRef ref="ENT:DistanceMatrixElementPrice:2_80" version="1"/>
                     </prices>
                 </DistanceMatrixElement>
+                
+                <DistanceMatrixElement id="ENT:DistanceMatrixElement:Length" version="1">
+                    <Distance>1</Distance>
+                </DistanceMatrixElement>
             </distanceMatrixElements>
             
             
+            
+
+            
+            
+            
+            
+            
+            <!-- 
+                7.5.6.6.1.1 FareStructureElement – Model Element
+                A sequence or set of CONTROLLABLE ELEMENTs to which rules for limitation of access rights and calculation of prices (fare structure) are applied.
+            -->
             <fareStructureElements>
                 
                 <!-- RECOMMENDATION: -->
                 <!-- Either as separate GenericParamaterAssignment(s) -->
-                <FareStructureElement id="ENT:FareStructureElement:1" version="1">
+                <FareStructureElement id="ENT:FareStructureElement:1" version="1" derivedFromObjectRef="">
                     <TariffBasis>discount</TariffBasis>
                     <validityParameterAssignments>
                         <GenericParameterAssignment id="ENT:GenericParameterAssignment:1" version="1" order="0">
@@ -274,6 +474,11 @@
                         <FareStructureElementRef ref="ENT:FareStructureElement:1" version="1"/>
                         <FareStructureElementRef ref="ENT:FareStructureElement:1" version="1"/>
                     </fareStructureElements>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment id="ENT:GenericParameterAssignment:1" version="1" order="1">
+                            <ControllableElementRef ref="ref"/>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
                 </ValidableElement>
                 <ValidableElement id="ENT:ValidableElement:2" version="1">
                     <Name>Single trip within two zones</Name>
@@ -311,7 +516,11 @@
                     </companionProfiles>
                 </UserProfile>
                 <UsageValidityPeriod id="ENT:UsageValidityPeriod:1" version="1">
-                    <Name>UsageValidityPeriod</Name>
+                    <StartDate>2020-01-01</StartDate>
+                    <StartTime>00:00:01</StartTime>
+                    <EndDate>2022-12-31</EndDate>
+                    <EndTime>23:59:59</EndTime>
+                    
                 </UsageValidityPeriod>
                 <Suspending id="ENT:Suspending:1" version="1">
                     <SuspensionPolicy>forAnyReason</SuspensionPolicy>
@@ -321,7 +530,7 @@
                     <IsRequired>true</IsRequired>
                 </RoundTrip>
                 <FrequencyOfUse id="ENT:FrequencyOfUse:1" version="1">
-                    <Name>FrequencyOfUse</Name>
+                    <FrequencyInterval>PT1H</FrequencyInterval>
                 </FrequencyOfUse>
                 <Interchanging id="ENT:Interchanging:1" version="1">
                     <Name>Interchanging</Name>
@@ -346,6 +555,7 @@
                 </Cancelling>
                 <Refunding id="ENT:Refunding:1" version="1">
                     <Name>Refunding</Name>
+                    <RefundBasis>perOffer</RefundBasis>
                 </Refunding>
                 <Transferability id="ENT:Transferability:1" version="1">
                     <Name>Transferability</Name>
@@ -405,7 +615,6 @@
             </usageParameters>
             
             <fareProducts>
-                
                 <PreassignedFareProduct id="ENT:PreassignedFareProduct:1" version="1">
                     <Name>PreassignedFareProduct</Name>
                     <PrivateCode></PrivateCode>
@@ -448,6 +657,13 @@
                 <ThirdPartyProduct id="ENT:ThirdPartyProduct:1" version="1">
                     <Name>ThirdPartyProduct</Name>
                 </ThirdPartyProduct>
+                
+                <!-- Alternative structure: -->
+                <PreassignedFareProduct id="ENT:PreassignedFareProduct:Sample" version="1">
+                    <validableElements>
+                        <ValidableElementRef ref=""></ValidableElementRef>
+                    </validableElements>
+                </PreassignedFareProduct>
                 
             </fareProducts>
             
@@ -596,6 +812,7 @@
                                         <TransferabilityRef ref="ENT:Transferability:1" version="1"/>
                                         <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1" version="1"/>
                                     </limitations>
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                                 </GenericParameterAssignment>
                             </validityParameterAssignments>
                         </SalesOfferPackageElement>
@@ -634,6 +851,7 @@
                     <AllowedInChannel>false</AllowedInChannel>
                 </DistributionAssignment>
             </distributionAssignments>
+            
         </FareFrame>
 
 
@@ -663,8 +881,31 @@
             </customers>
             
             <customerAccounts>
-                <CustomerAccount id="ENT:CustomerAccount:1" version="1"> </CustomerAccount>
+                
+                <CustomerAccount id="ENT:CustomerAccount:Test" version="1">
+                    <!--TODO-->
+                </CustomerAccount>
+                
+                <CustomerAccount id="ENT:CustomerAccount:1" version="1">
+                    <Name>Customer Account</Name>
+                    <fareContracts>
+                        <FareContractRef ref="ENT:FareContract:1" version="1"/>
+                    </fareContracts>
+                    
+                    
+                    
+                    <customerAccountEntries>
+                        <CustomerAccountEntryRef ref="generic"/>
+                        <CustomerRegistration id="ENT:CustomerRegistration:1" version="1">
+                            <Name>data</Name>
+                        </CustomerRegistration>
+                        <CustomerDeregistration id="ENT:CustomerDeregistration:1" version="1">
+                            <Name>data</Name>
+                        </CustomerDeregistration>
+                    </customerAccountEntries>
+                </CustomerAccount>
             </customerAccounts>
+            
             
             <fareContracts>
                 <FareContract id="ENT:FareContract:1" version="1">
@@ -706,11 +947,18 @@
             
             <customerPurchasePackages>
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SingleTrip1ZoneActivated" version="1">
+                    <validityConditions>
+                        <AvailabilityConditionRef ref="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021" version="1"/>
+                    </validityConditions>
+                    
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip1Zone" version="1"/>
                     <CustomerRef ref="ref"/>
                     <CustomerAccountRef ref="ref"/>
+                    
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SingleTrip1ZoneActivated" version="1" order="1">
+                            
+                            
                             <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:SingleTrip1Zone" version="1"/>
                             
                             <!-- CHECK: <PreassignedFareProduct> indirekte referert, og man trenger ikke angi eksplisitt -->  
@@ -719,14 +967,18 @@
                                 <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1" created="2020-07-22T11:00:00">
                                     
                                     <MarkedAs>activated</MarkedAs>
-                                    
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:1" version="1" order="1">
                                             <!-- CHECK: <ValidableElementRef> indirekte referert, likevel angi eksplisitt for ParameterAssignment? -->
                                             <limitations>
                                                 <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1" version="1"/>
                                                 <UserProfileRef ref="ENT:UserProfile:NormalFare" version="1"/>
+                                                <FrequencyOfUseRef ref="ref"/>
                                             </limitations>
+                                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                            <temporalValidityParameters>
+                                                
+                                            </temporalValidityParameters>
                                             <validityParameters>
                                                 <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" />
                                             </validityParameters>
@@ -734,6 +986,7 @@
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
+                            
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:2" version="1" order="1">
                                     <!-- CHECK: <ValidableElementRef> indirekte referert, likevel angi eksplisitt for ParameterAssignment? -->
@@ -744,18 +997,33 @@
                                         <EntitlementGivenRef ref="entitlement"></EntitlementGivenRef>
                                         <EntitlementRequiredRef ref="ent(ur)"></EntitlementRequiredRef>
                                     </limitations>
+                                    
+                                    <temporalValidityParameters>
+                                        <TimebandRef ref="ref"></TimebandRef>
+                                        <GroupOfTimebandsRef ref=""></GroupOfTimebandsRef>
+                                        <OperatingDayRef ref="ref"></OperatingDayRef>
+                                        <UicOperatingPeriodRef ref="ENT:UicOperatingPeriod:1" version="1"/>
+                                        <!--UicOperatingPeriodRef ref="ref"></UicOperatingPeriodRef-->
+                                        
+                                    </temporalValidityParameters>
                                     <validityParameters>
                                         <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" />
+                                        <PassengerSeatRef ref=""></PassengerSeatRef>
                                     </validityParameters>
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
+                            
                         </CustomerPurchasePackageElement>
+                        
                     </customerPurchasePackageElements>
+                    
                     <prices>
                         <CustomerPurchasePackagePrice id="ENT:CustomerPurchasePackagePrice:1" version="1">
                             <Amount>10</Amount>
                         </CustomerPurchasePackagePrice>
                     </prices>
+                    
                 </CustomerPurchasePackage>
             </customerPurchasePackages>
 
