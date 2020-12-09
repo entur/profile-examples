@@ -336,58 +336,6 @@
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SchoolTransportAlternative2" version="1" order="1">
                             <validityParameterAssignments>
                                 
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1"/>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                                    <LimitationGroupingType>AND</LimitationGroupingType>
-                                    <limitations>
-
-                                        <!-- Limit to -->
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolMorningV2-1" version="1">
-                                            <Name>1 trip in the morning</Name>
-                                            <FrequencyOfUseType>single</FrequencyOfUseType>
-                                            <MaximalFrequency>1</MaximalFrequency>
-                                            <FrequencyInterval>P1D</FrequencyInterval>
-                                            <!-- TODO how to specify start of day? / operating day? -->
-                                            <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
-                                        </FrequencyOfUse>
-                                        <!-- Limit to -->
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonV2-1" version="1">
-                                            <Name>1 trip in the afternoon</Name>
-                                            <FrequencyOfUseType>single</FrequencyOfUseType>
-                                            <MaximalFrequency>1</MaximalFrequency>
-                                            <FrequencyInterval>P1D</FrequencyInterval>
-                                            <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
-                                        </FrequencyOfUse>
-
-                                        <!-- These 2 FrequencyOfUse below is only necessary if the overall school calendar availabilityCondition is 
-                                            not strict enough. A use case is children with 2 homes, one requiring school transport and one that does not -->
-                                        <!-- Limit to -->
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:MorningTotalCountV2-1" version="1">
-                                            <Name>Maximum 190 trips in the morning to school in a year</Name>
-                                            <FrequencyOfUseType>limited</FrequencyOfUseType>
-                                            <MaximalFrequency>190</MaximalFrequency>
-                                            <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
-                                        </FrequencyOfUse>
-                                        <!-- Limit to -->
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonTotalCountV2-1" version="1">
-                                            <Name>Maximum 190 trips home from school in a year</Name>
-                                            <FrequencyOfUseType>limited</FrequencyOfUseType>
-                                            <MaximalFrequency>190</MaximalFrequency>
-                                            <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
-                                        </FrequencyOfUse>
-
-                                        <!-- No trigger, does not change, cannot be actvated -->
-                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:SchoolYear-1" version="1">
-                                            <StartDate>2020-08-21</StartDate>
-                                            <EndDate>2020-12-31</EndDate>
-                                        </UsageValidityPeriod>
-                                    </limitations>
-                                    <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected. -->
-                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
-                                    <!-- Overall availability -->
-                                    <FareDemandFactorRef ref="ENT:FareDemandFactor:SchoolDemandYear2020-2021-Bergen" version="1"/>
-                                </CustomerPurchaseParameterAssignment>
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1"/>
@@ -407,6 +355,61 @@
                                     <TimeIntervalRef ref="ENT:TimeInterval:90Min" version="1"/>
                                     <!-- Number of activations possible -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:380" version="1"/>
+                                    <IncludesGroupingType>OR</IncludesGroupingType>
+                                    <includes>
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1"/>
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <LimitationGroupingType>AND</LimitationGroupingType>
+                                            <limitations>
+                                                
+                                                <!-- Limit to -->
+                                                <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolMorningV2-1" version="1">
+                                                    <Name>1 trip in the morning</Name>
+                                                    <FrequencyOfUseType>single</FrequencyOfUseType>
+                                                    <MaximalFrequency>1</MaximalFrequency>
+                                                    <FrequencyInterval>P1D</FrequencyInterval>
+                                                    <!-- TODO how to specify start of day? / operating day? -->
+                                                    <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
+                                                </FrequencyOfUse>
+                                                <!-- Limit to -->
+                                                <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonV2-1" version="1">
+                                                    <Name>1 trip in the afternoon</Name>
+                                                    <FrequencyOfUseType>single</FrequencyOfUseType>
+                                                    <MaximalFrequency>1</MaximalFrequency>
+                                                    <FrequencyInterval>P1D</FrequencyInterval>
+                                                    <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
+                                                </FrequencyOfUse>
+                                                
+                                                <!-- These 2 FrequencyOfUse below is only necessary if the overall school calendar availabilityCondition is 
+                                            not strict enough. A use case is children with 2 homes, one requiring school transport and one that does not -->
+                                                <!-- Limit to -->
+                                                <FrequencyOfUse id="ENT:FrequencyOfUse:MorningTotalCountV2-1" version="1">
+                                                    <Name>Maximum 190 trips in the morning to school in a year</Name>
+                                                    <FrequencyOfUseType>limited</FrequencyOfUseType>
+                                                    <MaximalFrequency>190</MaximalFrequency>
+                                                    <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
+                                                </FrequencyOfUse>
+                                                <!-- Limit to -->
+                                                <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonTotalCountV2-1" version="1">
+                                                    <Name>Maximum 190 trips home from school in a year</Name>
+                                                    <FrequencyOfUseType>limited</FrequencyOfUseType>
+                                                    <MaximalFrequency>190</MaximalFrequency>
+                                                    <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
+                                                </FrequencyOfUse>
+                                                
+                                                <!-- No trigger, does not change, cannot be actvated -->
+                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:SchoolYear-1" version="1">
+                                                    <StartDate>2020-08-21</StartDate>
+                                                    <EndDate>2020-12-31</EndDate>
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                            <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected. -->
+                                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                            <!-- Overall availability -->
+                                            <FareDemandFactorRef ref="ENT:FareDemandFactor:SchoolDemandYear2020-2021-Bergen" version="1"/>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </includes>
                                 </CustomerPurchaseParameterAssignment>
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-3" order="1">
