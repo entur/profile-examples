@@ -7,6 +7,7 @@
         <!-- Reference data START -->
 
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            
             <typesOfValue>
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1">
                     <Name>Rule describing parameters when ValidableElement is activated</Name>
@@ -26,10 +27,17 @@
                     <Name>Entur Transport Service Inc</Name>
                 </Authority>
             </organisations>
+            
         </ResourceFrame>
 
         <FareFrame id="ENT:FareFrame:1" version="1">
-          
+            
+            <timeIntervals>
+                <TimeInterval id="ENT:TimeInterval:30Days" version="1">
+                    <Duration>P30D</Duration>
+                </TimeInterval>
+            </timeIntervals>
+            
             <qualityStructureFactors>
                 <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
                     <Name>Single activation</Name>
@@ -56,6 +64,9 @@
                 <UserProfile id="ENT:UserProfile:Adult" version="1">
                     <Name lang="no">Adult</Name>
                  </UserProfile>
+                <Interchanging id="ENT:Interchanging:StandardAllowed" version="1">
+                    <CanInterchange>true</CanInterchange>
+                </Interchanging>
             </usageParameters>
 
 
@@ -126,7 +137,7 @@
                             <elementAccesses>
                                 
                                 <!-- First *validation* entry -->
-                                <CustomerPurchasePackageElementAccess>
+                                <CustomerPurchasePackageElementAccess created="2020-01-01T00:05:00">
                                     <!-- TODO missing date/time of access -->
                                     <MarkedAs>marked</MarkedAs>
                                     <validityParameterAssignments>
@@ -153,6 +164,7 @@
                                             <Name>1 30day period</Name>
                                             <FrequencyOfUseType>unlimited</FrequencyOfUseType>
                                         </FrequencyOfUse>
+                                        <InterchangingRef ref="ENT:Interchanging:StandardAllowed" version="1"/>
                                         
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:30Days" version="1">
                                             <ActivationMeans>noneRequired</ActivationMeans>
@@ -238,10 +250,13 @@
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30Days" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
-                                            <StandardDuration>P30D</StandardDuration>
                                             <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
                                         </UsageValidityPeriod>
                                     </limitations>
+
+                                    <!-- 30 days given upon activation -->
+                                    <TimeIntervalRef ref="ENT:TimeInterval:30Days" version="1"/>
+                                    
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
@@ -299,12 +314,30 @@
                                 </CustomerPurchasePackageElementAccess>
                                 
                                 <!-- *Validation* entry -->
-                                <CustomerPurchasePackageElementAccess>
+                                <CustomerPurchasePackageElementAccess created="2020-01-01T00:04:00">
                                     <!-- TODO need date/time of access -->
                                     <MarkedAs>marked</MarkedAs>
+                                    
+                                    <!-- where was the element accesed? equipment, place, vehicle etc -->
+                       <!--             
+                                    <elementAccessParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassRideValidation1" order="1">
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <validityParameters>
+                                                <ServiceJourneyRef ref="ENT:ServiceJourney:JourneyXYZ"/>
+                                                <PlaceRef ref="OsloS"/>
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
+                                        
+                                    </elementAccessParameterAssignments>-->
+                                    
+                                    <!-- Additional parameters added to the access right - and that will be combined with  -->
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassRideValidation1" order="1">
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <validityParameters>
+                                                <ServiceJourneyRef ref="ENT:ServiceJourney:CurrentJourney"/>
+                                            </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
@@ -331,12 +364,19 @@
                                         </FrequencyOfUse>
                                         
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30Days1" version="1">
+                                         
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
-                                            <StandardDuration>P30D</StandardDuration>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                         
+                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationRequirements>selectedServiceJourney</ActivationRequirements>  <!-- selectedTariffZone -->
                                         </UsageValidityPeriod>
                                     </limitations>
+                            
+                                    <!-- 30 days given upon activation -->
+                                    <TimeIntervalRef ref="ENT:TimeInterval:30Days" version="1"/>
+                                    
+                                    
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
@@ -364,7 +404,7 @@
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/> 
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
                                     </limitations>

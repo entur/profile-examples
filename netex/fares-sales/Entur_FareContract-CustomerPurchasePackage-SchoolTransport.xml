@@ -411,7 +411,6 @@
                                     <TimeIntervalRef ref="ENT:TimeInterval:90Min" version="1"/>
                                     <!-- Number of activations possible -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:380" version="1"/>
-                                    <IncludesGroupingType>OR</IncludesGroupingType>
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1"/>
@@ -424,9 +423,7 @@
                                                     <Name>1 trip in the morning</Name>
                                                     <FrequencyOfUseType>single</FrequencyOfUseType>
                                                     <MaximalFrequency>1</MaximalFrequency>
-                                                    <FrequencyInterval>P1D</FrequencyInterval>
-                                                    
-                                                    <!-- TODO how to specify start of day? / operating day? -->
+                                                    <FrequencyInterval>PT22H</FrequencyInterval> <!-- SchoolMorning timeinterval is 2 hour duration from 07 to 09 so must account for activations as late as 08:59:59 -->
                                                     <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
                                                 </FrequencyOfUse>
                                                 <!-- Limit to -->
@@ -434,7 +431,7 @@
                                                     <Name>1 trip in the afternoon</Name>
                                                     <FrequencyOfUseType>single</FrequencyOfUseType>
                                                     <MaximalFrequency>1</MaximalFrequency>
-                                                    <FrequencyInterval>P1D</FrequencyInterval>
+                                                    <FrequencyInterval>PT20H</FrequencyInterval> <!-- SchoolAfternoon timeinterval is 4 hour duration from 12 to 16 so must account for activations as late as 15:59:59 -->
                                                     <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
                                                 </FrequencyOfUse>
                                                 
@@ -461,7 +458,6 @@
                                                     <EndDate>2020-12-31</EndDate>
                                                 </UsageValidityPeriod>
                                             </limitations>
-                                            <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected. -->
                                             <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                             <!-- Overall availability -->
                                             <FareDemandFactorRef ref="ENT:FareDemandFactor:SchoolDemandYear2020-2021-Bergen" version="1"/>
@@ -475,7 +471,6 @@
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
                                     </limitations>
-                                    <!-- To represent zonal Season passes, FARE ZONEs are defined for each zone and a Greater Anglia specific product is defined for the SEASON PASS. Its tariff allows different combinations of zone and TIME INTERVAL to be selected. -->
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
