@@ -334,10 +334,69 @@
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SchoolTransport"/>
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SchoolTransportAlternative2" version="1" order="1">
-                            <validityParameterAssignments>
+                            
+                            
+                            <elementAccesses>
                                 
+                                <!-- Access no 1 -->
+                                
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>activated</MarkedAs> 
+                                    
+                                    <!-- TO BE ADDED TO STANDARD 
+                                
+                                <AccessTime>2020-01-01T07:05:00</AccessTime>
+                                <PlaceRef ref="NSR:StopPlace:123"/>
+                                <ServiceJourneyRef ref="ENT:ServiceJourney:12345"/>
+                                   
+                                   TO BE ADDED TO STANDARD END -->
+                                    
+                                    <validityParameterAssignments>
+                                        <!-- Using derivedFrom(Object/Version)Ref to link which CPPA generated this CPPA -->
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Activation1" order="1" 
+                                            derivedFromObjectRef="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" derivedFromVersionRef="1" >
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <limitations>
+                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:Activation1" version="1">
+                                                    <StartDate>2020-01-01</StartDate>
+                                                    <StartTime>07:05:00</StartTime>
+                                                    <EndDate>2020-02-01</EndDate>
+                                                    <EndTime>08:35:00</EndTime>
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                    
+                                </CustomerPurchasePackageElementAccess>
 
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1">
+                                <!-- Access no 2 -->
+                                
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>activated</MarkedAs> 
+                                    
+                                     
+                                    <validityParameterAssignments>
+                                        <!-- Using derivedFrom(Object/Version)Ref to link which CPPA generated this CPPA -->
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Activation2" order="1" 
+                                            derivedFromObjectRef="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" derivedFromVersionRef="1" >
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <limitations>
+                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:Activation2" version="1">
+                                                    <StartDate>2020-01-01</StartDate>
+                                                    <StartTime>14:05:00</StartTime>
+                                                    <EndDate>2020-02-01</EndDate>
+                                                    <EndTime>15:35:00</EndTime>
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                    
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1" >
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <limitations>
@@ -369,6 +428,7 @@
                                                     <FrequencyOfUseType>single</FrequencyOfUseType>
                                                     <MaximalFrequency>1</MaximalFrequency>
                                                     <FrequencyInterval>P1D</FrequencyInterval>
+                                                    
                                                     <!-- TODO how to specify start of day? / operating day? -->
                                                     <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
                                                 </FrequencyOfUse>
