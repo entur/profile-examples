@@ -305,8 +305,7 @@
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
                                             <StandardDuration>PT90M</StandardDuration>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
-                                            <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                         </UsageValidityPeriod>
                                     </limitations>
 
@@ -402,8 +401,7 @@
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
                                          <!--   <StandardDuration>PT90M</StandardDuration>-->
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans>
-                                            <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                         </UsageValidityPeriod>
                                     </limitations>
                                     

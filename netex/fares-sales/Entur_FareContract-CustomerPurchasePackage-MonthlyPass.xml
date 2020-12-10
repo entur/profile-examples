@@ -250,7 +250,7 @@
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30Days" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                         </UsageValidityPeriod>
                                     </limitations>
 
@@ -368,7 +368,7 @@
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
                                          
-                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                             <ActivationRequirements>selectedServiceJourney</ActivationRequirements>  <!-- selectedTariffZone -->
                                         </UsageValidityPeriod>
                                     </limitations>
@@ -390,7 +390,7 @@
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:SingleRide" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>endOfRide</UsageEnd> <!-- Should trigger requirement of which ride -->
-                                            <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- TODO must be list and include useOfValidator -->
+                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                         </UsageValidityPeriod>
                                     </limitations>
                                     <!-- Unlimited -->
