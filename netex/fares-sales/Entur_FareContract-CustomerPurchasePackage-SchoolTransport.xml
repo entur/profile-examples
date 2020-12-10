@@ -340,12 +340,9 @@
                                 
                                 <!-- Access no 1 -->
                                 
-                                <CustomerPurchasePackageElementAccess>
+                                <CustomerPurchasePackageElementAccess created="2020-01-01T07:05:00">
                                     <MarkedAs>activated</MarkedAs> 
-                                    
-                                    <!-- TO BE ADDED TO STANDARD 
-                                
-                                <AccessTime>2020-01-01T07:05:00</AccessTime>
+                                    <!-- TO BE ADDED TO STANDARD ?
                                 <PlaceRef ref="NSR:StopPlace:123"/>
                                 <ServiceJourneyRef ref="ENT:ServiceJourney:12345"/>
                                    
@@ -371,7 +368,7 @@
 
                                 <!-- Access no 2 -->
                                 
-                                <CustomerPurchasePackageElementAccess>
+                                <CustomerPurchasePackageElementAccess created="2020-01-01T14:05:00">
                                     <MarkedAs>activated</MarkedAs> 
                                     
                                      
