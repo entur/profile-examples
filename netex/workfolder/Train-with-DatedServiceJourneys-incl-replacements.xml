@@ -647,7 +647,7 @@
               <dayTypes>
                 <DayTypeRef ref="ref"/>
               </dayTypes>
-              <TrainRef ref="ref"/>
+              <TrainRef ref="ref" changed="2020-11-11T20:00:00"/>
               <ServiceJourneyRef ref="ref"/>
               <ServiceJourneyRef ref="ref"/>
               <DatedServiceJourneyRef ref="reg"/>
