@@ -376,7 +376,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
 
         <!-- VARELAGER test-references -->
         
-        <Train version="0" nameOfClass="Bus" id="NSB:train:Dovrebussen">
+        <Train version="0" nameOfClass="Bus" id="NSB:Train:Dovrebussen">
           <components>
             <TrainComponent version="0" id="NSB:TrainComponent:DOVREBUSSEN-LOWER" order="1" created="2020-10-06T12:30:00" changed="2020-10-06T13:30:00">
               <TrainElementRef ref="PEN:LogicalElement:SETRA-S431DT-LOWER" versionRef="2"/>
@@ -386,6 +386,14 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
             </TrainComponent>
           </components>
         </Train>
+        
+        
+        <Train id="NSB:Train:1" version="1">
+          <!-- placeholder -->
+        </Train>
+        <VehicleType id="VehicleType:1" version="1">
+          <!-- placeholder -->
+        </VehicleType>
 
 
       </vehicleTypes>
@@ -791,7 +799,16 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
         <TimetableFrame version="1" id="NSB:TimetableFrame:4145999">
 
           <vehicleJourneys>
-            <VehicleJourney version="1" id="NSB:VehicleJourney:1-3922-61">
+
+            <DatedVehicleJourney id="NSB:DatedVehicleJourney:1" version="1">
+              <!-- placeholder -->
+            </DatedVehicleJourney>
+            
+            <DatedServiceJourney id="NSB:DatedServiceJourney:1" version="1">
+              <!-- placeholder -->
+            </DatedServiceJourney>
+            
+            <VehicleJourney version="1" id="NSB:VehicleJourney:1">
               <!-- placeholder -->
             </VehicleJourney>
 
@@ -826,13 +843,16 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
               </dayTypes>
               <JourneyPatternRef ref="NSB:JourneyPattern:1-1105" version="1"/>
 
-              <!-- XSD:choice -->
+              <!-- XSD:choice allows for: -->
               <!--
               <VehicleTypeRef ref=""></VehicleTypeRef>
               <TrainRef ref=""></TrainRef>
               -->
+              
+              <!-- VehicleTypeRef ref="NSB:Train:1" version="1"/ --> <!-- ERROR -->
+              <TrainRef ref="NSB:Train:1" version="1"/> <!-- OK -->
+              <!-- TrainRef ref="NSB:VehicleType:1" version="1"/ --> <!-- ERROR -->
 
-              <TrainRef ref="" ></TrainRef>
 
               <OperatorRef ref="NSB:Operator:503"/>
               <LineRef ref="NSB:Line:41" version="1"/>
@@ -842,9 +862,9 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                 (eksempel <trainNumbers> uansett flyttet til fritstaende liste lenger ned i TimetableFrame) -->
 
               <!-- Referanse til operativt transportnummer -->
-              <!--trainNumbers>
+              <trainNumbers>
                 <TrainNumberRef ref="NSB:TrainNumber:1" version="1"/>
-              </trainNumbers-->
+              </trainNumbers>
 
               <passingTimes>
                 <TimetabledPassingTime version="1" id="NSB:TimetabledPassingTime:686e98f9-e0ea-46c8-a208-e0ebb80d9315">
@@ -890,7 +910,13 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                   <EndTime>16:46:00</EndTime>
                   <VehicleOrientation>false</VehicleOrientation> <!-- true = forward -->
                 </JourneyPart>
-
+                
+                <JourneyPart id="NSB:JourneyPart:demo" version="1">
+                  <TrainNumberRef ref=""></TrainNumberRef>
+                  <StartTime>00:00:00</StartTime>
+                  <EndTime>00:00:00</EndTime>
+                </JourneyPart>
+                
               </parts>
             </ServiceJourney>
 
@@ -900,9 +926,13 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
 
               <TrainRef ref="NMR:Train:Flirt-2" /> <!-- SJN just as a technical example due to defined within this file -->
 
-              <parts>
+              <!--parts>
+                <JourneyPart >
+                  <StartTime></StartTime>
+                  <EndTime></EndTime>
+                </JourneyPart>
                 <JourneyPartRef ref="NSB:JourneyPart:1" version="1"/>
-              </parts>
+              </parts-->
 
               <ServiceJourneyRef ref="NSB:ServiceJourney:1-3922-61"/>
               <OperatingDayRef ref="NSB:OperatingDay:2020-12-31"/>
