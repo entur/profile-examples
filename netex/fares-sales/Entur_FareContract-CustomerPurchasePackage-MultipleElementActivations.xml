@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery version="1.08:NO-NeTEx-fares:1.0" xmlns="http://www.netex.org.uk/netex">
+    <PublicationTimestamp>2018-09-04T12:00:00</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <dataObjects>
+
+        <!-- Reference data START -->
+
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            
+            <typesOfValue>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1">
+                    <Name>Rule describing parameters when ValidableElement is activated</Name>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1">
+                    <Name>Rule describing how to activate</Name>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidationRule" version="1">
+                    <Name>Rule describing when to validate</Name>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1">
+                    <Name>Rule describing when a usage validity period may be activated</Name>
+                </TypeOfAccessRightAssignment>
+            </typesOfValue>
+            <organisations>
+                <Authority id="ENT:Authority:ENT" version="1">
+                    <Name>Entur Transport Service Inc</Name>
+                </Authority>
+            </organisations>
+            
+        </ResourceFrame>
+
+        <FareFrame id="ENT:FareFrame:1" version="1">
+            <qualityStructureFactors>
+                <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
+                    <Name>Single activation</Name>
+                    <Factor>activation</Factor>
+                    <Value>1</Value>
+                </QualityStructureFactor>
+            </qualityStructureFactors> 
+            
+            
+            <validableElements>
+                <ValidableElement id="ENT:ValidableElement:SingleRide" version="1">
+                    <Name>Single ride</Name>
+                </ValidableElement>
+                <ValidableElement id="ENT:ValidableElement:FatboySeating" version="1">
+                    <Name>Fatboy seating</Name>
+                </ValidableElement>
+            </validableElements>
+
+
+            <usageParameters>
+                <UserProfile id="ENT:UserProfile:Adult" version="1">
+                    <Name lang="no">Adult</Name>
+                 </UserProfile>
+                <Interchanging id="ENT:Interchanging:None" version="1">
+                    <CanInterchange>false</CanInterchange>
+                </Interchanging>
+            </usageParameters>
+
+
+            <fareProducts>
+                <PreassignedFareProduct id="ENT:PreassignedFareProduct:SingleTrip" version="1">
+                    <Name lang="eng">Standard connected rail trip</Name>
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+                <SupplementProduct id="ENT:SupplementProduct:FatboyBeanBag" version="1">
+                    <Name lang="eng">Fatboy bean bag seating (numbered)</Name>
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
+                    </accessRightsInProduct>
+                </SupplementProduct>
+            </fareProducts>
+
+
+            <salesOfferPackages>
+                <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip" version="1">
+                    <Name lang="no">Standard connected rail trip with seat</Name>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip" version="1" order="1">
+                            <Name lang="no">Single trip</Name>
+                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip" version="1"/>
+                        </SalesOfferPackageElement>
+                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:FatboySeating" version="1" order="1">
+                            <Name lang="no">Fatboy bean bag seating (numbered)</Name>
+                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:FatboyBeanBag" version="1"/>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+            
+        </FareFrame>
+
+
+        <SalesTransactionFrame id="ENT:SalesTransactionFrame:Case1" version="1">
+
+            <customerAccounts>
+                <CustomerAccount id="ENT:CustomerAccount:1" version="1"> </CustomerAccount>
+            </customerAccounts>
+
+            <fareContracts>
+                <FareContract id="ENT:FareContract:1" version="1">
+                    <Name>Rakkestad - Bergen</Name>
+                    <StartDate>2020-09-06T01:07:00</StartDate>
+                    <EndDate>2021-09-07T01:07:00</EndDate>
+                    <fareContractEntries>
+                        <SalesTransaction version="1" id="ENT:SalesTransaction:1">
+                            <Name>Rakkestad - Bergen</Name>
+                            <Date>2018-09-06T01:07:00</Date>
+                            <Amount>999</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Referanse til customer purchase packages -->
+                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:TripRakkestadBergenWithSpecialSeating" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                    </fareContractEntries>
+
+                </FareContract>
+            </fareContracts>
+
+
+            <customerPurchasePackages>
+                
+                
+                <!-- Example: OPEN 2 leg trip on authrotiy ENT using adult user profile, leg 1 with seating supplement product and leg 2 without.  -->
+                
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:PeriodPassNotActivated" version="1">
+
+                    <!-- New: Instantiation of a validable element -->
+                    <consumableElements>
+                        <ConsumableElement id="ENT:ConsumableElement:Leg1" validableElementRef="ENT:ValidableElement:SingleRide"/>
+                        <ConsumableElement id="ENT:ConsumableElement:Leg2" validableElementRef="ENT:ValidableElement:SingleRide"/>
+                        <ConsumableElement id="ENT:ConsumableElement:SeatingLeg2" validableElementRef="ENT:ValidableElement:FatboySeating"/>
+                    </consumableElements>
+                    
+       
+                   <!-- Activation is ordered -->
+                    <elementAccessGroupsInSequence>
+                        
+                        <!-- Leg 1 only -->
+                        <ElementAccessGroup id="ENT:ElementActivationGroup:1" version="1" order="1">
+                            <ConsumableElementRef ref="ENT:ConsumableElement:Leg1"/>
+                        </ElementAccessGroup>
+                        
+                        <!-- Leg 2 and seat supplement product -->
+                        <ElementActivationGroup id="ENT:ElementActivationGroup:2" version="1" order="2">
+                            <ConsumableElementRef ref="ENT:ConsumableElement:Leg2"/>
+                            <ConsumableElementRef ref="ENT:ConsumableElement:SeatingLeg2"/>
+                        </ElementActivationGroup>
+                    </elementAccessGroupsInSequence>
+                  
+                   
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip" />
+                    
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:NotActivated" version="1" order="1">
+                            
+                            <elementAccesses>
+                                
+                                <!-- *Activation* leg1 entry -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>activated</MarkedAs>
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationLeg1" order="1">
+                                            <limitations>
+                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:Leg1Period" version="1">
+                                                    <StartDate>2020-01-01</StartDate>
+                                                    <StartTime>12:00:00</StartTime>
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                            <validityParameters>
+                                                <ServiceJourneyRef ref="ENT:ServiceJourney:Leg1"/>
+                                            </validityParameters>
+                                            <ConsumableElementRef ref="ENT:ConsumableElement:Leg1"/>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                               </CustomerPurchasePackageElementAccess>
+                                
+                                
+                                <!-- *Activation* Leg2 entry -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationLeg2" order="1">
+                                            <limitations>
+                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:Leg2Period" version="1">
+                                                    <StartDate>2020-01-01</StartDate>
+                                                    <StartTime>15:45:00</StartTime>
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                            <validityParameters>
+                                                <ServiceJourneyRef ref="ENT:ServiceJourney:Leg2"/>
+                                            </validityParameters>
+                                            <ConsumableElementRef ref="ENT:ConsumableElement:Leg2"/>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                
+                                
+                                <!-- LEG 1 -->
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg1-Activation" order="1">
+                                    
+                                    <!-- This type defines uvp activation rules -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/> 
+                                    
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30Days" version="1">
+                                            <UsageTrigger>startOutboundRide</UsageTrigger>
+                                            <UsageEnd>endOfRide</UsageEnd>
+                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
+                                            <ActivationRequirements>selectedServiceJourney</ActivationRequirements>
+                                        </UsageValidityPeriod>
+                                    </limitations>
+                                    
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:Leg1"/>
+                                    <!-- Only once -->
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg1-Validity" order="1">
+                                    <!-- This type defines the validable element parameters when access right is activated -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/> 
+                                    <DistanceMatrixElement id="ENT:DistanceMatrixElement:Leg1" version="21">
+                                        <StartStopPointRef ref="NSR:ScheduledStopPoint:S123"/>
+                                        <EndStopPointRef ref="NSR:ScheduledStopPoint:S555"/>
+                                    </DistanceMatrixElement>
+                                    
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <InterchangingRef ref="ENT:Interchanging:None"/>
+                                        <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
+                                    </validityParameters>
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:Leg1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                <!-- LEG 2 -->
+                                
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2-Activation" order="1">
+                                    
+                                    <!-- This type defines uvp activation rules -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/> 
+                                    
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDays" version="1">
+                                            <UsageTrigger>startOutboundRide</UsageTrigger>
+                                            <UsageEnd>endOfRide</UsageEnd>
+                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
+                                            <ActivationRequirements>selectedServiceJourney</ActivationRequirements>
+                                        </UsageValidityPeriod>
+                                    </limitations>
+                                    
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:Leg2"/>
+                                    <!-- Only once -->
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2-Validity" order="1">
+                                    <!-- This type defines the validable element parameters when access right is activated -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/> 
+                                    <DistanceMatrixElement id="ENT:DistanceMatrixElement:Leg2" version="21">
+                                        <StartStopPointRef ref="NSR:ScheduledStopPoint:S19923"/>
+                                        <EndStopPointRef ref="NSR:ScheduledStopPoint:S55995"/>
+                                    </DistanceMatrixElement>
+                                    
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <InterchangingRef ref="ENT:Interchanging:None"/>
+                                        <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
+                                    </validityParameters>
+          
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:Leg2"/>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>  
+
+                        <!-- Seat supplement element -->
+
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Seat" version="1" order="1">
+                            
+                            <elementAccesses>
+                                
+                                <!-- *Activation* entry -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>activated</MarkedAs>
+                                    <validityParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2Seat-Activation" order="1">
+                                            <limitations>
+                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:Leg2Seat" version="1">
+                                                    <StartDate>2020-01-01</StartDate>
+                                                    <StartTime>15:35:00</StartTime>
+                                                </UsageValidityPeriod>
+                                            </limitations>
+                                            <validityParameters>
+                                                <!-- PassengerSeat not yet defined -->
+                                                <!-- Actual seat selected is registered here -->
+                                                <PassengerSeatRef ref="ENT:PassengerSeat:Fatboy1"/>
+                                                
+                                                <ServiceJourneyRef ref="ENT:ServiceJourney:Leg2"/>
+                                            </validityParameters>
+                                            <ConsumableElementRef ref="ENT:ConsumableElement:SeatingLeg2"/>
+                                            
+                                        </CustomerPurchaseParameterAssignment>
+                                    </validityParameterAssignments>
+                                </CustomerPurchasePackageElementAccess>
+                                
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                
+                                
+                                <!-- LEG 2 SEAT -->
+                                
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Activation" order="1">
+                                    
+                                    <!-- This type defines uvp activation rules -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/> 
+                                     
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDkkakys" version="1">
+                                          <!-- To be removed?   <UsageTrigger>followElementAccessGroup</UsageTrigger>-->
+                                            <UsageEnd>endOfRide</UsageEnd>
+                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
+                                            <ActivationRequirements>selectedServiceJourney selectedPassengerSeat</ActivationRequirements>
+                                        </UsageValidityPeriod>
+                                        <Reserving id="ENT:Reserving:Seating" version="1">
+                                            <ReservingRequirements>reservationsCompulsory</ReservingRequirements>
+                                        </Reserving>
+                                    </limitations>
+                                    
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:SeatingLeg2"/>
+                                    <!-- Only once -->
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Validity" order="1">
+                                    <!-- This type defines the validable element parameters when access right is activated -->
+                                    
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/> 
+                                    <DistanceMatrixElement id="ENT:DistanceMatrixElement:Leg2-Seat" version="21">
+                                        <StartStopPointRef ref="NSR:ScheduledStopPoint:S19923"/>
+                                        <EndStopPointRef ref="NSR:ScheduledStopPoint:S55995"/>
+                                    </DistanceMatrixElement>
+                                    
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
+                                    </validityParameters>
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:SeatingLeg2"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                
+                                
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>  
+                        
+
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>    
+                
+            </customerPurchasePackages>
+        </SalesTransactionFrame>
+
+     
+    </dataObjects>
+</PublicationDelivery>
