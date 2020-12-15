@@ -327,6 +327,13 @@
                                             not strict enough. A use case is children with 2 homes, one requiring school transport and one that does not -->
                                                 <!-- Limit to -->
                                                 <FrequencyOfUse id="ENT:FrequencyOfUse:MorningTotalCountV2-1" version="1">
+                                                   <!-- Frequency counter only active between (school year outer bounds) -->
+                                                    <validityConditions>
+                                                        <ValidBetween>
+                                                            <FromDate>2020-08-21T00:00:00</FromDate>
+                                                            <ToDate>2020-12-31T00:00:00</ToDate>
+                                                        </ValidBetween>
+                                                    </validityConditions>
                                                     <Name>Maximum 190 trips in the morning to school in a year</Name>
                                                     <FrequencyOfUseType>limited</FrequencyOfUseType>
                                                     <MaximalFrequency>190</MaximalFrequency>
@@ -334,17 +341,18 @@
                                                 </FrequencyOfUse>
                                                 <!-- Limit to -->
                                                 <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonTotalCountV2-1" version="1">
+                                                    <!-- Frequency counter only active between (school year outer bounds) -->
+                                                    <validityConditions>
+                                                        <ValidBetween>
+                                                            <FromDate>2020-08-21T00:00:00</FromDate>
+                                                            <ToDate>2020-12-31T00:00:00</ToDate>
+                                                        </ValidBetween>
+                                                    </validityConditions>
                                                     <Name>Maximum 190 trips home from school in a year</Name>
                                                     <FrequencyOfUseType>limited</FrequencyOfUseType>
                                                     <MaximalFrequency>190</MaximalFrequency>
                                                     <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
                                                 </FrequencyOfUse>
-                                                
-                                                <!-- No trigger, does not change, cannot be actvated -->
-                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:SchoolYear-1" version="1">
-                                                    <StartDate>2020-08-21</StartDate>
-                                                    <EndDate>2020-12-31</EndDate>
-                                                </UsageValidityPeriod>
                                             </limitations>
                                             <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                             <!-- Overall availability -->
