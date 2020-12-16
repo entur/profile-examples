@@ -110,10 +110,6 @@
                                         <TimeIntervalRef version="1" ref="ENT:school_carnet@academic_year"/>
                                     </timeIntervals>
                                 </FareStructureElement>
-<<<<<<< HEAD
-                                
-=======
->>>>>>> 4d7e14849e8b3689187df72d1d45e9c6825f81d3
                                 <FareStructureElement id="ENT:school_carnet@conditions_of_travel" version="1">
                                     <Name>Conditions of travel</Name>
                                     <GenericParameterAssignment version="1" order="1" id="ENT:school_carnet@conditions_of_travel">
@@ -351,9 +347,7 @@
                                                     </customerPurchasePackageElements>
                                                     <SalesTransactionRef version="1" ref="ENX:5781234501"/>
 
-
                                                     <!-- SmartcardRef versionRef="1" ref="ENX:87654"/ -->
-
 
                                                 </CustomerPurchasePackage>
                                             </customerPurchasePackages>
