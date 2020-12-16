@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- ==== FSYO First Passes==== -->
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    version="1.12:NO-NeTEx-fares:0.9">
+
+<!-- 
+    ==== School transport (Bergen, Norway) ==== 
+-->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:siri="http://www.siri.org.uk/siri" 
+  xmlns:gml="http://www.opengis.net/gml/3.2" 
+  version="1.10:NO-NeTEx-fares:0.9">
 
     <PublicationTimestamp>2020-12-16T15:30:00</PublicationTimestamp>
     <ParticipantRef>NK</ParticipantRef>
-
-    <!-- ======WHAT WAS REQUESTED ========== -->
-    <PublicationRefreshInterval>P1M</PublicationRefreshInterval>
     <Description>School transport per NK</Description>
 
     <!-- =============== RESULTS =========== -->
@@ -19,7 +24,7 @@
                     <tariffs>
                         <Tariff version="1" id="ENT:school_carnet:380">
                             <timeIntervals>
-                                <TimeInterval id="ENT:school_carnet@academic_year" version="1"> </TimeInterval>
+                                <TimeInterval id="ENT:school_carnet@academic_year" version="1"/> 
                             </timeIntervals>
                             <qualityStructureFactors>
                                 <!-- Total number of activations possible -->
