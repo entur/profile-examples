@@ -197,6 +197,14 @@ Example for modeling of Train layout throughout service using Timetable data ref
           <FromJourneyRef ref="XXX:ServiceJourney:D2"/>
           <ToJourneyRef ref="XXX:ServiceJourney:D1"/>
         </JourneyMeeting>
+        <!--
+                  <JourneyMeeting>
+                      <AtStopPointRef ref="S"/>
+                      <FromJourneyRef ref="XXX:ServiceJourney:D2"/>
+                      <ToJourneyRef ref="XXX:ServiceJourney:D1"/>
+                      <Reason>splitting</Reason>
+                  </JourneyMeeting>
+         -->
       </journeyMeetings>
       <journeyInterchanges>
         <ServiceJourneyInterchange>
