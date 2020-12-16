@@ -314,6 +314,20 @@
                                                 <!-- Actual seat selected is registered here -->
                                                 <PassengerSeatRef ref="ENT:PassengerSeat:Fatboy1"/>
                                                 
+                                                <!--   
+                                                    Sketch of what PassengerSeating could be
+                                                    
+                                                <PassengerSeating id="ENT:PassengerSeating:1" version="1">
+                                                    <Name lang="nob">Øvre Sete 5</Name>
+                                                    <alternativeNames>
+                                                        <AltnerativeName lang="eng">Upper Seat 5</AltnerativeName>
+                                                    </alternativeNames>
+                                                    <TrainRef ref="NSB:Train:Dovrebussen"/>
+                                                    <TrainElementRef ref="PEN:LogicalElement:SETRA-S431DT-LOWER" versionRef="2"/>
+                                                    <SeatingEquipmentRef ref="ENT:SeatingEquipmentRef:XYX"/>
+                                                </PassengerSeating>
+                                                 -->
+                                                
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:Leg2"/>
                                             </validityParameters>
                                             <ConsumableElementRef ref="ENT:ConsumableElement:SeatingLeg2"/>
