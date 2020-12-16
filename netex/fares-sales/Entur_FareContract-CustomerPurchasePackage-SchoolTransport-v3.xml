@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- ==== FSYO First Passes==== -->
-<PublicationDelivery 
-  xmlns="http://www.netex.org.uk/netex" 
-  xmlns:siri="http://www.siri.org.uk/siri"
-  xmlns:gml="http://www.opengis.net/gml/3.2"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  version="1.12:NO-NeTEx-fares:0.9">    
-    
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    version="1.12:NO-NeTEx-fares:0.9">
+
     <PublicationTimestamp>2020-12-16T15:30:00</PublicationTimestamp>
     <ParticipantRef>NK</ParticipantRef>
-        
+
     <!-- ======WHAT WAS REQUESTED ========== -->
     <PublicationRefreshInterval>P1M</PublicationRefreshInterval>
     <Description>School transport per NK</Description>
-        
+
     <!-- =============== RESULTS =========== -->
     <dataObjects>
         <CompositeFrame version="1" id="ENT:school_carnet:38" dataSourceRef="op:src">
@@ -23,8 +19,7 @@
                     <tariffs>
                         <Tariff version="1" id="ENT:school_carnet:380">
                             <timeIntervals>
-                                <TimeInterval id="ENT:school_carnet@academic_year" version="1"
-                                > </TimeInterval>
+                                <TimeInterval id="ENT:school_carnet@academic_year" version="1"> </TimeInterval>
                             </timeIntervals>
                             <qualityStructureFactors>
                                 <!-- Total number of activations possible -->
@@ -41,8 +36,8 @@
                                             </dayTypes>
                                             <timebands>
                                                 <Timeband id="ENT:school_carnet@morning" version="1">
-                                                  <StartTime>07:00:00</StartTime>
-                                                  <EndTime>09:00:00</EndTime>
+                                                    <StartTime>07:00:00</StartTime>
+                                                    <EndTime>09:00:00</EndTime>
                                                 </Timeband>
                                             </timebands>
                                         </AvailabilityCondition>
@@ -56,8 +51,8 @@
                                             </dayTypes>
                                             <timebands>
                                                 <Timeband id="ENT:school_carnet@afternoon" version="1">
-                                                  <StartTime>12:00:00</StartTime>
-                                                  <EndTime>16:00:00</EndTime>
+                                                    <StartTime>12:00:00</StartTime>
+                                                    <EndTime>16:00:00</EndTime>
                                                 </Timeband>
                                             </timebands>
                                         </AvailabilityCondition>
@@ -115,7 +110,10 @@
                                         <TimeIntervalRef version="1" ref="ENT:school_carnet@academic_year"/>
                                     </timeIntervals>
                                 </FareStructureElement>
+<<<<<<< HEAD
                                 
+=======
+>>>>>>> 4d7e14849e8b3689187df72d1d45e9c6825f81d3
                                 <FareStructureElement id="ENT:school_carnet@conditions_of_travel" version="1">
                                     <Name>Conditions of travel</Name>
                                     <GenericParameterAssignment version="1" order="1" id="ENT:school_carnet@conditions_of_travel">
@@ -163,33 +161,23 @@
                                 <ValidableElement id="ENT:school_carnet@afternoon_trip" version="1">
                                     <Name>Enkelttur Entur</Name>
                                     <fareStructureElements>
-                                        <FareStructureElementRef version="1"
-                                            ref="ENT:school_carnet@access_zones"/>
-                                        <FareStructureElementRef version="1"
-                                            ref="ENT:school_carnet@usage_limit"/>
-                                        <FareStructureElementRef version="1"
-                                            ref="ENT:school_carnet@access_when@afternoon"/>
-                                        <FareStructureElementRef version="1"
-                                            ref="ENT:school_carnet@eligibility"/>
-                                        <FareStructureElementRef version="1"
-                                            ref="ENT:school_carnet@durations"/>
-                                        <FareStructureElementRef version="1"
-                                            ref="ENT:school_carnet@conditions_of_travel"/>
+                                        <FareStructureElementRef version="1" ref="ENT:school_carnet@access_zones"/>
+                                        <FareStructureElementRef version="1" ref="ENT:school_carnet@usage_limit"/>
+                                        <FareStructureElementRef version="1" ref="ENT:school_carnet@access_when@afternoon"/>
+                                        <FareStructureElementRef version="1" ref="ENT:school_carnet@eligibility"/>
+                                        <FareStructureElementRef version="1" ref="ENT:school_carnet@durations"/>
+                                        <FareStructureElementRef version="1" ref="ENT:school_carnet@conditions_of_travel"/>
                                     </fareStructureElements>
                                 </ValidableElement>
                             </validableElements>
                             <accessRightsInProduct>
-                                <AccessRightInProduct version="1"
-                                    id="ENT:school_carnet@morning_trip" order="1">
+                                <AccessRightInProduct version="1" id="ENT:school_carnet@morning_trip" order="1">
                                     <MaximumAccess>1</MaximumAccess>
-                                    <ValidableElementRef ref="ENT:school_carnet@morning_trip"
-                                        version="1"/>
+                                    <ValidableElementRef ref="ENT:school_carnet@morning_trip" version="1"/>
                                 </AccessRightInProduct>
-                                <AccessRightInProduct version="1"
-                                    id="ENT:school_carnet@evening_trip" order="2">
+                                <AccessRightInProduct version="1" id="ENT:school_carnet@evening_trip" order="2">
                                     <MaximumAccess>1</MaximumAccess>
-                                    <ValidableElementRef ref="ENT:school_carnet@afternoon_trip"
-                                        version="1"/>
+                                    <ValidableElementRef ref="ENT:school_carnet@afternoon_trip" version="1"/>
                                 </AccessRightInProduct>
                             </accessRightsInProduct>
                             <ProductType>tripCarnet</ProductType>
@@ -199,12 +187,10 @@
                         <SalesOfferPackage id="ENT:school_carnet" version="1">
                             <Name lang="no">School transport Municipality X</Name>
                             <salesOfferPackageElements>
-                                <SalesOfferPackageElement id="ENT:school_carnet" version="1"
-                                    order="1">
+                                <SalesOfferPackageElement id="ENT:school_carnet" version="1" order="1">
                                     <Name lang="no">School transport Municipality X</Name>
                                     <TypeOfTravelDocumentRef versionRef="1.0" ref="ENT:smartcard"/>
-                                    <AmountOfPriceUnitProductRef ref="ENT:school_carnet" version="1"
-                                    />
+                                    <AmountOfPriceUnitProductRef ref="ENT:school_carnet" version="1"/>
                                 </SalesOfferPackageElement>
                             </salesOfferPackageElements>
                         </SalesOfferPackage>
@@ -285,113 +271,90 @@
                                             <PaymentMethod>debitCard</PaymentMethod>
                                             <travelSpecifications>
                                                 <TravelSpecification version="1" id="ENT:5781234501">
-                                                  <Units>380</Units>
-                                                  <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
-                                                  <EndOfValidity>2020-02-01T08:35:00</EndOfValidity>
-                                                  <specificParameterAssignments>
-                                                  <SpecificParameterAssignment version="1" 
-                                                  id="ENT:5781234501" order="1">
-                                                  <SalesOfferPackageRef version="1"
-                                                  ref="ENT:school_carnet"/>
-                                                  <validityParameters>
-                                                  <FareZoneRef versionRef="1" ref="ENT:Bergen@X"/>
-                                                  </validityParameters>
-                                                  </SpecificParameterAssignment>
-                                                  </specificParameterAssignments>
+                                                    <Units>380</Units>
+                                                    <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
+                                                    <EndOfValidity>2020-02-01T08:35:00</EndOfValidity>
+                                                    <specificParameterAssignments>
+                                                        <SpecificParameterAssignment version="1" id="ENT:5781234501" order="1">
+                                                            <SalesOfferPackageRef version="1" ref="ENT:school_carnet"/>
+                                                            <validityParameters>
+                                                                <FareZoneRef versionRef="1" ref="ENT:Bergen@X"/>
+                                                            </validityParameters>
+                                                        </SpecificParameterAssignment>
+                                                    </specificParameterAssignments>
                                                 </TravelSpecification>
                                             </travelSpecifications>
                                             <customerPurchasePackages>
                                                 <!-- Reference to customer purchase packages -->
-                                                <CustomerPurchasePackage
-                                                  id="ENX:1234@school_transport" version="1">
-                                                  <CustomerRef version="1" ref="ENX:1234"/>
-                                                  <CustomerAccountRef version="1" ref="ENX:1234-T"/>
-                                                  <CustomerPurchasePackageStatus>partiallyUsed</CustomerPurchasePackageStatus>
-                                                  <travelSpecifications>
-                                                  <TravelSpecification version="1"
-                                                  id="ENX:1234@school_transport">
-                                                  <Units>380</Units>
-                                                  <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
-                                                  <EndOfValidity>2020-12-31T08:35:00</EndOfValidity>
-                                                  <specificParameterAssignments>
-                                                  <SpecificParameterAssignment version="1"
-                                                  id="ENX:1234@school_transport" order="1">
-                                                  <SalesOfferPackageRef version="1"
-                                                  ref="ENT:school_carnet"/>
-                                                  <validityParameters>
-                                                  <FareZoneRef versionRef="1" ref="ENT:Bergen@X"/>
-                                                  </validityParameters>
-                                                  </SpecificParameterAssignment>
-                                                  </specificParameterAssignments>
-                                                  </TravelSpecification>
-                                                  </travelSpecifications>
-                                                  <customerPurchasePackageElements>
-                                                  <CustomerPurchasePackageElement version="1"
-                                                  id="ENT:school_transport@morning_trip" order="1">
-                                                  <elementAccesses>
-                                                  <CustomerPurchasePackageElementAccess version="1"
-                                                  id="ENT:school_transport@morning_trip@2020-01-05@07:05:00">
-                                                  <MarkedAs>used</MarkedAs>
-                                                  <validityParameterAssignments>
-                                                  <CustomerPurchaseParameterAssignment version="1"
-                                                  id="ENT:school_transport@morning_trip@2020-01-05@07:05:00"
-                                                  order="1">
-                                                  <validityParameters>
-                                                  <StopPlaceRef versionRef="EXTERNAl" ref="NSR:123"/>
-                                                  <ServiceJourneyRef versionRef="EXTERNAl"
-                                                  ref="ENT:ServiceJourney:1234578"/>
-                                                  </validityParameters>
-                                                  </CustomerPurchaseParameterAssignment>
-                                                  </validityParameterAssignments>
-                                                  </CustomerPurchasePackageElementAccess>
-                                                  <CustomerPurchasePackageElementAccess version="1"
-                                                  id="ENT:school_transport@afternoon_trip@2020-01-05@16:15:00">
-                                                  <MarkedAs>used</MarkedAs>
-                                                  <validityParameterAssignments>
-                                                  <CustomerPurchaseParameterAssignment version="1"
-                                                  id="ENT:school_transport@afternoon_trip@2020-01-05@15:15:00"
-                                                  order="1">
-                                                  <validityParameters>
-                                                  <StopPlaceRef versionRef="EXTERNAl" ref="NSR:891"/>
-                                                  <ServiceJourneyRef versionRef="EXTERNAl"
-                                                  ref="ENT:ServiceJourney:123455438"/>
-                                                  </validityParameters>
-                                                  </CustomerPurchaseParameterAssignment>
-                                                  </validityParameterAssignments>
-                                                  </CustomerPurchasePackageElementAccess>
-                                                  <CustomerPurchasePackageElementAccess version="1"
-                                                  id="ENT:school_transport@morning_trip@2020-01-05@07:15:00">
-                                                  <MarkedAs>used</MarkedAs>
-                                                  <validityParameterAssignments>
-                                                  <CustomerPurchaseParameterAssignment version="1"
-                                                  id="ENT:school_transport@morning_trip@2020-01-05@07:15:0"
-                                                  order="1">
-                                                  <validityParameters>
-                                                  <StopPlaceRef versionRef="EXTERNAl" ref="NSR:123"/>
-                                                  <ServiceJourneyRef versionRef="EXTERNAl"
-                                                  ref="ENT:ServiceJourney:12348"/>
-                                                  </validityParameters>
-                                                  </CustomerPurchaseParameterAssignment>
-                                                  </validityParameterAssignments>
-                                                  </CustomerPurchasePackageElementAccess>
-                                                  </elementAccesses>
-                                                  <validityParameterAssignments>
-                                                  <CustomerPurchaseParameterAssignment version="1"
-                                                  id="ENT:school_transport@morning_trip@2020-01-01@07:05:00"
-                                                  order="1">
-                                                  <ValidableElementRef
-                                                  ref="ENT:school_carnet@morning_trip" version="1"/>
-                                                  </CustomerPurchaseParameterAssignment>
-                                                  </validityParameterAssignments>
-                                                  </CustomerPurchasePackageElement>
-                                                  </customerPurchasePackageElements>
-                                                  <SalesTransactionRef version="1"
-                                                  ref="ENX:5781234501"/>
-                                                    
-                                                    
-                                                  <!-- SmartcardRef versionRef="1" ref="ENX:87654"/ -->
-                                                    
-                                                    
+                                                <CustomerPurchasePackage id="ENX:1234@school_transport" version="1">
+                                                    <CustomerRef version="1" ref="ENX:1234"/>
+                                                    <CustomerAccountRef version="1" ref="ENX:1234-T"/>
+                                                    <CustomerPurchasePackageStatus>partiallyUsed</CustomerPurchasePackageStatus>
+                                                    <travelSpecifications>
+                                                        <TravelSpecification version="1" id="ENX:1234@school_transport">
+                                                            <Units>380</Units>
+                                                            <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
+                                                            <EndOfValidity>2020-12-31T08:35:00</EndOfValidity>
+                                                            <specificParameterAssignments>
+                                                                <SpecificParameterAssignment version="1" id="ENX:1234@school_transport" order="1">
+                                                                    <SalesOfferPackageRef version="1" ref="ENT:school_carnet"/>
+                                                                    <validityParameters>
+                                                                        <FareZoneRef versionRef="1" ref="ENT:Bergen@X"/>
+                                                                    </validityParameters>
+                                                                </SpecificParameterAssignment>
+                                                            </specificParameterAssignments>
+                                                        </TravelSpecification>
+                                                    </travelSpecifications>
+                                                    <customerPurchasePackageElements>
+                                                        <CustomerPurchasePackageElement version="1" id="ENT:school_transport@morning_trip" order="1">
+                                                            <elementAccesses>
+                                                                <CustomerPurchasePackageElementAccess version="1" id="ENT:school_transport@morning_trip@2020-01-05@07:05:00">
+                                                                    <MarkedAs>used</MarkedAs>
+                                                                    <validityParameterAssignments>
+                                                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:school_transport@morning_trip@2020-01-05@07:05:00" order="1">
+                                                                            <validityParameters>
+                                                                                <StopPlaceRef versionRef="EXTERNAl" ref="NSR:123"/>
+                                                                                <ServiceJourneyRef versionRef="EXTERNAl" ref="ENT:ServiceJourney:1234578"/>
+                                                                            </validityParameters>
+                                                                        </CustomerPurchaseParameterAssignment>
+                                                                    </validityParameterAssignments>
+                                                                </CustomerPurchasePackageElementAccess>
+                                                                <CustomerPurchasePackageElementAccess version="1" id="ENT:school_transport@afternoon_trip@2020-01-05@16:15:00">
+                                                                    <MarkedAs>used</MarkedAs>
+                                                                    <validityParameterAssignments>
+                                                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:school_transport@afternoon_trip@2020-01-05@15:15:00" order="1">
+                                                                            <validityParameters>
+                                                                                <StopPlaceRef versionRef="EXTERNAl" ref="NSR:891"/>
+                                                                                <ServiceJourneyRef versionRef="EXTERNAl" ref="ENT:ServiceJourney:123455438"/>
+                                                                            </validityParameters>
+                                                                        </CustomerPurchaseParameterAssignment>
+                                                                    </validityParameterAssignments>
+                                                                </CustomerPurchasePackageElementAccess>
+                                                                <CustomerPurchasePackageElementAccess version="1" id="ENT:school_transport@morning_trip@2020-01-05@07:15:00">
+                                                                    <MarkedAs>used</MarkedAs>
+                                                                    <validityParameterAssignments>
+                                                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:school_transport@morning_trip@2020-01-05@07:15:0" order="1">
+                                                                            <validityParameters>
+                                                                                <StopPlaceRef versionRef="EXTERNAl" ref="NSR:123"/>
+                                                                                <ServiceJourneyRef versionRef="EXTERNAl" ref="ENT:ServiceJourney:12348"/>
+                                                                            </validityParameters>
+                                                                        </CustomerPurchaseParameterAssignment>
+                                                                    </validityParameterAssignments>
+                                                                </CustomerPurchasePackageElementAccess>
+                                                            </elementAccesses>
+                                                            <validityParameterAssignments>
+                                                                <CustomerPurchaseParameterAssignment version="1" id="ENT:school_transport@morning_trip@2020-01-01@07:05:00" order="1">
+                                                                    <ValidableElementRef ref="ENT:school_carnet@morning_trip" version="1"/>
+                                                                </CustomerPurchaseParameterAssignment>
+                                                            </validityParameterAssignments>
+                                                        </CustomerPurchasePackageElement>
+                                                    </customerPurchasePackageElements>
+                                                    <SalesTransactionRef version="1" ref="ENX:5781234501"/>
+
+
+                                                    <!-- SmartcardRef versionRef="1" ref="ENX:87654"/ -->
+
+
                                                 </CustomerPurchasePackage>
                                             </customerPurchasePackages>
                                         </SalesTransaction>

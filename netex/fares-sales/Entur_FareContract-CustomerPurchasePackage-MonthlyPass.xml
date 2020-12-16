@@ -4,6 +4,16 @@
     <ParticipantRef>ENT</ParticipantRef>
     <dataObjects>
 
+
+        <!-- 
+            This example shows a period pass with 3 different setups
+            - pre-activated
+            - activation necessary before use
+            - Non-activated period pass that must be activaed as well as requires validation on each ride
+            
+            The current period is 30 days, but setting this ie to 90 minutes will yield valid examples for typical 
+            single tickets as well -->
+
         <!-- Reference data START -->
 
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
@@ -242,7 +252,6 @@
                                                     <EndTime>00:00:00</EndTime>
                                                 </UsageValidityPeriod>
                                             </limitations>
-                                            
                                         </CustomerPurchaseParameterAssignment>
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
@@ -340,7 +349,7 @@
                        <!--             
                                     <elementAccessParameterAssignments>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassRideValidation1" order="1">
-                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                             <validityParameters>
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:JourneyXYZ"/>
                                                 <PlaceRef ref="OsloS"/>
