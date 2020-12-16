@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-
-<!-- 
-    ==== School transport (Bergen, Norway) ==== 
--->
-
-<PublicationDelivery 
-  xmlns="http://www.netex.org.uk/netex" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-  xmlns:siri="http://www.siri.org.uk/siri" 
-  xmlns:gml="http://www.opengis.net/gml/3.2" 
-  version="1.10:NO-NeTEx-fares:0.9">
+<!-- ==== FSYO First Passes==== -->
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" 
+    version="1.12:NO-NeTEx-fares:0.9">
 
     <PublicationTimestamp>2020-12-16T15:30:00</PublicationTimestamp>
     <ParticipantRef>NK</ParticipantRef>
@@ -35,6 +27,8 @@
                                 </QualityStructureFactor>
                                 <FareDemandFactor id="ENT:school_carnet@school_day@morning" version="1">
                                     <validityConditions>
+                                       
+                                        <!-- Q6 When multiple ValidityConditions - how to combine? -->
                                         <AvailabilityCondition id="ENT:school_carnet@school_day@morning" version="1">
                                             <dayTypes>
                                                 <DayTypeRef ref="ENT:school_day"/>
@@ -151,6 +145,8 @@
                                 <ValidableElement id="ENT:school_carnet@morning_trip" version="1">
                                     <Name>Enkelttur Entur</Name>
                                     <fareStructureElements>
+                                        <!-- Q4 Should FSE be logically combined somehow? -->
+                                        
                                         <FareStructureElementRef version="1" ref="ENT:school_carnet@access_zones"/>
                                         <FareStructureElementRef version="1" ref="ENT:school_carnet@usage_limit"/>
                                         <FareStructureElementRef version="1" ref="ENT:school_carnet@access_when@morning"/>
@@ -172,6 +168,9 @@
                                 </ValidableElement>
                             </validableElements>
                             <accessRightsInProduct>
+                                
+                                <!-- Q5 What if there are (dnyamic) 1-10 legs, how to parameterize each? (Norway ticket from north to south)-->
+                                
                                 <AccessRightInProduct version="1" id="ENT:school_carnet@morning_trip" order="1">
                                     <MaximumAccess>1</MaximumAccess>
                                     <ValidableElementRef ref="ENT:school_carnet@morning_trip" version="1"/>
@@ -203,7 +202,7 @@
                         <FareDayType version="1" id="ENT:school_day">
                             <properties>
                                 <PropertyOfDay>
-                                    <DaysOfWeek>Weekdays</DaysOfWeek>
+       <!-- Q1 -->                             <DaysOfWeek>Weekdays</DaysOfWeek>
                                     <HolidayTypes>SchoolDay</HolidayTypes>
                                 </PropertyOfDay>
                             </properties>
@@ -278,6 +277,8 @@
                                                     <specificParameterAssignments>
                                                         <SpecificParameterAssignment version="1" id="ENT:5781234501" order="1">
                                                             <SalesOfferPackageRef version="1" ref="ENT:school_carnet"/>
+                                                            <!-- Q7 how to reference which parameter that is overridden(?) -->
+                                                            <!-- FareStructureElementRef? -->
                                                             <validityParameters>
                                                                 <FareZoneRef versionRef="1" ref="ENT:Bergen@X"/>
                                                             </validityParameters>
@@ -292,6 +293,11 @@
                                                     <CustomerAccountRef version="1" ref="ENX:1234-T"/>
                                                     <CustomerPurchasePackageStatus>partiallyUsed</CustomerPurchasePackageStatus>
                                                     <travelSpecifications>
+                                                        
+                                                        <!-- Q2 Duplicated travel specification - why? -->
+                                                        
+                                                        <!-- Q3 why does a CPP have a Travel specification? -->
+                                                        
                                                         <TravelSpecification version="1" id="ENX:1234@school_transport">
                                                             <Units>380</Units>
                                                             <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
