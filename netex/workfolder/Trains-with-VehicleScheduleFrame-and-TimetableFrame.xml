@@ -196,6 +196,14 @@
           <FromJourneyRef ref="XXX:ServiceJourney:D2"/>
           <ToJourneyRef ref="XXX:ServiceJourney:D1"/>
         </JourneyMeeting>
+        <!--
+                  <JourneyMeeting>
+                      <AtStopPointRef ref="S"/>
+                      <FromJourneyRef ref="XXX:ServiceJourney:D2"/>
+                      <ToJourneyRef ref="XXX:ServiceJourney:D1"/>
+                      <Reason>splitting</Reason>
+                  </JourneyMeeting>
+         -->
       </journeyMeetings>
       <journeyInterchanges>
         <ServiceJourneyInterchange id="ENT:ServiceJourneyInterchange:1" version="1">
