@@ -130,6 +130,23 @@
                 <!-- Example 1: Pre-activated period pass. No activation nor validation required -->
                 
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:PeriodPassPreactivatedNoValidation" version="1">
+                   
+                    <!-- New: Instantiation of a validable element -->
+                    <consumableElements>
+                        <ConsumableElement id="ENT:ConsumableElement:SingleTrip" validableElementRef="ENT:ValidableElement:SingleTrip"/>
+                    </consumableElements>
+                    
+                    
+                    <!-- Activation is ordered -->
+                    <elementAccessGroupsInSequence>
+                        
+                        <ElementAccessGroup id="ENT:ElementActivationGroup:1" version="1" order="1">
+                            <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
+                        </ElementAccessGroup>
+                        
+                    </elementAccessGroupsInSequence>
+                    
+                    
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:PeriodPass" />
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:PeriodPassPreactivatedNoValidation" version="1" order="1">
@@ -142,7 +159,7 @@
                                     <MarkedAs>marked</MarkedAs>
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PreactivatedNoValidation" order="1">
-                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                         </CustomerPurchaseParameterAssignment>
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
@@ -155,7 +172,7 @@
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/> 
                                     
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                     
                                     <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
@@ -167,6 +184,7 @@
                                         <InterchangingRef ref="ENT:Interchanging:StandardAllowed" version="1"/>
                                         
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:30Days" version="1">
+                                            <UsageTrigger>specifiedStartDate</UsageTrigger>
                                             <ActivationMeans>noneRequired</ActivationMeans>
                                             <StartDate>2020-01-01</StartDate>
                                             <StartTime>00:00:00</StartTime>
@@ -180,7 +198,7 @@
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassNoValidation2" order="1">
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/> 
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                     <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
@@ -215,7 +233,7 @@
                                     <MarkedAs>activated</MarkedAs>
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:NotActivated" order="1">
-                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                             <limitations>
                                                 <UsageValidityPeriod id="ENT:UsageValidityPeriod:NotActivated" version="1">
                                                     <StartDate>2020-01-01</StartDate>
@@ -237,7 +255,7 @@
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/> 
                                     
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                     
                                     <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
@@ -266,7 +284,7 @@
                                     
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/> 
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                     <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
@@ -299,7 +317,7 @@
                                     <MarkedAs>activated</MarkedAs>
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassRideValidation" order="1">
-                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                             <limitations>
                                                 <UsageValidityPeriod id="ENT:UsageValidityPeriod:PeriodPassRideValidation" version="1">
                                                     <StartDate>2020-01-01</StartDate>
@@ -334,7 +352,7 @@
                                     <!-- Additional parameters added to the access right - and that will be combined with  -->
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassRideValidation1" order="1">
-                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                             <validityParameters>
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:CurrentJourney"/>
                                             </validityParameters>
@@ -353,9 +371,8 @@
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/> 
                                     
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                     
-                                    <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <FrequencyOfUse id="ENT:FrequencyOfUse:PeriodPassActivationRequiredUnlimited1" version="1" >
@@ -385,7 +402,7 @@
                                 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassValidationRule1" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidationRule" version="1"/> 
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:SingleRide" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
@@ -403,8 +420,8 @@
                                     
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/> 
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                                     <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <ConsumableElementRef ref="ENT:ConsumableElement:SingleTrip"/>
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
                                     </limitations>

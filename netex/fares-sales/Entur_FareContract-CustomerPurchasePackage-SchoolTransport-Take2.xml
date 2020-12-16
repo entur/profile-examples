@@ -222,10 +222,16 @@
                                     <MarkedAs>activated</MarkedAs> 
                                     <!-- TO BE ADDED TO STANDARD ?
                                         
-                                        Where element access occurred
+                                    <elementAccessParameterAssignments>
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassRideValidation1" order="1">
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                            <validityParameters>
+                                                <ServiceJourneyRef ref="ENT:ServiceJourney:JourneyXYZ"/>
+                                                <PlaceRef ref="OsloS"/>
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
                                         
-                                <PlaceRef ref="NSR:StopPlace:123"/>
-                                <ServiceJourneyRef ref="ENT:ServiceJourney:12345"/>
+                                    </elementAccessParameterAssignments>
                                    
                                    TO BE ADDED TO STANDARD END -->
                                     
