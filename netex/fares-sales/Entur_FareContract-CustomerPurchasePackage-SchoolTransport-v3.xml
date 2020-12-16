@@ -30,6 +30,7 @@
                                        
                                         <!-- Q6 When multiple ValidityConditions - how to combine? -->
                                         <AvailabilityCondition id="ENT:school_carnet@school_day@morning" version="1">
+                                           <!-- Q8 When multiple daytypes and timebands are present - how to combine? -->
                                             <dayTypes>
                                                 <DayTypeRef ref="ENT:school_day"/>
                                             </dayTypes>
