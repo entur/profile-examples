@@ -192,6 +192,9 @@
                                     <TypeOfTravelDocumentRef versionRef="1.0" ref="ENT:smartcard"/>
                                     <AmountOfPriceUnitProductRef ref="ENT:school_carnet" version="1"/>
                                 </SalesOfferPackageElement>
+                                <SalesOfferPackageElement id="ENT:school_carnetx" version="1" order="1">
+                                    <
+                                </SalesOfferPackageElement>
                             </salesOfferPackageElements>
                         </SalesOfferPackage>
                     </salesOfferPackages>
@@ -313,6 +316,7 @@
                                                         </TravelSpecification>
                                                     </travelSpecifications>
                                                     <customerPurchasePackageElements>
+                                                        
                                                         <CustomerPurchasePackageElement version="1" id="ENT:school_transport@morning_trip" order="1">
                                                             <elementAccesses>
                                                                 <CustomerPurchasePackageElementAccess version="1" id="ENT:school_transport@morning_trip@2020-01-05@07:05:00">
