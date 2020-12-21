@@ -143,15 +143,7 @@
 
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:PeriodPassPreactivatedNoValidation" version="1">
 
-                    <elementAccessGroupsInSequence>
-                        <!-- Leg 1 only -->
-                        <ElementActivationGroup id="ENT:ElementActivationGroup:1" version="1" order="1">
-                            <ElementAccess>
-                                <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-                                <InstanceNumber>1</InstanceNumber>
-                            </ElementAccess>
-                        </ElementActivationGroup>
-                    </elementAccessGroupsInSequence>
+                    <!-- no activation info present since it is already activated -->
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:PeriodPass"/>
                     <customerPurchasePackageElements>
@@ -159,7 +151,16 @@
 
                             <elementAccesses>
 
-                                <!-- First *validation* entry -->
+                                <!-- default element access must be present -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <MarkedAs>activated</MarkedAs>
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2020-01-02T07:05:00</EndOfValidity>
+                                </CustomerPurchasePackageElementAccess>
+
+                                <!-- First *validation* entry (logging of validations) -->
                                 <CustomerPurchasePackageElementAccess created="2020-01-01T00:05:00">
                                     <!-- TODO missing date/time of access -->
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
@@ -169,36 +170,10 @@
                             </elementAccesses>
 
                             <validityParameterAssignments>
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassNoValidation1" order="1">
 
-                                    <!-- This type defines uvp activation rules -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
+                                <!-- no activation rule necessary since pre-activated -->
 
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
-
-                                    <LimitationGroupingType>AND</LimitationGroupingType>
-                                    <limitations>
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:Unlimited" version="1">
-                                            <Name>1 30day period</Name>
-                                            <FrequencyOfUseType>unlimited</FrequencyOfUseType>
-                                        </FrequencyOfUse>
-                                        <InterchangingRef ref="ENT:Interchanging:StandardAllowed" version="1"/>
-
-                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:30Days" version="1">
-                                            <UsageTrigger>specifiedStartDate</UsageTrigger>
-                                            <ActivationMeans>noneRequired</ActivationMeans>
-                                            <StartDate>2020-01-01</StartDate>
-                                            <StartTime>00:00:00</StartTime>
-                                            <EndDate>2020-02-01</EndDate>
-                                            <EndTime>00:00:00</EndTime>
-                                        </UsageValidityPeriod>
-                                    </limitations>
-                                    <!-- 30 days given upon activation -->
-                                    <TimeIntervalRef ref="ENT:TimeInterval:30Days" version="1"/>
-                                    
-                                </CustomerPurchaseParameterAssignment>
-
-
+                                <!-- validity rule here -->
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassNoValidation2" order="1">
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
@@ -236,7 +211,7 @@
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (TimeIntervalRef in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
                                     <EndOfValidity>2020-01-02T07:05:00</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
@@ -260,7 +235,6 @@
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30Days" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
-                                            <UsageEnd>standardDuration</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                             <!-- use within 1 year -->
                                             <StartDate>2020-01-01</StartDate>
@@ -317,7 +291,7 @@
                                 <CustomerPurchasePackageElementAccess created="2020-01-01T07:05:00">
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (TimeINtervalRef in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
                                     <EndOfValidity>2020-01-02T07:05:00</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
@@ -344,14 +318,8 @@
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        <FrequencyOfUse id="ENT:FrequencyOfUse:PeriodPassActivationRequiredUnlimited1" version="1">
-                                            <Name>1 30day period</Name>
-                                            <FrequencyOfUseType>unlimited</FrequencyOfUseType>
-                                        </FrequencyOfUse>
-
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30Days1" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
-                                            <UsageEnd>standardDuration</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                             <!-- use within 1 year -->
                                             <StartDate>2020-01-01</StartDate>
@@ -371,6 +339,11 @@
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidationRule" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <limitations>
+                                        <FrequencyOfUse id="ENT:FrequencyOfUse:PeriodPassActivationRequiredUnlimited1" version="1">
+                                            <Name>1 30day period</Name>
+                                            <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                                        </FrequencyOfUse>
+                                        
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:SingleRide" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>endOfRide</UsageEnd>
