@@ -64,7 +64,7 @@
 
 
             <validableElements>
-                <ValidableElement id="ENT:ValidableElement:SingleTrip" version="1">
+                <ValidableElement id="ENT:ValidableElement:PeriodPass" version="1">
                     <Name>Enkelttur Entur</Name>
                 </ValidableElement>
             </validableElements>
@@ -85,7 +85,7 @@
                     <Name lang="no">Månedskort 30 dager</Name>
                     <accessRightsInProduct>
                         <AccessRightInProduct id="ENT:AccessRightInProduct:Legs" version="1" order="1">
-                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                            <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                         </AccessRightInProduct>
                     </accessRightsInProduct>
                 </PreassignedFareProduct>
@@ -153,7 +153,7 @@
 
                                 <!-- default element access must be present -->
                                 <CustomerPurchasePackageElementAccess>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
@@ -163,7 +163,7 @@
                                 <!-- First *validation* entry (logging of validations) -->
                                 <CustomerPurchasePackageElementAccess created="2020-01-01T00:05:00">
                                     <!-- TODO missing date/time of access -->
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <MarkedAs>marked</MarkedAs>
                                 </CustomerPurchasePackageElementAccess>
 
@@ -177,7 +177,7 @@
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassNoValidation2" order="1">
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
@@ -209,7 +209,7 @@
 
                                 <!-- *Activation* entry -->
                                 <CustomerPurchasePackageElementAccess>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (TimeIntervalRef in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
@@ -218,7 +218,7 @@
 
                                 <!-- first re-validation entry -->
                                 <CustomerPurchasePackageElementAccess created="2020-01-02T07:00:00">
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <MarkedAs>marked</MarkedAs>
                                 </CustomerPurchasePackageElementAccess>
 
@@ -230,7 +230,7 @@
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
 
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30Days" version="1">
@@ -255,7 +255,7 @@
 
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
@@ -289,7 +289,7 @@
                             <elementAccesses>
                                 <!-- *Activation* entry -->
                                 <CustomerPurchasePackageElementAccess created="2020-01-01T07:05:00">
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (TimeINtervalRef in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
@@ -298,7 +298,7 @@
 
                                 <!-- first validation entry -->
                                 <CustomerPurchasePackageElementAccess created="2020-01-02T07:00:00">
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <MarkedAs>marked</MarkedAs>
                                 </CustomerPurchasePackageElementAccess>
 
@@ -314,7 +314,7 @@
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
 
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
@@ -337,7 +337,7 @@
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassValidationRule1" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidationRule" version="1"/>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <limitations>
                                         <FrequencyOfUse id="ENT:FrequencyOfUse:PeriodPassActivationRequiredUnlimited1" version="1">
                                             <Name>1 30day period</Name>
@@ -361,7 +361,7 @@
 
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
