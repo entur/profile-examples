@@ -6,6 +6,16 @@
 
         <!-- Reference data START -->
 
+        <!-- Example of bundling public transit with a third party product, where the third party product
+            only is valid if the customer took public transit to the venue. This is valid where cities
+            are trying to reduce use of private vehicles and move people towards public transit - using carrots and not sticks
+            
+            The trip validityParameters are for simplication reduced to a single zone - but could be anything depending on
+            customer selection at purchase time
+            
+            The return ride can must activated separately
+           -->
+
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
 
             <typesOfValue>
@@ -32,6 +42,10 @@
                 <Authority id="ENT:Authority:ENT" version="1">
                     <Name>Entur Transport Service Inc</Name>
                 </Authority>
+                <OtherOrganisation id="ENT:Organisation:HouseOfConcerts" version="1">
+                    <Name>House of Concerts</Name>
+                    <OrganisationType>other</OrganisationType>
+                </OtherOrganisation>
             </organisations>
 
         </ResourceFrame>
@@ -50,8 +64,8 @@
                 <ValidableElement id="ENT:ValidableElement:SingleRide" version="1">
                     <Name>Single ride</Name>
                 </ValidableElement>
-                <ValidableElement id="ENT:ValidableElement:FatboySeating" version="1">
-                    <Name>Fatboy seating</Name>
+                <ValidableElement id="ENT:ValidableElement:Concert" version="1">
+                    <Name>Concert</Name>
                 </ValidableElement>
             </validableElements>
 
@@ -60,46 +74,42 @@
                 <UserProfile id="ENT:UserProfile:Adult" version="1">
                     <Name lang="no">Adult</Name>
                 </UserProfile>
-                <Interchanging id="ENT:Interchanging:None" version="1">
-                    <CanInterchange>false</CanInterchange>
+                <Interchanging id="ENT:Interchanging:Unlimited" version="1">
+                    <CanInterchange>true</CanInterchange>
                 </Interchanging>
             </usageParameters>
 
 
             <fareProducts>
                 <PreassignedFareProduct id="ENT:PreassignedFareProduct:SingleTrip" version="1">
-                    <Name lang="eng">Standard connected rail trip</Name>
+                    <Name lang="eng">2 trips</Name>
                     <accessRightsInProduct>
-                        <AccessRightInProduct id="ENT:AccessRightInProduct:Legs" version="1" order="1">
-                            <!-- 2 legs means 2 CPPE, one for each -->
+                        <AccessRightInProduct version="1" id="ENT:AccessRightInProduct:SingleRide" order="1">
                             <MaximumAccess>2</MaximumAccess>
                             <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                         </AccessRightInProduct>
                     </accessRightsInProduct>
                 </PreassignedFareProduct>
-                <SupplementProduct id="ENT:SupplementProduct:FatboyBeanBag" version="1">
-                    <Name lang="eng">Fatboy bean bag seating (numbered)</Name>
+                <ThirdPartyProduct id="ENT:ThirdPartyProduct:MozartConcert" version="1">
+                    <Name lang="eng">Mozart concert</Name>
                     <accessRightsInProduct>
-                        <AccessRightInProduct id="ENT:AccessRightInProduct:SeatingSupplementRight" version="1" order="1">
-                            <MaximumAccess>1</MaximumAccess>
-                            <ValidableElementRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
-                        </AccessRightInProduct>
+                        <AccessRightInProductRef ref="ENT:ValidableElement:Concert" version="1"/>
                     </accessRightsInProduct>
-                </SupplementProduct>
+                </ThirdPartyProduct>
             </fareProducts>
 
 
             <salesOfferPackages>
-                <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip" version="1">
-                    <Name lang="no">Standard connected rail trip with seat</Name>
+                <SalesOfferPackage id="ENT:SalesOfferPackage:ConcertWithPublicTransit" version="1">
+                    <Name lang="no">Mozart concert with public transit to and from included</Name>
                     <salesOfferPackageElements>
                         <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip" version="1" order="1">
-                            <Name lang="no">Single trip</Name>
+                            <Name lang="no">Return trip</Name>
                             <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip" version="1"/>
                         </SalesOfferPackageElement>
-                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:FatboySeating" version="1" order="1">
-                            <Name lang="no">Fatboy bean bag seating (numbered)</Name>
-                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:FatboyBeanBag" version="1"/>
+                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:Concert" version="1" order="1">
+                            <Name lang="no">Mozart concert</Name>
+                            <ThirdPartyProductRef ref="ENT:ThirdPartyProduct:MozartConcert" version="1"/>
                         </SalesOfferPackageElement>
                     </salesOfferPackageElements>
                 </SalesOfferPackage>
@@ -116,19 +126,19 @@
 
             <fareContracts>
                 <FareContract id="ENT:FareContract:1" version="1">
-                    <Name>Rakkestad - Bergen</Name>
+                    <Name>Mozard concert with public transit included</Name>
                     <StartDate>2020-09-06T01:07:00</StartDate>
                     <EndDate>2021-09-07T01:07:00</EndDate>
                     <fareContractEntries>
                         <SalesTransaction version="1" id="ENT:SalesTransaction:1">
-                            <Name>Rakkestad - Bergen</Name>
+                            <Name>Purchase</Name>
                             <Date>2018-09-06T01:07:00</Date>
                             <Amount>999</Amount>
                             <Currency>NOK</Currency>
                             <PaymentMethod>debitCard</PaymentMethod>
                             <customerPurchasePackages>
                                 <!-- Referanse til customer purchase packages -->
-                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:TripRakkestadBergenWithSpecialSeating" version="1"/>
+                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:ConcertAndReturnTrip" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
                     </fareContractEntries>
@@ -140,30 +150,9 @@
             <customerPurchasePackages>
 
 
-                <!-- Example: OPEN 2 leg trip on authrotiy ENT using adult user profile, leg 1 with seating supplement product and leg 2 without.  -->
 
-                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:PeriodPassNotActivated" version="1">
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:ConcertAndReturnTrip" version="1">
 
-                    <travelSpecifications>
-                        <TravelSpecification id="ENT:TravelSpecification:Leg1" version="1">
-                            <Name>Open Leg 1 X to Y</Name>
-                            <!-- overall usage validity -->
-                            <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
-                            <EndOfValidity>2021-01-01T00:00:00</EndOfValidity>
-                        </TravelSpecification>
-                        <TravelSpecification id="ENT:TravelSpecification:Leg2" version="1">
-                            <Name>Open Leg 2 X to Y</Name>
-                            <!-- overall usage validity -->
-                            <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
-                            <EndOfValidity>2021-01-01T00:00:00</EndOfValidity>
-                        </TravelSpecification>
-                        <TravelSpecification id="ENT:TravelSpecification:Seat" version="1">
-                            <Name>Fatboy seating Open Leg 2 X to Y</Name>
-                            <!-- overall usage validity -->
-                            <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
-                            <EndOfValidity>2021-01-01T00:00:00</EndOfValidity>
-                        </TravelSpecification>
-                    </travelSpecifications>
 
                     <!-- Activation is ordered -->
                     <elementAccessGroupsInSequence>
@@ -171,6 +160,10 @@
                         <ElementActivationGroup id="ENT:ElementActivationGroup:1" version="1" order="1">
                             <ElementAccess>
                                 <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+                                <InstanceNumber>1</InstanceNumber>
+                            </ElementAccess>
+                            <ElementAccess>
+                                <ValidableElementRef ref="ENT:ValidableElement:Concert" version="1"/>
                                 <InstanceNumber>1</InstanceNumber>
                             </ElementAccess>
                         </ElementActivationGroup>
@@ -181,81 +174,66 @@
                                 <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                 <InstanceNumber>2</InstanceNumber>
                             </ElementAccess>
-                            <ElementAccess>
-                                <ValidableElementRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
-                                <InstanceNumber>1</InstanceNumber>
-                            </ElementAccess>
                         </ElementActivationGroup>
                     </elementAccessGroupsInSequence>
 
-                    
 
-                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip"/>
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:ConcertWithPublicTransit"/>
 
                     <customerPurchasePackageElements>
-                        
-                        <!-- LEG 1 -->
 
-                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:NotActivated" version="1" order="1">
+                        <!-- Trip to concert -->
+
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Trip1" version="1" order="1">
 
                             <elementAccesses>
-
-                                <!-- *Activation* leg1 entry -->
+                                <!-- *Activation* trip to concert  -->
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
                                     <EndOfValidity>2020-01-01T08:35:00</EndOfValidity>
-                                    <validityParameterAssignments>
-                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationLeg1" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1"/>
-                                            <validityParameters>
-                                                <ServiceJourneyRef ref="ENT:ServiceJourney:Leg1"/>
-                                            </validityParameters>
-                                        </CustomerPurchaseParameterAssignment>
-                                    </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
 
                             </elementAccesses>
 
                             <validityParameterAssignments>
-                                <!-- LEG 1 -->
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg1-Activation" order="1">
+
+
+                                <!-- Trip to concert Activation Rule -->
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:TripToConcert-Activation" order="1">
+
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:1year" version="1">
-                                           <UsageTrigger>startOutboundRide</UsageTrigger>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30Days" version="1">
+                                            <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>endOfRide</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
+                                            <!-- Outer bounds of usage valdity period -->
                                             <StartDate>2020-01-01</StartDate>
                                             <EndDate>2020-01-01</EndDate>
+                                            
                                         </UsageValidityPeriod>
-                                        <ActivationRequirements id="ENT:ActivationRequirements:1" version="1">
-                                            <SelectionRequirements>serviceJourney</SelectionRequirements>
-                                        </ActivationRequirements>
                                     </limitations>
+
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
 
 
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg1-Validity" order="1">
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:TripToConcert-Validity" order="1">
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide"/>
-                                    <DistanceMatrixElement id="ENT:DistanceMatrixElement:Leg1" version="21">
-                                        <StartStopPointRef ref="NSR:ScheduledStopPoint:S123"/>
-                                        <EndStopPointRef ref="NSR:ScheduledStopPoint:S555"/>
-                                    </DistanceMatrixElement>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        <InterchangingRef ref="ENT:Interchanging:None"/>
+                                        <InterchangingRef ref="ENT:Interchanging:Unlimited"/>
                                         <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
                                     </limitations>
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
@@ -264,51 +242,24 @@
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
 
-                            </validityParameterAssignments>
-                        </CustomerPurchasePackageElement>
-
-                        <!-- LEG 2 -->
-                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Leg2" version="1" order="1">
-
-                            <elementAccesses>
-                                <!-- *Activation* Leg2 entry -->
-                                <CustomerPurchasePackageElementAccess>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-                                    <MarkedAs>activated</MarkedAs>
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
-                                    <StartOfValidity>2020-01-01T12:05:00</StartOfValidity>
-                                    <EndOfValidity>2020-01-01T18:35:00</EndOfValidity>
-                                    <validityParameterAssignments>
-                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationLeg2" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1"/>
-                                            <validityParameters>
-                                                <ServiceJourneyRef ref="ENT:ServiceJourney:Leg2"/>
-                                            </validityParameters>
-                                        </CustomerPurchaseParameterAssignment>
-                                    </validityParameterAssignments>
-                                </CustomerPurchasePackageElementAccess>
-                            </elementAccesses>
-
-                            <validityParameterAssignments>
+                                <!-- Return trip -->
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2-Activation" order="1">
 
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-                                    
+
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDays" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>endOfRide</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
+                                            <!-- Outer bounds of usage valdity period -->
                                             <StartDate>2020-01-01</StartDate>
                                             <EndDate>2020-01-01</EndDate>
                                         </UsageValidityPeriod>
-                                        <ActivationRequirements id="ENT:ActivationRequirements:2" version="1">
-                                            <SelectionRequirements>serviceJourney</SelectionRequirements>
-                                        </ActivationRequirements>
                                     </limitations>
 
                                     <!-- Only once -->
@@ -320,14 +271,10 @@
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-                                    <DistanceMatrixElement id="ENT:DistanceMatrixElement:Leg2" version="21">
-                                        <StartStopPointRef ref="NSR:ScheduledStopPoint:S19923"/>
-                                        <EndStopPointRef ref="NSR:ScheduledStopPoint:S55995"/>
-                                    </DistanceMatrixElement>
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        <InterchangingRef ref="ENT:Interchanging:None"/>
+                                        <InterchangingRef ref="ENT:Interchanging:Unlimited"/>
                                         <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
                                     </limitations>
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
@@ -338,29 +285,59 @@
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
 
-                        <!-- Seat supplement element -->
+                        <!-- Concert details -->
 
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Seat" version="1" order="1">
 
                             <elementAccesses>
 
-                                <!-- *Activation* entry -->
+                                <!-- *Activation* entry for concert ticket -->
                                 <CustomerPurchasePackageElementAccess>
+                                    <ValidableElementRef ref="ENT:ValidableElement:Concert" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
-                                    <StartOfValidity>2020-01-01T12:05:00</StartOfValidity>
-                                    <EndOfValidity>2020-01-01T18:35:00</EndOfValidity>
-                                    <validityParameterAssignments>
-                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2Seat-Activation" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1"/>
-                                            <ValidableElementRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
-                                            
-                                            <validityParameters>
-                                                <!-- PassengerSeat not yet defined -->
-                                                <!-- Actual seat selected is registered here -->
-                                                <PassengerSeatRef ref="ENT:PassengerSeat:Fatboy1"/>
+                                    <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2020-01-01T08:35:00</EndOfValidity>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
 
-                                                <!--   
+                            <validityParameterAssignments>
+
+
+                                <!-- Concert -->
+
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Activation" order="1">
+
+                                    <!-- This type defines uvp activation rules -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:Concert" version="1"/>
+
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDkkakys" version="1">
+                                            <UsageTrigger>activation</UsageTrigger>
+                                            <!-- Outer bounds of usage valdity period -->
+                                            <StartDate>2020-01-01</StartDate>
+                                            <EndDate>2020-01-01</EndDate>
+                                        </UsageValidityPeriod>
+                                    </limitations>
+                                    <!-- Only once -->
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+
+
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Validity" order="1">
+                                    <!-- This type defines the validable element parameters when access right is activated -->
+
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:Concert" version="1"/>
+
+                                    <limitations>
+                                        <!-- In case the concert has child/adult/senior ticket types -->
+                                        <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <validityParameters>
+                                        <!--   
                                                     Sketch of what PassengerSeating could be
                                                     
                                                 <PassengerSeating id="ENT:PassengerSeating:1" version="1">
@@ -373,65 +350,7 @@
                                                     <SeatingEquipmentRef ref="ENT:SeatingEquipmentRef:XYX"/>
                                                 </PassengerSeating>
                                                  -->
-
-                                                <ServiceJourneyRef ref="ENT:ServiceJourney:Leg2"/>
-                                            </validityParameters>
-                                        </CustomerPurchaseParameterAssignment>
-                                    </validityParameterAssignments>
-                                </CustomerPurchasePackageElementAccess>
-
-                            </elementAccesses>
-
-                            <validityParameterAssignments>
-
-
-                                <!-- LEG 2 SEAT -->
-
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Activation" order="1">
-
-                                    <!-- This type defines uvp activation rules -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
-                                    <ValidableElementRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
-                                    
-                                    <LimitationGroupingType>AND</LimitationGroupingType>
-                                    <limitations>
-                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDkkakys" version="1">
-                                            <!-- To be removed?   <UsageTrigger>followElementAccessGroup</UsageTrigger>-->
-                                            <UsageEnd>endOfRide</UsageEnd>
-                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
-                                            <StartDate>2020-01-01</StartDate>
-                                            <EndDate>2020-01-01</EndDate>
-                                            <ActivationRequirements id="ENT:ActivationRequirements:3" version="1">
-                                                <SelectionRequirements>serviceJourney</SelectionRequirements>
-                                            </ActivationRequirements>
-                                        </UsageValidityPeriod>
-                                        <Reserving id="ENT:Reserving:Seating" version="1">
-                                            <ReservingRequirements>reservationsCompulsory</ReservingRequirements>
-                                        </Reserving>
-                                    </limitations>
-
-                                    <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
-                                </CustomerPurchaseParameterAssignment>
-
-
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Validity" order="1">
-                                    <!-- This type defines the validable element parameters when access right is activated -->
-
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
-                                    <ValidableElementRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
-                                    <DistanceMatrixElement id="ENT:DistanceMatrixElement:Leg2-Seat" version="21">
-                                        <StartStopPointRef ref="NSR:ScheduledStopPoint:S19923"/>
-                                        <EndStopPointRef ref="NSR:ScheduledStopPoint:S55995"/>
-                                    </DistanceMatrixElement>
-
-                                    <LimitationGroupingType>AND</LimitationGroupingType>
-                                    <limitations>
-                                        <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
-                                    </limitations>
-                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
-                                    <validityParameters>
-                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
+                                        
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
@@ -440,7 +359,5 @@
                 </CustomerPurchasePackage>
             </customerPurchasePackages>
         </SalesTransactionFrame>
-
-
     </dataObjects>
 </PublicationDelivery>

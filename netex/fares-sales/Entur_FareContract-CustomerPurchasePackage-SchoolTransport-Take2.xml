@@ -165,11 +165,11 @@
                 <AmountOfPriceUnitProduct id="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1">
                     <Name lang="no">School transport with limited number of rides</Name>
                     <accessRightsInProduct>
-                        <AccessRightInProduct version="1" id="ENT:AccessRightInProductToSchool" order="1">
+                        <AccessRightInProduct version="1" id="ENT:AccessRightInProduct:ToSchool" order="1">
                             <MaximumAccess>1</MaximumAccess>
                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
                         </AccessRightInProduct>
-                        <AccessRightInProduct version="1" id="ENT:AccessRightInProductFromSchool" order="1">
+                        <AccessRightInProduct version="1" id="ENT:AccessRightInProduct:FromSchool" order="1">
                             <MaximumAccess>1</MaximumAccess>
                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool" version="1"/>
                         </AccessRightInProduct>
