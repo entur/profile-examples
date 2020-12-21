@@ -19,6 +19,7 @@
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
 
             <typesOfValue>
+                <!-- assignment types -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1">
                     <Name>Rule describing parameters when ValidableElement is activated</Name>
                 </TypeOfAccessRightAssignment>
@@ -37,6 +38,13 @@
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1">
                     <Name>CPPA describing information about where the activation took place</Name>
                 </TypeOfAccessRightAssignment>
+                <!-- activation types -->
+                <TypeOfActivation id="ENT:TypeOfActivation:Sequence" version="1">
+                    <Name>Activation rule describing Access which requires access rights (e.g. CustomerPurchaseParameterAssignment of lower order) to be activated</Name>
+                </TypeOfActivation>
+                <TypeOfActivation id="ENT:TypeOfActivation:Grouping" version="1">
+                    <Name>Activation rule describing Access which is combined with other access rights (e.g. CustomerPurchaseParameterAssignment of the same order)</Name>
+                </TypeOfActivation>
             </typesOfValue>
             <organisations>
                 <Authority id="ENT:Authority:ENT" version="1">
@@ -206,6 +214,7 @@
 
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
+                                    
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
@@ -287,13 +296,15 @@
 
                         <!-- Concert details -->
 
-                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Seat" version="1" order="1">
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Seat" version="1" order="2">
 
                             <elementAccesses>
 
                                 <!-- *Activation* entry for concert ticket -->
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:Concert" version="1"/>
+                                    <TypeOfActivationRef ref="ENT:TypeOfActivation:Grouping" version="1"/>
+                                    
                                     <MarkedAs>activated</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
@@ -306,11 +317,12 @@
 
                                 <!-- Concert -->
 
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Activation" order="1">
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Activation" order="2">
 
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:Concert" version="1"/>
+                                    <TypeOfActivationRef ref="ENT:TypeOfActivation:Grouping" version="1"/>
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
@@ -326,11 +338,12 @@
                                 </CustomerPurchaseParameterAssignment>
 
 
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Validity" order="1">
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Validity" order="2">
                                     <!-- This type defines the validable element parameters when access right is activated -->
 
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:Concert" version="1"/>
+                                    <TypeOfActivationRef ref="ENT:TypeOfActivation:Grouping" version="1"/>
 
                                     <limitations>
                                         <!-- In case the concert has child/adult/senior ticket types -->
