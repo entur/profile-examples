@@ -4,13 +4,11 @@
     Example of school period pass
 -->
 
-<PublicationDelivery 
-  xmlns="http://www.netex.org.uk/netex" 
-  version="1.10:NO-NeTEx-fares:0.9">
-    
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+
     <PublicationTimestamp>2020-12-04T12:34:56</PublicationTimestamp>
     <ParticipantRef>ENT</ParticipantRef>
- 
+
     <dataObjects>
 
         <!-- Reference data START -->
@@ -29,94 +27,127 @@
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1">
                     <Name>Rule describing when a usage validity period may be activated</Name>
                 </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1">
+                    <Name>CPPA describing additional access rights added as a result of activation</Name>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1">
+                    <Name>CPPA describing information about where the activation took place</Name>
+                </TypeOfAccessRightAssignment>
             </typesOfValue>
             <organisations>
                 <Authority id="ENT:Authority:ENT" version="1">
                     <Name>Entur School Transport Service Inc</Name>
                 </Authority>
             </organisations>
-            
+
         </ResourceFrame>
+
+
+        <ServiceCalendarFrame version="1" id="ENT:Bergen2020">
+            <Name>SchoolYear calendar</Name>
+            <ServiceCalendar id="ENT:ServiceCalendar:SchoolBergen2020-2021" version="1">
+                <dayTypes>
+                    <FareDayType version="1" id="ENT:FareDayType:1">
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>SchoolDay</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </FareDayType>
+                </dayTypes>
+                <operatingPeriods>
+                    <UicOperatingPeriod version="1" id="ENT:UicOperatingPeriod:SchoolYear">
+                        <FromDate>2020-08-17T00:00:00</FromDate>
+                        <!-- Only necessary to validate that enough validity bits are present -->
+                        <ToDate>2020-12-31T00:00:00</ToDate>
+                        <ValidDayBits> 
+                            1111100 <!-- week 34 --> 
+                            1111100 <!-- week 35 --> 
+                            1111100 <!-- week 36 --> 
+                            1111100 <!-- week 37 --> 
+                            1111100 <!-- week 38 -->
+                            1111100 <!-- week 39 --> 
+                            1111100 <!-- week 40 --> 
+                            1111100 <!-- week 41 --> 
+                            1111100 <!-- week 42 --> 
+                            1111100 <!-- week 43 -->
+                            1111100 <!-- week 44 --> 
+                            1111100 <!-- week 45 --> 
+                            1111100 <!-- week 46 --> 
+                            1111100 <!-- week 47 --> 
+                            1111100 <!-- week 48 -->
+                            1111100 <!-- week 49 --> 
+                            1111100 <!-- week 50 --> 
+                            1111100 <!-- week 51 --> 
+                            1111100 <!-- week 52 --> 
+                            1111 <!-- week 53 -->
+                        </ValidDayBits>
+                    </UicOperatingPeriod>
+                </operatingPeriods>
+                <dayTypeAssignments>
+                    <DayTypeAssignment version="1" id="ENT:Calendar" order="1">
+                        <!--UicOperatingPeriodRef version="1" ref="ENT:Bergen2020"/-->
+                        <OperatingPeriodRef ref="ENT:UicOperatingPeriod:SchoolYear"/>
+                        <DayTypeRef version="1" ref="ENT:FareDayType:1"/>
+                    </DayTypeAssignment>
+                </dayTypeAssignments>
+            </ServiceCalendar>
+        </ServiceCalendarFrame>
 
 
 
         <FareFrame id="ENT:FareFrame:1" version="1">
-            <timeIntervals>
-                <TimeInterval id="ENT:TimeInterval:SchoolMorning" version="1">
-                    <StartTime>07:00:00</StartTime>
-                    <EndTime>09:00:00</EndTime>
-                </TimeInterval>
-                <TimeInterval id="ENT:TimeInterval:SchoolAfternoon" version="1">
-                    <StartTime>12:00:00</StartTime>
-                    <EndTime>18:00:00</EndTime>
-                </TimeInterval>
-                <TimeInterval id="ENT:TimeInterval:90Min" version="1">
-                    <Duration>PT90M</Duration>
-                </TimeInterval>
-            </timeIntervals>
-
-
-
             <qualityStructureFactors>
-                
+
                 <!-- Total number of activations possible -->
-                <QualityStructureFactor id="ENT:QualityStructureFactor:380" version="1">
-                    <Name>380 activations</Name>
+                <QualityStructureFactor id="ENT:QualityStructureFactor:190" version="1">
+                    <Name>190 activations</Name>
                     <Factor>activation</Factor>
-                    <Value>380</Value>
+                    <Value>190</Value>
                 </QualityStructureFactor>
-                
-                <!-- School calendar -->
-                <FareDemandFactor id="ENT:FareDemandFactor:SchoolDemandYear2020-2021-Bergen" version="1">
+
+                <!-- Limiter to Schooldays between 07-09 -->
+                <FareDemandFactor id="ENT:FareDemandFactor:TripToSchool" version="1">
                     <validityConditions>
-                        <AvailabilityCondition id="ENT:AvailabilityCondition:SchoolYear2021Bergen" version="1">
-                            <Name>Skolerute Bergen 2020-2021</Name>
-                            <!-- Start date of validity bits, first bit represents this date -->
-                            <FromDate>2020-08-17T00:00:00</FromDate>
-                            <!-- Only necessary to validate that enough validity bits are present -->
-                            <ToDate>2020-12-31T00:00:00</ToDate>
-                            <ValidDayBits>
-                                1111100 <!-- week 34 -->
-                                1111100 <!-- week 35 -->
-                                1111100 <!-- week 36 -->
-                                1111100 <!-- week 37 -->
-                                1111100 <!-- week 38 -->
-                                1111100 <!-- week 39 -->
-                                1111100 <!-- week 40 -->
-                                1111100 <!-- week 41 -->
-                                1111100 <!-- week 42 -->
-                                1111100 <!-- week 43 -->
-                                1111100 <!-- week 44 -->
-                                1111100 <!-- week 45 -->
-                                1111100 <!-- week 46 -->
-                                1111100 <!-- week 47 -->
-                                1111100 <!-- week 48 -->
-                                1111100 <!-- week 49 -->
-                                1111100 <!-- week 50 -->
-                                1111100 <!-- week 51 -->
-                                1111100 <!-- week 52 -->
-                                1111 <!-- week 53 -->
-                            </ValidDayBits>
+                        <AvailabilityCondition id="ENT:AvailabilityCondition:SchoolMorning" version="1">
+                            <dayTypes>
+                                <DayTypeRef ref="ENT:DayType:SchoolDay"/>
+                            </dayTypes>
                             <timebands>
-                                <Timeband id="ENT:Timeband:SchoolMorningX" version="1">
+                                <Timeband id="ENT:Timeband:Morning" version="1">
                                     <StartTime>07:00:00</StartTime>
                                     <EndTime>09:00:00</EndTime>
                                 </Timeband>
-                                <Timeband id="ENT:Timeband:SchoolAfternoonX" version="1">
+                            </timebands>
+                        </AvailabilityCondition>
+                    </validityConditions>
+                </FareDemandFactor>
+
+                <!-- Limiter to Schooldays between 12-16 -->
+                <FareDemandFactor id="ENT:FareDemandFactor:TripFromSchool" version="1">
+                    <validityConditions>
+                        <AvailabilityCondition id="ENT:AvailabilityCondition:SchoolAfternoon" version="1">
+                            <dayTypes>
+                                <DayTypeRef ref="ENT:DayType:SchoolDay"/>
+                            </dayTypes>
+                            <timebands>
+                                <Timeband id="ENT:Timeband:Afternoon" version="1">
                                     <StartTime>12:00:00</StartTime>
                                     <EndTime>16:00:00</EndTime>
                                 </Timeband>
                             </timebands>
                         </AvailabilityCondition>
                     </validityConditions>
-                    <Name>School transportation</Name>
                 </FareDemandFactor>
             </qualityStructureFactors>
 
 
             <validableElements>
-                <ValidableElement id="ENT:ValidableElement:SingleTrip" version="1">
-                    <Name>Enkelttur Entur</Name>
+                <ValidableElement id="ENT:ValidableElement:SingleTripToSchool" version="1">
+                    <Name>Single trip to school</Name>
+                </ValidableElement>
+                <ValidableElement id="ENT:ValidableElement:SingleTripFromSchool" version="1">
+                    <Name>Single trip from school</Name>
                 </ValidableElement>
             </validableElements>
 
@@ -125,7 +156,7 @@
                 <UserProfile id="ENT:UserProfile:Pupil" version="1">
                     <Name lang="no">Pupil</Name>
                     <ProofRequired>identityDocument</ProofRequired>
-                    
+
                 </UserProfile>
             </usageParameters>
 
@@ -134,7 +165,14 @@
                 <AmountOfPriceUnitProduct id="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1">
                     <Name lang="no">School transport with limited number of rides</Name>
                     <accessRightsInProduct>
-                        <AccessRightInProductRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                        <AccessRightInProduct version="1" id="ENT:AccessRightInProductToSchool" order="1">
+                            <MaximumAccess>1</MaximumAccess>
+                            <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
+                        </AccessRightInProduct>
+                        <AccessRightInProduct version="1" id="ENT:AccessRightInProductFromSchool" order="1">
+                            <MaximumAccess>1</MaximumAccess>
+                            <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool" version="1"/>
+                        </AccessRightInProduct>
                     </accessRightsInProduct>
                 </AmountOfPriceUnitProduct>
             </fareProducts>
@@ -177,7 +215,7 @@
                             <PaymentMethod>debitCard</PaymentMethod>
                             <customerPurchasePackages>
                                 <!-- Reference to customer purchase packages -->
-                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:SchoolTransport" version="1"/>
+                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:SchoolCarnet" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
                     </fareContractEntries>
@@ -191,185 +229,189 @@
             -->
             <customerPurchasePackages>
 
-                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SchoolTransportAlternative2" version="1">
-                    
-                    <!-- New: Instantiation of a validable element -->
-                    <consumableElements>
-                        <ConsumableElement id="ENT:ConsumableElement:SchoolRide" validableElementRef="ENT:ValidableElement:SingleTrip"/>
-                    </consumableElements>
-                    
-                    
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SchoolCarnet" version="1">
+
                     <!-- Activation is ordered -->
-                    <elementAccessGroupsInSequence>
+                    <!-- TBD: <elementAccessGroupsInSequence>
                         
                         <ElementAccessGroup id="ENT:ElementActivationGroup:1" version="1" order="1">
-                            <ConsumableElementRef ref="ENT:ConsumableElement:SchoolRide"/>
+                            <ValidableElementRef ref="ENT:ValidableElement:TripToSchool"/>
                         </ElementAccessGroup>
  
                     </elementAccessGroupsInSequence>
+                    -->
                     
-                    
+ 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SchoolTransport"/>
+                    
+                    <travelSpecifications>
+                        <!-- When included, TravelSpecifications are the onces to display to traveller, not the CPP -->
+                        <TravelSpecification id="ENT:TravelSpecification:SchoolCarnet" version="1">
+                            <Name>School Transport year 2020-2021</Name>
+                            <Description>Valid on school days twice a day between 07-09 and 12-16</Description>
+                            <Units>380</Units>  
+                            <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
+                            <EndOfValidity>2020-12-31T00:00:00</EndOfValidity>
+                            <specificParameterAssignments>
+                                <SpecificParameterAssignment id="ENT:SpecificParameterAssignment:1" version="1" order="1">
+                                    <validityParameters>
+                                        <TariffZoneRef ref="ENT:TariffZone:1"/>
+                                    </validityParameters>
+                                </SpecificParameterAssignment>
+                            </specificParameterAssignments>
+                        </TravelSpecification>
+                    </travelSpecifications>
                     <customerPurchasePackageElements>
-                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SchoolTransportAlternative2" version="1" order="1">
-                            
-                            
+
+                        <!-- One CPPE pr instance of AccessRightInProduct -->
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SchoolTransportTripToSchool" version="1" order="1">
                             <elementAccesses>
-                                
-                                <!-- Access no 1 -->
-                                
+
+                                <!-- Access no 1 (first ride TO school) -->
                                 <CustomerPurchasePackageElementAccess created="2020-01-01T07:05:00">
-                                    <MarkedAs>activated</MarkedAs> 
-                                    <!-- TO BE ADDED TO STANDARD ?
-                                        
-                                    <elementAccessParameterAssignments>
-                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:PeriodPassRideValidation1" order="1">
-                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                                    <MarkedAs>activated</MarkedAs>
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2020-01-01T08:35:00</EndOfValidity>
+                                    <validityParameterAssignments>
+
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:RideToSchool1" order="1">
+                                            <!-- Details about where activation took place -->
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1"/>
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
                                             <validityParameters>
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:JourneyXYZ"/>
-                                                <PlaceRef ref="OsloS"/>
+                                                <StopPlaceRef ref="NSR:StopPlace:OsloS"/>
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
-                                        
-                                    </elementAccessParameterAssignments>
-                                   
-                                   TO BE ADDED TO STANDARD END -->
-                                    
-                                    <validityParameterAssignments>
-                                        <!-- Using derivedFrom(Object/Version)Ref to link which CPPA generated this CPPA -->
-                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Activation1" order="1" 
-                                            derivedFromObjectRef="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" derivedFromVersionRef="1" >
-                                            <limitations>
-                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:Activation1" version="1">
-                                                    <StartDate>2020-01-01</StartDate>
-                                                    <StartTime>07:05:00</StartTime>
-                                                    <EndDate>2020-02-01</EndDate>
-                                                    <EndTime>08:35:00</EndTime>
-                                                </UsageValidityPeriod>
-                                            </limitations>
-                                            
-                                            <ConsumableElementRef ref="ENT:ConsumableElement:SchoolRide"/>
-                                            
-                                        </CustomerPurchaseParameterAssignment>
+
                                     </validityParameterAssignments>
-                                    
+
                                 </CustomerPurchasePackageElementAccess>
 
-                                <!-- Access no 2 -->
-                                
-                                <CustomerPurchasePackageElementAccess created="2020-01-01T14:05:00">
-                                    <MarkedAs>activated</MarkedAs> 
-                                    
-                                     
+                                <!-- Access no 2 (second ride TO school) -->
+
+                                <CustomerPurchasePackageElementAccess created="2020-01-02T07:05:00">
+                                    <MarkedAs>activated</MarkedAs>
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <StartOfValidity>2020-01-02T07:25:00</StartOfValidity>
+                                    <EndOfValidity>2020-01-02T08:55:00</EndOfValidity>
                                     <validityParameterAssignments>
-                                        <!-- Using derivedFrom(Object/Version)Ref to link which CPPA generated this CPPA -->
-                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Activation2" order="1" 
-                                            derivedFromObjectRef="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" derivedFromVersionRef="1" >
-                                            <limitations>
-                                                <UsageValidityPeriod id="ENT:UsageValidityPeriod:Activation2" version="1">
-                                                    <StartDate>2020-01-01</StartDate>
-                                                    <StartTime>14:05:00</StartTime>
-                                                    <EndDate>2020-02-01</EndDate>
-                                                    <EndTime>15:35:00</EndTime>
-                                                </UsageValidityPeriod>
-                                            </limitations>
-                                            
-                                            <ConsumableElementRef ref="ENT:ConsumableElement:SchoolRide"/>
-                                            
+
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:RideToSchool2" order="1">
+                                            <!-- Details about where activation took place -->
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1"/>
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
+                                            <validityParameters>
+                                                <ServiceJourneyRef ref="ENT:ServiceJourney:JourneyXYZ"/>
+                                                <StopPlaceRef ref="NSR:StopPlace:OsloS"/>
+                                            </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
+
                                     </validityParameterAssignments>
-                                    
+
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
-                            
+
+
                             <validityParameterAssignments>
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1" >
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
                                     <limitations>
                                         <!-- Activated by trigger -->
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:WhatYouGetOnEachActivation" version="1">
-                                            <UsageTrigger>startOutboundRide</UsageTrigger>
+                                            <UsageTrigger>activation</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
-                                         <!--   <StandardDuration>PT90M</StandardDuration>-->
+                                            <StandardDuration>PT90M</StandardDuration>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                         </UsageValidityPeriod>
                                     </limitations>
-                                    
-                                    <ConsumableElementRef ref="ENT:ConsumableElement:SchoolRide"/>
-                                    
-                                    
-                                    <!-- Time interval given for each activation/usage trigger -->
-                                    <TimeIntervalRef ref="ENT:TimeInterval:90Min" version="1"/>
+
                                     <!-- Number of activations possible -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:380" version="1"/>
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:190" version="1"/>
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1"/>
-                                            <ConsumableElementRef ref="ENT:ConsumableElement:SchoolRide"/>
-                                            <LimitationGroupingType>AND</LimitationGroupingType>
-                                            <limitations>
-                                                
-                                                <!-- Limit to -->
-                                                <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolMorningV2-1" version="1">
-                                                    <Name>1 trip in the morning</Name>
-                                                    <FrequencyOfUseType>single</FrequencyOfUseType>
-                                                    <MaximalFrequency>1</MaximalFrequency>
-                                                    <!-- SchoolMorning timeinterval is 2 hour duration from 07 to 09 so must account for activations as late as 08:59:59 -->
-                                                    <FrequencyInterval>PT22H</FrequencyInterval> 
-                                                    <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
-                                                </FrequencyOfUse>
-                                                <!-- Limit to -->
-                                                <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonV2-1" version="1">
-                                                    <Name>1 trip in the afternoon</Name>
-                                                    <FrequencyOfUseType>single</FrequencyOfUseType>
-                                                    <MaximalFrequency>1</MaximalFrequency>
-                                                    <!-- SchoolAfternoon timeinterval is 4 hour duration from 12 to 16 so must account for activations as late as 15:59:59 -->
-                                                    <FrequencyInterval>PT20H</FrequencyInterval> 
-                                                    <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
-                                                </FrequencyOfUse>
-                                                
-                                                <!-- These 2 FrequencyOfUse below is only necessary if the overall school calendar availabilityCondition is 
-                                            not strict enough. A use case is children with 2 homes, one requiring school transport and one that does not -->
-                                                <!-- Limit to -->
-                                                <FrequencyOfUse id="ENT:FrequencyOfUse:MorningTotalCountV2-1" version="1">
-                                                   <!-- Frequency counter only active between (school year outer bounds) -->
-                                                    <validityConditions>
-                                                        <ValidBetween>
-                                                            <FromDate>2020-08-21T00:00:00</FromDate>
-                                                            <ToDate>2020-12-31T00:00:00</ToDate>
-                                                        </ValidBetween>
-                                                    </validityConditions>
-                                                    <Name>Maximum 190 trips in the morning to school in a year</Name>
-                                                    <FrequencyOfUseType>limited</FrequencyOfUseType>
-                                                    <MaximalFrequency>190</MaximalFrequency>
-                                                    <TimeIntervalRef ref="ENT:TimeInterval:SchoolMorning" version="1"/>
-                                                </FrequencyOfUse>
-                                                <!-- Limit to -->
-                                                <FrequencyOfUse id="ENT:FrequencyOfUse:SchoolAfternoonTotalCountV2-1" version="1">
-                                                    <!-- Frequency counter only active between (school year outer bounds) -->
-                                                    <validityConditions>
-                                                        <ValidBetween>
-                                                            <FromDate>2020-08-21T00:00:00</FromDate>
-                                                            <ToDate>2020-12-31T00:00:00</ToDate>
-                                                        </ValidBetween>
-                                                    </validityConditions>
-                                                    <Name>Maximum 190 trips home from school in a year</Name>
-                                                    <FrequencyOfUseType>limited</FrequencyOfUseType>
-                                                    <MaximalFrequency>190</MaximalFrequency>
-                                                    <TimeIntervalRef ref="ENT:TimeInterval:SchoolAfternoon" version="1"/>
-                                                </FrequencyOfUse>
-                                            </limitations>
-                                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
-                                            <!-- Overall availability -->
-                                            <FareDemandFactorRef ref="ENT:FareDemandFactor:SchoolDemandYear2020-2021-Bergen" version="1"/>
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
+                                            <FareDemandFactorRef ref="ENT:FareDemandFactor:TripToSchool" version="1"/>
                                         </CustomerPurchaseParameterAssignment>
                                     </includes>
                                 </CustomerPurchaseParameterAssignment>
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-3" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1"/>
-                                    <ConsumableElementRef ref="ENT:ConsumableElement:SchoolRide"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool"/>
+                                    <limitations>
+                                        <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
+                                        <TariffZoneRef ref="ENT:TariffZone:ValidityZone1"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+
+
+                        <!-- Trips FROM school -->
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SchoolTransportTripFromSchool" version="1" order="1">
+                            <elementAccesses>
+
+                                <!-- Access no 1 (first ride FROM school) -->
+                                <CustomerPurchasePackageElementAccess created="2020-01-01T07:05:00">
+                                    <MarkedAs>activated</MarkedAs>
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2020-01-01T08:35:00</EndOfValidity>
+                                    <validityParameterAssignments>
+
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:RideFromSchool1" order="1">
+                                            <!-- Details about where activation took place -->
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1"/>
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool" version="1"/>
+                                            <validityParameters>
+                                                <ServiceJourneyRef ref="ENT:ServiceJourney:JourneyXYZ"/>
+                                                <StopPlaceRef ref="NSR:StopPlace:OsloS"/>
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
+
+                                    </validityParameterAssignments>
+
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+
+
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationRuleFromSchool" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool" version="1"/>
+                                    <limitations>
+                                        <!-- Activated by trigger -->
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:WhatYouGetOnEachActivationFromSchool" version="1">
+                                            <UsageTrigger>activation</UsageTrigger>
+                                            <UsageEnd>standardDuration</UsageEnd>
+                                            <StandardDuration>PT90M</StandardDuration>
+                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
+                                        </UsageValidityPeriod>
+                                    </limitations>
+
+                                    <!-- Number of activations possible -->
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:190" version="1"/>
+                                    <includes>
+                                        <!-- Activation usage rule - when can it be activated -->
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationUsageRuleFromSchool" order="1">
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1"/>
+                                            <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool" version="1"/>
+                                            <FareDemandFactorRef ref="ENT:FareDemandFactor:TripFromSchool" version="1"/>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </includes>
+                                </CustomerPurchaseParameterAssignment>
+
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ValidityRuleFromSchool" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool"/>
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
                                     </limitations>
@@ -384,9 +426,7 @@
 
                     </customerPurchasePackageElements>
                 </CustomerPurchasePackage>
-
             </customerPurchasePackages>
-
         </SalesTransactionFrame>
 
     </dataObjects>
