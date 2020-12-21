@@ -157,7 +157,7 @@
                                     <MarkedAs>activated</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
-                                    <EndOfValidity>2020-01-02T07:05:00</EndOfValidity>
+                                    <EndOfValidity>2020-01-02T07:04:59</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
 
                                 <!-- First *validation* entry (logging of validations) -->
@@ -208,12 +208,12 @@
                             <elementAccesses>
 
                                 <!-- *Activation* entry -->
-                                <CustomerPurchasePackageElementAccess>
+                                <CustomerPurchasePackageElementAccess >
                                     <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (TimeIntervalRef in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
-                                    <EndOfValidity>2020-01-02T07:05:00</EndOfValidity>
+                                    <EndOfValidity>2020-01-02T07:04:59</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
 
                                 <!-- first re-validation entry -->
@@ -292,8 +292,8 @@
                                     <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (TimeINtervalRef in this case) -->
-                                    <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
-                                    <EndOfValidity>2020-01-02T07:05:00</EndOfValidity>
+                                    <StartOfValidity>2020-01-01T07:04:59</StartOfValidity>
+                                    <EndOfValidity>2020-01-02T07:04:59</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
 
                                 <!-- first validation entry -->
