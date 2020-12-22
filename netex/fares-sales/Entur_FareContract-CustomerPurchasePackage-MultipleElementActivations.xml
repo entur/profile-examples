@@ -13,7 +13,10 @@
                     <Name>Rule describing parameters when ValidableElement is activated</Name>
                 </TypeOfAccessRightAssignment>
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1">
-                    <Name>Rule describing how to activate</Name>
+                    <Name>Rule describing how to activate. If a usagetrigger=activation is specified, an element access is genereated as well, consuming the element</Name>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AdditionalConsumptionRule" version="1">
+                    <Name>Rule describing additional use of an activated element. Used when usage is separated from activation (ie access to lounge is made available when *activating*, but actual consuming/gate opening later)</Name>
                 </TypeOfAccessRightAssignment>
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidationRule" version="1">
                     <Name>Rule describing when to validate</Name>
@@ -27,7 +30,7 @@
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1">
                     <Name>CPPA describing information about where the activation took place</Name>
                 </TypeOfAccessRightAssignment>
-                
+
             </typesOfValue>
             <organisations>
                 <Authority id="ENT:Authority:ENT" version="1">
@@ -40,7 +43,7 @@
         <FareFrame id="ENT:FareFrame:1" version="1">
             <qualityStructureFactors>
                 <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
-                    <Name>Single activation</Name>
+                    <Name>Single activations</Name>
                     <Factor>activation</Factor>
                     <Value>1</Value>
                 </QualityStructureFactor>
@@ -181,24 +184,27 @@
                             <dependsOn>
                                 <DependsOn>
                                     <ElementAccessRef ref="ENT:ElementActivation:Leg1" version="1"/>
-                                    <MarkedAs>used</MarkedAs> <!-- List of acceptable values -->
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- List of acceptable values -->
                                 </DependsOn>
                             </dependsOn>
-                            <ElementActivation id="ENT:ElementActivation:Leg2" version="1">
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
-                            </ElementActivation>
-                            <ElementActivation id="ENT:ElementActivation:Seat" version="1">
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
-                            </ElementActivation>
+                            <elementActivations>
+                                <ElementActivation id="ENT:ElementActivation:Leg2" version="1">
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
+                                </ElementActivation>
+                                <ElementActivation id="ENT:ElementActivation:Seat" version="1">
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
+                                </ElementActivation>
+                            </elementActivations>
                         </DependentElementActivation>
                     </dependentElementActivations>
 
-                    
+
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip"/>
 
                     <customerPurchasePackageElements>
-                        
+
                         <!-- LEG 1 -->
 
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Leg1" version="1" order="1">
@@ -209,7 +215,7 @@
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (ServiceJourney date) -->
                                     <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
                                     <EndOfValidity>2020-01-02T00:00:00</EndOfValidity>
                                     <validityParameterAssignments>
@@ -221,24 +227,15 @@
                                         </CustomerPurchaseParameterAssignment>
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
-                                
+
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>used</MarkedAs>
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (ServiceJourney date) -->
                                     <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
                                     <EndOfValidity>2020-01-02T00:00:00</EndOfValidity>
-                                    <validityParameterAssignments>
-                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:UsedLeg1" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1"/>
-                                            
-                                            <validityParameters>
-                                                <ServiceJourneyRef ref="ENT:ServiceJourney:Leg1"/>
-                                            </validityParameters>
-                                        </CustomerPurchaseParameterAssignment>
-                                    </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
-                                
+
                             </elementAccesses>
 
                             <validityParameterAssignments>
@@ -251,7 +248,8 @@
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:1year" version="1">
-                                           <UsageTrigger>startOutboundRide</UsageTrigger>
+                                            <UsageTrigger>activation</UsageTrigger>
+                                            <!-- must generate an elementAccess/activated before use -->
                                             <UsageEnd>endOfRide</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                             <StartDate>2020-01-01</StartDate>
@@ -297,7 +295,7 @@
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (ServiceJourney in this case) -->
                                     <StartOfValidity>2020-01-01T12:05:00</StartOfValidity>
                                     <EndOfValidity>2020-01-01T18:35:00</EndOfValidity>
                                     <validityParameterAssignments>
@@ -309,6 +307,14 @@
                                         </CustomerPurchaseParameterAssignment>
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
+
+                                <CustomerPurchasePackageElementAccess>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <StartOfValidity>2020-01-01T12:05:00</StartOfValidity>
+                                    <EndOfValidity>2020-01-01T18:35:00</EndOfValidity>
+                                </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
 
                             <validityParameterAssignments>
@@ -318,11 +324,11 @@
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-                                    
+
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDays" version="1">
-                                            <UsageTrigger>startOutboundRide</UsageTrigger>
+                                            <UsageTrigger>activation</UsageTrigger>
                                             <UsageEnd>endOfRide</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                             <StartDate>2020-01-01</StartDate>
@@ -360,13 +366,13 @@
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
 
-                        <!-- Seat supplement element -->
+                        <!-- Seat supplement element leg 2 -->
 
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Seat" version="1" order="1">
 
                             <elementAccesses>
 
-                            <!--
+                                <!--
                                 unused - not ready for consumption (implicit if not given)
                                 activated - ready for consumption
                                 used - consumed
@@ -377,7 +383,7 @@
                                 carnet: each time a user activates one, a used+start/end entry is added uvpTrigger=activation, start/end depends on standardduration or timeintervalref
                                 school transport: activation first time + "used", then "used"+start/end entries uvpTrigger=activation, start/end depends on standardduration or timeintervalref
                                 open ticket: activated + "used"+start/end upon selection = uvpTrigger=activation, start/end depends on standardduration or timeintervalref
-                                supplement coffee: typically activated as part of leg, "used" for each cup of coffee (no start/end time) uvpTrigger=activation, no start/end set because no uvp+standardduration nor timeintervalref set
+                                supplement coffee: typically activated as part of leg, "used" for each cup of coffee (no start/end time) uvpTrigger=activation, no uvp+standardduration nor timeintervalref set, using serviceJourney bounds for start/end
                             -->
 
                                 <!-- *Activation* entry -->
@@ -390,7 +396,7 @@
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2Seat-Activation" order="1">
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
-                                            
+
                                             <validityParameters>
                                                 <!-- PassengerSeat not yet defined -->
                                                 <!-- Actual seat selected is registered here -->
@@ -416,23 +422,28 @@
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
 
+                                <CustomerPurchasePackageElementAccess created="2020-01-01T00:00:00">
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (ServiceJourney) -->
+                                    <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
+                                    <EndOfValidity>2020-01-01T23:59:59</EndOfValidity>
+                                </CustomerPurchasePackageElementAccess>
+
                             </elementAccesses>
 
                             <validityParameterAssignments>
 
-
-                                <!-- LEG 2 SEAT -->
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Activation" order="1">
 
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
-                                    
+
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDkkakys" version="1">
-                                            <!-- To be removed?   <UsageTrigger>followElementAccessGroup</UsageTrigger>-->
+                                            <UsageTrigger>activation</UsageTrigger>
                                             <UsageEnd>endOfRide</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                             <StartDate>2020-01-01</StartDate>
