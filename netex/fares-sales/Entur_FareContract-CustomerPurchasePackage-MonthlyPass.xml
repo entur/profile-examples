@@ -82,6 +82,7 @@
 
             <fareProducts>
                 <PreassignedFareProduct id="ENT:PreassignedFareProduct:PeriodPass" version="1">
+                    
                     <Name lang="no">Månedskort 30 dager</Name>
                     <accessRightsInProduct>
                         <AccessRightInProduct id="ENT:AccessRightInProduct:Legs" version="1" order="1">
@@ -285,6 +286,8 @@
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:PeriodPass"/>
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:PeriodPassRideValidation" version="1" order="1">
+
+                          
 
                             <elementAccesses>
                                 <!-- *Activation* entry -->
