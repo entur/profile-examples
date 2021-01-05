@@ -314,7 +314,7 @@
                             <validityParameterAssignments>
 
                                 <!-- Outbound Journey activation rule -->
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:OutboundJourney-Activation" order="1">
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:OutboundJourney-Activation" version="1" order="1">
 
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
@@ -328,7 +328,7 @@
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
 
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:OutboundJourney-Validity" order="1">
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:OutboundJourney-Validity" version="1" order="1">
 
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
@@ -347,7 +347,7 @@
 
 
                                 <!-- Return Journey activation rule -->
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Activation" order="2">
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Activation" version="1" order="2">
 
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
@@ -361,7 +361,7 @@
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
 
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Validity" order="1">
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Validity" version="1" order="1">
 
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
@@ -381,7 +381,8 @@
                         </CustomerPurchasePackageElement>
 
 
-                        <!-- Coffee/Snacks consumption rule -->
+                        <!-- Coffee/Snacks -->
+                        
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Coffee_Snack" version="1" order="0">
 
                             <elementAccesses>
@@ -397,19 +398,24 @@
                                     
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <!-- TODO: Not necessary in this case -->
-                                    <StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
-                                    <EndOfValidity>2021-01-10T16:51:00</EndOfValidity>
+                                    <!--StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
+                                    <EndOfValidity>2021-01-10T16:51:00</EndOfValidity-->
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
 
                             <validityParameterAssignments>
 
-                                <!-- Coffee -->
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:CoffeeSnack-Consumtion" order="0">
+                                <!-- Coffee/Snacks consumption rule -->
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:CoffeeSnack-Consumtion" version="1" order="0">
 
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
+                                    
+                                    <!-- NOT added as this is implicitly included per <includes> -->
+                                    <!-- 
                                     <ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:Snacks" version="1"/>
+                                    -->
                                     
                                     <!-- TODO: Not yet included, should be explicit or simply implicit from DependentElementActivation ? -->
                                     <TypeOfActivationRef ref="ENT:TypeOfActivation:Grouping" version="1"/>
@@ -423,11 +429,48 @@
                                             <EndDate>2021-12-31</EndDate>
                                         </UsageValidityPeriod>
                                     </limitations>
-                                    <!-- Max 3 consumptions -->
+                                    <!-- maximum 3 consumptions in total -->
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:3" version="1"/>
+                                    <includes>
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElement:Coffee" version="1" order="0">
+                                            <ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/>
+                                        </CustomerPurchaseParameterAssignment>
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElement:Snacks" version="1" order="0">
+                                            <ValidableElementRef ref="ENT:ValidableElement:Snacks" version="1"/>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </includes>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+
+
+<!-- ALTERNATIVE APPROACH:
+                            <validityParameterAssignments>
+
+                                <!-\- Coffee/Snacks consumption rule -\->
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:CoffeeSnack-Consumtion" version="1" order="0">
+
+                                    <!-\- This type defines uvp activation rules -\->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:Coffee_Snacks" version="1"/> <!-\- potential wrapper type (currently not defined) -\->
+                                    
+                                    <!-\- TODO: Not yet included, should be explicit or simply implicit from DependentElementActivation ? -\->
+                                    <TypeOfActivationRef ref="ENT:TypeOfActivation:Grouping" version="1"/>
+
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:2021" version="1">
+                                            <UsageTrigger>activation</UsageTrigger>
+                                            <!-\- Outer bounds of usage valdity period -\->
+                                            <StartDate>2021-01-01</StartDate>
+                                            <EndDate>2021-12-31</EndDate>
+                                        </UsageValidityPeriod>
+                                    </limitations>
+                                    <!-\- maximum 3 consumptions (in total) -\->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:3" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
                                 
-                            </validityParameterAssignments>
+                            </validityParameterAssignments>-->
+                            
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>
                 </CustomerPurchasePackage>
