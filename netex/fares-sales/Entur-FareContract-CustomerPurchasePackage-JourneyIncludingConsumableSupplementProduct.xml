@@ -57,14 +57,13 @@
 
         <FareFrame id="ENT:FareFrame:1" version="1">
             <qualityStructureFactors>
-                <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
-                    <Name>Single activation</Name>
+                <QualityStructureFactor id="ENT:QualityStructureFactor:Activation-x1" version="1">
+                    <Name>Activation (always singular)</Name>
                     <Factor>activation</Factor>
                     <Value>1</Value>
                 </QualityStructureFactor>
-                <QualityStructureFactor id="ENT:QualityStructureFactor:3" version="1">
+                <QualityStructureFactor id="ENT:QualityStructureFactor:Consumption-x3" version="1">
                     <Name>Three items (consumptions)</Name>
-                    <!-- TODO: ?-->
                     <Factor>consumption</Factor>
                     <Value>3</Value>
                 </QualityStructureFactor>
@@ -209,6 +208,7 @@
                     <!-- TODO: Review ! -->
                     <dependentElementActivations>
                         <!-- Outbound journey -->
+                        <!-- (implicitly given, probably not strictly necessary to define explicitly) -->
                         <DependentElementActivation id="ENT:DependentElementActivation:1" version="1" order="1">
                             <ElementActivation id="ENT:ElementActivation:OutboundJourney" version="1">
                                 <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
@@ -217,6 +217,13 @@
                         
                         <!-- Return journey -->
                         <DependentElementActivation id="ENT:DependentElementActivation:1" version="1" order="1">
+                            <dependsOn>
+                                <DependsOn>
+                                    <ElementAccessRef ref="ENT:ElementActivation:OutboundJourney" version="1"/>
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- List of acceptable values -->
+                                </DependsOn>
+                            </dependsOn>
                             <ElementActivation id="ENT:ElementActivation:ReturnJourney" version="1">
                                 <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
                             </ElementActivation>
@@ -247,6 +254,17 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementActivation>
                             </elementActivations>
+                            
+                            <elementConsumptions>
+                                <ElementConsumption id="ENT:ElementConsumption:Coffee" version="1">
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
+                                </ElementConsumption>
+                                <ElementConsumption id="ENT:ElementConsumption:Snack" version="1">
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
+                                </ElementConsumption>
+                            </elementConsumptions>
+                            
+                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
                         </DependentElementActivation>
                     </dependentElementActivations>
                     
@@ -298,7 +316,7 @@
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1" order="1">
 
                             <elementAccesses>
-                                <!-- *Activation* outbound Journey  -->
+                                <!-- *Activation* of outbound Journey  -->
                                 <!-- (i.e. return Journey not yet activated)  -->
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
@@ -308,6 +326,16 @@
                                     <StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
                                     <EndOfValidity>2021-01-10T16:51:00</EndOfValidity>
                                     
+                                </CustomerPurchasePackageElementAccess>
+                                
+                                <!-- *Consumption* of outbound Journey  -->
+                                <!-- TODO: Would be much better in this case if MaredAs was a list to which both statuses was added upon triggering -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
+                                    <EndOfValidity>2021-01-10T16:51:00</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
 
@@ -325,7 +353,7 @@
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1hour" version="1"/>
                                     </limitations>
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activation-x1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
 
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:OutboundJourney-Validity" version="1" order="1">
@@ -344,25 +372,54 @@
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
-
-
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                        
+                        
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1" order="1">
+                            
+                            <elementAccesses>
+                                <!-- *Activation* of return Journey  -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+                                    <MarkedAs>activated</MarkedAs>
+                                    
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <StartOfValidity>2021-01-10T17:14:00</StartOfValidity>
+                                    <EndOfValidity>2021-01-10T18:14:00</EndOfValidity>
+                                    
+                                </CustomerPurchasePackageElementAccess>
+                                
+                                <!-- *Consumption* of outbound Journey  -->
+                                <!-- TODO: Would be much better in this case if MaredAs was a list to which both statuses was added upon triggering -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <StartOfValidity>2021-01-10T17:14:00</StartOfValidity>
+                                    <EndOfValidity>2021-01-10T18:14:00</EndOfValidity>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                
                                 <!-- Return Journey activation rule -->
-                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Activation" version="1" order="2">
-
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Activation" version="1" order="1">
+                                    
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
+                                    
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1hour" version="1"/>
                                     </limitations>
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activation-x1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-
+                                
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Validity" version="1" order="1">
-
+                                    
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
                                     
@@ -377,8 +434,10 @@
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
+
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
+                        
 
 
                         <!-- Coffee/Snacks -->
@@ -389,7 +448,7 @@
 
                                 <!-- *Activation* entry for Coffee/Snack (i.e. this Access is consumption of one Coffee item) -->
                                 <CustomerPurchasePackageElementAccess created="2021-01-10T16:04:00">
-                                    <ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/>
+                                    <!--ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/ -->
                                     
                                     <!-- TODO: Not yet included, should be explicit or simply implicit from DependentElementActivation ? -->
                                     <TypeOfActivationRef ref="ENT:TypeOfActivation:Grouping" version="1"/>
@@ -430,7 +489,7 @@
                                         </UsageValidityPeriod>
                                     </limitations>
                                     <!-- maximum 3 consumptions in total -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:3" version="1"/>
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
                                     <includes>
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElement:Coffee" version="1" order="0">
                                             <ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/>
@@ -466,7 +525,7 @@
                                         </UsageValidityPeriod>
                                     </limitations>
                                     <!-\- maximum 3 consumptions (in total) -\->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:3" version="1"/>
+                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
                                 
                             </validityParameterAssignments>-->
