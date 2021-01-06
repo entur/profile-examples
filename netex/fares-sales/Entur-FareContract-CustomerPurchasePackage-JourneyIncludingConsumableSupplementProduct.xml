@@ -8,13 +8,11 @@
     ###
 -->
 
-<PublicationDelivery 
-  xmlns="http://www.netex.org.uk/netex"
-  version="1.10:NO-NeTEx-fares:0.9">
-    
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+
     <PublicationTimestamp>2021-01-05T12:34:56</PublicationTimestamp>
     <ParticipantRef>ENT</ParticipantRef>
-    
+
     <dataObjects>
 
         <!-- Reference data -->
@@ -40,7 +38,7 @@
                     <Name>CPPA describing information about where the activation took place</Name>
                 </TypeOfAccessRightAssignment>
             </typesOfValue>
-            
+
             <!-- Organisations (placeholders) -->
             <organisations>
                 <Authority id="ENT:Authority:ENT" version="1">
@@ -181,7 +179,7 @@
 
             <customerPurchasePackages>
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:JourneyAndSupplements" version="1">
-                    
+
                     <travelSpecifications>
                         <TravelSpecification id="ENT:TravelSpecification:Outbound" version="1">
                             <Name>Outbound journey</Name>
@@ -202,19 +200,21 @@
                             <EndOfValidity>2021-12-31T23:59:59</EndOfValidity>
                         </TravelSpecification>
                     </travelSpecifications>
-                    
-                    
-                    
+
+
+
                     <!-- TODO: Review ! -->
                     <dependentElementActivations>
                         <!-- Outbound journey -->
                         <!-- (implicitly given, probably not strictly necessary to define explicitly) -->
                         <DependentElementActivation id="ENT:DependentElementActivation:1" version="1" order="1">
-                            <ElementActivation id="ENT:ElementActivation:OutboundJourney" version="1">
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
-                            </ElementActivation>
+                            <elementActivations>
+                                <ElementActivation id="ENT:ElementActivation:OutboundJourney" version="1">
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
+                                </ElementActivation>
+                            </elementActivations>
                         </DependentElementActivation>
-                        
+
                         <!-- Return journey -->
                         <DependentElementActivation id="ENT:DependentElementActivation:1" version="1" order="1">
                             <dependsOn>
@@ -224,11 +224,13 @@
                                     <!-- List of acceptable values -->
                                 </DependsOn>
                             </dependsOn>
-                            <ElementActivation id="ENT:ElementActivation:ReturnJourney" version="1">
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
-                            </ElementActivation>
+                            <elementActivations>
+                                <ElementActivation id="ENT:ElementActivation:ReturnJourney" version="1">
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
+                                </ElementActivation>
+                            </elementActivations>
                         </DependentElementActivation>
-                        
+
                         <!-- Supplement products -->
                         <DependentElementActivation id="ENT:DependentElementActivation:3" version="1" order="2">
                             <DependsOnGroupingType>OR</DependsOnGroupingType>
@@ -244,7 +246,7 @@
                                     <!-- List of acceptable values -->
                                 </DependsOn>
                             </dependsOn>
-                            
+
                             <!-- TODO: Wrapper...something (ValidableElement) for Coffee/Snack ? -->
                             <elementActivations>
                                 <ElementActivation id="ENT:ElementActivation:Coffee" version="1">
@@ -254,7 +256,7 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementActivation>
                             </elementActivations>
-                            
+
                             <elementConsumptions>
                                 <ElementConsumption id="ENT:ElementConsumption:Coffee" version="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
@@ -263,15 +265,15 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementConsumption>
                             </elementConsumptions>
-                            
+
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
                         </DependentElementActivation>
                     </dependentElementActivations>
-                    
-                    
-                    
-<!-- TODO: Helt utdatert? Mye vanskeligere konsumering med denne konstruksjonen. -->                
-<!--
+
+
+
+                    <!-- TODO: Helt utdatert? Mye vanskeligere konsumering med denne konstruksjonen. -->
+                    <!--
                      <!-\- Activation is ordered -\->
                     <elementAccessGroupsInSequence>
                         
@@ -321,13 +323,13 @@
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
-                                    
+
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
                                     <EndOfValidity>2021-01-10T16:51:00</EndOfValidity>
-                                    
+
                                 </CustomerPurchasePackageElementAccess>
-                                
+
                                 <!-- *Consumption* of outbound Journey  -->
                                 <!-- TODO: Would be much better in this case if MaredAs was a list to which both statuses was added upon triggering -->
                                 <CustomerPurchasePackageElementAccess>
@@ -346,7 +348,7 @@
 
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
-                                    
+
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
@@ -360,7 +362,7 @@
 
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
-                                    
+
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
@@ -374,22 +376,22 @@
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
-                        
-                        
+
+
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1" order="1">
-                            
+
                             <elementAccesses>
                                 <!-- *Activation* of return Journey  -->
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
-                                    
+
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2021-01-10T17:14:00</StartOfValidity>
                                     <EndOfValidity>2021-01-10T18:14:00</EndOfValidity>
-                                    
+
                                 </CustomerPurchasePackageElementAccess>
-                                
+
                                 <!-- *Consumption* of outbound Journey  -->
                                 <!-- TODO: Would be much better in this case if MaredAs was a list to which both statuses was added upon triggering -->
                                 <CustomerPurchasePackageElementAccess>
@@ -400,15 +402,15 @@
                                     <EndOfValidity>2021-01-10T18:14:00</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
-                                
+
                                 <!-- Return Journey activation rule -->
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Activation" version="1" order="1">
-                                    
+
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
-                                    
+
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
@@ -417,12 +419,12 @@
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activation-x1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-                                
+
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Validity" version="1" order="1">
-                                    
+
                                     <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
-                                    
+
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
@@ -437,11 +439,11 @@
 
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
-                        
+
 
 
                         <!-- Coffee/Snacks -->
-                        
+
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Coffee_Snack" version="1" order="0">
 
                             <elementAccesses>
@@ -449,12 +451,12 @@
                                 <!-- *Activation* entry for Coffee/Snack (i.e. this Access is consumption of one Coffee item) -->
                                 <CustomerPurchasePackageElementAccess created="2021-01-10T16:04:00">
                                     <!--ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/ -->
-                                    
+
                                     <!-- TODO: Not yet included, should be explicit or simply implicit from DependentElementActivation ? -->
                                     <TypeOfActivationRef ref="ENT:TypeOfActivation:Grouping" version="1"/>
-                                    
+
                                     <MarkedAs>activated</MarkedAs>
-                                    
+
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <!-- TODO: Not necessary in this case -->
                                     <!--StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
@@ -469,13 +471,13 @@
 
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
-                                    
+
                                     <!-- NOT added as this is implicitly included per <includes> -->
                                     <!-- 
                                     <ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:Snacks" version="1"/>
                                     -->
-                                    
+
                                     <!-- TODO: Not yet included, should be explicit or simply implicit from DependentElementActivation ? -->
                                     <TypeOfActivationRef ref="ENT:TypeOfActivation:Grouping" version="1"/>
 
@@ -502,7 +504,7 @@
                             </validityParameterAssignments>
 
 
-<!-- ALTERNATIVE APPROACH:
+                            <!-- ALTERNATIVE APPROACH:
                             <validityParameterAssignments>
 
                                 <!-\- Coffee/Snacks consumption rule -\->
@@ -529,7 +531,7 @@
                                 </CustomerPurchaseParameterAssignment>
                                 
                             </validityParameterAssignments>-->
-                            
+
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>
                 </CustomerPurchasePackage>
