@@ -202,85 +202,167 @@
                     </travelSpecifications>
 
 
-
-                    <!-- Activation rules across different CustomerPurchasePackageElements -->
-                    <dependentElementActivations>
-                        <!-- Outbound journey -->
-                        <DependentElementActivation id="ENT:DependentElementActivation:1" version="1" order="1">
-                            <!-- Elements to activate (MarkedAs->activated) -->
-                            <elementActivations>
-                                <ElementActivation id="ENT:ElementActivation:OutboundJourney" version="1">
-                                    <!-- Reference to CPPE -->
+                    <elementUsages>
+                        <ElementUsage id="ENT:ElementActivation:OutboundJourneyActivation" version="1">
+                            <MarkedAs>activated</MarkedAs>
+                            <!-- Reference to CPPE -->
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
+                        </ElementUsage>
+                        <ElementUsage id="ENT:ElementActivation:ReturnJourneyActivation" version="1">
+                            <MarkedAs>activated</MarkedAs>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
+                        </ElementUsage>
+                        <ElementUsage id="ENT:ElementActivation:CoffeeActivation" version="1">
+                            <MarkedAs>activated</MarkedAs>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
+                        </ElementUsage>
+                        <ElementUsage id="ENT:ElementActivation:SnackActivation" version="1">
+                            <MarkedAs>activated</MarkedAs>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
+                        </ElementUsage>
+                        <ElementUsage id="ENT:ElementConsumption:CoffeeUsed" version="1">
+                            <MarkedAs>used</MarkedAs>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
+                        </ElementUsage>
+                        <ElementUsage id="ENT:ElementConsumption:SnackUsed" version="1">
+                            <MarkedAs>used</MarkedAs>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
+                        </ElementUsage>
+                    </elementUsages>
+                    
+                    <!-- Element usage rules across different CustomerPurchasePackageElements -->
+                    <dependentElementUsages>
+                        
+                        
+                        
+<!--                        
+                        <!-\- Outbound journey -\->
+                        <DependentElementUsage id="ENT:DependentElementActivation:1" version="1" order="1">
+                            <!-\- No activity required -\->
+                            <UsagePolicy>none</UsagePolicy>
+                            <!-\- Elements to activate (MarkedAs->activated) -\->
+                            <elementUsages>
+                                <ElementUsage id="ENT:ElementActivation:OutboundJourney" version="1">
+                                    <MarkedAs>activated</MarkedAs>
+                                    <!-\- Reference to CPPE -\->
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
-                                </ElementActivation>
-                            </elementActivations>
-                        </DependentElementActivation>
-
+                                </ElementUsage>
+                            </elementUsages>
+                            <!-\- Can only be activated once -\->
+                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
+                        </DependentElementUsage>
+-->
+        
+                        
                         <!-- Return journey -->
-                        <DependentElementActivation id="ENT:DependentElementActivation:1" version="1" order="1">
-                            <activationDependencies>
-                                <ActivationDependency>
-                                    <ElementActivationRef ref="ENT:ElementActivation:OutboundJourney" version="1"/>
+                        <DependentElementUsage id="ENT:DependentElementActivation:1" version="1" order="1">
+                            <elementUsageDependencies>
+                                <ElementUsageDependency>
+                                    <ElementUsageRef ref="ENT:ElementActivation:OutboundJourney" version="1"/>
                                     <!-- List of acceptable values -->
                                     <MarkedAs>used</MarkedAs>
-                                    </ActivationDependency>
-                            </activationDependencies>
-                            <elementActivations>
-                                <!-- Elements to activate (MarkedAs->activated) when dependent element is MarkedAs=activated -->
-                                <ElementActivation id="ENT:ElementActivation:ReturnJourney" version="1">
+                                </ElementUsageDependency>
+                            </elementUsageDependencies>
+                            <!-- Open return, must be activated manually -->
+                            <UsagePolicy>manual</UsagePolicy>
+                            <elementUsages>
+                                <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=activated -->
+                                <ElementUsageRef ref="ENT:ElementActivation:ReturnJourneyActivation" version="1"/>
+<!--                                <ElementUsage id="ENT:ElementActivation:ReturnJourney" version="1">
+                                    <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
-                                </ElementActivation>
-                            </elementActivations>
-                        </DependentElementActivation>
+                                </ElementUsage>
+-->                            </elementUsages>
+                            <!-- Can only be activated once -->
+                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
+                        </DependentElementUsage>
 
                         <!-- Supplement products -->
-                        <DependentElementActivation id="ENT:DependentElementActivation:3" version="1" order="2">
+                        <DependentElementUsage id="ENT:DependentElementActivation:3" version="1" order="2">
                             <DependsOnGroupingType>OR</DependsOnGroupingType>
-                            <activationDependencies>
-                                <ActivationDependency>
+                            <elementUsageDependencies>
+                                <ElementUsageDependency>
                                     <!-- List of acceptable values -->
                                     <ElementActivationRef ref="ENT:ElementActivation:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
-                                </ActivationDependency>
-                                <ActivationDependency>
+                                </ElementUsageDependency>
+                                <ElementUsageDependency>
                                     <!-- List of acceptable values -->
                                     <ElementActivationRef ref="ENT:ElementActivation:ReturnJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
-                                </ActivationDependency>
-                            </activationDependencies>
+                                </ElementUsageDependency>
+                            </elementUsageDependencies>
 
-                            <elementActivations>
-                                <!-- Elements to activate (MarkedAs->activated) when dependent element is MarkedAs=activated -->
-                                <ElementActivation id="ENT:ElementActivation:Coffee" version="1">
+                            <!-- *Must* be executed automatically when dependency conditions are satisfied -->
+                            <UsagePolicy>automatic</UsagePolicy>
+
+                            <!-- Both must be activated at the same time since ElementUsageGrouping=AND -->
+                            <ElementUsageGroupingType>AND</ElementUsageGroupingType>
+
+                            <elementUsages>
+                                <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=used -->
+                                <ElementUsageRef ref="ENT:ElementActivation:CoffeeActivation" version="1"/>
+                                <ElementUsageRef ref="ENT:ElementActivation:SnackActivation" version="1"/>
+<!--                                <ElementUsage id="ENT:ElementActivation:Coffee" version="1">
+                                    <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                </ElementActivation>
-                                <ElementActivation id="ENT:ElementActivation:Snack" version="1">
+                                </ElementUsage>
+                                <ElementUsage id="ENT:ElementActivation:Snack" version="1">
+                                    <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                                </ElementActivation>
-                            </elementActivations>
+                                </ElementUsage>
+-->                           </elementUsages>
 
-                        </DependentElementActivation>
-                    </dependentElementActivations>
+                            <!-- Can only be activated once -->
+                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
 
-                    <!-- *Combined/overall* consumption rules across different CustomerPurchasePackageElements
+                        </DependentElementUsage>
+
+
+                        <!-- *Combined/overall* consumption rules across different CustomerPurchasePackageElements
                         *Single* CPPE consumption is governed by CPPE->QualityStructureFactor
                         Requires that CPPE is MarkedAs=activated
                     -->
-                    <dependentElementConsumptions>
-                        <DependentElementConsumption>
-                            <!-- Either one -->
-                            <elementConsumptions>
-                                <ElementConsumption id="ENT:ElementConsumption:Coffee" version="1">
+                        <DependentElementUsage>
+                            <!-- Both must be activated before consumption/use -->
+                            <ActivationDependencyGroupingType>AND</ActivationDependencyGroupingType>
+                            <elementUsageDependencies>
+                                <ElementUsageDependency>
+                                    <!-- List of acceptable values -->
+                                    <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                </ElementConsumption>
-                                <ElementConsumption id="ENT:ElementConsumption:Snack" version="1">
+                                </ElementUsageDependency>
+                                <ElementUsageDependency>
+                                    <!-- List of acceptable values -->
+                                    <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                                </ElementConsumption>
-                            </elementConsumptions>
-                        </DependentElementConsumption>
-                        <!-- Number of times MarkedAs=used can appear in total -->
-                        <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
-                    </dependentElementConsumptions>
+                                </ElementUsageDependency>
+                            </elementUsageDependencies>
+                            
+                            <!-- Either one of the ElementUsage can be used independently -->
+                            <ElementUsageGroupingType>XOR</ElementUsageGroupingType>
+
+                            <!-- *May* be executed manually later when dependency conditions are satisfied -->
+                            <UsagePolicy>automatic</UsagePolicy>
+
+                            <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
+                            <elementUsages>
+                                <ElementUsageRef ref="ENT:ElementActivation:CoffeeUsed" version="1"/>
+                                <ElementUsageRef ref="ENT:ElementActivation:SnackUsed" version="1"/>
+<!--
+                                <ElementUsage id="ENT:ElementConsumption:CoffeeUsed" version="1">
+                                    <MarkedAs>used</MarkedAs>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
+                                </ElementUsage>
+                                <ElementUsage id="ENT:ElementConsumption:SnackUsed" version="1">
+                                    <MarkedAs>used</MarkedAs>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
+                                </ElementUsage>
+-->                            </elementUsages>
+                            <!-- Number of times MarkedAs=used can appear in total for given elements-->
+                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
+                        </DependentElementUsage>
+                    </dependentElementUsages>
 
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:JourneyWithConditionalSupplementProducts"/>
@@ -419,31 +501,31 @@
                         <!-- Coffee -->
 
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Coffee" version="1" order="0">
-                            
+
                             <elementAccesses>
-                                
+
                                 <!-- *Activation* entry for Coffee (i.e. this Access is consumption of one Coffee item) -->
                                 <CustomerPurchasePackageElementAccess created="2021-01-10T16:04:00">
                                     <ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
-                                    
+
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <!-- TODO: Not necessary in this case -->
                                     <!--StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
                                     <EndOfValidity>2021-01-10T16:51:00</EndOfValidity-->
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
-                                
+
                                 <!-- Coffee consumption rule -->
-                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:CoffeeSnack-Consumtion" version="1" order="0">
-                                    
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:Coffee-Consumtion" version="1" order="0">
+
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
-                                    
+
                                     <ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/>
-                                    
+
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:2021" version="1">
@@ -460,31 +542,31 @@
                         </CustomerPurchasePackageElement>
 
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Snack" version="1" order="0">
-                            
+
                             <elementAccesses>
-                                
+
                                 <!-- *Activation* entry for Snack (i.e. this Access is consumption of one Snack item) -->
                                 <CustomerPurchasePackageElementAccess created="2021-01-10T16:04:00">
                                     <ValidableElementRef ref="ENT:ValidableElement:Snack" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
-                                    
+
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <!-- TODO: Not necessary in this case -->
                                     <!--StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
                                     <EndOfValidity>2021-01-10T16:51:00</EndOfValidity-->
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
-                                
+
                                 <!-- Snacks consumption rule -->
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:Snack-Consumtion" version="1" order="0">
-                                    
+
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
-                                    
+
                                     <ValidableElementRef ref="ENT:ValidableElement:Snack" version="1"/>
-                                    
+
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:2021" version="1">
