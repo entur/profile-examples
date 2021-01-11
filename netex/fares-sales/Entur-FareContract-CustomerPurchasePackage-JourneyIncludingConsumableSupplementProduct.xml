@@ -343,7 +343,7 @@
                             <ElementUsageGroupingType>XOR</ElementUsageGroupingType>
 
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
-                            <UsagePolicy>automatic</UsagePolicy>
+                            <UsagePolicy>manual</UsagePolicy>
 
                             <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
                             <elementUsages>
