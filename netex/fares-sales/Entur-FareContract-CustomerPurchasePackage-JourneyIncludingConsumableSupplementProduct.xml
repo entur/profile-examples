@@ -239,7 +239,7 @@
                         <!-\- Outbound journey -\->
                         <DependentElementUsage id="ENT:DependentElementActivation:1" version="1" order="1">
                             <!-\- No activity required -\->
-                            <UsagePolicy>none</UsagePolicy>
+                            <ElementUsagePolicy>none</ElementUsagePolicy>
                             <!-\- Elements to activate (MarkedAs->activated) -\->
                             <elementUsages>
                                 <ElementUsage id="ENT:ElementActivation:OutboundJourney" version="1">
@@ -264,7 +264,7 @@
                                 </ElementUsageDependency>
                             </elementUsageDependencies>
                             <!-- Open return, must be activated manually -->
-                            <UsagePolicy>manual</UsagePolicy>
+                            <ElementUsagePolicy>manual</ElementUsagePolicy>
                             <elementUsages>
                                 <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=activated -->
                                 <ElementUsageRef ref="ENT:ElementActivation:ReturnJourneyActivation" version="1"/>
@@ -294,11 +294,10 @@
                             </elementUsageDependencies>
 
                             <!-- *Must* be executed automatically when dependency conditions are satisfied -->
-                            <UsagePolicy>automatic</UsagePolicy>
+                            <ElementUsagePolicy>automatic</ElementUsagePolicy>
 
                             <!-- Both must be activated at the same time since ElementUsageGrouping=AND -->
                             <ElementUsageGroupingType>AND</ElementUsageGroupingType>
-
                             <elementUsages>
                                 <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=used -->
                                 <ElementUsageRef ref="ENT:ElementActivation:CoffeeActivation" version="1"/>
@@ -312,7 +311,10 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUsage>
 -->                           </elementUsages>
-
+                            
+                            <!-- must use same parameters for same policy ryles ie service journey selection for both leg and seat -->
+                            <CombinePolicyAssignments>true</CombinePolicyAssignments>
+                            
                             <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
 
@@ -343,7 +345,7 @@
                             <ElementUsageGroupingType>XOR</ElementUsageGroupingType>
 
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
-                            <UsagePolicy>manual</UsagePolicy>
+                            <ElementUsagePolicy>manual</ElementUsagePolicy>
 
                             <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
                             <elementUsages>
@@ -359,8 +361,13 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUsage>
 -->                            </elementUsages>
+                        
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
+                            
+                            <!-- Must activate/use within 2 hours from dependent element -->
+                            <TimeIntervalRef ref="ENT:TimeInterval:2hours"/>
+                            
                         </DependentElementUsage>
                     </dependentElementUsages>
 

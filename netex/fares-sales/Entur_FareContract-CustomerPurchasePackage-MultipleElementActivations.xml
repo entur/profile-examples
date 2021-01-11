@@ -196,6 +196,17 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
                                 </ElementActivation>
                             </elementActivations>
+                            
+                            <!-- These CPPAs listed under each CPPE must be assigned the same value -->
+                            <identicalParameterAssignments>
+                                <IdenticalParameterAssignment>
+                                    <parameterAssignments>
+                                        <CustomerPurchasePackageAssigment ref="assignmentref journey"/>
+                                        <CustomerPurchasePackageAssigment ref="assignmentref journey-seat"/>
+                                    </parameterAssignments>
+                                </IdenticalParameterAssignment>
+                            </identicalParameterAssignments>
+                            
                         </DependentElementActivation>
                     </dependentElementActivations>
 
@@ -255,9 +266,23 @@
                                             <StartDate>2020-01-01</StartDate>
                                             <EndDate>2020-01-01</EndDate>
                                         </UsageValidityPeriod>
-                                        <ActivationRequirements id="ENT:ActivationRequirements:1" version="1">
+                                        <SpecificationReqiurements id="ENT:SpecificationReqiurements:1" version="1">
                                             <SelectionRequirements>serviceJourney</SelectionRequirements>
-                                        </ActivationRequirements>
+                                            <specificationParameterAssignments>
+                                                <!-- possible choices for selectedServiceJourney selection -->
+                                                <GenericParameterAssignment>
+                                                    <!-- interchanging is ruled by the ValidityRule -->
+                                                    <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+                                                    <validityParameters>
+                                                        <GroupOfLinesRef ref="ENT:GroupOfLine:Blue"/>
+                                                        <LineRef ref="ENT:Line:1"/>
+                                                        <LineRef ref="ENT:Line:2"/>
+                                                    </validityParameters>
+                                                </GenericParameterAssignment>
+                                                
+                                            </specificationParameterAssignments>
+                                          
+                                        </SpecificationReqiurements>
                                     </limitations>
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
@@ -334,14 +359,28 @@
                                             <StartDate>2020-01-01</StartDate>
                                             <EndDate>2020-01-01</EndDate>
                                         </UsageValidityPeriod>
-                                        <ActivationRequirements id="ENT:ActivationRequirements:2" version="1">
-                                            <SelectionRequirements>serviceJourney</SelectionRequirements>
-                                        </ActivationRequirements>
                                     </limitations>
 
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    
+                                    <includes>
+                                        <!-- Parameters that must be selected -->
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1" order="1">
+                                            <!-- Selected service journey -->
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementServiceJourney"/>
+                                            <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+                                            <validityParameters>
+                                                <GroupOfLinesRef ref="ENT:GroupOfLine:Green"/>
+                                                <LineRef ref="ENT:Line:3"/>
+                                                <LineRef ref="ENT:Line:4"/>
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </includes>
+                                    
                                 </CustomerPurchaseParameterAssignment>
+
+
 
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2-Validity" order="1">
@@ -442,16 +481,13 @@
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDkkakys" version="1">
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:1yearr" version="1">
                                             <UsageTrigger>activation</UsageTrigger>
                                             <UsageEnd>endOfRide</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                             <StartDate>2020-01-01</StartDate>
                                             <EndDate>2020-11-01</EndDate>
                                         </UsageValidityPeriod>
-                                        <ActivationRequirements id="ENT:ActivationRequirements:1" version="1">
-                                            <SelectionRequirements>serviceJourney seat</SelectionRequirements>
-                                        </ActivationRequirements>
                                         <Reserving id="ENT:Reserving:Seating" version="1">
                                             <ReservingRequirements>reservationsCompulsory</ReservingRequirements>
                                         </Reserving>
@@ -459,6 +495,27 @@
 
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+
+                                    <IncludesGroupingType>AND</IncludesGroupingType>
+                                    <includes>
+                                        <!-- Parameters that must be selected -->
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirementLeg" version="1" order="1">
+                                            <!-- Selected service journey -->
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementServiceJourney"/>
+                                            <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+                                            <validityParameters>
+                                                <GroupOfLinesRef ref="ENT:GroupOfLine:Green"/>
+                                                <LineRef ref="ENT:Line:3"/>
+                                                <LineRef ref="ENT:Line:4"/>
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
+                                        <!-- Parameters that must be selected -->
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirementSeat" version="1" order="1">
+                                            <!-- Selected service journey -->
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementSeat"/>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </includes>
+                                    
                                 </CustomerPurchaseParameterAssignment>
 
 
@@ -474,10 +531,12 @@
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
+                                        
                                         <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
                                     </limitations>
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
+                                        <LineRef ref="ENT:Line:1"/>
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
