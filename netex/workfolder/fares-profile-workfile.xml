@@ -5,7 +5,7 @@
   xmlns="http://www.netex.org.uk/netex"
   xmlns:gis="http://www.opengis.net/gml/3.2" 
   xmlns:siri="http://www.siri.org.uk/siri"
-  version="1.12:NO-NeTEx-fares:0.9">
+  version="1.10:NO-NeTEx-fares:0.9">
     
     <PublicationTimestamp>2020-07-22T12:00:00</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
@@ -520,7 +520,6 @@
                     <StartTime>00:00:01</StartTime>
                     <EndDate>2022-12-31</EndDate>
                     <EndTime>23:59:59</EndTime>
-                    
                 </UsageValidityPeriod>
                 <Suspending id="ENT:Suspending:1" version="1">
                     <SuspensionPolicy>forAnyReason</SuspensionPolicy>
@@ -534,6 +533,8 @@
                 </FrequencyOfUse>
                 <Interchanging id="ENT:Interchanging:1" version="1">
                     <Name>Interchanging</Name>
+                    <CanInterchange>true</CanInterchange>
+                    <CanBreakJourney>true</CanBreakJourney>
                 </Interchanging>
                 <LuggageAllowance id="ENT:LuggageAllowance:1" version="1">
                     <BaggageUseType>carryOn</BaggageUseType>
