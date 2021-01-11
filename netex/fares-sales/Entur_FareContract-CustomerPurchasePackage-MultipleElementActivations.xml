@@ -41,15 +41,15 @@
         
         <SiteFrame id="ENT:SiteFrame:1" version="1">
             <tariffZones>
-                <TariffZone id="EBT:TariffZone:1" version="1">
+                <TariffZone id=":TariffZone:1" version="1">
                     <Name lang="no">sample Tariff Zone 1</Name>
                     <ParentZoneRef ref="ENT:TariffZone:ALL" version="1"/>
                 </TariffZone>
-                <TariffZone id="EBT:TariffZone:2" version="1">
+                <TariffZone id="ENT:TariffZone:2" version="1">
                     <Name lang="no">sample Tariff Zone 2</Name>
                     <ParentZoneRef ref="ENT:TariffZone:ALL" version="1"/>
                 </TariffZone>
-                <TariffZone id="EBT:TariffZone:ALL" version="1">
+                <TariffZone id="ENT:TariffZone:ALL" version="1">
                     <Name lang="no">sample all Tariff Zones</Name>
                     <members>
                         <PointRef ref="ENT:TariffZone:1" version="1"/>
