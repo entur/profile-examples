@@ -15,22 +15,22 @@
 
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
             <typesOfValue>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1">
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
                     <Name>Rule describing parameters when ValidableElement is activated</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1">
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
                     <Name>Rule describing how to activate</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidationRule" version="1">
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
                     <Name>Rule describing when to validate</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1">
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
                     <Name>Rule describing when a usage validity period may be activated</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1">
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationRequirementsAssignment" version="1">
                     <Name>CPPA describing additional access rights added as a result of activation</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1">
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
                     <Name>CPPA describing information about where the activation took place</Name>
                 </TypeOfAccessRightAssignment>
             </typesOfValue>
@@ -277,7 +277,7 @@
 
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:RideToSchool1" order="1">
                                             <!-- Details about where activation took place -->
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
                                             <validityParameters>
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:JourneyXYZ"/>
@@ -300,7 +300,7 @@
 
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:RideToSchool2" order="1">
                                             <!-- Details about where activation took place -->
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
                                             <validityParameters>
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:JourneyXYZ"/>
@@ -316,7 +316,7 @@
 
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1">
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
                                     <limitations>
                                         <!-- Activated by trigger -->
@@ -332,7 +332,7 @@
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:190" version="1"/>
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
                                             <FareDemandFactorRef ref="ENT:FareDemandFactor:TripToSchool" version="1"/>
                                         </CustomerPurchaseParameterAssignment>
@@ -340,7 +340,7 @@
                                 </CustomerPurchaseParameterAssignment>
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-3" order="1">
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool"/>
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
@@ -369,7 +369,7 @@
 
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:RideFromSchool1" order="1">
                                             <!-- Details about where activation took place -->
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool" version="1"/>
                                             <validityParameters>
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:JourneyXYZ"/>
@@ -385,7 +385,7 @@
 
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationRuleFromSchool" order="1">
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool" version="1"/>
                                     <limitations>
                                         <!-- Activated by trigger -->
@@ -402,7 +402,7 @@
                                     <includes>
                                         <!-- Activation usage rule - when can it be activated -->
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationUsageRuleFromSchool" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool" version="1"/>
                                             <FareDemandFactorRef ref="ENT:FareDemandFactor:TripFromSchool" version="1"/>
                                         </CustomerPurchaseParameterAssignment>
@@ -410,7 +410,7 @@
                                 </CustomerPurchaseParameterAssignment>
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ValidityRuleFromSchool" order="1">
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool"/>
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>

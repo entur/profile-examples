@@ -8,26 +8,46 @@
 
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
             <typesOfValue>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1">
-                    <Name>Rule describing parameters when ValidableElement is activated</Name>
+                <!-- Transition from MarkedAs=unused to MarkedAs=activated -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
+                    <Name>Rule describing when and how an validable element is activated. Generates CPPElementAccess with MarkedAs=activated. Must be used with a corresponding ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1">
-                    <Name>Rule describing how to activate. If a usagetrigger=activation is specified, an element access is genereated as well, consuming the element</Name>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAssignment" version="1">
+                    <Name>Rule describing parameters and limitations applicableg when an validable element is activated (but not consumed)</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AdditionalConsumptionRule" version="1">
-                    <Name>Rule describing additional use of an activated element. Used when usage is separated from activation (ie access to lounge is made available when *activating*, but actual consuming/gate opening later)</Name>
+
+                <!-- Transition from MarkedAs=activated to MarkedAs=used -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment" version="1">
+                    <Name>Rule describing how to *consume*. Generates CPPElementAccess with MarkedAs=used, precondition is that it is already MarkedAs=activated</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidationRule" version="1">
-                    <Name>Rule describing when to validate</Name>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsageAssignment" version="1">
+                    <Name>Rule describing parameters and limitations applicable for the ValidableElement when used - ie the actual travel rights</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1">
-                    <Name>Rule describing when a usage validity period may be activated</Name>
+
+                <!-- Transition from MarkedAs=unused to MarkedAs=used directly -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
+                    <Name>Rule describing how to *activate* and *consume* in the same operation. Generates CPPElementAccess with MarkedAs=used directly, omits MarkedAs=activated</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1">
-                    <Name>CPPA describing additional access rights added as a result of activation</Name>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
+                    <Name>Rule describing parameters and limitations applicable for the ValidableElement when used - ie the actual travel rights</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationDetails" version="1">
-                    <Name>CPPA describing information about where the activation took place</Name>
+
+                <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
+                    <Name>Rule describing when and how to re-validate (also resulting in a MarkedAs=marked CPPElementAccess)</Name>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Subrules to the various xxxPolicyAssignment -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1">
+                    <Name>Rule describing when a usage validity period may be activated or consumed. Used as a subrule to ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment, ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment and ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment</Name>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationRequirementsAssignment" version="1">
+                    <Name>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation* (ie specified service journey)</Name>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Recording of place activation/consumption/marking happened. Recorded on CPPElementAccess/validityParameters -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
+                    <Name>CPPA describing information about where the activation/consumption/revalidation took place</Name>
                 </TypeOfAccessRightAssignment>
             </typesOfValue>
             <organisations>
@@ -36,30 +56,30 @@
                 </Authority>
             </organisations>
         </ResourceFrame>
-        
-        
-        
+
+
+
         <SiteFrame id="ENT:SiteFrame:1" version="1">
             <tariffZones>
-                <TariffZone id=":TariffZone:1" version="1">
+                <TariffZone id="ENT:TariffZone:1" version="1">
                     <Name lang="no">sample Tariff Zone 1</Name>
-                    <ParentZoneRef ref="ENT:TariffZone:ALL" version="1"/>
+                    <ParentZoneRef ref="ENT:TariffZone:ALL" />
                 </TariffZone>
                 <TariffZone id="ENT:TariffZone:2" version="1">
                     <Name lang="no">sample Tariff Zone 2</Name>
-                    <ParentZoneRef ref="ENT:TariffZone:ALL" version="1"/>
+                    <ParentZoneRef ref="ENT:TariffZone:ALL" />
                 </TariffZone>
                 <TariffZone id="ENT:TariffZone:ALL" version="1">
                     <Name lang="no">sample all Tariff Zones</Name>
                     <members>
-                        <PointRef ref="ENT:TariffZone:1" version="1"/>
-                        <PointRef ref="ENT:TariffZone:2" version="1"/>
+                        <PointRef ref="ENT:TariffZone:1" />
+                        <PointRef ref="ENT:TariffZone:2" />
                     </members>
                 </TariffZone>
             </tariffZones>
         </SiteFrame>
-        
-        
+
+
 
         <FareFrame id="ENT:FareFrame:1" version="1">
             <qualityStructureFactors>
@@ -124,7 +144,7 @@
                         </SalesOfferPackageElement>
                         <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:FatboySeating" version="1" order="1">
                             <Name lang="no">Fatboy bean bag seating (numbered)</Name>
-                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:FatboyBeanBag" version="1"/>
+                            <SupplementProductRef ref="ENT:SupplementProduct:FatboyBeanBag" version="1"/>
                         </SalesOfferPackageElement>
                     </salesOfferPackageElements>
                 </SalesOfferPackage>
@@ -132,6 +152,7 @@
 
         </FareFrame>
 
+        <!-- Referencedata end -->
 
         <SalesTransactionFrame id="ENT:SalesTransactionFrame:Case1" version="1">
 
@@ -153,7 +174,7 @@
                             <PaymentMethod>debitCard</PaymentMethod>
                             <customerPurchasePackages>
                                 <!-- Referanse til customer purchase packages -->
-                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:TripRakkestadBergenWithSpecialSeating" version="1"/>
+                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:PeriodPassNotActivated" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
                     </fareContractEntries>
@@ -217,7 +238,7 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
                                 </ElementActivation>
                             </elementActivations>
-                            
+
                             <!-- These CPPAs listed under each CPPE must be assigned the same value -->
                             <identicalParameterAssignments>
                                 <IdenticalParameterAssignment>
@@ -227,7 +248,7 @@
                                     </parameterAssignments>
                                 </IdenticalParameterAssignment>
                             </identicalParameterAssignments>
-                            
+
                         </DependentElementActivation>
                     </dependentElementActivations>
 
@@ -252,7 +273,7 @@
                                     <EndOfValidity>2020-01-02T00:00:00</EndOfValidity>
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationLeg1" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationRequirementsAssignment" version="1"/>
                                             <validityParameters>
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:Leg1"/>
                                             </validityParameters>
@@ -274,7 +295,7 @@
                                 <!-- LEG 1 -->
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg1-Activation" order="1">
                                     <!-- This type defines uvp activation rules -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide"/>
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
@@ -287,32 +308,31 @@
                                             <StartDate>2020-01-01</StartDate>
                                             <EndDate>2020-01-01</EndDate>
                                         </UsageValidityPeriod>
-                                        <SpecificationReqiurements id="ENT:SpecificationReqiurements:1" version="1">
-                                            <SelectionRequirements>serviceJourney</SelectionRequirements>
-                                            <specificationParameterAssignments>
-                                                <!-- possible choices for selectedServiceJourney selection -->
-                                                <GenericParameterAssignment>
-                                                    <!-- interchanging is ruled by the ValidityRule -->
-                                                    <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
-                                                    <validityParameters>
-                                                        <GroupOfLinesRef ref="ENT:GroupOfLine:Blue"/>
-                                                        <LineRef ref="ENT:Line:1"/>
-                                                        <LineRef ref="ENT:Line:2"/>
-                                                    </validityParameters>
-                                                </GenericParameterAssignment>
-                                                
-                                            </specificationParameterAssignments>
-                                          
-                                        </SpecificationReqiurements>
-                                    </limitations>
+                                     </limitations>
+            
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    
+                                    <includes>
+                                        <!-- Parameters that must be selected -->
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirementLeg1" version="1" order="1">
+                                            <!-- Selected service journey -->
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementServiceJourney"/>
+                                            <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+                                            <validityParameters>
+                                                <GroupOfLinesRef ref="ENT:GroupOfLine:Green"/>
+                                                <LineRef ref="ENT:Line:1"/>
+                                                <LineRef ref="ENT:Line:2"/>
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </includes>
+                                    
                                 </CustomerPurchaseParameterAssignment>
 
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg1-Validity" order="1">
                                     <!-- This type defines the validable element parameters when access right is activated -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide"/>
                                     <DistanceMatrixElement id="ENT:DistanceMatrixElement:Leg1" version="21">
                                         <StartStopPointRef ref="NSR:ScheduledStopPoint:S123"/>
@@ -346,7 +366,7 @@
                                     <EndOfValidity>2020-01-01T18:35:00</EndOfValidity>
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationLeg2" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationRequirementsAssignment" version="1"/>
                                             <validityParameters>
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:Leg2"/>
                                             </validityParameters>
@@ -368,7 +388,7 @@
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2-Activation" order="1">
 
                                     <!-- This type defines uvp activation rules -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
@@ -384,7 +404,7 @@
 
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
-                                    
+
                                     <includes>
                                         <!-- Parameters that must be selected -->
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1" order="1">
@@ -398,7 +418,7 @@
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
                                     </includes>
-                                    
+
                                 </CustomerPurchaseParameterAssignment>
 
 
@@ -406,7 +426,7 @@
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2-Validity" order="1">
                                     <!-- This type defines the validable element parameters when access right is activated -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <DistanceMatrixElement id="ENT:DistanceMatrixElement:Leg2" version="21">
                                         <StartStopPointRef ref="NSR:ScheduledStopPoint:S19923"/>
@@ -454,7 +474,7 @@
                                     <EndOfValidity>2020-01-01T18:35:00</EndOfValidity>
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2Seat-Activation" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AddedAccessRights" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationRequirementsAssignment" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
 
                                             <validityParameters>
@@ -497,7 +517,7 @@
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Activation" order="1">
 
                                     <!-- This type defines uvp activation rules -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
@@ -536,14 +556,14 @@
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementSeat"/>
                                         </CustomerPurchaseParameterAssignment>
                                     </includes>
-                                    
+
                                 </CustomerPurchaseParameterAssignment>
 
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Validity" order="1">
                                     <!-- This type defines the validable element parameters when access right is activated -->
 
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:FatboySeating" version="1"/>
                                     <DistanceMatrixElement id="ENT:DistanceMatrixElement:Leg2-Seat" version="21">
                                         <StartStopPointRef ref="NSR:ScheduledStopPoint:S19923"/>
@@ -552,7 +572,7 @@
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        
+
                                         <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
                                     </limitations>
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
