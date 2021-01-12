@@ -18,25 +18,60 @@
         <!-- Reference data -->
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
             <typesOfValue>
-                <!-- assignment types -->
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
-                    <Name>Rule describing parameters when ValidableElement is activated</Name>
-                </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
-                    <Name>Rule describing how to activate</Name>
-                </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
-                    <Name>Rule describing when to validate</Name>
-                </TypeOfAccessRightAssignment>
+                <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
+                <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
+                
+                <!-- Transition from MarkedAs=unused to MarkedAs=activated -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
-                    <Name>Rule describing when a usage validity period may be activated</Name>
+                    <Name>ActivationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to *activate* a validable element, generates CPPElementAccess with MarkedAs=activated (must be used with a corresponding ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAssignment" version="1">
+                    <Name>ActivationAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the validable element is activated (but not consumed)</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Transition from MarkedAs=activated to MarkedAs=used -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment" version="1">
+                    <Name>UsagePolicyAssignment</Name>
+                    <Description>Rule describing how to *consume* a validable element, generates CPPElementAccess with MarkedAs=used (the prerequisite is that the validable element is already MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsageAssignment" version="1">
+                    <Name>UsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is used, i.e. the acquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
+                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage isn' required -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
+                    <Name>ActivationAndUsagePolicyAssignment</Name>
+                    <Description>Rule describing how to both *activate* and *consume* in the same operation, generates CPPElementAccess with MarkedAs=used directly (omits MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
+                    <Name>ActivationAndUsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the aquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
+                    <Name>RevalidationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to re-validate a validable element, generates CPPElementAccess with MarkedAs=marked</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Subrules to the various xxxPolicyAssignment -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1">
+                    <Name>PreconditionPolicyAssignment</Name>
+                    <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule to ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment, ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment and ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment</Description>
                 </TypeOfAccessRightAssignment>
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationRequirementsAssignment" version="1">
-                    <Name>CPPA describing additional access rights added as a result of activation</Name>
+                    <Name>SpecificationRequirementsAssignment</Name>
+                    <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
                 </TypeOfAccessRightAssignment>
+                <!-- Recording of place activation/consumption/marking happened. Recorded on CPPElementAccess/validityParameters -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
-                    <Name>CPPA describing information about where the activation took place</Name>
-                </TypeOfAccessRightAssignment>
+                    <Name>AccessLogDetails</Name>
+                    <Description>CPPAccess with information about an activation / consumption / re-validation</Description>
+                </TypeOfAccessRightAssignment>  
             </typesOfValue>
 
             <!-- Organisations (placeholders) -->
@@ -251,7 +286,7 @@
                     <dependentElementUsages>
 <!--                        
                         <!-\- Outbound journey -\->
-                        <DependentElementUsage id="ENT:DependentElementActivation:1" version="1" order="1">
+                        <DependentElementUsage id="ENT:DependentElementUsage:1" version="1" order="1">
                             <!-\- No activity required -\->
                             <ElementUsagePolicy>none</ElementUsagePolicy>
                             <!-\- Elements to activate (MarkedAs->activated) -\->
@@ -268,7 +303,7 @@
 -->
                         
                         <!-- Return journey -->
-                        <DependentElementUsage id="ENT:DependentElementActivation:1" version="1" order="1">
+                        <DependentElementUsage id="ENT:DependentElementUsage:1" version="1" order="1">
                             <elementUsageDependencies>
                                 <ElementUsageDependency>
                                     <ElementUsageRef ref="ENT:ElementActivation:OutboundJourney" version="1"/>
@@ -287,17 +322,17 @@
                         </DependentElementUsage>
 
                         <!-- Supplement products -->
-                        <DependentElementUsage id="ENT:DependentElementActivation:3" version="1" order="2">
-                            <DependsOnGroupingType>OR</DependsOnGroupingType>
+                        <DependentElementUsage id="ENT:DependentElementUsage:3" version="1" order="2">
+                            <ElementUsageDependencyGroupingType>OR</ElementUsageDependencyGroupingType>
                             <elementUsageDependencies>
                                 <ElementUsageDependency>
                                     <!-- List of acceptable values -->
-                                    <ElementActivationRef ref="ENT:ElementActivation:OutboundJourney" version="1"/>
+                                    <ElementUsageRef ref="ENT:ElementActivation:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUsageDependency>
                                 <ElementUsageDependency>
                                     <!-- List of acceptable values -->
-                                    <ElementActivationRef ref="ENT:ElementActivation:ReturnJourney" version="1"/>
+                                    <ElementUsageRef ref="ENT:ElementActivation:ReturnJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUsageDependency>
                             </elementUsageDependencies>
@@ -312,11 +347,7 @@
                                 <ElementUsageRef ref="ENT:ElementActivation:CoffeeActivation" version="1"/>
                                 <ElementUsageRef ref="ENT:ElementActivation:SnackActivation" version="1"/>
                            </elementUsages>
-                            
-                            <!-- must use same parameters for same policy ryles ie service journey selection for both leg and seat -->
-                            <CombinePolicyAssignments>true</CombinePolicyAssignments>
-                            
-                            <!-- Can only be activated once -->
+                              <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
                             
                             <!-- 
@@ -329,13 +360,17 @@
                                 or ReturnJourney-Activation, depending on which of ENT:ElementActivation:OutboundJourney OR ENT:ElementActivation:ReturnJourney
                                 currently has MarkedAs=used. 
                             -->
+                            <DependentCustomerPurchaseParameterAssignmentGroupingType>OR</DependentCustomerPurchaseParameterAssignmentGroupingType>
                             <dependentCustomerPurchaseParameterAssignments>
-                                <DependentCustomerPurchaseParameterAssignmentGroupingType>OR</DependentCustomerPurchaseParameterAssignmentGroupingType>
                                 <DependentCustomerPurchaseParameterAssignment id="ENT:DependentCustomerPurchaseParameterAssignment:1" version="1">
                                     <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:OutboundJourney-Activation" version="1"/>
                                     <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Activation" version="1"/>
                                 </DependentCustomerPurchaseParameterAssignment>
                             </dependentCustomerPurchaseParameterAssignments>
+                            
+                            <!-- must use same parameters for same policy ryles ie service journey selection for both leg and seat -->
+                            <!--          <CombinePolicyAssignments>true</CombinePolicyAssignments>
+                  -->          
                         </DependentElementUsage>
 
 
@@ -346,7 +381,7 @@
                         -->
                         <DependentElementUsage>
                             <!-- Both must be activated before consumption/use -->
-                            <ActivationDependencyGroupingType>AND</ActivationDependencyGroupingType>
+                            <ElementDependencyGroupingType>AND</ElementDependencyGroupingType>
                             <elementUsageDependencies>
                                 <ElementUsageDependency>
                                     <!-- List of acceptable values -->

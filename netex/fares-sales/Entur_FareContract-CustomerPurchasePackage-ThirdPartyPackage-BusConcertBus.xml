@@ -6,45 +6,80 @@
 
         <!-- Reference data START -->
 
-        <!-- Example of bundling public transit with a third party product, where the third party product
-            only is valid if the customer took public transit to the venue. This is valid where cities
-            are trying to reduce use of private vehicles and move people towards public transit - using carrots and not sticks
+        <!-- Example of bundling public transit with a third party product, where the third party product and return ride is *activated* for consumption
+            only if the customer took public transit to the venue. 
+
+            The use case is valid in cities where cities are trying to reduce use of private vehicles and move people towards public transit - using carrots and not sticks
+
+            order: 
+            - customer boards vehicle and validates ticket (MarkedAs=used). This triggers activation of concert and return ride
+            - consumption of concert ticket happens at the venue gate
+            - consumption of the return trip is optional
+            
             
             The trip validityParameters are for simplication reduced to a single zone - but could be anything depending on
             customer selection at purchase time
             
-            The return ride can must activated separately
+            
            -->
 
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
 
             <typesOfValue>
-                <!-- assignment types -->
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
-                    <Name>Rule describing parameters when ValidableElement is activated</Name>
-                </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
-                    <Name>Rule describing how to activate</Name>
-                </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
-                    <Name>Rule describing when to validate</Name>
-                </TypeOfAccessRightAssignment>
+                <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
+                <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
+                
+                <!-- Transition from MarkedAs=unused to MarkedAs=activated -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
-                    <Name>Rule describing when a usage validity period may be activated</Name>
+                    <Name>ActivationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to *activate* a validable element, generates CPPElementAccess with MarkedAs=activated (must be used with a corresponding ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAssignment" version="1">
+                    <Name>ActivationAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the validable element is activated (but not consumed)</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Transition from MarkedAs=activated to MarkedAs=used -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment" version="1">
+                    <Name>UsagePolicyAssignment</Name>
+                    <Description>Rule describing how to *consume* a validable element, generates CPPElementAccess with MarkedAs=used (the prerequisite is that the validable element is already MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsageAssignment" version="1">
+                    <Name>UsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is used, i.e. the acquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
+                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage isn' required -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
+                    <Name>ActivationAndUsagePolicyAssignment</Name>
+                    <Description>Rule describing how to both *activate* and *consume* in the same operation, generates CPPElementAccess with MarkedAs=used directly (omits MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
+                    <Name>ActivationAndUsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the aquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
+                    <Name>RevalidationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to re-validate a validable element, generates CPPElementAccess with MarkedAs=marked</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Subrules to the various xxxPolicyAssignment -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1">
+                    <Name>PreconditionPolicyAssignment</Name>
+                    <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule to ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment, ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment and ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment</Description>
                 </TypeOfAccessRightAssignment>
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationRequirementsAssignment" version="1">
-                    <Name>CPPA describing additional access rights added as a result of activation</Name>
+                    <Name>SpecificationRequirementsAssignment</Name>
+                    <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
                 </TypeOfAccessRightAssignment>
+                <!-- Recording of place activation/consumption/marking happened. Recorded on CPPElementAccess/validityParameters -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
-                    <Name>CPPA describing information about where the activation took place</Name>
-                </TypeOfAccessRightAssignment>
-                <!-- activation types -->
-                <TypeOfActivation id="ENT:TypeOfActivation:Sequence" version="1">
-                    <Name>Activation rule describing Access which requires access rights (e.g. CustomerPurchaseParameterAssignment of lower order) to be activated</Name>
-                </TypeOfActivation>
-                <TypeOfActivation id="ENT:TypeOfActivation:Grouping" version="1">
-                    <Name>Activation rule describing Access which is combined with other access rights (e.g. CustomerPurchaseParameterAssignment of the same order)</Name>
-                </TypeOfActivation>
+                    <Name>AccessLogDetails</Name>
+                    <Description>CPPAccess with information about an activation / consumption / re-validation</Description>
+                </TypeOfAccessRightAssignment>  
             </typesOfValue>
             <organisations>
                 <Authority id="ENT:Authority:ENT" version="1">
@@ -162,28 +197,40 @@
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:ConcertAndReturnTrip" version="1">
 
 
-                    <!-- Activation is ordered -->
-                    <elementAccessGroupsInSequence>
-                        <!-- Leg 1 only -->
-                        <ElementActivationGroup id="ENT:ElementActivationGroup:1" version="1" order="1">
-                            <ElementAccess>
-                                <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-                                <InstanceNumber>1</InstanceNumber>
-                            </ElementAccess>
-                            <ElementAccess>
-                                <ValidableElementRef ref="ENT:ValidableElement:Concert" version="1"/>
-                                <InstanceNumber>1</InstanceNumber>
-                            </ElementAccess>
-                        </ElementActivationGroup>
-
-                        <!-- Leg 2 and seat supplement product -->
-                        <ElementActivationGroup id="ENT:ElementActivationGroup:2" version="1" order="2">
-                            <ElementAccess>
-                                <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-                                <InstanceNumber>2</InstanceNumber>
-                            </ElementAccess>
-                        </ElementActivationGroup>
-                    </elementAccessGroupsInSequence>
+                    <elementUsages>
+                        <ElementUsage id="ENT:ElementActivation:ToConcert" version="1">
+                            <MarkedAs>used</MarkedAs>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
+                        </ElementUsage>
+                        <ElementUsage id="ENT:ElementActivation:Concert" version="1">
+                            <MarkedAs>activated</MarkedAs>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
+                        </ElementUsage>
+                        <ElementUsage id="ENT:ElementActivation:FromConcert" version="1">
+                            <MarkedAs>activated</MarkedAs>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
+                        </ElementUsage>
+                    </elementUsages>
+                    
+                    <dependentElementUsages>
+        
+                        <ElementUsageDependencyGroupingType>AND</ElementUsageDependencyGroupingType>
+                        <elementUsageDependencies>
+                            <ElementUsageDependency>
+                                <!-- Trip to concert, must be validated/marked -->
+                                <ElementUsageRef ref="ENT:ElementUsage:ToConcert" version="1"/>
+                            </ElementUsageDependency>
+                        </elementUsageDependencies>
+                        
+                        <!-- Both concert and return trip is made available automatic once trip to concert is validated -->
+                        <ElementUsagePolicy>automatic</ElementUsagePolicy>
+ 
+                        <elementUsages>
+                            <ElementUsageRef ref="ENT:ElementUsage:Concert" version="1"/>
+                            <ElementUsageRef ref="ENT:ElementUsage:FromConcert" version="1"/>
+                        </elementUsages>
+                       
+                     </dependentElementUsages>
 
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:ConcertWithPublicTransit"/>
@@ -193,53 +240,54 @@
                         <!-- Trip to concert -->
 
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Trip1" version="1" order="1">
-
+                            
                             <elementAccesses>
                                 <!-- *Activation* trip to concert  -->
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-                                    <MarkedAs>activated</MarkedAs>
+                                    <MarkedAs>used</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
                                     <EndOfValidity>2020-01-01T08:35:00</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
-
+                                
                             </elementAccesses>
-
+                            
                             <validityParameterAssignments>
-
-
-                                <!-- Trip to concert Activation Rule -->
+                                
+                                
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:TripToConcert-Activation" order="1">
-
+                                    
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
                                     
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-
+                                    
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30Days" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>endOfRide</UsageEnd>
-                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
+                                            <!-- must be activated using validator -->
+                                            <ActivationMeans>useOfValidator</ActivationMeans>
                                             <!-- Outer bounds of usage valdity period -->
                                             <StartDate>2020-01-01</StartDate>
-                                            <EndDate>2020-01-01</EndDate>
+                                            <EndDate>2020-01-02</EndDate>
                                             
                                         </UsageValidityPeriod>
                                     </limitations>
-
+                                    <!-- Amount of time to complete trip to concert -->
+                                    <TimeIntervalRef ref="ENT:TimeInterval:90minutes"/> 
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-
-
+                                
+                                
+                                <!-- Access rights given when used -->
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:TripToConcert-Validity" order="1">
-                                    <!-- This type defines the validable element parameters when access right is activated -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-
+                                    
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <InterchangingRef ref="ENT:Interchanging:Unlimited"/>
@@ -250,37 +298,60 @@
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
+                                
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
 
-                                <!-- Return trip -->
-
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2-Activation" order="1">
-
-                                    <!-- This type defines uvp activation rules -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Return" version="1" order="1">
+                            
+                            <elementAccesses>
+                                <!-- *Activation* trip from concert  -->
+                                <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-
+                                    <MarkedAs>activated</MarkedAs>
+                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2020-01-01T08:35:00</EndOfValidity>
+                                </CustomerPurchasePackageElementAccess>
+                                
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                
+                                
+                                
+                                <!-- Return trip -->
+                                
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ReturnActivation" order="1">
+                                    
+                                    <!-- This type defines uvp activation rules -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAssignment"/>
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+                                    
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDays" version="1">
                                             <UsageTrigger>startOutboundRide</UsageTrigger>
                                             <UsageEnd>endOfRide</UsageEnd>
-                                            <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                             <!-- Outer bounds of usage valdity period -->
                                             <StartDate>2020-01-01</StartDate>
+                                            <!-- some time after concert has started -->
+                                            <StartTime>21:00:00</StartTime>
                                             <EndDate>2020-01-01</EndDate>
+                                            
                                         </UsageValidityPeriod>
                                     </limitations>
-
+                                    
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-
-
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg2-Validity" order="1">
+                                
+                                
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ReturnValidity" order="1">
                                     <!-- This type defines the validable element parameters when access right is activated -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:UsageAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-
+                                    
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <InterchangingRef ref="ENT:Interchanging:Unlimited"/>
@@ -293,18 +364,16 @@
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
-
+                        
                         <!-- Concert details -->
 
-                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Seat" version="1" order="2">
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Concert" version="1" order="2">
 
                             <elementAccesses>
 
                                 <!-- *Activation* entry for concert ticket -->
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:Concert" version="1"/>
-                                    <TypeOfActivationRef ref="ENT:TypeOfActivation:Grouping" version="1"/>
-                                    
                                     <MarkedAs>activated</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
@@ -317,20 +386,19 @@
 
                                 <!-- Concert -->
 
-                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Multileg2-Seat-Activation" order="2">
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ConcertActivation" order="2">
 
                                     <!-- This type defines uvp activation rules -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:Concert" version="1"/>
-                                    <TypeOfActivationRef ref="ENT:TypeOfActivation:Grouping" version="1"/>
-
+                                 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDkkakys" version="1">
                                             <UsageTrigger>activation</UsageTrigger>
                                             <!-- Outer bounds of usage valdity period -->
                                             <StartDate>2020-01-01</StartDate>
-                                            <EndDate>2020-01-01</EndDate>
+                                            <EndDate>2020-02-01</EndDate>
                                         </UsageValidityPeriod>
                                     </limitations>
                                     <!-- Only once -->
