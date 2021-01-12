@@ -947,6 +947,16 @@
             </travelDocuments>
             
             <customerPurchasePackages>
+                
+                <CustomerPurchasePackage id="1" version="1">
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchacePackageElement:1" version="1" order="1">
+                            <Name>Sample</Name>
+                        </CustomerPurchasePackageElement>
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>
+                
+                
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SingleTrip1ZoneActivated" version="1">
                     <validityConditions>
                         <AvailabilityConditionRef ref="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021" version="1"/>
