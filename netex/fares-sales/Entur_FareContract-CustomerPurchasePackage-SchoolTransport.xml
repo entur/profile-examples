@@ -18,16 +18,16 @@
 
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
             <typesOfValue>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1">
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
                     <Name>Rule describing parameters when ValidableElement is activated</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1">
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
                     <Name>Rule describing how to activate</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ValidationRule" version="1">
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
                     <Name>Rule describing when to validate</Name>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1">
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
                     <Name>Rule describing when a usage validity period may be activated</Name>
                 </TypeOfAccessRightAssignment>
             </typesOfValue>
@@ -393,7 +393,7 @@
                             
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1" >
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationRule" version="1"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <limitations>
                                         <!-- Activated by trigger -->
@@ -411,7 +411,7 @@
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:380" version="1"/>
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationUsageRule" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                             <LimitationGroupingType>AND</LimitationGroupingType>
                                             <limitations>
@@ -464,7 +464,7 @@
                                 </CustomerPurchaseParameterAssignment>
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-3" order="1">
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ValidityRule" version="1"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
                                     <limitations>
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
