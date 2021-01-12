@@ -18,6 +18,8 @@
         <!-- Reference data -->
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
             <typesOfValue>
+                <!-- Assignment types (categorisation/flags) -->
+                
                 <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
                 <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
                 
@@ -42,7 +44,7 @@
                 </TypeOfAccessRightAssignment>
                 
                 <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
-                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage isn' required -->
+                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage is not required -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
                     <Name>ActivationAndUsagePolicyAssignment</Name>
                     <Description>Rule describing how to both *activate* and *consume* in the same operation, generates CPPElementAccess with MarkedAs=used directly (omits MarkedAs=activated)</Description>
@@ -74,6 +76,7 @@
                 </TypeOfAccessRightAssignment>  
             </typesOfValue>
 
+
             <!-- Organisations (placeholders) -->
             <organisations>
                 <Authority id="ENT:Authority:ENT" version="1">
@@ -87,16 +90,22 @@
         </ResourceFrame>
         
         
+        <!-- Sample data placeholder (currently not used in example) -->
         <SiteFrame id="ENT:SiteFrame:1" version="1">
             <tariffZones>
                 <TariffZone id="ENT:TariffZone:1" version="1">
-                    <Name lang="no">Ruter Sone 1</Name>
-                    <ParentZoneRef ref="RUT:TariffZone:ALL" version="1"/>
+                    <Name lang="no">sample Tariff Zone 1</Name>
+                    <ParentZoneRef ref="ENT:TariffZone:ALL" />
+                </TariffZone>
+                <TariffZone id="ENT:TariffZone:2" version="1">
+                    <Name lang="no">sample Tariff Zone 2</Name>
+                    <ParentZoneRef ref="ENT:TariffZone:ALL" />
                 </TariffZone>
                 <TariffZone id="ENT:TariffZone:ALL" version="1">
-                    <Name lang="no">Ruter overordnet sone </Name>
+                    <Name lang="no">sample all Tariff Zones</Name>
                     <members>
-                        <PointRef ref=""/>
+                        <PointRef ref="ENT:TariffZone:1" />
+                        <PointRef ref="ENT:TariffZone:2" />
                     </members>
                 </TariffZone>
             </tariffZones>
@@ -135,9 +144,17 @@
                 <UserProfile id="ENT:UserProfile:Adult" version="1">
                     <Name lang="eng">Adult</Name>
                 </UserProfile>
+                
                 <Interchanging id="ENT:Interchanging:Unlimited" version="1">
                     <CanInterchange>true</CanInterchange>
                 </Interchanging>
+                
+                <UsageValidityPeriod id="ENT:UsageValidityPeriod:2021" version="1">
+                    <UsageTrigger>activation</UsageTrigger>
+                    <!-- Outer bounds of usage valdity period -->
+                    <StartDate>2021-01-01</StartDate>
+                    <EndDate>2021-12-31</EndDate>
+                </UsageValidityPeriod>
                 <UsageValidityPeriod id="ENT:UsageValidityPeriod:1hour" version="1">
                     <UsageTrigger>startOutboundRide</UsageTrigger>
                     <UsageEnd>endOfRide</UsageEnd>
@@ -369,8 +386,7 @@
                             </dependentCustomerPurchaseParameterAssignments>
                             
                             <!-- must use same parameters for same policy ryles ie service journey selection for both leg and seat -->
-                            <!--          <CombinePolicyAssignments>true</CombinePolicyAssignments>
-                  -->          
+                            <!-- CombinePolicyAssignments>true</CombinePolicyAssignments -->
                         </DependentElementUsage>
 
 
@@ -414,8 +430,6 @@
                             <!-- TimeIntervalRef ref="ENT:TimeInterval:2hours"/ --> <!-- NO LONGER APPLICABLE AS THIS IS DEFINED BY THE DependentCustomerPurchaseParameterAssignment -->
                         </DependentElementUsage>
                     </dependentElementUsages>
-                    
-                    
                     
 
 
@@ -583,12 +597,7 @@
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:2021" version="1">
-                                            <UsageTrigger>activation</UsageTrigger>
-                                            <!-- Outer bounds of usage valdity period -->
-                                            <StartDate>2021-01-01</StartDate>
-                                            <EndDate>2021-12-31</EndDate>
-                                        </UsageValidityPeriod>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:2021" version="1"/>
                                     </limitations>
                                     <!-- maximum 3 coffee cups -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
@@ -624,12 +633,7 @@
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
-                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:2021" version="1">
-                                            <UsageTrigger>activation</UsageTrigger>
-                                            <!-- Outer bounds of usage valdity period -->
-                                            <StartDate>2021-01-01</StartDate>
-                                            <EndDate>2021-12-31</EndDate>
-                                        </UsageValidityPeriod>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:2021" version="1"/>
                                     </limitations>
                                     <!-- maximum 3 snacks in total (but overridden by total consumption rule defined above) -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
