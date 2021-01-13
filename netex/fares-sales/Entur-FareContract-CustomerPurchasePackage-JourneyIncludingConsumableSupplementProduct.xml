@@ -291,28 +291,21 @@
 
                     <elementUsages>
                         <ElementUsage id="ENT:ElementActivation:OutboundJourneyActivation" version="1">
-                            <MarkedAs>activated</MarkedAs>
-                            <!-- Reference to CPPE -->
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
                         </ElementUsage>
                         <ElementUsage id="ENT:ElementActivation:ReturnJourneyActivation" version="1">
-                            <MarkedAs>activated</MarkedAs>
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
                         </ElementUsage>
                         <ElementUsage id="ENT:ElementActivation:CoffeeActivation" version="1">
-                            <MarkedAs>activated</MarkedAs>
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                         </ElementUsage>
                         <ElementUsage id="ENT:ElementActivation:SnackActivation" version="1">
-                            <MarkedAs>activated</MarkedAs>
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                         </ElementUsage>
                         <ElementUsage id="ENT:ElementConsumption:CoffeeUsed" version="1">
-                            <MarkedAs>used</MarkedAs>
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                         </ElementUsage>
                         <ElementUsage id="ENT:ElementConsumption:SnackUsed" version="1">
-                            <MarkedAs>used</MarkedAs>
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                         </ElementUsage>
                     </elementUsages>
