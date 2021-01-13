@@ -267,7 +267,7 @@
                                 <ElementUsageDependency>
                                     <ElementUsageRef ref="ENT:ElementUsage:Leg1" version="1"/>
                                     <MarkedAs>used</MarkedAs>
-                                    <!-- List of acceptable values -->
+                                    
                                 </ElementUsageDependency>
                             </elementUsageDependencies>
                            

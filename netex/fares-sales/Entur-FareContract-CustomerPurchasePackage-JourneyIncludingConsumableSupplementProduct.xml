@@ -319,7 +319,7 @@
                             <elementUsageDependencies>
                                 <ElementUsageDependency>
                                     <ElementUsageRef ref="ENT:ElementUsage:OutboundJourney" version="1"/>
-                                    <!-- List of acceptable values -->
+                                    
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUsageDependency>
                             </elementUsageDependencies>
@@ -338,12 +338,12 @@
                             <ElementUsageDependencyGroupingType>OR</ElementUsageDependencyGroupingType>
                             <elementUsageDependencies>
                                 <ElementUsageDependency>
-                                    <!-- List of acceptable values -->
+                                    
                                     <ElementUsageRef ref="ENT:ElementUsage:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUsageDependency>
                                 <ElementUsageDependency>
-                                    <!-- List of acceptable values -->
+                                    
                                     <ElementUsageRef ref="ENT:ElementUsage:ReturnJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUsageDependency>
@@ -375,12 +375,12 @@
                             <ElementDependencyGroupingType>AND</ElementDependencyGroupingType>
                             <elementUsageDependencies>
                                 <ElementUsageDependency>
-                                    <!-- List of acceptable values -->
+                                    
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 </ElementUsageDependency>
                                 <ElementUsageDependency>
-                                    <!-- List of acceptable values -->
+                                    
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUsageDependency>
