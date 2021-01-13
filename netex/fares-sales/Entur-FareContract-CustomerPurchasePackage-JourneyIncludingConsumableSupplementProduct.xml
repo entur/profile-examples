@@ -15,7 +15,7 @@
 
     <dataObjects>
 
-        <!-- Reference data -->
+        <!-- Reference data START -->
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
             <typesOfValue>
                 <!-- Assignment types (categorisation/flags) -->
@@ -213,6 +213,7 @@
             </salesOfferPackages>
         </FareFrame>
 
+        <!-- Reference data END -->
 
 
         <SalesTransactionFrame id="ENT:SalesTransactionFrame:Case1" version="1">
@@ -385,8 +386,14 @@
                                 </DependentCustomerPurchaseParameterAssignment>
                             </dependentCustomerPurchaseParameterAssignments>
                             
-                            <!-- must use same parameters for same policy ryles ie service journey selection for both leg and seat -->
-                            <!-- CombinePolicyAssignments>true</CombinePolicyAssignments -->
+                            <!-- 
+                                CombinePolicyAssignments (boolean) is used to specify that assignments of the same policy rule type must explicitly use (if "true", or must not if "false") 
+                                the same limitations and validityParameters as imposed through associated assignments, 
+                                e.g. service journey selection applies to both the leg and the seat assignment rule
+                            -->
+                            <!--
+                            <CombinePolicyAssignments>true</CombinePolicyAssignments>
+                            -->
                         </DependentElementUsage>
 
 
