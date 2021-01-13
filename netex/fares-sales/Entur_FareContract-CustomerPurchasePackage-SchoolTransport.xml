@@ -18,6 +18,8 @@
 
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
             <typesOfValue>
+                <!-- Assignment types (categorisation/flags) -->
+                
                 <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
                 <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
                 
@@ -42,7 +44,7 @@
                 </TypeOfAccessRightAssignment>
                 
                 <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
-                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage isn' required -->
+                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage is not required -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
                     <Name>ActivationAndUsagePolicyAssignment</Name>
                     <Description>Rule describing how to both *activate* and *consume* in the same operation, generates CPPElementAccess with MarkedAs=used directly (omits MarkedAs=activated)</Description>
@@ -59,14 +61,32 @@
                 </TypeOfAccessRightAssignment>
                 
                 <!-- Subrules to the various xxxPolicyAssignment -->
+                
+                <!-- Various specification requirements policies - depending on the type of element that must be provided -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment" version="1">
+                    <Name>SpecificationServiceJourneyPolicyAssignment</Name>
+                    <Description>Rule describing that a ServiceJourney must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationSeatPolicyAssignment" version="1">
+                    <Name>SpecificationSeatPolicyAssignment</Name>
+                    <Description>Rule describing that a PassengerSeat must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationTariffZonePolicyAssignment" version="1">
+                    <Name>SpecificationTariffZonePolicyAssignment</Name>
+                    <Description>Rule describing that a TariffZone must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Result of specification requirements -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1">
+                    <Name>SpecificationAssignment</Name>
+                    <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
+                </TypeOfAccessRightAssignment>
+                
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1">
                     <Name>PreconditionPolicyAssignment</Name>
                     <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule to ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment, ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment and ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment</Description>
                 </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationRequirementsAssignment" version="1">
-                    <Name>SpecificationRequirementsAssignment</Name>
-                    <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
-                </TypeOfAccessRightAssignment>
+                
                 <!-- Recording of place activation/consumption/marking happened. Recorded on CPPElementAccess/validityParameters -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
                     <Name>AccessLogDetails</Name>
