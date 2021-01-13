@@ -262,6 +262,7 @@
                         <!-- Leg 2 and seat supplement product -->
                         <DependentElementUsage id="ENT:DependentElementUsage:2" version="1" order="2">
                             <ElementUsageDependencyGroupingType>AND</ElementUsageDependencyGroupingType>
+                            <!-- Elements that must be in given state in order for elementUsages to transition -->
                             <elementUsageDependencies>
                                 <ElementUsageDependency>
                                     <ElementUsageRef ref="ENT:ElementActivation:Leg1" version="1"/>
@@ -273,27 +274,25 @@
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
                             <ElementUsagePolicy>manual</ElementUsagePolicy>
                             
+                            <!-- Elements in question, see listed ElementUsages above -->
                             <elementUsages>
                                 <ElementUsageRef ref="ENT:ElementActivation:Leg2" version="1"/>
                                 <ElementUsageRef ref="ENT:ElementActivation:Seat" version="1"/>
                             </elementUsages>
 
-                            <DependentCustomerPurchaseParameterAssignmentGroupingType>OR</DependentCustomerPurchaseParameterAssignmentGroupingType>
-                            <dependentCustomerPurchaseParameterAssignments>
-                                <DependentCustomerPurchaseParameterAssignment id="ENT:DependentCustomerPurchaseParameterAssignment:1" version="1">
+                            <!-- Requires that these to specification assignments must get identical values. 
+                                Ie that the servicejourney for leg2 is identical to the servicejourney for the supplement seat -->
+                            <identicalCustomerPurchaseParameterAssignments>
+                                <IdenticalCustomerPurchaseParameterAssignment id="ENT:IdenticalCustomerPurchaseParameterAssignment:1" version="1">
                                     <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1"/>
-                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementServiceJourney" version="1"/>
-                                </DependentCustomerPurchaseParameterAssignment>
-                            </dependentCustomerPurchaseParameterAssignments>
+                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirement" version="1"/>
+                                </IdenticalCustomerPurchaseParameterAssignment>
+                            </identicalCustomerPurchaseParameterAssignments>
                         
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-single" version="1"/>
-                            
                         </DependentElementUsage>
-                        
-                        
                     </dependentElementUsages>
-
 
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip"/>
@@ -301,9 +300,7 @@
                     <customerPurchasePackageElements>
 
                         <!-- LEG 1 -->
-
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Leg1" version="1" order="1">
-
                             <elementAccesses>
 
                                 <!-- *Activation* leg1 entry -->
@@ -582,7 +579,7 @@
                                     <IncludesGroupingType>AND</IncludesGroupingType>
                                     <includes>
                                         <!-- Parameters that must be selected -->
-                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirementLeg" version="1" order="1">
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirement" version="1" order="1">
                                             <!-- Selected service journey -->
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementServiceJourney"/>
                                             <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>

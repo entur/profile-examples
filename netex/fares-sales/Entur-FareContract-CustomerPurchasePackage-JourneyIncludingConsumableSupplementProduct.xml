@@ -386,32 +386,6 @@
                               <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
                             
-                            <!-- 
-                                Each CustomerPurchaseParameterAssignmentRef will "inherit" the dependent CustomerPurchaseParameterAssignment(s)
-                                as per related TypeOfAccessRightAssignment rule type, that is the *limitations* and *validityParameters* 
-                                assigned in the related CustomerPurchaseParameterAssignment(s)
-                                
-                                I.e. the ENT:ElementActivation:CoffeeActivation and ENT:ElementActivation:SnackActivation will be assigned the 
-                                StartOfValidity/EndOfValidity (UsageValidityPeriod limitation) of either the OutboundJourney-Activation
-                                or ReturnJourney-Activation, depending on which of ENT:ElementActivation:OutboundJourney OR ENT:ElementActivation:ReturnJourney
-                                currently has MarkedAs=used. 
-                            -->
-                            <DependentCustomerPurchaseParameterAssignmentGroupingType>OR</DependentCustomerPurchaseParameterAssignmentGroupingType>
-                            <dependentCustomerPurchaseParameterAssignments>
-                                <DependentCustomerPurchaseParameterAssignment id="ENT:DependentCustomerPurchaseParameterAssignment:1" version="1">
-                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:OutboundJourney-Activation" version="1"/>
-                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Activation" version="1"/>
-                                </DependentCustomerPurchaseParameterAssignment>
-                            </dependentCustomerPurchaseParameterAssignments>
-                            
-                            <!-- 
-                                CombinePolicyAssignments (boolean) is used to specify that assignments of the same policy rule type must explicitly use (if "true", or must not if "false") 
-                                the same limitations and validityParameters as imposed through associated assignments, 
-                                e.g. service journey selection applies to both the leg and the seat assignment rule
-                            -->
-                            <!--
-                            <CombinePolicyAssignments>true</CombinePolicyAssignments>
-                            -->
                         </DependentElementUsage>
 
 
