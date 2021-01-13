@@ -313,23 +313,6 @@
 
                     <!-- Element usage rules across different CustomerPurchasePackageElements -->
                     <dependentElementUsages>
-<!--                        
-                        <!-\- Outbound journey -\->
-                        <DependentElementUsage id="ENT:DependentElementUsage:1" version="1" order="1">
-                            <!-\- No activity required -\->
-                            <ElementUsagePolicy>none</ElementUsagePolicy>
-                            <!-\- Elements to activate (MarkedAs->activated) -\->
-                            <elementUsages>
-                                <ElementUsage id="ENT:ElementUsage:OutboundJourney" version="1">
-                                    <MarkedAs>activated</MarkedAs>
-                                    <!-\- Reference to CPPE -\->
-                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
-                                </ElementUsage>
-                            </elementUsages>
-                            <!-\- Can only be activated once -\->
-                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
-                        </DependentElementUsage>
--->
                         
                         <!-- Return journey -->
                         <DependentElementUsage id="ENT:DependentElementUsage:1" version="1" order="1">
