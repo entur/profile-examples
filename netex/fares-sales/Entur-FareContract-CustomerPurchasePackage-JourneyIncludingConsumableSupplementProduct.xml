@@ -290,16 +290,16 @@
 
 
                     <elementUsages>
-                        <ElementUsage id="ENT:ElementActivation:OutboundJourneyActivation" version="1">
+                        <ElementUsage id="ENT:ElementUsage:OutboundJourneyActivation" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
                         </ElementUsage>
-                        <ElementUsage id="ENT:ElementActivation:ReturnJourneyActivation" version="1">
+                        <ElementUsage id="ENT:ElementUsage:ReturnJourneyActivation" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
                         </ElementUsage>
-                        <ElementUsage id="ENT:ElementActivation:CoffeeActivation" version="1">
+                        <ElementUsage id="ENT:ElementUsage:CoffeeActivation" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                         </ElementUsage>
-                        <ElementUsage id="ENT:ElementActivation:SnackActivation" version="1">
+                        <ElementUsage id="ENT:ElementUsage:SnackActivation" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                         </ElementUsage>
                         <ElementUsage id="ENT:ElementConsumption:CoffeeUsed" version="1">
@@ -320,7 +320,7 @@
                             <ElementUsagePolicy>none</ElementUsagePolicy>
                             <!-\- Elements to activate (MarkedAs->activated) -\->
                             <elementUsages>
-                                <ElementUsage id="ENT:ElementActivation:OutboundJourney" version="1">
+                                <ElementUsage id="ENT:ElementUsage:OutboundJourney" version="1">
                                     <MarkedAs>activated</MarkedAs>
                                     <!-\- Reference to CPPE -\->
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
@@ -335,7 +335,7 @@
                         <DependentElementUsage id="ENT:DependentElementUsage:1" version="1" order="1">
                             <elementUsageDependencies>
                                 <ElementUsageDependency>
-                                    <ElementUsageRef ref="ENT:ElementActivation:OutboundJourney" version="1"/>
+                                    <ElementUsageRef ref="ENT:ElementUsage:OutboundJourney" version="1"/>
                                     <!-- List of acceptable values -->
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUsageDependency>
@@ -344,7 +344,7 @@
                             <ElementUsagePolicy>manual</ElementUsagePolicy>
                             <elementUsages>
                                 <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=activated -->
-                                <ElementUsageRef ref="ENT:ElementActivation:ReturnJourneyActivation" version="1"/>
+                                <ElementUsageRef ref="ENT:ElementUsage:ReturnJourneyActivation" version="1"/>
                            </elementUsages>
                             <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
@@ -356,12 +356,12 @@
                             <elementUsageDependencies>
                                 <ElementUsageDependency>
                                     <!-- List of acceptable values -->
-                                    <ElementUsageRef ref="ENT:ElementActivation:OutboundJourney" version="1"/>
+                                    <ElementUsageRef ref="ENT:ElementUsage:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUsageDependency>
                                 <ElementUsageDependency>
                                     <!-- List of acceptable values -->
-                                    <ElementUsageRef ref="ENT:ElementActivation:ReturnJourney" version="1"/>
+                                    <ElementUsageRef ref="ENT:ElementUsage:ReturnJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUsageDependency>
                             </elementUsageDependencies>
@@ -373,8 +373,8 @@
                             <ElementUsageGroupingType>AND</ElementUsageGroupingType>
                             <elementUsages>
                                 <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=used -->
-                                <ElementUsageRef ref="ENT:ElementActivation:CoffeeActivation" version="1"/>
-                                <ElementUsageRef ref="ENT:ElementActivation:SnackActivation" version="1"/>
+                                <ElementUsageRef ref="ENT:ElementUsage:CoffeeActivation" version="1"/>
+                                <ElementUsageRef ref="ENT:ElementUsage:SnackActivation" version="1"/>
                            </elementUsages>
                               <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
@@ -411,8 +411,8 @@
 
                             <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
                             <elementUsages>
-                                <ElementUsageRef ref="ENT:ElementActivation:CoffeeUsed" version="1"/>
-                                <ElementUsageRef ref="ENT:ElementActivation:SnackUsed" version="1"/>
+                                <ElementUsageRef ref="ENT:ElementUsage:CoffeeUsed" version="1"/>
+                                <ElementUsageRef ref="ENT:ElementUsage:SnackUsed" version="1"/>
                             </elementUsages>
                             
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->

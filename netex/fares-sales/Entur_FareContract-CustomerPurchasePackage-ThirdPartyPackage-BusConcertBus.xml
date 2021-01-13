@@ -218,13 +218,13 @@
 
 
                     <elementUsages>
-                        <ElementUsage id="ENT:ElementActivation:ToConcert" version="1">
+                        <ElementUsage id="ENT:ElementUsage:ToConcert" version="1">
                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
                         </ElementUsage>
-                        <ElementUsage id="ENT:ElementActivation:Concert" version="1">
+                        <ElementUsage id="ENT:ElementUsage:Concert" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
                         </ElementUsage>
-                        <ElementUsage id="ENT:ElementActivation:FromConcert" version="1">
+                        <ElementUsage id="ENT:ElementUsage:FromConcert" version="1">
                              <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
                         </ElementUsage>
                     </elementUsages>

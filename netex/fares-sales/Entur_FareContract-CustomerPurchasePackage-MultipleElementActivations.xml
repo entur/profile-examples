@@ -245,13 +245,13 @@
                     </travelSpecifications>
 
                     <elementUsages>
-                        <ElementUsage id="ENT:ElementActivation:Leg1" version="1">
+                        <ElementUsage id="ENT:ElementUsage:Leg1" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
                         </ElementUsage>
-                        <ElementUsage id="ENT:ElementActivation:Leg2" version="1">
+                        <ElementUsage id="ENT:ElementUsage:Leg2" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
                         </ElementUsage>
-                        <ElementUsage id="ENT:ElementActivation:Seat" version="1">
+                        <ElementUsage id="ENT:ElementUsage:Seat" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
                         </ElementUsage>
                     </elementUsages>
@@ -265,7 +265,7 @@
                             <!-- Elements that must be in given state in order for elementUsages to transition -->
                             <elementUsageDependencies>
                                 <ElementUsageDependency>
-                                    <ElementUsageRef ref="ENT:ElementActivation:Leg1" version="1"/>
+                                    <ElementUsageRef ref="ENT:ElementUsage:Leg1" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                     <!-- List of acceptable values -->
                                 </ElementUsageDependency>
@@ -276,8 +276,8 @@
                             
                             <!-- Elements in question, see listed ElementUsages above -->
                             <elementUsages>
-                                <ElementUsageRef ref="ENT:ElementActivation:Leg2" version="1"/>
-                                <ElementUsageRef ref="ENT:ElementActivation:Seat" version="1"/>
+                                <ElementUsageRef ref="ENT:ElementUsage:Leg2" version="1"/>
+                                <ElementUsageRef ref="ENT:ElementUsage:Seat" version="1"/>
                             </elementUsages>
 
                             <!-- Requires that these to specification assignments must get identical values. 
