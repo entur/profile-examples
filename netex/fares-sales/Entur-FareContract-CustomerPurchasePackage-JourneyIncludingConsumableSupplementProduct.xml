@@ -289,80 +289,80 @@
 
 
 
-                    <elementUsages>
-                        <ElementUsage id="ENT:ElementUsage:OutboundJourneyActivation" version="1">
+                    <elementUtilisations>
+                        <ElementUtilisation id="ENT:ElementUtilisation:OutboundJourneyActivation" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
-                        </ElementUsage>
-                        <ElementUsage id="ENT:ElementUsage:ReturnJourneyActivation" version="1">
+                        </ElementUtilisation>
+                        <ElementUtilisation id="ENT:ElementUtilisation:ReturnJourneyActivation" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
-                        </ElementUsage>
-                        <ElementUsage id="ENT:ElementUsage:CoffeeActivation" version="1">
+                        </ElementUtilisation>
+                        <ElementUtilisation id="ENT:ElementUtilisation:CoffeeActivation" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                        </ElementUsage>
-                        <ElementUsage id="ENT:ElementUsage:SnackActivation" version="1">
+                        </ElementUtilisation>
+                        <ElementUtilisation id="ENT:ElementUtilisation:SnackActivation" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                        </ElementUsage>
-                        <ElementUsage id="ENT:ElementConsumption:CoffeeUsed" version="1">
+                        </ElementUtilisation>
+                        <ElementUtilisation id="ENT:ElementConsumption:CoffeeUsed" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                        </ElementUsage>
-                        <ElementUsage id="ENT:ElementConsumption:SnackUsed" version="1">
+                        </ElementUtilisation>
+                        <ElementUtilisation id="ENT:ElementConsumption:SnackUsed" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                        </ElementUsage>
-                    </elementUsages>
+                        </ElementUtilisation>
+                    </elementUtilisations>
 
 
                     <!-- Element usage rules across different CustomerPurchasePackageElements -->
-                    <dependentElementUsages>
+                    <dependentElementUtilisations>
                         
                         <!-- Return journey -->
-                        <DependentElementUsage id="ENT:DependentElementUsage:1" version="1" order="1">
-                            <elementUsageDependencies>
-                                <ElementUsageDependency>
-                                    <ElementUsageRef ref="ENT:ElementUsage:OutboundJourney" version="1"/>
+                        <DependentElementUtilisation id="ENT:DependentElementUtilisation:1" version="1" order="1">
+                            <elementUtilisationDependencies>
+                                <ElementUtilisationDependency>
+                                    <ElementUtilisationRef ref="ENT:ElementUtilisation:OutboundJourney" version="1"/>
                                     
                                     <MarkedAs>used</MarkedAs>
-                                </ElementUsageDependency>
-                            </elementUsageDependencies>
+                                </ElementUtilisationDependency>
+                            </elementUtilisationDependencies>
                             <!-- Open return, must be activated manually -->
-                            <ElementUsagePolicy>manual</ElementUsagePolicy>
-                            <elementUsages>
+                            <ElementUtilisationPolicy>manual</ElementUtilisationPolicy>
+                            <elementUtilisations>
                                 <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=activated -->
-                                <ElementUsageRef ref="ENT:ElementUsage:ReturnJourneyActivation" version="1"/>
-                           </elementUsages>
+                                <ElementUtilisationRef ref="ENT:ElementUtilisation:ReturnJourneyActivation" version="1"/>
+                           </elementUtilisations>
                             <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
-                        </DependentElementUsage>
+                        </DependentElementUtilisation>
 
                         <!-- Supplement products -->
-                        <DependentElementUsage id="ENT:DependentElementUsage:3" version="1" order="2">
-                            <ElementUsageDependencyGroupingType>OR</ElementUsageDependencyGroupingType>
-                            <elementUsageDependencies>
-                                <ElementUsageDependency>
+                        <DependentElementUtilisation id="ENT:DependentElementUtilisation:3" version="1" order="2">
+                            <ElementUtilisationDependencyGroupingType>OR</ElementUtilisationDependencyGroupingType>
+                            <elementUtilisationDependencies>
+                                <ElementUtilisationDependency>
                                     
-                                    <ElementUsageRef ref="ENT:ElementUsage:OutboundJourney" version="1"/>
+                                    <ElementUtilisationRef ref="ENT:ElementUtilisation:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
-                                </ElementUsageDependency>
-                                <ElementUsageDependency>
+                                </ElementUtilisationDependency>
+                                <ElementUtilisationDependency>
                                     
-                                    <ElementUsageRef ref="ENT:ElementUsage:ReturnJourney" version="1"/>
+                                    <ElementUtilisationRef ref="ENT:ElementUtilisation:ReturnJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
-                                </ElementUsageDependency>
-                            </elementUsageDependencies>
+                                </ElementUtilisationDependency>
+                            </elementUtilisationDependencies>
 
                             <!-- *Must* be executed automatically when dependency conditions are satisfied -->
-                            <ElementUsagePolicy>automatic</ElementUsagePolicy>
+                            <ElementUtilisationPolicy>automatic</ElementUtilisationPolicy>
 
-                            <!-- Both must be activated at the same time since ElementUsageGrouping=AND -->
-                            <ElementUsageGroupingType>AND</ElementUsageGroupingType>
-                            <elementUsages>
+                            <!-- Both must be activated at the same time since ElementUtilisationGrouping=AND -->
+                            <ElementUtilisationGroupingType>AND</ElementUtilisationGroupingType>
+                            <elementUtilisations>
                                 <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=used -->
-                                <ElementUsageRef ref="ENT:ElementUsage:CoffeeActivation" version="1"/>
-                                <ElementUsageRef ref="ENT:ElementUsage:SnackActivation" version="1"/>
-                           </elementUsages>
+                                <ElementUtilisationRef ref="ENT:ElementUtilisation:CoffeeActivation" version="1"/>
+                                <ElementUtilisationRef ref="ENT:ElementUtilisation:SnackActivation" version="1"/>
+                           </elementUtilisations>
                               <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
                             
-                        </DependentElementUsage>
+                        </DependentElementUtilisation>
 
 
                         <!-- 
@@ -370,41 +370,41 @@
                             *Single* CPPE consumption is governed by CPPE->QualityStructureFactor
                             Requires that CPPE is MarkedAs=activated
                         -->
-                        <DependentElementUsage>
+                        <DependentElementUtilisation>
                             <!-- Both must be activated before consumption/use -->
                             <ElementDependencyGroupingType>AND</ElementDependencyGroupingType>
-                            <elementUsageDependencies>
-                                <ElementUsageDependency>
+                            <elementUtilisationDependencies>
+                                <ElementUtilisationDependency>
                                     
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                </ElementUsageDependency>
-                                <ElementUsageDependency>
+                                </ElementUtilisationDependency>
+                                <ElementUtilisationDependency>
                                     
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                                </ElementUsageDependency>
-                            </elementUsageDependencies>
+                                </ElementUtilisationDependency>
+                            </elementUtilisationDependencies>
                             
-                            <!-- Either one of the ElementUsage can be used independently -->
-                            <ElementUsageGroupingType>XOR</ElementUsageGroupingType>
+                            <!-- Either one of the ElementUtilisation can be used independently -->
+                            <ElementUtilisationGroupingType>XOR</ElementUtilisationGroupingType>
 
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
-                            <ElementUsagePolicy>manual</ElementUsagePolicy>
+                            <ElementUtilisationPolicy>manual</ElementUtilisationPolicy>
 
                             <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
-                            <elementUsages>
-                                <ElementUsageRef ref="ENT:ElementUsage:CoffeeUsed" version="1"/>
-                                <ElementUsageRef ref="ENT:ElementUsage:SnackUsed" version="1"/>
-                            </elementUsages>
+                            <elementUtilisations>
+                                <ElementUtilisationRef ref="ENT:ElementUtilisation:CoffeeUsed" version="1"/>
+                                <ElementUtilisationRef ref="ENT:ElementUtilisation:SnackUsed" version="1"/>
+                            </elementUtilisations>
                             
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
                             
                             <!-- Must activate/use within 2 hours from dependent element -->
                             <!-- TimeIntervalRef ref="ENT:TimeInterval:2hours"/ --> <!-- NO LONGER APPLICABLE AS THIS IS DEFINED BY THE DependentCustomerPurchaseParameterAssignment -->
-                        </DependentElementUsage>
-                    </dependentElementUsages>
+                        </DependentElementUtilisation>
+                    </dependentElementUtilisations>
                     
 
 

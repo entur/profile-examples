@@ -244,41 +244,41 @@
                         </TravelSpecification>
                     </travelSpecifications>
 
-                    <elementUsages>
-                        <ElementUsage id="ENT:ElementUsage:Leg1" version="1">
+                    <elementUtilisations>
+                        <ElementUtilisation id="ENT:ElementUtilisation:Leg1" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
-                        </ElementUsage>
-                        <ElementUsage id="ENT:ElementUsage:Leg2" version="1">
+                        </ElementUtilisation>
+                        <ElementUtilisation id="ENT:ElementUtilisation:Leg2" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
-                        </ElementUsage>
-                        <ElementUsage id="ENT:ElementUsage:SeatForLeg2" version="1">
+                        </ElementUtilisation>
+                        <ElementUtilisation id="ENT:ElementUtilisation:SeatForLeg2" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
-                        </ElementUsage>
-                    </elementUsages>
+                        </ElementUtilisation>
+                    </elementUtilisations>
 
                     <!-- Usage is ordered/dependent -->
-                    <dependentElementUsages>
+                    <dependentElementUtilisations>
                    
                         <!-- Leg 2 and seat supplement product -->
-                        <DependentElementUsage id="ENT:DependentElementUsage:2" version="1" order="2">
-                            <ElementUsageDependencyGroupingType>AND</ElementUsageDependencyGroupingType>
-                            <!-- Elements that must be in given state in order for elementUsages to transition -->
-                            <elementUsageDependencies>
-                                <ElementUsageDependency>
-                                    <ElementUsageRef ref="ENT:ElementUsage:Leg1" version="1"/>
+                        <DependentElementUtilisation id="ENT:DependentElementUtilisation:2" version="1" order="2">
+                            <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
+                            <!-- Elements that must be in given state in order for elementUtilisations to transition -->
+                            <elementUtilisationDependencies>
+                                <ElementUtilisationDependency>
+                                    <ElementUtilisationRef ref="ENT:ElementUtilisation:Leg1" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                     
-                                </ElementUsageDependency>
-                            </elementUsageDependencies>
+                                </ElementUtilisationDependency>
+                            </elementUtilisationDependencies>
                            
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
-                            <ElementUsagePolicy>manual</ElementUsagePolicy>
+                            <ElementUtilisationPolicy>manual</ElementUtilisationPolicy>
                             
-                            <!-- Elements in question, see listed ElementUsages above -->
-                            <elementUsages>
-                                <ElementUsageRef ref="ENT:ElementUsage:Leg2" version="1"/>
-                                <ElementUsageRef ref="ENT:ElementUsage:SeatForLeg2" version="1"/>
-                            </elementUsages>
+                            <!-- Elements in question, see listed ElementUtilisations above -->
+                            <elementUtilisations>
+                                <ElementUtilisationRef ref="ENT:ElementUtilisation:Leg2" version="1"/>
+                                <ElementUtilisationRef ref="ENT:ElementUtilisation:SeatForLeg2" version="1"/>
+                            </elementUtilisations>
 
                             <!-- Requires that these to specification assignments must get identical values. 
                                 Ie that the servicejourney for leg2 is identical to the servicejourney for the supplement seat -->
@@ -291,8 +291,8 @@
                         
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-single" version="1"/>
-                        </DependentElementUsage>
-                    </dependentElementUsages>
+                        </DependentElementUtilisation>
+                    </dependentElementUtilisations>
 
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip"/>

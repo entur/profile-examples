@@ -217,37 +217,37 @@
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:ConcertAndReturnTrip" version="1">
 
 
-                    <elementUsages>
-                        <ElementUsage id="ENT:ElementUsage:ToConcert" version="1">
+                    <elementUtilisations>
+                        <ElementUtilisation id="ENT:ElementUtilisation:ToConcert" version="1">
                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
-                        </ElementUsage>
-                        <ElementUsage id="ENT:ElementUsage:Concert" version="1">
+                        </ElementUtilisation>
+                        <ElementUtilisation id="ENT:ElementUtilisation:Concert" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
-                        </ElementUsage>
-                        <ElementUsage id="ENT:ElementUsage:FromConcert" version="1">
+                        </ElementUtilisation>
+                        <ElementUtilisation id="ENT:ElementUtilisation:FromConcert" version="1">
                              <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
-                        </ElementUsage>
-                    </elementUsages>
+                        </ElementUtilisation>
+                    </elementUtilisations>
 
-                    <dependentElementUsages>
+                    <dependentElementUtilisations>
 
-                        <ElementUsageDependencyGroupingType>AND</ElementUsageDependencyGroupingType>
-                        <elementUsageDependencies>
-                            <ElementUsageDependency>
+                        <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
+                        <elementUtilisationDependencies>
+                            <ElementUtilisationDependency>
                                 <!-- Trip to concert, must be validated/marked -->
-                                <ElementUsageRef ref="ENT:ElementUsage:ToConcert" version="1"/>
-                            </ElementUsageDependency>
-                        </elementUsageDependencies>
+                                <ElementUtilisationRef ref="ENT:ElementUtilisation:ToConcert" version="1"/>
+                            </ElementUtilisationDependency>
+                        </elementUtilisationDependencies>
 
                         <!-- Both concert and return trip is made available automatic once trip to concert is validated -->
-                        <ElementUsagePolicy>automatic</ElementUsagePolicy>
+                        <ElementUtilisationPolicy>automatic</ElementUtilisationPolicy>
 
-                        <elementUsages>
-                            <ElementUsageRef ref="ENT:ElementUsage:Concert" version="1"/>
-                            <ElementUsageRef ref="ENT:ElementUsage:FromConcert" version="1"/>
-                        </elementUsages>
+                        <elementUtilisations>
+                            <ElementUtilisationRef ref="ENT:ElementUtilisation:Concert" version="1"/>
+                            <ElementUtilisationRef ref="ENT:ElementUtilisation:FromConcert" version="1"/>
+                        </elementUtilisations>
 
-                    </dependentElementUsages>
+                    </dependentElementUtilisations>
 
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:ConcertWithPublicTransit"/>
