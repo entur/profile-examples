@@ -251,7 +251,7 @@
                         <ElementUsage id="ENT:ElementUsage:Leg2" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
                         </ElementUsage>
-                        <ElementUsage id="ENT:ElementUsage:Seat" version="1">
+                        <ElementUsage id="ENT:ElementUsage:SeatForLeg2" version="1">
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
                         </ElementUsage>
                     </elementUsages>
@@ -277,7 +277,7 @@
                             <!-- Elements in question, see listed ElementUsages above -->
                             <elementUsages>
                                 <ElementUsageRef ref="ENT:ElementUsage:Leg2" version="1"/>
-                                <ElementUsageRef ref="ENT:ElementUsage:Seat" version="1"/>
+                                <ElementUsageRef ref="ENT:ElementUsage:SeatForLeg2" version="1"/>
                             </elementUsages>
 
                             <!-- Requires that these to specification assignments must get identical values. 
