@@ -291,14 +291,7 @@
                     <!-- Element utilisation (validation/activation/consumption) rules across different CustomerPurchasePackageElements -->
                     <elementInterdependencies>
 
-                        <!-- Outbound journey has no dependencies to other CPPElements -->
-                        
                         <!-- Return journey -->
-                        
-                        <!-- SPM: kan det bli aktuelt med andre dependencies på tvers av CPPElements, f.eks. forenklet ElementStatusDependency (valid/not valid ValidableElement/AccessRight), ValidableElementTypeDepencency e.l. ? -->
-                        
-                        <!-- HAR "KORRIGERT" ELEMENTNAVN I DENNE: -->
-                        
                         <ElementInterdependency id="ENT:ElementInterdependency:1" version="1" order="1"> 
                             <elementDependencies>
                                 <!-- order attribute can be used to signify priority -->
@@ -320,10 +313,7 @@
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
                         </ElementInterdependency>
                         
-                        <!-- KORRIGERING (nye navn) FERDIG -->
-
-
-
+    
                         <!-- Supplement products -->
                         <ElementInterdependency id="ENT:ElementInterdependency:3" version="1" order="2">
                             <ElementUtilisationDependencyGroupingType>OR</ElementUtilisationDependencyGroupingType>
