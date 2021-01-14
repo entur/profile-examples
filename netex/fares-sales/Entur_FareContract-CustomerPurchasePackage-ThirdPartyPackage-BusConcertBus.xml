@@ -220,7 +220,7 @@
                         <ElementInterdependency id="ENT:ElementInterdependency:1" version="1" order="1">
                             <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
                             <elementDependencies>
-                                <ElementUtilisationDependency>
+                                <ElementUtilisationDependency id="ENT:ElementUtilisationDependency:1" version="1" order="1">
                                     <MarkedAs>used</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
                                 </ElementUtilisationDependency>
@@ -230,10 +230,10 @@
                             <ElementUtilisationTransitionPolicy>automatic</ElementUtilisationTransitionPolicy>
 
                             <elementUtilisations>
-                                <ElementUtilisation>
+                                <ElementUtilisation id="ENT:ElementUtilisation:1" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
                                 </ElementUtilisation>
-                                <ElementUtilisation>
+                                <ElementUtilisation id="ENT:ElementUtilisation:2" version="1" order="2">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
                                 </ElementUtilisation>
                             </elementUtilisations>

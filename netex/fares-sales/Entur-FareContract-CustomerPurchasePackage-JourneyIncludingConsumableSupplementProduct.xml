@@ -305,7 +305,7 @@
                             <ElementUtilisationTransitionPolicy>manual</ElementUtilisationTransitionPolicy>
                             <elementUtilisations>
                                 <!-- Element(s) to be utilized based on related policy assignment (TypeOfAccessRightAssignment=xxPolicyAssignment for the referred CPPE) -->
-                                <ElementUtilisation>
+                                <ElementUtilisation id="ENT:ElementUtilisation:1" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
                                 </ElementUtilisation>
                             </elementUtilisations>
@@ -318,11 +318,11 @@
                         <ElementInterdependency id="ENT:ElementInterdependency:2" version="1" order="2">
                             <ElementUtilisationDependencyGroupingType>OR</ElementUtilisationDependencyGroupingType>
                             <elementDependencies>
-                                <ElementUtilisationDependency>
+                                <ElementUtilisationDependency id="ENT:ElementUtilisationDependency:2" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
-                                <ElementUtilisationDependency>
+                                <ElementUtilisationDependency id="ENT:ElementUtilisationDependency:3" version="1" order="2">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
@@ -335,10 +335,10 @@
                             <ElementUtilisationGroupingType>AND</ElementUtilisationGroupingType>
                             <elementUtilisations>
                                 <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
-                                <ElementUtilisation>
+                                <ElementUtilisation id="ENT:ElementUtilisation:2" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 </ElementUtilisation>
-                                <ElementUtilisation>
+                                <ElementUtilisation id="ENT:ElementUtilisation:3" version="1" order="2">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUtilisation>
                             </elementUtilisations>
@@ -357,11 +357,11 @@
                             <!-- Both must be activated before consumption/use -->
                             <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
                             <elementDependencies>
-                                <ElementUtilisationDependency>
+                                <ElementUtilisationDependency id="ENT:ElementUtilisationDependency:4" version="1" order="1">
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 </ElementUtilisationDependency>
-                                <ElementUtilisationDependency>
+                                <ElementUtilisationDependency id="ENT:ElementUtilisationDependency:5" version="1" order="1">
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUtilisationDependency>
@@ -376,10 +376,10 @@
                             <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
                             <elementUtilisations>
                                 <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
-                                <ElementUtilisation>
+                                <ElementUtilisation id="ENT:ElementUtilisation:4" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 </ElementUtilisation>
-                                <ElementUtilisation>
+                                <ElementUtilisation id="ENT:ElementUtilisation:5" version="1" order="2">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUtilisation>
                             </elementUtilisations>

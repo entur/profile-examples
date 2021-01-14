@@ -257,7 +257,7 @@
                             <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
                             <!-- Elements that must be in given state in order for elementUtilisations to transition -->
                             <elementDependencies>
-                                <ElementUtilisationDependency>
+                                <ElementUtilisationDependency id="ENT:ElementUtilisationDependency:1" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
@@ -266,24 +266,24 @@
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
                             <ElementUtilisationTransitionPolicy>manual</ElementUtilisationTransitionPolicy>
 
-                            <!-- Elements in question, see listed ElementUtilisations above -->
+                            <!-- Elements in question, see listed ElementUtilisationDependeny above -->
                             <elementUtilisations>
-                                <ElementUtilisation>
+                                <ElementUtilisation id="ENT:ElementUtilisation:1" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
                                 </ElementUtilisation>
-                                <ElementUtilisation>
+                                <ElementUtilisation  id="ENT:ElementUtilisation:2" version="1" order="2">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
                                 </ElementUtilisation>
                             </elementUtilisations>
 
                             <!-- Requires that these to specification assignments must get identical values. 
                                 I.e. that the servicejourney for leg2 is identical to the servicejourney for the supplement seat -->
-                            <idensticalCustomerPurchaseParameterAssignments>
+                            <identicalCustomerPurchaseParameterAssignments>
                                 <IdenticalCustomerPurchaseParameterAssignment id="ENT:IdenticalCustomerPurchaseParameterAssignment:1" version="1">
                                     <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1"/>
                                     <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirement" version="1"/>
                                 </IdenticalCustomerPurchaseParameterAssignment>
-                            </idensticalCustomerPurchaseParameterAssignments>
+                            </identicalCustomerPurchaseParameterAssignments>
 
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
