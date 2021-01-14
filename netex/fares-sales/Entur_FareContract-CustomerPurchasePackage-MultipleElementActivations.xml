@@ -250,22 +250,22 @@
                     </travelSpecifications>
 
                     <!-- Usage is ordered/dependent -->
-                    <dependentElementUtilisations>
+                    <elementInterdependencies>
                    
                         <!-- Leg 2 and seat supplement product -->
-                        <DependentElementUtilisation id="ENT:DependentElementUtilisation:2" version="1" order="2">
+                        <ElementInterdependency id="ENT:ElementInterdependency:2" version="1" order="2">
                             <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
                             <!-- Elements that must be in given state in order for elementUtilisations to transition -->
-                            <elementUtilisationDependencies>
+                            <elementDependencies>
                                 <ElementUtilisationDependency>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                     
                                 </ElementUtilisationDependency>
-                            </elementUtilisationDependencies>
+                            </elementDependencies>
                            
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
-                            <ElementUtilisationPolicy>manual</ElementUtilisationPolicy>
+                            <ElementUtilisationTransitionPolicy>manual</ElementUtilisationTransitionPolicy>
                             
                             <!-- Elements in question, see listed ElementUtilisations above -->
                             <elementUtilisations>
@@ -284,8 +284,8 @@
                         
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-single" version="1"/>
-                        </DependentElementUtilisation>
-                    </dependentElementUtilisations>
+                        </ElementInterdependency>
+                    </elementInterdependencies>
 
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip"/>

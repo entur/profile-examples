@@ -289,7 +289,7 @@
 
 
                     <!-- Element utilisation (validation/activation/consumption) rules across different CustomerPurchasePackageElements -->
-                    <elementDependencies>
+                    <elementInterdependencies>
 
                         <!-- Outbound journey has no dependencies to other CPPElements -->
                         
@@ -299,43 +299,35 @@
                         
                         <!-- HAR "KORRIGERT" ELEMENTNAVN I DENNE: -->
                         
-                        <ElementDependency id="ENT:DependentElementUtilisation:1" version="1" order="1"> 
-                            <elementUtilisationDependencies>
-                                
-                                <!-- TODO: Add id/version ? (and order!?) -->
-                                
+                        <ElementInterdependency id="ENT:ElementInterdependency:1" version="1" order="1"> 
+                            <elementDependencies>
+                                <!-- order attribute can be used to signify priority -->
                                 <ElementUtilisationDependency id="ENT:ElementUtilisationDependency:1" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
-                            </elementUtilisationDependencies>
+                            </elementDependencies>
+                            
                             <!-- Open return, must be activated manually -->
-                            <ElementUtilisationPolicy>manual</ElementUtilisationPolicy>
-                            <elementUtilisations>
-                                
-                                <!-- TODO: Feil!? Mener vel MarkedAs=used ? -->
-                                
-                                <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=activated -->
-                                
-                                <!-- TODO: Bør ha wrapper <ElementUtilisation> slik at man kan sette meta-element hvis relevant !? 
-                                    (f.eks. for å si noe om hvilken tilstand den skal få?) - Men neppe viktig på nåværende tidspunkt siden vi pdd i praksis styrer dette med TypeOfAccessRightAssignment...) 
-                                    - I tilfelle bør denne wrapperen også ha id/version/order 
-                                -->
-                                
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
-                            </elementUtilisations>
+                            <ElementUtilisationTransitionPolicy>manual</ElementUtilisationTransitionPolicy>
+                            <elementUtsilisations>
+                                <!-- Element(s) to be utilized based on related policy assignment (TypeOfAccessRightAssignment=xxPolicyAssignment for the referred CPPE) -->
+                                <ElementUtilisation>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
+                                </ElementUtilisation>
+                            </elementUtsilisations>
                             <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
-                        </ElementDependency>
+                        </ElementInterdependency>
                         
                         <!-- KORRIGERING (nye navn) FERDIG -->
 
 
 
                         <!-- Supplement products -->
-                        <DependentElementUtilisation id="ENT:DependentElementUtilisation:3" version="1" order="2">
+                        <ElementInterdependency id="ENT:ElementInterdependency:3" version="1" order="2">
                             <ElementUtilisationDependencyGroupingType>OR</ElementUtilisationDependencyGroupingType>
-                            <elementUtilisationDependencies>
+                            <elementDependencies>
                                 <ElementUtilisationDependency>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
@@ -344,10 +336,10 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
-                            </elementUtilisationDependencies>
+                            </elementDependencies>
 
                             <!-- *Must* be executed automatically when dependency conditions are satisfied -->
-                            <ElementUtilisationPolicy>automatic</ElementUtilisationPolicy>
+                            <ElementUtilisationTransitionPolicy>automatic</ElementUtilisationTransitionPolicy>
 
                             <!-- Both must be activated at the same time since ElementUtilisationGrouping=AND -->
                             <ElementUtilisationGroupingType>AND</ElementUtilisationGroupingType>
@@ -357,26 +349,9 @@
                                 <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                            </elementUtilisations>
                             
-                            
-                            
-                            <!-- TODO: SLETT -->
-                                
-                            <!--    (tilhører ikke dette eksempelet, kun tatt med for å diskutere navn på nye element (dvs er happy med dette navnet) -->
-                            
-                            <identicalCustomerPurchaseParameterAssignments>
-                                <IdenticalCustomerPurchaseParameterAssignment id="ENT:IdenticalCustomerPurchaseParameterAssignment:1" version="1">
-                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1"/>
-                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirement" version="1"/>
-                                </IdenticalCustomerPurchaseParameterAssignment>
-                            </identicalCustomerPurchaseParameterAssignments>
-                            
-                            <!-- SLETT T.O.M. HIT -->
-                            
-                            
-                            
                               <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>    
-                        </DependentElementUtilisation>
+                        </ElementInterdependency>
 
 
                         <!-- 
@@ -384,10 +359,10 @@
                             *Single* CPPE consumption is governed by CPPE -> QualityStructureFactor
                             Requires that CPPE is MarkedAs=activated
                         -->
-                        <DependentElementUtilisation>
+                        <ElementInterdependency>
                             <!-- Both must be activated before consumption/use -->
-                            <ElementDependencyGroupingType>AND</ElementDependencyGroupingType>
-                            <elementUtilisationDependencies>
+                            <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
+                            <elementDependencies>
                                 <ElementUtilisationDependency>
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
@@ -396,13 +371,13 @@
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUtilisationDependency>
-                            </elementUtilisationDependencies>
+                            </elementDependencies>
                             
                             <!-- Either one of the ElementUtilisation can be used independently -->
                             <ElementUtilisationGroupingType>XOR</ElementUtilisationGroupingType>
 
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
-                            <ElementUtilisationPolicy>manual</ElementUtilisationPolicy>
+                            <ElementUtilisationTransitionPolicy>manual</ElementUtilisationTransitionPolicy>
 
                             <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
                             <elementUtilisations>
@@ -414,8 +389,8 @@
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
                             
-                        </DependentElementUtilisation>
-                    </elementDependencies>
+                        </ElementInterdependency>
+                    </elementInterdependencies>
 
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:JourneyWithConditionalSupplementProducts"/>

@@ -217,24 +217,24 @@
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:ConcertAndReturnTrip" version="1">
 
 
-                    <dependentElementUtilisations>
+                    <elementInterdependencies>
                         <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
-                        <elementUtilisationDependencies>
+                        <elementDependencies>
                             <ElementUtilisationDependency>
                                 <MarkedAs>used</MarkedAs>
                                 <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
                             </ElementUtilisationDependency>
-                        </elementUtilisationDependencies>
+                        </elementDependencies>
 
                         <!-- Both concert and return trip is made available automatic once trip to concert is validated -->
-                        <ElementUtilisationPolicy>automatic</ElementUtilisationPolicy>
+                        <ElementUtilisationTransitionPolicy>automatic</ElementUtilisationTransitionPolicy>
 
                         <elementUtilisations>
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
                         </elementUtilisations>
 
-                    </dependentElementUtilisations>
+                    </elementInterdependencies>
 
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:ConcertWithPublicTransit"/>
