@@ -260,7 +260,6 @@
                                 <ElementUtilisationDependency>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
                                     <MarkedAs>used</MarkedAs>
-
                                 </ElementUtilisationDependency>
                             </elementDependencies>
 
@@ -273,7 +272,6 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
                                 </ElementUtilisation>
                                 <ElementUtilisation>
-
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
                                 </ElementUtilisation>
                             </elementUtilisations>

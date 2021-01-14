@@ -216,28 +216,28 @@
 
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:ConcertAndReturnTrip" version="1">
 
-
                     <elementInterdependencies>
-                        <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
-                        <elementDependencies>
-                            <ElementUtilisationDependency>
-                                <MarkedAs>used</MarkedAs>
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
-                            </ElementUtilisationDependency>
-                        </elementDependencies>
+                        <ElementInterdependency id="ENT:ElementInterdependency:1" version="1" order="1">
+                            <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
+                            <elementDependencies>
+                                <ElementUtilisationDependency>
+                                    <MarkedAs>used</MarkedAs>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
+                                </ElementUtilisationDependency>
+                            </elementDependencies>
 
-                        <!-- Both concert and return trip is made available automatic once trip to concert is validated -->
-                        <ElementUtilisationTransitionPolicy>automatic</ElementUtilisationTransitionPolicy>
+                            <!-- Both concert and return trip is made available automatic once trip to concert is validated -->
+                            <ElementUtilisationTransitionPolicy>automatic</ElementUtilisationTransitionPolicy>
 
-                        <elementUtilisations>
-                            <ElementUtilisation>
-
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
-                            </ElementUtilisation>
-                            <ElementUtilisation>
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
-                            </ElementUtilisation>
-                        </elementUtilisations>
+                            <elementUtilisations>
+                                <ElementUtilisation>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
+                                </ElementUtilisation>
+                                <ElementUtilisation>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
+                                </ElementUtilisation>
+                            </elementUtilisations>
+                        </ElementInterdependency>
 
                     </elementInterdependencies>
 

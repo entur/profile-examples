@@ -315,7 +315,7 @@
 
 
                         <!-- Supplement products -->
-                        <ElementInterdependency id="ENT:ElementInterdependency:3" version="1" order="2">
+                        <ElementInterdependency id="ENT:ElementInterdependency:2" version="1" order="2">
                             <ElementUtilisationDependencyGroupingType>OR</ElementUtilisationDependencyGroupingType>
                             <elementDependencies>
                                 <ElementUtilisationDependency>
@@ -339,7 +339,6 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 </ElementUtilisation>
                                 <ElementUtilisation>
-
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUtilisation>
                             </elementUtilisations>
@@ -354,7 +353,7 @@
                             *Single* CPPE consumption is governed by CPPE -> QualityStructureFactor
                             Requires that CPPE is MarkedAs=activated
                         -->
-                        <ElementInterdependency>
+                        <ElementInterdependency id="ENT:ElementInterdependency:3" version="1" order="1">
                             <!-- Both must be activated before consumption/use -->
                             <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
                             <elementDependencies>
@@ -381,7 +380,6 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 </ElementUtilisation>
                                 <ElementUtilisation>
-
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUtilisation>
                             </elementUtilisations>
