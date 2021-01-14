@@ -286,7 +286,7 @@
                             </elementUtilisations>
 
                             <!-- Requires that these to specification assignments must get identical values. 
-                                Ie that the servicejourney for leg2 is identical to the servicejourney for the supplement seat -->
+                                I.e. that the servicejourney for leg2 is identical to the servicejourney for the supplement seat -->
                             <identicalCustomerPurchaseParameterAssignments>
                                 <IdenticalCustomerPurchaseParameterAssignment id="ENT:IdenticalCustomerPurchaseParameterAssignment:1" version="1">
                                     <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1"/>
