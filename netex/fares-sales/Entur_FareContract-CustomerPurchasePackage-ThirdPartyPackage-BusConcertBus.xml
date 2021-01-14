@@ -217,25 +217,12 @@
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:ConcertAndReturnTrip" version="1">
 
 
-                    <elementUtilisations>
-                        <ElementUtilisation id="ENT:ElementUtilisation:ToConcert" version="1">
-                           <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
-                        </ElementUtilisation>
-                        <ElementUtilisation id="ENT:ElementUtilisation:Concert" version="1">
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
-                        </ElementUtilisation>
-                        <ElementUtilisation id="ENT:ElementUtilisation:FromConcert" version="1">
-                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
-                        </ElementUtilisation>
-                    </elementUtilisations>
-
                     <dependentElementUtilisations>
-
                         <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
                         <elementUtilisationDependencies>
                             <ElementUtilisationDependency>
-                                <!-- Trip to concert, must be validated/marked -->
-                                <ElementUtilisationRef ref="ENT:ElementUtilisation:ToConcert" version="1"/>
+                                <MarkedAs>used</MarkedAs>
+                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
                             </ElementUtilisationDependency>
                         </elementUtilisationDependencies>
 
@@ -243,8 +230,8 @@
                         <ElementUtilisationPolicy>automatic</ElementUtilisationPolicy>
 
                         <elementUtilisations>
-                            <ElementUtilisationRef ref="ENT:ElementUtilisation:Concert" version="1"/>
-                            <ElementUtilisationRef ref="ENT:ElementUtilisation:FromConcert" version="1"/>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
                         </elementUtilisations>
 
                     </dependentElementUtilisations>

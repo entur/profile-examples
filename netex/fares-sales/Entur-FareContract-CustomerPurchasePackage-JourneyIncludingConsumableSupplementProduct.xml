@@ -288,29 +288,6 @@
                     </travelSpecifications>
 
 
-
-                    <elementUtilisations>
-                        <ElementUtilisation id="ENT:ElementUtilisation:OutboundJourneyActivation" version="1">
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
-                        </ElementUtilisation>
-                        <ElementUtilisation id="ENT:ElementUtilisation:ReturnJourneyActivation" version="1">
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
-                        </ElementUtilisation>
-                        <ElementUtilisation id="ENT:ElementUtilisation:CoffeeActivation" version="1">
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                        </ElementUtilisation>
-                        <ElementUtilisation id="ENT:ElementUtilisation:SnackActivation" version="1">
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                        </ElementUtilisation>
-                        <ElementUtilisation id="ENT:ElementConsumption:CoffeeUsed" version="1">
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                        </ElementUtilisation>
-                        <ElementUtilisation id="ENT:ElementConsumption:SnackUsed" version="1">
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                        </ElementUtilisation>
-                    </elementUtilisations>
-
-
                     <!-- Element utilisation (validation/activation/consumption) rules across different CustomerPurchasePackageElements -->
                     <dependentElementUtilisations>
 
@@ -320,7 +297,7 @@
                         <DependentElementUtilisation id="ENT:DependentElementUtilisation:1" version="1" order="1">
                             <elementUtilisationDependencies>
                                 <ElementUtilisationDependency>
-                                    <ElementUtilisationRef ref="ENT:ElementUtilisation:OutboundJourney" version="1"/>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
                             </elementUtilisationDependencies>
@@ -328,8 +305,8 @@
                             <ElementUtilisationPolicy>manual</ElementUtilisationPolicy>
                             <elementUtilisations>
                                 <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=activated -->
-                                <ElementUtilisationRef ref="ENT:ElementUtilisation:ReturnJourneyActivation" version="1"/>
-                           </elementUtilisations>
+                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
+                            </elementUtilisations>
                             <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
                         </DependentElementUtilisation>
@@ -339,11 +316,11 @@
                             <ElementUtilisationDependencyGroupingType>OR</ElementUtilisationDependencyGroupingType>
                             <elementUtilisationDependencies>
                                 <ElementUtilisationDependency>
-                                    <ElementUtilisationRef ref="ENT:ElementUtilisation:OutboundJourney" version="1"/>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
                                 <ElementUtilisationDependency>
-                                    <ElementUtilisationRef ref="ENT:ElementUtilisation:ReturnJourney" version="1"/>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
                             </elementUtilisationDependencies>
@@ -354,9 +331,9 @@
                             <!-- Both must be activated at the same time since ElementUtilisationGrouping=AND -->
                             <ElementUtilisationGroupingType>AND</ElementUtilisationGroupingType>
                             <elementUtilisations>
-                                <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=used -->
-                                <ElementUtilisationRef ref="ENT:ElementUtilisation:CoffeeActivation" version="1"/>
-                                <ElementUtilisationRef ref="ENT:ElementUtilisation:SnackActivation" version="1"/>
+                                <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
+                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
+                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                            </elementUtilisations>
                               <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>    
@@ -390,16 +367,14 @@
 
                             <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
                             <elementUtilisations>
-                                <ElementUtilisationRef ref="ENT:ElementUtilisation:CoffeeUsed" version="1"/>
-                                <ElementUtilisationRef ref="ENT:ElementUtilisation:SnackUsed" version="1"/>
+                                <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
+                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
+                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                             </elementUtilisations>
                             
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
                             
-                            <!-- Activate/use within 2 hours from dependent element -->
-                            <!-- TimeIntervalRef ref="ENT:TimeInterval:2hours"/ -->
-                            <!-- NO LONGER APPLICABLE AS THIS IS DEFINED BY THE DependentCustomerPurchaseParameterAssignment -->
                         </DependentElementUtilisation>
                     </dependentElementUtilisations>
 

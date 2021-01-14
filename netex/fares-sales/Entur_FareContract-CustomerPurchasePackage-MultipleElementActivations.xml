@@ -249,18 +249,6 @@
                         </TravelSpecification>
                     </travelSpecifications>
 
-                    <elementUtilisations>
-                        <ElementUtilisation id="ENT:ElementUtilisation:Leg1" version="1">
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
-                        </ElementUtilisation>
-                        <ElementUtilisation id="ENT:ElementUtilisation:Leg2" version="1">
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
-                        </ElementUtilisation>
-                        <ElementUtilisation id="ENT:ElementUtilisation:SeatForLeg2" version="1">
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
-                        </ElementUtilisation>
-                    </elementUtilisations>
-
                     <!-- Usage is ordered/dependent -->
                     <dependentElementUtilisations>
                    
@@ -270,7 +258,7 @@
                             <!-- Elements that must be in given state in order for elementUtilisations to transition -->
                             <elementUtilisationDependencies>
                                 <ElementUtilisationDependency>
-                                    <ElementUtilisationRef ref="ENT:ElementUtilisation:Leg1" version="1"/>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                     
                                 </ElementUtilisationDependency>
@@ -281,8 +269,8 @@
                             
                             <!-- Elements in question, see listed ElementUtilisations above -->
                             <elementUtilisations>
-                                <ElementUtilisationRef ref="ENT:ElementUtilisation:Leg2" version="1"/>
-                                <ElementUtilisationRef ref="ENT:ElementUtilisation:SeatForLeg2" version="1"/>
+                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
+                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
                             </elementUtilisations>
 
                             <!-- Requires that these to specification assignments must get identical values. 
