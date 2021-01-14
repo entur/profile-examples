@@ -255,7 +255,7 @@
                             <Currency>NOK</Currency>
                             <PaymentMethod>debitCard</PaymentMethod>
                             <customerPurchasePackages>
-                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:JourneyAndCoffee" version="1"/>
+                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:JourneyAndSupplements" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
                     </fareContractEntries>
@@ -310,7 +310,7 @@
                                 </ElementUtilisation>
                             </elementUtilisations>
                             <!-- Can only be activated once -->
-                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
+                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activation-x1" version="1"/>
                         </ElementInterdependency>
 
 
@@ -344,7 +344,7 @@
                             </elementUtilisations>
 
                             <!-- Can only be activated once -->
-                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
+                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activation-x1" version="1"/>
                         </ElementInterdependency>
 
 

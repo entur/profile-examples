@@ -286,7 +286,7 @@
                             </idensticalCustomerPurchaseParameterAssignments>
 
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
-                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-single" version="1"/>
+                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
                         </ElementInterdependency>
                     </elementInterdependencies>
 
