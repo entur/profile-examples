@@ -388,7 +388,7 @@
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:190" version="1"/>
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
                                             <FareDemandFactorRef ref="ENT:FareDemandFactor:TripToSchool" version="1"/>
                                         </CustomerPurchaseParameterAssignment>
@@ -458,7 +458,7 @@
                                     <includes>
                                         <!-- Activation usage rule - when can it be activated -->
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationUsageRuleFromSchool" order="1">
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool" version="1"/>
                                             <FareDemandFactorRef ref="ENT:FareDemandFactor:TripFromSchool" version="1"/>
                                         </CustomerPurchaseParameterAssignment>

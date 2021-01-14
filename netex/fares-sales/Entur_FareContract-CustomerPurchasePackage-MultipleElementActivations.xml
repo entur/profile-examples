@@ -326,6 +326,25 @@
 
                             </elementAccesses>
 
+
+                            <!-- The GroupOfValidityParameterAssignment groups different parameter assignments. 
+                                In this example, this is used to bind together a xxxPolicyAssignemnt with the corresponding xxxAssignment as there may be more than one set of parameters.
+                                The Norwegian/Nordic NeTEx profile will describe which corresponding types of CPPAs (TypeOfAccessRightAssignment) that are allowed to be be grouped.
+                                
+                                An example use of multiple GroupOfValidityParameterAssignments is to allow different parameters to be applied depending on activation rules, ie
+                                activation on weekdays gives 2 hours of travel while in the weekends 3 hours.
+                            -->
+
+                            <groupsOfValidityParameterAssignments>
+                                <GroupOfValidityParameterAssignments id="ENT:IdenticalCustomerPurchaseParameterAssignment:1" version="1" order="1">
+                                    <!-- Multiple CPPA refs -->
+                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:Leg1-Activation1" version="1"/>
+                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:Leg1-Validity" version="1"/>
+                                </GroupOfValidityParameterAssignments>
+ 
+                                <!-- Multiple GroupOfValidityParameterAssignments -->
+                            </groupsOfValidityParameterAssignments>
+
                             <validityParameterAssignments>
                                 <!-- LEG 1 -->
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg1-Activation" order="1">
@@ -349,20 +368,24 @@
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
 
                                     <includes>
-                                        <!-- Parameters that must be selected -->
+                                        <!-- Parameters that must be selected
+                                        
+                                        Any valdityParameters and limitations listed here are in ADDITION to the ones specified in the Assignment
+                                        
+                                        -->
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirementLeg1" version="1" order="1">
                                             <!-- Selected service journey -->
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementServiceJourney"/>
                                             <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
                                             <validityParameters>
-                                                <GroupOfLinesRef ref="ENT:GroupOfLine:Green"/>
                                                 <LineRef ref="ENT:Line:1"/>
                                                 <LineRef ref="ENT:Line:2"/>
-                                            </validityParameters>
+                                                </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
                                     </includes>
 
                                 </CustomerPurchaseParameterAssignment>
+
 
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:Leg1-Validity" order="1">
