@@ -289,14 +289,22 @@
 
 
                     <!-- Element utilisation (validation/activation/consumption) rules across different CustomerPurchasePackageElements -->
-                    <dependentElementUtilisations>
+                    <elementDependencies>
 
-                        <!-- Outbound journey has no element usage dependencies -->
+                        <!-- Outbound journey has no dependencies to other CPPElements -->
                         
                         <!-- Return journey -->
-                        <DependentElementUtilisation id="ENT:DependentElementUtilisation:1" version="1" order="1">
+                        
+                        <!-- SPM: kan det bli aktuelt med andre dependencies på tvers av CPPElements, f.eks. forenklet ElementStatusDependency (valid/not valid ValidableElement/AccessRight), ValidableElementTypeDepencency e.l. ? -->
+                        
+                        <!-- HAR "KORRIGERT" ELEMENTNAVN I DENNE: -->
+                        
+                        <ElementDependency id="ENT:DependentElementUtilisation:1" version="1" order="1"> 
                             <elementUtilisationDependencies>
-                                <ElementUtilisationDependency>
+                                
+                                <!-- TODO: Add id/version ? (and order!?) -->
+                                
+                                <ElementUtilisationDependency id="ENT:ElementUtilisationDependency:1" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
@@ -304,12 +312,25 @@
                             <!-- Open return, must be activated manually -->
                             <ElementUtilisationPolicy>manual</ElementUtilisationPolicy>
                             <elementUtilisations>
+                                
+                                <!-- TODO: Feil!? Mener vel MarkedAs=used ? -->
+                                
                                 <!-- Elements allowed to activate (MarkedAs->activated) when dependent element is MarkedAs=activated -->
+                                
+                                <!-- TODO: Bør ha wrapper <ElementUtilisation> slik at man kan sette meta-element hvis relevant !? 
+                                    (f.eks. for å si noe om hvilken tilstand den skal få?) - Men neppe viktig på nåværende tidspunkt siden vi pdd i praksis styrer dette med TypeOfAccessRightAssignment...) 
+                                    - I tilfelle bør denne wrapperen også ha id/version/order 
+                                -->
+                                
                                 <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
                             </elementUtilisations>
                             <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
-                        </DependentElementUtilisation>
+                        </ElementDependency>
+                        
+                        <!-- KORRIGERING (nye navn) FERDIG -->
+
+
 
                         <!-- Supplement products -->
                         <DependentElementUtilisation id="ENT:DependentElementUtilisation:3" version="1" order="2">
@@ -335,6 +356,24 @@
                                 <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                            </elementUtilisations>
+                            
+                            
+                            
+                            <!-- TODO: SLETT -->
+                                
+                            <!--    (tilhører ikke dette eksempelet, kun tatt med for å diskutere navn på nye element (dvs er happy med dette navnet) -->
+                            
+                            <identicalCustomerPurchaseParameterAssignments>
+                                <IdenticalCustomerPurchaseParameterAssignment id="ENT:IdenticalCustomerPurchaseParameterAssignment:1" version="1">
+                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1"/>
+                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirement" version="1"/>
+                                </IdenticalCustomerPurchaseParameterAssignment>
+                            </identicalCustomerPurchaseParameterAssignments>
+                            
+                            <!-- SLETT T.O.M. HIT -->
+                            
+                            
+                            
                               <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>    
                         </DependentElementUtilisation>
@@ -376,7 +415,7 @@
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
                             
                         </DependentElementUtilisation>
-                    </dependentElementUtilisations>
+                    </elementDependencies>
 
 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:JourneyWithConditionalSupplementProducts"/>
