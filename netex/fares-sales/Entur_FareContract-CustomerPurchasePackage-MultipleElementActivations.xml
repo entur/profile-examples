@@ -9,10 +9,10 @@
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
             <typesOfValue>
                 <!-- Assignment types (categorisation/flags) -->
-                
+
                 <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
                 <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
-                
+
                 <!-- Transition from MarkedAs=unused to MarkedAs=activated -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
                     <Name>ActivationPolicyAssignment</Name>
@@ -22,7 +22,7 @@
                     <Name>ActivationAssignment</Name>
                     <Description>Rule describing limitations and parameters applicable when the validable element is activated (but not consumed)</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Transition from MarkedAs=activated to MarkedAs=used -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment" version="1">
                     <Name>UsagePolicyAssignment</Name>
@@ -32,7 +32,7 @@
                     <Name>UsageAssignment</Name>
                     <Description>Rule describing limitations and parameters applicable when the ValidableElement is used, i.e. the acquired travel rights</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
                 <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage is not required -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
@@ -43,15 +43,15 @@
                     <Name>ActivationAndUsageAssignment</Name>
                     <Description>Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the aquired travel rights</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
                     <Name>RevalidationPolicyAssignment</Name>
                     <Description>Rule describing how and when to re-validate a validable element, generates CPPElementAccess with MarkedAs=marked</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Subrules to the various xxxPolicyAssignments -->
-                
+
                 <!-- Various specification requirements policies - depending on the type of element that must be provided -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment" version="1">
                     <Name>SpecificationServiceJourneyPolicyAssignment</Name>
@@ -65,26 +65,26 @@
                     <Name>SpecificationTariffZonePolicyAssignment</Name>
                     <Description>Rule describing that a TariffZone must be specificed during *activation* or *consumption* or *revalidation*</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Result of specification requirements -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1">
                     <Name>SpecificationAssignment</Name>
                     <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1">
                     <Name>PreconditionPolicyAssignment</Name>
                     <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule for ActivationPolicyAssignment, ActivationAndUsagePolicyAssignment or UsagePolicyAssignment</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Logging of activation/consumption/re-validation, i.e. validityParameters recorded on CPPElementAccess -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
                     <Name>AccessLogDetails</Name>
                     <Description>CPPAccess with information about an activation / consumption / re-validation</Description>
                 </TypeOfAccessRightAssignment>
             </typesOfValue>
-            
-            
+
+
             <!-- Organisations (placeholders) -->
             <organisations>
                 <Authority id="ENT:Authority:ENT" version="1">
@@ -99,17 +99,17 @@
             <tariffZones>
                 <TariffZone id="ENT:TariffZone:1" version="1">
                     <Name lang="no">sample Tariff Zone 1</Name>
-                    <ParentZoneRef ref="ENT:TariffZone:ALL" />
+                    <ParentZoneRef ref="ENT:TariffZone:ALL"/>
                 </TariffZone>
                 <TariffZone id="ENT:TariffZone:2" version="1">
                     <Name lang="no">sample Tariff Zone 2</Name>
-                    <ParentZoneRef ref="ENT:TariffZone:ALL" />
+                    <ParentZoneRef ref="ENT:TariffZone:ALL"/>
                 </TariffZone>
                 <TariffZone id="ENT:TariffZone:ALL" version="1">
                     <Name lang="no">sample all Tariff Zones</Name>
                     <members>
-                        <PointRef ref="ENT:TariffZone:1" />
-                        <PointRef ref="ENT:TariffZone:2" />
+                        <PointRef ref="ENT:TariffZone:1"/>
+                        <PointRef ref="ENT:TariffZone:2"/>
                     </members>
                 </TariffZone>
             </tariffZones>
@@ -189,8 +189,8 @@
         </FareFrame>
 
         <!-- Referencedata END -->
-        
-        
+
+
 
         <SalesTransactionFrame id="ENT:SalesTransactionFrame:Case1" version="1">
 
@@ -251,7 +251,7 @@
 
                     <!-- Usage is ordered/dependent -->
                     <elementInterdependencies>
-                   
+
                         <!-- Leg 2 and seat supplement product -->
                         <ElementInterdependency id="ENT:ElementInterdependency:2" version="1" order="2">
                             <ElementUtilisationDependencyGroupingType>AND</ElementUtilisationDependencyGroupingType>
@@ -260,28 +260,33 @@
                                 <ElementUtilisationDependency>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
                                     <MarkedAs>used</MarkedAs>
-                                    
+
                                 </ElementUtilisationDependency>
                             </elementDependencies>
-                           
+
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
                             <ElementUtilisationTransitionPolicy>manual</ElementUtilisationTransitionPolicy>
-                            
+
                             <!-- Elements in question, see listed ElementUtilisations above -->
                             <elementUtilisations>
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
+                                <ElementUtilisation>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
+                                </ElementUtilisation>
+                                <ElementUtilisation>
+
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
+                                </ElementUtilisation>
                             </elementUtilisations>
 
                             <!-- Requires that these to specification assignments must get identical values. 
                                 I.e. that the servicejourney for leg2 is identical to the servicejourney for the supplement seat -->
-                            <identicalCustomerPurchaseParameterAssignments>
+                            <idensticalCustomerPurchaseParameterAssignments>
                                 <IdenticalCustomerPurchaseParameterAssignment id="ENT:IdenticalCustomerPurchaseParameterAssignment:1" version="1">
                                     <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1"/>
                                     <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirement" version="1"/>
                                 </IdenticalCustomerPurchaseParameterAssignment>
-                            </identicalCustomerPurchaseParameterAssignments>
-                        
+                            </idensticalCustomerPurchaseParameterAssignments>
+
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-single" version="1"/>
                         </ElementInterdependency>
@@ -340,11 +345,11 @@
                                             <StartDate>2020-01-01</StartDate>
                                             <EndDate>2020-01-01</EndDate>
                                         </UsageValidityPeriod>
-                                     </limitations>
-            
+                                    </limitations>
+
                                     <!-- Only once -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
-                                    
+
                                     <includes>
                                         <!-- Parameters that must be selected -->
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirementLeg1" version="1" order="1">
@@ -358,7 +363,7 @@
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
                                     </includes>
-                                    
+
                                 </CustomerPurchaseParameterAssignment>
 
 

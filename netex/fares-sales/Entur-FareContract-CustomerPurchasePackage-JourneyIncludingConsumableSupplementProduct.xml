@@ -19,10 +19,10 @@
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
             <typesOfValue>
                 <!-- Assignment types (categorisation/flags) -->
-                
+
                 <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
                 <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
-                
+
                 <!-- Transition from MarkedAs=unused to MarkedAs=activated -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
                     <Name>ActivationPolicyAssignment</Name>
@@ -32,7 +32,7 @@
                     <Name>ActivationAssignment</Name>
                     <Description>Rule describing limitations and parameters applicable when the validable element is activated (but not consumed)</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Transition from MarkedAs=activated to MarkedAs=used -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment" version="1">
                     <Name>UsagePolicyAssignment</Name>
@@ -42,7 +42,7 @@
                     <Name>UsageAssignment</Name>
                     <Description>Rule describing limitations and parameters applicable when the ValidableElement is used, i.e. the acquired travel rights</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
                 <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage is not required -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
@@ -53,15 +53,15 @@
                     <Name>ActivationAndUsageAssignment</Name>
                     <Description>Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the aquired travel rights</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
                     <Name>RevalidationPolicyAssignment</Name>
                     <Description>Rule describing how and when to re-validate a validable element, generates CPPElementAccess with MarkedAs=marked</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Subrules to the various xxxPolicyAssignments -->
-                
+
                 <!-- Various specification requirements policies - depending on the type of element that must be provided -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment" version="1">
                     <Name>SpecificationServiceJourneyPolicyAssignment</Name>
@@ -75,13 +75,13 @@
                     <Name>SpecificationTariffZonePolicyAssignment</Name>
                     <Description>Rule describing that a TariffZone must be specificed during *activation* or *consumption* or *revalidation*</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <!-- Result of specification requirements -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1">
                     <Name>SpecificationAssignment</Name>
                     <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
                 </TypeOfAccessRightAssignment>
-                
+
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1">
                     <Name>PreconditionPolicyAssignment</Name>
                     <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule for ActivationPolicyAssignment, ActivationAndUsagePolicyAssignment or UsagePolicyAssignment</Description>
@@ -106,24 +106,24 @@
                 </OtherOrganisation>
             </organisations>
         </ResourceFrame>
-        
-        
+
+
         <!-- Sample data placeholder (currently not used in example) -->
         <SiteFrame id="ENT:SiteFrame:1" version="1">
             <tariffZones>
                 <TariffZone id="ENT:TariffZone:1" version="1">
                     <Name lang="no">sample Tariff Zone 1</Name>
-                    <ParentZoneRef ref="ENT:TariffZone:ALL" />
+                    <ParentZoneRef ref="ENT:TariffZone:ALL"/>
                 </TariffZone>
                 <TariffZone id="ENT:TariffZone:2" version="1">
                     <Name lang="no">sample Tariff Zone 2</Name>
-                    <ParentZoneRef ref="ENT:TariffZone:ALL" />
+                    <ParentZoneRef ref="ENT:TariffZone:ALL"/>
                 </TariffZone>
                 <TariffZone id="ENT:TariffZone:ALL" version="1">
                     <Name lang="no">sample all Tariff Zones</Name>
                     <members>
-                        <PointRef ref="ENT:TariffZone:1" />
-                        <PointRef ref="ENT:TariffZone:2" />
+                        <PointRef ref="ENT:TariffZone:1"/>
+                        <PointRef ref="ENT:TariffZone:2"/>
                     </members>
                 </TariffZone>
             </tariffZones>
@@ -162,11 +162,11 @@
                 <UserProfile id="ENT:UserProfile:Adult" version="1">
                     <Name lang="eng">Adult</Name>
                 </UserProfile>
-                
+
                 <Interchanging id="ENT:Interchanging:Unlimited" version="1">
                     <CanInterchange>true</CanInterchange>
                 </Interchanging>
-                
+
                 <UsageValidityPeriod id="ENT:UsageValidityPeriod:2021" version="1">
                     <UsageTrigger>activation</UsageTrigger>
                     <!-- Outer bounds of usage valdity period -->
@@ -292,7 +292,7 @@
                     <elementInterdependencies>
 
                         <!-- Return journey -->
-                        <ElementInterdependency id="ENT:ElementInterdependency:1" version="1" order="1"> 
+                        <ElementInterdependency id="ENT:ElementInterdependency:1" version="1" order="1">
                             <elementDependencies>
                                 <!-- order attribute can be used to signify priority -->
                                 <ElementUtilisationDependency id="ENT:ElementUtilisationDependency:1" version="1" order="1">
@@ -300,20 +300,20 @@
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
                             </elementDependencies>
-                            
+
                             <!-- Open return, must be activated manually -->
                             <ElementUtilisationTransitionPolicy>manual</ElementUtilisationTransitionPolicy>
-                            <elementUtsilisations>
+                            <elementUtilisations>
                                 <!-- Element(s) to be utilized based on related policy assignment (TypeOfAccessRightAssignment=xxPolicyAssignment for the referred CPPE) -->
                                 <ElementUtilisation>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
                                 </ElementUtilisation>
-                            </elementUtsilisations>
+                            </elementUtilisations>
                             <!-- Can only be activated once -->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
                         </ElementInterdependency>
-                        
-    
+
+
                         <!-- Supplement products -->
                         <ElementInterdependency id="ENT:ElementInterdependency:3" version="1" order="2">
                             <ElementUtilisationDependencyGroupingType>OR</ElementUtilisationDependencyGroupingType>
@@ -335,12 +335,17 @@
                             <ElementUtilisationGroupingType>AND</ElementUtilisationGroupingType>
                             <elementUtilisations>
                                 <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                           </elementUtilisations>
-                            
-                              <!-- Can only be activated once -->
-                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>    
+                                <ElementUtilisation>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
+                                </ElementUtilisation>
+                                <ElementUtilisation>
+
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
+                                </ElementUtilisation>
+                            </elementUtilisations>
+
+                            <!-- Can only be activated once -->
+                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activations-1" version="1"/>
                         </ElementInterdependency>
 
 
@@ -362,7 +367,7 @@
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUtilisationDependency>
                             </elementDependencies>
-                            
+
                             <!-- Either one of the ElementUtilisation can be used independently -->
                             <ElementUtilisationGroupingType>XOR</ElementUtilisationGroupingType>
 
@@ -372,13 +377,18 @@
                             <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
                             <elementUtilisations>
                                 <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
+                                <ElementUtilisation>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
+                                </ElementUtilisation>
+                                <ElementUtilisation>
+
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
+                                </ElementUtilisation>
                             </elementUtilisations>
-                            
+
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
-                            
+
                         </ElementInterdependency>
                     </elementInterdependencies>
 
@@ -394,7 +404,7 @@
                             <elementAccesses>
                                 <!-- *Activation* of outbound Journey  -->
                                 <!-- (i.e. return Journey not yet activated)  -->
-                                   <CustomerPurchasePackageElementAccess>
+                                <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
 
@@ -423,8 +433,8 @@
                                     <!-- This type defines uvp activation rules -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
 
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>                                
-                                    
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1hour" version="1"/>
