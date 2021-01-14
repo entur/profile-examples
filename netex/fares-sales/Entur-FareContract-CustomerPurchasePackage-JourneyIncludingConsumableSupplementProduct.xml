@@ -321,7 +321,6 @@
                             <elementUtilisationDependencies>
                                 <ElementUtilisationDependency>
                                     <ElementUtilisationRef ref="ENT:ElementUtilisation:OutboundJourney" version="1"/>
-                                    
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
                             </elementUtilisationDependencies>
@@ -340,12 +339,10 @@
                             <ElementUtilisationDependencyGroupingType>OR</ElementUtilisationDependencyGroupingType>
                             <elementUtilisationDependencies>
                                 <ElementUtilisationDependency>
-                                    
                                     <ElementUtilisationRef ref="ENT:ElementUtilisation:OutboundJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
                                 <ElementUtilisationDependency>
-                                    
                                     <ElementUtilisationRef ref="ENT:ElementUtilisation:ReturnJourney" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ElementUtilisationDependency>
@@ -376,12 +373,10 @@
                             <ElementDependencyGroupingType>AND</ElementDependencyGroupingType>
                             <elementUtilisationDependencies>
                                 <ElementUtilisationDependency>
-                                    
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 </ElementUtilisationDependency>
                                 <ElementUtilisationDependency>
-                                    
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </ElementUtilisationDependency>
@@ -420,22 +415,22 @@
                             <elementAccesses>
                                 <!-- *Activation* of outbound Journey  -->
                                 <!-- (i.e. return Journey not yet activated)  -->
-                                <CustomerPurchasePackageElementAccess>
+                                   <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
 
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- PROPOSED AS ADDITION TO THE STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
                                     <EndOfValidity>2021-01-10T16:51:00</EndOfValidity>
 
                                 </CustomerPurchasePackageElementAccess>
 
-                                <!-- *Consumption* of outbound Journey  -->
+                                <!-- *Use* (consumption) of outbound Journey  -->
                                 <!-- TODO: Would be much better in this case if MaredAs was a list to which both statuses was added upon triggering -->
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>used</MarkedAs>
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- PROPOSED AS ADDITION TO THE STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
                                     <EndOfValidity>2021-01-10T16:51:00</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
@@ -487,18 +482,18 @@
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
 
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- PROPOSED AS ADDITION TO THE STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2021-01-10T17:14:00</StartOfValidity>
                                     <EndOfValidity>2021-01-10T18:14:00</EndOfValidity>
 
                                 </CustomerPurchasePackageElementAccess>
 
-                                <!-- *Consumption* of outbound Journey  -->
+                                <!-- *Use* (consumption) of outbound Journey  -->
                                 <!-- TODO: Would be much better in this case if MaredAs was a list to which both statuses was added upon triggering -->
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
                                     <MarkedAs>used</MarkedAs>
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- PROPOSED AS ADDITION TO THE STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2021-01-10T17:14:00</StartOfValidity>
                                     <EndOfValidity>2021-01-10T18:14:00</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
@@ -554,10 +549,12 @@
                                     <ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
 
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
-                                    <!-- TODO: Not necessary in this case -->
-                                    <!--StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
-                                    <EndOfValidity>2021-01-10T16:51:00</EndOfValidity-->
+                                    <!-- PROPOSED AS ADDITION TO THE STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- TODO: Remove start/end of validity? Not really necessary to set for this ValidableElement as this restriction implicitly derived from the Journey. -->
+                                    <!--
+                                    <StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
+                                    <EndOfValidity>2021-01-10T16:51:00</EndOfValidity>
+                                    -->
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
 
@@ -575,7 +572,7 @@
                                     <limitations>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:2021" version="1"/>
                                     </limitations>
-                                    <!-- maximum 3 coffee cups -->
+                                    <!-- Maximum 3 coffee in total, if coffee only (redundant, is overridden by total consumption QualityStructureFactor for DependantElementUtilisation further up) -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
@@ -590,10 +587,12 @@
                                     <ValidableElementRef ref="ENT:ValidableElement:Snack" version="1"/>
                                     <MarkedAs>activated</MarkedAs>
 
-                                    <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
-                                    <!-- TODO: Not necessary in this case -->
-                                    <!--StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
-                                    <EndOfValidity>2021-01-10T16:51:00</EndOfValidity-->
+                                    <!-- PROPOSED AS ADDITION TO THE STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
+                                    <!-- TODO: Remove start/end of validity? Not really necessary to set for this ValidableElement as this restriction implicitly derived from the Journey. -->
+                                    <!--
+                                    <StartOfValidity>2021-01-10T15:51:00</StartOfValidity>
+                                    <EndOfValidity>2021-01-10T16:51:00</EndOfValidity>
+                                    -->
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
 
@@ -611,7 +610,7 @@
                                     <limitations>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:2021" version="1"/>
                                     </limitations>
-                                    <!-- maximum 3 snacks in total (but overridden by total consumption rule defined above) -->
+                                    <!-- Maximum 3 snacks in total, if snacks only (redundant, is overridden by total consumption QualityStructureFactor for DependantElementUtilisation further up) -->
                                     <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
