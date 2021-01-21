@@ -167,6 +167,37 @@
             </validityConditions>
             <Description>https://ruter.no/en/buying-tickets/zones/</Description>
             <tariffZones>
+                <FareZone id="test" version="test">
+                    <fareSections>
+                        <FareSection id="test" version="test">
+                            <Name>test</Name>
+                        </FareSection>
+                    </fareSections>
+                </FareZone>
+                
+                <FareZone id="test2" version="test">
+                    <neighbours>
+                        <FareZoneRef ref=""></FareZoneRef>
+                    </neighbours>
+                </FareZone>
+                
+                <FareZone id="test3" version="test">
+                    <gis:Polygon gis:id="testgis">
+                        <gis:exterior>
+                            <gis:LinearRing>
+                                <gis:pos>1</gis:pos>
+                                <gis:pos>2</gis:pos>
+                                <gis:pos>3</gis:pos>
+                                <gis:pos>4</gis:pos>
+                            </gis:LinearRing>
+                        </gis:exterior>
+                    </gis:Polygon>
+                </FareZone>
+                
+                <TariffZone id="test01" version="test">
+                    
+                </TariffZone>
+                
                 <TariffZone id="RUT:TariffZone:1" version="1">
                     <Name lang="en">Ruter# tariff zone 1 (sentral Oslo region)</Name>
                 </TariffZone>
@@ -186,6 +217,7 @@
                     <Name lang="en">Ruter# tariff zone 3S (south incl Son)</Name>                 
                 </TariffZone>
             </tariffZones>
+            
         </SiteFrame>
         
         
@@ -352,6 +384,11 @@
             -->
             
             <distanceMatrixElements>
+                
+                <DistanceMatrixElement id="i" version="x">
+                    <Name>test</Name>
+                </DistanceMatrixElement>
+                
                 <DistanceMatrixElement id="ENT:DistanceMatrixElement:StopPoints" version="1">
                     <Name>ScheduledStopPoint based DistanceMatrixElement</Name>
                     <InverseAllowed>true</InverseAllowed>
@@ -951,6 +988,7 @@
                 <CustomerPurchasePackage id="1" version="1">
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchacePackageElement:1" version="1" order="1">
+                            
                             <Name>Sample</Name>
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>
