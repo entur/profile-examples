@@ -75,7 +75,7 @@
 					
 					<organisations>
 						<Authority version="1" id="RUT:Authority:Ruter">
-							<PublicCode>sddf</PublicCode>
+							<PublicCode>RUT</PublicCode>
 							<!-- Organisasjonsnummer -->
 							<CompanyNumber>991609407</CompanyNumber>
 							<Name>Ruter#</Name>
