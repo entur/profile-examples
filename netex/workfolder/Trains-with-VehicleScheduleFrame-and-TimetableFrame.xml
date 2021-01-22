@@ -81,6 +81,15 @@
     </ResourceFrame>
     <VehicleScheduleFrame id="ENT:VehicleScheduleFrame:1" version="1">
       <blocks>
+        <Block id="ENT:Block:EXAMPLE" version="1">
+          <coursesOfJourneys>
+            <CourseOfJourneys id="ENT:CourseOfJourneys:1" version="1">
+              <journeys>
+                <ServiceJourneyRef ref="ref"></ServiceJourneyRef>
+              </journeys>
+            </CourseOfJourneys>
+          </coursesOfJourneys>
+        </Block>
         <TrainBlock id="ENT:TrainBlock:1" version="1">
           <blockParts>
             <TrainBlockPart id="ENT:P-Q:1" version="1">

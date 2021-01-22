@@ -650,6 +650,9 @@
                 <EntitlementRequired id="test" version="1">
                     <ServiceAccessRightRef ref="ref"/>
                 </EntitlementRequired>
+                
+                
+                
             </usageParameters>
             
             <fareProducts>
@@ -868,6 +871,9 @@
                                         <TransferabilityRef ref="ENT:Transferability:1" version="1"/>
                                         <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1" version="1"/>
                                     </limitations>
+                                    <validityParameters>
+                                        <VehicleModes>air bus</VehicleModes>
+                                    </validityParameters>
                                 </GenericParameterAssignment>
                             </validityParameterAssignments>
                         </SalesOfferPackageElement>
@@ -932,7 +938,7 @@
                     
                     
                     
-                    <customerAccountEntries>
+                    <!--customerAccountEntries>
                         <CustomerAccountEntryRef ref="generic"/>
                         <CustomerRegistration id="ENT:CustomerRegistration:1" version="1">
                             <Name>data</Name>
@@ -940,7 +946,7 @@
                         <CustomerDeregistration id="ENT:CustomerDeregistration:1" version="1">
                             <Name>data</Name>
                         </CustomerDeregistration>
-                    </customerAccountEntries>
+                    </customerAccountEntries-->
                 </CustomerAccount>
             </customerAccounts>
             
@@ -983,13 +989,24 @@
                 </TravelDocument>
             </travelDocuments>
             
+            
             <customerPurchasePackages>
                 
-                <CustomerPurchasePackage id="1" version="1">
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:1" version="1">
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchacePackageElement:1" version="1" order="1">
-                            
-                            <Name>Sample</Name>
+                            <Name>TODO xxx TODO</Name>
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:1" version="1" order="1">
+                                    <BrandingRef ref="ref"/>
+                                    <validityParameters>
+                                        <VehicleModes>bus cableway</VehicleModes>
+                                        <TransportSubmode>
+                                            <AirSubmode>airshipService</AirSubmode>
+                                        </TransportSubmode>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>
                 </CustomerPurchasePackage>
@@ -1048,13 +1065,12 @@
                                     </limitations>
                                     
                                     <temporalValidityParameters>
-                                        <TimebandRef ref="ref"></TimebandRef>
-                                        <GroupOfTimebandsRef ref=""></GroupOfTimebandsRef>
-                                        <OperatingDayRef ref="ref"></OperatingDayRef>
-                                        <UicOperatingPeriodRef ref="ENT:UicOperatingPeriod:1" version="1"/>
-                                        <!--UicOperatingPeriodRef ref="ref"></UicOperatingPeriodRef-->
-                                        
+                                        <!--TimebandRef ref="ref"></TimebandRef-->
+                                        <!--GroupOfTimebandsRef ref="ref"></GroupOfTimebandsRef-->
+                                        <!--OperatingDayRef ref="ref"></OperatingDayRef-->
+                                        <!--UicOperatingPeriodRef ref="ENT:UicOperatingPeriod:1" version="1"/-->
                                     </temporalValidityParameters>
+                                    
                                     <validityParameters>
                                         <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" />
                                         <PassengerSeatRef ref=""></PassengerSeatRef>
