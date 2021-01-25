@@ -652,6 +652,20 @@
                 </EntitlementRequired>
                 
                 
+                <ServiceMode id="ENT:ServiceMode:Airship" version="1">
+                    <TransportMode>air</TransportMode>
+                    <TransportSubmode>
+                        <AirSubmode>airshipService</AirSubmode>
+                    </TransportSubmode>
+                </ServiceMode>
+                
+                <ServiceMode id="ENT:ServiceMode:Minibus" version="1">
+                    <TransportMode>bus</TransportMode>
+                    <TransportSubmode>
+                        <BusSubmode>minibus</BusSubmode>
+                    </TransportSubmode>
+                </ServiceMode>
+                
                 
             </usageParameters>
             
