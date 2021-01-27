@@ -177,7 +177,7 @@
                 
                 <FareZone id="test2" version="test">
                     <neighbours>
-                        <FareZoneRef ref=""></FareZoneRef>
+                        <FareZoneRef ref="ref"></FareZoneRef>
                     </neighbours>
                 </FareZone>
                 

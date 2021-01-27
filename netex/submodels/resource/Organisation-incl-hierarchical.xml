@@ -75,7 +75,7 @@ REMARK: Currently very much a work in progress!
             </codespaces>
             
             
-            <organisations>
+            <organisations>                
 
                 <!-- =================== -->
                 <!-- EXAMPLE 1: Vy-group -->
@@ -367,8 +367,11 @@ REMARK: Currently very much a work in progress!
                 
                 <!-- ************************************************************************************************************************************** -->
                 
+                <!-- =============================== -->
+                <!-- sample placeholder (dummy data) -->
+                <!-- =============================== -->
                 
-                
+                <!-- ************************************************************************************************************************************** -->
                 
                 <Authority id="NOG:Authority:TEST" version="1">
                     <parts>
@@ -436,6 +439,33 @@ REMARK: Currently very much a work in progress!
                             </units>
                         </Department>
                     </departments>
+                </Operator>
+                
+                
+                
+                
+                <GeneralOrganisation id="NOG:GeneralOrganisation:DEMO" version="1">
+                    <Name>Demo-organisation</Name>
+                </GeneralOrganisation>
+                
+                <OtherOrganisation id="NOG:OtherOrganisation:DEMO">
+                    <Name>Demo-organisation</Name>
+                </OtherOrganisation>
+                
+                
+                <Operator id="ENT:Operator:DEMO" version="1" status="other" >
+                    <Name>demo</Name>
+                    <parts>
+                        <Department id="ENT:Department:DEMO" version="1">
+                            <Name>Demo-department</Name>
+                        </Department>
+                    </parts>
+                    <relatedOrganisations>
+                        <RelatedOrganisation id="ENT:RelatedOrganisation:DEMO" version="1">
+                            <GeneralOrganisationRef ref="ref"></GeneralOrganisationRef>
+                            <OrganisationRoleType>other</OrganisationRoleType>
+                        </RelatedOrganisation>
+                    </relatedOrganisations>
                 </Operator>
                 
 
