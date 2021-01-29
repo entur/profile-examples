@@ -9,13 +9,13 @@ DestinationDisplay is used to specify text that is advertized to public, both on
     
     <destinationDisplays>
         <!-- Metro Line 5 to Sognsvann -->
-        <DestinationDisplay version="1" id="RUT:DestinationDisplay:5-sognsvann">
+        <DestinationDisplay id="RUT:DestinationDisplay:1" version="1">
             <SideText>5 Sognsvann</SideText>
             <FrontText>5 Sognsvann</FrontText>
-            <PublicCode>5</PublicCode>
+            <!-- PublicCode>5</PublicCode --> <!-- possible to have as separate value instead of embedded in text strings -->
             <vias>
                 <Via>
-                    <DestinationDisplayRef ref="RUT:DestinationDisplay:Ringen" version="1"/>
+                    <DestinationDisplayRef ref="RUT:DestinationDisplay:3" version="1"/>
                     <ViaType>name</ViaType>
                 </Via>
             </vias>
@@ -28,13 +28,12 @@ DestinationDisplay is used to specify text that is advertized to public, both on
         </DestinationDisplay>
         
         <!-- Metro Line 5 to Vestli -->
-        <DestinationDisplay version="1" id="RUT:DestinationDisplay:5-sognsvann">
+        <DestinationDisplay id="RUT:DestinationDisplay:2" version="1">
             <SideText>5 Vestli</SideText>
             <FrontText>5 Vestli</FrontText>
-            <PublicCode>5</PublicCode>
             <vias>
                 <Via>
-                    <DestinationDisplayRef ref="RUT:DestinationDisplay:Ringen" version="1"/>
+                    <DestinationDisplayRef ref="RUT:DestinationDisplay:3" version="1"/>
                     <ViaType>name</ViaType>
                 </Via>
             </vias>
@@ -47,7 +46,7 @@ DestinationDisplay is used to specify text that is advertized to public, both on
         </DestinationDisplay>
         
         <!-- Via -->
-        <DestinationDisplay version="1" id="RUT:DestinationDisplay:Ringen">
+        <DestinationDisplay id="RUT:DestinationDisplay:3" version="1">
             <FrontText>Ringen</FrontText>
         </DestinationDisplay>
     </destinationDisplays>
