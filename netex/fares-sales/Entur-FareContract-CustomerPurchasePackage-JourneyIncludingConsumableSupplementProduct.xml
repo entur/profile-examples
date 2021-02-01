@@ -131,22 +131,6 @@
 
 
         <FareFrame id="ENT:FareFrame:1" version="1">
-            <qualityStructureFactors>
-                <QualityStructureFactor id="ENT:QualityStructureFactor:Activation-x1" version="1">
-                    
-                    <Name>Activation (always singular)</Name>
-                    <Factor>activation</Factor>
-                    <Value>1</Value>
-                    
-                </QualityStructureFactor>
-                <QualityStructureFactor id="ENT:QualityStructureFactor:Consumption-x3" version="1">
-                    <Name>Three items (consumptions)</Name>
-                    <Factor>consumption</Factor>
-                    <Value>3</Value>
-                </QualityStructureFactor>
-            </qualityStructureFactors>
-
-
             <validableElements>
                 <ValidableElement id="ENT:ValidableElement:SingleRide" version="1">
                     <Name>Single ride</Name>
@@ -312,7 +296,10 @@
                                 </ConsumptionUtilisation>
                             </consumptionUtilisations>
                             <!-- Can only be activated once -->
-                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activation-x1" version="1"/>
+                            <MaximumNumberOfAccesses>
+                                <Type>limited</Type>
+                                <Value>1</Value>
+                            </MaximumNumberOfAccesses>
                         </ConsumptionUtilisationDependency>
 
 
@@ -346,13 +333,16 @@
                             </consumptionUtilisations>
 
                             <!-- Can only be activated once -->
-                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activation-x1" version="1"/>
+                            <MaximumNumberOfAccesses>
+                                <Type>limited</Type>
+                                <Value>1</Value>
+                            </MaximumNumberOfAccesses>
                         </ConsumptionUtilisationDependency>
 
 
                         <!-- 
                             *Combined/overall* consumption rules across different CustomerPurchasePackageElements
-                            *Single* CPPE consumption is governed by CPPE -> QualityStructureFactor
+                            *Single* CPPE consumption is governed by CPPE -> MaximumNumberOfAccesses
                             Requires that CPPE is MarkedAs=activated
                         -->
                         <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:3" version="1" order="1">
@@ -387,8 +377,11 @@
                             </consumptionUtilisations>
 
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
-                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
-
+                            <MaximumNumberOfAccesses>
+                                <Type>limited</Type>
+                                <Value>3</Value>
+                            </MaximumNumberOfAccesses>
+                            
                         </ConsumptionUtilisationDependency>
                     </consumptionUtilisationDependencies>
 
@@ -440,7 +433,10 @@
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1hour" version="1"/>
                                     </limitations>
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activation-x1" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
 
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:OutboundJourney-Validity" version="1" order="1">
@@ -502,7 +498,10 @@
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1hour" version="1"/>
                                     </limitations>
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Activation-x1" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
 
                                 <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ReturnJourney-Validity" version="1" order="1">
@@ -561,9 +560,11 @@
                                     <limitations>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:2021" version="1"/>
                                     </limitations>
-                                    <!-- Maximum 3 coffee in total, if coffee only (redundant, is overridden by total consumption QualityStructureFactor for DependantConsumptionUtilisation further up) -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
-                                    <MaximumNumberOfAccesses>1</MaximumNumberOfAccesses>
+                                    <!-- Maximum 3 coffee in total, if coffee only (redundant, is overridden by total consumption for DependantConsumptionUtilisation further up) -->
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>3</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
@@ -600,8 +601,11 @@
                                     <limitations>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:2021" version="1"/>
                                     </limitations>
-                                    <!-- Maximum 3 snacks in total, if snacks only (redundant, is overridden by total consumption QualityStructureFactor for DependantConsumptionUtilisation further up) -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Consumption-x3" version="1"/>
+                                    <!-- Maximum 3 snacks in total, if snacks only (redundant, is overridden by total consumption for DependantConsumptionUtilisation further up) -->
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>3</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>

@@ -114,15 +114,6 @@
         </ResourceFrame>
 
         <FareFrame id="ENT:FareFrame:1" version="1">
-            <qualityStructureFactors>
-                <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
-                    <Name>Single activation</Name>
-                    <Factor>activation</Factor>
-                    <Value>1</Value>
-                </QualityStructureFactor>
-            </qualityStructureFactors>
-
-
             <validableElements>
                 <ValidableElement id="ENT:ValidableElement:SingleRide" version="1">
                     <Name>Single ride</Name>
@@ -288,7 +279,10 @@
                                     <!-- Amount of time to complete trip to concert -->
                                     <TimeIntervalRef ref="ENT:TimeInterval:90minutes"/>
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
 
 
@@ -353,7 +347,10 @@
                                     </limitations>
 
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
 
                                 <!-- Not necessary? -->
@@ -385,7 +382,10 @@
 
                                     <TimeIntervalRef ref="ENT:TimeInterval:90minutes"/>
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
 
 
@@ -445,7 +445,10 @@
                                         </UsageValidityPeriod>
                                     </limitations>
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
 
 
@@ -474,7 +477,10 @@
                                         </UsageValidityPeriod>
                                     </limitations>
                                     <!-- Can enter only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
 
 

@@ -118,14 +118,6 @@
 
 
         <FareFrame id="ENT:FareFrame:1" version="1">
-            <qualityStructureFactors>
-                <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
-                    <Name>Single activations</Name>
-                    <Factor>activation</Factor>
-                    <Value>1</Value>
-                </QualityStructureFactor>
-            </qualityStructureFactors>
-
 
             <validableElements>
                 <ValidableElement id="ENT:ValidableElement:SingleRide" version="1">
@@ -286,7 +278,10 @@
                             </identicalCustomerPurchaseParameterAssignments>
 
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
-                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                            <MaximumNumberOfAccesses>
+                                <Type>limited</Type>
+                                <Value>1</Value>
+                            </MaximumNumberOfAccesses>
                         </ConsumptionUtilisationDependency>
                     </consumptionUtilisationDependencies>
 
@@ -365,8 +360,11 @@
                                     </limitations>
 
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
-
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
+                                    
                                     <includes>
                                         <!-- Parameters that must be selected
                                         
@@ -461,8 +459,11 @@
                                     </limitations>
 
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
-
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
+                                    
                                     <includes>
                                         <!-- Parameters that must be selected -->
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1" order="1">
@@ -593,8 +594,11 @@
                                     </limitations>
 
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
-
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
+                                    
                                     <IncludesGroupingType>AND</IncludesGroupingType>
                                     <includes>
                                         <!-- Parameters that must be selected -->

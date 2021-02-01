@@ -155,13 +155,6 @@
         <FareFrame id="ENT:FareFrame:1" version="1">
             <qualityStructureFactors>
 
-                <!-- Total number of activations possible -->
-                <QualityStructureFactor id="ENT:QualityStructureFactor:190" version="1">
-                    <Name>190 activations</Name>
-                    <Factor>activation</Factor>
-                    <Value>190</Value>
-                </QualityStructureFactor>
-
                 <!-- Limiter to Schooldays between 07-09 -->
                 <FareDemandFactor id="ENT:FareDemandFactor:TripToSchool" version="1">
                     <validityConditions>
@@ -385,7 +378,10 @@
                                     </limitations>
 
                                     <!-- Number of activations possible -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:190" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>190</Value>
+                                    </MaximumNumberOfAccesses>
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1"/>
@@ -454,7 +450,10 @@
                                     </limitations>
 
                                     <!-- Number of activations possible -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:190" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>190</Value>
+                                    </MaximumNumberOfAccesses>
                                     <includes>
                                         <!-- Activation usage rule - when can it be activated -->
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationUsageRuleFromSchool" order="1">

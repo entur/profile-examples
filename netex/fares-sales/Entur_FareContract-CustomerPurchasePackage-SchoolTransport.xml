@@ -124,16 +124,6 @@
 
 
             <qualityStructureFactors>
-                <QualityStructureFactor id="ENT:QualityStructureFactor:190" version="1">
-                    <Name>190 activations</Name>
-                    <Factor>activation</Factor>
-                    <Value>190</Value>
-                </QualityStructureFactor>
-                <QualityStructureFactor id="ENT:QualityStructureFactor:380" version="1">
-                    <Name>380 activations</Name>
-                    <Factor>activation</Factor>
-                    <Value>380</Value>
-                </QualityStructureFactor>
                 <FareDemandFactor id="ENT:FareDemandFactor:SchoolDemandYear2020-2021-Bergen" version="1">
                     <validityConditions>
                         <AvailabilityCondition id="ENT:AvailabilityCondition:SchoolYear2021Bergen" version="1">
@@ -470,7 +460,10 @@
                                     <!-- Time interval given for each activation/usage trigger -->
                                     <TimeIntervalRef ref="ENT:TimeInterval:90Min" version="1"/>
                                     <!-- Number of activations possible -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:380" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>380</Value>
+                                    </MaximumNumberOfAccesses>
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1"/>

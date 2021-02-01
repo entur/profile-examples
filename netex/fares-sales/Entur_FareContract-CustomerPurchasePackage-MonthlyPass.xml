@@ -310,7 +310,10 @@
                                     <TimeIntervalRef ref="ENT:TimeInterval:30Days" version="1"/>
 
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
 
 
@@ -395,7 +398,10 @@
                                     <!-- 30 days given upon activation -->
                                     <TimeIntervalRef ref="ENT:TimeInterval:30Days" version="1"/>
                                     <!-- Only once -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
 
                                 <!-- *Validation* rule -->
@@ -417,7 +423,9 @@
                                         </UsageValidityPeriod>
                                     </limitations>
                                     <!-- Unlimited -->
-                                    <QualityStructureFactorRef ref="ENT:QualityStructureFactor:Unlimited" version="1"/>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>unlimited</Type>
+                                    </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
 
 
