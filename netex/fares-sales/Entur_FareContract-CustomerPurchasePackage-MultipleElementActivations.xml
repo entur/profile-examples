@@ -272,14 +272,19 @@
                                 </ConsumptionUtilisation>
                             </consumptionUtilisations>
 
-                            <!-- Requires that these to specification assignments must get identical values. 
+                            <!-- Requires that these to specification assignments must get values according to given constraint 
                                 I.e. that the servicejourney for leg2 is identical to the servicejourney for the supplement seat -->
-                            <identicalCustomerPurchaseParameterAssignments>
-                                <IdenticalCustomerPurchaseParameterAssignment id="ENT:IdenticalCustomerPurchaseParameterAssignment:1" version="1">
-                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1"/>
-                                    <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirement" version="1"/>
-                                </IdenticalCustomerPurchaseParameterAssignment>
-                            </identicalCustomerPurchaseParameterAssignments>
+                            <crossConstraints>
+                                <CrossConstraint id="ENT:CrossConstraint:1" version="1">
+                                    <Constraint>
+                                        <JourneyConstraint>same</JourneyConstraint>
+                                    </Constraint>
+                                    <customerPurchaseParameterAssigments>
+                                        <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1"/>
+                                        <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirement" version="1"/>
+                                    </customerPurchaseParameterAssigments>
+                                </CrossConstraint>
+                            </crossConstraints>
 
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <MaximumNumberOfAccesses>
@@ -331,17 +336,17 @@
                                 
                                 An example use of multiple GroupOfValidityParameterAssignments is to allow different parameters to be applied depending on activation rules, ie
                                 activation on weekdays gives 2 hours of travel while in the weekends 3 hours.
-                            -->
+                            --> 
 
-                            <groupsOfValidityParameterAssignments>
-                                <GroupOfValidityParameterAssignments id="ENT:IdenticalCustomerPurchaseParameterAssignment:1" version="1" order="1">
+                            <groupsOfCustomerPurchaseParameterAssignments>
+                                <GroupOfCustomerPurchaseParameterAssignments id="ENT:IdenticalCustomerPurchaseParameterAssignment:1" version="1">
                                     <!-- Multiple CPPA refs -->
                                     <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:Leg1-Activation1" version="1"/>
                                     <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:Leg1-Validity" version="1"/>
-                                </GroupOfValidityParameterAssignments>
+                                </GroupOfCustomerPurchaseParameterAssignments>
  
                                 <!-- Multiple GroupOfValidityParameterAssignments -->
-                            </groupsOfValidityParameterAssignments>
+                            </groupsOfCustomerPurchaseParameterAssignments>
 
                             <validityParameterAssignments>
                                 <!-- LEG 1 -->
@@ -367,6 +372,7 @@
                                         <Type>limited</Type>
                                         <Value>1</Value>
                                     </MaximumNumberOfAccesses>
+                                    
                                     
                                     <includes>
                                         <!-- Parameters that must be selected
@@ -610,9 +616,11 @@
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementServiceJourney"/>
                                             <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
                                             <validityParameters>
+                                                
                                                 <GroupOfLinesRef ref="ENT:GroupOfLine:Green"/>
                                                 <LineRef ref="ENT:Line:3"/>
                                                 <LineRef ref="ENT:Line:4"/>
+                                                
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
                                         <!-- Parameters that must be selected -->
