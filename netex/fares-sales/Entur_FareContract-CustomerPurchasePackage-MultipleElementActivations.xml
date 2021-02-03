@@ -248,12 +248,12 @@
                         <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:2" version="1" order="2">
                             <ConsumptionUtilisationDependencyGroupingType>AND</ConsumptionUtilisationDependencyGroupingType>
                             <!-- Elements that must be in given state in order for consumptionUtilisations to transition -->
-                            <elementDependencies>
+                            <consumptionDependencies>
                                 <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ConsumptionDependency>
-                            </elementDependencies>
+                            </consumptionDependencies>
 
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
                             <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
