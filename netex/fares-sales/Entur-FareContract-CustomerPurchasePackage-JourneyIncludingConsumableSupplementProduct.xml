@@ -306,7 +306,7 @@
 
                         <!-- Supplement products -->
                         <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:2" version="1" order="2">
-                            <ConsumptionUtilisationDependencyGroupingType>OR</ConsumptionUtilisationDependencyGroupingType>
+                            <ConsumptionDependencyGroupingType>OR</ConsumptionDependencyGroupingType>
                             <consumptionDependencies>
                                 <ConsumptionDependency id="ENT:ConsumptionDependency:2" version="1" order="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
@@ -348,7 +348,7 @@
                         -->
                         <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:3" version="1" order="1">
                             <!-- Both must be activated before consumption/use -->
-                            <ConsumptionUtilisationDependencyGroupingType>AND</ConsumptionUtilisationDependencyGroupingType>
+                            <ConsumptionDependencyGroupingType>AND</ConsumptionDependencyGroupingType>
                             <consumptionDependencies>
                                 <ConsumptionDependency id="ENT:ConsumptionDependency:4" version="1" order="1">
                                     <MarkedAs>activated</MarkedAs>

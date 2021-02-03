@@ -124,6 +124,7 @@
                     <Name>Single ride</Name>
                 </ValidableElement>
                 <ValidableElement id="ENT:ValidableElement:FatboySeating" version="1">
+                    
                     <Name>Fatboy seating</Name>
                 </ValidableElement>
             </validableElements>
@@ -220,6 +221,8 @@
 
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:PeriodPassNotActivated" version="1">
 
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip"/>
+                    
                     <travelSpecifications>
                         <TravelSpecification id="ENT:TravelSpecification:Leg1" version="1">
                             <Name>Open Leg 1 X to Y</Name>
@@ -241,15 +244,16 @@
                         </TravelSpecification>
                     </travelSpecifications>
 
+
                     <!-- Usage is ordered/dependent -->
                     <consumptionUtilisationDependencies>
 
                         <!-- Leg 2 and seat supplement product -->
                         <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:2" version="1" order="2">
-                            <ConsumptionUtilisationDependencyGroupingType>AND</ConsumptionUtilisationDependencyGroupingType>
+                            <ConsumptionDependencyGroupingType>AND</ConsumptionDependencyGroupingType>
                             <!-- Elements that must be in given state in order for consumptionUtilisations to transition -->
                             <consumptionDependencies>
-                                <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1" order="1">
+                                <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
                                     <MarkedAs>used</MarkedAs>
                                 </ConsumptionDependency>
@@ -286,7 +290,6 @@
                     </consumptionUtilisationDependencies>
 
 
-                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip"/>
 
                     <customerPurchasePackageElements>
 
