@@ -252,7 +252,8 @@
 
             <customerPurchasePackages>
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:JourneyAndSupplements" version="1">
-
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:JourneyWithConditionalSupplementProducts"/>
+                    
                     <travelSpecifications>
                         <TravelSpecification id="ENT:TravelSpecification:Outbound" version="1">
                             <Name>Outbound journey</Name>
@@ -274,27 +275,27 @@
                         </TravelSpecification>
                     </travelSpecifications>
 
-
+                    
                     <!-- Element utilisation (validation/activation/consumption) rules across different CustomerPurchasePackageElements -->
                     <consumptionUtilisationDependencies>
 
                         <!-- Return journey -->
-                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:1" version="1" order="1">
+                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:1" version="1" >
                             <consumptionDependencies>
                                 <!-- order attribute can be used to signify priority -->
-                                <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1" order="1">
-                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
+                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:1" version="1">
                                     <MarkedAs>used</MarkedAs>
-                                </ConsumptionDependency>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
+                                </CustomerPurchasePackageElementConsumptionDependency>
                             </consumptionDependencies>
 
                             <!-- Open return, must be activated manually -->
                             <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
                             <consumptionUtilisations>
                                 <!-- Element(s) to be utilized based on related policy assignment (TypeOfAccessRightAssignment=xxPolicyAssignment for the referred CPPE) -->
-                                <ConsumptionUtilisation id="ENT:ConsumptionUtilisation:1" version="1" order="1">
+                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:1" version="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
-                                </ConsumptionUtilisation>
+                                </CustomerPurchasePackageElementConsumptionUtilisation>
                             </consumptionUtilisations>
                             <!-- Can only be activated once -->
                             <MaximumNumberOfAccesses>
@@ -305,17 +306,17 @@
 
 
                         <!-- Supplement products -->
-                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:2" version="1" order="2">
+                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:2" version="1" >
                             <ConsumptionDependencyGroupingType>OR</ConsumptionDependencyGroupingType>
                             <consumptionDependencies>
-                                <ConsumptionDependency id="ENT:ConsumptionDependency:2" version="1" order="1">
+                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:2" version="1" >
+                                    <MarkedAs>used</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
+                                </CustomerPurchasePackageElementConsumptionDependency>
+                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:3" version="1" >
                                     <MarkedAs>used</MarkedAs>
-                                </ConsumptionDependency>
-                                <ConsumptionDependency id="ENT:ConsumptionDependency:3" version="1" order="2">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
-                                    <MarkedAs>used</MarkedAs>
-                                </ConsumptionDependency>
+                                </CustomerPurchasePackageElementConsumptionDependency>
                             </consumptionDependencies>
 
                             <!-- *Must* be executed automatically when dependency conditions are satisfied -->
@@ -325,12 +326,12 @@
                             <ConsumptionUtilisationGroupingType>AND</ConsumptionUtilisationGroupingType>
                             <consumptionUtilisations>
                                 <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
-                                <ConsumptionUtilisation id="ENT:ConsumptionUtilisation:2" version="1" order="1">
+                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:2" version="1" >
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                </ConsumptionUtilisation>
-                                <ConsumptionUtilisation id="ENT:ConsumptionUtilisation:3" version="1" order="2">
+                                </CustomerPurchasePackageElementConsumptionUtilisation>
+                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:3" version="1" >
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                                </ConsumptionUtilisation>
+                                </CustomerPurchasePackageElementConsumptionUtilisation>
                             </consumptionUtilisations>
 
                             <!-- Can only be activated once -->
@@ -346,35 +347,36 @@
                             *Single* CPPE consumption is governed by CPPE -> MaximumNumberOfAccesses
                             Requires that CPPE is MarkedAs=activated
                         -->
-                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:3" version="1" order="1">
+                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:3" version="1">
                             <!-- Both must be activated before consumption/use -->
                             <ConsumptionDependencyGroupingType>AND</ConsumptionDependencyGroupingType>
                             <consumptionDependencies>
-                                <ConsumptionDependency id="ENT:ConsumptionDependency:4" version="1" order="1">
+                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:4" version="1">
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                </ConsumptionDependency>
-                                <ConsumptionDependency id="ENT:ConsumptionDependency:5" version="1" order="1">
+                                </CustomerPurchasePackageElementConsumptionDependency>
+                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:5" version="1" >
                                     <MarkedAs>activated</MarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                                </ConsumptionDependency>
+                                </CustomerPurchasePackageElementConsumptionDependency>
                             </consumptionDependencies>
 
-                            <!-- Either one of the ConsumptionUtilisation can be used independently -->
-                            <ConsumptionUtilisationGroupingType>XOR</ConsumptionUtilisationGroupingType>
-
+                        
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
                             <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
 
+                            <!-- Either one of the ConsumptionUtilisation can be used independently -->
+                            <ConsumptionUtilisationGroupingType>XOR</ConsumptionUtilisationGroupingType>
+                            
                             <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
                             <consumptionUtilisations>
                                 <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
-                                <ConsumptionUtilisation id="ENT:ConsumptionUtilisation:4" version="1" order="1">
+                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:4" version="1" >
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                </ConsumptionUtilisation>
-                                <ConsumptionUtilisation id="ENT:ConsumptionUtilisation:5" version="1" order="2">
+                                </CustomerPurchasePackageElementConsumptionUtilisation>
+                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:5" version="1" >
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                                </ConsumptionUtilisation>
+                                </CustomerPurchasePackageElementConsumptionUtilisation>
                             </consumptionUtilisations>
 
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
@@ -387,8 +389,7 @@
                     </consumptionUtilisationDependencies>
 
 
-                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:JourneyWithConditionalSupplementProducts"/>
-
+        
                     <customerPurchasePackageElements>
 
                         <!-- Journeys (outbound and return journey) -->

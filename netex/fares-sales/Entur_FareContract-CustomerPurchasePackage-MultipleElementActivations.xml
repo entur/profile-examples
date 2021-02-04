@@ -253,10 +253,10 @@
                             <ConsumptionDependencyGroupingType>AND</ConsumptionDependencyGroupingType>
                             <!-- Elements that must be in given state in order for consumptionUtilisations to transition -->
                             <consumptionDependencies>
-                                <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1">
-                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
+                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:1" version="1">
                                     <MarkedAs>used</MarkedAs>
-                                </ConsumptionDependency>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
+                                </CustomerPurchasePackageElementConsumptionDependency>
                             </consumptionDependencies>
 
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
@@ -264,12 +264,12 @@
 
                             <!-- Elements in question, see listed ConsumptionUtilisationDependeny above -->
                             <consumptionUtilisations>
-                                <ConsumptionUtilisation id="ENT:ConsumptionUtilisation:1" version="1" order="1">
+                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:1" version="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
-                                </ConsumptionUtilisation>
-                                <ConsumptionUtilisation  id="ENT:ConsumptionUtilisation:2" version="1" order="2">
+                                </CustomerPurchasePackageElementConsumptionUtilisation>
+                                <CustomerPurchasePackageElementConsumptionUtilisation  id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:2" version="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
-                                </ConsumptionUtilisation>
+                                </CustomerPurchasePackageElementConsumptionUtilisation>
                             </consumptionUtilisations>
 
                             <!-- Requires that these to specification assignments must get values according to given constraint 
@@ -279,10 +279,10 @@
                                     <Constraint>
                                         <JourneyConstraint>same</JourneyConstraint>
                                     </Constraint>
-                                    <customerPurchaseParameterAssigments>
+                                    <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1"/>
                                         <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirement" version="1"/>
-                                    </customerPurchaseParameterAssigments>
+                                    </validityParameterAssignments>
                                 </CrossConstraint>
                             </crossConstraints>
 
