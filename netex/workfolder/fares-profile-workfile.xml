@@ -1121,10 +1121,9 @@
                                     </limitations>
                                     
                                     <temporalValidityParameters>
-                                        <!--TimebandRef ref="ref"></TimebandRef-->
-                                        <!--GroupOfTimebandsRef ref="ref"></GroupOfTimebandsRef-->
-                                        <!--OperatingDayRef ref="ref"></OperatingDayRef-->
-                                        <!--UicOperatingPeriodRef ref="ENT:UicOperatingPeriod:1" version="1"/-->
+                                        <TimebandRef ref="ext"/>
+                                        <GroupOfTimebandsRef ref="ext"/>
+                                        <OperatingDayRef ref="ext"/>
                                     </temporalValidityParameters>
                                     
                                     <validityParameters>
