@@ -140,6 +140,8 @@
             
             <organisations>
                 <GeneralOrganisation id="ENT:GeneralOrganisation:Entur" version="1">
+                    <PublicCode>ENT</PublicCode>
+                    <PrivateCode>ENT01</PrivateCode>
                     <Name>Entur</Name>
                     <ContactDetails>
                         <Url>https://www.entur.org</Url>
@@ -151,8 +153,14 @@
                     <ContactDetails>
                         <Url>https://www.ruter.no</Url>
                     </ContactDetails>
+                    <OrganisationType>authority</OrganisationType>
+                </Authority>
+                <Authority id="ENT:Operator:Unibuss" version="1">
+                    <Name>Unibuss</Name>
+                    <ContactDetails>
+                        <Url>https://www.unibuss.no/</Url>
+                    </ContactDetails>
                     <OrganisationType>operator</OrganisationType>
-                    <!-- (simplified) acts as both operator and authority for this example -->
                 </Authority>
             </organisations>
         </ResourceFrame>
@@ -166,22 +174,30 @@
                 </AvailabilityCondition>
             </validityConditions>
             <Description>https://ruter.no/en/buying-tickets/zones/</Description>
+            
+            
+            <!-- DEMO OBJECTS -->
+            <topographicPlaces>
+                <TopographicPlace id="ENT:TopographicPlace:1" version="1">
+                    <Descriptor>
+                        <Name>Demo TopgraphicPlace (for consitency verification)</Name>
+                    </Descriptor>
+                </TopographicPlace>
+            </topographicPlaces>
+            
+            
             <tariffZones>
-                <FareZone id="test" version="test">
-                    <fareSections>
-                        <FareSection id="test" version="test">
-                            <Name>test</Name>
-                        </FareSection>
-                    </fareSections>
+
+                <FareZone id="ENT:FareZone:1" version="1">
+                    <ValidBetween>
+                        <FromDate>2020-01-01T00:00:00</FromDate>
+                    </ValidBetween>
+                    <Name>Parent FareZone</Name>
                 </FareZone>
                 
-                <FareZone id="test2" version="test">
-                    <neighbours>
-                        <FareZoneRef ref="ref"></FareZoneRef>
-                    </neighbours>
-                </FareZone>
-                
-                <FareZone id="test3" version="test">
+                <FareZone id="ENT:FareZone:2" version="1">
+                    <Name>Child FareZone</Name>
+                    <PrivateCode>1</PrivateCode>
                     <gis:Polygon gis:id="testgis">
                         <gis:exterior>
                             <gis:LinearRing>
@@ -192,12 +208,35 @@
                             </gis:LinearRing>
                         </gis:exterior>
                     </gis:Polygon>
+                    
+                    <ParentZoneRef ref="ENT:TopographicPlace:1" version="1"/>
+                    <ParentFareZoneRef ref="ENT:FareZone:1" version="1"/>
+                    <AuthorityRef ref="ENT:Authority:Ruter" version="1"/>
+                    
+                    <neighbours>
+                        <FareZoneRef ref="ENT:FareZone:3" version="1"/>
+                        <FareZoneRef ref="ENT:FareZone:4" version="1"/>
+                    </neighbours>
+                </FareZone>
+
+                
+                <FareZone id="ENT:FareZone:3" version="1">
+                    <Name>Demo FareZone</Name>
+                </FareZone>
+                <FareZone id="ENT:FareZone:4" version="1">
+                    <Name>Demo FareZone</Name>
                 </FareZone>
                 
-                <TariffZone id="test01" version="test">
-                    
+                
+                <TariffZone id="ENT:TariffZone:1" version="1">
+                    <Name>Demo TariffZone</Name>
+                    <PrivateCode>1</PrivateCode>
+                    <ParentZoneRef ref="ENT:TopographicPlace:1" version="1"/>
                 </TariffZone>
                 
+                
+                
+                <!-- EXAMPLE: Ruter# zones -->
                 <TariffZone id="RUT:TariffZone:1" version="1">
                     <Name lang="en">Ruter# tariff zone 1 (sentral Oslo region)</Name>
                 </TariffZone>
@@ -217,11 +256,15 @@
                     <Name lang="en">Ruter# tariff zone 3S (south incl Son)</Name>                 
                 </TariffZone>
             </tariffZones>
-            
+
         </SiteFrame>
         
         
         <ServiceFrame id="ENT:ServiceFrame:1" version="1">
+            <tariffZones>
+                <TariffZone id="fdasjkhfdsa" version="fsda">
+                </TariffZone>
+            </tariffZones>
             <!-- only included as NeTEx frame structure reference -->
         </ServiceFrame>
         
@@ -229,6 +272,7 @@
         <TimetableFrame id="ENT:TimetableFrame:1" version="1">
             <!-- only included as NeTEx frame structure reference -->
         </TimetableFrame>
+        
         
         <ServiceCalendarFrame id="ENT:ServiceCalendarFrame:1" version="1">
             <ServiceCalendar id="ENT:ServiceCalendar:1" version="1">
@@ -274,6 +318,15 @@
 
 
 
+        <FareFrame id="slettemg" version="slettmeg">
+            <fareZones>
+                <FareZone id="ENT:FareZone:100" version="1">
+                    <Name>Temporary construction for ID tickets (will be moved to SiteFrame once the Nordic NeTEx profile update is approved)</Name>
+                </FareZone>
+            </fareZones>
+        </FareFrame>
+
+
         <!-- Fare data for Ruter# codespace "RUT" (greater Oslo region) -->
 
         <FareFrame id="ENT:FareFrame:1" version="1">
@@ -285,8 +338,14 @@
             
             <Description>https://ruter.no/en/buying-tickets/tickets-and-fares/</Description>
             
-            
             <PricingParameterSet id="ENT:PricingParameterSet:1" version="1">
+                <pricingRules>
+                    <PricingRule id="ENT:PricingRule:1" version="1">
+                        <MethodName>Fritekst-uten-mellomrom</MethodName>
+                        <Factor>666</Factor>
+                    </PricingRule>
+                </pricingRules>
+                
                 <pricingServices>
                     <PricingService id="ENT:PricingService:PoP" version="1">
                         <Name>PoP (Pris og Produkt)</Name>
@@ -295,7 +354,6 @@
                     </PricingService>
                 </pricingServices>
             </PricingParameterSet>
-            
             
 
             <!-- Spec: 7.5.3.4.1 GeographicalUnit – Model Element 
@@ -317,7 +375,7 @@
             <geographicalIntervals>
                 <GeographicalInterval id="ENT:GeographicalInterval:1" version="1">
                     <NumberOfUnits>2</NumberOfUnits>
-                    <IntervalType>section</IntervalType>
+                    <IntervalType>tariffZone</IntervalType>
                     <!--prices>
                         <GeographicalIntervalPrice id="ENT:GeographicalIntervalPrice:1" version="1">
                             <Name>GeographicalIntervalPrice</Name>
@@ -512,7 +570,7 @@
                         <FareStructureElementRef ref="ENT:FareStructureElement:1" version="1"/>
                     </fareStructureElements>
                     <validityParameterAssignments>
-                        <GenericParameterAssignment id="ENT:GenericParameterAssignment:1" version="1" order="1">
+                        <GenericParameterAssignment id="ENT:GenericParameterAssignment:100" version="1" order="1">
                             <ControllableElementRef ref="ref"/>
                         </GenericParameterAssignment>
                     </validityParameterAssignments>
@@ -999,7 +1057,6 @@
                                     <BrandingRef ref="ref"/>
                                     <validityParameters>
                                         <!--VehicleModes>bus cableway</VehicleModes-->
-                                        <Transport>air</Transport>
                                         <TransportSubmode>
                                             <AirSubmode>airshipService</AirSubmode>
                                         </TransportSubmode>
