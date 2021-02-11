@@ -128,6 +128,18 @@
                     </operatingDays>
                 </AvailabilityCondition>
             </contentValidityConditions>
+            
+            <responsibilitySets>
+                <ResponsibilitySet id="ENT:ResponsibilitySet:1" version="1">
+                    <roles>
+                        <ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:1" version="1">
+                            <DataRoleType>owns</DataRoleType>
+                            <StakeholderRoleType>FareManagement</StakeholderRoleType>
+                        </ResponsibilityRoleAssignment>
+                    </roles>
+                </ResponsibilitySet>
+            </responsibilitySets>
+            
         </ResourceFrame>
         
         
@@ -188,7 +200,7 @@
             
             <tariffZones>
 
-                <FareZone id="ENT:FareZone:1" version="1">
+                <FareZone id="ENT:FareZone:1" version="1" responsibilitySetRef="ENT:ResponsibilitySet:1">
                     <ValidBetween>
                         <FromDate>2020-01-01T00:00:00</FromDate>
                     </ValidBetween>
@@ -211,7 +223,8 @@
                     
                     <ParentZoneRef ref="ENT:TopographicPlace:1" version="1"/>
                     <ParentFareZoneRef ref="ENT:FareZone:1" version="1"/>
-                    <AuthorityRef ref="ENT:Authority:Ruter" version="1"/>
+                    <OperatorRef ref=""></OperatorRef>
+                    
                     
                     <neighbours>
                         <FareZoneRef ref="ENT:FareZone:3" version="1"/>
