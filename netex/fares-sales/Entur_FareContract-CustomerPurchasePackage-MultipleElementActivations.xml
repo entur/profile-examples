@@ -435,7 +435,7 @@
                                         -->
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirementLeg1" version="1" order="1">
                                             <!-- Selected service journey -->
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementServiceJourney"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment"/>
                                             <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
                                             <validityParameters>
                                                 <LineRef ref="ENT:Line:1"/>
@@ -530,7 +530,7 @@
                                         <!-- Parameters that must be selected -->
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SelectionRequirement" version="1" order="1">
                                             <!-- Selected service journey -->
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementServiceJourney"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment"/>
                                             <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
                                             <validityParameters>
                                                 <LineRef ref="ENT:Line:1"/>
@@ -665,7 +665,7 @@
                                         <!-- Parameters that must be selected -->
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirement" version="1" order="1">
                                             <!-- Selected service journey -->
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementServiceJourney"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment"/>
                                             <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
                                             <validityParameters>
                                                 
@@ -678,7 +678,7 @@
                                         <!-- Parameters that must be selected -->
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:ServiceJourneyLeg2SeatSelectionRequirementSeat" version="1" order="1">
                                             <!-- Selected service journey -->
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpeficationRequirementSeat"/>
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationSeatPolicyAssignment"/>
                                         </CustomerPurchaseParameterAssignment>
                                     </includes>
 
