@@ -270,19 +270,13 @@
 
                             <elementAccesses>
 
-                                <!-- *Activation* entry -->
+                                <!-- *Combined activation and used* entry as result of first usage -->
                                 <CustomerPurchasePackageElementAccess >
                                     <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
-                                    <MarkedAs>activated</MarkedAs>
+                                    <MarkedAs>used</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (TimeIntervalRef in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
-                                    <EndOfValidity>2020-01-02T07:04:59</EndOfValidity>
-                                </CustomerPurchasePackageElementAccess>
-
-                                <!-- first re-validation entry -->
-                                <CustomerPurchasePackageElementAccess created="2020-01-02T07:00:00">
-                                    <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
-                                    <MarkedAs>marked</MarkedAs>
+                                    <EndOfValidity>2020-02-01T07:04:59</EndOfValidity>
                                 </CustomerPurchasePackageElementAccess>
 
                             </elementAccesses>
