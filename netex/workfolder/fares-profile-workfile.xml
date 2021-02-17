@@ -148,7 +148,14 @@
                 <TypeOfCustomerAccount id="ENT:TypeOfCustomerAccount:1" version="1">
                     <Name>Customer account 1</Name>
                 </TypeOfCustomerAccount>
+
+                <Branding version="1" id="ENT:Branding:1">
+                    <Name>Test</Name>
+                    <Url>http://url.com</Url>
+                </Branding>
+
             </typesOfValue> 
+            
             
             <organisations>
                 <GeneralOrganisation id="ENT:GeneralOrganisation:Entur" version="1">
@@ -204,7 +211,6 @@
                     <ValidBetween>
                         <FromDate>2020-01-01T00:00:00</FromDate>
                     </ValidBetween>
-                    <Name>Parent FareZone</Name>
                 </FareZone>
                 
                 <FareZone id="ENT:FareZone:2" version="1">
