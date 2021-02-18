@@ -280,17 +280,6 @@
 
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SchoolCarnet" version="1">
 
-                    <!-- Activation is ordered -->
-                    <!-- TBD: <elementAccessGroupsInSequence>
-                        
-                        <ElementAccessGroup id="ENT:ElementActivationGroup:1" version="1" order="1">
-                            <ValidableElementRef ref="ENT:ValidableElement:TripToSchool"/>
-                        </ElementAccessGroup>
- 
-                    </elementAccessGroupsInSequence>
-                    -->
-                    
- 
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SchoolTransport"/>
                     
                     <travelSpecifications>
@@ -318,13 +307,15 @@
 
                                 <!-- Access no 1 (first ride TO school) -->
                                 <CustomerPurchasePackageElementAccess created="2020-01-01T07:05:00">
-                                    <MarkedAs>activated</MarkedAs>
+                                    
+                                    <MarkedAs>used</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2020-01-01T07:05:00</StartOfValidity>
                                     <EndOfValidity>2020-01-01T08:35:00</EndOfValidity>
                                     <validityParameterAssignments>
 
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:RideToSchool1" order="1">
+                                           
                                             <!-- Details about where activation took place -->
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
@@ -335,13 +326,13 @@
                                         </CustomerPurchaseParameterAssignment>
 
                                     </validityParameterAssignments>
-
+                             
                                 </CustomerPurchasePackageElementAccess>
 
                                 <!-- Access no 2 (second ride TO school) -->
 
                                 <CustomerPurchasePackageElementAccess created="2020-01-02T07:05:00">
-                                    <MarkedAs>activated</MarkedAs>
+                                    <MarkedAs>used</MarkedAs>
                                     <!-- TO BE ADDED TO STANDARD: Validity period as a result of the activation (UVP/StandardDuration in this case) -->
                                     <StartOfValidity>2020-01-02T07:25:00</StartOfValidity>
                                     <EndOfValidity>2020-01-02T08:55:00</EndOfValidity>
