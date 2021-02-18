@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+
+==== Minimalistic example of using TariffZones according to the Nordic NeTEx Profile v1.4 including reference from affected StopPlace (see  https://ruter.no/kjop-billett/soner/  for zone map) ======
+
+-->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex"
+  xmlns:gml="http://www.opengis.net/gml/3.2" 
+  version="1.12:NO-NeTEx-stops:1.4">
+
+	<PublicationTimestamp>2021-02-17T22:44:00</PublicationTimestamp>
+	<ParticipantRef>NSR</ParticipantRef>
+	<dataObjects>		
+		
+		<ResourceFrame id="ENT:ResourceFrame:1" version="1">
+			<responsibilitySets>
+				<ResponsibilitySet id="ENT:ResponsibilitySet:1" version="1">
+					<Name>TariffZone management</Name>
+					<roles>
+						<ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:1" version="1">
+							<DataRoleType>owns</DataRoleType>
+							<StakeholderRoleType>FareManagement</StakeholderRoleType>
+						</ResponsibilityRoleAssignment>
+						
+						<!-- probably irrelevant -->
+						<ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:2" version="1">
+							<DataRoleType>creates</DataRoleType>
+							<StakeholderRoleType>Planning</StakeholderRoleType>
+						</ResponsibilityRoleAssignment>
+					</roles>
+				</ResponsibilitySet>
+			</responsibilitySets>
+			
+			<organisations>
+				<Authority id="ENT:Authority:RUT" version="1">
+					<PrivateCode>22</PrivateCode> <!-- Org.reg ID -->
+					<CompanyNumber>991609407</CompanyNumber>
+					<Name>Ruter#</Name>
+					<ContactDetails>
+						<Url>https://www.ruter.no</Url>
+					</ContactDetails>
+					<OrganisationType>authority</OrganisationType>
+				</Authority>
+			</organisations>
+		</ResourceFrame>
+		
+		
+		<SiteFrame id="NSR:SiteFrame:1" version="1">
+			<stopPlaces>
+				
+				<!-- Simplified stop places description without quays -->
+				
+				
+				<!-- TODO: Add correct position and ID for stop -->
+				
+				<StopPlace id="NSR:StopPlace:1" version="1">
+					<Name>Oslo S</Name>
+					<Centroid>
+						<Location>
+							<Longitude>11.00</Longitude>
+							<Latitude>60.00</Latitude>
+						</Location>
+					</Centroid>
+					<TransportMode>bus</TransportMode>
+					<tariffZones>
+						<TariffZoneRef ref="RUT:FareZone:1" version="1"/>
+					</tariffZones>
+					<StopPlaceType>onstreetBus</StopPlaceType>
+				</StopPlace>
+				
+				
+				<!-- TODO: Add correct position and ID for stop -->
+				
+				<StopPlace id="NSR:StopPlace:2" version="1">
+					<Name>Nationaltheatret</Name>
+					<Centroid>
+						<Location>
+							<Longitude>11.00</Longitude>
+							<Latitude>60.00</Latitude>
+						</Location>
+					</Centroid>
+					<TransportMode>bus</TransportMode>
+					<tariffZones>
+						<TariffZoneRef ref="RUT:FareZone:1" version="1"/>
+					</tariffZones>
+					<StopPlaceType>onstreetBus</StopPlaceType>
+				</StopPlace>				
+				
+				
+				<!-- TODO: Add correct position and ID for stop -->
+				
+				<StopPlace id="NSR:StopPlace:3" version="1">
+					<Name>Sandvika terminal</Name>
+					<Centroid>
+						<Location>
+							<Longitude>12.00</Longitude>
+							<Latitude>61.00</Latitude>
+						</Location>
+					</Centroid>
+					<TransportMode>bus</TransportMode>
+					<StopPlaceType>onstreetBus</StopPlaceType>
+					<quays>
+						<Quay id="NSR:Quay:1" version="1">
+							<tariffZones>
+								<TariffZoneRef ref="RUT:FareZone:2V" version="1"/>
+							</tariffZones>
+						</Quay>
+						<Quay id="NSR:Quay:2" version="1">
+							<tariffZones>
+								<TariffZoneRef ref="RUT:FareZone:2V" version="1"/>
+							</tariffZones>
+						</Quay>
+					</quays>
+				</StopPlace>
+				
+			</stopPlaces>
+			
+			
+			<tariffZones>
+				<TariffZone id="RUT:TariffZone:Oslo-and-Viken" version="1" responsibilitySetRef="ENT:ResponsibilitySet:1">
+					<Name lang="no">Ruter# Oslo and (parts of) Viken (formerly Akershus) TariffZone area</Name>
+					<Description>Outer bounds of all Oslo-Viken FareZones (i.e. wrapper ParentZone)</Description>
+					
+					<!-- PUBLIC CODE (currently added as PrivateCode for Zones in the example) -->
+					
+					<gml:Polygon gml:id="RuterFareZones" srsName="Ruter#">
+						<gml:exterior>
+							<gml:LinearRing>
+								
+								<!-- TODO: Add correct positions for Ruter# zone outer ring -->
+								
+								<gml:pos>60.037738 10.813144</gml:pos>
+								<gml:pos>59.913408 10.640027</gml:pos>
+								<gml:pos>59.823341 10.798219</gml:pos>
+								<gml:pos>59.944553 10.945122</gml:pos>
+							</gml:LinearRing>
+						</gml:exterior>
+					</gml:Polygon>
+				</TariffZone>
+				
+				
+				<FareZone id="RUT:FareZone:1" version="1">
+					<Name>Ruter# FareZone 2V</Name>
+					<PrivateCode>2V</PrivateCode>
+					<gml:Polygon gml:id="Ruter1Oslo" srsName="Ruter#">
+						<gml:exterior>
+							<gml:LinearRing>
+								<gml:pos>60.037738 10.813144</gml:pos>
+								<gml:pos>59.913408 10.640027</gml:pos>
+								<gml:pos>59.823341 10.798219</gml:pos>
+								<gml:pos>59.944553 10.945122</gml:pos>
+							</gml:LinearRing>
+						</gml:exterior>
+					</gml:Polygon>
+					<ParentZoneRef ref="RUT:TariffZone:Oslo-and-Viken" version="1"/>
+					<ZoneTopology>tiled</ZoneTopology>
+					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
+					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
+					<neighbours>
+						<FareZoneRef ref="RUT:FareZone:2V" version="1"/>
+						<FareZoneRef ref="RUT:FareZone:2S" /> <!-- not defined in example -->
+						<FareZoneRef ref="RUT:FareZone:2O" /> <!-- not defined in example -->
+					</neighbours>
+				</FareZone>
+				
+				<FareZone id="RUT:FareZone:2V" version="1">
+					<Name>Ruter# zone 2V</Name>
+					<PrivateCode>2V</PrivateCode>
+					<gml:Polygon gml:id="Ruter2VEST" srsName="Ruter#">
+						<gml:exterior>
+							<gml:LinearRing>
+								<gml:pos>60.146632 10.676651</gml:pos>
+								<gml:pos>60.155636 10.906953</gml:pos>
+								<gml:pos>59.98272 11.155931</gml:pos>
+								<gml:pos>59.814488 11.216325</gml:pos>
+								<gml:pos>59.778375 10.999464</gml:pos>
+								<gml:pos>59.830567 10.922014</gml:pos>
+								<gml:pos>59.983912 10.921569</gml:pos>
+							</gml:LinearRing>
+						</gml:exterior>
+					</gml:Polygon>
+					<ParentZoneRef ref="RUT:TariffZone:Oslo-and-Viken" version="1"/>
+					<ZoneTopology>tiled</ZoneTopology>
+					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
+					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
+					<neighbours>
+						<FareZoneRef ref="RUT:FareZone:3V" /> <!-- not defined in example -->
+						<FareZoneRef ref="RUT:FareZone:5V" /> <!-- not defined in example -->
+					</neighbours>
+				</FareZone>
+				
+				<FareZone id="RUT:FareZone:3V" version="1">
+					<Name>Ruter# zone 3V</Name>
+					<PrivateCode>3V</PrivateCode>
+					<gml:Polygon gml:id="Ruter3VEST" srsName="Ruter#">
+						<gml:exterior>
+							<gml:LinearRing>
+								<gml:pos>59.778375 10.999464</gml:pos>
+								<gml:pos>59.814488 11.216325</gml:pos>
+								<gml:pos>59.98272 11.155931</gml:pos>
+								<gml:pos>60.155636 10.906953</gml:pos>
+								<gml:pos>60.146632 10.676651</gml:pos>
+							</gml:LinearRing>
+						</gml:exterior>
+					</gml:Polygon>
+					<ParentZoneRef ref="RUT:TariffZone:Oslo-and-Viken" version="1"/>
+					<ZoneTopology>tiled</ZoneTopology>
+					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
+					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
+					<neighbours>
+						<FareZoneRef ref="RUT:FareZone:4V" /> <!-- not defined in example -->
+					</neighbours>
+				</FareZone>
+			</tariffZones>		
+		</SiteFrame>
+	</dataObjects>
+</PublicationDelivery>
