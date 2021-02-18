@@ -355,10 +355,10 @@
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Leg1" version="1" order="1">
                             <elementAccesses>
 
-                                <!-- *Activation* leg1 entry -->
+                                <!-- *used* leg1 entry -->
                                 <CustomerPurchasePackageElementAccess>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-                                    <MarkedAs>activated</MarkedAs>
+                                    <MarkedAs>used</MarkedAs>
                                     <!-- PROPOSED AS ADDITION TO THE STANDARD: Validity period as a result of the activation (ServiceJourney date) -->
                                     <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
                                     <EndOfValidity>2020-01-02T00:00:00</EndOfValidity>
@@ -371,15 +371,6 @@
                                         </CustomerPurchaseParameterAssignment>
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
-
-                                <CustomerPurchasePackageElementAccess>
-                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
-                                    <MarkedAs>used</MarkedAs>
-                                    <!-- PROPOSED AS ADDITION TO THE STANDARD: Validity period as a result of the activation (ServiceJourney date) -->
-                                    <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
-                                    <EndOfValidity>2020-01-02T00:00:00</EndOfValidity>
-                                </CustomerPurchasePackageElementAccess>
-
                             </elementAccesses>
 
 
