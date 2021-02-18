@@ -24,6 +24,17 @@
 					</values>
 				</ValueSet>
 			</typesOfValue>
+			<organisations>
+				<Authority id="ENT:Authority:RUT" version="1">
+					<PrivateCode>22</PrivateCode>
+					<CompanyNumber>991609407</CompanyNumber>
+					<Name>Ruter#</Name>
+					<ContactDetails>
+						<Url>https://www.ruter.no</Url>
+					</ContactDetails>
+					<OrganisationType>authority</OrganisationType>
+				</Authority>
+			</organisations>
 		</ResourceFrame>
 		
 		
@@ -85,8 +96,8 @@
 				</TariffZone>
 				
 				<TariffZone id="RUT:TariffZone:1" version="1">
-					<Name>Ruter# zone 2V</Name>
-					<PrivateCode>2V</PrivateCode>
+					<Name>Ruter# TariffZone 1</Name>
+					<PrivateCode>1</PrivateCode>
 					<types>
 						<TypeOfZoneRef ref="NSR:TypeOfZone:Ruter" version="1"/>
 					</types>
@@ -104,7 +115,7 @@
 				</TariffZone>
 				
 				<TariffZone id="RUT:TariffZone:2V" version="1">
-					<Name>Ruter# zone 2V</Name>
+					<Name>Ruter# TariffZone 2V</Name>
 					<PrivateCode>2V</PrivateCode>
 					<types>
 						<TypeOfZoneRef ref="NSR:TypeOfZone:Ruter" version="1"/>
@@ -126,7 +137,7 @@
 				</TariffZone>
 				
 				<TariffZone id="RUT:TariffZone:3V" version="1">
-					<Name>Ruter# zone 3V</Name>
+					<Name>Ruter# TariffZone 3V</Name>
 					<PrivateCode>3V</PrivateCode>
 					<types>
 						<TypeOfZoneRef ref="NSR:TypeOfZone:Ruter" version="1"/>
