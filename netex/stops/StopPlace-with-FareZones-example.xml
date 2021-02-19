@@ -25,7 +25,7 @@
 							<StakeholderRoleType>FareManagement</StakeholderRoleType>
 						</ResponsibilityRoleAssignment>
 						
-						<!-- probably irrelevant -->
+						<!-- currently irrelevant -->
 						<ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:2" version="1">
 							<DataRoleType>creates</DataRoleType>
 							<StakeholderRoleType>Planning</StakeholderRoleType>
@@ -33,6 +33,7 @@
 					</roles>
 				</ResponsibilitySet>
 			</responsibilitySets>
+			
 			
 			<organisations>
 				<Authority id="ENT:Authority:RUT" version="1">
@@ -52,10 +53,7 @@
 			<stopPlaces>
 				
 				<!-- Simplified stop places description without quays -->
-				
-				
-				<!-- TODO: Add correct position and ID for stop -->
-				
+
 				<StopPlace id="NSR:StopPlace:1" version="1">
 					<Name>Oslo S</Name>
 					<Centroid>
@@ -72,8 +70,6 @@
 				</StopPlace>
 				
 				
-				<!-- TODO: Add correct position and ID for stop -->
-				
 				<StopPlace id="NSR:StopPlace:2" version="1">
 					<Name>Nationaltheatret</Name>
 					<Centroid>
@@ -87,10 +83,8 @@
 						<TariffZoneRef ref="RUT:FareZone:1" version="1"/>
 					</tariffZones>
 					<StopPlaceType>onstreetBus</StopPlaceType>
-				</StopPlace>				
+				</StopPlace>
 				
-				
-				<!-- TODO: Add correct position and ID for stop -->
 				
 				<StopPlace id="NSR:StopPlace:3" version="1">
 					<Name>Sandvika terminal</Name>
@@ -105,46 +99,77 @@
 					<quays>
 						<Quay id="NSR:Quay:1" version="1">
 							<tariffZones>
-								<TariffZoneRef ref="RUT:FareZone:2V" version="1"/>
+								<TariffZoneRef ref="RUT:FareZone:2S" version="1"/>
 							</tariffZones>
 						</Quay>
 						<Quay id="NSR:Quay:2" version="1">
 							<tariffZones>
-								<TariffZoneRef ref="RUT:FareZone:2V" version="1"/>
+								<TariffZoneRef ref="RUT:FareZone:2S" version="1"/>
 							</tariffZones>
 						</Quay>
 					</quays>
 				</StopPlace>
 				
+				
+				<StopPlace id="NSR:StopPlace:4" version="1">
+					<Name>Kambo stasjon</Name>
+					<Centroid>
+						<Location>
+							<Longitude>10.69346</Longitude>
+							<Latitude>59.47773</Latitude>
+						</Location>
+					</Centroid>
+					<TransportMode>bus</TransportMode>
+					<tariffZones>
+						<TariffZoneRef ref="RUT:FareZone:4S" version="1"/>
+					</tariffZones>
+					<StopPlaceType>onstreetBus</StopPlaceType>
+				</StopPlace>
+				
+				<StopPlace id="NSR:StopPlace:5" version="1">
+					<Name>Tigerplassen</Name>
+					<Centroid>
+						<Location>
+							<Longitude>10.68612</Longitude>
+							<Latitude>59.44670</Latitude>
+						</Location>
+					</Centroid>
+					<TransportMode>bus</TransportMode>
+					<tariffZones>
+						<TariffZoneRef ref="RUT:FareZone:4S" version="1"/>
+					</tariffZones>
+					<StopPlaceType>onstreetBus</StopPlaceType>
+				</StopPlace>
 			</stopPlaces>
 			
 			
 			<tariffZones>
+				
+				<!-- Not currently in use, but available if relevant to e.g. "wrap" zones in outer boundaries -->
 				<TariffZone id="RUT:TariffZone:Oslo-and-Viken" version="1" responsibilitySetRef="ENT:ResponsibilitySet:1">
 					<Name lang="no">Ruter# Oslo and (parts of) Viken (formerly Akershus) TariffZone area</Name>
-					<Description>Outer bounds of all Oslo-Viken FareZones (i.e. wrapper ParentZone)</Description>
-					
-					<!-- PUBLIC CODE (currently added as PrivateCode for Zones in the example) -->
-					
+					<Description>Outer bounds of all Oslo-Viken FareZones (sample wrapper ParentZone)</Description>
 					<gml:Polygon gml:id="RuterFareZones" srsName="Ruter#">
 						<gml:exterior>
 							<gml:LinearRing>
-								
-								<!-- TODO: Add correct positions for Ruter# zone outer ring -->
-								
-								<gml:pos>60.037738 10.813144</gml:pos>
-								<gml:pos>59.913408 10.640027</gml:pos>
-								<gml:pos>59.823341 10.798219</gml:pos>
-								<gml:pos>59.944553 10.945122</gml:pos>
+								<gml:pos>60.439793 11.068976</gml:pos>
+								<gml:pos>59.846298 11.809165</gml:pos>
+								<gml:pos>59.743988 11.812826</gml:pos>
+								<gml:pos>59.607333 11.472706</gml:pos>
+								<gml:pos>59.605084 10.749445</gml:pos>
+								<gml:pos>59.432334 10.657440</gml:pos>
+								<gml:pos>59.542633 10.558302</gml:pos>
+								<gml:pos>59.740239 10.203681</gml:pos>
+								<gml:pos>60.258727 11.029269</gml:pos>
 							</gml:LinearRing>
 						</gml:exterior>
 					</gml:Polygon>
 				</TariffZone>
 				
-<!--				
+				
 				<FareZone id="RUT:FareZone:1" version="1">
-					<Name>Ruter# FareZone 2V</Name>
-					<PrivateCode>2V</PrivateCode>
+					<Name>Ruter# FareZone 1</Name>
+					<PrivateCode>1</PrivateCode>
 					<gml:Polygon gml:id="Ruter1Oslo" srsName="Ruter#">
 						<gml:exterior>
 							<gml:LinearRing>
@@ -160,105 +185,22 @@
 					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
 					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
 					<neighbours>
-						<FareZoneRef ref="RUT:FareZone:2V" version="1"/>
-						<FareZoneRef ref="RUT:FareZone:2S" /> <!-\- not defined in example -\->
-						<FareZoneRef ref="RUT:FareZone:2O" /> <!-\- not defined in example -\->
-					</neighbours>
-				</FareZone>
-				
-				<FareZone id="RUT:FareZone:2V" version="1">
-					<Name>Ruter# zone 2V</Name>
-					<PrivateCode>2V</PrivateCode>
-					<gml:Polygon gml:id="Ruter2VEST" srsName="Ruter#">
-						<gml:exterior>
-							<gml:LinearRing>
-								<gml:pos>60.146632 10.676651</gml:pos>
-								<gml:pos>60.155636 10.906953</gml:pos>
-								<gml:pos>59.98272 11.155931</gml:pos>
-								<gml:pos>59.814488 11.216325</gml:pos>
-								<gml:pos>59.778375 10.999464</gml:pos>
-								<gml:pos>59.830567 10.922014</gml:pos>
-								<gml:pos>59.983912 10.921569</gml:pos>
-							</gml:LinearRing>
-						</gml:exterior>
-					</gml:Polygon>
-					<ParentZoneRef ref="RUT:TariffZone:Oslo-and-Viken" version="1"/>
-					<ZoneTopology>tiled</ZoneTopology>
-					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
-					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
-					<neighbours>
-						<FareZoneRef ref="RUT:FareZone:3V" /> <!-\- not defined in example -\->
-						<FareZoneRef ref="RUT:FareZone:5V" /> <!-\- not defined in example -\->
-					</neighbours>
-				</FareZone>
-				
-				<FareZone id="RUT:FareZone:3V" version="1">
-					<Name>Ruter# zone 3V</Name>
-					<PrivateCode>3V</PrivateCode>
-					<gml:Polygon gml:id="Ruter3VEST" srsName="Ruter#">
-						<gml:exterior>
-							<gml:LinearRing>
-								<gml:pos>59.778375 10.999464</gml:pos>
-								<gml:pos>59.814488 11.216325</gml:pos>
-								<gml:pos>59.98272 11.155931</gml:pos>
-								<gml:pos>60.155636 10.906953</gml:pos>
-								<gml:pos>60.146632 10.676651</gml:pos>
-							</gml:LinearRing>
-						</gml:exterior>
-					</gml:Polygon>
-					<ParentZoneRef ref="RUT:TariffZone:Oslo-and-Viken" version="1"/>
-					<ZoneTopology>tiled</ZoneTopology>
-					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
-					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
-					<neighbours>
-						<FareZoneRef ref="RUT:FareZone:4V" /> <!-\- not defined in example -\->
-					</neighbours>
-				</FareZone>
-				-->
-			</tariffZones>		
-		</SiteFrame>
-		
-		
-		<FareFrame id="ENT:FareFrame:1" version="1">
-			<fareZones>
-				
-				<FareZone id="RUT:FareZone:1" version="1">
-					<Name>Ruter# FareZone 2V</Name>
-					<PrivateCode>2V</PrivateCode>
-					<gml:Polygon gml:id="Ruter1Oslo" srsName="Ruter#">
-						<gml:exterior>
-							<gml:LinearRing>
-								<gml:pos>60.037738 10.813144</gml:pos>
-								<gml:pos>59.913408 10.640027</gml:pos>
-								<gml:pos>59.823341 10.798219</gml:pos>
-								<gml:pos>59.944553 10.945122</gml:pos>
-							</gml:LinearRing>
-						</gml:exterior>
-					</gml:Polygon>
-					<ParentZoneRef ref="RUT:TariffZone:Oslo-and-Viken" version="1"/>
-					<ZoneTopology>tiled</ZoneTopology>
-					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
-					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
-					<neighbours>
-						<FareZoneRef ref="RUT:FareZone:2V" version="1"/>
-						<FareZoneRef ref="RUT:FareZone:2S" /> <!-- not defined in example -->
+						<FareZoneRef ref="RUT:FareZone:2S" version="1"/>
+						<FareZoneRef ref="RUT:FareZone:2V" /> <!-- not defined in example -->
 						<FareZoneRef ref="RUT:FareZone:2O" /> <!-- not defined in example -->
 					</neighbours>
 				</FareZone>
 				
-				<FareZone id="RUT:FareZone:2V" version="1">
-					<Name>Ruter# zone 2V</Name>
-					<PrivateCode>2V</PrivateCode>
-					<gml:Polygon gml:id="Ruter2VEST" srsName="Ruter#">
+				<FareZone id="RUT:FareZone:2S" version="1">
+					<Name>Ruter# zone 2S</Name>
+					<PrivateCode>2S</PrivateCode>
+					<gml:Polygon gml:id="Ruter2SOUTH" srsName="Ruter#">
 						<gml:exterior>
 							<gml:LinearRing>
-								<gml:pos>60.146632 10.676651</gml:pos>
-								<gml:pos>60.155636 10.906953</gml:pos>
-								<gml:pos>59.98272 11.155931</gml:pos>
-								<gml:pos>59.814488 11.216325</gml:pos>
-								<gml:pos>59.778375 10.999464</gml:pos>
-								<gml:pos>59.830567 10.922014</gml:pos>
-								<gml:pos>59.983912 10.921569</gml:pos>
+								<gml:pos>59.811075 10.801101</gml:pos>
+								<gml:pos>59.725208 11.042524</gml:pos>
+								<gml:pos>59.664256 10.793872</gml:pos>
+								<gml:pos>59.661963 10.628158</gml:pos>
 							</gml:LinearRing>
 						</gml:exterior>
 					</gml:Polygon>
@@ -267,25 +209,44 @@
 					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
 					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
 					<neighbours>
-						<FareZoneRef ref="RUT:FareZone:3V" /> <!-- not defined in example -->
-						<FareZoneRef ref="RUT:FareZone:5V" /> <!-- not defined in example -->
+						<FareZoneRef ref="RUT:FareZone:1" version="1"/>
+						<FareZoneRef ref="RUT:FareZone:2O" /> <!-- not defined in example -->
+						<FareZoneRef ref="RUT:FareZone:3O" /> <!-- not defined in example -->
+						<FareZoneRef ref="RUT:FareZone:4SO" /> <!-- not defined in example -->
 					</neighbours>
 				</FareZone>
 				
-				<FareZone id="RUT:FareZone:3V" version="1">
-					<Name>Ruter# zone 3V</Name>
-					<PrivateCode>3V</PrivateCode>
-					<gml:Polygon gml:id="Ruter3VEST" srsName="Ruter#">
+				<FareZone id="RUT:FareZone:3S" version="1">
+					<Name>Ruter# zone 3S</Name>
+					<PrivateCode>3S</PrivateCode>
+					<gml:Polygon gml:id="Ruter3SOUTH" srsName="Ruter#">
 						<gml:exterior>
 							<gml:LinearRing>
-								<gml:pos>59.778375 10.999464</gml:pos>
-								<gml:pos>59.814488 11.216325</gml:pos>
-								<gml:pos>59.98272 11.155931</gml:pos>
-								<gml:pos>60.155636 10.906953</gml:pos>
-								<gml:pos>60.146632 10.676651</gml:pos>
+								<gml:pos>59.604867 10.749016</gml:pos>
+								<gml:pos>59.539611 10.742533</gml:pos>
+								<gml:pos>59.517129 10.709961</gml:pos>
+								<gml:pos>59.598746 10.655497</gml:pos>
 							</gml:LinearRing>
 						</gml:exterior>
 					</gml:Polygon>
+					<ParentZoneRef ref="RUT:TariffZone:Oslo-and-Viken" version="1"/>
+					<ZoneTopology>tiled</ZoneTopology>
+					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
+					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
+					<neighbours>
+						<FareZoneRef ref="RUT:FareZone:2S" version="1"/>
+						<FareZoneRef ref="RUT:FareZone:4S" version="1"/>
+					</neighbours>
+				</FareZone>
+				
+				<FareZone id="RUT:FareZone:4S" version="1">
+					<Name>Ruter# zone 4S</Name>
+					<Description>Zone structure only consisting of a set of explicit stop places</Description>
+					<PrivateCode>4S</PrivateCode>
+					<members>
+						<PointRef ref="NSR:ScheduledStopPoint:4" version="1"/>
+						<PointRef ref="NSR:ScheduledStopPoint:5" version="1"/>
+					</members>
 					<ParentZoneRef ref="RUT:TariffZone:Oslo-and-Viken" version="1"/>
 					<ZoneTopology>tiled</ZoneTopology>
 					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
@@ -295,8 +256,17 @@
 					</neighbours>
 				</FareZone>
 				
-			</fareZones>
-		</FareFrame>
+			</tariffZones>		
+		</SiteFrame>
 		
+		
+		<ServiceFrame id="RUT:ServiceFrame:1" version="1">
+			<!-- Points for StopPlace 4 and 5 (see SiteFrame) -->
+			<scheduledStopPoints>
+				<ScheduledStopPoint id="NSR:ScheduledStopPoint:4" version="1"/>
+				<ScheduledStopPoint id="NSR:ScheduledStopPoint:5" version="1"/>
+			</scheduledStopPoints>
+		</ServiceFrame>
+
 	</dataObjects>
 </PublicationDelivery>
