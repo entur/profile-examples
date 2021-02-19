@@ -34,7 +34,6 @@
 				</ResponsibilitySet>
 			</responsibilitySets>
 			
-			
 			<organisations>
 				<Authority id="ENT:Authority:RUT" version="1">
 					<PrivateCode>22</PrivateCode> <!-- Org.reg ID -->
@@ -47,6 +46,7 @@
 				</Authority>
 			</organisations>
 		</ResourceFrame>
+		
 		
 		
 		<SiteFrame id="NSR:SiteFrame:1" version="1">
@@ -69,7 +69,6 @@
 					<StopPlaceType>onstreetBus</StopPlaceType>
 				</StopPlace>
 				
-				
 				<StopPlace id="NSR:StopPlace:2" version="1">
 					<Name>Nationaltheatret</Name>
 					<Centroid>
@@ -85,13 +84,12 @@
 					<StopPlaceType>onstreetBus</StopPlaceType>
 				</StopPlace>
 				
-				
 				<StopPlace id="NSR:StopPlace:3" version="1">
-					<Name>Sandvika terminal</Name>
+					<Name>Ski stasjon</Name>
 					<Centroid>
 						<Location>
-							<Longitude>12.00</Longitude>
-							<Latitude>61.00</Latitude>
+							<Longitude>10.83492</Longitude>
+							<Latitude>59.71929</Latitude>
 						</Location>
 					</Centroid>
 					<TransportMode>bus</TransportMode>
@@ -109,7 +107,6 @@
 						</Quay>
 					</quays>
 				</StopPlace>
-				
 				
 				<StopPlace id="NSR:StopPlace:4" version="1">
 					<Name>Kambo stasjon</Name>
@@ -141,6 +138,7 @@
 					<StopPlaceType>onstreetBus</StopPlaceType>
 				</StopPlace>
 			</stopPlaces>
+			
 			
 			
 			<tariffZones>
@@ -258,6 +256,7 @@
 				
 			</tariffZones>		
 		</SiteFrame>
+		
 		
 		
 		<ServiceFrame id="RUT:ServiceFrame:1" version="1">
