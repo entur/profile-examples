@@ -199,11 +199,11 @@
                             <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
                             <!-- Elements that must be in given state in order for consumptions to transition -->
                             <consumptionRequirements>
-                                <AccessRightInProductConsumptionDependency id="ENT:AccessRightInProductConsumptionDependency:1" version="1">
+                                <AccessRightInProductConsumptionRequirement id="ENT:AccessRightInProductConsumptionRequirement:1" version="1">
                                     <MarkedAs>used</MarkedAs>
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:Legs" version="1"/>
                                     <AccessNumber>1</AccessNumber>
-                                </AccessRightInProductConsumptionDependency>
+                                </AccessRightInProductConsumptionRequirement>
                             </consumptionRequirements>
                             
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
@@ -211,13 +211,13 @@
                             
                             <!-- Elements in question, see listed ConsumptionUtilisationDependeny above -->
                             <consumptions>
-                                <AccessRightInProductConsumptionUtilisation id="ENT:AccessRightInProductConsumptionUtilisation:1" version="1">
+                                <AccessRightInProductConsumption id="ENT:AccessRightInProductConsumption:1" version="1">
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:Legs" version="1"/>
                                     <AccessNumber>2</AccessNumber>
-                                </AccessRightInProductConsumptionUtilisation>
-                                <AccessRightInProductConsumptionUtilisation id="ENT:AccessRightInProductConsumptionUtilisation:2" version="1">
+                                </AccessRightInProductConsumption>
+                                <AccessRightInProductConsumption id="ENT:AccessRightInProductConsumption:2" version="1">
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:SeatingSupplementRight" version="1"/>
-                                </AccessRightInProductConsumptionUtilisation>
+                                </AccessRightInProductConsumption>
                             </consumptions>
                             
                             <crossConstraints>
