@@ -10,6 +10,12 @@
             <typesOfValue>
                 <!-- Assignment types (categorisation/flags) -->
 
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:CommonAssignment" version="1">
+                    <Name>CommonAssignment</Name>
+                    <Description>Assignment describing common parameters applicable to all xxxPolicyAssignment and xxxAssignment</Description>
+                </TypeOfAccessRightAssignment>
+                
+
                 <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
                 <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
 
@@ -65,7 +71,11 @@
                     <Name>SpecificationTariffZonePolicyAssignment</Name>
                     <Description>Rule describing that a TariffZone must be specificed during *activation* or *consumption* or *revalidation*</Description>
                 </TypeOfAccessRightAssignment>
-
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationStartTimePolicyAssignment" version="1">
+                    <Name>SpecificationStartTimePolicyAssignment</Name>
+                    <Description>Rule describing that the desired activation/consumption start time must be within specified rules</Description>
+                </TypeOfAccessRightAssignment>
+                
                 <!-- Result of specification requirements -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1">
                     <Name>SpecificationAssignment</Name>
@@ -82,6 +92,19 @@
                     <Name>AccessLogDetails</Name>
                     <Description>CPPAccess with information about an activation / consumption / re-validation</Description>
                 </TypeOfAccessRightAssignment>
+                
+                
+                <!-- Postpaid rules defining how to activate a postpaid element for consumption and which open access rights that are provided as part of the contract -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PostpaidUsagePolicyAssignment" version="1">
+                    <Name>PostpaidPolicyAssignment</Name>
+                    <Description>Rule describing how to *activate* a postpaid element</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PostpaidUsageAssignment" version="1">
+                    <Name>PostpaidUsageAssignment</Name>
+                    <Description>Rule describing open access rights given in a postpaid contract (where actual completed journeys are computed and stored in CustomerPurchasePackageElementAccesses)</Description>
+                </TypeOfAccessRightAssignment>
+                
+                
             </typesOfValue>
 
 
@@ -353,6 +376,7 @@
 
                         <!-- LEG 1 -->
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Leg1" version="1" order="1">
+                            
                             <elementAccesses>
 
                                 <!-- *used* leg1 entry -->
@@ -464,7 +488,7 @@
 
                         <!-- LEG 2 -->
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Leg2" version="1" order="1">
-
+<
                             <elementAccesses>
                                 <!-- *Activation* Leg2 entry -->
                                 <CustomerPurchasePackageElementAccess>
