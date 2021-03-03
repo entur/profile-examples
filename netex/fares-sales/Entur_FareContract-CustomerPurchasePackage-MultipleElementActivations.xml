@@ -488,7 +488,7 @@
 
                         <!-- LEG 2 -->
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:Leg2" version="1" order="1">
-<
+
                             <elementAccesses>
                                 <!-- *Activation* Leg2 entry -->
                                 <CustomerPurchasePackageElementAccess>
