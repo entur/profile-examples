@@ -278,7 +278,7 @@
 						<PointRef ref="NSR:ScheduledStopPoint:5" version="1"/>
 					</members>
 					<ZoneTopology>tiled</ZoneTopology>
-					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
+					<ScopingMethod>explicitStops</ScopingMethod>
 					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
 					<neighbours>
 						<FareZoneRef ref="RUT:FareZone:4V" /> <!-- not defined in example -->

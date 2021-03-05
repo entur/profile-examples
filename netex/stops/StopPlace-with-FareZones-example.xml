@@ -247,7 +247,7 @@
 					</members>
 					<ParentZoneRef ref="RUT:TariffZone:Oslo-and-Viken" version="1"/>
 					<ZoneTopology>tiled</ZoneTopology>
-					<ScopingMethod>implicitSpatialProjection</ScopingMethod>
+					<ScopingMethod>explicitStops</ScopingMethod>
 					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
 					<neighbours>
 						<FareZoneRef ref="RUT:FareZone:4V" /> <!-- not defined in example -->
