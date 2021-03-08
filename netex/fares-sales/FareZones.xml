@@ -307,6 +307,26 @@
 						<FareZoneRef ref="RUT:FareZone:4V" /> <!-- not defined in example -->
 					</neighbours>
 				</FareZone>
+				
+				
+				
+				<!-- Generic example added for XML completeness --> 
+				<FareZone id="RUT:FareZone:X" version="1">
+					<Name>Name</Name>
+					<Description>Sample FareZone</Description>
+					<PrivateCode>Code</PrivateCode>
+					<members>
+						<PointRef ref="NSR:ScheduledStopPoint:1"/>
+						<PointRef ref="NSR:ScheduledStopPoint:2"/>
+					</members>
+					<ParentFareZoneRef ref="ENT:FareZone:Y"/>
+					<ZoneTopology>tiled</ZoneTopology>
+					<ScopingMethod>explicitStops</ScopingMethod>
+					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
+					<neighbours>
+						<FareZoneRef ref="RUT:FareZone:4V" /> <!-- not defined in example -->
+					</neighbours>
+				</FareZone>
 			</fareZones>
 		</FareFrame>
 
