@@ -127,7 +127,7 @@
 				</StopPlace>
 			</stopPlaces>
 			
-			
+
 			<tariffZones>
 				<TariffZone id="RUT:TariffZone:1" version="1">
 					<Name>Ruter# TariffZone 1</Name>
@@ -183,7 +183,30 @@
 						<PointRef ref="NSR:ScheduledStopPoint:5" version="1"/>
 					</members>
 				</TariffZone>
-			</tariffZones>		
+			</tariffZones>
+			
+			
+			
+			<!-- Generic example added for XML completeness --> 
+			<groupsOfTariffZones>
+				<GroupOfTariffZones id="RUT:GroupOfTariffZones:1" version="1">
+					<Name>Name</Name>
+					<PurposeOfGroupingRef ref="FRITEKST-TBD"/>
+					<PrivateCode>Code</PrivateCode>
+					<members>
+						<TariffZoneRef ref="RUT:FareZone:1" version="1"/>
+					</members>
+				</GroupOfTariffZones>
+				<GroupOfTariffZones id="RUT:GroupOfTariffZones:2" version="1">
+					<Name>Name</Name>
+					<PurposeOfGroupingRef ref="FRITEKST-TBD"/>
+					<PrivateCode>Code</PrivateCode>
+					<members>
+						<TariffZoneRef ref="RUT:FareZone:1" version="1"/>
+					</members>
+				</GroupOfTariffZones>
+			</groupsOfTariffZones>
+			
 		</SiteFrame>
 		
 		
