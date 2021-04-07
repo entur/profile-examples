@@ -186,7 +186,6 @@
 			</tariffZones>
 			
 			
-			
 			<!-- Generic example added for XML completeness --> 
 			<groupsOfTariffZones>
 				<GroupOfTariffZones id="RUT:GroupOfTariffZones:1" version="1">
@@ -222,6 +221,7 @@
 		
 		
 		<FareFrame id="NSR:FareFrame:1" version="1">
+			
 			<fareZones>
 				<FareZone id="RUT:FareZone:1" version="1">
 					<Name>Ruter# FareZone 1</Name>
@@ -311,7 +311,7 @@
 				
 				
 				<!-- Generic example added for XML completeness --> 
-				<FareZone id="RUT:FareZone:X" version="1">
+				<FareZone id="ENT:FareZone:X" version="1">
 					<Name>Name</Name>
 					<Description>Sample FareZone</Description>
 					<PrivateCode>Code</PrivateCode>
@@ -324,10 +324,27 @@
 					<ScopingMethod>explicitStops</ScopingMethod>
 					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
 					<neighbours>
-						<FareZoneRef ref="RUT:FareZone:4V" /> <!-- not defined in example -->
+						<FareZoneRef ref="RUT:FareZone:EXTERNAL" /> <!-- not defined in example -->
 					</neighbours>
 				</FareZone>
+				
+				<FareZone id="ENT:FareZone:Sample" version="1">
+					<alternativeTexts>
+						<AlternativeText>
+							<Text lang="nob">Norsk tekst bokmål</Text>
+						</AlternativeText>
+						<AlternativeText>
+							<Text lang="nno">Norsk tekst nynorsk</Text>
+						</AlternativeText>
+						<AlternativeText>
+							<Text lang="eng">English text</Text>
+						</AlternativeText>
+					</alternativeTexts>
+					<Name>name</Name>
+				</FareZone>
+				
 			</fareZones>
+			
 		</FareFrame>
 
 	</dataObjects>

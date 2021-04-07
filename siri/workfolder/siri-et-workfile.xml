@@ -293,7 +293,7 @@
                             
                             <DepartureFormationAssignment>
                                 <TrainRef>ref</TrainRef>
-                                <PositionOfTrainElement>2</PositionOfTrainElement>
+                                <!-- PositionOfTrainElement>2</PositionOfTrainElement --> <!-- CURRENTLY REMOVED PER https://3.basecamp.com/3256016/buckets/9672657/messages/3021493475#__recording_3022264789 -->
                                 <TrainStopAssignment>
                                     <AimedQuayName>id</AimedQuayName>
                                     <ExpectedQuayName>id</ExpectedQuayName>
