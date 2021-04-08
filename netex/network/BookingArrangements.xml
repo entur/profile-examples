@@ -1,103 +1,114 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:gis="http://www.opengis.net/gml/3.2" xmlns:siri="http://www.siri.org.uk/siri" version="1.09:NO-NeTEx-networktimetable:1.3">
-  <PublicationTimestamp>2019-10-30T00:55:54.402</PublicationTimestamp>
-  <ParticipantRef>RB</ParticipantRef>
-  <Description>Sørlandsekspressen</Description>
-  <dataObjects>
-    <CompositeFrame created="2019-10-15T09:47:20.418" version="1" id="NBE:CompositeFrame:10461060">
-      <validityConditions>
-        <AvailabilityCondition version="1" id="NBE:AvailabilityCondition:10460388">
-          <FromDate>2019-10-28T00:00:00</FromDate>
-          <ToDate>2020-10-29T00:00:00</ToDate>
-        </AvailabilityCondition>
-      </validityConditions>
-      <codespaces>
-        <Codespace id="nbe">
-          <Xmlns>NBE</Xmlns>
-          <XmlnsUrl>http://www.rutebanken.org/ns/nbe</XmlnsUrl>
-        </Codespace>
-        <Codespace id="nsr">
-          <Xmlns>NSR</Xmlns>
-          <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
-        </Codespace>
-      </codespaces>
-      <FrameDefaults>
-        <DefaultLocale>
-          <TimeZone>Europe/Oslo</TimeZone>
-          <DefaultLanguage>no</DefaultLanguage>
-        </DefaultLocale>
-      </FrameDefaults>
-      <frames>
-        <ServiceFrame version="1" id="NBE:ServiceFrame:10461061">
-          <routes>
-            <Route version="1" id="NBE:Route:1900002_1_1">
-              <Name>Kristiansand rutebilstasjon -> Oslo Bussterminal</Name>
-              <LineRef ref="NBE:Line:1900002" version="1"/>
-              <pointsInSequence>
-                <PointOnRoute order="1" version="1" id="NBE:PointOnRoute:10460391">
-                  <RoutePointRef ref="NBE:RoutePoint:1900002_1_1aNSR_Quay_42129_10"/>
-                </PointOnRoute>
-                <PointOnRoute order="2" version="1" id="NBE:PointOnRoute:10460392">
-                  <RoutePointRef ref="NBE:RoutePoint:1900002_1_1aNSR_Quay_99376_01"/>
-                </PointOnRoute>
-              </pointsInSequence>
-            </Route>
-          </routes>
-          <lines>
-            <Line version="1" id="NBE:Line:1900002">
-              <Name>Sørlandsekspressen</Name>
-              <ShortName>Sørlandsekspressen</ShortName>
-              <TransportMode>bus</TransportMode>
-              <TransportSubmode>
-                <BusSubmode>expressBus</BusSubmode>
-              </TransportSubmode>
-              <PublicCode>VY190</PublicCode>
-              <PrivateCode>1900002</PrivateCode>
-              <OperatorRef ref="NBE:Operator:1o"/>
-              <RepresentedByGroupRef ref="NBE:Network:1"/>
-              <Presentation>
-                <Colour>FFFFFF</Colour>
-                <TextColour>000000</TextColour>
-              </Presentation>
-            </Line>
-          </lines>
-          <journeyPatterns>
-           
-            <JourneyPattern version="1" id="NBE:JourneyPattern:1900002_1_1">
-              <RouteRef ref="NBE:Route:1900002_1_1" version="1"/>
-              <pointsInSequence>
-                <StopPointInJourneyPattern order="1" version="1" id="NBE:StopPointInJourneyPattern:1900002_1_1aNSR_Quay_42129_10">
-                  <ScheduledStopPointRef ref="NBE:ScheduledStopPoint:1900002_1_1aNSR_Quay_42129_10"/>
-                  <ForAlighting>false</ForAlighting>
-                  <DestinationDisplayRef ref="NBE:DestinationDisplay:1900002_1_1-1900002_1_1aNSR_Quay_42129_10"/>
-                </StopPointInJourneyPattern>
-                
-                <StopPointInJourneyPattern order="7" version="1" id="NBE:StopPointInJourneyPattern:1900002_1_1aNSR_Quay_101494_22">
-                  <ScheduledStopPointRef ref="NBE:ScheduledStopPoint:1900002_1_1aNSR_Quay_101494_22"/>
-                  
-                  <!-- The bus stops only on demand: passengers should book online or by phone, at least 10 minutes before departure -->
-		          <BookingArrangements>
-                        <BookingContact>
-                           <Phone>+47 407 05 070</Phone>
-                           <Url>https://www.nettbuss.no</Url>
-                        </BookingContact>
-                        <BookingMethods>callOffice online</BookingMethods>
-                        <BookingAccess>public</BookingAccess>
-                        <BookWhen>advanceAndDayOfTravel</BookWhen>
-                        <BuyWhen>onReservation</BuyWhen>
-                        <MinimumBookingPeriod>PT10M</MinimumBookingPeriod>
-                  </BookingArrangements>
-                </StopPointInJourneyPattern>
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  xmlns:gis="http://www.opengis.net/gml/3.2" 
+  xmlns:siri="http://www.siri.org.uk/siri" 
+  version="1.09:NO-NeTEx-networktimetable:1.3">
+    
+    <PublicationTimestamp>2019-10-30T00:55:54.402</PublicationTimestamp>
+    
+    <ParticipantRef>RB</ParticipantRef>
+    <Description>Sørlandsekspressen</Description>
+    
+    <dataObjects>
+        <CompositeFrame created="2019-10-15T09:47:20.418" version="1" id="NBE:CompositeFrame:10461060">
+            <validityConditions>
+                <AvailabilityCondition version="1" id="NBE:AvailabilityCondition:10460388">
+                    <FromDate>2019-10-28T00:00:00</FromDate>
+                    <ToDate>2020-10-29T00:00:00</ToDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            
+            <codespaces>
+                <Codespace id="nbe">
+                    <Xmlns>NBE</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/nbe</XmlnsUrl>
+                </Codespace>
+                <Codespace id="nsr">
+                    <Xmlns>NSR</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+                </Codespace>
+            </codespaces>
+            
+            <FrameDefaults>
+                <DefaultLocale>
+                    <TimeZone>Europe/Oslo</TimeZone>
+                    <DefaultLanguage>no</DefaultLanguage>
+                </DefaultLocale>
+            </FrameDefaults>
+            
+            <frames>
+                <ServiceFrame version="1" id="NBE:ServiceFrame:10461061">
+                    <routes>
+                        <Route version="1" id="NBE:Route:1900002_1_1">
+                            <Name>Kristiansand rutebilstasjon -> Oslo Bussterminal</Name>
+                            <LineRef ref="NBE:Line:1900002" version="1"/>
+                            <pointsInSequence>
+                                <PointOnRoute order="1" version="1" id="NBE:PointOnRoute:10460391">
+                                    <RoutePointRef ref="NBE:RoutePoint:1900002_1_1aNSR_Quay_42129_10"/>
+                                </PointOnRoute>
+                                <PointOnRoute order="2" version="1" id="NBE:PointOnRoute:10460392">
+                                    <RoutePointRef ref="NBE:RoutePoint:1900002_1_1aNSR_Quay_99376_01"/>
+                                </PointOnRoute>
+                            </pointsInSequence>
+                        </Route>
+                    </routes>
+                    <lines>
+                        <Line version="1" id="NBE:Line:1900002">
+                            <Name>Sørlandsekspressen</Name>
+                            <ShortName>Sørlandsekspressen</ShortName>
+                            <TransportMode>bus</TransportMode>
+                            <TransportSubmode>
+                                <BusSubmode>expressBus</BusSubmode>
+                            </TransportSubmode>
+                            <PublicCode>VY190</PublicCode>
+                            <PrivateCode>1900002</PrivateCode>
+                            <OperatorRef ref="NBE:Operator:1o"/>
+                            <RepresentedByGroupRef ref="NBE:Network:1"/>
+                            <Presentation>
+                                <Colour>FFFFFF</Colour>
+                                <TextColour>000000</TextColour>
+                            </Presentation>
+                        </Line>
+                    </lines>
+                    <journeyPatterns>
 
-                <StopPointInJourneyPattern order="26" version="1" id="NBE:StopPointInJourneyPattern:1900002_1_1aNSR_Quay_99376_01">
-                  <ScheduledStopPointRef ref="NBE:ScheduledStopPoint:1900002_1_1aNSR_Quay_99376_01"/>
-                  <ForBoarding>false</ForBoarding>
-                </StopPointInJourneyPattern>
-              </pointsInSequence>
-            </JourneyPattern>
-          </journeyPatterns>
-        </ServiceFrame>
-      </frames>
-    </CompositeFrame>
-  </dataObjects>
+                        <JourneyPattern version="1" id="NBE:JourneyPattern:1900002_1_1">
+                            <RouteRef ref="NBE:Route:1900002_1_1" version="1"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern order="1" version="1" id="NBE:StopPointInJourneyPattern:1900002_1_1aNSR_Quay_42129_10">
+                                    <ScheduledStopPointRef ref="NBE:ScheduledStopPoint:1900002_1_1aNSR_Quay_42129_10"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <DestinationDisplayRef ref="NBE:DestinationDisplay:1900002_1_1-1900002_1_1aNSR_Quay_42129_10"/>
+                                </StopPointInJourneyPattern>
+
+                                <StopPointInJourneyPattern order="7" version="1" id="NBE:StopPointInJourneyPattern:1900002_1_1aNSR_Quay_101494_22">
+                                    <ScheduledStopPointRef ref="NBE:ScheduledStopPoint:1900002_1_1aNSR_Quay_101494_22"/>
+
+                                    <!-- The bus stops only on demand: passengers should book online or by phone, at least 10 minutes before departure -->
+                                    <BookingArrangements>
+                                        <BookingContact>
+                                            <Phone>+47 407 05 070</Phone>
+                                            <Url>https://www.vybuss.no</Url>
+                                        </BookingContact>
+                                        <BookingMethods>callOffice online</BookingMethods>
+                                        <BookingAccess>public</BookingAccess>
+                                        <BookWhen>advanceAndDayOfTravel</BookWhen>
+                                        <BuyWhen>onReservation</BuyWhen>
+                                        <MinimumBookingPeriod>PT10M</MinimumBookingPeriod>
+                                    </BookingArrangements>
+
+                                </StopPointInJourneyPattern>
+
+                                <StopPointInJourneyPattern order="26" version="1" id="NBE:StopPointInJourneyPattern:1900002_1_1aNSR_Quay_99376_01">
+                                    <ScheduledStopPointRef ref="NBE:ScheduledStopPoint:1900002_1_1aNSR_Quay_99376_01"/>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </JourneyPattern>
+                    </journeyPatterns>
+                </ServiceFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
 </PublicationDelivery>
