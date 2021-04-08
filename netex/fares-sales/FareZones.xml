@@ -307,41 +307,44 @@
 						<FareZoneRef ref="RUT:FareZone:4V" /> <!-- not defined in example -->
 					</neighbours>
 				</FareZone>
+
 				
 				
 				
-				<!-- Generic example added for XML completeness --> 
-				<FareZone id="ENT:FareZone:X" version="1">
-					<Name>Name</Name>
-					<Description>Sample FareZone</Description>
-					<PrivateCode>Code</PrivateCode>
-					<members>
-						<PointRef ref="NSR:ScheduledStopPoint:1"/>
-						<PointRef ref="NSR:ScheduledStopPoint:2"/>
-					</members>
-					<ParentFareZoneRef ref="ENT:FareZone:Y"/>
-					<ZoneTopology>tiled</ZoneTopology>
-					<ScopingMethod>explicitStops</ScopingMethod>
-					<AuthorityRef ref="ENT:Authority:RUT" version="1"/>
-					<neighbours>
-						<FareZoneRef ref="RUT:FareZone:EXTERNAL" /> <!-- not defined in example -->
-					</neighbours>
-				</FareZone>
-				
-				<FareZone id="ENT:FareZone:Sample" version="1">
-					<alternativeTexts>
-						<AlternativeText>
-							<Text lang="nob">Norsk tekst bokmål</Text>
-						</AlternativeText>
-						<AlternativeText>
-							<Text lang="nno">Norsk tekst nynorsk</Text>
-						</AlternativeText>
-						<AlternativeText>
-							<Text lang="eng">English text</Text>
-						</AlternativeText>
-					</alternativeTexts>
-					<Name>name</Name>
-				</FareZone>
+			    <!-- Generic examples added for illustratory purposes / XML completeness -->
+			    <FareZone id="ENT:FareZone:Sample-1" version="1">
+			        <Name>Name</Name>
+			        <Description>Sample FareZone</Description>
+			        <PrivateCode>Code</PrivateCode>
+			        <members>
+			            <PointRef ref="NSR:ScheduledStopPoint:1"/>
+			            <PointRef ref="NSR:ScheduledStopPoint:2"/>
+			        </members>
+			        <ParentFareZoneRef ref="ENT:FareZone:Y"/>
+			        <ZoneTopology>tiled</ZoneTopology>
+			        <ScopingMethod>explicitStops</ScopingMethod>
+			        <AuthorityRef ref="ENT:Authority:RUT" version="1"/>
+			        <neighbours>
+			            <FareZoneRef ref="RUT:FareZone:EXTERNAL"/>
+			            <!-- not defined in example -->
+			        </neighbours>
+			    </FareZone>
+
+			    <FareZone id="ENT:FareZone:Sample-2" version="1">
+			        <!-- Proposed preliminary workaround to enable multi-lingual descriptions -->
+			        <alternativeTexts>
+			            <AlternativeText>
+			                <Text lang="nob">Norsk tekst bokmål</Text>
+			            </AlternativeText>
+			            <AlternativeText>
+			                <Text lang="nno">Norsk tekst nynorsk</Text>
+			            </AlternativeText>
+			            <AlternativeText>
+			                <Text lang="eng">English text</Text>
+			            </AlternativeText>
+			        </alternativeTexts>
+			        <Name>name</Name>
+			    </FareZone>
 				
 			</fareZones>
 			
