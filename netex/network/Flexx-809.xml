@@ -6,148 +6,152 @@
 
 <PublicationDelivery 
   xmlns="http://www.netex.org.uk/netex" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:gml="http://www.opengis.net/gml/3.2" 
   version="1.10:NO-NeTEx-networktimetable:1.4">
 
-	<PublicationTimestamp>2018-05-28T08:00:00</PublicationTimestamp>
-	<ParticipantRef>FIN</ParticipantRef>
-	<Description>Flexx 809 Gamvik - Mehamn</Description>
-	<dataObjects>
+    <PublicationTimestamp>2018-05-28T08:00:00</PublicationTimestamp>
+    <ParticipantRef>FIN</ParticipantRef>
+    <Description>Flexx 809 Gamvik - Mehamn</Description>
+    <dataObjects>
 
-		<CompositeFrame version="1" created="2018-05-28T08:00:00" id="FIN:CompositeFrame:0809">
-			<validityConditions>
-				<ValidBetween>
-					<FromDate>2018-03-21T00:00:00</FromDate>
-					<ToDate>2018-08-19T00:00:00</ToDate>
-				</ValidBetween>
-			</validityConditions>
+        <CompositeFrame version="1" created="2018-05-28T08:00:00" id="FIN:CompositeFrame:0809">
+            <validityConditions>
+                <ValidBetween>
+                    <FromDate>2018-03-21T00:00:00</FromDate>
+                    <ToDate>2018-08-19T00:00:00</ToDate>
+                </ValidBetween>
+            </validityConditions>
 
-			<codespaces>
-				<Codespace id="fin">
-					<Xmlns>FIN</Xmlns>
-					<XmlnsUrl>http://www.rutebanken.org/ns/fin</XmlnsUrl>
-				</Codespace>
-				<Codespace id="nsr">
-					<Xmlns>NSR</Xmlns>
-					<XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
-				</Codespace>
-			</codespaces>
-
-
-			<frames>
-				<ResourceFrame version="1" id="FIN:ResourceFrame:1">
-					<organisations>
-						<Authority version="1" id="FIN:Authority:FIN_ID">
-							<CompanyNumber>964994218</CompanyNumber>
-							<Name>Snelandia</Name>
-							<LegalName>Finnmark fylkeskommune</LegalName>
-							<ContactDetails>
-								<Phone>78963000</Phone>
-								<Url>www.snelandia.no</Url>
-							</ContactDetails>
-							<OrganisationType>authority</OrganisationType>
-						</Authority>
-						<!-- Theoretical example (Operator-to-be not known at time of setting up example) -->
-						<Operator version="1" id="FIN:Operator:Flexx">
-							<CompanyNumber>00000000</CompanyNumber>
-							<Name>Flexx</Name>
-							<LegalName>Flexx</LegalName>
-							<CustomerServiceContactDetails>
-								<Email>post@snelandia.no</Email>
-								<Phone>177</Phone>
-								<Url>http://flexx.no/finnmark/flexx-i-finnmark/</Url>
-							</CustomerServiceContactDetails>
-						</Operator>
-					</organisations>
-				</ResourceFrame>
+            <codespaces>
+                <Codespace id="fin">
+                    <Xmlns>FIN</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/fin</XmlnsUrl>
+                </Codespace>
+                <Codespace id="nsr">
+                    <Xmlns>NSR</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+                </Codespace>
+            </codespaces>
 
 
-				<!-- References to the Norwegian National Stop Registry (NSR) - External data, only included for readability -->
-				<SiteFrame version="1" id="FIN:SiteFrame:1">
-					<stopPlaces>
-						<StopPlace version="1" id="NRI:StopPlace:761083330">
-							<Name>Gamvik</Name>
-							<quays>
-								<Quay version="1" id="NSR:Quay:97371"/>
-								<!-- Quay in oposite direction is not used for this dataset -->
-							</quays>
-						</StopPlace>
-						<StopPlace version="1" id="NRI:StopPlace:761083333">
-							<Name lang="NO-NB">Mehamn</Name>
-							<quays>
-								<Quay version="1" id="NSR:Quay:97379"/>
-								<!-- Quay in oposite direction is not used for this dataset -->
-							</quays>
-						</StopPlace>
-					</stopPlaces>
-				</SiteFrame>
+            <frames>
+                <ResourceFrame version="1" id="FIN:ResourceFrame:1">
+                    <organisations>
+                        <Authority version="1" id="FIN:Authority:FIN_ID">
+                            <CompanyNumber>964994218</CompanyNumber>
+                            <Name>Snelandia</Name>
+                            <LegalName>Finnmark fylkeskommune</LegalName>
+                            <ContactDetails>
+                                <Phone>78963000</Phone>
+                                <Url>www.snelandia.no</Url>
+                            </ContactDetails>
+                            <OrganisationType>authority</OrganisationType>
+                        </Authority>
+                        <!-- Theoretical example (Operator-to-be not known at time of setting up example) -->
+                        <Operator version="1" id="FIN:Operator:Flexx">
+                            <CompanyNumber>00000000</CompanyNumber>
+                            <Name>Flexx</Name>
+                            <LegalName>Flexx</LegalName>
+                            <CustomerServiceContactDetails>
+                                <Email>post@snelandia.no</Email>
+                                <Phone>177</Phone>
+                                <Url>http://flexx.no/finnmark/flexx-i-finnmark/</Url>
+                            </CustomerServiceContactDetails>
+                        </Operator>
+                    </organisations>
+                </ResourceFrame>
 
 
-				<ServiceFrame version="1" id="FIN:ServiceFrame:809">
-					<Network version="1" id="FIN:Network:Flexx">
-						<Name>Flexx Finmark</Name>
-						<AuthorityRef ref="FIN:Authority:FIN_ID" version="1"/>
-					</Network>
-
-					<routePoints>
-						<!-- Gamvik -->
-						<RoutePoint version="1" id="FIN:RoutePoint:1">
-							<projections>
-								<PointProjection version="1" id="FIN:PointProjection:1">
-									<ProjectToPointRef version="1" ref="FIN:ScheduledStopPoint:1"/>
-								</PointProjection>
-							</projections>
-						</RoutePoint>
-						<!-- Mehamn -->
-						<RoutePoint version="1" id="FIN:RoutePoint:2">
-							<projections>
-								<PointProjection version="1" id="FIN:PointProjection:2">
-									<ProjectToPointRef version="1" ref="FIN:ScheduledStopPoint:1"/>
-								</PointProjection>
-							</projections>
-						</RoutePoint>
-					</routePoints>
-
-					<routes>
-						<Route version="1" id="FIN:Route:809">
-							<Name>Gamvik - Mehamn</Name>
-							<FlexibleLineRef version="1" ref="FIN:FlexibleLine:809"/>
-							<DirectionType>outbound</DirectionType>
-							<pointsInSequence>
-								<PointOnRoute version="1" id="FIN:PointOnRoute:1" order="1">
-									<RoutePointRef version="1" ref="FIN:RoutePoint:1"/>
-								</PointOnRoute>
-								<PointOnRoute version="1" id="FIN:PointOnRoute:2" order="2">
-									<RoutePointRef version="1" ref="FIN:RoutePoint:2"/>
-								</PointOnRoute>
-							</pointsInSequence>
-						</Route>
-					</routes>
+                <!-- References to the Norwegian National Stop Registry (NSR) - External data, only included for readability -->
+                <SiteFrame version="1" id="FIN:SiteFrame:1">
+                    <stopPlaces>
+                        <StopPlace version="1" id="NRI:StopPlace:761083330">
+                            <Name>Gamvik</Name>
+                            <quays>
+                                <Quay version="1" id="NSR:Quay:97371"/>
+                                <!-- Quay in oposite direction is not used for this dataset -->
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NRI:StopPlace:761083333">
+                            <Name lang="NO-NB">Mehamn</Name>
+                            <quays>
+                                <Quay version="1" id="NSR:Quay:97379"/>
+                                <!-- Quay in oposite direction is not used for this dataset -->
+                            </quays>
+                        </StopPlace>
+                    </stopPlaces>
+                </SiteFrame>
 
 
-					<lines>
-						<FlexibleLine version="1" id="FIN:FlexibleLine:809">
-							<Name>Flexx 809 Gamvik - Mehamn</Name>
-							<TransportMode>bus</TransportMode>
-							<TransportSubmode>
-								<BusSubmode>shuttleBus</BusSubmode>
-							</TransportSubmode>
-							<PublicCode>809</PublicCode>
-							<OperatorRef version="1" ref="FIN:Operator:Flexx"/>
-							<RepresentedByGroupRef version="1" ref="FIN:Network:Flexx"/>
-							<FlexibleLineType>fixed</FlexibleLineType>
-							<BookingContact>
-								<Email>post@snelandia.no</Email>
-								<Phone>177</Phone>
-								<Url>http://finnmark.flexx.no/</Url>
-							</BookingContact>
-							<BookingMethods>online callOffice</BookingMethods>
-							<BookWhen>advanceAndDayOfTravel</BookWhen>
-							<LatestBookingTime>21:00:00</LatestBookingTime>
-							<MinimumBookingPeriod>PT2H</MinimumBookingPeriod>
-							<!-- Copied from Authority info pamphlet, therefore Norwegian text --> 
-							<BookingNote>
+                <ServiceFrame version="1" id="FIN:ServiceFrame:809">
+                    <Network version="1" id="FIN:Network:Flexx">
+                        <Name>Flexx Finmark</Name>
+                        <AuthorityRef ref="FIN:Authority:FIN_ID" version="1"/>
+                    </Network>
+
+                    <routePoints>
+                        <!-- Gamvik -->
+                        <RoutePoint version="1" id="FIN:RoutePoint:1">
+                            <projections>
+                                <PointProjection version="1" id="FIN:PointProjection:1">
+                                    <ProjectToPointRef version="1" ref="FIN:ScheduledStopPoint:1"/>
+                                </PointProjection>
+                            </projections>
+                        </RoutePoint>
+                        <!-- Mehamn -->
+                        <RoutePoint version="1" id="FIN:RoutePoint:2">
+                            <projections>
+                                <PointProjection version="1" id="FIN:PointProjection:2">
+                                    <ProjectToPointRef version="1" ref="FIN:ScheduledStopPoint:1"/>
+                                </PointProjection>
+                            </projections>
+                        </RoutePoint>
+                    </routePoints>
+
+                    <routes>
+                        <Route version="1" id="FIN:Route:809">
+                            <Name>Gamvik - Mehamn</Name>
+                            <FlexibleLineRef version="1" ref="FIN:FlexibleLine:809"/>
+                            <DirectionType>outbound</DirectionType>
+                            <pointsInSequence>
+                                <PointOnRoute version="1" id="FIN:PointOnRoute:1" order="1">
+                                    <RoutePointRef version="1" ref="FIN:RoutePoint:1"/>
+                                </PointOnRoute>
+                                <PointOnRoute version="1" id="FIN:PointOnRoute:2" order="2">
+                                    <RoutePointRef version="1" ref="FIN:RoutePoint:2"/>
+                                </PointOnRoute>
+                            </pointsInSequence>
+                        </Route>
+                    </routes>
+
+                    <lines>
+                        <FlexibleLine version="1" id="FIN:FlexibleLine:809">
+                            <alternativeTexts>
+                                <AlternativeText>
+                                    <Text/>
+                                </AlternativeText>
+                            </alternativeTexts>
+                            <Name>Flexx 809 Gamvik - Mehamn</Name>
+                            <TransportMode>bus</TransportMode>
+                            <TransportSubmode>
+                                <BusSubmode>shuttleBus</BusSubmode>
+                            </TransportSubmode>
+                            <PublicCode>809</PublicCode>
+                            <OperatorRef version="1" ref="FIN:Operator:Flexx"/>
+                            <RepresentedByGroupRef version="1" ref="FIN:Network:Flexx"/>
+                            <FlexibleLineType>fixed</FlexibleLineType>
+                            <BookingContact>
+                                <Email>post@snelandia.no</Email>
+                                <Phone>177</Phone>
+                                <Url>http://finnmark.flexx.no/</Url>
+                            </BookingContact>
+                            <BookingMethods>online callOffice</BookingMethods>
+                            <BookWhen>advanceAndDayOfTravel</BookWhen>
+                            <LatestBookingTime>21:00:00</LatestBookingTime>
+                            <MinimumBookingPeriod>PT2H</MinimumBookingPeriod>
+                            <!-- Copied from Authority info pamphlet, therefore Norwegian text -->
+                            <BookingNote lang="eng">
 								Du kan bestille reise med Flexxruter ved å lage deg en brukerprofil på 
 								http://finnmark.flexx.no/, og bestille på den aktuelle ruten.
 								
@@ -157,63 +161,56 @@
 								
 								Fordi Flexx også skal hente andre, må du være klar 15 minutter før henting.
 							</BookingNote>
-						</FlexibleLine>
-					</lines>
+                        </FlexibleLine>
+                    </lines>
 
-					<destinationDisplays>
-						<DestinationDisplay version="1" id="FIN:DestinationDisplay:1">
-							<FrontText>Mehamn</FrontText>
-						</DestinationDisplay>
-					</destinationDisplays>
+                    <destinationDisplays>
+                        <DestinationDisplay version="1" id="FIN:DestinationDisplay:1">
+                            <FrontText>Mehamn</FrontText>
+                        </DestinationDisplay>
+                    </destinationDisplays>
 
+                    <scheduledStopPoints>
+                        <!-- Gamvik -->
+                        <ScheduledStopPoint version="1" id="FIN:ScheduledStopPoint:1"/>
+                        <!-- Mehamn -->
+                        <ScheduledStopPoint version="1" id="FIN:ScheduledStopPoint:2"/>
+                    </scheduledStopPoints>
 
-					<scheduledStopPoints>
-						<!-- Gamvik -->
-						<ScheduledStopPoint version="1" id="FIN:ScheduledStopPoint:1"/>
-						<!-- Mehamn -->
-						<ScheduledStopPoint version="1" id="FIN:ScheduledStopPoint:2"/>
-					</scheduledStopPoints>
+                    <stopAssignments>
+                        <PassengerStopAssignment version="1" id="FIN:PassengerStopAssignment:1" order="1">
+                            <ScheduledStopPointRef version="1" ref="FIN:ScheduledStopPoint:1"/>
+                            <StopPlaceRef version="1" ref="NRI:StopPlace:761083330"/>
+                            <QuayRef version="1" ref="NSR:Quay:97371"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="1" id="FIN:PassengerStopAssignment:2" order="2">
+                            <ScheduledStopPointRef version="1" ref="FIN:ScheduledStopPoint:2"/>
+                            <StopPlaceRef version="1" ref="NRI:StopPlace:761083333"/>
+                            <QuayRef version="1" ref="NSR:Quay:97379"/>
+                        </PassengerStopAssignment>
+                    </stopAssignments>
 
-					<stopAssignments>
-						<PassengerStopAssignment version="1" id="FIN:PassengerStopAssignment:1"
-							order="1">
-							<ScheduledStopPointRef version="1" ref="FIN:ScheduledStopPoint:1"/>
-							<StopPlaceRef version="1" ref="NRI:StopPlace:761083330"/>
-							<QuayRef version="1" ref="NSR:Quay:97371"/>
-						</PassengerStopAssignment>
-						<PassengerStopAssignment version="1" id="FIN:PassengerStopAssignment:2"
-							order="2">
-							<ScheduledStopPointRef version="1" ref="FIN:ScheduledStopPoint:2"/>
-							<StopPlaceRef version="1" ref="NRI:StopPlace:761083333"/>
-							<QuayRef version="1" ref="NSR:Quay:97379"/>
-						</PassengerStopAssignment>
-					</stopAssignments>
+                    <journeyPatterns>
+                        <JourneyPattern version="1" id="FIN:JourneyPattern:809">
+                            <Name>Flexx 809 Gamvik - Mehamn</Name>
+                            <RouteRef version="1" ref="FIN:Route:809"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern version="1" id="FIN:StopPointInJourneyPattern:1" order="1">
+                                    <ScheduledStopPointRef version="1" ref="FIN:ScheduledStopPoint:1"/>
+                                    <DestinationDisplayRef version="1" ref="FIN:DestinationDisplay:1"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="FIN:StopPointInJourneyPattern:2" order="2">
+                                    <ScheduledStopPointRef version="1" ref="FIN:ScheduledStopPoint:2"/>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </JourneyPattern>
+                    </journeyPatterns>
 
-
-					<journeyPatterns>
-						<JourneyPattern version="1" id="FIN:JourneyPattern:809">
-							<Name>Flexx 809 Gamvik - Mehamn</Name>
-							<RouteRef version="1" ref="FIN:Route:809"/>
-							<pointsInSequence>
-								<StopPointInJourneyPattern version="1"
-									id="FIN:StopPointInJourneyPattern:1" order="1">
-									<ScheduledStopPointRef version="1" ref="FIN:ScheduledStopPoint:1"/>
-									<DestinationDisplayRef version="1" ref="FIN:DestinationDisplay:1"/>
-								</StopPointInJourneyPattern>
-								<StopPointInJourneyPattern version="1"
-									id="FIN:StopPointInJourneyPattern:2" order="2">
-									<ScheduledStopPointRef version="1" ref="FIN:ScheduledStopPoint:2"/>
-								</StopPointInJourneyPattern>
-							</pointsInSequence>
-						</JourneyPattern>
-					</journeyPatterns>
-
-
-					<notices>
-						<!-- Fotnote with general info on the Flexx Finnmark service -->
-						<Notice version="1" id="FIN:Notice:Flexx">
-							<!-- Copied from Authority info pamphlet, therefore Norwegian text -->
-							<Text>
+                    <notices>
+                        <!-- Fotnote with general info on the Flexx Finnmark service -->
+                        <Notice version="1" id="FIN:Notice:Flexx">
+                            <!-- Copied from Authority info pamphlet, therefore Norwegian text -->
+                            <Text>
 								I Finnmark er det innført bestillingsruter på noen strekninger som tradisjonelt har hatt for lavt 
 								passasjergrunnlag til å kjøre ordinær rutebuss. Denne ordningen kalles Flexx, og vil gradvis bli 
 								utvidet i tiden som kommer. Flexx vil fra 2016 også omfatte signalanløp med expressbåt.
@@ -224,122 +221,118 @@
 								
 								Husk å sjekke bestillingsfristen som gjelder for din aktuelle rute – den kan variere. 
 							</Text>
-						</Notice>
-						<!-- Fotnote related to booking -->
-						<Notice version="1" id="FIN:Notice:Booking">
-							<!-- Copied from Authority info pamphlet, therefore Norwegian text -->
-							<Text>
+                        </Notice>
+                        <!-- Fotnote related to booking -->
+                        <Notice version="1" id="FIN:Notice:Booking">
+                            <!-- Copied from Authority info pamphlet, therefore Norwegian text -->
+                            <Text>
 								Plass må bestilles senest 2 timer før avreise på www.flexx.no eller tlf 75 77 18 88
 								Plass for avganger før kl. 09.00 må bestilles på www.flexx.no eller tlf 75 77 18 88 innen kl. 21.00 kvelden før avreise
 								Du kan ikke bestille mer enn 120 dager frem i tid
 							</Text>
-						</Notice>
-						<Notice version="1" id="FIN:Notice:Interchange">
-							<!-- Copied from Authority info pamphlet, therefore Norwegian text -->
-							<Text>
+                        </Notice>
+                        <Notice version="1" id="FIN:Notice:Interchange">
+                            <!-- Copied from Authority info pamphlet, therefore Norwegian text -->
+                            <Text>
 								Mehamn 10.45 har korresponderende rute
 							</Text>
-						</Notice>
-					</notices>
-					<noticeAssignments>
-						<NoticeAssignment version="1" id="FIN:NoticeAssignment:Flexx" order="0">
-							<NoticeRef version="1" ref="FIN:Notice:Flexx"/>
-							<NoticedObjectRef version="1" ref="FIN:Line:809"/>
-						</NoticeAssignment>
-						<NoticeAssignment version="1" id="FIN:NoticeAssignment:Booking" order="0">
-							<NoticeRef version="1" ref="FIN:Notice:Booking"/>
-							<NoticedObjectRef version="1" ref="FIN:FlexibleLine:809"/>
-						</NoticeAssignment>
-						<NoticeAssignment version="1" id="FIN:NoticeAssignment:Interchange" order="0">
-							<NoticeRef version="1" ref="FIN:Notice:Interchange"/>
-							<NoticedObjectRef version="1" ref="FIN:ServiceJourney:1"/>
-						</NoticeAssignment>
-					</noticeAssignments>
-				</ServiceFrame>
+                        </Notice>
+                    </notices>
+                    <noticeAssignments>
+                        <NoticeAssignment version="1" id="FIN:NoticeAssignment:Flexx" order="0">
+                            <NoticeRef version="1" ref="FIN:Notice:Flexx"/>
+                            <NoticedObjectRef version="1" ref="FIN:Line:809"/>
+                        </NoticeAssignment>
+                        <NoticeAssignment version="1" id="FIN:NoticeAssignment:Booking" order="0">
+                            <NoticeRef version="1" ref="FIN:Notice:Booking"/>
+                            <NoticedObjectRef version="1" ref="FIN:FlexibleLine:809"/>
+                        </NoticeAssignment>
+                        <NoticeAssignment version="1" id="FIN:NoticeAssignment:Interchange" order="0">
+                            <NoticeRef version="1" ref="FIN:Notice:Interchange"/>
+                            <NoticedObjectRef version="1" ref="FIN:ServiceJourney:1"/>
+                        </NoticeAssignment>
+                    </noticeAssignments>
+                </ServiceFrame>
 
 
-				<ServiceCalendarFrame id="FIN:ServiceCalendarFrame:809" version="1">
-					<dayTypes>
-						<DayType id="FIN:DayType:1" version="1">
-							<Name>Tirsdag og fredag</Name>
-							<properties>
-								<PropertyOfDay>
-									<DaysOfWeek>Tuesday Friday</DaysOfWeek>
-								</PropertyOfDay>
-							</properties>
-						</DayType>
-					</dayTypes>
+                <ServiceCalendarFrame id="FIN:ServiceCalendarFrame:809" version="1">
+                    <dayTypes>
+                        <DayType id="FIN:DayType:1" version="1">
+                            <Name>Tirsdag og fredag</Name>
+                            <properties>
+                                <PropertyOfDay>
+                                    <DaysOfWeek>Tuesday Friday</DaysOfWeek>
+                                </PropertyOfDay>
+                            </properties>
+                        </DayType>
+                    </dayTypes>
 
-					<operatingPeriods>
-						<OperatingPeriod id="FIN:OperatingPeriod:2018" version="1">
-							<FromDate>2018-01-01T00:00:00</FromDate>
-							<ToDate>2018-12-31T23:59:59</ToDate>
-						</OperatingPeriod>
-					</operatingPeriods>
+                    <operatingPeriods>
+                        <OperatingPeriod id="FIN:OperatingPeriod:2018" version="1">
+                            <FromDate>2018-01-01T00:00:00</FromDate>
+                            <ToDate>2018-12-31T23:59:59</ToDate>
+                        </OperatingPeriod>
+                    </operatingPeriods>
 
-					<dayTypeAssignments>
-						<DayTypeAssignment id="FIN:DayTypeAssignment:1" version="1" order="1">
-							<OperatingPeriodRef version="1" ref="FIN:OperatingPeriod:2018"/>
-							<DayTypeRef version="1" ref="FIN:DayType:1"/>
-						</DayTypeAssignment>
-					</dayTypeAssignments>
-				</ServiceCalendarFrame>
+                    <dayTypeAssignments>
+                        <DayTypeAssignment id="FIN:DayTypeAssignment:1" version="1" order="1">
+                            <OperatingPeriodRef version="1" ref="FIN:OperatingPeriod:2018"/>
+                            <DayTypeRef version="1" ref="FIN:DayType:1"/>
+                        </DayTypeAssignment>
+                    </dayTypeAssignments>
+                </ServiceCalendarFrame>
 
 
-				<TimetableFrame version="1" id="FIN:TimetableFrame:809">
-					<Name>809 Gamvik - Mehamn</Name>
-					<DefaultMode>bus</DefaultMode>
-					<vehicleJourneys>
-						<ServiceJourney version="1" id="FIN:ServiceJourney:1">
-							<DepartureTime>10:25:00</DepartureTime>
-							<dayTypes>
-								<DayTypeRef version="1" ref="FIN:DayType:1"/>
-							</dayTypes>
-							<JourneyPatternRef version="1" ref="FIN:JourneyPattern:809"/>
-							<FlexibleLineRef version="1" ref="FIN:FlexibleLine:809"/>
-							<passingTimes>
-								<TimetabledPassingTime version="1"
-									id="FIN:TimetabledPassingTime:1025">
-									<StopPointInJourneyPatternRef ref="FIN:StopPointInJourneyPattern:1" version="1"/>
-									<DepartureTime>10:25:00</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="1"
-									id="FIN:TimetabledPassingTime:1045">
-									<StopPointInJourneyPatternRef ref="FIN:StopPointInJourneyPattern:2" version="1"/>
-									<ArrivalTime>10:45:00</ArrivalTime>
-								</TimetabledPassingTime>
-							</passingTimes>
-							<FlexibleServiceProperties>
-								<BookWhen>advanceAndDayOfTravel</BookWhen>
-								<BuyWhen>afterBoarding</BuyWhen>
-								<LatestBookingTime>10:25:00</LatestBookingTime>
-							</FlexibleServiceProperties>
-						</ServiceJourney>
+                <TimetableFrame version="1" id="FIN:TimetableFrame:809">
+                    <Name>809 Gamvik - Mehamn</Name>
+                    <DefaultMode>bus</DefaultMode>
+                    <vehicleJourneys>
+                        <ServiceJourney version="1" id="FIN:ServiceJourney:1">
+                            <DepartureTime>10:25:00</DepartureTime>
+                            <dayTypes>
+                                <DayTypeRef version="1" ref="FIN:DayType:1"/>
+                            </dayTypes>
+                            <JourneyPatternRef version="1" ref="FIN:JourneyPattern:809"/>
+                            <FlexibleLineRef version="1" ref="FIN:FlexibleLine:809"/>
+                            <passingTimes>
+                                <TimetabledPassingTime version="1" id="FIN:TimetabledPassingTime:1025">
+                                    <StopPointInJourneyPatternRef ref="FIN:StopPointInJourneyPattern:1" version="1"/>
+                                    <DepartureTime>10:25:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="1" id="FIN:TimetabledPassingTime:1045">
+                                    <StopPointInJourneyPatternRef ref="FIN:StopPointInJourneyPattern:2" version="1"/>
+                                    <ArrivalTime>10:45:00</ArrivalTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                            <FlexibleServiceProperties>
+                                <BookWhen>advanceAndDayOfTravel</BookWhen>
+                                <BuyWhen>afterBoarding</BuyWhen>
+                                <LatestBookingTime>10:25:00</LatestBookingTime>
+                            </FlexibleServiceProperties>
+                        </ServiceJourney>
 
-						<ServiceJourney version="1" id="FIN:ServiceJourney:2">
-							<DepartureTime>14:10:00</DepartureTime>
-							<dayTypes>
-								<DayTypeRef version="1" ref="FIN:DayType:1"/>
-							</dayTypes>
-							<JourneyPatternRef version="1" ref="FIN:JourneyPattern:809"/>
-							<FlexibleLineRef version="1" ref="FIN:FlexibleLine:809"/>
-							<passingTimes>
-								<TimetabledPassingTime version="1"
-									id="FIN:TimetabledPassingTime:1410">
-									<StopPointInJourneyPatternRef ref="FIN:StopPointInJourneyPattern:1" version="1"/>
-									<DepartureTime>14:10:00</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="1"
-									id="FIN:TimetabledPassingTime:1430">
-									<StopPointInJourneyPatternRef ref="FIN:StopPointInJourneyPattern:2" version="1"/>
-									<ArrivalTime>14:30:00</ArrivalTime>
-								</TimetabledPassingTime>
-							</passingTimes>
-						</ServiceJourney>
-					</vehicleJourneys>
-				</TimetableFrame>
+                        <ServiceJourney version="1" id="FIN:ServiceJourney:2">
+                            <DepartureTime>14:10:00</DepartureTime>
+                            <dayTypes>
+                                <DayTypeRef version="1" ref="FIN:DayType:1"/>
+                            </dayTypes>
+                            <JourneyPatternRef version="1" ref="FIN:JourneyPattern:809"/>
+                            <FlexibleLineRef version="1" ref="FIN:FlexibleLine:809"/>
+                            <passingTimes>
+                                <TimetabledPassingTime version="1" id="FIN:TimetabledPassingTime:1410">
+                                    <StopPointInJourneyPatternRef ref="FIN:StopPointInJourneyPattern:1" version="1"/>
+                                    <DepartureTime>14:10:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="1" id="FIN:TimetabledPassingTime:1430">
+                                    <StopPointInJourneyPatternRef ref="FIN:StopPointInJourneyPattern:2" version="1"/>
+                                    <ArrivalTime>14:30:00</ArrivalTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                    </vehicleJourneys>
+                </TimetableFrame>
 
-			</frames>
-		</CompositeFrame>
-	</dataObjects>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
 </PublicationDelivery>
