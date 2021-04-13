@@ -384,11 +384,11 @@
                                             <LimitationGroupingType>AND</LimitationGroupingType>
                                             <limitations>
                                                 
-                                                <FrequencyOfUse>
+                                                <FrequencyOfUse id="ENT:FrequencyOfUse:SingleInTheMorning" version="1">
                                                     <FrequencyOfUseType>single</FrequencyOfUseType>
                                                     <TimeIntervalRef ref="ENT:TimeInterval:mellom7og9"/>
                                                 </FrequencyOfUse>
-                                                <FrequencyOfUse>
+                                                <FrequencyOfUse id="ENT:FrequencyOfUse:SingleInTheAfternoon" version="1">
                                                     <FrequencyOfUseType>single</FrequencyOfUseType>
                                                     <TimeIntervalRef ref="ENT:TimeInterval:mellom12og16"/>
                                                 </FrequencyOfUse>
