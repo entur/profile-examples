@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Official Norwegian DayTypes available for referenceing
+-->
+
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+
+    <PublicationTimestamp>2020-12-04T12:34:56</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+
+    <dataObjects>
+
+         <ServiceCalendarFrame version="1" id="ENT:ServiceCalendarFrame:OfficialDayTypes">
+            <Name>Offical national DayTypes for Norweay</Name>
+             <ServiceCalendar id="ENT:ServiceCalendar:OfficialDayTypes" version="1">
+                <dayTypes>
+                    <DayType version="1" id="ENT:DayType:Mondays">
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Monday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    <DayType version="1" id="ENT:DayType:Tuesdays">
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Tuesday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    <DayType version="1" id="ENT:DayType:Wednesdays">
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Wednesday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    <DayType version="1" id="ENT:DayType:Thursdays">
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Thursday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    <DayType version="1" id="ENT:DayType:Fridays">
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Friday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    <DayType version="1" id="ENT:DayType:Saturdays">
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Saturday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    <DayType version="1" id="ENT:DayType:Sundays">
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Sunday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    <DayType version="1" id="ENT:DayType:Weekends">
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Weekend</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    <DayType version="1" id="ENT:DayType:Weekdays">
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Weekdays</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                </dayTypes>
+                 <!-- Assignments are calculated based on offical data 
+                <dayTypeAssignments>
+       
+                </dayTypeAssignments>-->
+            </ServiceCalendar>
+        </ServiceCalendarFrame>
+    </dataObjects>
+</PublicationDelivery>
