@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Official Norwegian DayType objects and assignments available for referencing
+-->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  version="1.11:NO-NeTEx-networktimetable:1.4">
+
+    <PublicationTimestamp>2021-06-01T12:34:56</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+
+    <dataObjects>
+
+        <ServiceCalendarFrame version="1" id="ENT:ServiceCalendarFrame:OfficialDayTypesNorway">
+            <Name>Offical national DayTypes for Norway</Name>
+            
+            <ServiceCalendar version="1" id="ENT:ServiceCalendar:OfficialDayTypesNorway">
+                <dayTypes>
+                    
+                    <!-- ### WEEK DAYS ### -->
+                    
+                    <DayType version="1" id="ENT:DayType:Mondays">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Mondays</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Mandager</Name>
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Monday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    
+                    <DayType version="1" id="ENT:DayType:Tuesdays">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Tuesdays</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Tirsdager</Name>
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Tuesday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    
+                    <DayType version="1" id="ENT:DayType:Wednesdays">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Wednesdays</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Onsdager</Name>
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Wednesday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    
+                    <DayType version="1" id="ENT:DayType:Thursdays">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Thursdays</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Torsdager</Name>
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Thursday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    
+                    <DayType version="1" id="ENT:DayType:Fridays">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Fridays</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Fredager</Name>
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Friday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    
+                    <DayType version="1" id="ENT:DayType:Saturdays">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Saturdays</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Lørdager</Name>
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Saturday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    
+                    <DayType version="1" id="ENT:DayType:Sundays">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Sundays</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Søndager</Name>
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Sunday</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+
+                    <!-- ### COMMON GROUPINGS OF DAYS ### -->
+
+                    <DayType version="1" id="ENT:DayType:Weekdays">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Weekdays</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Hverdager</Name>
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Weekdays</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:Weekends">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Weekends</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Helg</Name>
+                        <properties>
+                            <PropertyOfDay>
+                                <DaysOfWeek>Weekend</DaysOfWeek>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+
+
+                    <!-- ### NATIONAL HOLIDAYS AND OBSERVANCES ### -->
+                    
+                    <DayType version="1" id="ENT:DayType:NationalHolidays">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">National holidays</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Helligdager, høytidsdager og andre merkedager</Name>
+                        <Description>Collection of all national holidays and observances (defined below)</Description>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                    
+                    <!-- ### FIXED DATE HOLIDAYS ### -->
+
+                    <DayType version="1" id="ENT:DayType:NewYearsDay">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">New Years Day</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Første nyttårsdag</Name>
+                        <ShortName>1. nyttårsdag</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <DayOfYear>--01-01</DayOfYear>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:LaborDay">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Labor day</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Arbeidernes dag</Name>
+                        <ShortName>1. mai</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <DayOfYear>--05-01</DayOfYear>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:ConsitutionDay">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Constitution Day</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Nasjonaldagen</Name>
+                        <ShortName>17. mai</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <DayOfYear>--05-17</DayOfYear>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <!-- avklares om skal inkluderes -->
+                    <DayType version="1" id="ENT:DayType:ChristmasEve">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Christmas Eve</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Julaften</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <DayOfYear>--12-24</DayOfYear>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:ChristmasDay">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Christmas Day</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Første juledag</Name>
+                        <ShortName>1. juledag</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <DayOfYear>--12-25</DayOfYear>
+                                <HolidayTypes>EveOfHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:BoxingDay">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Boxing Day</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Andre juledag</Name>
+                        <ShortName>2. juledag</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <DayOfYear>--12-26</DayOfYear>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <!-- avklares om skal inkluderes -->
+                    <DayType version="1" id="ENT:DayType:NewYearsEve">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">New Years Eve</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Nyttårsaften</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <DayOfYear>--12-31</DayOfYear>
+                                <HolidayTypes>EveOfHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+
+                    <!-- ### FLOATING DATE HOLIDAYS ### -->
+
+                    <DayType version="1" id="ENT:DayType:PalmSunday">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Palm Sunday</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Palmesøndag</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:MaundyThursday">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Maundy Thursday</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Skjærtorsdag</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:GoodFriday">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Good Friday</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Langfredag</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <!-- avklares om skal inkluderes -->
+                    <DayType version="1" id="ENT:DayType:HolySaturday">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Holy Saturday</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Påskeaften</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>EveOfHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:EasterSunday">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Easter Sunday</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>1. påskedag</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:EasterMonday">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Easter Monday</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>2. påskedag</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:AscensionDay">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Ascension Day</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Kristi himmelfartsdag</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <!-- avklares om skal inkluderes -->
+                    <DayType version="1" id="ENT:DayType:PentecostEve">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Pentecost Eve</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Pinseaften</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>EveOfHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:WhitSunday">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Whit Sunday</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>Pinse</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+
+                    <DayType version="1" id="ENT:DayType:WhitMonday">
+                        <alternativeTexts>
+                            <AlternativeText>
+                                <Text lang="eng">Whit Monday</Text>
+                            </AlternativeText>
+                        </alternativeTexts>
+                        <Name>1. pinsedag</Name>
+                        <ShortName>-</ShortName>
+                        <properties>
+                            <PropertyOfDay>
+                                <HolidayTypes>NationalHoliday</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </DayType>
+                </dayTypes>
+
+
+                <!-- Assignments are calculated based on offical data 
+                <dayTypeAssignments>
+       
+                </dayTypeAssignments>-->
+                
+
+            </ServiceCalendar>
+        </ServiceCalendarFrame>
+    </dataObjects>
+</PublicationDelivery>
