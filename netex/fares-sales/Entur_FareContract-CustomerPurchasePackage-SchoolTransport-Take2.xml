@@ -103,7 +103,7 @@
             <Name>SchoolYear calendar</Name>
             <ServiceCalendar id="ENT:ServiceCalendar:SchoolBergen2020-2021" version="1">
                 <dayTypes>
-                    <FareDayType version="1" id="ENT:FareDayType:1">
+                    <FareDayType version="1" id="ENT:FareDayType:SchoolDay">
                         <properties>
                             <PropertyOfDay>
                                 <HolidayTypes>SchoolDay</HolidayTypes>
@@ -153,6 +153,7 @@
 
 
         <FareFrame id="ENT:FareFrame:1" version="1">
+            
             <qualityStructureFactors>
 
                 <!-- Limiter to Schooldays between 07-09 -->
@@ -202,6 +203,7 @@
 
 
             <usageParameters>
+             
                 <UserProfile id="ENT:UserProfile:Pupil" version="1">
                     <Name lang="no">Pupil</Name>
                     <ProofRequired>identityDocument</ProofRequired>
@@ -363,6 +365,7 @@
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:WhatYouGetOnEachActivation" version="1">
                                             <UsageTrigger>activation</UsageTrigger>
                                             <UsageEnd>standardDuration</UsageEnd>
+                                            <!-- TODO replace with TimeInterval -->
                                             <StandardDuration>PT90M</StandardDuration>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                         </UsageValidityPeriod>
@@ -376,8 +379,23 @@
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1"/>
+                                            
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
+                                            <LimitationGroupingType>AND</LimitationGroupingType>
+                                            <limitations>
+                                                
+                                                <FrequencyOfUse>
+                                                    <FrequencyOfUseType>single</FrequencyOfUseType>
+                                                    <TimeIntervalRef ref="ENT:TimeInterval:mellom7og9"/>
+                                                </FrequencyOfUse>
+                                                <FrequencyOfUse>
+                                                    <FrequencyOfUseType>single</FrequencyOfUseType>
+                                                    <TimeIntervalRef ref="ENT:TimeInterval:mellom12og16"/>
+                                                </FrequencyOfUse>
+                                            
+                                            </limitations>
                                             <FareDemandFactorRef ref="ENT:FareDemandFactor:TripToSchool" version="1"/>
+                                            
                                         </CustomerPurchaseParameterAssignment>
                                     </includes>
                                 </CustomerPurchaseParameterAssignment>

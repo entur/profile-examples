@@ -304,6 +304,7 @@
                                 <!-- order attribute can be used to signify priority -->
                                 <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:1" version="1">
                                     <MarkedAs>used</MarkedAs>
+                                    <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
                                 </CustomerPurchasePackageElementConsumptionRequirement>
                             </consumptionRequirements>
@@ -336,10 +337,12 @@
                             <consumptionRequirements>
                                 <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:4" version="1">
                                     <MarkedAs>activated</MarkedAs>
+                                    <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 </CustomerPurchasePackageElementConsumptionRequirement>
                                 <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:5" version="1" >
                                     <MarkedAs>activated</MarkedAs>
+                                    <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </CustomerPurchasePackageElementConsumptionRequirement>
                             </consumptionRequirements>
@@ -415,6 +418,7 @@
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
+                                       
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1hour" version="1"/>
                                     </limitations>
                                     <!-- Only once -->

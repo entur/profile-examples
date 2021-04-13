@@ -214,6 +214,7 @@
                             <consumptionRequirements>
                                 <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:1" version="1" >
                                     <MarkedAs>used</MarkedAs>
+                                    <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
                                 </CustomerPurchasePackageElementConsumptionRequirement>
                             </consumptionRequirements>

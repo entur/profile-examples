@@ -201,6 +201,7 @@
                             <consumptionRequirements>
                                 <AccessRightInProductConsumptionRequirement id="ENT:AccessRightInProductConsumptionRequirement:1" version="1">
                                     <MarkedAs>used</MarkedAs>
+                                    <MarkedAsTemporalValidity>current</MarkedAsTemporalValidity>
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:Legs" version="1"/>
                                     <AccessNumber>1</AccessNumber>
                                 </AccessRightInProductConsumptionRequirement>
@@ -212,10 +213,14 @@
                             <!-- Elements in question, see listed ConsumptionUtilisationDependeny above -->
                             <consumptions>
                                 <AccessRightInProductConsumption id="ENT:AccessRightInProductConsumption:1" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>activated</ToMarkedAs>
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:Legs" version="1"/>
                                     <AccessNumber>2</AccessNumber>
                                 </AccessRightInProductConsumption>
                                 <AccessRightInProductConsumption id="ENT:AccessRightInProductConsumption:2" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>activated</ToMarkedAs>
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:SeatingSupplementRight" version="1"/>
                                 </AccessRightInProductConsumption>
                             </consumptions>
@@ -330,6 +335,7 @@
                             <consumptionRequirements>
                                 <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:1" version="1">
                                     <MarkedAs>used</MarkedAs>
+                                    <MarkedAsTemporalValidity>current</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
                                 </CustomerPurchasePackageElementConsumptionRequirement>
                             </consumptionRequirements>
@@ -341,8 +347,10 @@
                             <consumptions>
                                 
                                 <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>activated</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
-                                </CustomerPurchasePackageElementConsumption>
+                                 </CustomerPurchasePackageElementConsumption>
                                 <CustomerPurchasePackageElementConsumption  id="ENT:CustomerPurchasePackageElementConsumption:2" version="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
                                 </CustomerPurchasePackageElementConsumption>
@@ -387,12 +395,13 @@
                                     <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
                                     <EndOfValidity>2020-01-02T00:00:00</EndOfValidity>
                                     <validityParameterAssignments>
-                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationLeg1" order="1">
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationLeg1" order="1" derivedFromObjectRef="ENT:CustomerPurchaseParameterAssignment:Leg1-Activation1">
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1"/>
                                             <validityParameters>
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:Leg1"/>
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
+                                                            
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
