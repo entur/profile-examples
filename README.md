@@ -12,6 +12,9 @@ The profiles can be found at
 Official NeTEx XSD repository:
 https://github.com/NeTEx-CEN/NeTEx
 
+Official SIRI XSD repository (_version 2.1 branch should be concidered a work in progress until official release, estimated second half of 2021_):
+https://github.com/NeTEx-CEN/NeTEx
+
 Publication of last updated (semi-official) SIRI v2.0 XML schema:
 https://www.vdv.de/siri.aspx
 
