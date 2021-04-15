@@ -82,9 +82,9 @@
                     <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
                 </TypeOfAccessRightAssignment>
 
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1">
-                    <Name>PreconditionPolicyAssignment</Name>
-                    <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule for ActivationPolicyAssignment, ActivationAndUsagePolicyAssignment or UsagePolicyAssignment</Description>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1">
+                    <Name>ExecutionTimePolicyAssignment</Name>
+                    <Description>Rule describing *when* something can be executed, ie access right must be activated within 1 week or only once a day. Used as a sub rule to ActivationPolicyAssignment, ActivationAndUsagePolicyAssignment or UsagePolicyAssignment</Description>
                 </TypeOfAccessRightAssignment>
 
                 <!-- Logging of activation/consumption/re-validation, i.e. validityParameters recorded on CPPElementAccess -->
