@@ -4,7 +4,9 @@
     Example of school period pass
 -->
 
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  version="1.10:NO-NeTEx-fares:0.9">
 
     <PublicationTimestamp>2020-12-04T12:34:56</PublicationTimestamp>
     <ParticipantRef>ENT</ParticipantRef>
@@ -14,6 +16,15 @@
         <!-- Reference data START
         
         NOTE: Included only for consistency of example
+        
+        
+        ABBREVIATIONS:
+        
+        CPP = CustomerPurchasePackage
+        CPPE = CustomerPurchasePackageElement
+        CPPA = CustomerPurchaseParameterAssignment
+        CPPEA = CustomerPurchasePackageElementAccess (consumption i.e. activation/validation/usage)
+        
         -->
 
         <ResourceFrame id="ENT:ResourceFrame:1" version="1">
@@ -90,9 +101,9 @@
                 <!-- Recording of place activation/consumption/marking happened. Recorded on CPPElementAccess/validityParameters -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
                     <Name>AccessLogDetails</Name>
-                    <Description>CPPAccess with information about an activation / consumption / re-validation</Description>
+                    <Description>CPPEAccess with information about an activation / consumption / re-validation</Description>
                 </TypeOfAccessRightAssignment>  
-                <!-- Common assignments that applies to all other assignments - to avoid repeating ourselves for each CPPA -->
+                <!-- Common assignments that applies to all other assignments - to avoid repeating it for each CPPA -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment" version="1">
                     <Name>CommonPolicyAssignment</Name>
                     <Description>Assignments that applies to all other Assignments within the CPPE</Description>
@@ -123,10 +134,10 @@
                     </FareDayType>
                 </dayTypes>
                 <operatingPeriods>
-                    <!-- bit mask type of operating period -->
+                    <!-- Bit mask type of operating period -->
                     <UicOperatingPeriod version="1" id="ENT:UicOperatingPeriod:SchoolYear">
                         
-                        <!-- first day represented by in calendar -->
+                        <!-- First day represented by in calendar -->
                         <FromDate>2020-08-17T00:00:00</FromDate>
                         <!-- ToDate necessary to validate that enough validity bits are present -->
                         <ToDate>2020-12-31T00:00:00</ToDate>
@@ -158,7 +169,7 @@
                 </operatingPeriods>
                 <dayTypeAssignments>
                     
-                    <!-- linking of a daytype to a list of dates that applies (here using the operating period above) -->
+                    <!-- Linking of a daytype to a list of dates that applies (here using the operating period above) -->
                     <DayTypeAssignment version="1" id="ENT:Calendar" order="1">
                         <!--UicOperatingPeriodRef version="1" ref="ENT:Bergen2020"/-->
                         <OperatingPeriodRef ref="ENT:UicOperatingPeriod:SchoolYear"/>
@@ -188,9 +199,8 @@
             
             <qualityStructureFactors>
 
-                <!-- Definition of a fare demand factor - also used for rush hour setups  
-                    
-                     -->
+                <!-- Definition of a fare demand factor - also used for rush hour setups -->
+
                 <FareDemandFactor id="ENT:FareDemandFactor:TripToSchool" version="1">
                     <validityConditions>
                         
@@ -233,9 +243,9 @@
 
     
             <validableElements>
-                <!-- empty validable elements, would normally contain all the product definition details -->
+                <!-- Empty validable elements for referencing, will contain all the product definition details in a product/sales/ticketing data exchange -->
                 
-                <!-- one for travel TO school and one for travel BACK from school -->
+                <!-- One for travel TO school and one for travel BACK from school -->
                 <ValidableElement id="ENT:ValidableElement:SingleTripToSchool" version="1">
                     <Name>Single trip to school</Name>
                 </ValidableElement>
@@ -247,26 +257,24 @@
 
             <usageParameters>
              
-             <!-- user profile definition - would also come from a reference data source -->
+                <!-- User profile definition - will usually be specified in a reference data source -->
                 <UserProfile id="ENT:UserProfile:Pupil" version="1">
                     <Name lang="no">Pupil</Name>
-                    <!-- reqired to show a student card -->
+                    <!-- Reqired to show a student card -->
                     <ProofRequired>studentCard</ProofRequired>
-
                 </UserProfile>
             </usageParameters>
 
 
             <fareProducts>
-                <!-- product definiton of type AmountOfPriceUnit -->
+                <!-- Product definiton of type AmountOfPriceUnit, consisting of a stored value of e.g. money, value card units, prepaid access rights or similar -->
                 <AmountOfPriceUnitProduct id="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1">
                     <Name lang="no">School transport with limited number of rides</Name>
                     <accessRightsInProduct>
                         <AccessRightInProduct version="1" id="ENT:AccessRightInProduct:ToSchool" order="1">
-                            <!-- actual number of use is defined later using MaximumNumberOfAccesses (190).
-                            
-                            For each of these validable element instances a CustomerPurchasePackageElement is created in the CPP
-                            
+                            <!-- 
+                                Actual number of use is defined later using MaximumNumberOfAccesses (190).
+                                For each of these validable element instances a CustomerPurchasePackageElement is created in the CPP
                             -->
                             <MaximumAccess>1</MaximumAccess>
                             <!-- Trip TO school -->
@@ -283,7 +291,7 @@
 
 
             <salesOfferPackages>
-                <!-- Dummy sales offer package needed for completeness -->
+                <!-- Dummy sales offer package added for fare/sales model completeness -->
                 <SalesOfferPackage id="ENT:SalesOfferPackage:SchoolCarnet" version="1">
                     <Name lang="no">School transport Municipality X</Name>
                     <salesOfferPackageElements>
@@ -311,7 +319,7 @@
                     <StartDate>2020-09-06T01:07:00</StartDate>
                     <EndDate>2021-09-07T01:07:00</EndDate>
                     <fareContractEntries>
-                        <!-- Dummy, only way in official netex to get a CPP in is via SalesTransaction -->
+                        <!-- Supplementary (dummy) data for including CustomerPurchasePackage in a FareContract / SalesTransaction -->
                         <SalesTransaction version="1" id="ENT:SalesTransaction:1">
                             <Name>Kjøp Skoleskyss</Name>
                             <Date>2020-09-06T01:07:00</Date>
@@ -339,7 +347,7 @@
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SchoolTransport"/>
                     
                     <travelSpecifications>
-                        <!-- When included, TravelSpecifications are the onces to display to traveller, not the CPP -->
+                        <!-- When included, the TravelSpecifications (summary data) should be displayed to the traveller rather than data from the individual CPP elements -->
                         <TravelSpecification id="ENT:TravelSpecification:SchoolCarnet" version="1">
                             <Name>School Transport year 2020-2021</Name>
                             <Description>Valid on school days twice a day between 07-09 and 12-16</Description>
@@ -357,14 +365,15 @@
                     </travelSpecifications>
                     <customerPurchasePackageElements>
 
-                        <!-- This is the CPPE for the trip TO school
-                        Contains 1 rule with a subrule that defines WHEN the usage can be done and what details applies to the usage
-                        Contains 1 rule that describes WHAT the access rights are for each usage
+                        <!-- 
+                            This is the CPPE for the trip TO school
+                            Contains 1 rule with a subrule that defines WHEN the CPPE can be used and what details that applies to this usage
+                            Contains 1 rule that describes WHAT the access rights are for each usage
                        -->
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SchoolTransportTripToSchool" version="1" order="1">
 
 
-                            <!-- example of usage -->
+                            <!-- Example of usage -->
                             <elementAccesses>
                                 <!-- Access no 1 (first ride TO school) -->
                                 <CustomerPurchasePackageElementAccess created="2020-01-01T07:05:00">
@@ -373,16 +382,16 @@
                                     <EndOfValidity>2020-01-01T08:35:00</EndOfValidity>
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:RideToSchool1" order="1">
-                                            <!-- Details about where usage took place 
-                                            
-                                            If actual consumption was triggered on ie a mobile device there would be no details here 
+                                            <!-- 
+                                                Details about where usage took place 
+                                                If actual consumption was triggered on ie a mobile device there would be no details here 
                                             -->
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1"/>
                                             <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
                                             <validityParameters>
                                                 
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:JourneyXYZ"/>
-                                                <!-- if bus was on a stop when this happened -->
+                                                <!-- If bus was on a stop when this happened -->
                                                 <StopPlaceRef ref="NSR:StopPlace:OsloS"/>
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
@@ -419,14 +428,14 @@
                             <validityParameterAssignments>
  
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:CommonForTripToSchool" order="1">
-                                    <!-- These values applies to all other CPPAs in this CPPE (optimisation in order to not have to reference it in all others) -->
+                                    <!-- These values applies to all other CPPAs in this CPPE (optimisation to avoid having to reference it repeatedly in all other CPPAs) -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTripToSchool" version="1"/>
                                     <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
                                 </CustomerPurchaseParameterAssignment>                                    
 
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1">
-                                    <!-- Rule definining how the usage can be triggered and what other element applies -->
+                                    <!-- Rule definining how the usage can be triggered and specification of the parameters that apply for this usage -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1"/>
                                     <limitations>
                                         <!-- Activated by trigger -->
@@ -437,9 +446,9 @@
                                              <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                         </UsageValidityPeriod>
                                     </limitations>
-                                    <!-- How long the consumption would be valid -->
+                                    <!-- How long the consumption will be valid -->
                                     <TimeIntervalRef ref="ENT:TimeInterval:90Min" version="1"/>
-                                    <!-- Number of consumes possible. -->
+                                    <!-- Maximum possible total consumptions of the related ValidableElement -->
                                     <MaximumNumberOfAccesses>
                                         <Type>limited</Type>
                                         <Value>190</Value>
@@ -453,9 +462,8 @@
                                                     <FrequencyOfUseType>single</FrequencyOfUseType>
                                                     <TimeIntervalRef ref="ENT:TimeInterval:Morning" version="1"/>
                                                 </FrequencyOfUse>
-                                            
                                             </limitations>
-                                            <!-- the actual limiting to a ceritain fare demand factor -> school days in the morning -->
+                                            <!-- The actual limiting to a ceritain fare demand factor: School days in the morning -->
                                             <FareDemandFactorRef ref="ENT:FareDemandFactor:TripToSchool" version="1"/>
                                             
                                         </CustomerPurchaseParameterAssignment>
@@ -467,12 +475,12 @@
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-3" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1"/>
                                     <limitations>
-                                       <!-- must be pupil and can show appropriate documentation -->
+                                       <!-- Must be pupil and can show appropriate documentation -->
                                         <UserProfileRef ref="ENT:UserProfile:Pupil" version="1"/>
                                     </limitations>
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
-                                        <!-- dummy authority and zone info -->
+                                        <!-- Dummy authority and zone info -->
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
                                         <TariffZoneRef ref="ENT:TariffZone:ValidityZone1"/>
                                     </validityParameters>
@@ -511,7 +519,7 @@
 
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:CommonForTripFromSchool" order="1">
-                                    <!-- These values applies to all other CPPAs in this CPPE (optimisation in order to not have to reference it in all others) -->
+                                    <!-- These values applies to all other CPPAs in this CPPE (optimisation to avoid having to reference it repeatedly in all other CPPAs) -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment" version="1"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:SingleTripFromSchool" version="1"/>
                                     <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
@@ -529,7 +537,7 @@
                                         </UsageValidityPeriod>
                                     </limitations>
 
-                                    <!-- Number of consume possible -->
+                                    <!-- Maximum possible total consumptions of the related ValidableElement -->
                                     <MaximumNumberOfAccesses>
                                         <Type>limited</Type>
                                         <Value>190</Value>
@@ -545,14 +553,14 @@
                                                     <TimeIntervalRef ref="ENT:TimeInterval:Afternoon" version="1"/>
                                                 </FrequencyOfUse>
                                             </limitations>
-                                            <!-- limiting to school days as above, this time in the afternoon -->
+                                            <!-- Limiting to school days as earlier assignment: This time school days in the afternoon -->
                                             <FareDemandFactorRef ref="ENT:FareDemandFactor:TripFromSchool" version="1"/>
           
                                         </CustomerPurchaseParameterAssignment>
                                     </includes>
                                 </CustomerPurchaseParameterAssignment>
 
-                                <!-- ACTUAL rights given once consumption is done - this is what the traveller gets -->
+                                <!-- ACTUAL rights given once consumption is done - this is the rights the traveller obtains for the consumed ValidableElement -->
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ValidityRuleFromSchool" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1"/>
                                     <limitations>
