@@ -90,8 +90,8 @@
                     <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
                 </TypeOfAccessRightAssignment>
 
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1">
-                    <Name>PreconditionPolicyAssignment</Name>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1">
+                    <Name>ExecutionTimePolicyAssignment</Name>
                     <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule to ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment, ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment and ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment</Description>
                 </TypeOfAccessRightAssignment>
 
@@ -208,30 +208,31 @@
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:ConcertAndReturnTrip" version="1">
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:ConcertWithPublicTransit"/>
                     
-                    <consumptionUtilisationDependencies>
-                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:1" version="1">
-                            <ConsumptionDependencyGroupingType>AND</ConsumptionDependencyGroupingType>
-                            <consumptionDependencies>
-                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:1" version="1" >
+                    <consumptionDependencies>
+                        <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1">
+                            <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
+                            <consumptionRequirements>
+                                <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:1" version="1" >
                                     <MarkedAs>used</MarkedAs>
+                                    <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Trip1" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionDependency>
-                            </consumptionDependencies>
+                                </CustomerPurchasePackageElementConsumptionRequirement>
+                            </consumptionRequirements>
 
                             <!-- Both concert and return trip is made available automatic once trip to concert is validated -->
                             <ConsumptionTransitionPolicy>automatic</ConsumptionTransitionPolicy>
 
-                            <consumptionUtilisations>
-                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:1" version="1" >
+                            <consumptions>
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1" version="1" >
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionUtilisation>
-                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:2" version="1" >
+                                </CustomerPurchasePackageElementConsumption>
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:2" version="1" >
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionUtilisation>
-                            </consumptionUtilisations>
-                        </ConsumptionUtilisationDependency>
+                                </CustomerPurchasePackageElementConsumption>
+                            </consumptions>
+                        </ConsumptionDependency>
 
-                    </consumptionUtilisationDependencies>
+                    </consumptionDependencies>
 
 
     

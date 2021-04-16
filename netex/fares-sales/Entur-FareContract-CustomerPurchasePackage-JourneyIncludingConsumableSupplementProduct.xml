@@ -82,9 +82,9 @@
                     <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
                 </TypeOfAccessRightAssignment>
 
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1">
-                    <Name>PreconditionPolicyAssignment</Name>
-                    <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule for ActivationPolicyAssignment, ActivationAndUsagePolicyAssignment or UsagePolicyAssignment</Description>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1">
+                    <Name>ExecutionTimePolicyAssignment</Name>
+                    <Description>Rule describing *when* something can be executed, ie access right must be activated within 1 week or only once a day. Used as a sub rule to ActivationPolicyAssignment, ActivationAndUsagePolicyAssignment or UsagePolicyAssignment</Description>
                 </TypeOfAccessRightAssignment>
 
                 <!-- Logging of activation/consumption/re-validation, i.e. validityParameters recorded on CPPElementAccess -->
@@ -277,69 +277,53 @@
 
                     
                     <!-- Element utilisation (validation/activation/consumption) rules across different CustomerPurchasePackageElements -->
-                    <consumptionUtilisationDependencies>
+                    <consumptionDependencies>
+
+
+                        <!-- Outbound journey consumption triggers coffee and snack activation -->
+                        <ConsumptionDependency id="ENT:ConsumptionDependency:x1" version="1" >
+                            <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
+                            <consumptions>
+                                <!-- Consumption of outbound journey also triggers activation of coffee and snack -->
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1" version="1">
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Outboundjourney" version="1"/>
+                                </CustomerPurchasePackageElementConsumption>
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:41" version="1">
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
+                                </CustomerPurchasePackageElementConsumption>
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:42" version="1">
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
+                                </CustomerPurchasePackageElementConsumption>
+                            </consumptions>
+                        </ConsumptionDependency>
+                        
 
                         <!-- Return journey -->
-                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:1" version="1" >
-                            <consumptionDependencies>
+                        <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1" >
+                            <consumptionRequirements>
                                 <!-- order attribute can be used to signify priority -->
-                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:1" version="1">
+                                <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:1" version="1">
                                     <MarkedAs>used</MarkedAs>
+                                    <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionDependency>
-                            </consumptionDependencies>
+                                </CustomerPurchasePackageElementConsumptionRequirement>
+                            </consumptionRequirements>
 
                             <!-- Open return, must be activated manually -->
                             <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
-                            <consumptionUtilisations>
+                            <consumptions>
                                 <!-- Element(s) to be utilized based on related policy assignment (TypeOfAccessRightAssignment=xxPolicyAssignment for the referred CPPE) -->
-                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:1" version="1">
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1x" version="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionUtilisation>
-                            </consumptionUtilisations>
+                                </CustomerPurchasePackageElementConsumption>
+                            </consumptions>
                             <!-- Can only be activated once -->
                             <MaximumNumberOfAccesses>
                                 <Type>limited</Type>
                                 <Value>1</Value>
                             </MaximumNumberOfAccesses>
-                        </ConsumptionUtilisationDependency>
+                        </ConsumptionDependency>
 
-
-                        <!-- Supplement products -->
-                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:2" version="1" >
-                            <ConsumptionDependencyGroupingType>OR</ConsumptionDependencyGroupingType>
-                            <consumptionDependencies>
-                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:2" version="1" >
-                                    <MarkedAs>used</MarkedAs>
-                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionDependency>
-                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:3" version="1" >
-                                    <MarkedAs>used</MarkedAs>
-                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionDependency>
-                            </consumptionDependencies>
-
-                            <!-- *Must* be executed automatically when dependency conditions are satisfied -->
-                            <ConsumptionTransitionPolicy>automatic</ConsumptionTransitionPolicy>
-
-                            <!-- Both must be activated at the same time since ConsumptionUtilisationGrouping=AND -->
-                            <ConsumptionUtilisationGroupingType>AND</ConsumptionUtilisationGroupingType>
-                            <consumptionUtilisations>
-                                <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
-                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:2" version="1" >
-                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionUtilisation>
-                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:3" version="1" >
-                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionUtilisation>
-                            </consumptionUtilisations>
-
-                            <!-- Can only be activated once -->
-                            <MaximumNumberOfAccesses>
-                                <Type>limited</Type>
-                                <Value>1</Value>
-                            </MaximumNumberOfAccesses>
-                        </ConsumptionUtilisationDependency>
 
 
                         <!-- 
@@ -347,37 +331,39 @@
                             *Single* CPPE consumption is governed by CPPE -> MaximumNumberOfAccesses
                             Requires that CPPE is MarkedAs=activated
                         -->
-                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:3" version="1">
+                        <ConsumptionDependency id="ENT:ConsumptionDependency:3" version="1">
                             <!-- Both must be activated before consumption/use -->
-                            <ConsumptionDependencyGroupingType>AND</ConsumptionDependencyGroupingType>
-                            <consumptionDependencies>
-                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:4" version="1">
+                            <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
+                            <consumptionRequirements>
+                                <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:4" version="1">
                                     <MarkedAs>activated</MarkedAs>
+                                    <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionDependency>
-                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:5" version="1" >
+                                </CustomerPurchasePackageElementConsumptionRequirement>
+                                <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:5" version="1" >
                                     <MarkedAs>activated</MarkedAs>
+                                    <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionDependency>
-                            </consumptionDependencies>
+                                </CustomerPurchasePackageElementConsumptionRequirement>
+                            </consumptionRequirements>
 
                         
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
                             <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
 
                             <!-- Either one of the ConsumptionUtilisation can be used independently -->
-                            <ConsumptionUtilisationGroupingType>XOR</ConsumptionUtilisationGroupingType>
+                            <ConsumptionGroupingType>XOR</ConsumptionGroupingType>
                             
                             <!-- Elements allowed to be consumed (MarkedAs->used) when dependent element is MarkedAs=used -->
-                            <consumptionUtilisations>
+                            <consumptions>
                                 <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
-                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:4" version="1" >
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:4" version="1" >
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionUtilisation>
-                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:5" version="1" >
+                                </CustomerPurchasePackageElementConsumption>
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:5" version="1" >
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionUtilisation>
-                            </consumptionUtilisations>
+                                </CustomerPurchasePackageElementConsumption>
+                            </consumptions>
 
                             <!-- Number of times MarkedAs=used can appear in total for given elements-->
                             <MaximumNumberOfAccesses>
@@ -385,8 +371,8 @@
                                 <Value>3</Value>
                             </MaximumNumberOfAccesses>
                             
-                        </ConsumptionUtilisationDependency>
-                    </consumptionUtilisationDependencies>
+                        </ConsumptionDependency>
+                    </consumptionDependencies>
 
 
         
@@ -432,6 +418,7 @@
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
+                                       
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:1hour" version="1"/>
                                     </limitations>
                                     <!-- Only once -->
@@ -550,17 +537,37 @@
 
                             <validityParameterAssignments>
 
-                                <!-- Coffee consumption rule -->
-                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:Coffee-Consumtion" version="1" order="0">
-
+                                <!-- Coffee activation rule -->
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:Coffee-Activation" version="1" order="0">
+                                    
                                     <!-- This type defines uvp activation rules -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
-
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment"/>
+                                    
                                     <ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/>
-
+                                    
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:2021" version="1"/>
+                                    </limitations>
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
+                                </CustomerPurchaseParameterAssignment>
+                                <!-- Coffee consumption rule -->
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:Coffee-Consumtion" version="1" order="0">
+                                    
+                                    <!-- This type defines uvp activation rules -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment"/>
+                                    
+                                    <ValidableElementRef ref="ENT:ValidableElement:Coffee" version="1"/>
+                                    
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:CoffeeConsumption" version="1">
+                                            <UsageTrigger>activation</UsageTrigger>
+                                            <ActivationMeans>useOfValidator</ActivationMeans>
+                                        </UsageValidityPeriod>
                                     </limitations>
                                     <!-- Maximum 3 coffee in total, if coffee only (redundant, is overridden by total consumption for DependantConsumptionUtilisation further up) -->
                                     <MaximumNumberOfAccesses>
@@ -592,10 +599,10 @@
                             <validityParameterAssignments>
 
                                 <!-- Snacks consumption rule -->
-                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:Snack-Consumtion" version="1" order="0">
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:Snack-Activation" version="1" order="0">
 
                                     <!-- This type defines uvp activation rules -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment"/>
 
                                     <ValidableElementRef ref="ENT:ValidableElement:Snack" version="1"/>
 
@@ -606,9 +613,30 @@
                                     <!-- Maximum 3 snacks in total, if snacks only (redundant, is overridden by total consumption for DependantConsumptionUtilisation further up) -->
                                     <MaximumNumberOfAccesses>
                                         <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
+                                </CustomerPurchaseParameterAssignment>
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:Snack-Consumtion" version="1" order="0">
+                                    
+                                    <!-- This type defines uvp activation rules -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment"/>
+                                    
+                                    <ValidableElementRef ref="ENT:ValidableElement:Snack" version="1"/>
+                                    
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:SnackConsumption" version="1">
+                                            <UsageTrigger>activation</UsageTrigger>
+                                            <ActivationMeans>useOfValidator</ActivationMeans>
+                                        </UsageValidityPeriod>
+                                    </limitations>
+                                    <!-- Maximum 3 snack in total, if snack only (redundant, is overridden by total consumption for DependantConsumptionUtilisation further up) -->
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
                                         <Value>3</Value>
                                     </MaximumNumberOfAccesses>
                                 </CustomerPurchaseParameterAssignment>
+                                
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>

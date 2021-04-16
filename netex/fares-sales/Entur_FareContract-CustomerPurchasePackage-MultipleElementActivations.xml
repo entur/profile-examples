@@ -82,9 +82,9 @@
                     <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
                 </TypeOfAccessRightAssignment>
 
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PreconditionPolicyAssignment" version="1">
-                    <Name>PreconditionPolicyAssignment</Name>
-                    <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule for ActivationPolicyAssignment, ActivationAndUsagePolicyAssignment or UsagePolicyAssignment</Description>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1">
+                    <Name>ExecutionTimePolicyAssignment</Name>
+                    <Description>Rule describing *when* something can be executed, ie access right must be activated within 1 week or only once a day. Used as a sub rule to ActivationPolicyAssignment, ActivationAndUsagePolicyAssignment or UsagePolicyAssignment</Description>
                 </TypeOfAccessRightAssignment>
 
                 <!-- Logging of activation/consumption/re-validation, i.e. validityParameters recorded on CPPElementAccess -->
@@ -192,33 +192,38 @@
                 <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip" version="1">
                     <Name lang="no">Standard connected rail trip with seat</Name>
                     
-                    <consumptionUtilisationDependencies>
+                    <consumptionDependencies>
                         
                         <!-- Leg 2 and seat supplement product -->
-                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:SOP" version="1" >
-                            <ConsumptionDependencyGroupingType>AND</ConsumptionDependencyGroupingType>
-                            <!-- Elements that must be in given state in order for consumptionUtilisations to transition -->
-                            <consumptionDependencies>
-                                <AccessRightInProductConsumptionDependency id="ENT:AccessRightInProductConsumptionDependency:1" version="1">
+                        <ConsumptionDependency id="ENT:ConsumptionDependency:SOP" version="1" >
+                            <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
+                            <!-- Elements that must be in given state in order for consumptions to transition -->
+                            <consumptionRequirements>
+                                <AccessRightInProductConsumptionRequirement id="ENT:AccessRightInProductConsumptionRequirement:1" version="1">
                                     <MarkedAs>used</MarkedAs>
+                                    <MarkedAsTemporalValidity>current</MarkedAsTemporalValidity>
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:Legs" version="1"/>
                                     <AccessNumber>1</AccessNumber>
-                                </AccessRightInProductConsumptionDependency>
-                            </consumptionDependencies>
+                                </AccessRightInProductConsumptionRequirement>
+                            </consumptionRequirements>
                             
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
                             <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
                             
                             <!-- Elements in question, see listed ConsumptionUtilisationDependeny above -->
-                            <consumptionUtilisations>
-                                <AccessRightInProductConsumptionUtilisation id="ENT:AccessRightInProductConsumptionUtilisation:1" version="1">
+                            <consumptions>
+                                <AccessRightInProductConsumption id="ENT:AccessRightInProductConsumption:1" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>activated</ToMarkedAs>
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:Legs" version="1"/>
                                     <AccessNumber>2</AccessNumber>
-                                </AccessRightInProductConsumptionUtilisation>
-                                <AccessRightInProductConsumptionUtilisation id="ENT:AccessRightInProductConsumptionUtilisation:2" version="1">
+                                </AccessRightInProductConsumption>
+                                <AccessRightInProductConsumption id="ENT:AccessRightInProductConsumption:2" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>activated</ToMarkedAs>
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:SeatingSupplementRight" version="1"/>
-                                </AccessRightInProductConsumptionUtilisation>
-                            </consumptionUtilisations>
+                                </AccessRightInProductConsumption>
+                            </consumptions>
                             
                             <crossConstraints>
                                 <!-- Requires that these to specification assignments must get values according to given constraint 
@@ -239,8 +244,8 @@
                                 <Type>limited</Type>
                                 <Value>1</Value>
                             </MaximumNumberOfAccesses>
-                        </ConsumptionUtilisationDependency>
-                    </consumptionUtilisationDependencies>
+                        </ConsumptionDependency>
+                    </consumptionDependencies>
 
                     <salesOfferPackageElements>
                         <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip" version="1" order="1">
@@ -321,32 +326,40 @@
                     </travelSpecifications>
 
 
-                    <consumptionUtilisationDependencies>
+                    <consumptionDependencies>
 
                         <!-- Leg 2 and seat supplement product -->
-                        <ConsumptionUtilisationDependency id="ENT:ConsumptionUtilisationDependency:2" version="1" >
-                            <ConsumptionDependencyGroupingType>AND</ConsumptionDependencyGroupingType>
-                            <!-- Elements that must be in given state in order for consumptionUtilisations to transition -->
-                            <consumptionDependencies>
-                                <CustomerPurchasePackageElementConsumptionDependency id="ENT:CustomerPurchasePackageElementConsumptionDependency:1" version="1">
+                        <ConsumptionDependency id="ENT:ConsumptionDependency:2" version="1" >
+                            <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
+                            <!-- Elements that must be in given state in order for consumptions to transition -->
+                            <consumptionRequirements>
+                                <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:1" version="1">
                                     <MarkedAs>used</MarkedAs>
+                                    <MarkedAsTemporalValidity>current</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionDependency>
-                            </consumptionDependencies>
+                                </CustomerPurchasePackageElementConsumptionRequirement>
+                            </consumptionRequirements>
 
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
                             <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
 
                             <!-- Elements in question, see listed ConsumptionUtilisationDependeny above -->
-                            <consumptionUtilisations>
+                            <consumptions>
                                 
-                                <CustomerPurchasePackageElementConsumptionUtilisation id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:1" version="1">
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>activated</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionUtilisation>
-                                <CustomerPurchasePackageElementConsumptionUtilisation  id="ENT:CustomerPurchasePackageElementConsumptionUtilisation:2" version="1">
+                                 </CustomerPurchasePackageElementConsumption>
+                                <CustomerPurchasePackageElementConsumption  id="ENT:CustomerPurchasePackageElementConsumption:2" version="1">
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionUtilisation>
-                            </consumptionUtilisations>
+                                    
+                                    <!-- TODO: mekanisme for å angi relative tidsangivelser i forhold til 
+                                        generert elementaccess
+                                        
+                                        -->
+                                </CustomerPurchasePackageElementConsumption>
+                            </consumptions>
 
                             <!-- Requires that these to specification assignments must get values according to given constraint 
                                 I.e. that the servicejourney for leg2 is identical to the servicejourney for the supplement seat -->
@@ -367,8 +380,8 @@
                                 <Type>limited</Type>
                                 <Value>1</Value>
                             </MaximumNumberOfAccesses>
-                        </ConsumptionUtilisationDependency>
-                    </consumptionUtilisationDependencies>
+                        </ConsumptionDependency>
+                    </consumptionDependencies>
 
 
 
@@ -387,12 +400,13 @@
                                     <StartOfValidity>2020-01-01T00:00:00</StartOfValidity>
                                     <EndOfValidity>2020-01-02T00:00:00</EndOfValidity>
                                     <validityParameterAssignments>
-                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationLeg1" order="1">
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ActivationLeg1" order="1" derivedFromObjectRef="ENT:CustomerPurchaseParameterAssignment:Leg1-Activation1">
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1"/>
                                             <validityParameters>
                                                 <ServiceJourneyRef ref="ENT:ServiceJourney:Leg1"/>
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
+                                                            
                                     </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
