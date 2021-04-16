@@ -193,9 +193,6 @@
                                     <TypeOfTravelDocumentRef versionRef="1.0" ref="ENT:smartcard"/>
                                     <AmountOfPriceUnitProductRef ref="ENT:school_carnet" version="1"/>
                                 </SalesOfferPackageElement>
-                                <SalesOfferPackageElement id="ENT:school_carnetx" version="1" order="1">
-                                    <
-                                </SalesOfferPackageElement>
                             </salesOfferPackageElements>
                         </SalesOfferPackage>
                     </salesOfferPackages>
