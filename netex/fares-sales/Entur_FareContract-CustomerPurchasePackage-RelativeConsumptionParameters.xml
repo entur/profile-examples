@@ -174,18 +174,79 @@
 
                     <consumptionDependencies>
                 
-                    <!-- TODO create based on CPP consumption dependencies -->
-                
+                        <!-- Consume bus before and after boat ride with relative intervals -->
+                        <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1" >
+                            <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
+                            <!-- Elements that must be in given state in order for consumptions to transition -->
+                            <consumptionRequirements>
+                                <AccessRightInProductConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:BoatConsumed" version="1">
+                                    <MarkedAs>used</MarkedAs>
+                                    <MarkedAsTemporalValidity>currentFuture</MarkedAsTemporalValidity>
+                                    <AccessRightInProductRef ref="ENT:AccessRightInProduct:Boat" version="1"/>
+                                </AccessRightInProductConsumptionRequirement>
+                            </consumptionRequirements>
+                            
+                            <!--Will trigger automatic consume of the bus to boat and bus from boat  -->
+                            <ConsumptionTransitionPolicy>automatic</ConsumptionTransitionPolicy>
+                            
+                            <consumptions>
+                                
+                                
+                                <!-- Automatic consumption of bus before boat -->
+                                <AccessRightInProductConsumption id="ENT:BusToBoat:BusToBoat" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
+                                    <AccessRightInProductRef ref="ENT:CustomerPurchasePackageElement:BusToBoat" version="1"/>
+                                    <AccessNumber>1</AccessNumber>
+                                    <specificationPolicyAssignmentInputs>
+                                        <AccessRightInProductSpecificationStartTimePolicyAssignmentInput>
+                                            <!-- Siste elementAccess på denne CPPE -->
+                                            <AccessRightInProductRef ref="ENT:AccessRightInProduct:Boat" version="1"/>
+                                            <!-- CPPA som spesifiserer kravet om startTime -->
+                                            <GenericParameterAssignmentRef ref="ENT:GenericParameterAssignment:BusToBoatStartTime"/>
+                                            
+                                            <!-- relativt til boat elementAcccess -->
+                                            <RelativeTo>startOfValidity</RelativeTo> <!-- endOfValidity -->
+                                            
+                                            <!-- startTime som sendes til SpecificationStartTimePA = startOfValditiy på boat PLUSS gitt timeInterval (her negativt) -->
+                                            <!-- Negativt timeinterval for ting som skal starte før -->
+                                            <TimeIntervalRef ref="ENT:TimeInterval:45MinutesBefore"/>
+                                        </AccessRightInProductSpecificationStartTimePolicyAssignmentInput>
+                                    </specificationPolicyAssignmentInputs>
+                                </AccessRightInProductConsumption>
+                                
+                                <!-- Automatic consumption of bus AFTER boat -->
+                                <AccessRightInProductConsumption id="ENT:BusToBoat:BusFromBoat" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
+                                    <AccessRightInProductRef ref="ENT:CustomerPurchasePackageElement:BusFromBoat" version="1"/>
+                                    <AccessNumber>1</AccessNumber>
+                                    <specificationPolicyAssignmentInputs>
+                                        <AccessRightInProductSpecificationStartTimePolicyAssignmentInput>
+                                            <!-- Siste elementAccess på denne CPPE -->
+                                            <AccessRightInProductRef ref="ENT:AccessRightInProduct:Boat" version="1"/>
+                                            <!-- CPPA som spesifiserer kravet om startTime -->
+                                            <GenericParameterAssignmentRef ref="ENT:GenericParameterAssignment:BusFromBoatStartTime"/>
+                                            
+                                            <!-- relativt til boat elementAcccess -->
+                                            <RelativeTo>startOfValidity</RelativeTo> <!-- endOfValidity -->
+                                            
+                                            <!-- startTime som sendes til SpecificationStartTimePA = startOfValditiy på boat PLUSS gitt timeInterval (her negativt) -->
+                                            <!-- Negativt timeinterval for ting som skal starte før -->
+                                            <TimeIntervalRef ref="ENT:TimeInterval:45MinutesBefore"/>
+                                        </AccessRightInProductSpecificationStartTimePolicyAssignmentInput>
+                                    </specificationPolicyAssignmentInputs>
+                                </AccessRightInProductConsumption>
+                                
+                            </consumptions>
+                        </ConsumptionDependency>
+                        
                     </consumptionDependencies>
 
                     <salesOfferPackageElements>
-                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip" version="1" order="1">
-                            <Name lang="no">Single trip</Name>
-                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip" version="1"/>
-                        </SalesOfferPackageElement>
-                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:FatboySeating" version="1" order="1">
-                            <Name lang="no">Fatboy bean bag seating (numbered)</Name>
-                            <SupplementProductRef ref="ENT:SupplementProduct:FatboyBeanBag" version="1"/>
+                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:BoatCarnet" version="1" order="1">
+                            <Name lang="no">Carnet of boat trips</Name>
+                            <AmountOfPriceUnitProductRef ref="ENT:AmountOfPriceUnitProduct:BoatCarnet" version="1"/>
                         </SalesOfferPackageElement>
                     </salesOfferPackageElements>
                 </SalesOfferPackage>
@@ -265,22 +326,21 @@
                                     <ToMarkedAs>used</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:BusToBoat" version="1"/>
                                  
-                                    <validityParameterInputs>
-                                        <SpecificationStartTimePolicyAssignmentInput>
+                                    <specificationPolicyAssignmentInputs>
+                                        <CustomerPurchasePackageSpecificationStartTimePolicyAssignmentInput>
                                             <!-- Siste elementAccess på denne CPPE -->
                                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Boat" version="1"/>
+                                            <!-- CPPA som spesifiserer kravet om startTime -->
+                                            <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:BusToBoatStartTime"/>
                                             
                                             <!-- relativt til boat elementAcccess -->
                                             <RelativeTo>startOfValidity</RelativeTo> <!-- endOfValidity -->
                                             
                                             <!-- startTime som sendes til SpecificationStartTimePA = startOfValditiy på boat PLUSS gitt timeInterval (her negativt) -->
-                                            
                                             <!-- Negativt timeinterval for ting som skal starte før -->
                                             <TimeIntervalRef ref="ENT:TimeInterval:45MinutesBefore"/>
-                                            <!-- CPPA som spesifiserer kravet om startTime -->
-                                            <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:BusToBoatStartTime"/>
-                                        </SpecificationStartTimePolicyAssignmentInput>
-                                    </validityParameterInputs>
+                                        </CustomerPurchasePackageSpecificationStartTimePolicyAssignmentInput>
+                                    </specificationPolicyAssignmentInputs>
                                 </CustomerPurchasePackageElementConsumption>
 
                                 <!-- Automatic consumption of bus AFTER boat -->
@@ -289,20 +349,20 @@
                                     <ToMarkedAs>used</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:BusFromBoat" version="1"/>
                                     
-                                    <validityParameterInputs>
-                                        <SpecificationStartTimePolicyAssignmentInput>
+                                    <specificationPolicyAssignmentInputs>
+                                        <CustomerPurchasePackageSpecificationStartTimePolicyAssignmentInput>
                                             <!-- Siste elementAccess på denne CPPE -->
                                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Boat" version="1"/>
+                                            <!-- CPPA som spesifiserer kravet om startTime -->
+                                            <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:BusFromBoatStartTime"/>
                                             
                                             <!-- relativt til et elementAcccess -->
                                             <RelativeTo>endOfValidity</RelativeTo> 
                                             
                                             <!-- endOfValidity på elementAccess for boat + angitt tid -->
                                             <TimeIntervalRef ref="ENT:TimeInterval:45Minutes"/>
-                                            <!-- CPPA som spesifiserer kravet om startTime -->
-                                            <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment:BusFromBoatStartTime"/>
-                                        </SpecificationStartTimePolicyAssignmentInput>
-                                    </validityParameterInputs>
+                                        </CustomerPurchasePackageSpecificationStartTimePolicyAssignmentInput>
+                                    </specificationPolicyAssignmentInputs>
                                 </CustomerPurchasePackageElementConsumption>
                                 
                             </consumptions>
@@ -315,8 +375,6 @@
 
                         <!-- Bus to boat -->
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:BusToBoat" version="1" order="1">
-                            
-                            <!-- TODO Q1: How to define that CPPE is NOT consumable on its own? -->
                             
                             <!-- TODO example element access -->
                             <elementAccesses>

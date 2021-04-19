@@ -145,7 +145,6 @@
                 </ValidableElement>
             </validableElements>
 
-
             <usageParameters>
                 <UserProfile id="ENT:UserProfile:Adult" version="1">
                     <Name lang="eng">Adult</Name>
@@ -278,8 +277,8 @@
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ExecutionTimeRelativePolicyAssignment" order="1">
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1"/>
-                                          <!-- May not consumed more than 48 hours before corresponding startOfValidity (from specified serviceJourney)  -->
-                                             <TimeIntervalRef ref="ENT:TimeInterval:48hours" version="1"/>
+                                            <!-- May not consumed more than 48 hours before corresponding startOfValidity (from specified serviceJourney)  -->
+                                            <TimeIntervalRef ref="ENT:TimeInterval:48hours" version="1"/>
                                         </CustomerPurchaseParameterAssignment>
                                         <!-- Parameters that must be selected
 
