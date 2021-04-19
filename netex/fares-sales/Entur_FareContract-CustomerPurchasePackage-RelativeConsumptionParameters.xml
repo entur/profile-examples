@@ -128,7 +128,7 @@
         <FareFrame id="ENT:FareFrame:1" version="1">
 
             <validableElements>
-                <ValidableElement id="ENT:ValidableElement:BusFromBoat" version="1">
+                <ValidableElement id="ENT:ValidableElement:BusToBoat" version="1">
                     <Name>Single ride bus to boat</Name>
                 </ValidableElement>
                 <ValidableElement id="ENT:ValidableElement:Boat" version="1">
@@ -171,9 +171,6 @@
             <salesOfferPackages>
                 <SalesOfferPackage id="ENT:SalesOfferPackage:BoatCarnet" version="1">
                     <Name lang="eng">10 rides on boat with connecting bus before and after boat ride</Name>
-
-
-                
 
                     <consumptionDependencies>
                 
@@ -244,14 +241,14 @@
 
                     <consumptionDependencies>
 
-                        <!-- Leg 2 and seat supplement product -->
+                        <!-- Consume bus before and after boat ride with relative intervals -->
                         <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1" >
                             <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
                             <!-- Elements that must be in given state in order for consumptions to transition -->
                             <consumptionRequirements>
                                 <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:BoatConsumed" version="1">
                                     <MarkedAs>used</MarkedAs>
-                                    <MarkedAsTemporalValidity>current</MarkedAsTemporalValidity>
+                                    <MarkedAsTemporalValidity>currentFuture</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Boat" version="1"/>
                                 </CustomerPurchasePackageElementConsumptionRequirement>
                             </consumptionRequirements>
@@ -273,8 +270,10 @@
                                             <!-- Siste elementAccess på denne CPPE -->
                                             <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Boat" version="1"/>
                                             
-                                            <!-- relativt til et elementAcccess -->
+                                            <!-- relativt til boat elementAcccess -->
                                             <RelativeTo>startOfValidity</RelativeTo> <!-- endOfValidity -->
+                                            
+                                            <!-- startTime som sendes til SpecificationStartTimePA = startOfValditiy på boat PLUSS gitt timeInterval (her negativt) -->
                                             
                                             <!-- Negativt timeinterval for ting som skal starte før -->
                                             <TimeIntervalRef ref="ENT:TimeInterval:45MinutesBefore"/>
@@ -330,7 +329,17 @@
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:BusToBoat" version="1"/>
 
-                               
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:BusToBoat" version="1">
+                                            <UsageTrigger>specifiedStartDate</UsageTrigger>
+                                            <UsageEnd>standardDuration</UsageEnd>
+                                            <ActivationMeans>automaticByDependency</ActivationMeans>
+                                        </UsageValidityPeriod>
+                                    </limitations>
+                                    
+                                    <TimeIntervalRef ref="ENT:TimeInterval:45Minutes"/>
+                                    
                                     <!-- 10 times -->
                                     <MaximumNumberOfAccesses>
                                         <Type>limited</Type>
@@ -369,7 +378,6 @@
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
                                         <TariffZoneRef ref="ENT:TariffZone:A" version="1"/>
                                     </validityParameters>
-                                    <TimeIntervalRef ref="ENT:TimeInterval:45Minutes"/>
                                 </CustomerPurchaseParameterAssignment>
 
                             </validityParameterAssignments>
@@ -390,10 +398,11 @@
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:X30kDays" version="1">
-                                            <UsageTrigger>activation</UsageTrigger>
+                                            <UsageTrigger>startOutboundRide</UsageTrigger>
+                                            <UsageEnd>endOfRide</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
-                                            <StartDate>2020-01-01</StartDate>
-                                            <EndDate>2020-01-01</EndDate>
+                                            <StartDate>2021-01-01</StartDate>
+                                            <EndDate>2022-01-01</EndDate>
                                         </UsageValidityPeriod>
                                     </limitations>
 
@@ -446,7 +455,8 @@
                         <!-- Boat to bus -->
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:BusFromBoat" version="1" order="1">
                             
-                            <!-- TODO Q1: How to define that CPPE is NOT consumable on its own? -->
+                            <!-- TODO Q1: How to define that CPPE is NOT consumable on its own? 
+                            A: ActivationMeans = automaticByDependency-->
                             
                             <!-- TODO example element access -->
                             <elementAccesses>
@@ -459,7 +469,18 @@
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
                                     <ValidableElementRef ref="ENT:ValidableElement:BusFromBoat" version="1"/>
                                     
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UsageValidityPeriod id="ENT:UsageValidityPeriod:BusFromBoat" version="1">
+                                            <UsageTrigger>specifiedStartDate</UsageTrigger>
+                                            <UsageEnd>standardDuration</UsageEnd>
+                                            <ActivationMeans>automaticByDependency</ActivationMeans>
+                                           </UsageValidityPeriod>
+                                    </limitations>
                                     
+                                    <TimeIntervalRef ref="ENT:TimeInterval:45Minutes"/>
+
+
                                     <!-- 10 times -->
                                     <MaximumNumberOfAccesses>
                                         <Type>limited</Type>
@@ -496,10 +517,9 @@
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
-                                        <TariffZoneRef ref="ENT:TariffZone:A" version="1"/>
+                                        <TariffZoneRef ref="ENT:TariffZone:B" version="1"/>
                                     </validityParameters>
                                     
-                                    <TimeIntervalRef ref="ENT:TimeInterval:45Minutes"/>
                                 </CustomerPurchaseParameterAssignment>
                                 
                             </validityParameterAssignments>
