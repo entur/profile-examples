@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    ###
+    
+    Example of public transport product with a supplement (or third party) product which becomes consumable upon activation of a journey.
+    
+    ###
+-->
+
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.10:NO-NeTEx-fares:0.9">
+
+    <PublicationTimestamp>2021-01-05T12:34:56</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+
+    <dataObjects>
+
+        <!-- Reference data START -->
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            <typesOfValue>
+                <!-- Assignment types (categorisation/flags) -->
+
+                <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
+                <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
+
+                <!-- Transition from MarkedAs=unused to MarkedAs=activated -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
+                    <Name>ActivationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to *activate* a validable element, generates CPPElementAccess with MarkedAs=activated (must be used with a corresponding
+                        ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment)
+                    </Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAssignment" version="1">
+                    <Name>ActivationAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the validable element is activated (but not consumed)</Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Transition from MarkedAs=activated to MarkedAs=used -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment" version="1">
+                    <Name>UsagePolicyAssignment</Name>
+                    <Description>Rule describing how to *consume* a validable element, generates CPPElementAccess with MarkedAs=used (the prerequisite is that the validable element is already
+                        MarkedAs=activated)
+                    </Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsageAssignment" version="1">
+                    <Name>UsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is used, i.e. the acquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
+                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage is not required -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
+                    <Name>ActivationAndUsagePolicyAssignment</Name>
+                    <Description>Rule describing how to both *activate* and *consume* in the same operation, generates CPPElementAccess with MarkedAs=used directly (omits MarkedAs=activated)
+                    </Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
+                    <Name>ActivationAndUsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the aquired travel rights
+                    </Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
+                    <Name>RevalidationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to re-validate a validable element, generates CPPElementAccess with MarkedAs=marked</Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Subrules to the various xxxPolicyAssignments -->
+
+                <!-- Various specification requirements policies - depending on the type of element that must be provided -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment" version="1">
+                    <Name>SpecificationServiceJourneyPolicyAssignment</Name>
+                    <Description>Rule describing that a ServiceJourney must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationSeatPolicyAssignment" version="1">
+                    <Name>SpecificationSeatPolicyAssignment</Name>
+                    <Description>Rule describing that a PassengerSeat must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationTariffZonePolicyAssignment" version="1">
+                    <Name>SpecificationTariffZonePolicyAssignment</Name>
+                    <Description>Rule describing that a TariffZone must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Result of specification requirements -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1">
+                    <Name>SpecificationAssignment</Name>
+                    <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
+                </TypeOfAccessRightAssignment>
+
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1">
+                    <Name>ExecutionTimePolicyAssignment</Name>
+                    <Description>Rule describing *when* something can be executed, ie access right must be activated within 1 week or only once a day. Used as a sub rule to ActivationPolicyAssignment,
+                        ActivationAndUsagePolicyAssignment or UsagePolicyAssignment
+                    </Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Logging of activation/consumption/re-validation, i.e. validityParameters recorded on CPPElementAccess -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
+                    <Name>AccessLogDetails</Name>
+                    <Description>CPPAccess with information about an activation / consumption / re-validation</Description>
+                </TypeOfAccessRightAssignment>
+            </typesOfValue>
+
+
+            <!-- Organisations (placeholders) -->
+            <organisations>
+                <Authority id="ENT:Authority:ENT" version="1">
+                    <Name>Entur AS</Name>
+                </Authority>
+                <OtherOrganisation id="ENT:Organisation:HouseOfCoffees" version="1">
+                    <Name>Vending provider</Name>
+                    <OrganisationType>other</OrganisationType>
+                </OtherOrganisation>
+            </organisations>
+        </ResourceFrame>
+
+
+        <!-- Sample data placeholder (currently not used in example) -->
+        <SiteFrame id="ENT:SiteFrame:1" version="1">
+            <tariffZones>
+                <TariffZone id="ENT:TariffZone:1" version="1">
+                    <Name lang="no">sample Tariff Zone 1</Name>
+                    <ParentZoneRef ref="ENT:TariffZone:ALL"/>
+                </TariffZone>
+                <TariffZone id="ENT:TariffZone:2" version="1">
+                    <Name lang="no">sample Tariff Zone 2</Name>
+                    <ParentZoneRef ref="ENT:TariffZone:ALL"/>
+                </TariffZone>
+                <TariffZone id="ENT:TariffZone:ALL" version="1">
+                    <Name lang="no">sample all Tariff Zones</Name>
+                    <members>
+                        <PointRef ref="ENT:TariffZone:1"/>
+                        <PointRef ref="ENT:TariffZone:2"/>
+                    </members>
+                </TariffZone>
+            </tariffZones>
+        </SiteFrame>
+
+
+        <FareFrame id="ENT:FareFrame:1" version="1">
+            <validableElements>
+                <ValidableElement id="ENT:ValidableElement:SingleRide" version="1">
+                    <Name>Single ride</Name>
+                </ValidableElement>
+            </validableElements>
+
+
+            <usageParameters>
+                <UserProfile id="ENT:UserProfile:Adult" version="1">
+                    <Name lang="eng">Adult</Name>
+                </UserProfile>
+
+                <Interchanging id="ENT:Interchanging:Unlimited" version="1">
+                    <CanInterchange>true</CanInterchange>
+                </Interchanging>
+
+                <UsageValidityPeriod id="ENT:UsageValidityPeriod:2021" version="1">
+                    <UsageTrigger>activation</UsageTrigger>
+                    <!-- Outer bounds of usage validity period -->
+                    <StartDate>2021-01-01</StartDate>
+                    <EndDate>2021-12-31</EndDate>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="ENT:UsageValidityPeriod:SingleRide" version="1">
+                    <UsageTrigger>startOutboundRide</UsageTrigger>
+                    <UsageEnd>endOfRide</UsageEnd>
+                    <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
+                    <!-- Outer bounds of usage validity period -->
+                    <StartDate>2021-01-01</StartDate>
+                    <EndDate>2021-12-31</EndDate>
+                </UsageValidityPeriod>
+            </usageParameters>
+
+
+            <fareProducts>
+                <PreassignedFareProduct id="ENT:PreassignedFareProduct:SingleTrip" version="1">
+
+                    <Name lang="eng">Single trip</Name>
+                    <accessRightsInProduct>
+                        <AccessRightInProduct version="1" id="ENT:AccessRightInProduct:SingleRide" order="1">
+                            <MaximumAccess>1</MaximumAccess>
+                            <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+                        </AccessRightInProduct>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+            </fareProducts>
+
+
+            <salesOfferPackages>
+                <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip" version="1">
+                    <Name lang="eng">Single journey ticket</Name>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip" version="1" order="1">
+                            <Name lang="eng">Single trip</Name>
+                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip" version="1"/>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+        </FareFrame>
+
+        <!-- Reference data END -->
+
+
+        <SalesTransactionFrame id="ENT:SalesTransactionFrame:Case1" version="1">
+
+            <customerAccounts>
+                <CustomerAccount id="ENT:CustomerAccount:1" version="1">
+                    <!-- placeholder -->
+                </CustomerAccount>
+            </customerAccounts>
+
+            <fareContracts>
+                <FareContract id="ENT:FareContract:1" version="1">
+                    <Name>Single journey, consume no sooner than 48 hours before departure</Name>
+                    <StartDate>2021-01-10T13:37:00</StartDate>
+                    <EndDate>2021-01-10T23:45:00</EndDate>
+                    <fareContractEntries>
+                        <SalesTransaction version="1" id="ENT:SalesTransaction:1">
+                            <Name>Purchase</Name>
+                            <Date>2021-01-01T12:34:00</Date>
+                            <Amount>510</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:JourneyAndSupplements" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                    </fareContractEntries>
+                </FareContract>
+            </fareContracts>
+
+
+            <customerPurchasePackages>
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:JourneyAndSupplements" version="1">
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:JourneyWithConditionalSupplementProducts"/>
+
+                    <travelSpecifications>
+                        <TravelSpecification id="ENT:TravelSpecification:SingleJourney" version="1">
+                            <Name>Single journey</Name>
+                            <!-- overall usage validity -->
+                            <StartOfValidity>2021-01-01T00:00:00</StartOfValidity>
+                            <EndOfValidity>2021-12-31T23:59:59</EndOfValidity>
+                        </TravelSpecification>
+                  </travelSpecifications>
+
+
+                    <!-- Element utilisation (validation/activation/consumption) rules across different CustomerPurchasePackageElements -->
+
+                    <customerPurchasePackageElements>
+
+                        <!-- Journey -->
+
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SingleJourney" version="1" order="1">
+
+                            <validityParameterAssignments>
+
+                                <!-- Single Journey activation rule -->
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:SingleJourney-Activation" version="1" order="1">
+
+                                    <!-- This type defines uvp activation rules -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
+
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:SingleRide" version="1"/>
+                                    </limitations>
+                                    <!-- TODO need limitation saying start of validity (ie start of specified SJ) may be than 48 hours after execution time. Add here, executionTimeSpecificationPolicyAssignment or SpecificationServiceJourneyPolicyAssignment / SpecificationStartTimePolicyAssignment-->
+
+                                    <!-- Only once -->
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>1</Value>
+                                    </MaximumNumberOfAccesses>
+                                    <includes>
+
+                                                <!-- Parameters that must be selected
+
+                                        Any validityParameters and limitations listed here are in ADDITION to the ones specified in the Assignment
+
+                                        -->
+                                        <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:SingleServiceJourneySpecificationPolicy" version="1" order="1">
+                                            <!-- Selected service journey -->
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment"/>
+                                            <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+                                            <validityParameters>
+                                                <LineRef ref="ENT:Line:1"/>
+                                                <LineRef ref="ENT:Line:2"/>
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
+                                    </includes>
+                                </CustomerPurchaseParameterAssignment>
+
+                                <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:SingleJourney-Validity" version="1" order="1">
+
+                                    <!-- This type defines the validable element parameters when access right is activated -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
+
+                                    <ValidableElementRef ref="ENT:ValidableElement:SingleRide" version="1"/>
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <InterchangingRef ref="ENT:Interchanging:Unlimited"/>
+                                        <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="ENT:Authority:ENT" version="1"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+
+
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>
+            </customerPurchasePackages>
+        </SalesTransactionFrame>
+    </dataObjects>
+</PublicationDelivery>
