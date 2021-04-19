@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Master reference data set for Access Right Assignment types (categorisation/flags) 
+-->
+
+<PublicationDelivery 
+  version="1.11:NO-NeTEx-fares:1.0" 
+  xmlns="http://www.netex.org.uk/netex">
+
+    <PublicationTimestamp>2021-04-19T12:34:56</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <dataObjects>
+
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            <typesOfValue>
+                <!-- Assignment types (categorisation/flags) -->
+
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:CommonAssignment" version="1">
+                    <Name>CommonAssignment</Name>
+                    <Description>Assignment describing common parameters applicable to all xxxPolicyAssignment and xxxAssignment</Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
+                <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
+
+                <!-- Transition from MarkedAs=unused to MarkedAs=activated -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
+                    <Name>ActivationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to *activate* a validable element, generates CPPElementAccess with MarkedAs=activated (must be used with a corresponding ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAssignment" version="1">
+                    <Name>ActivationAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the validable element is activated (but not consumed)</Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Transition from MarkedAs=activated to MarkedAs=used -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment" version="1">
+                    <Name>UsagePolicyAssignment</Name>
+                    <Description>Rule describing how to *consume* a validable element, generates CPPElementAccess with MarkedAs=used (the prerequisite is that the validable element is already MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsageAssignment" version="1">
+                    <Name>UsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is used, i.e. the acquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
+                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage is not required -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
+                    <Name>ActivationAndUsagePolicyAssignment</Name>
+                    <Description>Rule describing how to both *activate* and *consume* in the same operation, generates CPPElementAccess with MarkedAs=used directly (omits MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
+                    <Name>ActivationAndUsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the aquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
+                    <Name>RevalidationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to re-validate a validable element, generates CPPElementAccess with MarkedAs=marked</Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Subrules to the various xxxPolicyAssignments -->
+
+                <!-- Various specification requirements policies - depending on the type of element that must be provided -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment" version="1">
+                    <Name>SpecificationServiceJourneyPolicyAssignment</Name>
+                    <Description>Rule describing that a ServiceJourney must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationSeatPolicyAssignment" version="1">
+                    <Name>SpecificationSeatPolicyAssignment</Name>
+                    <Description>Rule describing that a PassengerSeat must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationTariffZonePolicyAssignment" version="1">
+                    <Name>SpecificationTariffZonePolicyAssignment</Name>
+                    <Description>Rule describing that a TariffZone must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationStartTimePolicyAssignment" version="1">
+                    <Name>SpecificationStartTimePolicyAssignment</Name>
+                    <Description>Rule describing that the desired activation/consumption start time must be within specified rules</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Result of specification requirements -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1">
+                    <Name>SpecificationAssignment</Name>
+                    <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
+                </TypeOfAccessRightAssignment>
+
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1">
+                    <Name>ExecutionTimePolicyAssignment</Name>
+                    <Description>Rule describing *when* something can be executed, ie access right must be activated within 1 week or only once a day. Used as a sub rule to ActivationPolicyAssignment, ActivationAndUsagePolicyAssignment or UsagePolicyAssignment</Description>
+                </TypeOfAccessRightAssignment>
+
+                <!-- Logging of activation/consumption/re-validation, i.e. validityParameters recorded on CPPElementAccess -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
+                    <Name>AccessLogDetails</Name>
+                    <Description>CPPAccess with information about an activation / consumption / re-validation</Description>
+                </TypeOfAccessRightAssignment>
+                
+                
+                <!-- Postpaid rules defining how to activate a postpaid element for consumption and which open access rights that are provided as part of the contract -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PostpaidUsagePolicyAssignment" version="1">
+                    <Name>PostpaidPolicyAssignment</Name>
+                    <Description>Rule describing how to *activate* a postpaid element</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:PostpaidUsageAssignment" version="1">
+                    <Name>PostpaidUsageAssignment</Name>
+                    <Description>Rule describing open access rights given in a postpaid contract (where actual completed journeys are computed and stored in CustomerPurchasePackageElementAccesses)</Description>
+                </TypeOfAccessRightAssignment>
+                
+            </typesOfValue>
+            
+            
+            <!-- Organisations (placeholders) -->
+            <organisations>
+                <Authority id="ORG:Authority:ENT" version="1">
+                    <Name>Entur AS</Name>
+                </Authority>
+                <Operator id="ORG:Operator:NSP" version="1">
+                    <Name>Operator placeholder</Name>
+                </Operator>
+                <OtherOrganisation id="ORG:Organisation:ServuceProvicer" version="1">
+                    <Name>Service provide placeholder</Name>
+                    <OrganisationType>other</OrganisationType>
+                </OtherOrganisation>
+            </organisations>
+
+        </ResourceFrame>
+
+    </dataObjects>
+</PublicationDelivery>
