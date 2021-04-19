@@ -242,7 +242,7 @@
                             <StartOfValidity>2021-01-01T00:00:00</StartOfValidity>
                             <EndOfValidity>2021-12-31T23:59:59</EndOfValidity>
                         </TravelSpecification>
-                  </travelSpecifications>
+                    </travelSpecifications>
 
 
                     <!-- Element utilisation (validation/activation/consumption) rules across different CustomerPurchasePackageElements -->
@@ -276,12 +276,16 @@
                                         <Value>1</Value>
                                     </MaximumNumberOfAccesses>
                                     <includes>
+                                        <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:ExecutionTimeRelativePolicyAssignment" order="1">
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1"/>
+                                          <!-- May not consumed more than 48 hours before corresponding startOfValidity (from specified serviceJourney)  -->
+                                             <TimeIntervalRef ref="ENT:TimeInterval:48hours" version="1"/>
+                                        </CustomerPurchaseParameterAssignment>
+                                        <!-- Parameters that must be selected
 
-                                                <!-- Parameters that must be selected
+                                Any validityParameters and limitations listed here are in ADDITION to the ones specified in the Assignment
 
-                                        Any validityParameters and limitations listed here are in ADDITION to the ones specified in the Assignment
-
-                                        -->
+                                -->
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchaseParameterAssignment:SingleServiceJourneySpecificationPolicy" version="1" order="1">
                                             <!-- Selected service journey -->
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment"/>
