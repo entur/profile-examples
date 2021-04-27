@@ -282,23 +282,32 @@
 
                         <!-- Outbound journey consumption triggers coffee and snack activation -->
                         <ConsumptionDependency id="ENT:ConsumptionDependency:x1" version="1" >
-                            <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
+                            <consumptionRequirements>
+                                <!-- order attribute can be used to signify priority -->
+                                <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:OutboundTriggersActivationOfReturnAndSnacksCoffee" version="1">
+                                    <MarkedAs>used</MarkedAs>
+                                    <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:OutboundJourney" version="1"/>
+                                </CustomerPurchasePackageElementConsumptionRequirement>
+                            </consumptionRequirements>
+                            <ConsumptionTransitionPolicy>automatic</ConsumptionTransitionPolicy>
                             <consumptions>
                                 <!-- Consumption of outbound journey also triggers activation of coffee and snack -->
-                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1" version="1">
-                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Outboundjourney" version="1"/>
-                                </CustomerPurchasePackageElementConsumption>
                                 <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:41" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>activated</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </CustomerPurchasePackageElementConsumption>
                                 <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:42" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>activated</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 </CustomerPurchasePackageElementConsumption>
                             </consumptions>
                         </ConsumptionDependency>
                         
 
-                        <!-- Return journey -->
+                        <!-- Return journey can be selected after outbound journey has been used -->
                         <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1" >
                             <consumptionRequirements>
                                 <!-- order attribute can be used to signify priority -->
@@ -314,6 +323,8 @@
                             <consumptions>
                                 <!-- Element(s) to be utilized based on related policy assignment (TypeOfAccessRightAssignment=xxPolicyAssignment for the referred CPPE) -->
                                 <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1x" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:ReturnJourney" version="1"/>
                                 </CustomerPurchasePackageElementConsumption>
                             </consumptions>
@@ -358,9 +369,13 @@
                             <consumptions>
                                 <!-- Elements allowed to process. Whether result is ElementAccess with MarkedAs=activated or MarkedAs=used depends on CPPA rule -->
                                 <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:4" version="1" >
+                                    <FromMarkedAs>activated</FromMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Coffee" version="1"/>
                                 </CustomerPurchasePackageElementConsumption>
                                 <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:5" version="1" >
+                                    <FromMarkedAs>activated</FromMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Snack" version="1"/>
                                 </CustomerPurchasePackageElementConsumption>
                             </consumptions>
