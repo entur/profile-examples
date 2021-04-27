@@ -306,51 +306,45 @@
                         
                     </travelSpecifications>
 
-                    <transitionPolicies>
-                        <TransitionPolicy>
-                            <FromMarkedAs>unused</FromMarkedAs>
-                            <ToMarkedAs>used</ToMarkedAs>
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Boat" version="1"/>
-                            <!-- List of enums -->
-                            <AllowedConsumptionTransitions>manual</AllowedConsumptionTransitions>
-                        </TransitionPolicy>
-                        <TransitionPolicy>
-                            <FromMarkedAs>unused</FromMarkedAs>
-                            <ToMarkedAs>used</ToMarkedAs>
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:BusToBoat" version="1"/>
-                            <AllowedConsumptionTransitions>automatic</AllowedConsumptionTransitions>
-                        </TransitionPolicy>
-                        <TransitionPolicy>
-                            <FromMarkedAs>unused</FromMarkedAs>
-                            <ToMarkedAs>used</ToMarkedAs>
-                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:BusFromBoat" version="1"/>
-                            <AllowedConsumptionTransitions>automatic</AllowedConsumptionTransitions>
-                        </TransitionPolicy>
-                    </transitionPolicies>
+                    <elementTransitions>
 
+                        <!-- Manual consumption of boat -->
+                        <ElementTransition id="ENT:ConsumptionDependency:Boat" version="1" >
+                            
+                            <!--Will trigger automatic consume of the bus to boat and bus from boat  -->
+                            <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
+                            
+                            <transitions>
+                                <!-- Manual transiution of boat -->
+                                <CustomerPurchasePackageElementTransition id="ENT:CustomerPurchasePackageElementConsumption:Boat" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Boat" version="1"/>
+                                </CustomerPurchasePackageElementTransition>
 
-                    <consumptionDependencies>
-
+                            </transitions>
+                        </ElementTransition>
+                        
                         <!-- Consume bus before and after boat ride with relative intervals -->
-                        <ConsumptionDependency id="ENT:ConsumptionDependency:1x" version="1" >
+                        <ElementTransition id="ENT:ConsumptionDependency:1x" version="1" >
                             <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
                             <!-- Elements that must be in given state in order for consumptions to transition -->
-                            <consumptionRequirements>
+                            <elementTransitionRequirements>
                                 <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:BoatConsumed" version="1">
                                     <MarkedAs>used</MarkedAs>
                                     <MarkedAsTemporalValidity>currentFuture</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Boat" version="1"/>
                                 </CustomerPurchasePackageElementConsumptionRequirement>
-                            </consumptionRequirements>
+                            </elementTransitionRequirements>
 
                             <!--Will trigger automatic consume of the bus to boat and bus from boat  -->
                             <ConsumptionTransitionPolicy>automatic</ConsumptionTransitionPolicy>
 
-                            <consumptions>
+                            <transitions>
                                 
                                 
                                 <!-- Automatic consumption of bus before boat -->
-                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:BusToBoat" version="1">
+                                <CustomerPurchasePackageElementTransition id="ENT:CustomerPurchasePackageElementConsumption:BusToBoat" version="1">
                                     <FromMarkedAs>unused</FromMarkedAs>
                                     <ToMarkedAs>used</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:BusToBoat" version="1"/>
@@ -370,10 +364,10 @@
                                             <TimeIntervalRef ref="ENT:TimeInterval:45MinutesBefore" version="1"/>
                                         </CustomerPurchasePackageSpecificationStartTimePolicyAssignmentInput>
                                     </specificationPolicyAssignmentInputs>
-                                </CustomerPurchasePackageElementConsumption>
+                                </CustomerPurchasePackageElementTransition>
 
                                 <!-- Automatic consumption of bus AFTER boat -->
-                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:BusFromBoat" version="1">
+                                <CustomerPurchasePackageElementTransition id="ENT:CustomerPurchasePackageElementConsumption:BusFromBoat" version="1">
                                     <FromMarkedAs>unused</FromMarkedAs>
                                     <ToMarkedAs>used</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:BusFromBoat" version="1"/>
@@ -392,11 +386,11 @@
                                             <TimeIntervalRef ref="ENT:TimeInterval:5MinutesBefore"/>
                                         </CustomerPurchasePackageSpecificationStartTimePolicyAssignmentInput>
                                     </specificationPolicyAssignmentInputs>
-                                </CustomerPurchasePackageElementConsumption>
+                                </CustomerPurchasePackageElementTransition>
                                 
-                            </consumptions>
-                        </ConsumptionDependency>
-                    </consumptionDependencies>
+                            </transitions>
+                        </ElementTransition>
+                    </elementTransitions>
 
 
 

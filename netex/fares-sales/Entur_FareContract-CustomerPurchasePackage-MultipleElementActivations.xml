@@ -328,6 +328,20 @@
 
                     <consumptionDependencies>
 
+                        <!-- Leg 1  -->
+                        <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1" >
+                            <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
+                            
+                            <!-- Elements in question, see listed ConsumptionUtilisationDependeny above -->
+                            <consumptions>
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>activated</ToMarkedAs>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg1" version="1"/>
+                                </CustomerPurchasePackageElementConsumption>
+                            </consumptions>
+                        </ConsumptionDependency>
+                        
                         <!-- Leg 2 and seat supplement product -->
                         <ConsumptionDependency id="ENT:ConsumptionDependency:2" version="1" >
                             <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
@@ -340,24 +354,24 @@
                                 </CustomerPurchasePackageElementConsumptionRequirement>
                             </consumptionRequirements>
 
-                            <!-- *May* be executed manually later when dependency conditions are satisfied -->
+                            <!-- Must be executed manually later when dependency conditions are satisfied -->
                             <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
 
                             <!-- Elements in question, see listed ConsumptionUtilisationDependeny above -->
                             <consumptions>
                                 
-                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1" version="1">
+                                <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1x" version="1">
                                     <FromMarkedAs>unused</FromMarkedAs>
-                                    <ToMarkedAs>activated</ToMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Leg2" version="1"/>
                                  </CustomerPurchasePackageElementConsumption>
                                 <CustomerPurchasePackageElementConsumption  id="ENT:CustomerPurchasePackageElementConsumption:2" version="1">
+                                    <FromMarkedAs>unused</FromMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Seat" version="1"/>
-                                    
-                                    <!-- TODO: mekanisme for å angi relative tidsangivelser i forhold til 
-                                        generert elementaccess
-                                        
-                                        -->
+
+                                <!-- TODO return must be selected within 1 week of outbound journey -->
+
                                 </CustomerPurchasePackageElementConsumption>
                             </consumptions>
 
@@ -374,12 +388,6 @@
                                     </validityParameterAssignments>
                                 </CrossConstraint>
                             </crossConstraints>
-
-                            <!-- Number of times MarkedAs=used can appear in total for given elements-->
-                            <MaximumNumberOfAccesses>
-                                <Type>limited</Type>
-                                <Value>1</Value>
-                            </MaximumNumberOfAccesses>
                         </ConsumptionDependency>
                     </consumptionDependencies>
 
