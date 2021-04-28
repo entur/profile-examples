@@ -208,8 +208,8 @@
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:ConcertAndReturnTrip" version="1">
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:ConcertWithPublicTransit"/>
                     
-                    <consumptionDependencies>
-                        <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1">
+                    <elementConsumptionPolicies>
+                        <ElementConsumptionPolicy id="ENT:ElementConsumptionPolicy:1" version="1">
                             <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
                             <consumptionRequirements>
                                 <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:1" version="1" >
@@ -220,19 +220,19 @@
                             </consumptionRequirements>
 
                             <!-- Both concert and return trip is made available automatic once trip to concert is validated -->
-                            <ConsumptionTransitionPolicy>automatic</ConsumptionTransitionPolicy>
+                            <ConsumptionTriggerType>automatic</ConsumptionTriggerType>
 
-                            <consumptions>
+                            <elementConsumptions>
                                 <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1" version="1" >
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Concert" version="1"/>
                                 </CustomerPurchasePackageElementConsumption>
                                 <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:2" version="1" >
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Return" version="1"/>
                                 </CustomerPurchasePackageElementConsumption>
-                            </consumptions>
-                        </ConsumptionDependency>
+                            </elementConsumptions>
+                        </ElementConsumptionPolicy>
 
-                    </consumptionDependencies>
+                    </elementConsumptionPolicies>
 
 
     

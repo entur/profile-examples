@@ -196,10 +196,10 @@
                 <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip" version="1">
                     <Name lang="no">Standard connected rail trip with seat</Name>
                     
-                    <consumptionDependencies>
+                    <elementConsumptionPolicies>
                         
                         <!-- Leg 2 and seat supplement product -->
-                        <ConsumptionDependency id="ENT:ConsumptionDependency:SOP" version="1" >
+                        <ElementConsumptionPolicy id="ENT:ElementConsumptionPolicy:SOP" version="1" >
                             <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
                             <!-- Elements that must be in given state in order for consumptions to transition -->
                             <consumptionRequirements>
@@ -212,10 +212,10 @@
                             </consumptionRequirements>
                             
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
-                            <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
+                            <ConsumptionTriggerType>manual</ConsumptionTriggerType>
                             
                             <!-- Elements in question, see listed ConsumptionUtilisationDependeny above -->
-                            <consumptions>
+                            <elementConsumptions>
                                 <AccessRightInProductConsumption id="ENT:AccessRightInProductConsumption:1" version="1">
                                     <FromMarkedAs>unused</FromMarkedAs>
                                     <ToMarkedAs>activated</ToMarkedAs>
@@ -227,7 +227,7 @@
                                     <ToMarkedAs>activated</ToMarkedAs>
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:SeatingSupplementRight" version="1"/>
                                 </AccessRightInProductConsumption>
-                            </consumptions>
+                            </elementConsumptions>
                             
                             <crossConstraints>
                                 <!-- Requires that these to specification assignments must get values according to given constraint 
@@ -248,8 +248,8 @@
                                 <Type>limited</Type>
                                 <Value>1</Value>
                             </MaximumNumberOfAccesses>
-                        </ConsumptionDependency>
-                    </consumptionDependencies>
+                        </ElementConsumptionPolicy>
+                    </elementConsumptionPolicies>
 
                     <salesOfferPackageElements>
                         <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip" version="1" order="1">
@@ -330,10 +330,10 @@
                     </travelSpecifications>
 
 
-                    <consumptionDependencies>
+                    <elementConsumptionPolicies>
 
                         <!-- Leg 2 and seat supplement product -->
-                        <ConsumptionDependency id="ENT:ConsumptionDependency:2" version="1" >
+                        <ElementConsumptionPolicy id="ENT:ElementConsumptionPolicy:2" version="1" >
                             <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
                             <!-- Elements that must be in given state in order for consumptions to transition -->
                             <consumptionRequirements>
@@ -345,10 +345,10 @@
                             </consumptionRequirements>
 
                             <!-- *May* be executed manually later when dependency conditions are satisfied -->
-                            <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
+                            <ConsumptionTriggerType>manual</ConsumptionTriggerType>
 
                             <!-- Elements in question, see listed ConsumptionUtilisationDependeny above -->
-                            <consumptions>
+                            <elementConsumptions>
                                 
                                 <CustomerPurchasePackageElementConsumption id="ENT:CustomerPurchasePackageElementConsumption:1" version="1">
                                     <FromMarkedAs>unused</FromMarkedAs>
@@ -363,7 +363,7 @@
                                         
                                         -->
                                 </CustomerPurchasePackageElementConsumption>
-                            </consumptions>
+                            </elementConsumptions>
 
                             <!-- Requires that these to specification assignments must get values according to given constraint 
                                 I.e. that the servicejourney for leg2 is identical to the servicejourney for the supplement seat -->
@@ -384,8 +384,8 @@
                                 <Type>limited</Type>
                                 <Value>1</Value>
                             </MaximumNumberOfAccesses>
-                        </ConsumptionDependency>
-                    </consumptionDependencies>
+                        </ElementConsumptionPolicy>
+                    </elementConsumptionPolicies>
 
 
 
