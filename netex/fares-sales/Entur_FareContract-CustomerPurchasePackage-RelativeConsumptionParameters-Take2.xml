@@ -183,18 +183,18 @@
                 
                         <!-- Consume bus before and after boat ride with relative intervals -->
                         <ConsumptionDependency id="ENT:ConsumptionDependency:1" version="1" >
-                            <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
+                            <TransitionRequirementGroupingType>AND</TransitionRequirementGroupingType>
                             <!-- Elements that must be in given state in order for consumptions to transition -->
                             <consumptionRequirements>
-                                <AccessRightInProductConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:BoatConsumed" version="1">
+                                <AccessRightInProductTransitionRequirement id="ENT:CustomerPurchasePackageElementTransitionRequirement:BoatConsumed" version="1">
                                     <MarkedAs>used</MarkedAs>
                                     <MarkedAsTemporalValidity>currentFuture</MarkedAsTemporalValidity>
                                     <AccessRightInProductRef ref="ENT:AccessRightInProduct:Boat" version="1"/>
-                                </AccessRightInProductConsumptionRequirement>
+                                </AccessRightInProductTransitionRequirement>
                             </consumptionRequirements>
                             
                             <!--Will trigger automatic consume of the bus to boat and bus from boat  -->
-                            <ConsumptionTransitionPolicy>automatic</ConsumptionTransitionPolicy>
+                            <TransitionPolicy>automatic</TransitionPolicy>
                             
                             <consumptions>
                                 
@@ -306,13 +306,21 @@
                         
                     </travelSpecifications>
 
+
+elementTransitions -> consumptionTransitions
+ElementTransition -> ConsumptionTransition
+TransitionPolicy -> ConsumptionTransitionMethod
+transitions -> elementTransitions
+elementTransitionRequirements -> (no change)
+CustomerPurchasePackageElementTransitionRequirement ->
+
                     <elementTransitions>
 
                         <!-- Manual consumption of boat -->
                         <ElementTransition id="ENT:ConsumptionDependency:Boat" version="1" >
                             
                             <!--Will trigger automatic consume of the bus to boat and bus from boat  -->
-                            <ConsumptionTransitionPolicy>manual</ConsumptionTransitionPolicy>
+                            <TransitionPolicy>manual</TransitionPolicy>
                             
                             <transitions>
                                 <!-- Manual transiution of boat -->
@@ -327,18 +335,18 @@
                         
                         <!-- Consume bus before and after boat ride with relative intervals -->
                         <ElementTransition id="ENT:ConsumptionDependency:1x" version="1" >
-                            <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
+                            <TransitionRequirementGroupingType>AND</TransitionRequirementGroupingType>
                             <!-- Elements that must be in given state in order for consumptions to transition -->
                             <elementTransitionRequirements>
-                                <CustomerPurchasePackageElementConsumptionRequirement id="ENT:CustomerPurchasePackageElementConsumptionRequirement:BoatConsumed" version="1">
+                                <CustomerPurchasePackageElementTransitionRequirement id="ENT:CustomerPurchasePackageElementTransitionRequirement:BoatConsumed" version="1">
                                     <MarkedAs>used</MarkedAs>
                                     <MarkedAsTemporalValidity>currentFuture</MarkedAsTemporalValidity>
                                     <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:Boat" version="1"/>
-                                </CustomerPurchasePackageElementConsumptionRequirement>
+                                </CustomerPurchasePackageElementTransitionRequirement>
                             </elementTransitionRequirements>
 
                             <!--Will trigger automatic consume of the bus to boat and bus from boat  -->
-                            <ConsumptionTransitionPolicy>automatic</ConsumptionTransitionPolicy>
+                            <TransitionPolicy>automatic</TransitionPolicy>
 
                             <transitions>
                                 
