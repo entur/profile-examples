@@ -162,6 +162,10 @@
                 <Interchanging id="ENT:Interchanging:None" version="1">
                     <CanInterchange>false</CanInterchange>
                 </Interchanging>
+               
+                <PurchaseWindow>
+                    
+                </PurchaseWindow>
             </usageParameters>
 
 
@@ -439,13 +443,14 @@
 
                                     <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
+                                        
                                         <UsageValidityPeriod id="ENT:UsageValidityPeriod:1year" version="1">
                                             <UsageTrigger>activation</UsageTrigger>
                                             <!-- must generate an elementAccess/activated before use -->
                                             <UsageEnd>endOfRide</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                             <StartDate>2020-01-01</StartDate>
-                                            <EndDate>2020-01-01</EndDate>
+                                            <EndDate>2021-01-01</EndDate>
                                         </UsageValidityPeriod>
                                     </limitations>
 
@@ -545,9 +550,11 @@
                                             <UsageEnd>endOfRide</UsageEnd>
                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                             <StartDate>2020-01-01</StartDate>
-                                            <EndDate>2020-01-01</EndDate>
+                                            <EndDate>2021-01-01</EndDate>
                                         </UsageValidityPeriod>
                                     </limitations>
+
+
 
                                     <!-- Only once -->
                                     <MaximumNumberOfAccesses>
