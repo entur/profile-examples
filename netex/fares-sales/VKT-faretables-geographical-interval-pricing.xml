@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- TODO: UNFINISHED EXAMPLE FOR PURE GeographicalIntervalPrice for RUTER OSLO REGION ZONES --> 
+
+
+<!-- 
+    Simplified example for GeographicalIntervalPrice based FareTable with static pricing in NeTEx.
+    Based on Ruter# zones and tariffs for the greater Oslo/Viken region in Norway.
+    
+    https://ruter.no/kjop-billett/billetter-og-priser/
+-->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex"
+  version="1.11:NO-NeTEx-fares:0.8">
+    
+    <PublicationTimestamp>2020-11-24T12:34:56</PublicationTimestamp>
+    <ParticipantRef>RUT</ParticipantRef>
+    <dataObjects>
+
+
+        <!-- Organisation data (incomplete, only used for example purposes) -->
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            <organisations>
+                <GeneralOrganisation id="ENT:GeneralOrganisation:Entur" version="1">
+                    <Name>Entur</Name>
+                    <ContactDetails>
+                        <Url>https://www.entur.org</Url>
+                    </ContactDetails>
+                    <OrganisationType>statutoryBody</OrganisationType>
+                </GeneralOrganisation>
+                
+                <Authority id="RUT:Authority:Ruter" version="1">
+                    <Name>Ruter</Name>
+                    <ContactDetails>
+                        <Url>https://ruter.no/</Url>
+                    </ContactDetails>
+                </Authority>
+            </organisations>
+        </ResourceFrame>
+        
+
+
+        <!-- Tariff Zones definitions (in Norway managed in NSR, the National Stopplace Registry) -->
+        <SiteFrame id="RUT:SiteFrame:1" version="1">
+            <validityConditions>
+                <AvailabilityCondition id="RUT:AvailabilityCondition:2" version="1">
+                    <FromDate>2020-01-01T00:00:00</FromDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            
+            <Description>https://ruter.no/kjop-billett/soner/</Description>
+            
+            <tariffZones>
+                <TariffZone id="RUT:TariffZone:1" version="1">
+                    <Name>1</Name>
+                    <Description>Oslo, Fornebu, Lørenskog</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:2V" version="1">
+                    <Name>2V</Name>
+                    <Description>Sandvika, Asker</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:3V" version="1">
+                    <Name>3V</Name>
+                    <Description>Slemmestad</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:4V" version="1">
+                    <Name>4V</Name>
+                    <Description>Tofte</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:5V" version="1">
+                    <Name>5V</Name>
+                    <Description>Drammen, Lier</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:2S" version="1">
+                    <Name>2S</Name>
+                    <Description>Kolbotn, Ski, Ås, Drøbak, Enebakk</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:3S" version="1">
+                    <Name>3S</Name>
+                    <Description>Vestby, Son</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:2O" version="1">
+                    <Name>2Ø</Name>
+                    <Description>Lillestrøm, Nittedal</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:3O" version="1">
+                    <Name>3Ø</Name>
+                    <Description>Fetsund, Frogner, Aurskog, Bjørkelangen</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:4O" version="1">
+                    <Name>4Ø</Name>
+                    <Description>(Trøgstad)</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:4SO" version="1">
+                    <Name>4SØ</Name>
+                    <Description>(Rømskog)</Description>
+                </TariffZone>
+                <TariffZone id="RUT:TariffZone:4N" version="1">
+                    <Name>4N</Name>
+                    <Description>Oslo Lufthavn (Gardermoen), Jessheim, Årnes, Dal, Maura, Eidsvoll, Hurdal</Description>
+                </TariffZone>
+            </tariffZones>
+            
+        </SiteFrame>
+        
+        
+
+        <FareFrame id="RUT:FareFrame:1" version="1">
+            <validityConditions>
+                <AvailabilityCondition id="RUT:AvailabilityCondition:1" version="1">
+                    <FromDate>2020-01-01T00:00:00</FromDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            
+            
+            
+            <!-- Spec: 7.5.3.4.1 GeographicalUnit – Model Element 
+                "A unit for calculating geographical graduated fares." 
+            (page 124) -->
+            
+            
+            <!--
+            <geographicalUnits>
+                <GeographicalUnit id="RUT:GeographicalUnit:1" version="1">
+                    <Name>One zone (D, only zone allowing one-zone ticket)</Name>
+                    <prices>
+                        <GeographicalUnitPrice id="RUT:GeographicalUnitPrice:1" version="1">
+
+                        </GeographicalUnitPrice>
+                    </prices>
+                </GeographicalUnit>
+                
+                
+                <GeographicalUnit version="any" id="tfl:tariff_zone">
+                    <Name>Arbitrary Quanitized Unit of Transport Usage - One zone to zone hop</Name>
+                </GeographicalUnit>
+                
+                
+            </geographicalUnits>
+            -->
+
+
+            
+            <!-- Spec: ﻿7.5.3.4.3 GeographicalInterval – Model Element 
+                "A geographical interval specifying access rights for the FARE STRUCTURE ELEMENTs within the range of this interval: '20-5 km', '4-6 zones', etc." 
+            (page 126) -->
+            <geographicalIntervals>
+                <GeographicalInterval id="RUT:GeographicalInterval:1" version="1">
+                    <NumberOfUnits>1</NumberOfUnits>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="RUT:GeographicalInterval:2" version="1">
+                    <NumberOfUnits>2</NumberOfUnits>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="RUT:GeographicalInterval:3" version="1">
+                    <NumberOfUnits>3</NumberOfUnits>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="RUT:GeographicalInterval:4" version="1">
+                    <NumberOfUnits>4</NumberOfUnits>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="RUT:GeographicalInterval:all" version="1">
+                    <NumberOfUnits>0</NumberOfUnits> <!-- all zones, i.e. unlimited -->
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+            </geographicalIntervals>
+            
+            
+            
+            <!--﻿7.5.3.4.5 GeographicalStructureFactor.
+            The value of a GEOGRAPHICAL INTERVAL or a DISTANCE MATRIX ELEMENT expressed by a GEOGRAPHICAL UNIT.
+            (page 128) -->
+            
+            <geographicalStructureFactors>
+                <GeographicalStructureFactor id="RUT:GeographicalStructureFactor:1" version="1">
+                    <GeographicalIntervalRef ref="RUT:GeographicalInterval:1" version="1"/>
+                </GeographicalStructureFactor>
+                <GeographicalStructureFactor id="RUT:GeographicalStructureFactor:2" version="1">
+                    <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                </GeographicalStructureFactor>
+                <GeographicalStructureFactor id="RUT:GeographicalStructureFactor:3" version="1">
+                    <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                </GeographicalStructureFactor>
+                <!-- etc. -->
+            </geographicalStructureFactors>
+
+
+
+            
+            <!-- ﻿7.5.4.4.3 TimeInterval – Model Element
+                A time-based interval specifying access rights for the FARE STRUCTURE ELEMENTs within the range of this interval: “0-1 hours,” “1-3 days”, etc
+            (page 134) -->
+            <timeIntervals>
+                <!-- Single ticket intervals (first sone purchase is valid for 60 min, each additional sone gives +30 min up to max 180 min which equals valid for "all sones") -->
+                <TimeInterval id="RUT:TimeInterval:60min" version="1">
+                    <Description>One zone</Description>
+                    <Duration>PT60M</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:90min" version="1">
+                    <Description>Two zones</Description>
+                    <Duration>PT90M</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:120min" version="1">
+                    <Description>Three zones</Description>
+                    <Duration>PT120M</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:150min" version="1">
+                    <Description>Two zones</Description>
+                    <Duration>PT150M</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:180min" version="1"> <!-- all zones -->
+                    <Description>All zones</Description>
+                    <Duration>PT180M</Duration>
+                </TimeInterval>
+                
+                <!-- Period ticket intervals -->
+                <TimeInterval id="RUT:TimeInterval:24h" version="1">
+                    <Duration>PT24H</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:7days" version="1">
+                    <Duration>P7D</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:30days" version="1">
+                    <Duration>P30D</Duration>
+                </TimeInterval>
+                <TimeInterval id="RUT:TimeInterval:360days" version="1">
+                    <Duration>P360D</Duration>
+                </TimeInterval>
+            </timeIntervals> 
+            
+            
+            
+            <!-- ﻿7.5.7.4.1 DistanceMatrixElement – Model Element
+                "A cell of an origin-destination matrix for TARIFF ZONEs or STOP POINTs, expressing a fare distance for the corresponding trip: value in km, number of fare units etc" 
+            (page 180) -->
+            
+            <distanceMatrixElements>
+                <DistanceMatrixElement id="RUT:DistanceMatrixElement:1" version="1">
+                    <Name>Within zone 1</Name>
+                    <StartTariffZoneRef ref="RUT:TariffZone:1" version="1"/>
+                    <EndTariffZoneRef ref="RUT:TariffZone:1" version="1"/>
+                    <!-- redundant in this context but added to display structure -->
+                    <structureFactors>
+                        <GeographicalStructureFactorRef ref="RUT:GeographicalStructureFactor:1" version="1"/>
+                    </structureFactors>
+                </DistanceMatrixElement>
+                
+                <DistanceMatrixElement id="RUT:DistanceMatrixElement:2V" version="1">
+                    <Name>Within zone 2V</Name>
+                    <StartTariffZoneRef ref="RUT:TariffZone:2V" version="1"/>
+                    <EndTariffZoneRef ref="RUT:TariffZone:2V" version="1"/>
+                    <!-- structureFactors -->
+                </DistanceMatrixElement>
+                
+                <DistanceMatrixElement id="RUT:DistanceMatrixElement:1-2V" version="1">
+                    <Name>Between zone 1 and 2V</Name>
+                    <InverseAllowed>true</InverseAllowed>
+                    <StartTariffZoneRef ref="RUT:TariffZone:1" version="1"/>
+                    <EndTariffZoneRef ref="RUT:TariffZone:2V" version="1"/>
+                    <!-- redundant in this context but added to display structure -->
+                    <structureFactors>
+                        <GeographicalStructureFactorRef ref="RUT:GeographicalStructureFactor:2" version="1"/>
+                    </structureFactors>
+                </DistanceMatrixElement>
+                
+                <DistanceMatrixElement id="RUT:DistanceMatrixElement:3V" version="1">
+                    <Name>Within zone 3V</Name>
+                    <StartTariffZoneRef ref="RUT:TariffZone:2V" version="1"/>
+                    <EndTariffZoneRef ref="RUT:TariffZone:2V" version="1"/>
+                </DistanceMatrixElement>
+                
+                <DistanceMatrixElement id="RUT:DistanceMatrixElement:1-3V" version="1">
+                    <Name>Between zone 1 and 3V</Name>
+                    <InverseAllowed>true</InverseAllowed>
+                    <StartTariffZoneRef ref="RUT:TariffZone:1" version="1"/>
+                    <EndTariffZoneRef ref="RUT:TariffZone:3V" version="1"/>
+                </DistanceMatrixElement>
+                
+                <DistanceMatrixElement id="RUT:DistanceMatrixElement:2V-3V" version="1">
+                    <Name>Between zone 2V and 3V</Name>
+                    <InverseAllowed>true</InverseAllowed>
+                    <StartTariffZoneRef ref="RUT:TariffZone:2V" version="1"/>
+                    <EndTariffZoneRef ref="RUT:TariffZone:3V" version="1"/>
+                </DistanceMatrixElement>
+                
+                <!-- etc. (all possible combinations) -->
+                
+            </distanceMatrixElements>
+            
+            
+            <groupsOfDistanceMatrixElements>
+                <!-- Within one zone -->
+                <GroupOfDistanceMatrixElements id="RUT:GroupOfDistanceMatrixElements:1zone" version="1">
+                    <members>
+                        <DistanceMatrixElementRef ref="RUT:DistanceMatrixElement:1" version="1"/>
+                        <DistanceMatrixElementRef ref="RUT:DistanceMatrixElement:2V" version="1"/>
+                        <DistanceMatrixElementRef ref="RUT:DistanceMatrixElement:3V" version="1"/>
+                    </members>
+                </GroupOfDistanceMatrixElements>
+                
+                <!-- Between two zones -->
+                <GroupOfDistanceMatrixElements id="RUT:GroupOfDistanceMatrixElements:2zones" version="1">
+                    <members>
+                        <DistanceMatrixElementRef ref="RUT:DistanceMatrixElement:1-2V" version="1"/>
+                        <DistanceMatrixElementRef ref="RUT:DistanceMatrixElement:2V-3V" version="1"/>
+                    </members>
+                </GroupOfDistanceMatrixElements>
+                
+                <!-- Between three zones -->
+                <GroupOfDistanceMatrixElements id="RUT:GroupOfDistanceMatrixElements:3zones" version="1">
+                    <members>
+                        <DistanceMatrixElementRef ref="RUT:DistanceMatrixElement:1-3V" version="1"/>
+                    </members>
+                </GroupOfDistanceMatrixElements>
+                
+                <!-- etc. -->
+                
+            </groupsOfDistanceMatrixElements>
+            
+
+            
+            <usageParameters>
+                <UserProfile id="RUT:UserProfile:Adult" version="1">
+                    <Name>"Voksen" (full fare)</Name>
+                    <UserType>adult</UserType>
+                    <ProofRequired>noneRequired</ProofRequired>
+                    <DiscountBasis>none</DiscountBasis>
+                </UserProfile>
+                
+                <UserProfile id="RUT:UserProfile:Child-less-than-6" version="1">
+                    <Name>Child less than 6 years old (free)</Name>
+                    <UserType>child</UserType>
+                    <MinimumAge>6</MinimumAge>
+                    <MaximumAge>17</MaximumAge>
+                    <ProofRequired>other</ProofRequired>
+                    <DiscountBasis>free</DiscountBasis>
+                </UserProfile>
+                <UserProfile id="RUT:UserProfile:Child-6-17" version="1">
+                    <Name>Child / youth between 6 and 17 year old (free)</Name>
+                    <UserType>youngPerson</UserType>
+                    <ProofRequired>other</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                
+                <!-- Pupil and student entitles the same discount -->
+                <UserProfile id="RUT:UserProfile:Pupil" version="1">
+                    <Name>Pupil less than 20 years old or student</Name>
+                    <Description>Only valid for 30 day period pass</Description>
+                    <UserType>schoolPupil</UserType>
+                    <MaximumAge>20</MaximumAge>
+                    <ProofRequired>studentCard</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                <UserProfile id="RUT:UserProfile:Student" version="1">
+                    <Name>Student / work practitioner less than 30 years old</Name>
+                    <Description>Only valid for 30 day period pass</Description>
+                    <UserType>student</UserType>
+                    <MaximumAge>30</MaximumAge>
+                    <ProofRequired>studentCard</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                
+                <!-- Senior, SeniorCompanion, Disabled and DisabledCompanionentitles the same discount -->
+                <UserProfile id="RUT:UserProfile:Senior" version="1">
+                    <Name>Senior citizen</Name>
+                    <Description>Discount also valid for spouse or registered partner of qualified traveller</Description>
+                    <UserType>senior</UserType>
+                    <MaximumAge>67</MaximumAge>
+                    <ProofRequired>other</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                <CompanionProfile id="RUT:CompanionProfile:SeniorCompanion" version="1">
+                    <Name>Senior citizen spouse or registered partner</Name>
+                    <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                </CompanionProfile>
+                <UserProfile id="RUT:UserProfile:Disabled" version="1">
+                    <Name>Qualified disability</Name>
+                    <Description>Discount also valid for spouse or registered partner of qualified traveller</Description>
+                    <UserType>disabled</UserType>
+                    <ProofRequired>medicalDocument</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                <CompanionProfile id="RUT:CompanionProfile:DisabledCompanion" version="1">
+                    <Name>Companion of traveller with qualified disability</Name>
+                    <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                    <DiscountBasis>discount</DiscountBasis>
+                </CompanionProfile>
+                
+                <UserProfile id="RUT:UserProfile:Youth" version="1">
+                    <Name>Pupil less than 20 years old or student</Name>
+                    <Description>Only valid for 7 and 30 day period passes</Description>
+                    <UserType>youngPerson</UserType>
+                    <MinimumAge>18</MinimumAge>
+                    <MaximumAge>19</MaximumAge>
+                    <ProofRequired>identityDocument</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                
+                <UserProfile id="RUT:UserProfile:Military" version="1">
+                    <Name>Military (in draft service only)</Name>
+                    <Description>Only valid for single ticket</Description>
+                    <UserType>military</UserType>
+                    <ProofRequired>other</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+            </usageParameters>
+            
+            
+            
+            
+            
+            <!-- ﻿7.7.3.4.1 FareTable – Model Element
+                A grouping of prices that may be associated with various combinations fare elements such as the
+                DISTANCE MATRIX ELEMENT, FARE STRUCTURE ELEMENT, GEOGRAPHICAL INTERVAL, TIME INTERVAL, USAGE PARAMETER, etc.
+            (page 419) -->
+            
+            <fareTables>
+                
+                <!-- ALTERNATIVE 1: One FareTable per GeographicalIntervalRef for a set of UserProfiles with the same DistanceMatrixElementPrice -->
+                <FareTable id="RUT:FareTable:FullPrice-1zone" version="1">
+                    <Name>Fare table for 1 zone SINGLE TICKET full price (Adult, Pupil/Student, Youth)</Name>
+                    <pricesFor>
+                        <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Student" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Youth" version="1"/>
+                        <GeographicalIntervalRef ref="RUT:GeographicalInterval:1" version="1"/>
+                        <TimeIntervalRef ref="RUT:TimeInterval:60min" version="1"/>
+                    </pricesFor>
+                    <prices>
+                        <DistanceMatrixElementPrice id="RUT:DistanceMatrixElementPrice:Full-1zone" version="1">
+                            <Amount>37</Amount>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:1zone" version="1"/>
+                        </DistanceMatrixElementPrice>
+                    </prices>
+                </FareTable>
+                <FareTable id="RUT:FareTable:FullPrice-2zones" version="1">
+                    <Name>Fare table for 2 zones SINGLE TICKET full price (Adult, Pupil/Student, Youth)</Name>
+                    <pricesFor>
+                        <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Student" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Youth" version="1"/>
+                        <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                        <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                    </pricesFor>
+                    <prices>
+                        <DistanceMatrixElementPrice id="RUT:DistanceMatrixElementPrice:Full-2zones" version="1">
+                            <Amount>61</Amount>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:2zones" version="1"/>
+                        </DistanceMatrixElementPrice>
+                    </prices>
+                </FareTable>
+                <FareTable id="RUT:FareTable:FullPrice-3zones" version="1">
+                    <Name>Fare table for 3 zones SINGLE TICKET full price (Adult, Pupil/Student, Youth)</Name>
+                    <pricesFor>
+                        <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Student" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Youth" version="1"/>
+                        <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                        <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                    </pricesFor>
+                    <prices>
+                        <DistanceMatrixElementPrice id="RUT:DistanceMatrixElementPrice:Full-3zones" version="1">
+                            <Amount>85</Amount>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:3zones" version="1"/>
+                        </DistanceMatrixElementPrice>
+                    </prices>
+                </FareTable>
+                
+                <FareTable id="RUT:FareTable:ReducedPrice-1zone" version="1">
+                    <Name>Fare table for 1 zone SINGLE TICKET Reduced price (Adult, Pupil/Student, Youth)</Name>
+                    <pricesFor>
+                        <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                        <CompanionProfileRef ref="RUT:CompanionProfile:SeniorCompanion" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                        <CompanionProfileRef ref="RUT:CompanionProfile:DisabledCompanion" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Military" version="1"/>
+                        <GeographicalIntervalRef ref="RUT:GeographicalInterval:1" version="1"/>
+                        <TimeIntervalRef ref="RUT:TimeInterval:60min" version="1"/>
+                    </pricesFor>
+                    <prices>
+                        <DistanceMatrixElementPrice id="RUT:DistanceMatrixElementPrice:Reduced-1zone" version="1">
+                            <Amount>37</Amount>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:1zone" version="1"/>
+                        </DistanceMatrixElementPrice>
+                    </prices>
+                </FareTable>
+                <FareTable id="RUT:FareTable:ReducedPrice-2zones" version="1">
+                    <Name>Fare table for 2 zones SINGLE TICKET Reduced price (Adult, Pupil/Student, Youth)</Name>
+                    <pricesFor>
+                        <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                        <CompanionProfileRef ref="RUT:CompanionProfile:SeniorCompanion" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                        <CompanionProfileRef ref="RUT:CompanionProfile:DisabledCompanion" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Military" version="1"/>
+                        <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                        <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                    </pricesFor>
+                    <prices>
+                        <DistanceMatrixElementPrice id="RUT:DistanceMatrixElementPrice:Reduced-2zones" version="1">
+                            <Amount>61</Amount>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:2zones" version="1"/>
+                        </DistanceMatrixElementPrice>
+                    </prices>
+                </FareTable>
+                <FareTable id="RUT:FareTable:ReducedPrice-3zones" version="1">
+                    <Name>Fare table for 3 zones SINGLE TICKET Reduced price (Adult, Pupil/Student, Youth)</Name>
+                    <pricesFor>
+                        <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                        <CompanionProfileRef ref="RUT:CompanionProfile:SeniorCompanion" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                        <CompanionProfileRef ref="RUT:CompanionProfile:DisabledCompanion" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Military" version="1"/>
+                        <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                        <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                    </pricesFor>
+                    <prices>
+                        <DistanceMatrixElementPrice id="RUT:DistanceMatrixElementPrice:Reduced-3zones" version="1">
+                            <Amount>85</Amount>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:3zones" version="1"/>
+                        </DistanceMatrixElementPrice>
+                    </prices>
+                </FareTable>
+                
+                
+                
+                <!-- ALTERNATIVE 2: One FareTable per Geographical/Time IntervalRefs for a set of UserProfiles with the same CellPrice -->
+                <FareTable id="RUT:FareTable:SingleTicket" version="1">
+                    <Name>Fare table for SINGLE TICKETs multiple sones and prices</Name>
+                    <cells>
+                        <!-- ONE ZONE full price -->
+                        <Cell id="RUT:Cell:1-1" version="1" order="1">
+                            <Name>Full price for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>37</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:1" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:60min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Student" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Youth" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:1zone" version="1"/>
+                        </Cell>
+                        <!-- TWO ZONES full price-->
+                        <Cell id="RUT:Cell:1-2" version="1" order="1">
+                            <Name>Full price for 2 zones</Name>
+                            <CellPrice>
+                                <Amount>61</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Student" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Youth" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:2zones" version="1"/>
+                        </Cell>
+                        <!-- THREE ZONES full price-->
+                        <Cell id="RUT:Cell:1-3" version="1" order="1">
+                            <Name>Full price for 3 zones</Name>
+                            <CellPrice>
+                                <Amount>85</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Student" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Youth" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:3zones" version="1"/>
+                        </Cell>
+                        
+                        <!-- ONE ZONE reduced price -->
+                        <Cell id="RUT:Cell:2-1" version="1" order="1">
+                            <Name>Reduced price for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>19</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:1" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:60min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:SeniorCompanion" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:DisabledCompanion" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Military" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:1zone" version="1"/>
+                        </Cell>
+                        <!-- TWO ZONES reduced price -->
+                        <Cell id="RUT:Cell:2-2" version="1" order="1">
+                            <Name>Reduced price for 2 zones</Name>
+                            <CellPrice>
+                                <Amount>31</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:SeniorCompanion" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:DisabledCompanion" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Military" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:2zones" version="1"/>
+                        </Cell>
+                        <!-- THREE ZONES reduced price -->
+                        <Cell id="RUT:Cell:2-3" version="1" order="1">
+                            <Name>Reduced price for 3 zones</Name>
+                            <CellPrice>
+                                <Amount>43</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:SeniorCompanion" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                            <CompanionProfileRef ref="RUT:CompanionProfile:DisabledCompanion" version="1"/>
+                            <UserProfileRef ref="RUT:UserProfile:Military" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:3zones" version="1"/>
+                        </Cell>
+                    </cells>  
+                </FareTable>
+                
+                
+                <!-- ALTERNATIVE 3: One FareTable per set of CellPrices for a predefined set of UserProfiles -->
+                <FareTable id="RUT:FareTable:SingleTicket-FullPrice" version="1">
+                    <Name>Fare table for SINGLE TICKETs multiple sones</Name>
+                    <pricesFor>
+                        <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Student" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Youth" version="1"/>
+                    </pricesFor>
+                    <cells>
+                        <Cell id="RUT:Cell:3-1" version="1" order="1">
+                            <Name>Full price for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>37</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:1" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:60min" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:1zone" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:3-2" version="1" order="1">
+                            <Name>Full price for 2 zones</Name>
+                            <CellPrice>
+                                <Amount>61</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:2zones" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:3-3" version="1" order="1">
+                            <Name>Full price for 3 zones</Name>
+                            <CellPrice>
+                                <Amount>85</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:3zones" version="1"/>
+                        </Cell>
+                    </cells>
+                </FareTable>
+                
+                <FareTable id="RUT:FareTable:SingleTicket-ReducedPrice" version="1">
+                    <Name>Fare table for SINGLE TICKETs multiple sones</Name>
+                    <pricesFor>
+                        <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
+                        <CompanionProfileRef ref="RUT:CompanionProfile:SeniorCompanion" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Disabled" version="1"/>
+                        <CompanionProfileRef ref="RUT:CompanionProfile:DisabledCompanion" version="1"/>
+                        <UserProfileRef ref="RUT:UserProfile:Military" version="1"/>
+                    </pricesFor>
+                    <cells>
+                        <Cell id="RUT:Cell:4-1" version="1" order="1">
+                            <Name>Reduced price for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>19</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:1" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:60min" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:1zone" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:4-2" version="1" order="1">
+                            <Name>Reduced price for 2 zones</Name>
+                            <CellPrice>
+                                <Amount>31</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:2" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:90min" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:2zones" version="1"/>
+                        </Cell>
+                        <Cell id="RUT:Cell:4-3" version="1" order="1">
+                            <Name>Reduced price for 1 zone</Name>
+                            <CellPrice>
+                                <Amount>43</Amount>
+                            </CellPrice>
+                            <GeographicalIntervalRef ref="RUT:GeographicalInterval:3" version="1"/>
+                            <TimeIntervalRef ref="RUT:TimeInterval:120min" version="1"/>
+                            <GroupOfDistanceMatrixElementsRef ref="RUT:GroupOfDistanceMatrixElements:3zones" version="1"/>
+                        </Cell>
+                    </cells>
+                </FareTable>
+            </fareTables>
+                      
+        </FareFrame>
+    </dataObjects>
+</PublicationDelivery>
