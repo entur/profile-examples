@@ -41,8 +41,7 @@
         </ResourceFrame>
         
 
-
-        <!-- Tariff Zones definitions (in Norway managed in NSR, the National Stopplace Registry) -->
+        
         <SiteFrame id="VKT:SiteFrame:1" version="1">
             <validityConditions>
                 <AvailabilityCondition id="VKT:AvailabilityCondition:2" version="1">
@@ -53,54 +52,8 @@
             <Description>https://VKT.no/kjop-billett/soner/</Description>
             
             <tariffZones>
-                <TariffZone id="VKT:TariffZone:1" version="1">
-                    <Name>1</Name>
-                    <Description>Oslo, Fornebu, Lørenskog</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:2V" version="1">
-                    <Name>2V</Name>
-                    <Description>Sandvika, Asker</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:3V" version="1">
-                    <Name>3V</Name>
-                    <Description>Slemmestad</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:4V" version="1">
-                    <Name>4V</Name>
-                    <Description>Tofte</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:5V" version="1">
-                    <Name>5V</Name>
-                    <Description>Drammen, Lier</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:2S" version="1">
-                    <Name>2S</Name>
-                    <Description>Kolbotn, Ski, Ås, Drøbak, Enebakk</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:3S" version="1">
-                    <Name>3S</Name>
-                    <Description>Vestby, Son</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:2O" version="1">
-                    <Name>2Ø</Name>
-                    <Description>Lillestrøm, Nittedal</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:3O" version="1">
-                    <Name>3Ø</Name>
-                    <Description>Fetsund, Frogner, Aurskog, Bjørkelangen</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:4O" version="1">
-                    <Name>4Ø</Name>
-                    <Description>(Trøgstad)</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:4SO" version="1">
-                    <Name>4SØ</Name>
-                    <Description>(Rømskog)</Description>
-                </TariffZone>
-                <TariffZone id="VKT:TariffZone:4N" version="1">
-                    <Name>4N</Name>
-                    <Description>Oslo Lufthavn (Gardermoen), Jessheim, Årnes, Dal, Maura, Eidsvoll, Hurdal</Description>
-                </TariffZone>
+                <!-- Fare Zones are managed in NSR, the National Stopplace Registry for Norway -->
+                <FareZone id="NSR:FareZone:1" version="dummy-data"></FareZone>
             </tariffZones>
             
         </SiteFrame>
@@ -147,24 +100,20 @@
                 "A geographical interval specifying access rights for the FARE STRUCTURE ELEMENTs within the range of this interval: '20-5 km', '4-6 zones', etc." 
             (page 126) -->
             <geographicalIntervals>
-                <GeographicalInterval id="VKT:GeographicalInterval:1" version="1">
+                <GeographicalInterval id="VKT:GeographicalInterval:1zone" version="1">
                     <NumberOfUnits>1</NumberOfUnits>
                     <IntervalType>tariffZone</IntervalType>
                 </GeographicalInterval>
-                <GeographicalInterval id="VKT:GeographicalInterval:2" version="1">
+                <GeographicalInterval id="VKT:GeographicalInterval:2zones" version="1">
                     <NumberOfUnits>2</NumberOfUnits>
                     <IntervalType>tariffZone</IntervalType>
                 </GeographicalInterval>
-                <GeographicalInterval id="VKT:GeographicalInterval:3" version="1">
+                <GeographicalInterval id="VKT:GeographicalInterval:3zones" version="1">
                     <NumberOfUnits>3</NumberOfUnits>
                     <IntervalType>tariffZone</IntervalType>
                 </GeographicalInterval>
-                <GeographicalInterval id="VKT:GeographicalInterval:4" version="1">
-                    <NumberOfUnits>4</NumberOfUnits>
-                    <IntervalType>tariffZone</IntervalType>
-                </GeographicalInterval>
-                <GeographicalInterval id="VKT:GeographicalInterval:all" version="1">
-                    <NumberOfUnits>0</NumberOfUnits> <!-- all zones, i.e. unlimited -->
+                <GeographicalInterval id="VKT:GeographicalInterval:allzones" version="1">
+                    <NumberOfUnits>0</NumberOfUnits> <!-- all (4 or more) zones, i.e. unlimited -->
                     <IntervalType>tariffZone</IntervalType>
                 </GeographicalInterval>
             </geographicalIntervals>
@@ -176,16 +125,18 @@
             (page 128) -->
             
             <geographicalStructureFactors>
-                <GeographicalStructureFactor id="VKT:GeographicalStructureFactor:1" version="1">
-                    <GeographicalIntervalRef ref="VKT:GeographicalInterval:1" version="1"/>
+                <GeographicalStructureFactor id="VKT:GeographicalStructureFactor:1zone" version="1">
+                    <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
                 </GeographicalStructureFactor>
-                <GeographicalStructureFactor id="VKT:GeographicalStructureFactor:2" version="1">
-                    <GeographicalIntervalRef ref="VKT:GeographicalInterval:2" version="1"/>
+                <GeographicalStructureFactor id="VKT:GeographicalStructureFactor:2zones" version="1">
+                    <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
                 </GeographicalStructureFactor>
-                <GeographicalStructureFactor id="VKT:GeographicalStructureFactor:3" version="1">
-                    <GeographicalIntervalRef ref="VKT:GeographicalInterval:3" version="1"/>
+                <GeographicalStructureFactor id="VKT:GeographicalStructureFactor:3zones" version="1">
+                    <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
                 </GeographicalStructureFactor>
-                <!-- etc. -->
+                <GeographicalStructureFactor id="VKT:GeographicalStructureFactor:allzones" version="1">
+                    <GeographicalIntervalRef ref="VKT:GeographicalInterval:allzones" version="1"/>
+                </GeographicalStructureFactor>
             </geographicalStructureFactors>
 
 
@@ -194,8 +145,11 @@
             <!-- ﻿7.5.4.4.3 TimeInterval – Model Element
                 A time-based interval specifying access rights for the FARE STRUCTURE ELEMENTs within the range of this interval: “0-1 hours,” “1-3 days”, etc
             (page 134) -->
+            
+            <!-- TODO: Single ticket intervals (e.g. first sone purchase is valid for 60 min, each additional sone gives +30 min up to max 180 min which equals valid for "all sones") -->
+            
             <timeIntervals>
-                <!-- Single ticket intervals (first sone purchase is valid for 60 min, each additional sone gives +30 min up to max 180 min which equals valid for "all sones") -->
+                
                 <TimeInterval id="VKT:TimeInterval:60min" version="1">
                     <Description>One zone</Description>
                     <Duration>PT60M</Duration>
@@ -239,85 +193,65 @@
             (page 180) -->
             
             <distanceMatrixElements>
-                <DistanceMatrixElement id="VKT:DistanceMatrixElement:1" version="1">
-                    <Name>Within zone 1</Name>
-                    <StartTariffZoneRef ref="VKT:TariffZone:1" version="1"/>
-                    <EndTariffZoneRef ref="VKT:TariffZone:1" version="1"/>
-                    <!-- redundant in this context but added to display structure -->
+                <DistanceMatrixElement id="VKT:DistanceMatrixElement:1zone" version="1">
+                    <Name>Within 1 zone</Name>
                     <structureFactors>
-                        <GeographicalStructureFactorRef ref="VKT:GeographicalStructureFactor:1" version="1"/>
+                        <GeographicalStructureFactorRef ref="VKT:GeographicalStructureFactor:1zone" version="1"/>
                     </structureFactors>
                 </DistanceMatrixElement>
                 
-                <DistanceMatrixElement id="VKT:DistanceMatrixElement:2V" version="1">
-                    <Name>Within zone 2V</Name>
-                    <StartTariffZoneRef ref="VKT:TariffZone:2V" version="1"/>
-                    <EndTariffZoneRef ref="VKT:TariffZone:2V" version="1"/>
-                    <!-- structureFactors -->
-                </DistanceMatrixElement>
-                
-                <DistanceMatrixElement id="VKT:DistanceMatrixElement:1-2V" version="1">
-                    <Name>Between zone 1 and 2V</Name>
-                    <InverseAllowed>true</InverseAllowed>
-                    <StartTariffZoneRef ref="VKT:TariffZone:1" version="1"/>
-                    <EndTariffZoneRef ref="VKT:TariffZone:2V" version="1"/>
-                    <!-- redundant in this context but added to display structure -->
+                <DistanceMatrixElement id="VKT:DistanceMatrixElement:2zones" version="1">
+                    <Name>Within 2 zones</Name>
                     <structureFactors>
-                        <GeographicalStructureFactorRef ref="VKT:GeographicalStructureFactor:2" version="1"/>
+                        <GeographicalStructureFactorRef ref="VKT:GeographicalStructureFactor:2zones" version="1"/>
                     </structureFactors>
                 </DistanceMatrixElement>
                 
-                <DistanceMatrixElement id="VKT:DistanceMatrixElement:3V" version="1">
-                    <Name>Within zone 3V</Name>
-                    <StartTariffZoneRef ref="VKT:TariffZone:2V" version="1"/>
-                    <EndTariffZoneRef ref="VKT:TariffZone:2V" version="1"/>
+                <DistanceMatrixElement id="VKT:DistanceMatrixElement:3zones" version="1">
+                    <Name>Within 3 zones</Name>
+                    <structureFactors>
+                        <GeographicalStructureFactorRef ref="VKT:GeographicalStructureFactor:3zones" version="1"/>
+                    </structureFactors>
                 </DistanceMatrixElement>
                 
-                <DistanceMatrixElement id="VKT:DistanceMatrixElement:1-3V" version="1">
-                    <Name>Between zone 1 and 3V</Name>
-                    <InverseAllowed>true</InverseAllowed>
-                    <StartTariffZoneRef ref="VKT:TariffZone:1" version="1"/>
-                    <EndTariffZoneRef ref="VKT:TariffZone:3V" version="1"/>
+                <DistanceMatrixElement id="VKT:DistanceMatrixElement:allzones" version="1">
+                    <Name>Within unlimited zones</Name>
+                    <structureFactors>
+                        <GeographicalStructureFactorRef ref="VKT:GeographicalStructureFactor:allzones" version="1"/>
+                    </structureFactors>
                 </DistanceMatrixElement>
-                
-                <DistanceMatrixElement id="VKT:DistanceMatrixElement:2V-3V" version="1">
-                    <Name>Between zone 2V and 3V</Name>
-                    <InverseAllowed>true</InverseAllowed>
-                    <StartTariffZoneRef ref="VKT:TariffZone:2V" version="1"/>
-                    <EndTariffZoneRef ref="VKT:TariffZone:3V" version="1"/>
-                </DistanceMatrixElement>
-                
-                <!-- etc. (all possible combinations) -->
-                
             </distanceMatrixElements>
             
             
+            <!-- REDUNDANT IN THIS EXAMPLE -->
             <groupsOfDistanceMatrixElements>
                 <!-- Within one zone -->
                 <GroupOfDistanceMatrixElements id="VKT:GroupOfDistanceMatrixElements:1zone" version="1">
                     <members>
-                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:1" version="1"/>
-                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:2V" version="1"/>
-                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:3V" version="1"/>
+                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:1zone" version="1"/>
                     </members>
                 </GroupOfDistanceMatrixElements>
                 
                 <!-- Between two zones -->
                 <GroupOfDistanceMatrixElements id="VKT:GroupOfDistanceMatrixElements:2zones" version="1">
                     <members>
-                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:1-2V" version="1"/>
-                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:2V-3V" version="1"/>
+                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:2zones" version="1"/>
                     </members>
                 </GroupOfDistanceMatrixElements>
                 
                 <!-- Between three zones -->
                 <GroupOfDistanceMatrixElements id="VKT:GroupOfDistanceMatrixElements:3zones" version="1">
                     <members>
-                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:1-3V" version="1"/>
+                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:3zones" version="1"/>
                     </members>
                 </GroupOfDistanceMatrixElements>
                 
-                <!-- etc. -->
+                <!-- Between four or more (all) zones -->
+                <GroupOfDistanceMatrixElements id="VKT:GroupOfDistanceMatrixElements:allzones" version="1">
+                    <members>
+                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:allzones" version="1"/>
+                    </members>
+                </GroupOfDistanceMatrixElements>
                 
             </groupsOfDistanceMatrixElements>
             
@@ -455,7 +389,7 @@
                         
                         <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/-->
                         
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:1" version="1"/>
+                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
                     </pricesFor>
                 </FareTable>
                 
@@ -474,6 +408,8 @@
                 
                 
                 <!-- ALTERNATIVE 1: One FareTable per GeographicalIntervalRef for a set of UserProfiles with the same DistanceMatrixElementPrice -->
+                
+                <!--
                 <FareTable id="VKT:FareTable:FullPrice-1zone" version="1">
                     <Name>Fare table for 1 zone SINGLE TICKET full price (Adult, Pupil/Student, Youth)</Name>
                     <pricesFor>
@@ -481,7 +417,7 @@
                         <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
                         <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
                         <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:1" version="1"/>
+                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
                         <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
                     </pricesFor>
                     <prices>
@@ -498,7 +434,7 @@
                         <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
                         <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
                         <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:2" version="1"/>
+                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
                         <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
                     </pricesFor>
                     <prices>
@@ -515,7 +451,7 @@
                         <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
                         <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
                         <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:3" version="1"/>
+                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
                         <TimeIntervalRef ref="VKT:TimeInterval:120min" version="1"/>
                     </pricesFor>
                     <prices>
@@ -535,7 +471,7 @@
                         <UserProfileRef ref="VKT:UserProfile:Disabled" version="1"/>
                         <CompanionProfileRef ref="VKT:CompanionProfile:DisabledCompanion" version="1"/>
                         <UserProfileRef ref="VKT:UserProfile:Military" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:1" version="1"/>
+                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
                         <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
                     </pricesFor>
                     <prices>
@@ -554,7 +490,7 @@
                         <UserProfileRef ref="VKT:UserProfile:Disabled" version="1"/>
                         <CompanionProfileRef ref="VKT:CompanionProfile:DisabledCompanion" version="1"/>
                         <UserProfileRef ref="VKT:UserProfile:Military" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:2" version="1"/>
+                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
                         <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
                     </pricesFor>
                     <prices>
@@ -573,7 +509,7 @@
                         <UserProfileRef ref="VKT:UserProfile:Disabled" version="1"/>
                         <CompanionProfileRef ref="VKT:CompanionProfile:DisabledCompanion" version="1"/>
                         <UserProfileRef ref="VKT:UserProfile:Military" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:3" version="1"/>
+                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
                         <TimeIntervalRef ref="VKT:TimeInterval:120min" version="1"/>
                     </pricesFor>
                     <prices>
@@ -583,6 +519,7 @@
                         </DistanceMatrixElementPrice>
                     </prices>
                 </FareTable>
+                -->
                 
                 
                 
@@ -596,7 +533,7 @@
                             <CellPrice>
                                 <Amount>37</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
@@ -610,7 +547,7 @@
                             <CellPrice>
                                 <Amount>61</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:2" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
@@ -624,7 +561,7 @@
                             <CellPrice>
                                 <Amount>85</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:3" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:120min" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
@@ -639,7 +576,7 @@
                             <CellPrice>
                                 <Amount>19</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Child-6-17" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Senior" version="1"/>
@@ -655,7 +592,7 @@
                             <CellPrice>
                                 <Amount>31</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:2" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Child-6-17" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Senior" version="1"/>
@@ -671,7 +608,7 @@
                             <CellPrice>
                                 <Amount>43</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:3" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:120min" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Child-6-17" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Senior" version="1"/>
@@ -700,7 +637,7 @@
                             <CellPrice>
                                 <Amount>37</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
                             <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:1zone" version="1"/>
                         </Cell>
@@ -709,7 +646,7 @@
                             <CellPrice>
                                 <Amount>61</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:2" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
                             <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:2zones" version="1"/>
                         </Cell>
@@ -718,7 +655,7 @@
                             <CellPrice>
                                 <Amount>85</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:3" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:120min" version="1"/>
                             <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:3zones" version="1"/>
                         </Cell>
@@ -741,7 +678,7 @@
                             <CellPrice>
                                 <Amount>19</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
                             <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:1zone" version="1"/>
                         </Cell>
@@ -750,7 +687,7 @@
                             <CellPrice>
                                 <Amount>31</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:2" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
                             <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:2zones" version="1"/>
                         </Cell>
@@ -759,7 +696,7 @@
                             <CellPrice>
                                 <Amount>43</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:3" version="1"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:120min" version="1"/>
                             <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:3zones" version="1"/>
                         </Cell>
