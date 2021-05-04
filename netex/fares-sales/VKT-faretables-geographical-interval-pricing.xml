@@ -72,7 +72,8 @@
             <!-- Spec: 7.5.3.4.1 GeographicalUnit – Model Element 
                 "A unit for calculating geographical graduated fares." 
             (page 124) -->
-            
+                        
+            <!-- Datatype for å definere egne enheter evt inkludert distanse og pris / priskalkuleringsparametre -->
             
             <!--
             <geographicalUnits>
@@ -124,6 +125,8 @@
             The value of a GEOGRAPHICAL INTERVAL or a DISTANCE MATRIX ELEMENT expressed by a GEOGRAPHICAL UNIT.
             (page 128) -->
             
+            <!-- NOT RELEVANT in this example as the value is directly expressed in the fare tables, not in its underlying units -->
+            <!--            
             <geographicalStructureFactors>
                 <GeographicalStructureFactor id="VKT:GeographicalStructureFactor:1zone" version="1">
                     <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
@@ -138,7 +141,7 @@
                     <GeographicalIntervalRef ref="VKT:GeographicalInterval:allzones" version="1"/>
                 </GeographicalStructureFactor>
             </geographicalStructureFactors>
-
+            -->
 
 
             
@@ -192,6 +195,8 @@
                 "A cell of an origin-destination matrix for TARIFF ZONEs or STOP POINTs, expressing a fare distance for the corresponding trip: value in km, number of fare units etc" 
             (page 180) -->
             
+            <!-- NOT RELEVANT in this example as the value is directly expressed in the fare tables, not in its underlying units -->
+            <!--
             <distanceMatrixElements>
                 <DistanceMatrixElement id="VKT:DistanceMatrixElement:1zone" version="1">
                     <Name>Within 1 zone</Name>
@@ -199,21 +204,18 @@
                         <GeographicalStructureFactorRef ref="VKT:GeographicalStructureFactor:1zone" version="1"/>
                     </structureFactors>
                 </DistanceMatrixElement>
-                
                 <DistanceMatrixElement id="VKT:DistanceMatrixElement:2zones" version="1">
                     <Name>Within 2 zones</Name>
                     <structureFactors>
                         <GeographicalStructureFactorRef ref="VKT:GeographicalStructureFactor:2zones" version="1"/>
                     </structureFactors>
                 </DistanceMatrixElement>
-                
                 <DistanceMatrixElement id="VKT:DistanceMatrixElement:3zones" version="1">
                     <Name>Within 3 zones</Name>
                     <structureFactors>
                         <GeographicalStructureFactorRef ref="VKT:GeographicalStructureFactor:3zones" version="1"/>
                     </structureFactors>
                 </DistanceMatrixElement>
-                
                 <DistanceMatrixElement id="VKT:DistanceMatrixElement:allzones" version="1">
                     <Name>Within unlimited zones</Name>
                     <structureFactors>
@@ -221,40 +223,9 @@
                     </structureFactors>
                 </DistanceMatrixElement>
             </distanceMatrixElements>
-            
-            
-            <!-- REDUNDANT IN THIS EXAMPLE -->
-            <groupsOfDistanceMatrixElements>
-                <!-- Within one zone -->
-                <GroupOfDistanceMatrixElements id="VKT:GroupOfDistanceMatrixElements:1zone" version="1">
-                    <members>
-                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:1zone" version="1"/>
-                    </members>
-                </GroupOfDistanceMatrixElements>
-                
-                <!-- Between two zones -->
-                <GroupOfDistanceMatrixElements id="VKT:GroupOfDistanceMatrixElements:2zones" version="1">
-                    <members>
-                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:2zones" version="1"/>
-                    </members>
-                </GroupOfDistanceMatrixElements>
-                
-                <!-- Between three zones -->
-                <GroupOfDistanceMatrixElements id="VKT:GroupOfDistanceMatrixElements:3zones" version="1">
-                    <members>
-                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:3zones" version="1"/>
-                    </members>
-                </GroupOfDistanceMatrixElements>
-                
-                <!-- Between four or more (all) zones -->
-                <GroupOfDistanceMatrixElements id="VKT:GroupOfDistanceMatrixElements:allzones" version="1">
-                    <members>
-                        <DistanceMatrixElementRef ref="VKT:DistanceMatrixElement:allzones" version="1"/>
-                    </members>
-                </GroupOfDistanceMatrixElements>
-                
-            </groupsOfDistanceMatrixElements>
-            
+            -->
+           
+ 
 
             
             <usageParameters>
@@ -379,7 +350,7 @@
 
                 
                 
-                <FareTable id="VKT:FareTable:Bus-FullPrice" version="1">
+                <FareTable id="VKT:FareTable:Bus-FullPrice-DEPRECATED" version="1">
                     <Name>Fare table for zone based Full Price Tickets</Name>
                     <pricesFor>
                         <!--UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
@@ -395,132 +366,78 @@
                 
                 
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <!-- ALTERNATIVE 1: One FareTable per GeographicalIntervalRef for a set of UserProfiles with the same DistanceMatrixElementPrice -->
-                <FareTable id="VKT:FareTable:FullPrice-1zone" version="1">
-                    <Name>Fare table for 1 zone SINGLE TICKET full price (Adult, Pupil/Student, Youth)</Name>
+                <FareTable id="VKT:FareTable:Bus-FullPrice" version="1">
+                    <Name>Fare table for zone based Full Price Tickets</Name>
                     <pricesFor>
-                        <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
-                        <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
+                        <!-- Parametre pristabellen gjelder for - her aktuelle produkter
+                        Ment som  oppsummering -->
+                        <PreassignedFareProductRef ref="VKT:EnkeltBillett"/>
+                        <PreassignedFareProductRef ref="VKT:24hBillett"/>
+                        <PreassignedFareProductRef ref="VKT:7DBillett"/>
                     </pricesFor>
-                    <prices>
-                        <DistanceMatrixElementPrice id="VKT:DistanceMatrixElementPrice:Full-1zone" version="1">
-                            <Amount>37</Amount>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:1zone" version="1"/>
-                        </DistanceMatrixElementPrice>
-                    </prices>
-                </FareTable>
-                <FareTable id="VKT:FareTable:FullPrice-2zones" version="1">
-                    <Name>Fare table for 2 zones SINGLE TICKET full price (Adult, Pupil/Student, Youth)</Name>
-                    <pricesFor>
-                        <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
-                        <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
-                    </pricesFor>
-                    <prices>
-                        <DistanceMatrixElementPrice id="VKT:DistanceMatrixElementPrice:Full-2zones" version="1">
-                            <Amount>61</Amount>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:2zones" version="1"/>
-                        </DistanceMatrixElementPrice>
-                    </prices>
-                </FareTable>
-                <FareTable id="VKT:FareTable:FullPrice-3zones" version="1">
-                    <Name>Fare table for 3 zones SINGLE TICKET full price (Adult, Pupil/Student, Youth)</Name>
-                    <pricesFor>
-                        <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
-                        <TimeIntervalRef ref="VKT:TimeInterval:120min" version="1"/>
-                    </pricesFor>
-                    <prices>
-                        <DistanceMatrixElementPrice id="VKT:DistanceMatrixElementPrice:Full-3zones" version="1">
-                            <Amount>85</Amount>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:3zones" version="1"/>
-                        </DistanceMatrixElementPrice>
-                    </prices>
-                </FareTable>
-                
-                <FareTable id="VKT:FareTable:ReducedPrice-1zone" version="1">
-                    <Name>Fare table for 1 zone SINGLE TICKET Reduced price (Adult, Pupil/Student, Youth)</Name>
-                    <pricesFor>
-                        <UserProfileRef ref="VKT:UserProfile:Child-6-17" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Senior" version="1"/>
-                        <CompanionProfileRef ref="VKT:CompanionProfile:SeniorCompanion" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Disabled" version="1"/>
-                        <CompanionProfileRef ref="VKT:CompanionProfile:DisabledCompanion" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Military" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
-                        <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
-                    </pricesFor>
-                    <prices>
-                        <DistanceMatrixElementPrice id="VKT:DistanceMatrixElementPrice:Reduced-1zone" version="1">
-                            <Amount>37</Amount>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:1zone" version="1"/>
-                        </DistanceMatrixElementPrice>
-                    </prices>
-                </FareTable>
-                <FareTable id="VKT:FareTable:ReducedPrice-2zones" version="1">
-                    <Name>Fare table for 2 zones SINGLE TICKET Reduced price (Adult, Pupil/Student, Youth)</Name>
-                    <pricesFor>
-                        <UserProfileRef ref="VKT:UserProfile:Child-6-17" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Senior" version="1"/>
-                        <CompanionProfileRef ref="VKT:CompanionProfile:SeniorCompanion" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Disabled" version="1"/>
-                        <CompanionProfileRef ref="VKT:CompanionProfile:DisabledCompanion" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Military" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
-                        <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
-                    </pricesFor>
-                    <prices>
-                        <DistanceMatrixElementPrice id="VKT:DistanceMatrixElementPrice:Reduced-2zones" version="1">
-                            <Amount>61</Amount>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:2zones" version="1"/>
-                        </DistanceMatrixElementPrice>
-                    </prices>
-                </FareTable>
-                <FareTable id="VKT:FareTable:ReducedPrice-3zones" version="1">
-                    <Name>Fare table for 3 zones SINGLE TICKET Reduced price (Adult, Pupil/Student, Youth)</Name>
-                    <pricesFor>
-                        <UserProfileRef ref="VKT:UserProfile:Child-6-17" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Senior" version="1"/>
-                        <CompanionProfileRef ref="VKT:CompanionProfile:SeniorCompanion" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Disabled" version="1"/>
-                        <CompanionProfileRef ref="VKT:CompanionProfile:DisabledCompanion" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Military" version="1"/>
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
-                        <TimeIntervalRef ref="VKT:TimeInterval:120min" version="1"/>
-                    </pricesFor>
-                    <prices>
-                        <DistanceMatrixElementPrice id="VKT:DistanceMatrixElementPrice:Reduced-3zones" version="1">
-                            <Amount>85</Amount>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:3zones" version="1"/>
-                        </DistanceMatrixElementPrice>
-                    </prices>
+                    <cells>
+                        <Cell id="VKT:Cell:1zone-full" version="1" order="1">
+                            <Name>1 sone voksen</Name>
+                            <CellPrice>
+                                <Amount>40</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:Enkeltbillett"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
+                            <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
+                            <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
+                        </Cell>
+                        <Cell id="VKT:Cell:2zones-full" version="1" order="1">
+                            <Name>2 soner voksen</Name>
+                            <CellPrice>
+                                <Amount>80</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:Enkeltbillett"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
+                            <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
+                            <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
+                        </Cell>
+                        <!-- osv alle kobinasjoner som er gyldige for voksen enkeltbillett-->
+                        <!-- 24 timers (kun 1 variant for voksen) -->
+                        <Cell id="VKT:Cell:24timer1-1" version="1" order="1">
+                            <Name>1 sone voksen</Name>
+                            <CellPrice>
+                                <Amount>40</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:24Timer"/>
+                            <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
+                            <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
+                        </Cell>
+                        <!-- Barn -->
+                        <Cell id="VKT:Cell:1zone-reduced" version="1" order="1">
+                            <Name>1 soner barn</Name>
+                            <CellPrice>
+                                <Amount>80</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:Enkeltbillett"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
+                            <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
+                            <UserProfileRef ref="VKT:UserProfile:Child-6-17" version="1"/>
+                        </Cell>
+                        <!-- Barn -->
+                        <Cell id="VKT:Cell:2zones-reduced" version="1" order="1">
+                            <Name>1 soner barn</Name>
+                            <CellPrice>
+                                <Amount>80</Amount>
+                                <Currency>NOK</Currency>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:Enkeltbillett"/>
+                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
+                            <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
+                            <UserProfileRef ref="VKT:UserProfile:Child-6-17" version="1"/>
+                        </Cell>
+                    </cells>                   
                 </FareTable>
                 
                 
                 
-                <!-- ALTERNATIVE 2: One FareTable per Geographical/Time IntervalRefs for a set of UserProfiles with the same CellPrice -->
+                
+                
+                <!-- One FareTable per Geographical/Time IntervalRefs for a set of UserProfiles with the same CellPrice? -->
                 <FareTable id="VKT:FareTable:SingleTicket" version="1">
                     <Name>Fare table for SINGLE TICKETs multiple sones and prices</Name>
                     <cells>
@@ -530,13 +447,6 @@
                             <CellPrice>
                                 <Amount>37</Amount>
                             </CellPrice>
-                            <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
-                            <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
-                            <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
-                            <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
-                            <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
-                            <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:1zone" version="1"/>
                         </Cell>
                         <!-- TWO ZONES full price-->
                         <Cell id="VKT:Cell:1-2" version="1" order="1">
@@ -550,7 +460,6 @@
                             <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:2zones" version="1"/>
                         </Cell>
                         <!-- THREE ZONES full price-->
                         <Cell id="VKT:Cell:1-3" version="1" order="1">
@@ -564,7 +473,6 @@
                             <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:3zones" version="1"/>
                         </Cell>
                         
                         <!-- ONE ZONE reduced price -->
@@ -581,7 +489,6 @@
                             <UserProfileRef ref="VKT:UserProfile:Disabled" version="1"/>
                             <CompanionProfileRef ref="VKT:CompanionProfile:DisabledCompanion" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Military" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:1zone" version="1"/>
                         </Cell>
                         <!-- TWO ZONES reduced price -->
                         <Cell id="VKT:Cell:2-2" version="1" order="1">
@@ -597,7 +504,6 @@
                             <UserProfileRef ref="VKT:UserProfile:Disabled" version="1"/>
                             <CompanionProfileRef ref="VKT:CompanionProfile:DisabledCompanion" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Military" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:2zones" version="1"/>
                         </Cell>
                         <!-- THREE ZONES reduced price -->
                         <Cell id="VKT:Cell:2-3" version="1" order="1">
@@ -613,7 +519,6 @@
                             <UserProfileRef ref="VKT:UserProfile:Disabled" version="1"/>
                             <CompanionProfileRef ref="VKT:CompanionProfile:DisabledCompanion" version="1"/>
                             <UserProfileRef ref="VKT:UserProfile:Military" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:3zones" version="1"/>
                         </Cell>
                     </cells>  
                 </FareTable>
@@ -636,7 +541,6 @@
                             </CellPrice>
                             <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:1zone" version="1"/>
                         </Cell>
                         <Cell id="VKT:Cell:3-2" version="1" order="1">
                             <Name>Full price for 2 zones</Name>
@@ -645,7 +549,6 @@
                             </CellPrice>
                             <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:2zones" version="1"/>
                         </Cell>
                         <Cell id="VKT:Cell:3-3" version="1" order="1">
                             <Name>Full price for 3 zones</Name>
@@ -654,7 +557,6 @@
                             </CellPrice>
                             <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:120min" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:3zones" version="1"/>
                         </Cell>
                     </cells>
                 </FareTable>
@@ -677,7 +579,6 @@
                             </CellPrice>
                             <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:1zone" version="1"/>
                         </Cell>
                         <Cell id="VKT:Cell:4-2" version="1" order="1">
                             <Name>Reduced price for 2 zones</Name>
@@ -686,7 +587,6 @@
                             </CellPrice>
                             <GeographicalIntervalRef ref="VKT:GeographicalInterval:2zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:90min" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:2zones" version="1"/>
                         </Cell>
                         <Cell id="VKT:Cell:4-3" version="1" order="1">
                             <Name>Reduced price for 1 zone</Name>
@@ -695,7 +595,6 @@
                             </CellPrice>
                             <GeographicalIntervalRef ref="VKT:GeographicalInterval:3zones" version="1"/>
                             <TimeIntervalRef ref="VKT:TimeInterval:120min" version="1"/>
-                            <GroupOfDistanceMatrixElementsRef ref="VKT:GroupOfDistanceMatrixElements:3zones" version="1"/>
                         </Cell>
                     </cells>
                 </FareTable>
