@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
+<!-- TODO: UNFINISHED EXAMPLE FOR PURE GeographicalIntervalPrice for RUTER OSLO REGION ZONES --> 
+
+
 <!-- 
-    Simplified example for FareTable with static pricing in NeTEx based on Ruter# zones and tariffs for the greater Oslo/Viken region in Norway
+    Simplified example for GeographicalIntervalPrice based FareTable with static pricing in NeTEx.
+    Based on Ruter# zones and tariffs for the greater Oslo/Viken region in Norway.
     
     https://ruter.no/kjop-billett/billetter-og-priser/
 -->
 
 <PublicationDelivery 
   xmlns="http://www.netex.org.uk/netex"
-  xmlns:gis="http://www.opengis.net/gml/3.2" 
-  xmlns:siri="http://www.siri.org.uk/siri"
-  version="1.10:NO-NeTEx-fares:0.9">
+  version="1.11:NO-NeTEx-fares:0.8">
     
-    <PublicationTimestamp>2020-08-15T12:00:00</PublicationTimestamp>
+    <PublicationTimestamp>2020-11-24T12:34:56</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
     <dataObjects>
-        
-        
-        <!-- UNFINISHED EXAMPLE - RUTER FARE TABLE FOR OSLO ZONES --> 
 
 
         <!-- Organisation data (incomplete, only used for example purposes) -->
@@ -634,7 +634,7 @@
                 
                 <!-- ALTERNATIVE 3: One FareTable per set of CellPrices for a predefined set of UserProfiles -->
                 <FareTable id="RUT:FareTable:SingleTicket-FullPrice" version="1">
-                    <Name>Fare table for full price SINGLE TICKETs multiple sones</Name>
+                    <Name>Fare table for SINGLE TICKETs multiple sones</Name>
                     <pricesFor>
                         <UserProfileRef ref="RUT:UserProfile:Adult" version="1"/>
                         <UserProfileRef ref="RUT:UserProfile:Pupil" version="1"/>
@@ -673,7 +673,7 @@
                 </FareTable>
                 
                 <FareTable id="RUT:FareTable:SingleTicket-ReducedPrice" version="1">
-                    <Name>Fare table for reduced price SINGLE TICKETs multiple sones</Name>
+                    <Name>Fare table for SINGLE TICKETs multiple sones</Name>
                     <pricesFor>
                         <UserProfileRef ref="RUT:UserProfile:Child-6-17" version="1"/>
                         <UserProfileRef ref="RUT:UserProfile:Senior" version="1"/>
