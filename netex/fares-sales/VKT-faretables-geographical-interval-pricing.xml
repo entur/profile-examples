@@ -408,8 +408,6 @@
                 
                 
                 <!-- ALTERNATIVE 1: One FareTable per GeographicalIntervalRef for a set of UserProfiles with the same DistanceMatrixElementPrice -->
-                
-                <!--
                 <FareTable id="VKT:FareTable:FullPrice-1zone" version="1">
                     <Name>Fare table for 1 zone SINGLE TICKET full price (Adult, Pupil/Student, Youth)</Name>
                     <pricesFor>
@@ -519,7 +517,6 @@
                         </DistanceMatrixElementPrice>
                     </prices>
                 </FareTable>
-                -->
                 
                 
                 
