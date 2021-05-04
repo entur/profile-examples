@@ -80,7 +80,7 @@
 				
 				
 				<!-- Non-Xerces compliant sample to include TimetableFrame -->
-				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="./imported.xml" xpointer="xpointer(//PublicationDelivery/dataObjects/TimetableFrame)"/>
+				<!--xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="./imported.xml" xpointer="xpointer(//PublicationDelivery/dataObjects/TimetableFrame)"/-->
 				
 			</frames>
 		</CompositeFrame>
