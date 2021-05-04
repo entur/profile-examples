@@ -9,6 +9,10 @@
     Based on VKT zones and tariffs for the Vestfold-Telemark region in Norway.
     
     https://www.vkt.no/reise/billetter-og-priser/
+      * https://www.vkt.no/reise/billetter-og-priser/vkt-mobilbillett-enkeltbilletter/
+      * https://www.vkt.no/reise/billetter-og-priser/periodebilletter/
+      * https://www.vkt.no/reise/sonekart/
+    
 -->
 
 <PublicationDelivery 
@@ -53,7 +57,9 @@
             
             <tariffZones>
                 <!-- Fare Zones are managed in NSR, the National Stopplace Registry for Norway -->
-                <FareZone id="NSR:FareZone:1" version="dummy-data"></FareZone>
+                <FareZone id="NSR:FareZone:Grenland" version="1">
+                    <ParentFareZoneRef ref="NSR:FareZone:Grenland"/>
+                </FareZone>
             </tariffZones>
             
         </SiteFrame>
@@ -195,7 +201,7 @@
                 "A cell of an origin-destination matrix for TARIFF ZONEs or STOP POINTs, expressing a fare distance for the corresponding trip: value in km, number of fare units etc" 
             (page 180) -->
             
-            <!-- NOT RELEVANT in this example as the value is directly expressed in the fare tables, not in its underlying units -->
+            <!-- DistanceMatrixElements are NOT RELEVANT in this example as the value is directly expressed in the fare tables, not in its underlying units -->
             <!--
             <distanceMatrixElements>
                 <DistanceMatrixElement id="VKT:DistanceMatrixElement:1zone" version="1">
@@ -222,11 +228,18 @@
                         <GeographicalStructureFactorRef ref="VKT:GeographicalStructureFactor:allzones" version="1"/>
                     </structureFactors>
                 </DistanceMatrixElement>
+                
+                <DistanceMatrixElement id="VKT:DistanceMatrixElement:FareZoneGrenland" version="1">
+                    <StartTariffZoneRef ref="NSR:FareZone:Grenland" version="1"/>
+                    <EndTariffZoneRef ref="NSR:FareZone:Grenland" version="1"/>
+                </DistanceMatrixElement>
             </distanceMatrixElements>
             -->
            
  
 
+
+<!-- TODO - Revise VKT user profiles -->
             
             <usageParameters>
                 <UserProfile id="VKT:UserProfile:Adult" version="1">
@@ -296,7 +309,17 @@
                 </CompanionProfile>
                 
                 <UserProfile id="VKT:UserProfile:Youth" version="1">
-                    <Name>Pupil less than 20 years old or student</Name>
+                    <Name>TODO</Name>
+                    <Description>Only valid for 7 and 30 day period passes</Description>
+                    <UserType>youngPerson</UserType>
+                    <MinimumAge>18</MinimumAge>
+                    <MaximumAge>19</MaximumAge>
+                    <ProofRequired>identityDocument</ProofRequired>
+                    <DiscountBasis>discount</DiscountBasis>
+                </UserProfile>
+                
+                <UserProfile id="VKT:UserProfile:YoungAdult" version="1">
+                    <Name>TODO</Name>
                     <Description>Only valid for 7 and 30 day period passes</Description>
                     <UserType>youngPerson</UserType>
                     <MinimumAge>18</MinimumAge>
@@ -348,21 +371,116 @@
                     </includes>
                 </FareTable>
 
-                
-                
-                <FareTable id="VKT:FareTable:Bus-FullPrice-DEPRECATED" version="1">
-                    <Name>Fare table for zone based Full Price Tickets</Name>
+    
+    
+                <FareTable id="VKT:FareTable:Bus-FullPrice-Grenland" version="1">
+                    <Name>Fare table for Grenland zone full price tickets</Name>
                     <pricesFor>
-                        <!--UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Pupil" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
-                        <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
-                        
-                        <TimeIntervalRef ref="VKT:TimeInterval:60min" version="1"/-->
-                        
-                        <GeographicalIntervalRef ref="VKT:GeographicalInterval:1zone" version="1"/>
+                        <UserProfileRef ref="VKT:UserProfile:Adult" version="1"/>
                     </pricesFor>
+                    <specifics>
+                        <TariffZoneRef ref="NSR:FareZone:Grenland" version="1"/>
+                    </specifics>
+                    <cells>
+                        <Cell id="VKT:Cell:Grenland-full-1" version="1" order="1">
+                            <CellPrice>
+                                <Amount>25</Amount>
+                            </CellPrice>
+                            
+                            <!-- TODO: Should rather have ValidableElementRef than ProductRef (or both) ? -->
+                            
+                            <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:Single"/>
+                        </Cell>
+                        <Cell id="VKT:Cell:Grenland-full-2" version="1" order="1">
+                            <CellPrice>
+                                <Amount>90</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:24hours"/>
+                        </Cell>
+                        <Cell id="VKT:Cell:Grenland-full-3" version="1" order="1">
+                            <CellPrice>
+                                <Amount>120</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:7days"/>
+                        </Cell>
+                        <Cell id="VKT:Cell:Grenland-full-4" version="1" order="1">
+                            <CellPrice>
+                                <Amount>400</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:30days"/>
+                        </Cell>
+                        <Cell id="VKT:Cell:Grenland-full-5" version="1" order="1">
+                            <CellPrice>
+                                <Amount>2000</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:180days"/>
+                        </Cell>
+                    </cells>
                 </FareTable>
+                
+                
+                
+                <FareTable id="VKT:FareTable:Bus-ReducedPrice-Grenland" version="1">
+                    <Name>Fare table for Grenland zone reduced price tickets</Name>
+                    <pricesFor>
+                        <UserProfileRef ref="VKT:UserProfile:Youth" version="1"/>
+                        <UserProfileRef ref="VKT:UserProfile:Senior" version="1"/>
+                        <UserProfileRef ref="VKT:UserProfile:Student" version="1"/>
+                    </pricesFor>
+                    <specifics>
+                        <TariffZoneRef ref="NSR:FareZone:Grenland" version="1"/>
+                    </specifics>
+                    <cells>
+                        <Cell id="VKT:Cell:Grenland-reduced-1" version="1" order="1">
+                            <CellPrice>
+                                <Amount>25</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:Single"/>
+                        </Cell>
+                        <Cell id="VKT:Cell:Grenland-reduced-2" version="1" order="1">
+                            <CellPrice>
+                                <Amount>90</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:24hours"/>
+                        </Cell>
+                        <Cell id="VKT:Cell:Grenland-reduced-3" version="1" order="1">
+                            <CellPrice>
+                                <Amount>90</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:7days"/>
+                        </Cell>
+                        <Cell id="VKT:Cell:Grenland-reduced-4" version="1" order="1">
+                            <CellPrice>
+                                <Amount>400</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:180days"/>
+                        </Cell>
+                        <Cell id="VKT:Cell:Grenland-reduced-5" version="1" order="1">
+                            <CellPrice>
+                                <Amount>2000</Amount>
+                            </CellPrice>
+                            <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:180days"/>
+                        </Cell>
+                    </cells>
+                </FareTable>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+<!-- TODO - Revise BELOW FareTables (NOT REVISED per 2021-05-05) -->
+                
                 
                 
                 
@@ -371,11 +489,22 @@
                     <pricesFor>
                         <!-- Parametre pristabellen gjelder for - her aktuelle produkter
                         Ment som  oppsummering -->
-                        <PreassignedFareProductRef ref="VKT:EnkeltBillett"/>
-                        <PreassignedFareProductRef ref="VKT:24hBillett"/>
-                        <PreassignedFareProductRef ref="VKT:7DBillett"/>
+                        <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:Single"/>
+                        <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:24hours"/>
+                        <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:7days"/>
+                        <PreassignedFareProductRef ref="VKT:PreassignedFareProduct:180days"/>
                     </pricesFor>
                     <cells>
+                        <Cell id="VKT:Cell:referencesample" version="1" order="1">
+                            <Name>1 sone voksen</Name>
+                            <CellPrice>
+                                <Amount>40</Amount>
+                            </CellPrice>
+                            <TariffZoneRef ref="ref"></TariffZoneRef>
+                        </Cell>
+                        
+                        
+                        
                         <Cell id="VKT:Cell:1zone-full" version="1" order="1">
                             <Name>1 sone voksen</Name>
                             <CellPrice>
