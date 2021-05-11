@@ -720,17 +720,20 @@
                     TODO
                 -->
                 
-                
                 <EntitlementGiven id="test" version="1">
-                    <CappedDiscountRightRef ref="ref"/>
+                    <PreassignedFareProductRef ref="ref"/>
                 </EntitlementGiven>
+                
                 <EntitlementRequired id="test" version="1">
                     <ServiceAccessRightRef ref="ref"/>
                 </EntitlementRequired>
                 
             </usageParameters>
             
+            
+            
             <fareProducts>
+
                 <PreassignedFareProduct id="ENT:PreassignedFareProduct:1" version="1">
                     <Name>PreassignedFareProduct</Name>
                     <PrivateCode></PrivateCode>
