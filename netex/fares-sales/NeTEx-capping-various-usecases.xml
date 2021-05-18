@@ -18,11 +18,14 @@
 
         <FareFrame id="VOT:FareFrame:1" version="1">
 
-            <!--PricingParameterSet id="VOT:PricingParameterSet" version="1">
+            <PricingParameterSet id="VOT:PricingParameterSet" version="1">
                 <pricingRules>
-                    <LimitingRule id="VOT:LimitingRule:MaxPerDayAdult" version="1">
-                        <MaximumLimitPrice>80</MaximumLimitPrice>
+                    <LimitingRule id="VOT:LimitingRule:100percent" version="1">
+                        <MaximumPriceAsPercentage>100</MaximumPriceAsPercentage>
                     </LimitingRule>
+                    
+                    
+                    <!--
                     <LimitingRule id="VOT:LimitingRule:MaxPer7DaysAdult" version="1">
                         <MaximumLimitPrice>240</MaximumLimitPrice>
                     </LimitingRule>
@@ -42,8 +45,19 @@
                     <LimitingRule id="VOT:LimitingRule:MaxPer7DaysElderly" version="1">
                         <MaximumLimitPrice>130</MaximumLimitPrice>
                     </LimitingRule>
+                    -->
                 </pricingRules>
-            </PricingParameterSet-->
+                
+                <pricingServices>
+                    <PricingService id="ENT:PricingService:PoP" version="1">
+                        <Name>PoP (Pris og Produkt)</Name>
+                        <OrganisationRef ref="ENT:GeneralOrganisation:1" />
+                        <Url>https://pop.entur.org/</Url>
+                    </PricingService>
+                </pricingServices>
+            </PricingParameterSet>
+
+
 
             <validableElements>
                 <ValidableElement id="VOT:ValidableElement:SingleTrip" version="1">
@@ -237,15 +251,58 @@
                 
                 
                 
-                <CappedDiscountRight id="VOT:CappedDiscountRight:1" version="1">
+                <!--
+                    
+                    Eksempler:
+                    
+                    * Max beløp
+                    * Fare table faste priser
+                    * Pricing engine (prosentvis)
+                    * NSB m/ prosent av egen pris (avslag)
+                    
+                    Må håndtere både forskuddsvis og etterskuddsvis betaling!
+                    
+                -->
+                
+                <CappedDiscountRight id="VOT:CappedDiscountRight:BestprisVestfold-PricingService" version="1">
                     
                     <cappingRules>
                         <CappingRule id="VOT:CappingRule:1" version="1">
+                            <Name>Capping of single tickets to (max price for) 24 hour ticket</Name>
+                            
+                            <CappingPeriod>day</CappingPeriod>
+                            
+                            <!-- Product being capped  to -->
                             <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:24Hours" version="1"/>
+                            
+                            <!-- Element (entitlement) to be capped -->
+                            <ValidableElementRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                            
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment order="1" id="VOT:GenericParameterAssignment:PS-1" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:24Hours" version="1"/> <!-- only related to the capping, thus necessary -->
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                            
+                            <prices>
+                                <CappingRulePrice id="VOT:CappingRulePrice:PS-1" version="1">
+                                    <PricingServiceRef ref="ENT:PricingService:PoP" version="1"/>
+                                    <LimitingRuleRef ref="VOT:LimitingRule:100percent" version="1"/>
+                                </CappingRulePrice>
+                            </prices>
                         </CappingRule>
+                        
+                        
+                        
                         <CappingRule id="VOT:CappingRule:2" version="1">
+                            
                             <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:7Days" version="1"/>
+                            
                         </CappingRule>
+                        
+                        
                         <CappingRule id="VOT:CappingRule:3" version="1">
                             <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:30Days" version="1"/>
                         </CappingRule>
@@ -353,80 +410,9 @@
                         <CappingRulePrice id="VOT:CappingRulePrice:2" version="1">
                             <Amount>170</Amount>
                             <!-- FareProductPriceRef ref="ref"/ -->
-                        </CappingRulePrice>                        
-                        
-                        <!-- dummy data -->
-                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:1" version="1">
-                            <Amount>2.80</Amount>
-                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElemENT:TariffZones" />
-                        </DistanceMatrixElementPrice>
-                        
-                        <SalesOfferPackagePrice id="ENT:SalesOfferPackagePrice:1" version="1">
-                            <Amount>6.66</Amount>
-                        </SalesOfferPackagePrice>
-                        
-                        <GeographicalUnitPrice id="ENT:GeographicalUnitPrice:1" version="1">
-                            <Amount>2.80</Amount>
-                        </GeographicalUnitPrice>
+                        </CappingRulePrice>
                     </prices>
                 </FareTable>
-                
-                
-                
-                <!-- 
-                    DUMMY DATA SET, included for illustration of modeling the generic Price elements
-                    
-                    Could preferably (more lean structuring) use <prices> rather than <cells> for referencing? 
-                    (in contrast to official CEN examples using the latter) 
-                -->
-                <!-- 
-                <FareTable id="ENT:FareTable:DUMMY-EXAMPLE" version="1">
-                    <pricesFor>
-                        <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip1Zone"/>
-                        <UserProfileRef ref="ENT:UserProfile:ReducedFare" />
-                        <UserProfileRef ref="ENT:UserProfile:NormalFare"  />
-                        <UserProfileRef ref="ENT:UserProfile:StudentFare" />
-                    </pricesFor>
-                    
-                    <prices>
-                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:2_80" version="1">
-                            <Amount>2.80</Amount>
-                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElemENT:TariffZones" />
-                        </DistanceMatrixElementPrice>
-                        
-                        <SalesOfferPackagePrice id="ENT:SalesOfferPackagePrice:6_66" version="1">
-                            <Amount>6.66</Amount>
-                        </SalesOfferPackagePrice>
-                        
-                        <GeographicalUnitPrice id="ENT:GeographicalUnitPrice:2_80" version="1">
-                            <Amount>2.80</Amount>
-                        </GeographicalUnitPrice>
-                    </prices>
-                    
-                    <cells>
-                        <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:9">
-                            <Amount>41</Amount>
-                            <Currency>SEK</Currency>
-                            <FareStructureElementRef version="1" ref="ENT:FareStructureElement:120minZone2SL"/>
-                        </FareStructureElementPrice>
-                        <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:10">
-                            <Amount>57</Amount>
-                            <Currency>SEK</Currency>
-                            <FareStructureElementRef version="1" ref="ENT:FareStructureElement:150minZone12SL"/>
-                        </FareStructureElementPrice>
-                        <GeographicalIntervalPrice version="1" id="ENT:GeographicalIntervalPrice:7">
-                            <Amount>16</Amount>
-                            <Currency>SEK</Currency>
-                            <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:1zone"/>
-                        </GeographicalIntervalPrice>
-                        <GeographicalIntervalPrice version="1" id="ENT:GeographicalIntervalPrice:8">
-                            <Amount>32</Amount>
-                            <Currency>SEK</Currency>
-                            <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:2zones"/>
-                        </GeographicalIntervalPrice>
-                    </cells>
-                </FareTable>
-                -->
                 
             </fareTables>
             
