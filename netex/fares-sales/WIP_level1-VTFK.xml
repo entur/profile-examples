@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    "Wireframe" for Capping P.O.C. mainly based on Vestfold/Telemark "Best Price" use-cases
+    
+    https://enturas.atlassian.net/wiki/spaces/kb/pages/2556985467/User+stories+-+Capping
+-->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  xmlns:gis="http://www.opengis.net/gml/3.2" 
+  version="1.11:NO-NeTEx-fares:0.9">
+
+    <PublicationTimestamp>2021-05-11T18:14:00</PublicationTimestamp>
+    <ParticipantRef>Entur_EXAMPLES</ParticipantRef>
+    <dataObjects>
+
+        <FareFrame id="VOT:FareFrame:1" version="1">
+
+            <PricingParameterSet id="VOT:PricingParameterSet" version="1">
+                <pricingRules>
+                    <LimitingRule id="VOT:LimitingRule:MaxPerDayAdult" version="1">
+                        <MaximumLimitPrice>80</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="VOT:LimitingRule:MaxPer7DaysAdult" version="1">
+                        <MaximumLimitPrice>240</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="VOT:LimitingRule:MaxPer30DaysAdult" version="1">
+                        <MaximumLimitPrice>740</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="VOT:LimitingRule:MaxPer180DaysAdult" version="1">
+                        <MaximumLimitPrice>3700</MaximumLimitPrice>
+                    </LimitingRule>
+
+                    <LimitingRule id="VOT:LimitingRule:MaxPer7DaysYoung" version="1">
+                        <MaximumLimitPrice>100</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="VOT:LimitingRule:MaxPer7DaysYoungAdult" version="1">
+                        <MaximumLimitPrice>150</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="VOT:LimitingRule:MaxPer7DaysElderly" version="1">
+                        <MaximumLimitPrice>130</MaximumLimitPrice>
+                    </LimitingRule>
+                </pricingRules>
+            </PricingParameterSet>
+
+            <validableElements>
+                <ValidableElement id="VOT:ValidableElement:SingleTrip" version="1">
+                    <Name lang="eng">SingleTrip</Name>
+                </ValidableElement>
+                <ValidableElement id="VOT:ValidableElement:SingleTripArea1" version="1">
+                    <Name lang="eng">SingleTrip Area 1</Name>
+                </ValidableElement>
+                
+                <!-- Rather model as SingleTrip + 24H timeband? -->
+                <ValidableElement id="VOT:ValidableElement:24Hours" version="1">
+                    <Name lang="eng">24 hour ticket</Name>
+                </ValidableElement>
+            </validableElements>
+
+
+            <usageParameters>
+                
+                <UserProfile id="VOT:UserProfile:Adult" version="1">
+                    <Name lang="eng">Adult</Name>
+                    <Description>Regular full price</Description>
+                    <MinimumAge>18</MinimumAge>
+                    <MaximumAge>66</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="VOT:UserProfile:Child" version="1">
+                    <Name lang="eng">Child</Name>
+                    <MinimumAge>6</MinimumAge>
+                    <MaximumAge>17</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="VOT:UserProfile:Young" version="1">
+                    <Name lang="eng">Vestfoldkortet Ung</Name>
+                    <MinimumAge>6</MinimumAge>
+                    <MaximumAge>19</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="VOT:UserProfile:YoungAdult" version="1">
+                    <Name lang="eng">Vestfoldkortet Young Adult</Name>
+                    <MinimumAge>20</MinimumAge>
+                    <MaximumAge>29</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="VOT:UserProfile:AdultVestfoldkort" version="1">
+                    <Name lang="eng">Vestfoldkortet Adult</Name>
+                    <MinimumAge>30</MinimumAge>
+                    <MaximumAge>66</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="VOT:UserProfile:Elderly" version="1">
+                    <Name lang="eng">Child</Name>
+                    <MinimumAge>67</MinimumAge>
+                </UserProfile>
+                
+                
+                
+                <!-- Duplicates in Norwegian for reference only -->
+                <UserProfile id="VOT:UserProfile:Voksen" version="1">
+                    <Name lang="nob">Voksen</Name>
+                    <Description>Vanlig fullpris</Description>
+                    <MinimumAge>18</MinimumAge>
+                    <MaximumAge>66</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="VOT:UserProfile:Barn" version="1">
+                    <Name lang="nob">BArn</Name>
+                    <MinimumAge>6</MinimumAge>
+                    <MaximumAge>17</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="VOT:UserProfile:VestfoldCardYoung" version="1">
+                    <Name lang="nob">Vestfoldkortet Ung</Name>
+                    <MinimumAge>6</MinimumAge>
+                    <MaximumAge>19</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="VOT:UserProfile:VestfoldCardYoungAdult" version="1">
+                    <Name lang="nob">Vestfoldkortet UngVoksen</Name>
+                    <MinimumAge>20</MinimumAge>
+                    <MaximumAge>29</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="VOT:UserProfile:VestfoldCardAdult" version="1">
+                    <Name lang="eng">Vestfoldkortet Voksen</Name>
+                    <MinimumAge>30</MinimumAge>
+                    <MaximumAge>66</MaximumAge>
+                </UserProfile>
+                
+                <UserProfile id="VOT:UserProfile:Senior" version="1">
+                    <Name lang="eng">Senior</Name>
+                    <MinimumAge>67</MinimumAge>
+                </UserProfile>
+                
+                
+
+                <!-- Other usage parameters -->
+                <Transferability id="VOT:Transferability:TransferableSingleConcurrentUser" version="1">
+                    <CanTransfer>true</CanTransfer>
+                    <HasTransferFee>false</HasTransferFee>
+                    <SharedUsage>singleUser</SharedUsage>
+                </Transferability>
+                <Transferability id="VOT:Transferability:NoTransfer" version="1">
+                    <CanTransfer>false</CanTransfer>
+                </Transferability>
+                <FrequencyOfUse id="VOT:FrequencyOfUse:Unlimited" version="1">
+                    <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                </FrequencyOfUse>
+                <FrequencyOfUse id="VOT:FrequencyOfUse:Single" version="1">
+                    <FrequencyOfUseType>single</FrequencyOfUseType>
+                </FrequencyOfUse>
+                <UsageValidityPeriod id="VOT:UsageValidityPeriod:24Hours" version="1">
+                    <UsageTrigger>fulfilment</UsageTrigger>
+                    <StandardDuration>PT24H</StandardDuration>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="VOT:UsageValidityPeriod:7Days" version="1">
+                    <StandardDuration>P7D</StandardDuration>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="VOT:UsageValidityPeriod:30Days" version="1">
+                    <StandardDuration>P30D</StandardDuration>
+                </UsageValidityPeriod>
+
+            </usageParameters>
+
+
+            <fareProducts>
+
+                <PreassignedFareProduct id="VOT:PreassignedFareProduct:SingleTicket" version="1">
+                    <Name lang="eng">Single ticket Vestfold</Name>
+                    <!-- The regular product -->
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+                
+                <PreassignedFareProduct id="VOT:PreassignedFareProduct:24Hours" version="1">
+                    <Name lang="eng">24 hours Vestfold</Name>
+                    <!-- The regular product -->
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+                
+                <PreassignedFareProduct id="VOT:PreassignedFareProduct:7DayTicket" version="1">
+                    <Name lang="eng">7 days Vestfold</Name>
+                    <!-- The regular product -->
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+            
+                
+                <CappedDiscountRight id="VOT:CappedDiscountRight:1" version="1">
+                    <Name lang="eng">Best Price Vestfold</Name>
+                    
+                    <!-- The Capped discount right that is included/added to the account when a 
+                        new capping scheme is started(?) -->
+
+                    <cappingRules>
+                                                
+                        <!-- How to describe?
+                            
+                            1)
+                            Capping based on amount 
+                            vs.
+                            Capping based on number of purchases of (one or more) specific PreassignedFareProducts 
+                            
+                            2) Different user profiles?
+                            3) How to tell that even if you are paying using "Child" fares, the capping level for 24hr is the same as adult (80kr),
+                                 and you also receive an Adult access right, not a 24hr child ticket ( which does not exist)
+                        -->
+
+                        <CappingRule id="VOT:CappingRule:1" version="1">
+                            
+                            <Name>Max amount per 24 hour</Name>
+                            
+                            <!-- Limit on how much money to spend in this rule before moving to next (?) -->
+                             <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            
+                            <fareTables>
+                                <FareTable id="VOT:FareTable:24Hour" version="any">
+                                    <Name>Max amount 24 hour</Name>
+                                    <cells>
+                                        <!-- Does not matter which UserProfile -->
+                                        <Cell version="1" order="1" id="VOT:Cell:1">
+                                            <CellPrice>
+                                                <Name>Max amount for 24 hour</Name>
+                                                <!-- Sets the capping price/limit -->
+                                                <LimitingRuleRef ref="VOT:LimitingRule:MaxPerDayAdult" version="1"/>
+                                            </CellPrice>
+                                            
+                                            <!-- The type of element we are considering -->
+                                            <ValidableElementRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                                            <!-- The period to consider / look back --> 
+                                            <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:24Hours" version="1"/>
+                                        </Cell>
+                                    </cells>
+                                </FareTable>
+                            </fareTables>
+                            
+                            <CappingPeriod>day</CappingPeriod>
+                            
+                            <!-- Is this the product that has a cap on cost ?-->
+                            
+                            <!-- PREASSIGNED FARE PRODUCT whose prices set cap for this product.-->
+                            <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:24Hours" version="1"/>
+                            <ValidableElementRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                            <!-- Parameter assignments to apply to issued access right? -->
+                            <validityParameterAssignments>
+                                <!-- Capping is only to Adult fare -->
+                                <GenericParameterAssignment order="1" id="VOT:GenericParameterAssignment:1" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:24Hours" version="1"/>
+                                        <UserProfileRef ref="VOT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </CappingRule>
+                       
+                        <CappingRule id="VOT:CappingRule:2" version="1">
+                            <Name>Max amount per 7 days</Name>
+
+                            <fareTables>
+                                <FareTable id="VOT:FareTable:7Days" version="any">
+                                    <Name>Max amount for 7 days</Name>
+                                    <cells>
+                                        <Cell version="1" order="1" id="VOT:Cell:2">
+                                            <CellPrice>
+                                                <Name>Max amount 7 days Adult (full price)</Name>
+                                                <LimitingRuleRef ref="VOT:LimitingRule:MaxPer7DaysAdult" version="1"/>
+                                            </CellPrice>
+                                            <!-- The type of element we are considering -->
+                                            <ValidableElementRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                                            <!-- The period to consider / look back --> 
+                                            <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:7Days" version="1"/>
+                                            <!-- Adult 30-66 -->
+                                            <UserProfileRef ref="VOT:UserProfile:AdultVestfoldkort" version="1"/>
+                                        </Cell>
+                                        <Cell version="1" order="1" id="VOT:Cell:3">
+                                            <CellPrice>
+                                                <Name>Max amount 7 days Young</Name>
+                                                <LimitingRuleRef ref="VOT:LimitingRule:MaxPer7DaysYoung" version="1"/>
+                                            </CellPrice>
+                                            <!-- The type of element we are considering -->
+                                            <ValidableElementRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                                            <!-- The period to consider / look back --> 
+                                            <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:7Days" version="1"/>
+                                            <!-- Young 6-19 -->
+                                            <UserProfileRef ref="VOT:UserProfile:Young" version="1"/>
+                                        </Cell>
+                                        <Cell version="1" order="1" id="VOT:Cell:4">
+                                            <CellPrice>
+                                                <Name>Max amount 7 days YoungAdult</Name>
+                                                <LimitingRuleRef ref="VOT:LimitingRule:MaxPer7DaysYoungAdult" version="1"/>
+                                            </CellPrice>
+                                            <!-- The type of element we are considering -->
+                                            <ValidableElementRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                                            <!-- The period to consider / look back --> 
+                                            <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:7Days" version="1"/>
+                                            <!-- Young 6-19 -->
+                                            <UserProfileRef ref="VOT:UserProfile:YoungAdult" version="1"/>
+                                        </Cell>
+                                        <Cell version="1" order="1" id="VOT:Cell:5">
+                                            <CellPrice>
+                                                <Name>Max amount 7 days Senior</Name>
+                                                <LimitingRuleRef ref="VOT:LimitingRule:MaxPer7DaysElderly" version="1"/>
+                                            </CellPrice>
+                                            <!-- The type of element we are considering -->
+                                            <ValidableElementRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                                            <!-- The period to consider / look back --> 
+                                            <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:7Days" version="1"/>
+                                            <!-- Young 6-19 -->
+                                            <UserProfileRef ref="VOT:UserProfile:Elderly" version="1"/>
+                                        </Cell>
+                                    </cells>
+                                </FareTable>
+                            </fareTables>
+                            
+                            <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            
+                            <CappingPeriod>week</CappingPeriod>
+                            <!-- Is this the product that has a cap on cost -->
+                            <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:7DayTicket" version="1"/>
+                            <ValidableElementRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                            
+                            <validityParameterAssignments>
+                                
+                            <!-- Either one of these must be assigned to the resulting ticket -->  
+                                
+<!-- TODO how to find correct parameter assignment to apply?
+            Implicit based on age eligibility? --> 
+                                
+                                <GenericParameterAssignment order="1" id="VOT:GenericParameterAssignment:2" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:7Days" version="1"/>
+                                        <UserProfileRef ref="VOT:UserProfile:Young" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                                <GenericParameterAssignment order="1" id="VOT:GenericParameterAssignment:3" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:7Days" version="1"/>
+                                        <UserProfileRef ref="VOT:UserProfile:YoungAdult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                                <GenericParameterAssignment order="1" id="VOT:GenericParameterAssignment:4" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:7Days" version="1"/>
+                                        <UserProfileRef ref="VOT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                                <GenericParameterAssignment order="1" id="VOT:GenericParameterAssignment:5" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:7Days" version="1"/>
+                                        <UserProfileRef ref="VOT:UserProfile:Elderly" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </CappingRule>
+                    </cappingRules>
+                </CappedDiscountRight>
+                
+                
+                
+                
+                <!-- 
+                    OPTIONAL MODELING
+                    
+                    Possible alternative approach to structuring Bestepris (Best Price)
+                    
+                    POC to test if real life use-cases can be arranged simpler / more intutive
+                    (most comments from "VOT:CappedDiscountRight:1" have been removed for better readability)
+                    
+                    Rather than using LimitingRule with fixed max amount, use the actual PreassignedFareProducts as both product and (max) price "upgrade" for the capping
+                    
+                    
+                    NB:                    
+                    The the PreassignedFareProduct now owns the reference to the CappedDiscountRight with CappingRule(s) defining capping thresholds and which
+                    new (Preassigned)FareProduct the capping should lead to
+                    However, it may be more intuitive to model this relation the other way around, where the CappedDiscountRight - CappingRule 
+                    
+                    Have not (yet) found this/these relation(s) to be clearly documented in the spec, 
+                    thus a best-effort POC to investigate options to examine what requires the least amount of redundant data.
+                -->
+                
+                
+                <PreassignedFareProduct id="VOT:PreassignedFareProduct:SingleTicketCapped" version="1">
+                    <Name lang="eng">
+                        Single ticket Vestfold
+                        with capping according to mobile ticketing requirements for Vestfold/Telemark #32:
+                        
+                        All sales within single ticket categories Adult, Senior and Child
+                        should lead to a Best Price category for the relevant period tickets,
+                        defined for a specified age (user profile) 
+                    </Name>
+                    <alternativeNames>
+                        <AlternativeName>
+                            <Name lang="nob">
+                                Enkeltbillett Vestfold 
+                                med capping iht. Kravspec Vestfold/Telemark pkt 32:
+                                
+                                Alle salg av kategoriene på enkeltbillett Adult, Senior og Child 
+                                skal lede inn til en Beste Pris kategori for periodebillett, 
+                                definert på registrert alder (brukerprofil)
+                            </Name>
+                        </AlternativeName>
+                    </alternativeNames>
+                    <CappedDiscountRightRef ref="VOT:CappedDiscountRight:BesteprisVestfold" version="1"/>
+                    
+                    <!-- Deemed irrelevant, originally included due to misunderstanding the capping intentions(?), 
+                        should (probably) rather be modeled with generic CappingRules and a LimitingRule (?) setting the price ceiling with a FareTable per UserProfile -->
+                    
+                    <!--GenericParameterAssignmentInContext>
+                        <limitations>
+                            <UserProfileRef ref="VOT:UserProfile:Child" version="1"/>
+                        </limitations>
+                    </GenericParameterAssignmentInContext-->
+                    
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                    </accessRightsInProduct>
+                    <ProductType>singleTrip</ProductType>
+                </PreassignedFareProduct>
+                
+                
+                <PreassignedFareProduct id="VOT:PreassignedFareProduct:24HoursCapped" version="1">
+                    <Name lang="eng">24 hours capped price Vestfold</Name>
+                    <CappedDiscountRightRef ref="VOT:CappedDiscountRight:BesteprisVestfold" version="1"/>
+                    
+                    <!-- Again deemed irrelevant, originally included due to misunderstanding the capping intentions(?), 
+                        should (probably) rather be modeled with generic CappingRules and a LimitingRule (?) setting the price ceiling with a FareTable per UserProfile -->
+
+                    <!--GenericParameterAssignmentInContext>
+                        <limitations>
+                            <UserProfileRef ref="VOT:UserProfile:Adult" version="1"/>
+                        </limitations>
+                    </GenericParameterAssignmentInContext-->
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="VOT:ValidableElement:24Hours" version="1"/>
+                    </accessRightsInProduct>
+                    <ProductType>dayPass</ProductType>
+                </PreassignedFareProduct>
+                
+                
+                <CappedDiscountRight id="VOT:CappedDiscountRight:BesteprisVestfold" version="1">
+                    <Name lang="eng">Best Price Vestfold</Name>
+                    <alternativeNames>
+                        <AlternativeName>
+                            <Name lang="nob">Bestepris Vestfold</Name>
+                        </AlternativeName>
+                    </alternativeNames>
+                    <cappingRules>
+                        
+                        <!-- 1) first level capping after reaching cost of 24 hour ticket --> 
+                        <CappingRule id="VOT:CappingRule:BesteprisVestfold-1" version="1">
+                            <Name>Max amount per 24 hour</Name>
+                            <!-- LimitingRuleRef ref="VOT:LimitingRule:MaxPerDayAdult" version="1"/ -->
+                            <CappingPeriod>day</CappingPeriod>
+                            <!-- 
+                                Although the spec states that the PreassignedFareProductRef = "PREASSIGNED FARE PRODUCT whose prices set cap for this product."
+                                this is instead used as a (more intuitive?) capping threshold.
+                                
+                                Ref. 
+                                7.6.2.4.6 CappingRule – Model Element (page 368)
+                                "A capping limit for a given time interval, where **the capping is expressed by another product**. 
+                            -->
+                            <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:24Hours" version="1"/>
+                            <!--ValidableElementRef ref="VOT:ValidableElement:SingleTrip" version="1"/--> <!-- already defined by the PreassignedFareProduct -->
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment order="1" id="VOT:GenericParameterAssignment:5-1" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:24Hours" version="1"/> <!-- only related to the capping, thus necessary -->
+                                        <!--UserProfileRef ref="VOT:UserProfile:Adult" version="1"/ --> <!-- rather have generic CappingRule -->
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </CappingRule>
+                        
+                        <!-- 2) second level capping after reaching cost of 7 day ticket -->
+                        <CappingRule id="VOT:CappingRule:BesteprisVestfold-2" version="1">
+                            <Name>Max amount pr 7 days</Name>
+                            <!--LimitingRuleRef ref="VOT:LimitingRule:MaxPer7DaysAdult" version="1"/-->
+                            <CappingPeriod>week</CappingPeriod>
+                            <!-- Is this the product that has a cap on cost -->
+                            <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:7DayTicket" version="1"/>
+                            <!--ValidableElementRef ref="VOT:ValidableElement:24Hours" version="1"/--> <!-- already defined by the PreassignedFareProduct -->
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment order="1" id="VOT:GenericParameterAssignment:5-2" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:7Days" version="1"/>
+                                        <UserProfileRef ref="VOT:UserProfile:Adult" version="1"/> <!-- because capping requires even child/young to reach this price/LimitingRule before capping applies -->
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </CappingRule>
+                        
+                    </cappingRules>
+                </CappedDiscountRight>
+            </fareProducts>
+            
+            
+            <fareTables>
+                <FareTable id="ENT:FareTable:1" version="1">  
+                    <pricesFor>
+                        <UserProfileRef ref="VOT:UserProfile:Child" version="1" />
+                    </pricesFor>
+                    
+                    <prices>
+                        <FareProductPrice id="VOT:PreassignedFareProduct:1" version="1">
+                            <Amount>34</Amount>
+                            <CappingRulePriceRef ref="VOT:CappingRulePrice:1" version="1"/>
+                            <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:24Hours" version="1"/>
+                        </FareProductPrice>
+                    </prices>
+                </FareTable>
+                
+                
+                <FareTable id="ENT:FareTable:2" version="1">  
+                    <pricesFor>
+                        <UserProfileRef ref="VOT:UserProfile:Adult" version="1" />
+                    </pricesFor>
+                    
+                    <prices>
+                        <FareProductPrice id="VOT:FareProductPrice:2" version="1">
+                            <Amount>34</Amount>
+                            <CappingRulePriceRef ref="VOT:CappingRulePrice:2" version="1"/>
+                            <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:24HoursCapped" version="1"/>
+                        </FareProductPrice>
+                        <FareProductPrice id="VOT:FareProductPrice:3" version="1">
+                            <Amount>170</Amount>
+                            <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:7DayTicket" version="1"/>
+                        </FareProductPrice>
+                        
+                        <CappingRulePrice id="VOT:CappingRulePrice:1" version="1">
+                            <Amount>80</Amount>
+                            <!-- FareProductPriceRef ref="ref"/ -->
+                        </CappingRulePrice>
+                        <CappingRulePrice id="VOT:CappingRulePrice:2" version="1">
+                            <Amount>170</Amount>
+                            <!-- FareProductPriceRef ref="ref"/ -->
+                        </CappingRulePrice>                        
+                        
+                        <!-- dummy data -->
+                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:1" version="1">
+                            <Amount>2.80</Amount>
+                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElemENT:TariffZones" />
+                        </DistanceMatrixElementPrice>
+                        
+                        <SalesOfferPackagePrice id="ENT:SalesOfferPackagePrice:1" version="1">
+                            <Amount>6.66</Amount>
+                        </SalesOfferPackagePrice>
+                        
+                        <GeographicalUnitPrice id="ENT:GeographicalUnitPrice:1" version="1">
+                            <Amount>2.80</Amount>
+                        </GeographicalUnitPrice>
+                    </prices>
+                </FareTable>
+                
+                
+                
+                <!-- 
+                    DUMMY DATA SET, included for illustration of modeling the generic Price elements
+                    
+                    Could preferably (more lean structuring) use <prices> rather than <cells> for referencing? 
+                    (in contrast to official CEN examples using the latter) 
+                -->
+                <!-- 
+                <FareTable id="ENT:FareTable:DUMMY-EXAMPLE" version="1">
+                    <pricesFor>
+                        <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:SingleTrip1Zone"/>
+                        <UserProfileRef ref="ENT:UserProfile:ReducedFare" />
+                        <UserProfileRef ref="ENT:UserProfile:NormalFare"  />
+                        <UserProfileRef ref="ENT:UserProfile:StudentFare" />
+                    </pricesFor>
+                    
+                    <prices>
+                        <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:2_80" version="1">
+                            <Amount>2.80</Amount>
+                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElemENT:TariffZones" />
+                        </DistanceMatrixElementPrice>
+                        
+                        <SalesOfferPackagePrice id="ENT:SalesOfferPackagePrice:6_66" version="1">
+                            <Amount>6.66</Amount>
+                        </SalesOfferPackagePrice>
+                        
+                        <GeographicalUnitPrice id="ENT:GeographicalUnitPrice:2_80" version="1">
+                            <Amount>2.80</Amount>
+                        </GeographicalUnitPrice>
+                    </prices>
+                    
+                    <cells>
+                        <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:9">
+                            <Amount>41</Amount>
+                            <Currency>SEK</Currency>
+                            <FareStructureElementRef version="1" ref="ENT:FareStructureElement:120minZone2SL"/>
+                        </FareStructureElementPrice>
+                        <FareStructureElementPrice version="1" id="ENT:FareStructureElementPrice:10">
+                            <Amount>57</Amount>
+                            <Currency>SEK</Currency>
+                            <FareStructureElementRef version="1" ref="ENT:FareStructureElement:150minZone12SL"/>
+                        </FareStructureElementPrice>
+                        <GeographicalIntervalPrice version="1" id="ENT:GeographicalIntervalPrice:7">
+                            <Amount>16</Amount>
+                            <Currency>SEK</Currency>
+                            <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:1zone"/>
+                        </GeographicalIntervalPrice>
+                        <GeographicalIntervalPrice version="1" id="ENT:GeographicalIntervalPrice:8">
+                            <Amount>32</Amount>
+                            <Currency>SEK</Currency>
+                            <GeographicalIntervalRef version="1" ref="ENT:GeographicalInterval:2zones"/>
+                        </GeographicalIntervalPrice>
+                    </cells>
+                </FareTable>
+                -->
+                
+            </fareTables>
+            
+
+            <!-- A Sales offer package is something that can actually be purchased 
+            
+                These are a skeleton of what is required to be reported to the National Access Point according to the ITS directive.
+            -->
+            <salesOfferPackages>
+                <!-- Single ticket bus -->
+                <SalesOfferPackage id="VOT:SalesOfferPackage:SingleTicketBus" version="1">
+                    <Name lang="eng">Single Ticket</Name>
+                    <alternativeNames>
+                        <AlternativeName>
+                            <Name lang="nob">Enkeltbillett</Name>
+                        </AlternativeName>
+                    </alternativeNames>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="VOT:SalesOfferPackageElement:SingleTicketBus" version="1" order="1">
+                            <Name lang="eng">Single Ticket</Name>
+                            <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTicket" version="1"/>
+
+                            <!-- Only included for illustration purposes -->
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment id="VOT:GenericParameterAssignment:1-SingleTicket" version="1" order="0">
+                                    <ValidableElementRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
+                                    <!--
+                                    <limitations></limitations>
+                                    <validityParameters></validityParameters>
+                                    -->
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+        </FareFrame>
+    </dataObjects>
+</PublicationDelivery>
