@@ -213,14 +213,12 @@
                             3) How to tell that even if you are paying using "Child" fares, the capping level for 24hr is the same as adult (80kr),
                                  and you also receive an Adult access right, not a 24hr child ticket ( which does not exist)
                         -->
-
                         <CappingRule id="VOT:CappingRule:1" version="1">
                             
                             <Name>Max amount per 24 hour</Name>
-                            
                             <!-- Limit on how much money to spend in this rule before moving to next (?) -->
                              <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
-                            
+                        
                             <fareTables>
                                 <FareTable id="VOT:FareTable:24Hour" version="any">
                                     <Name>Max amount 24 hour</Name>

@@ -196,7 +196,7 @@
                                 <AccessRightInProductConsumption id="ENT:BusToBoat:BusToBoat" version="1">
                                     <FromMarkedAs>unused</FromMarkedAs>
                                     <ToMarkedAs>used</ToMarkedAs>
-                                    <AccessRightInProductRef ref="ENT:CustomerPurchasePackageElement:BusToBoat" version="1"/>
+                                    <AccessRightInProductRef ref="ENT:AccessRightInProduct:BusToBoat" version="1"/>
                                     <AccessNumber>1</AccessNumber>
                                     <specificationPolicyAssignmentInputs>
                                         <AccessRightInProductSpecificationStartTimePolicyAssignmentInput>
@@ -219,7 +219,7 @@
                                 <AccessRightInProductConsumption id="ENT:BusToBoat:BusFromBoat" version="1">
                                     <FromMarkedAs>unused</FromMarkedAs>
                                     <ToMarkedAs>used</ToMarkedAs>
-                                    <AccessRightInProductRef ref="ENT:CustomerPurchasePackageElement:BusFromBoat" version="1"/>
+                                    <AccessRightInProductRef ref="ENT:AccessRightInProduct:BusFromBoat" version="1"/>
                                     <AccessNumber>1</AccessNumber>
                                     <specificationPolicyAssignmentInputs>
                                         <AccessRightInProductSpecificationStartTimePolicyAssignmentInput>
