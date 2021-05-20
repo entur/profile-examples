@@ -1,0 +1,1490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ==== ryde Line 1 ==== -->
+<PublicationDelivery version="1.2.2" xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../xsd/NeTEx_publication.xsd" xmlns="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- 
+    "Wireframe" for Capping P.O.C. mainly based on Vestfold/Telemark "Best Price" use-cases
+    
+    https://enturas.atlassian.net/wiki/spaces/kb/pages/2556985467/User+stories+-+Capping
+
+
+    Furteh rindormation for Vestfold from
+			https://www.vkt.no/takster2021/
+  
+     Notes - For clarity this example
+        uses snake case for data instance ids e.g.  single_ticket 
+        usea default namespace VOT . and currency NKR, specifed only on outer frame.
+   
+
+-->
+	<PublicationTimestamp>2021-05-11T18:14:00</PublicationTimestamp>
+	<ParticipantRef>Entur_EXAMPLES</ParticipantRef>
+	<dataObjects>
+		<CompositeFrame version="1.0" id="vot">
+			<Name>VOT Fare Products and prices</Name>
+			<codespaces>
+				<Codespace id="vot_data">
+					<Xmlns>VOT</Xmlns>
+					<XmlnsUrl>http://www.vot.no/data</XmlnsUrl>
+				</Codespace>
+				<Codespace id="entur_metadata">
+					<Xmlns>ENT</Xmlns>
+					<XmlnsUrl>http://www.entur.no/data</XmlnsUrl>
+				</Codespace>
+			</codespaces>
+			<FrameDefaults>
+				<DefaultCodespaceRef ref="vot_data"/>
+				<DefaultCurrency>NKR</DefaultCurrency>
+			</FrameDefaults>
+			<frames>
+				<!--==== OPERATOR COMMON RESOURCES==== -->
+				<ResourceFrame version="1.0" id="operator">
+					<Name>VOT Operator   common resources</Name>
+					<!-- ========Responsibility Sets========== -->
+					<organisations>
+						<!-- ==== ORGANISATIONS ==== -->
+						<Operator version="1" id="VOT">
+							<Name>Vestfold Transport  Operator</Name>
+							<ShortName>VOT</ShortName>
+						</Operator>
+					</organisations>
+				</ResourceFrame>
+				<FareFrame id="single_trip" version="1">
+					<fareZones>
+						<!--- Vestfold -->
+						<FareZone version="1" id="all_vestfold">
+							<Name>All Vestfold</Name>
+							<ZoneTopology>overlapping</ZoneTopology>
+							<contains>
+								<TariffZoneRef ref="zone_1">Holmestrand</TariffZoneRef>
+								<TariffZoneRef ref="zone_2">Tønsberg</TariffZoneRef>
+								<TariffZoneRef ref="zone_3">Sandefjord</TariffZoneRef>
+								<TariffZoneRef ref="zone_4">Larvik</TariffZoneRef>
+							</contains>
+						</FareZone>
+						<FareZone version="1" id="zone_1">
+							<Name lang="nob">Holmestrand kommune og Horten kommune</Name>
+							<ShortName lang="nob">Sone 1</ShortName>
+							<ParentFareZoneRef version="1" ref="all_vestfold"/>
+							<ZoneTopology>tiled</ZoneTopology>
+							<neighbours>
+								<FareZoneRef ref="zone_2">Tønsberg</FareZoneRef>
+								<FareZoneRef ref="zone_4">Larvik</FareZoneRef>
+							</neighbours>
+						</FareZone>
+						<FareZone version="1" id="zone_2">
+							<Name lang="nob">Tønsberg kommune og Færder kommune</Name>
+							<ShortName lang="nob">Sone 2</ShortName>
+							<ParentFareZoneRef version="1" ref="all_vestfold"/>
+							<ZoneTopology>tiled</ZoneTopology>
+							<neighbours>
+								<FareZoneRef ref="zone_1">Holmestrand</FareZoneRef>
+								<FareZoneRef ref="zone_3">Sandefjord</FareZoneRef>
+								<FareZoneRef ref="zone_4">Larvik</FareZoneRef>
+							</neighbours>
+						</FareZone>
+						<FareZone version="1" id="zone_3">
+							<Name lang="nob">Sandefjord kommune</Name>
+							<ShortName lang="nob">Sone 1</ShortName>
+							<ParentFareZoneRef version="1" ref="all_vestfold"/>
+							<ZoneTopology>tiled</ZoneTopology>
+							<neighbours>
+								<FareZoneRef ref="zone_2">Tønsberg</FareZoneRef>
+								<FareZoneRef ref="zone_4">Larvik</FareZoneRef>
+							</neighbours>
+						</FareZone>
+						<FareZone version="1" id="zone_4">
+							<Name lang="nob">Larvik kommune</Name>
+							<ShortName lang="nob">Sone 4</ShortName>
+							<ParentFareZoneRef version="1" ref="all_vestfold"/>
+							<ZoneTopology>tiled</ZoneTopology>
+							<neighbours>
+								<FareZoneRef ref="zone_1">Holmestrand</FareZoneRef>
+								<FareZoneRef ref="zone_2">Tønsberg</FareZoneRef>
+								<FareZoneRef ref="zone_3">Sandefjord</FareZoneRef>
+								<FareZoneRef ref="zone_5">Grenland</FareZoneRef>
+							</neighbours>
+						</FareZone>
+						<!--- Telemark -->
+						<FareZone version="1" id="all_telemark">
+							<Name>All Telemark</Name>
+							<ZoneTopology>overlapping</ZoneTopology>
+							<contains>
+								<TariffZoneRef ref="zone_5">Grenland</TariffZoneRef>
+							</contains>
+						</FareZone>
+						<FareZone version="1" id="zone_5">
+							<Name lang="nob">Grenland kommune</Name>
+							<ShortName lang="nob">Sone 5</ShortName>
+							<ParentFareZoneRef version="1" ref="all_telemark"/>
+							<ZoneTopology>tiled</ZoneTopology>
+							<neighbours>
+								<FareZoneRef ref="zone_5">Larvik</FareZoneRef>
+								<!-- etc  add telemark zonws -->
+							</neighbours>
+						</FareZone>
+					</fareZones>
+					<tariffs>
+						<Tariff version="1" id="single_trip">
+							<Name>Single Trip</Name>
+							<Description>Rate 1 = for travel in a zone.
+Rate 2 = for journeys that extend over 2 zones.
+Rate 3 = for journeys that extend over 3 zones.
+Rate 4 = for journeys that extend over 4 zones or more.</Description>
+							<OperatorRef version="1" ref="VOT"/>
+							<geographicalIntervals>
+								<!-- This for stepepd zoen count pricing. As per 
+
+
+ If there was a flat rate [er zone, could use just a single geographical unit price -->
+								<GeographicalInterval version="1" id="1_zone">
+									<Name>One zone</Name>
+									<StartGeographicalValue>1</StartGeographicalValue>
+									<EndGeographicalValue>1</EndGeographicalValue>
+									<IntervalType>tariffZone</IntervalType>
+								</GeographicalInterval>
+								<GeographicalInterval version="1" id="2_zone">
+									<Name>Two zones zone</Name>
+									<StartGeographicalValue>2</StartGeographicalValue>
+									<EndGeographicalValue>2</EndGeographicalValue>
+									<IntervalType>tariffZone</IntervalType>
+								</GeographicalInterval>
+								<GeographicalInterval version="1" id="3_zone">
+									<Name>Three zones</Name>
+									<StartGeographicalValue>3</StartGeographicalValue>
+									<EndGeographicalValue>3</EndGeographicalValue>
+									<IntervalType>tariffZone</IntervalType>
+								</GeographicalInterval>
+								<GeographicalInterval version="1" id="4_plus_zone">
+									<Name>Four or more zones</Name>
+									<StartGeographicalValue>4</StartGeographicalValue>
+									<IntervalType>tariffZone</IntervalType>
+								</GeographicalInterval>
+							</geographicalIntervals>
+							<fareStructureElements>
+								<FareStructureElement version="1" id="single_trip@access">
+									<Name>Available zones</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:access"/>
+									<GenericParameterAssignment order="1" id="single_trip@access" version="1">
+										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access"/>
+										<ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+										<validityParameters>
+											<FareZoneRef version="1" ref="all_vestfold"/>
+											<FareZoneRef version="1" ref="zone_1"/>
+											<FareZoneRef version="1" ref="zone_2"/>
+											<FareZoneRef version="1" ref="zone_3"/>
+											<FareZoneRef version="1" ref="zone_4"/>
+											<FareZoneRef version="1" ref="zone_5"/>
+										</validityParameters>
+									</GenericParameterAssignment>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="single_trip@access_durations">
+									<Name lang="eng">Steps per zone</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:access_durations"/>
+									<geographicalIntervals>
+										<GeographicalIntervalRef version="1" ref="1_zone"/>
+										<GeographicalIntervalRef version="1" ref="2_zone"/>
+										<GeographicalIntervalRef version="1" ref="3_zone"/>
+										<GeographicalIntervalRef version="1" ref="4_plus_zone"/>
+									</geographicalIntervals>
+									<validityParameterAssignments>
+										<GenericParameterAssignment order="1" id="single_trip@access_steps@1_zone" version="1">
+											<Name>Single zone use must be done in 60 minutes</Name>
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access_time_limits"/>
+											<limitations>
+												<UsageValidityPeriod version="1" id="single_trip@access_steps@1_zone">
+													<UsageTrigger>activation</UsageTrigger>
+													<StandardDuration>PT60M</StandardDuration>
+												</UsageValidityPeriod>
+											</limitations>
+											<validityParameters>
+												<GeographicalIntervalRef version="1" ref="1_zone"/>
+											</validityParameters>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="2" id="single_trip@access_steps@2_zone" version="1">
+											<Name>Two  zone use must be done in 90 minutes</Name>
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access_time_limits"/>
+											<limitations>
+												<UsageValidityPeriod version="1" id="single_trip@access_steps@2_zone">
+													<UsageTrigger>activation</UsageTrigger>
+													<StandardDuration>PT90M</StandardDuration>
+												</UsageValidityPeriod>
+											</limitations>
+											<validityParameters>
+												<GeographicalIntervalRef version="1" ref="2_zone"/>
+											</validityParameters>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="3" id="single_trip@access_steps@3_zone" version="1">
+											<Name>Three  zone use must be done in 120 minutes</Name>
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access_time_limits"/>
+											<limitations>
+												<UsageValidityPeriod version="1" id="single_trip@access_steps@1_zone">
+													<UsageTrigger>activation</UsageTrigger>
+													<StandardDuration>PT120M</StandardDuration>
+												</UsageValidityPeriod>
+											</limitations>
+											<validityParameters>
+												<GeographicalIntervalRef version="1" ref="3_zone"/>
+											</validityParameters>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="4" id="single_trip@access_steps@4_plus_zone" version="1">
+											<Name>Four zone use must be done in 150minutes</Name>
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access_time_limits"/>
+											<limitations>
+												<UsageValidityPeriod version="1" id="single_trip@access_steps@4_plus_zone">
+													<UsageTrigger>activation</UsageTrigger>
+													<StandardDuration>PT150M</StandardDuration>
+												</UsageValidityPeriod>
+											</limitations>
+											<validityParameters>
+												<GeographicalIntervalRef version="1" ref="4_plus_zone"/>
+											</validityParameters>
+										</GenericParameterAssignment>
+									</validityParameterAssignments>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="single_trip@eligibility">
+									<Name lang="eng">Eligible user types</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:eligibility"/>
+									<GenericParameterAssignment order="1" id="single_trip@eligibility" version="1">
+										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:eligible"/>
+										<LimitationGroupingType>OR</LimitationGroupingType>
+										<limitations>
+											<!---  ===ELIGIBILITY USAGE PARAMETERS =========    -->
+											<UserProfile id="adult" version="1">
+												<alternativeTexts>
+													<AlternativeText id="adult" attributeName="Name" version="1" order="1" useForLanguage="nob">
+														<Text lang="nob">Voksen</Text>
+													</AlternativeText>
+													<AlternativeText id="adult" attributeName="Description" order="2">
+														<Text lang="nob">Vanlig fullpris</Text>
+													</AlternativeText>
+												</alternativeTexts>
+												<Name lang="eng">Adult</Name>
+												<Description>Regular full price</Description>
+												<MinimumAge>18</MinimumAge>
+												<MaximumAge>66</MaximumAge>
+												<DiscountBasis>none</DiscountBasis>
+											</UserProfile>
+											<UserProfile id="senior" version="1">
+												<alternativeTexts>
+													<AlternativeText id="senior" attributeName="Name" version="1" order="1" useForLanguage="nob">
+														<Text lang="nob">Honnor</Text>
+													</AlternativeText>
+												</alternativeTexts>
+												<Name lang="eng">Child</Name>
+												<MinimumAge>67</MinimumAge>
+												<DiscountBasis>discount</DiscountBasis>
+											</UserProfile>
+											<UserProfile id="child" version="1">
+												<alternativeTexts>
+													<AlternativeText id="child" attributeName="Name" version="1" order="1" useForLanguage="nob">
+														<Text lang="nob">Barn</Text>
+													</AlternativeText>
+												</alternativeTexts>
+												<Name lang="eng">Child</Name>
+												<MinimumAge>6</MinimumAge>
+												<MaximumAge>17</MaximumAge>
+												<DiscountBasis>discount</DiscountBasis>
+											</UserProfile>
+											<UserProfile id="infant" version="1">
+												<Name lang="eng">Infant</Name>
+												<MinimumAge>0</MinimumAge>
+												<MaximumAge>5</MaximumAge>
+												<DiscountBasis>free</DiscountBasis>
+											</UserProfile>
+											<UserProfile id="military" version="1">
+												<alternativeTexts>
+													<AlternativeText id="military" attributeName="Name" version="1" order="1" useForLanguage="nob">
+														<Text lang="nob">Vernepliktige</Text>
+													</AlternativeText>
+												</alternativeTexts>
+												<Name lang="eng">Conscript</Name>
+												<DiscountBasis>discount</DiscountBasis>
+											</UserProfile>
+										</limitations>
+									</GenericParameterAssignment>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="single_trip@group">
+									<Name lang="eng">Eligible user types</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:group"/>
+									<GenericParameterAssignment order="1" id="single_trip@group" version="1">
+										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:eligible"/>
+										<LimitationGroupingType>OR</LimitationGroupingType>
+										<limitations>
+											<!---  ===ELIGIBILITY USAGE PARAMETERS =========    -->
+											<GroupTicket id="school_ticket" version="1">
+												<Name lang="eng">Primary School Group Ticket</Name>
+												<Description>children and staff in primary schools who travel together during school hours can do so at a greatly reduced price. Primary schools can in the period from kl. 09:00 to 13:30 on weekdays travel with the local buses and only pay NOK. 7, - per person.</Description>
+												<MinimumNumberOfPersons>1</MinimumNumberOfPersons>
+												<companionProfiles>
+													<CompanionProfile id="teacher_with_group" version="1">
+														<UserProfileRef version="1" ref="adult"/>
+													</CompanionProfile>
+												</companionProfiles>
+											</GroupTicket>
+										</limitations>
+									</GenericParameterAssignment>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="single_trip@conditions_of_travel">
+									<Name lang="eng">Conditions on travel</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:travel_conditions"/>
+									<GenericParameterAssignment version="1" order="1" id="single_trip@conditions_of_travel">
+										<Name>Conditions of travel</Name>
+										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_use"/>
+										<LimitationGroupingType>AND</LimitationGroupingType>
+										<limitations>
+											<UsageValidityPeriod version="1" id="single_trip@usageValidity">
+												<ValidityPeriodType>singleTrip</ValidityPeriodType>
+												<UsageTrigger>activation</UsageTrigger>
+												<UsageEnd>endOfTrip</UsageEnd>
+											</UsageValidityPeriod>
+											<FrequencyOfUse version="1" id="single_trip@frequency">
+												<Name>One trip no transfers</Name>
+												<FrequencyOfUseType>none</FrequencyOfUseType>
+												<MaximalFrequency>1</MaximalFrequency>
+											</FrequencyOfUse>
+										</limitations>
+									</GenericParameterAssignment>
+								</FareStructureElement>
+							</fareStructureElements>
+						</Tariff>
+					</tariffs>
+					<fareProducts>
+						<PreassignedFareProduct id="single_ticket" version="1">
+							<Name lang="eng">Single ticket Vestfold</Name>
+							<Description>A single ride </Description>
+							<ChargingMomentType>beforeTravel</ChargingMomentType>
+							<OperatorRef version="1" ref="VOT"/>
+							<CappedDiscountRightRef version="1" ref="bestepris_vestfold">Potentially Counts towards this product</CappedDiscountRightRef>
+							<validableElements>
+								<ValidableElement id="single_trip" version="1">
+									<Name lang="eng">Single Trip</Name>
+									<Description>A single trip within the specifed zone.</Description>
+									<fareStructureElements>
+										<FareStructureElementRef ref="single_trip@access"/>
+										<FareStructureElementRef ref="single_trip@eligibility"/>
+										<FareStructureElementRef ref="single_trip@group"/>
+										<FareStructureElementRef ref="single_trip@conditions_of_travel"/>
+										<FareStructureElementRef ref="single_trip@conditions_of_sale"/>
+									</fareStructureElements>
+								</ValidableElement>
+							</validableElements>
+							<accessRightsInProduct>
+								<AccessRightInProduct version="1" id="single_trip" order="1">
+									<ValidableElementRef version="1" ref="single_trip"/>
+								</AccessRightInProduct>
+							</accessRightsInProduct>
+							<ProductType>singleTrip</ProductType>
+						</PreassignedFareProduct>
+					</fareProducts>
+					<salesOfferPackages>
+						<!-- Single ticket bus -->
+						<SalesOfferPackage id="single_ticket_bus@paper_ticket" version="1">
+							<Name lang="eng">Single Ticket - onboard paper ticket</Name>
+							<Description>Walk up anonmpous purchase - no capping rights</Description>
+							<alternativeNames>
+								<AlternativeName>
+									<Name lang="nob">Enkeltbillett</Name>
+								</AlternativeName>
+							</alternativeNames>
+							<validityParameterAssignments>
+								<GenericParameterAssignment version="1" order="1" id="single_ticket_bus@paper_ticket@conditions_of_sale">
+									<Name>Conditions of sale</Name>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<Transferability id="single_ticket_bus@paper_ticket@transferability" version="1">
+											<CanTransfer>true</CanTransfer>
+											<HasTransferFee>false</HasTransferFee>
+											<SharedUsage>singleUser</SharedUsage>
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="single_ticket_bus@paper_ticket" version="1" order="1">
+									<Name lang="eng">Single Ticket</Name>
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:paper_ticket"/>
+									<PreassignedFareProductRef ref="single_ticket" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<SalesOfferPackage id="single_ticket_bus@mobile_app" version="1">
+							<Name lang="eng">Single Ticket - mobile app</Name>
+							<Description lang="nob">Enkeltbillett i appen Vy og på vy.no.  </Description>
+							<alternativeNames>
+								<AlternativeName id="single_ticket_bus@mobile_app" version="1">
+									<Name lang="nob">Enkeltbillett</Name>
+								</AlternativeName>
+							</alternativeNames>
+							<validityParameterAssignments>
+								<GenericParameterAssignment version="1" order="1" id="single_ticket_bus@mobile_app@gives_entitlement">
+									<Name>Entitled to capping discount</Name>
+									<Description>Purchase of product on mobile app counts towards capping discount</Description>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:capped"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<EntitlementGiven version="1" id="single_ticket_bus@mobile_app@entitles">
+											<Name>Counts towards capping discount</Name>
+											<CappedDiscountRightRef version="1" ref="bestepris_vestfold"/>
+											<EntitlementType>purchaseAtDiscount</EntitlementType>
+										</EntitlementGiven>
+									</limitations>
+								</GenericParameterAssignment>
+								<GenericParameterAssignment version="1" order="1" id="ingle_ticket_bus@mobile_app@conditions_of_sale">
+									<Name>Conditions of sale</Name>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<Transferability id="single_ticket_bus@mobile_app@transferability" version="1">
+											<CanTransfer>false</CanTransfer>
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="single_ticket@mobile_app" version="1" order="1">
+									<Name lang="eng">Single Ticket</Name>
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:mobile_app"/>
+									<PreassignedFareProductRef ref="single_ticket" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<SalesOfferPackage id="single_ticket_bus@smartcard" version="1">
+							<Name lang="eng">Single Ticket - on smartcard</Name>
+							<validityParameterAssignments>
+								<GenericParameterAssignment version="1" order="1" id="single_ticket_bus@smartcard@gives_entitlement">
+									<Name>Entitled to capping discount</Name>
+									<Description>Purchase of product on mobile app counts towards capping discount</Description>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:capped"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<EntitlementGiven version="1" id="single_ticket_bus@smartcard@entitles">
+											<Name>Counts towards capping discount</Name>
+											<CappedDiscountRightRef version="1" ref="bestepris_vestfold"/>
+											<EntitlementType>purchaseAtDiscount</EntitlementType>
+										</EntitlementGiven>
+									</limitations>
+								</GenericParameterAssignment>
+								<GenericParameterAssignment version="1" order="1" id="ingle_ticket_bus@smartcard@conditions_of_sale">
+									<Name>Conditions of sale</Name>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<Transferability id="single_ticket_bus@smartcard@transferability" version="1">
+											<CanTransfer>false</CanTransfer>
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="single_ticket@smartcard" version="1" order="1">
+									<Name lang="eng">Single Ticket</Name>
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:smartcard"/>
+									<PreassignedFareProductRef ref="single_ticket" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+					</salesOfferPackages>
+				</FareFrame>
+				<FareFrame id="period_pass" version="1">
+					<tariffs>
+						<Tariff version="1" id="period_pass">
+							<Name>Pariod Passes</Name>
+							<OperatorRef version="1" ref="VOT"/>
+							<timeIntervals>
+								<TimeInterval version="1" id="24_hours">
+									<Name>24 hours</Name>
+									<Duration>P1D</Duration>
+								</TimeInterval>
+								<TimeInterval version="1" id="7_days">
+									<alternativeTexts>
+										<AlternativeText id="7_days" attributeName="Name" version="1" order="1" useForLanguage="nob">
+											<Text lang="nob">7 dager</Text>
+										</AlternativeText>
+									</alternativeTexts>
+									<Name>7 Days</Name>
+									<Duration>P7D</Duration>
+								</TimeInterval>
+								<TimeInterval version="1" id="30_days">
+									<alternativeTexts>
+										<AlternativeText id="30_days" attributeName="Name" version="1" order="1" useForLanguage="nob">
+											<Text lang="nob">30 dager</Text>
+										</AlternativeText>
+									</alternativeTexts>
+									<Name>30 Days</Name>
+									<Duration>P30D</Duration>
+								</TimeInterval>
+								<TimeInterval version="1" id="180_days">
+									<alternativeTexts>
+										<AlternativeText id="180_days" attributeName="Name" version="1" order="1" useForLanguage="nob">
+											<Text lang="nob">180 dager</Text>
+										</AlternativeText>
+									</alternativeTexts>
+									<Name>30 Days</Name>
+									<Duration>P30D</Duration>
+								</TimeInterval>
+							</timeIntervals>
+							<qualityStructureFactors>
+								<FareDemandFactor version="1" id="period_pass@any_time">
+									<Name>Anytime including rush hour</Name>
+									<FareDemandType>peak</FareDemandType>
+								</FareDemandFactor>
+								<FareDemandFactor version="1" id="period_pass@off_peak">
+									<validityConditions>
+										<AvailabilityCondition version="1" id="period_pass@off_peak">
+											<Name>Not available during peak hours</Name>
+											<IsAvailable>false</IsAvailable>
+											<dayTypes>
+												<DayType version="1" id="period_pass@peak">
+													<Name>Week days</Name>
+													<properties>
+														<PropertyOfDay>
+															<DaysOfWeek>Weekdays</DaysOfWeek>
+														</PropertyOfDay>
+													</properties>
+													<timebands>
+														<Timeband version="1" id="period_pass@peak@am">
+															<StartTime>07:00:00</StartTime>
+															<EndTime>09:00:00</EndTime>
+														</Timeband>
+														<Timeband version="1" id="period_pass@peak@pm">
+															<StartTime>14:00:00</StartTime>
+															<EndTime>17:00:00</EndTime>
+														</Timeband>
+													</timebands>
+												</DayType>
+											</dayTypes>
+										</AvailabilityCondition>
+									</validityConditions>
+									<alternativeTexts>
+										<AlternativeText id="period_pass@off_peak" attributeName="Name" version="1" order="1" useForLanguage="nob">
+											<Text lang="nob">Utenom rush</Text>
+										</AlternativeText>
+									</alternativeTexts>
+									<Name>Off peak</Name>
+									<Description>Travel outside the periods 07:00 - 09:00 and 14: 00-17: 00 on weekdays.</Description>
+									<FareDemandType>offPeak</FareDemandType>
+								</FareDemandFactor>
+							</qualityStructureFactors>
+							<fareStructureElements>
+								<FareStructureElement version="1" id="period_pass@access">
+									<Name>Travel within a given zone</Name>
+									<Description>Choice of zones</Description>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:access"/>
+									<GenericParameterAssignment order="1" id="period_pass@access" version="1">
+										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access"/>
+										<ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+										<validityParameters>
+											<FareZoneRef version="1" ref="all_vestfold"/>
+											<FareZoneRef version="1" ref="zone_1"/>
+											<FareZoneRef version="1" ref="zone_2"/>
+											<FareZoneRef version="1" ref="zone_3"/>
+											<FareZoneRef version="1" ref="zone_4"/>
+											<FareZoneRef version="1" ref="zone_5"/>
+										</validityParameters>
+									</GenericParameterAssignment>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="period_pass@durations@24_hours">
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:duration"/>
+									<timeIntervals>
+										<TimeIntervalRef version="1" ref="24_hours"/>
+									</timeIntervals>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="period_pass@durations@7_days">
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:duration"/>
+									<timeIntervals>
+										<TimeIntervalRef version="1" ref="7_days"/>
+									</timeIntervals>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="period_pass@durations@30_days">
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:duration"/>
+									<timeIntervals>
+										<TimeIntervalRef version="1" ref="30_days"/>
+									</timeIntervals>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="period_pass@eligibility">
+									<Name>eligible user types</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:eligibility"/>
+									<GenericParameterAssignment order="1" id="period_pass@eligibility" version="1">
+										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:eligible"/>
+										<LimitationGroupingType>OR</LimitationGroupingType>
+										<limitations>
+											<!---  ===ELIGIBILITY USAGE PARAMETERS =========    -->
+											<UserProfile id="vestfoldkort@youth" version="1">
+												<alternativeTexts>
+													<AlternativeText id="vestfoldkort@youth" attributeName="Name" version="1" order="1" useForLanguage="nob">
+														<Text lang="nob">Vestfoldkortet Ung</Text>
+													</AlternativeText>
+												</alternativeTexts>
+												<Name lang="eng">Vestfoldkortet Ung</Name>
+												<MinimumAge>6</MinimumAge>
+												<MaximumAge>19</MaximumAge>
+											</UserProfile>
+											<UserProfile id="vestfoldkort@young_adult" version="1">
+												<alternativeTexts>
+													<AlternativeText id="vestfoldkort@young_adult" attributeName="Name" version="1" order="1" useForLanguage="nob">
+														<Text lang="nob">Vestfoldkortet UngVoksen</Text>
+													</AlternativeText>
+												</alternativeTexts>
+												<Name lang="eng">Vestfoldkortet Young Adult</Name>
+												<MinimumAge>20</MinimumAge>
+												<MaximumAge>29</MaximumAge>
+											</UserProfile>
+											<UserProfile id="vestfoldkort@student" version="1">
+												<Name lang="eng">Vestfoldkortet Student</Name>
+												<MinimumAge>20</MinimumAge>
+											</UserProfile>
+											<UserProfile id="vestfoldkort@adult" version="1">
+												<alternativeTexts>
+													<AlternativeText id="vestfoldkort_adult" attributeName="Name" version="1" order="1" useForLanguage="nob">
+														<Text lang="nob">Vestfoldkortet Voksen</Text>
+													</AlternativeText>
+												</alternativeTexts>
+												<Name lang="eng">Vestfoldkortet Adult</Name>
+												<MinimumAge>30</MinimumAge>
+												<MaximumAge>66</MaximumAge>
+											</UserProfile>
+											<UserProfileRef version="1" ref="senior"/>
+										</limitations>
+									</GenericParameterAssignment>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="period_pass@access_when">
+									<Name>Alloed periods fo travel</Name>
+									<Description>Choice of anyime or outside rush hour</Description>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:access_when"/>
+									<validityParameterAssignments>
+										<GenericParameterAssignment order="1" id="period_pass@access_when@any_time" version="1">
+											<Name>Travel any time</Name>
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access_when"/>
+											<FareDemandFactorRef version="1" ref="period_pass@any_time"/>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="2" id="period_pass@access_when@off_peak" version="1">
+											<Name>Off peak travel only</Name>
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access_when"/>
+											<FareDemandFactorRef version="1" ref="period_pass@off_peak"/>
+										</GenericParameterAssignment>
+									</validityParameterAssignments>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="period_pass@conditions_of_travel">
+									<Name>Conditions on travel</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:travel_conditions"/>
+									<GenericParameterAssignment version="1" order="1" id="period_pass@conditions_of_travel">
+										<Name>Conditions of travel</Name>
+										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_use"/>
+										<LimitationGroupingType>OR</LimitationGroupingType>
+										<limitations>
+											<UsageValidityPeriod version="1" id="period_pass@usageValidity@24_hour">
+												<ValidityPeriodType>dayPass</ValidityPeriodType>
+												<UsageTrigger>activation</UsageTrigger>
+												<UsageEnd>standardDuration</UsageEnd>
+											</UsageValidityPeriod>
+											<UsageValidityPeriod version="1" id="period_pass@usageValidity@7_days">
+												<ValidityPeriodType>weeklyPass</ValidityPeriodType>
+												<UsageTrigger>specifiedStartDate</UsageTrigger>
+												<UsageEnd>profileExpiry</UsageEnd>
+											</UsageValidityPeriod>
+										</limitations>
+									</GenericParameterAssignment>
+								</FareStructureElement>
+							</fareStructureElements>
+						</Tariff>
+					</tariffs>
+					<fareProducts>
+						<!-- NOTE: COULD ALSO DO THIS WITH A SINGLE PERIOD PASS PRDUCT  WITH   ALTERNATIVE INTERVALS (24h, 7d, 30d, ETC: 
+							CAPPING LIMIT WOULD DTHEN HAVE TO REFERENCE  BOTH PRODUCT AND INTERVAL _  -->
+						<PreassignedFareProduct id="24_hour_pass" version="1">
+							<Name lang="eng">24 hours Vestfold</Name>
+							<Description>24 hour pass valid from moment of actviation until same time next day</Description>
+							<ChargingMomentType>beforeTravel</ChargingMomentType>
+							<OperatorRef version="1" ref="VOT"/>
+							<CappedDiscountRightRef version="1" ref="bestepris_vestfold">Potentially Counts towards this product</CappedDiscountRightRef>
+							<validableElements>
+								<ValidableElement id="24_hour_pass@travel" version="1">
+									<Name lang="eng">24 hours travel</Name>
+									<Description>A single trip within the specifed zone.</Description>
+									<fareStructureElements>
+										<FareStructureElementRef ref="period_pass@access"/>
+										<FareStructureElementRef ref="period_pass@duration@24_hour"/>
+										<FareStructureElementRef ref="period_pass@eligibility"/>
+										<FareStructureElementRef ref="period_pass@conditions_of_travel"/>
+									</fareStructureElements>
+								</ValidableElement>
+							</validableElements>
+							<accessRightsInProduct>
+								<AccessRightInProduct version="1" id="24_hour_pass" order="1">
+									<ValidableElementRef version="1" ref="24_hour_pass@travel"/>
+								</AccessRightInProduct>
+							</accessRightsInProduct>
+							<ProductType>dayPass</ProductType>
+						</PreassignedFareProduct>
+						<PreassignedFareProduct id="7_day_pass" version="1">
+							<Name lang="eng">7 day Vestfold pass</Name>
+							<Description>7 day  pass valid from day of purchase or activation  until end of fare day 7.</Description>
+							<ChargingMomentType>beforeTravel</ChargingMomentType>
+							<OperatorRef version="1" ref="VOT"/>
+							<CappedDiscountRightRef version="1" ref="bestepris_vestfold">Does this  Counts towards 30 day product ? check</CappedDiscountRightRef>
+							<validableElements>
+								<ValidableElement id="7_day_pass@travel" version="1">
+									<fareStructureElements>
+										<FareStructureElementRef ref="period_pass@access"/>
+										<FareStructureElementRef ref="period_pass@access_when"/>
+										<FareStructureElementRef ref="period_pass@duration@7_day"/>
+										<FareStructureElementRef ref="period_pass@eligibility"/>
+										<FareStructureElementRef ref="period_pass@conditions_of_travel"/>
+									</fareStructureElements>
+								</ValidableElement>
+							</validableElements>
+							<accessRightsInProduct>
+								<AccessRightInProduct version="1" id="7_day_pass" order="1">
+									<ValidableElementRef version="1" ref="7_day_pass@travel"/>
+								</AccessRightInProduct>
+							</accessRightsInProduct>
+							<ProductType>periodPass</ProductType>
+						</PreassignedFareProduct>
+						<PreassignedFareProduct id="30_day_pass" version="1">
+							<Name lang="eng">30 days Vestfold pass</Name>
+							<Description>30 day pass valid from day of purchase or activation until end of fare day 30.</Description>
+							<ChargingMomentType>beforeTravel</ChargingMomentType>
+							<OperatorRef version="1" ref="VOT"/>
+							<CappedDiscountRightRef version="1" ref="bestepris_vestfold">Does this  Counts towards 180 day prdocut ? check</CappedDiscountRightRef>
+							<validableElements>
+								<ValidableElement id="30_day_pass@travel" version="1">
+									<fareStructureElements>
+										<FareStructureElementRef ref="period_pass@access"/>
+										<FareStructureElementRef ref="period_pass@access_when"/>
+										<FareStructureElementRef ref="period_pass@duration@30_day"/>
+										<FareStructureElementRef ref="period_pass@eligibility"/>
+										<FareStructureElementRef ref="period_pass@conditions_of_travel"/>
+									</fareStructureElements>
+								</ValidableElement>
+							</validableElements>
+							<accessRightsInProduct>
+								<AccessRightInProduct version="1" id="30_day_pass" order="1">
+									<ValidableElementRef version="1" ref="30_day_pass@travel"/>
+								</AccessRightInProduct>
+							</accessRightsInProduct>
+							<ProductType>periodPass</ProductType>
+						</PreassignedFareProduct>
+						<AmountOfPriceUnitProduct id="vestfoldkorte_smartcard" version="1">
+							<Name lang="nob">Vestfoldkorte</Name>
+							<Description>Smartcard on which to record capped purchases etc </Description>
+							<OperatorRef version="1" ref="VOT"/>
+							<ProductType>storedValue</ProductType>
+						</AmountOfPriceUnitProduct>
+					</fareProducts>
+					<!-- SALES OFFERS -->
+					<salesOfferPackages>
+						<SalesOfferPackage id="24_hour_pass@smartcard" version="1">
+							<Name lang="eng">24 Hour Pass - smartcard</Name>
+							<alternativeNames>
+								<AlternativeName>
+									<Name lang="nob">Periodekort Vestfold</Name>
+								</AlternativeName>
+							</alternativeNames>
+							<validityParameterAssignments>
+								<GenericParameterAssignment version="1" order="1" id="24_hour_pass@smartcard@conditions_of_sale">
+									<Name>Conditions of sale</Name>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<EntitlementRequired id="vestfoldkorte_smartcard" version="1">
+											<Name>Requires SMartcard to buy product</Name>
+											<AmountOfPriceUnitProductRef version="1" ref="vestfoldkorte_smartcard"/>
+										</EntitlementRequired>
+										<EntitlementGiven version="1" id="24_hour_pass@smartcard@entitles">
+											<Name>Counts towards capping discount</Name>
+											<CappedDiscountRightRef version="1" ref="bestepris_vestfold"/>
+											<EntitlementType>purchaseAtDiscount</EntitlementType>
+										</EntitlementGiven>
+										<Transferability id="24_hour_pass@smartcard@transferability" version="1">
+											<CanTransfer>true</CanTransfer>
+											<HasTransferFee>false</HasTransferFee>
+											<SharedUsage>singleUser</SharedUsage>
+										</Transferability>
+										<Transferability id="VOT:Transferability:NoTransfer" version="1">
+											<CanTransfer>false</CanTransfer>
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="24_hour_pass@smartcard" version="1" order="1">
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:smartcard"/>
+									<PreassignedFareProductRef ref="24_hour_pass" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<SalesOfferPackage id="24_hour_pass@mobile_app" version="1">
+							<Name lang="eng">4 Hour Pass - - mobile app</Name>
+							<alternativeNames>
+								<AlternativeName>
+									<Name lang="nob">VKT Periodekort Vestfold</Name>
+								</AlternativeName>
+							</alternativeNames>
+							<validityParameterAssignments>
+								<GenericParameterAssignment version="1" order="1" id="24_hour_pass@mobile_app@conditions_of_sale">
+									<Name>Conditions of sale</Name>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<EntitlementGiven version="1" id="24_hour_pass@mobile_app@entitles">
+											<CappedDiscountRightRef version="1" ref="bestepris_vestfold"/>
+											<EntitlementType>purchaseAtDiscount</EntitlementType>
+										</EntitlementGiven>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="24_hour_pass@mobile_app" version="1" order="1">
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:mobile_app"/>
+									<PreassignedFareProductRef ref="24_hour_pass" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<SalesOfferPackage id="7_day_pass@smartcard" version="1">
+							<Name lang="eng">7 Day pass - smartcard</Name>
+							<validityParameterAssignments>
+								<GenericParameterAssignment version="1" order="1" id="7_day_pass@smartcard@conditions_of_sale">
+									<Name>Conditions of sale</Name>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<EntitlementRequired id="7_day_pass@mobile_app@vestfoldkorte_smartcard" version="1">
+											<Name>Requires SMartcard to buy product</Name>
+											<AmountOfPriceUnitProductRef version="1" ref="vestfoldkorte_smartcard"/>
+										</EntitlementRequired>
+										<EntitlementGiven version="1" id="7_day_pass@smartcard@entitles">
+											<Name>Counts towards capping discount</Name>
+											<CappedDiscountRightRef version="1" ref="bestepris_vestfold"/>
+											<EntitlementType>purchaseAtDiscount</EntitlementType>
+										</EntitlementGiven>
+										<Transferability id="7_day_pass@smartcard@transferability" version="1">
+											<CanTransfer>false</CanTransfer>
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="7_day_pass@smartcard" version="1" order="1">
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:smartcard"/>
+									<PreassignedFareProductRef ref="7_day_pass" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<SalesOfferPackage id="7_day_pass@mobile_app" version="1">
+							<Name lang="eng">Period pass - mobile app</Name>
+							<Description lang="nob">Enkeltbillett i appen Vy og på vy.no.  </Description>
+							<alternativeNames>
+								<AlternativeName id="period_pass@mobile_app" version="1">
+									<Name lang="nob">Periodekort Vestfold  VKT</Name>
+								</AlternativeName>
+							</alternativeNames>
+							<validityParameterAssignments>
+								<GenericParameterAssignment version="1" order="1" id="7_day_pass@mobile_app@conditions_of_sale">
+									<Name>Conditions of sale</Name>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<EntitlementGiven version="1" id="7_day_pass@mobile_app@entitles">
+											<Name>Counts towards capping discount</Name>
+											<CappedDiscountRightRef version="1" ref="bestepris_vestfold"/>
+											<EntitlementType>purchaseAtDiscount</EntitlementType>
+										</EntitlementGiven>
+										<Transferability id="7_day_pass@mobile_app@transferability" version="1">
+											<CanTransfer>false</CanTransfer>
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="7_day_pass@mobile_app" version="1" order="1">
+									<Name lang="eng">7 Day Pass</Name>
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:mobile_app"/>
+									<PreassignedFareProductRef ref="7_day_pass" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<!-- are 30 and 180 day passes only on smartcard ? -->
+						<SalesOfferPackage id="30_day_pass@smartcard" version="1">
+							<Name lang="eng">30 Day pass - smartcard</Name>
+							<validityParameterAssignments>
+								<GenericParameterAssignment version="1" order="1" id="30_day_pass@smartcard@conditions_of_sale">
+									<Name>Conditions of sale</Name>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<EntitlementRequired id="30_day_pass@mobile_app@vestfoldkorte_smartcard" version="1">
+											<Name>Requires SMartcard to buy product</Name>
+											<AmountOfPriceUnitProductRef version="1" ref="vestfoldkorte_smartcard"/>
+										</EntitlementRequired>
+										<Transferability id="30_day_pass@smartcard@transferability" version="1">
+											<CanTransfer>false</CanTransfer>
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="30_day_pass@smartcard" version="1" order="1">
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:smartcard"/>
+									<PreassignedFareProductRef ref="30_day_pass" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+					</salesOfferPackages>
+				</FareFrame>
+				<FareFrame id="capped_discount" version="1">
+					<tariffs>
+						<Tariff version="1" id="capped_discount">
+							<Name>Capping DIscounts</Name>
+							<OperatorRef version="1" ref="VOT"/>
+							<fareStructureElements>
+								<FareStructureElement version="1" id="capped_discount@qualifying">
+									<Name>Which products are eligble for capping)</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:qualifiies_for_discount"/>
+									<validityParameterAssignments>
+										<GenericParameterAssignment order="1" id="capped_discount@qualifying@single_ticket_bus@mobile_app" version="1">
+											<SalesOfferPackageRef version="1" ref="single_ticket_bus@mobile_app"/>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="2" id="capped_discount@qualifying@single_ticket_bus@smartcard" version="1">
+											<SalesOfferPackageRef version="1" ref="single_ticket_bus@smartcard"/>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="3" id="capped_discount@qualifying@24_hour_pass@smartcard" version="1">
+											<SalesOfferPackageRef version="1" ref="24_hour_pass@smartcard"/>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="4" id="capped_discount@qualifying@24_hour_pass@mobile_app" version="1">
+											<SalesOfferPackageRef version="1" ref="24_hour_pass@mobile_app"/>
+										</GenericParameterAssignment>
+									</validityParameterAssignments>
+								</FareStructureElement>
+							</fareStructureElements>
+						</Tariff>
+					</tariffs>
+					<fareProducts>
+						<CappedDiscountRight id="bestepris_vestfold" version="1">
+							<Name lang="eng">Best Price Vestfold - fare capping</Name>
+							<Description>Gives the right to buy tickets at prices capped within the qualifying period.</Description>
+							<alternativeNames>
+								<AlternativeName id="bestepris_vestfold" version="1">
+									<Name lang="nob">Bestepris Vestfold</Name>
+								</AlternativeName>
+							</alternativeNames>
+							<OperatorRef version="1" ref="VOT"/>
+							<cappingRules>
+								<!--- Clean  - APPROACH - USING products   -->
+								<!-- 1) first level capping after reaching cost of 24 hour ticket -->
+								<CappingRule id="bestepris_vestfold@24_hour_cap" version="1">
+									<Name>Max usage within 24 hour</Name>
+									<!-- LimitingRuleRef ref="max_per_day_adult" version="1"/ -->
+									<Description>Capping of use within 24 hours set at cost of 24 hour pass</Description>
+									<CappingPeriod>day</CappingPeriod>
+									<PreassignedFareProductRef ref="24_hour_pass" version="1"/>
+									<!-- already defined by the PreassignedFareProduct -->
+									<validityParameterAssignments>
+										<GenericParameterAssignment order="1" id="bestepris_vestfold@24_hour_cap" version="1">
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:capping_step"/>
+											<TimeIntervalRef version="1" ref="24_hours"/>
+											<!-- Formal reference to Interval within which capping is applied -->
+										</GenericParameterAssignment>
+									</validityParameterAssignments>
+								</CappingRule>
+								<!-- 2) second level capping after reaching cost of 7 day ticket -->
+								<CappingRule id="bestepris_vestfold@7_day_cap" version="1">
+									<Name>Maximum usage within 7 days</Name>
+									<Description>Capping of use within 7 days; set at cost of 7 day pass</Description>
+									<!-- CappingPerido is for user info - formal ref is TimeInterval.-->
+									<CappingPeriod>week</CappingPeriod>
+									<!-- Product that sets the cap equivalence -->
+									<PreassignedFareProductRef ref="7_day_pass" version="1"/>
+									<validityParameterAssignments>
+										<GenericParameterAssignment order="1" id="bestepris_vestfold@7_day_cap" version="1">
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:capping_step"/>
+											<LimitationGroupingType>OR</LimitationGroupingType>
+											<limitations>
+												<!-- Must reach adult capping thresholldm   even if  child/young  -->
+												<UserProfileRef ref="adult" version="1"/>
+												<UserProfileRef ref="child" version="1"/>
+												<UserProfileRef ref="senior" version="1"/>
+											</limitations>
+											<TimeIntervalRef version="1" ref="7_days"/>
+											<!-- Formal reference to Interval within which capping is applied -->
+										</GenericParameterAssignment>
+									</validityParameterAssignments>
+								</CappingRule>
+								<!--  coudl also add 30 day cap -->
+								<!-- =====================  -->
+								<!--- ALTERNATIVE - APPROACH - USING LIMITS   -->
+								<CappingRule id="bestepris_vestfold@24_hour_limit@adult" version="1">
+									<Name>Max usage within 24 hour</Name>
+									<Description>Capping of use within 24 hours set at cost of 24 hour pass</Description>
+									<!-- Normally capping prices would be taken from referenced product eg. <PreassignedFareProductRef ref="7_day_pass"  , 
+										because may have complex tariff structure of zones, user types etc., with multiple prices.
+						but as well or alternatively could also cite limiting rule . However must specify  paremeters that deg=fien rule, eg user type -->
+									<LimitingRuleRef ref="max_per_24_hours@adult" version="1"/>
+									<CappingPeriod>day</CappingPeriod>
+									<!-- also defined by the PreassignedFareProduct -->
+									<PreassignedFareProductRef ref="24_hour_pass" version="1"/>
+									<validityParameterAssignments>
+										<GenericParameterAssignment order="1" id="bestepris_vestfold@24_hour_limit@adult" version="1">
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:capping_step"/>
+											<limitations>
+												<UserProfileRef ref="adult" version="1"/>
+											</limitations>
+											<TimeIntervalRef version="1" ref="24_hours"/>
+										</GenericParameterAssignment>
+									</validityParameterAssignments>
+								</CappingRule>
+								<CappingRule id="bestepris_vestfold@24_hour_limit@child" version="1">
+									<Name>Max usage within 24 hour</Name>
+									<Description>Capping of use within 24 hours set at cost of 24 hour pass</Description>
+									<!-- Normally capping prices would be taken from referenced product eg. <PreassignedFareProductRef ref="7_day_pass"  , 
+										because may have complex tariff structure of zones, user types etc., with multiple prices.
+						but as well or alternatively could also cite limiting rule . However must specify  paremeters that deg=fien rule, eg user type -->
+									<LimitingRuleRef ref="max_per_24_hours@child" version="1"/>
+									<CappingPeriod>day</CappingPeriod>
+									<!-- also defined by the PreassignedFareProduct -->
+									<PreassignedFareProductRef ref="24_hour_pass" version="1"/>
+									<validityParameterAssignments>
+										<GenericParameterAssignment order="1" id="bestepris_vestfold@24_hour_limit@child" version="1">
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:capping_step"/>
+											<limitations>
+												<UserProfileRef ref="child" version="1"/>
+											</limitations>
+											<TimeIntervalRef version="1" ref="24_hours"/>
+										</GenericParameterAssignment>
+									</validityParameterAssignments>
+								</CappingRule>
+								<!-- etc etc -->
+							</cappingRules>
+						</CappedDiscountRight>
+					</fareProducts>
+					<salesOfferPackages>
+						<SalesOfferPackage id="bestepris_vestfold@on_card" version="1">
+							<Name lang="eng">Bestpris Vestfold</Name>
+							<Description>Discount rights to capped travel. Bundled with smartcard</Description>
+							<ConditionSummary>
+								<GoesOnCard>true</GoesOnCard>
+								<IsPersonal>true</IsPersonal>
+								<MustCarry>true</MustCarry>
+							</ConditionSummary>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="bestepris_vestfold@on_card@smartcard" version="1" order="1">
+									<Name lang="eng">Smartcard Card</Name>
+									<Description>SMartcard linke dto account on which travel rights are placed.</Description>
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:e_card"/>
+									<AmountOfPriceUnitProductRef ref="vestfoldkorte_smartcard" version="1"/>
+								</SalesOfferPackageElement>
+								<SalesOfferPackageElement id="bestepris_vestfold@on_card@rights" version="1" order="1">
+									<Name lang="eng">Discount right</Name>
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:e_card"/>
+									<CappedDiscountRightRef ref="bestepris_vestfold" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<SalesOfferPackage id="bestepris_vestfold@mobile_app" version="1">
+							<Name lang="eng">Bestpris Vestfold</Name>
+							<Description>Discount rights to capped travel. As mobile app</Description>
+							<ConditionSummary>
+								<IsPersonal>true</IsPersonal>
+								<MustCarry>true</MustCarry>
+							</ConditionSummary>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="bestepris_vestfold@mobile_app@rights" version="1" order="1">
+									<Name lang="eng">Discount right</Name>
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:mobile_app"/>
+									<CappedDiscountRightRef ref="bestepris_vestfold" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+					</salesOfferPackages>
+				</FareFrame>
+				<FareFrame id="usage_rebate" version="1">
+					<Name>USage based discount</Name>
+					<PricingParameterSet id="usage_rebate" version="1">
+						<Name> Stepped discount rates</Name>
+						<pricingRules>
+							<DiscountingRule id="usage_rebate@discount_step_01-04" version="1">
+								<DiscountAsPercentage>0</DiscountAsPercentage>
+							</DiscountingRule>
+							<DiscountingRule id="usage_rebate@discount_step_05-10" version="1">
+								<DiscountAsPercentage>30</DiscountAsPercentage>
+							</DiscountingRule>
+							<DiscountingRule id="usage_rebate@discount_step_11-20" version="1">
+								<DiscountAsPercentage>60</DiscountAsPercentage>
+							</DiscountingRule>
+							<DiscountingRule id="usage_rebate@discount_step_20+" version="1">
+								<DiscountAsPercentage>100</DiscountAsPercentage>
+							</DiscountingRule>
+						</pricingRules>
+					</PricingParameterSet>
+					<tariffs>
+						<Tariff version="1" id="usage_rebate">
+							<Name>Vy on-the-fly rebate </Name>
+							<Description>The PTO has defined a set of rules that reduces the price of a fare product based on the number of previous purchases
+within a (specified) 30 day period when all ticket purchases have the same geographical parameters, level of service (in
+practice: same fare class) and user profile:</Description>
+							<OperatorRef version="1" ref="VOT"/>
+							<qualityStructureFactors>
+								<QualityStructureFactor version="1" id="usage_rebate@discount_step_01-04">
+									<Name>first 4 single ticket purchases at full rate</Name>
+									<DiscountingRuleRef version="1" ref="usage_rebate@discount_step_01-04"/>
+									<Value>1</Value>
+								</QualityStructureFactor>
+								<QualityStructureFactor version="1" id="usage_rebate@discount_step_05-10">
+									<Name>next purchases (tickets number 5-10) at a discount e.g. 30 %</Name>
+									<DiscountingRuleRef version="1" ref="usage_rebate@discount_step_05-10"/>
+									<Value>5</Value>
+								</QualityStructureFactor>
+								<QualityStructureFactor version="1" id="usage_rebate@discount_step_11-20">
+									<Name>next purchases (tickets number 11-20) at a discount e.g. 60%</Name>
+									<DiscountingRuleRef version="1" ref="usage_rebate@discount_step_11-20"/>
+									<Value>11</Value>
+								</QualityStructureFactor>
+								<QualityStructureFactor version="1" id="usage_rebate@discount_step_20+">
+									<Name>further purchases within the 30 day period at no cost</Name>
+									<DiscountingRuleRef version="1" ref="usage_rebate@discount_step_20+"/>
+									<Value>21</Value>
+								</QualityStructureFactor>
+							</qualityStructureFactors>
+							<fareStructureElements>
+								<FareStructureElement version="1" id="usage_rebate@stepped_discounts">
+									<Name>Discounts on multiple purchases</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:stepped_discounts"/>
+									<validityParameterAssignments>
+										<GenericParameterAssignment order="1" id="usage_rebate@stepped_discounts@01-04" version="1">
+											<QualityStructureFactorRef version="1" ref="usage_rebate@discount_step_01-04"/>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="2" id="usage_rebate@stepped_discounts@05-10" version="1">
+											<QualityStructureFactorRef version="1" ref="usage_rebate@discount_step_05-10"/>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="3" id="usage_rebate@stepped_discounts@11-20" version="1">
+											<QualityStructureFactorRef version="1" ref="usage_rebate@discount_step_11-20"/>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="4" id="usage_rebate@stepped_discounts@20+" version="1">
+											<QualityStructureFactorRef version="1" ref="usage_rebate@discount_step_20+"/>
+										</GenericParameterAssignment>
+									</validityParameterAssignments>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="usage_rebate@qualifying">
+									<Name>Which products are eligble for discount (NBCould get fancier and have different steps for different products)</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:qualifiies_for_discount"/>
+									<validityParameterAssignments>
+										<GenericParameterAssignment order="1" id="usage_rebate@qualifying@single_ticket_bus@mobile_app" version="1">
+											<SalesOfferPackageRef version="1" ref="single_ticket_bus@mobile_app"/>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment order="1" id="usage_rebate@qualifying@single_ticket_bus@smartcard" version="1">
+											<SalesOfferPackageRef version="1" ref="single_ticket_bus@smartcard"/>
+										</GenericParameterAssignment>
+									</validityParameterAssignments>
+								</FareStructureElement>
+							</fareStructureElements>
+						</Tariff>
+					</tariffs>
+					<fareProducts>
+						<UsageDiscountRight id="usage_rebate" version="1">
+							<Name>Vy on-the-fly rebate</Name>
+							<OperatorRef version="1" ref="VOT"/>
+							<validableElements>
+								<ValidableElement id="usage_rebate@steps" version="1">
+									<fareStructureElements>
+										<FareStructureElementRef ref="usage_rebate@stepped_discount"/>
+										<FareStructureElementRef ref="usage_rebate@qualifying"/>
+									</fareStructureElements>
+								</ValidableElement>
+							</validableElements>
+						</UsageDiscountRight>
+					</fareProducts>
+				</FareFrame>
+				<!--- ==== PRICES ===  -->
+				<FareFrame id="single_trip_pricing" version="1">
+					<Name>Prices for single trips </Name>
+					<priceGroups>
+						<PriceGroup id="single_ticket@concession" version="1">
+							<Name>Concessionary prices</Name>
+							<Description>The same concessionary prices are reused </Description>
+							<members>
+								<GeographicalIntervalPrice id="single_ticket@concession@1_zone" version="1">
+									<Amount>21.00</Amount>
+									<GeographicalIntervalRef ref="1_zone" version="1"/>
+								</GeographicalIntervalPrice>
+								<GeographicalIntervalPrice id="single_ticket@concession@2_zone" version="1">
+									<Amount>25.00</Amount>
+									<GeographicalIntervalRef ref="2_zone" version="1"/>
+								</GeographicalIntervalPrice>
+								<GeographicalIntervalPrice id="single_ticket@concession@3_zone" version="1">
+									<Amount>29.00</Amount>
+									<GeographicalIntervalRef ref="3_zone" version="1"/>
+								</GeographicalIntervalPrice>
+								<GeographicalIntervalPrice id="single_ticket@concession@4_zone" version="1">
+									<Amount>33.00</Amount>
+									<GeographicalIntervalRef ref="4_plus_zone" version="1"/>
+								</GeographicalIntervalPrice>
+							</members>
+						</PriceGroup>
+					</priceGroups>
+					<fareTables>
+						<!-- prices -->
+						<FareTable id="single_ticket@on_board" version="1">
+							<Name>Buy on board, sales office, Vipps and SMS</Name>
+							<!--  NB SMS shoudl probable be separae as different media -->
+							<pricesFor>
+								<PreassignedFareProductRef ref="single_ticket" version="1"/>
+								<SalesOfferPackageRef ref="single_ticket_bus@paper_ticket" version="1"/>
+							</pricesFor>
+							<includes>
+								<FareTable id="single_ticket@on_board@adult" version="1">
+									<Name>Adult - Buy on board, sales office, Vipps and SMS</Name>
+									<pricesFor>
+										<UserProfileRef ref="adult" version="1"/>
+									</pricesFor>
+									<prices>
+										<GeographicalIntervalPrice id="single_ticket@on_board@adult@1_zone" version="1">
+											<Amount>41.00</Amount>
+											<GeographicalIntervalRef ref="1_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@on_board@adult@2_zone" version="1">
+											<Amount>49.00</Amount>
+											<GeographicalIntervalRef ref="2_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@on_board@adult@3_zone" version="1">
+											<Amount>57.00</Amount>
+											<GeographicalIntervalRef ref="3_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@on_board@adult@4_plus_zone" version="1">
+											<Amount>65.00</Amount>
+											<GeographicalIntervalRef ref="4_plus_zone" version="1"/>
+										</GeographicalIntervalPrice>
+									</prices>
+								</FareTable>
+								<FareTable id="single_ticket@on_board@concession" version="1">
+									<Name>Child - Buy on board, sales office, Vipps and SMS</Name>
+									<pricesFor>
+										<UserProfileRef ref="child" version="1"/>
+										<UserProfileRef ref="senior" version="1"/>
+									</pricesFor>
+									<prices>
+										<GeographicalIntervalPrice id="single_ticket@on_board@concession@1_zone" version="1">
+											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@1_zone">21 NKR</GeographicalIntervalPriceRef>
+											<GeographicalIntervalRef ref="1_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@on_board@concession@2_zone" version="1">
+											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@2_zone">25 NKR</GeographicalIntervalPriceRef>
+											<GeographicalIntervalRef ref="2_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@on_board@concession@3_zone" version="1">
+											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@3_zone">29NKR</GeographicalIntervalPriceRef>
+											<GeographicalIntervalRef ref="3_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@on_board@concession@4_plus_zone" version="1">
+											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@3_zone">33 NKR</GeographicalIntervalPriceRef>
+											<GeographicalIntervalRef ref="4_plus_zone" version="1"/>
+										</GeographicalIntervalPrice>
+									</prices>
+								</FareTable>
+							</includes>
+						</FareTable>
+						<!-- prices -->
+						<FareTable id="single_ticket@mobile_app" version="1">
+							<Name>Buy in VKT Mobile Ticket and with Travel Money</Name>
+							<pricesFor>
+								<PreassignedFareProductRef ref="single_ticket" version="1"/>
+								<SalesOfferPackageRef ref="single_ticket_bus@paper_ticket" version="1"/>
+							</pricesFor>
+							<includes>
+								<FareTable id="single_ticket@mobile_app@adult" version="1">
+									<Name>Adult -Buy in VKT Mobile Ticket and with Travel Money</Name>
+									<pricesFor>
+										<UserProfileRef ref="adult" version="1"/>
+									</pricesFor>
+									<prices>
+										<GeographicalIntervalPrice id="single_ticket@mobile_app@adult@1_zone" version="1">
+											<Amount>35.00</Amount>
+											<GeographicalIntervalRef ref="1_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@mobile_app@adult@2_zone" version="1">
+											<Amount>43.00</Amount>
+											<GeographicalIntervalRef ref="2_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@mobile_app@adult@3_zone" version="1">
+											<Amount>51.00</Amount>
+											<GeographicalIntervalRef ref="3_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@mobile_app@adult@4_plus_zone" version="1">
+											<Amount>59.00</Amount>
+											<GeographicalIntervalRef ref="4_plus_zone" version="1"/>
+										</GeographicalIntervalPrice>
+									</prices>
+								</FareTable>
+								<FareTable id="single_ticket@mobile_app@concession" version="1">
+									<Name>Child and Senior - Buy in VKT Mobile Ticket and with Travel Money</Name>
+									<pricesFor>
+										<UserProfileRef ref="child" version="1"/>
+										<UserProfileRef ref="senior" version="1"/>
+									</pricesFor>
+									<prices>
+										<GeographicalIntervalPrice id="single_ticke@mobile_app@concession@1_zone" version="1">
+											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@1_zone">21 NKR</GeographicalIntervalPriceRef>
+											<GeographicalIntervalRef ref="1_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@mobile_app@concession@2_zone" version="1">
+											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@2_zone">25 NKR</GeographicalIntervalPriceRef>
+											<GeographicalIntervalRef ref="2_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@mobile_app@concession@3_zone" version="1">
+											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@1_zone">29 NKR</GeographicalIntervalPriceRef>
+											<GeographicalIntervalRef ref="3_zone" version="1"/>
+										</GeographicalIntervalPrice>
+										<GeographicalIntervalPrice id="single_ticket@mobile_app@concession@4_plus_zone" version="1">
+											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@1_zone">33 NKR</GeographicalIntervalPriceRef>
+											<GeographicalIntervalRef ref="4_plus_zone" version="1"/>
+										</GeographicalIntervalPrice>
+									</prices>
+								</FareTable>
+							</includes>
+						</FareTable>
+					</fareTables>
+				</FareFrame>
+				<FareFrame id="pass_pricing" version="1">
+					<Name>Prices for passes trips </Name>
+					<fareTables>
+						<!-- prices -->
+						<FareTable id="7_day_pass" version="1">
+							<Name>Prices for 7_day passes     </Name>
+							<pricesFor>
+								<PreassignedFareProductRef ref="7_day_pass" version="1"/>
+								<SalesOfferPackageRef ref="7_day_pass@smartcard" version="1"/>
+								<SalesOfferPackageRef ref="7_day_pass@mobile_app" version="1"/>
+								<TimeIntervalRef ref="7_days" version="1"/>
+							</pricesFor>
+							<includes>
+								<FareTable id="7_day_pass@any_time" version="1">
+									<Name>Prices for 7 day pass, travel any time</Name>
+									<pricesFor>
+										<FareDemandFactorRef ref="period_pass@any_time" version="1"/>
+									</pricesFor>
+									<prices>
+										<UsageParameterPrice id="7_days@any_time@vestfoldkort@youth" version="1">
+											<Amount>100.00</Amount>
+											<UserProfileRef ref="vestfoldkort@youth" version="1"/>
+										</UsageParameterPrice>
+										<UsageParameterPrice id="7_days@any_time@vestfoldkort@young_adult" version="1">
+											<Amount>150.00</Amount>
+											<UserProfileRef ref="vestfoldkort@young_adult" version="1"/>
+										</UsageParameterPrice>
+										<UsageParameterPrice id="7_days@any_time@vestfoldkort@student" version="1">
+											<Amount>150.00</Amount>
+											<UserProfileRef ref="vestfoldkort@student" version="1"/>
+										</UsageParameterPrice>
+										<UsageParameterPrice id="7_days@any_time@vestfoldkort@adult" version="1">
+											<Amount>240.00</Amount>
+											<UserProfileRef ref="vestfoldkort@adult" version="1"/>
+										</UsageParameterPrice>
+										<UsageParameterPrice id="7_days@any_time@senior" version="1">
+											<Amount>130.00</Amount>
+											<UserProfileRef ref="senior" version="1"/>
+										</UsageParameterPrice>
+									</prices>
+								</FareTable>
+								<FareTable id="7_day_pass@off_peak" version="1">
+									<Name>Prices for 7 day pass , travel off peak only</Name>
+									<pricesFor>
+										<UserProfileRef ref="vestfoldkort@adult" version="1"/>
+									</pricesFor>
+									<prices>
+										<QualityStructureFactorPrice id="7_days@off_peak@vestfoldkort@adult" version="1">
+											<Amount>240.00</Amount>
+											<FareDemandFactorRef ref="period_pass@off_peak" version="1"/>
+										</QualityStructureFactorPrice>
+									</prices>
+								</FareTable>
+							</includes>
+						</FareTable>
+						<FareTable id="30_day_pass" version="1">
+							<Name>Prices for 30_day passes     </Name>
+							<pricesFor>
+								<PreassignedFareProductRef ref="30_day_pass" version="1"/>
+								<SalesOfferPackageRef ref="30_day_pass@smartcard" version="1"/>
+								<TimeIntervalRef ref="30_days" version="1"/>
+							</pricesFor>
+							<includes>
+								<FareTable id="30_day_pass@any_time" version="1">
+									<Name>Prices for 30 day pass, travel any time</Name>
+									<pricesFor>
+										<FareDemandFactorRef ref="period_pass@any_time" version="1"/>
+									</pricesFor>
+									<prices>
+										<UsageParameterPrice id="30_days@any_time@vestfoldkort@youth" version="1">
+											<Amount>290.00</Amount>
+											<UserProfileRef ref="vestfoldkort@youth" version="1"/>
+										</UsageParameterPrice>
+										<UsageParameterPrice id="30_days@any_time@vestfoldkort@young_adult" version="1">
+											<Amount>450.00</Amount>
+											<UserProfileRef ref="vestfoldkort@young_adult" version="1"/>
+										</UsageParameterPrice>
+										<UsageParameterPrice id="30_days@any_time@vestfoldkort@student" version="1">
+											<Amount>450.00</Amount>
+											<UserProfileRef ref="vestfoldkort@student" version="1"/>
+										</UsageParameterPrice>
+										<UsageParameterPrice id="30_days@any_time@vestfoldkort@adult" version="1">
+											<Amount>770.00</Amount>
+											<UserProfileRef ref="vestfoldkort@adult" version="1"/>
+										</UsageParameterPrice>
+										<UsageParameterPrice id="30_days@any_time@senior" version="1">
+											<Amount>390.00</Amount>
+											<UserProfileRef ref="senior" version="1"/>
+										</UsageParameterPrice>
+									</prices>
+								</FareTable>
+								<FareTable id="30_day_pass@off_peak" version="1">
+									<Name>Prices for 30 day pass , travel off peak only</Name>
+									<pricesFor>
+										<UserProfileRef ref="vestfoldkort@adult" version="1"/>
+									</pricesFor>
+									<prices>
+										<QualityStructureFactorPrice id="30_days@off_peak@vestfoldkort@adult" version="1">
+											<Amount>450.00</Amount>
+											<FareDemandFactorRef ref="period_pass@off_peak" version="1"/>
+										</QualityStructureFactorPrice>
+									</prices>
+								</FareTable>
+							</includes>
+						</FareTable>
+					</fareTables>
+				</FareFrame>
+				<FareFrame id="bestepris_pricing" version="1">
+					<PricingParameterSet id="limiting" version="1">
+						<Name> not realluy needed but let in to sho ho to link to limit prices</Name>
+						<pricingRules>
+							<LimitingRule id="max_per_24_hours@adult" version="1">
+								<MaximumLimitPrice>80.00</MaximumLimitPrice>
+							</LimitingRule>
+							<LimitingRule id="max_per_24_hours@child" version="1">
+								<MaximumLimitPrice>80.00</MaximumLimitPrice>
+							</LimitingRule>
+							<LimitingRule id="max_per_24_hours@young" version="1">
+								<MaximumLimitPrice>80.00</MaximumLimitPrice>
+							</LimitingRule>
+							<LimitingRule id="max_per_7_days@adult" version="1">
+								<MaximumLimitPrice>240.00</MaximumLimitPrice>
+							</LimitingRule>
+							<LimitingRule id="max_per_30_days@adult" version="1">
+								<MaximumLimitPrice>740.00</MaximumLimitPrice>
+							</LimitingRule>
+							<LimitingRule id="max_per_180_days@adult" version="1">
+								<MaximumLimitPrice>3700.00</MaximumLimitPrice>
+							</LimitingRule>
+							<LimitingRule id="max_per_7_days@young" version="1">
+								<MaximumLimitPrice>100.00</MaximumLimitPrice>
+							</LimitingRule>
+							<LimitingRule id="max_per_7_days@young_adult" version="1">
+								<MaximumLimitPrice>150</MaximumLimitPrice>
+							</LimitingRule>
+							<LimitingRule id="max_per_7_days@senior" version="1">
+								<MaximumLimitPrice>130</MaximumLimitPrice>
+							</LimitingRule>
+						</pricingRules>
+					</PricingParameterSet>
+				</FareFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
