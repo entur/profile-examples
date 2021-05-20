@@ -7,13 +7,14 @@
     https://enturas.atlassian.net/wiki/spaces/kb/pages/2556985467/User+stories+-+Capping
 
 
-    Furteh rindormation for Vestfold from
+    Further information for Vestfold from
 			https://www.vkt.no/takster2021/
   
      Notes - For clarity this example
         uses snake case for data instance ids e.g.  single_ticket 
         usea default namespace VOT . and currency NKR, specifed only on outer frame.
    
+      Example from NJSK 
 
 -->
 	<PublicationTimestamp>2021-05-11T18:14:00</PublicationTimestamp>
@@ -49,6 +50,14 @@
 					</organisations>
 				</ResourceFrame>
 				<FareFrame id="single_trip" version="1">
+					<PricingParameterSet id="single_trip" version="1">
+						<pricingRules>
+							<DiscountingRule id="group_discount" version="1">
+								<Name>Discount for groups over 3 people</Name>
+								<DiscountAsPercentage>33.00</DiscountAsPercentage>
+							</DiscountingRule>
+						</pricingRules>
+					</PricingParameterSet>
 					<fareZones>
 						<!--- Vestfold -->
 						<FareZone version="1" id="all_vestfold">
@@ -177,6 +186,31 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 										</validityParameters>
 									</GenericParameterAssignment>
 								</FareStructureElement>
+								<FareStructureElement version="1" id="single_trip@access@vestfold_only">
+									<Name>Zones in Vestfolds</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:access"/>
+									<GenericParameterAssignment order="1" id="single_trip@access@vestfold_only" version="1">
+										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access"/>
+										<ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+										<validityParameters>
+											<FareZoneRef version="1" ref="zone_1"/>
+											<FareZoneRef version="1" ref="zone_2"/>
+											<FareZoneRef version="1" ref="zone_3"/>
+											<FareZoneRef version="1" ref="zone_4"/>
+										</validityParameters>
+									</GenericParameterAssignment>
+								</FareStructureElement>
+								<FareStructureElement version="1" id="single_trip@access@grenland_only">
+									<Name>Zone in Grenland</Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:access"/>
+									<GenericParameterAssignment order="1" id="single_trip@access@grenland_only" version="1">
+										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access"/>
+										<ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+										<validityParameters>
+											<FareZoneRef version="1" ref="zone_5"/>
+										</validityParameters>
+									</GenericParameterAssignment>
+								</FareStructureElement>
 								<FareStructureElement version="1" id="single_trip@access_durations">
 									<Name lang="eng">Steps per zone</Name>
 									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:access_durations"/>
@@ -196,9 +230,7 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 													<StandardDuration>PT60M</StandardDuration>
 												</UsageValidityPeriod>
 											</limitations>
-											<validityParameters>
-												<GeographicalIntervalRef version="1" ref="1_zone"/>
-											</validityParameters>
+											<GeographicalIntervalRef version="1" ref="1_zone"/>
 										</GenericParameterAssignment>
 										<GenericParameterAssignment order="2" id="single_trip@access_steps@2_zone" version="1">
 											<Name>Two  zone use must be done in 90 minutes</Name>
@@ -209,22 +241,18 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 													<StandardDuration>PT90M</StandardDuration>
 												</UsageValidityPeriod>
 											</limitations>
-											<validityParameters>
-												<GeographicalIntervalRef version="1" ref="2_zone"/>
-											</validityParameters>
+											<GeographicalIntervalRef version="1" ref="2_zone"/>
 										</GenericParameterAssignment>
 										<GenericParameterAssignment order="3" id="single_trip@access_steps@3_zone" version="1">
 											<Name>Three  zone use must be done in 120 minutes</Name>
 											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access_time_limits"/>
 											<limitations>
-												<UsageValidityPeriod version="1" id="single_trip@access_steps@1_zone">
+												<UsageValidityPeriod version="1" id="single_trip@access_steps@3_zone">
 													<UsageTrigger>activation</UsageTrigger>
 													<StandardDuration>PT120M</StandardDuration>
 												</UsageValidityPeriod>
 											</limitations>
-											<validityParameters>
-												<GeographicalIntervalRef version="1" ref="3_zone"/>
-											</validityParameters>
+											<GeographicalIntervalRef version="1" ref="3_zone"/>
 										</GenericParameterAssignment>
 										<GenericParameterAssignment order="4" id="single_trip@access_steps@4_plus_zone" version="1">
 											<Name>Four zone use must be done in 150minutes</Name>
@@ -235,9 +263,7 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 													<StandardDuration>PT150M</StandardDuration>
 												</UsageValidityPeriod>
 											</limitations>
-											<validityParameters>
-												<GeographicalIntervalRef version="1" ref="4_plus_zone"/>
-											</validityParameters>
+											<GeographicalIntervalRef version="1" ref="4_plus_zone"/>
 										</GenericParameterAssignment>
 									</validityParameterAssignments>
 								</FareStructureElement>
@@ -311,13 +337,51 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 										<LimitationGroupingType>OR</LimitationGroupingType>
 										<limitations>
 											<!---  ===ELIGIBILITY USAGE PARAMETERS =========    -->
-											<GroupTicket id="school_ticket" version="1">
+											<GroupTicket id="single_ticket_bus@school_ticket" version="1">
 												<Name lang="eng">Primary School Group Ticket</Name>
 												<Description>children and staff in primary schools who travel together during school hours can do so at a greatly reduced price. Primary schools can in the period from kl. 09:00 to 13:30 on weekdays travel with the local buses and only pay NOK. 7, - per person.</Description>
-												<MinimumNumberOfPersons>1</MinimumNumberOfPersons>
+												<MinimumNumberOfPersons>3</MinimumNumberOfPersons>
 												<companionProfiles>
 													<CompanionProfile id="teacher_with_group" version="1">
 														<UserProfileRef version="1" ref="adult"/>
+													</CompanionProfile>
+													<CompanionProfile id="child_with_group" version="1">
+														<UserProfileRef version="1" ref="child"/>
+													</CompanionProfile>
+												</companionProfiles>
+											</GroupTicket>
+											<GroupTicket id="single_ticket_bus@group_ticket" version="1">
+												<Name lang="eng"> Group Ticket</Name>
+												<Description>It must be possible to buy a single ticket for several people in different
+categories on the same ticket. If 3 tickets or more are purchased in total, it must automatically give a price for a group ticket on a bus. When a minimum
+of 3 people travel together, a 33% discount is given on an adult single ticket. Children and seniors tickets are not discounted, but these count in the group. The
+category Children under 0-5 years must also be included in the group. (Children under 0-5 years are free). Group tickets must be paid in full and only one ticket is issued.</Description>
+												<DiscountingRuleRef version="1" ref="group_discount"/>
+												<MinimumNumberOfPersons>3</MinimumNumberOfPersons>
+												<companionProfiles>
+													<CompanionProfile id="group@adult" version="1">
+														<Name>At least one adult</Name>
+														<UserProfileRef version="1" ref="adult"/>
+														<MinimumNumberOfPersons>1</MinimumNumberOfPersons>
+														<DiscountBasis>discount</DiscountBasis>
+													</CompanionProfile>
+													<CompanionProfile id="group@senior" version="1">
+														<Name>Sniors count but not discounted</Name>
+														<UserProfileRef version="1" ref="adult"/>
+														<MinimumNumberOfPersons>0</MinimumNumberOfPersons>
+														<DiscountBasis>none</DiscountBasis>
+													</CompanionProfile>
+													<CompanionProfile id="group@child" version="1">
+														<Name>Children  count but not discounted</Name>
+														<UserProfileRef version="1" ref="child"/>
+														<MinimumNumberOfPersons>0</MinimumNumberOfPersons>
+														<DiscountBasis>none</DiscountBasis>
+													</CompanionProfile>
+													<CompanionProfile id="group@infant" version="1">
+														<Name>Sniors count but not discounted</Name>
+														<UserProfileRef version="1" ref="infant"/>
+														<MinimumNumberOfPersons>0</MinimumNumberOfPersons>
+														<DiscountBasis>free</DiscountBasis>
 													</CompanionProfile>
 												</companionProfiles>
 											</GroupTicket>
@@ -361,6 +425,7 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 									<Description>A single trip within the specifed zone.</Description>
 									<fareStructureElements>
 										<FareStructureElementRef ref="single_trip@access"/>
+										<FareStructureElementRef ref="single_trip@access_durations"/>
 										<FareStructureElementRef ref="single_trip@eligibility"/>
 										<FareStructureElementRef ref="single_trip@group"/>
 										<FareStructureElementRef ref="single_trip@conditions_of_travel"/>
@@ -430,7 +495,7 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 										</EntitlementGiven>
 									</limitations>
 								</GenericParameterAssignment>
-								<GenericParameterAssignment version="1" order="1" id="ingle_ticket_bus@mobile_app@conditions_of_sale">
+								<GenericParameterAssignment version="1" order="2" id="sngle_ticket_bus@mobile_app@conditions_of_sale">
 									<Name>Conditions of sale</Name>
 									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
 									<LimitationGroupingType>AND</LimitationGroupingType>
@@ -465,7 +530,7 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 										</EntitlementGiven>
 									</limitations>
 								</GenericParameterAssignment>
-								<GenericParameterAssignment version="1" order="1" id="ingle_ticket_bus@smartcard@conditions_of_sale">
+								<GenericParameterAssignment version="1" order="2" id="single_ticket_bus@smartcard@conditions_of_sale">
 									<Name>Conditions of sale</Name>
 									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
 									<LimitationGroupingType>AND</LimitationGroupingType>
@@ -480,6 +545,28 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 								<SalesOfferPackageElement id="single_ticket@smartcard" version="1" order="1">
 									<Name lang="eng">Single Ticket</Name>
 									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:smartcard"/>
+									<PreassignedFareProductRef ref="single_ticket" version="1"/>
+								</SalesOfferPackageElement>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<SalesOfferPackage id="group_ticket@paper_ticket" version="1">
+							<Name lang="eng">Group Ticket - on paper ticket</Name>
+							<validityParameterAssignments>
+								<GenericParameterAssignment version="1" order="1" id="group_ticket@paper_ticket@conditions_of_sale">
+									<Name>Conditions of sale</Name>
+									<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_sale"/>
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<GroupTicketRef ref="single_ticket_bus@group_ticket" version="1"/>
+										<Transferability id="group_ticket@paper_ticket@transferability" version="1">
+											<CanTransfer>false</CanTransfer>
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElement id="group_ticket@paper_ticket" version="1" order="1">
+									<TypeOfTravelDocumentRef versionRef="EXTERNAL" ref="ENT:paper_ticket"/>
 									<PreassignedFareProductRef ref="single_ticket" version="1"/>
 								</SalesOfferPackageElement>
 							</salesOfferPackageElements>
@@ -602,6 +689,12 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 										<TimeIntervalRef version="1" ref="30_days"/>
 									</timeIntervals>
 								</FareStructureElement>
+								<FareStructureElement version="1" id="period_pass@durations@180_days">
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:duration"/>
+									<timeIntervals>
+										<TimeIntervalRef version="1" ref="180_days"/>
+									</timeIntervals>
+								</FareStructureElement>
 								<FareStructureElement version="1" id="period_pass@eligibility">
 									<Name>eligible user types</Name>
 									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:eligibility"/>
@@ -671,7 +764,7 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 									<GenericParameterAssignment version="1" order="1" id="period_pass@conditions_of_travel">
 										<Name>Conditions of travel</Name>
 										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:condition_of_use"/>
-										<LimitationGroupingType>OR</LimitationGroupingType>
+										<LimitationGroupingType>XOR</LimitationGroupingType>
 										<limitations>
 											<UsageValidityPeriod version="1" id="period_pass@usageValidity@24_hour">
 												<ValidityPeriodType>dayPass</ValidityPeriodType>
@@ -686,12 +779,27 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 										</limitations>
 									</GenericParameterAssignment>
 								</FareStructureElement>
+								<FareStructureElement version="1" id="period_pass@purchase_when">
+									<Name>Must buy eason ticket in adavcne </Name>
+									<TypeOfFareStructureElementRef versionRef="EXTERNAL" ref="ENT:purchase_when"/>
+									<GenericParameterAssignment order="1" id="period_pass@purchase_when" version="1">
+										<Name>Travel any time</Name>
+										<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:access_when"/>
+										<limitations>
+											<PurchaseWindow id="period_pass@purchase_when" version="1">
+												<PurchaseAction>purchase</PurchaseAction>
+												<PurchaseWhen>advanceOnly</PurchaseWhen>
+												<MinimumPeriodBeforeDeparture>P1D</MinimumPeriodBeforeDeparture>
+											</PurchaseWindow>
+										</limitations>
+									</GenericParameterAssignment>
+								</FareStructureElement>
 							</fareStructureElements>
 						</Tariff>
 					</tariffs>
 					<fareProducts>
 						<!-- NOTE: COULD ALSO DO THIS WITH A SINGLE PERIOD PASS PRDUCT  WITH   ALTERNATIVE INTERVALS (24h, 7d, 30d, ETC: 
-							CAPPING LIMIT WOULD DTHEN HAVE TO REFERENCE  BOTH PRODUCT AND INTERVAL _  -->
+							CAPPING LIMIT WOULD THEN HAVE TO REFERENCE  BOTH PRODUCT AND INTERVAL -->
 						<PreassignedFareProduct id="24_hour_pass" version="1">
 							<Name lang="eng">24 hours Vestfold</Name>
 							<Description>24 hour pass valid from moment of actviation until same time next day</Description>
@@ -761,6 +869,30 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 							<accessRightsInProduct>
 								<AccessRightInProduct version="1" id="30_day_pass" order="1">
 									<ValidableElementRef version="1" ref="30_day_pass@travel"/>
+								</AccessRightInProduct>
+							</accessRightsInProduct>
+							<ProductType>periodPass</ProductType>
+						</PreassignedFareProduct>
+						<PreassignedFareProduct id="180_day_pass" version="1">
+							<Name lang="eng">180 days Vestfold pass</Name>
+							<Description>180 day pass valid from day of purchase or activation until end of fare day 180.</Description>
+							<ChargingMomentType>beforeTravel</ChargingMomentType>
+							<OperatorRef version="1" ref="VOT"/>
+							<validableElements>
+								<ValidableElement id="180_day_pass@travel" version="1">
+									<fareStructureElements>
+										<FareStructureElementRef ref="period_pass@access"/>
+										<FareStructureElementRef ref="period_pass@access_when"/>
+										<FareStructureElementRef ref="period_pass@duration@180_day"/>
+										<FareStructureElementRef ref="period_pass@eligibility"/>
+										<FareStructureElementRef ref="period_pass@conditions_of_travel"/>
+										<FareStructureElementRef ref="period_pass@purchase_when"/>
+									</fareStructureElements>
+								</ValidableElement>
+							</validableElements>
+							<accessRightsInProduct>
+								<AccessRightInProduct version="1" id="180_day_pass" order="1">
+									<ValidableElementRef version="1" ref="180_day_pass@travel"/>
 								</AccessRightInProduct>
 							</accessRightsInProduct>
 							<ProductType>periodPass</ProductType>
@@ -962,13 +1094,27 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 					<fareProducts>
 						<CappedDiscountRight id="bestepris_vestfold" version="1">
 							<Name lang="eng">Best Price Vestfold - fare capping</Name>
-							<Description>Gives the right to buy tickets at prices capped within the qualifying period.</Description>
+							<Description>Defines thresholds to become eligible buy at discount.</Description>
 							<alternativeNames>
 								<AlternativeName id="bestepris_vestfold" version="1">
 									<Name lang="nob">Bestepris Vestfold</Name>
 								</AlternativeName>
 							</alternativeNames>
 							<OperatorRef version="1" ref="VOT"/>
+							<validableElements>
+								<ValidableElement version="1" id="qualifyication_to_cap">
+									<Name>eligibility for capping</Name>
+									<validityParameterAssignments>
+										<GenericParameterAssignment order="1" id="qualifyication_to_cap" version="1">
+										<LimitationGroupingType>XOR</LimitationGroupingType>
+											<limitations>
+												<UserProfileRef ref="adult" version="1"/>
+												<UserProfileRef ref="child" version="1"/>
+											</limitations>
+										</GenericParameterAssignment>
+									</validityParameterAssignments>
+								</ValidableElement>
+							</validableElements>
 							<cappingRules>
 								<!--- Clean  - APPROACH - USING products   -->
 								<!-- 1) first level capping after reaching cost of 24 hour ticket -->
@@ -995,15 +1141,14 @@ Rate 4 = for journeys that extend over 4 zones or more.</Description>
 									<CappingPeriod>week</CappingPeriod>
 									<!-- Product that sets the cap equivalence -->
 									<PreassignedFareProductRef ref="7_day_pass" version="1"/>
+									<ValidableElementRef ref="qualifyication_to_cap" version="1"/>
 									<validityParameterAssignments>
 										<GenericParameterAssignment order="1" id="bestepris_vestfold@7_day_cap" version="1">
-											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:capping_step"/>
+											<TypeOfAccessRightAssignmentRef versionRef="EXTERNAL" ref="ENT:cap:capping_to"/>
 											<LimitationGroupingType>OR</LimitationGroupingType>
 											<limitations>
 												<!-- Must reach adult capping thresholldm   even if  child/young  -->
 												<UserProfileRef ref="adult" version="1"/>
-												<UserProfileRef ref="child" version="1"/>
-												<UserProfileRef ref="senior" version="1"/>
 											</limitations>
 											<TimeIntervalRef version="1" ref="7_days"/>
 											<!-- Formal reference to Interval within which capping is applied -->
@@ -1214,8 +1359,8 @@ practice: same fare class) and user profile:</Description>
 									<Amount>29.00</Amount>
 									<GeographicalIntervalRef ref="3_zone" version="1"/>
 								</GeographicalIntervalPrice>
-								<GeographicalIntervalPrice id="single_ticket@concession@4_zone" version="1">
-									<Amount>33.00</Amount>
+								<GeographicalIntervalPrice id="single_ticket@concession@4_plus_zone" version="1">
+									<Amount>35.00</Amount>
 									<GeographicalIntervalRef ref="4_plus_zone" version="1"/>
 								</GeographicalIntervalPrice>
 							</members>
@@ -1283,61 +1428,111 @@ practice: same fare class) and user profile:</Description>
 							</includes>
 						</FareTable>
 						<!-- prices -->
-						<FareTable id="single_ticket@mobile_app" version="1">
+						<FareTable id="vestfold" version="1">
 							<Name>Buy in VKT Mobile Ticket and with Travel Money</Name>
 							<pricesFor>
-								<PreassignedFareProductRef ref="single_ticket" version="1"/>
-								<SalesOfferPackageRef ref="single_ticket_bus@paper_ticket" version="1"/>
+								<FareStructureElementRef version="1" ref="single_trip@access@vestfold_only"/>
 							</pricesFor>
 							<includes>
-								<FareTable id="single_ticket@mobile_app@adult" version="1">
-									<Name>Adult -Buy in VKT Mobile Ticket and with Travel Money</Name>
+								<FareTable id="vestfold@single_ticket@mobile_app" version="1">
+									<Name>Buy in VKT Mobile Ticket and with Travel Money</Name>
 									<pricesFor>
-										<UserProfileRef ref="adult" version="1"/>
+										<PreassignedFareProductRef ref="single_ticket" version="1"/>
+										<SalesOfferPackageRef ref="single_ticket_bus@mobile_app" version="1"/>
 									</pricesFor>
-									<prices>
-										<GeographicalIntervalPrice id="single_ticket@mobile_app@adult@1_zone" version="1">
-											<Amount>35.00</Amount>
-											<GeographicalIntervalRef ref="1_zone" version="1"/>
-										</GeographicalIntervalPrice>
-										<GeographicalIntervalPrice id="single_ticket@mobile_app@adult@2_zone" version="1">
-											<Amount>43.00</Amount>
-											<GeographicalIntervalRef ref="2_zone" version="1"/>
-										</GeographicalIntervalPrice>
-										<GeographicalIntervalPrice id="single_ticket@mobile_app@adult@3_zone" version="1">
-											<Amount>51.00</Amount>
-											<GeographicalIntervalRef ref="3_zone" version="1"/>
-										</GeographicalIntervalPrice>
-										<GeographicalIntervalPrice id="single_ticket@mobile_app@adult@4_plus_zone" version="1">
-											<Amount>59.00</Amount>
-											<GeographicalIntervalRef ref="4_plus_zone" version="1"/>
-										</GeographicalIntervalPrice>
-									</prices>
+									<includes>
+										<FareTable id="vestfold@single_ticket@mobile_app@adult" version="1">
+											<Name>Adult -Buy in VKT Mobile Ticket and with Travel Money</Name>
+											<pricesFor>
+												<UserProfileRef version="1" ref="adult"/>
+											</pricesFor>
+											<prices>
+												<GeographicalIntervalPrice id="vestfold@single_ticket@mobile_app@adult@1_zone" version="1">
+													<Amount>35.00</Amount>
+													<GeographicalIntervalRef ref="1_zone" version="1"/>
+												</GeographicalIntervalPrice>
+												<GeographicalIntervalPrice id="vestfold@single_ticket@mobile_app@adult@2_zone" version="1">
+													<Amount>43.00</Amount>
+													<GeographicalIntervalRef ref="2_zone" version="1"/>
+												</GeographicalIntervalPrice>
+												<GeographicalIntervalPrice id="vestfold@single_ticket@mobile_app@adult@3_zone" version="1">
+													<Amount>51.00</Amount>
+													<GeographicalIntervalRef ref="3_zone" version="1"/>
+												</GeographicalIntervalPrice>
+												<GeographicalIntervalPrice id="vestfold@single_ticket@mobile_app@adult@4_plus_zone" version="1">
+													<Amount>59.00</Amount>
+													<GeographicalIntervalRef ref="4_plus_zone" version="1"/>
+												</GeographicalIntervalPrice>
+											</prices>
+										</FareTable>
+										<FareTable id="vestfold@single_ticket@mobile_app@concession" version="1">
+											<Name>Child and Senior - Buy in VKT Mobile Ticket and with Travel Money</Name>
+											<pricesFor>
+												<UserProfileRef ref="child" version="1"/>
+												<UserProfileRef ref="senior" version="1"/>
+											</pricesFor>
+											<prices>
+												<GeographicalIntervalPrice id="vestfold@single_ticket@mobile_app@concession@1_zone" version="1">
+													<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@1_zone">21 NKR</GeographicalIntervalPriceRef>
+													<GeographicalIntervalRef version="1" ref="1_zone"/>
+												</GeographicalIntervalPrice>
+												<GeographicalIntervalPrice id="vestfold@single_ticket@mobile_app@concession@2_zone" version="1">
+													<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@2_zone">25 NKR</GeographicalIntervalPriceRef>
+													<GeographicalIntervalRef version="1" ref="2_zone"/>
+												</GeographicalIntervalPrice>
+												<GeographicalIntervalPrice id="single_ticket@mobile_app@concession@3_zone" version="1">
+													<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@3_zone">29 NKR</GeographicalIntervalPriceRef>
+													<GeographicalIntervalRef version="1" ref="3_zone"/>
+												</GeographicalIntervalPrice>
+												<GeographicalIntervalPrice id="vestfold@single_ticket@mobile_app@concession@4_plus_zone" version="1">
+													<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@4_plus_zone">33 NKR</GeographicalIntervalPriceRef>
+													<GeographicalIntervalRef version="1" ref="4_plus_zone"/>
+												</GeographicalIntervalPrice>
+											</prices>
+										</FareTable>
+									</includes>
 								</FareTable>
-								<FareTable id="single_ticket@mobile_app@concession" version="1">
-									<Name>Child and Senior - Buy in VKT Mobile Ticket and with Travel Money</Name>
+							</includes>
+						</FareTable>
+						<FareTable id="grenland" version="1">
+							<Name>Grenland Buy in VKT Mobile Ticket and with Travel Money</Name>
+							<pricesFor>
+								<FareStructureElementRef version="1" ref="single_trip@access@grenland_only"/>
+							</pricesFor>
+							<includes>
+								<FareTable id="grenland@single_ticket@mobile_app" version="1">
+									<Name>Buy in VKT Mobile Ticket and with Travel Money</Name>
 									<pricesFor>
-										<UserProfileRef ref="child" version="1"/>
-										<UserProfileRef ref="senior" version="1"/>
+										<PreassignedFareProductRef ref="single_ticket" version="1"/>
+										<SalesOfferPackageRef ref="single_ticket_bus@paper_ticket" version="1"/>
 									</pricesFor>
-									<prices>
-										<GeographicalIntervalPrice id="single_ticke@mobile_app@concession@1_zone" version="1">
-											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@1_zone">21 NKR</GeographicalIntervalPriceRef>
-											<GeographicalIntervalRef ref="1_zone" version="1"/>
-										</GeographicalIntervalPrice>
-										<GeographicalIntervalPrice id="single_ticket@mobile_app@concession@2_zone" version="1">
-											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@2_zone">25 NKR</GeographicalIntervalPriceRef>
-											<GeographicalIntervalRef ref="2_zone" version="1"/>
-										</GeographicalIntervalPrice>
-										<GeographicalIntervalPrice id="single_ticket@mobile_app@concession@3_zone" version="1">
-											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@1_zone">29 NKR</GeographicalIntervalPriceRef>
-											<GeographicalIntervalRef ref="3_zone" version="1"/>
-										</GeographicalIntervalPrice>
-										<GeographicalIntervalPrice id="single_ticket@mobile_app@concession@4_plus_zone" version="1">
-											<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@1_zone">33 NKR</GeographicalIntervalPriceRef>
-											<GeographicalIntervalRef ref="4_plus_zone" version="1"/>
-										</GeographicalIntervalPrice>
-									</prices>
+									<includes>
+										<FareTable id="grenland@single_ticket@mobile_app@adult" version="1">
+											<Name> Adult -Buy in VKT Mobile Ticket and with Travel Money</Name>
+											<pricesFor>
+												<UserProfileRef version="1" ref="adult"/>
+											</pricesFor>
+											<prices>
+												<GeographicalIntervalPrice id="grenland@single_ticket@mobile_app@adult@1_zone" version="1">
+													<Amount>25.00</Amount>
+													<GeographicalIntervalRef ref="1_zone" version="1"/>
+												</GeographicalIntervalPrice>
+											</prices>
+										</FareTable>
+										<FareTable id="grenland@single_ticket@mobile_app@concession" version="1">
+											<Name>Grenland Child and Senior - Buy in VKT Mobile Ticket and with Travel Money</Name>
+											<pricesFor>
+												<UserProfileRef ref="child" version="1"/>
+												<UserProfileRef ref="senior" version="1"/>
+											</pricesFor>
+											<prices>
+												<GeographicalIntervalPrice id="grenland@single_ticket@mobile_app@concession@1_zone" version="1">
+													<GeographicalIntervalPriceRef version="1" ref="single_ticket@concession@1_zone">21 NKR</GeographicalIntervalPriceRef>
+													<GeographicalIntervalRef version="1" ref="1_zone"/>
+												</GeographicalIntervalPrice>
+											</prices>
+										</FareTable>
+									</includes>
 								</FareTable>
 							</includes>
 						</FareTable>
@@ -1452,7 +1647,7 @@ practice: same fare class) and user profile:</Description>
 				</FareFrame>
 				<FareFrame id="bestepris_pricing" version="1">
 					<PricingParameterSet id="limiting" version="1">
-						<Name> not realluy needed but let in to sho ho to link to limit prices</Name>
+						<Name> not realluy needed but let in to show how to link to limit prices</Name>
 						<pricingRules>
 							<LimitingRule id="max_per_24_hours@adult" version="1">
 								<MaximumLimitPrice>80.00</MaximumLimitPrice>

@@ -145,6 +145,20 @@
                     <StandardDuration>P30D</StandardDuration>
                 </UsageValidityPeriod>
 
+
+
+
+                <EntitlementRequired id="VOT:EntitlementRequired:1" version="1">
+                    <ServiceAccessRightRef ref="ref"/>
+                    <EntitlementConstraint>
+                        <PeriodConstraint>withinSamePeriod</PeriodConstraint>
+                    </EntitlementConstraint>
+                </EntitlementRequired>
+
+                <EntitlementGiven id="VOT:EntitlementGiven:1" version="1">
+                    <ServiceAccessRightRef ref="ref"/>
+                </EntitlementGiven>                
+
             </usageParameters>
 
 
@@ -433,7 +447,7 @@
                     <salesOfferPackageElements>
                         <SalesOfferPackageElement id="VOT:SalesOfferPackageElement:SingleTicketBus" version="1" order="1">
                             <Name lang="eng">Single Ticket</Name>
-                            <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTicket" version="1"/>
+                            <CappedDiscountRightRef ref="ref"/>
 
                             <!-- Only included for illustration purposes -->
                             <validityParameterAssignments>
