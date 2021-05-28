@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fully specified by product definition -->
+
+<PublicationDelivery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex file:/Users/hegedreiem/sandboxes/NeTEx/xsd/NeTEx_publication.xsd"
+    xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0">
+    <PublicationTimestamp>2018-09-04T12:00:00</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <dataObjects>
+        <FareFrame id="VOT:FareFrame:FareData" version="VOT:Version:FareFrame-1">
+            
+            
+            <fareStructureElements>
+                <FareStructureElement id="VOT:FareStructureElement:473ec687" version="VOT:Version:bea9e157-dfe5-49e0-92ca-6c4e112ff376">
+                    <Name>Sonetabell – enkeltbillett</Name>
+                    <geographicalIntervals>
+                        <GeographicalIntervalRef ref="VOT:GeographicalInterval:3cd3bfb5"/>
+                        <GeographicalIntervalRef ref="VOT:GeographicalInterval:1de248eb"/>
+                        <GeographicalIntervalRef ref="VOT:GeographicalInterval:d4bb5cce"/>
+                        <GeographicalIntervalRef ref="VOT:GeographicalInterval:efc6c46b"/>
+                    </geographicalIntervals>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:cd2eab57" version="VOT:Version:bea9e157-dfe5-49e0-92ca-6c4e112ff376">
+                            <Name/>
+                            <LimitationGroupingType>OR</LimitationGroupingType> <!-- BØR være XOR? -->
+                            <limitations>
+                                <UserProfile id="VOT:UserProfile:52a11cf5"  version="VOT:Version:da4f2b82-6c8f-4684-982f-57c429f7311b">
+                                    <Name>Voksen</Name>
+                                    <UserType>adult</UserType>
+                                    <MinimumAge>18</MinimumAge>
+                                    <MaximumAge>66</MaximumAge>
+                                    <ProofRequired>noneRequired</ProofRequired>
+                                </UserProfile>
+                                <UserProfile id="VOT:UserProfile:6469488b"  version="cf122264-ecc6-43f8-9bdc-367b7018ac34">
+                                    <Name>Barn 6-17</Name>
+                                    <UserType>child</UserType>
+                                    <MinimumAge>6</MinimumAge>
+                                    <MaximumAge>17</MaximumAge>
+                                    <ProofRequired>noneRequired</ProofRequired>
+                                </UserProfile>
+                                <UserProfile id="VOT:UserProfile:53c8b925"  version="VOT:Version:bd87a9cc-3ef7-4310-bd57-1ebddf85ae3b">
+                                    <Name>spedbarn</Name>
+                                    <UserType>infant</UserType>
+                                    <MinimumAge>0</MinimumAge>
+                                    <MaximumAge>5</MaximumAge>
+                                    <ProofRequired>other</ProofRequired><!-- hvorfor other? -->
+                                </UserProfile>
+                                <UserProfile id="VOT:UserProfile:dd49f0f0"  version="VOT:Version:92b5f281-9a5c-4792-873c-25641ce24cc1">
+                                    <Name>Honnør</Name>
+                                    <UserType>senior</UserType><!-- BØR ha minimumAge -->
+                                    <ProofRequired>identityDocument</ProofRequired>
+                                </UserProfile>
+                                <UserProfile id="VOT:UserProfile:ff25a93b"  version="VOT:Version:2794c1a3-c002-44e5-87e7-e2d73176d248">
+                                    <Name>Militær</Name>
+                                    <UserType>military</UserType>
+                                    <ProofRequired>other</ProofRequired>
+                                </UserProfile>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:967be541" version="VOT:Version:bea9e157-dfe5-49e0-92ca-6c4e112ff376">
+                            <Name>Overgang er tillatt - gjennomgående prising</Name>
+                            <limitations>
+                                <Interchanging id="VOT:Interchanging:5b4f5f3f" version="VOT:Version:858a7181-2455-4d58-9867-96c854438bd3">
+                                    <CanInterchange>true</CanInterchange> <!-- MÅ denne mangler i data, må legges til -->
+                                </Interchanging>
+                            </limitations>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </FareStructureElement>
+            </fareStructureElements>
+            
+            <validableElements>
+                <ValidableElement id="VOT:ValidableElement:cfb8506d" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
+                    <Name>Navn</Name>
+                    <fareStructureElements>
+                        <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                    </fareStructureElements>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:0bdca2bf" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
+                            <Name/>
+                            <IncludesGroupingType>AND</IncludesGroupingType>
+                            <includes>
+                                <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:b9b68960" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
+                                    <LimitationGroupingType>OR</LimitationGroupingType>
+                                    <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                                    <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="VKT:Authority:VKT_ID"></AuthorityRef>
+                                        <AuthorityRef ref="TEL:Authority:TEL_ID"></AuthorityRef>
+                                        <AuthorityRef ref="VOT:Authority:VTFK_ID"></AuthorityRef>
+                                    </validityParameters>
+                                    <IncludesGroupingType>OR</IncludesGroupingType>
+                                </GenericParameterAssignment>
+                                <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:89775b7c" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
+                                    <LimitationGroupingType>OR</LimitationGroupingType>
+                                    <ValidityParameterAssignmentType>NE</ValidityParameterAssignmentType>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <LineRef ref="TEL:Line:1_8712"></LineRef>
+                                        <LineRef ref="TEL:Line:1_8137"></LineRef>
+                                        <LineRef ref="TEL:Line:1_8281"></LineRef>
+                                        <LineRef ref="TEL:Line:1_8711"></LineRef>
+                                        <LineRef ref="TEL:Line:1_8718"></LineRef>
+                                    </validityParameters>
+                                    <IncludesGroupingType>OR</IncludesGroupingType>
+                                </GenericParameterAssignment>
+                            </includes>
+                            
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:SingleTicketNotIncludedInFareSectionDS" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
+                            <Name/>
+                            <ValidityParameterAssignmentType>NE</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                            <validityParameters>
+                                <FareSectionRef ref="ENT:FareSection:DrammenSagatun"></FareSectionRef>
+                            </validityParameters>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:8471bf1b" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
+                            <Name>Ubegrenset</Name>
+                            <limitations>
+                                <FrequencyOfUse id="VOT:FrequencyOfUse:d7d014e1" version="VOT:Version:5f825475-c017-490a-8cd9-3dfb2362baa0">
+                                    <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                                </FrequencyOfUse>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:SingleTicketNotIncludedInFareSectionHB" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
+                            <Name/>
+                            <ValidityParameterAssignmentType>NE</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                            <validityParameters>
+                                <FareSectionRef ref="ENT:FareSection:HaukeliBykle"></FareSectionRef>
+                            </validityParameters>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:SingleTicketNotIncludedInFareSectionSB" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
+                            <Name/>
+                            <ValidityParameterAssignmentType>NE</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                            <validityParameters>
+                                <FareSectionRef ref="ENT:FareSection:SvelvikBerger"></FareSectionRef>
+                            </validityParameters>
+                            </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:9037ed3b" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
+                            <Name/>
+                            <!-- Konstruksjonen med mange UVP. Her er det helt opp til 50H30M, altså 100 UVP. Hvorfor er det lagt til så mange? Det er bare 18 buss-soner i VTFK. Maks reise ligger sannsynligvis rundt 10 soner -->
+                            <LimitationGroupingType>XOR</LimitationGroupingType>
+                            <limitations>
+                                <UsageValidityPeriod id="VOT:UsageValidityPeriod:e29ccce4" version="VOT:Version:445561ce-64ad-4e40-864e-d415810445b8">
+                                    <ValidityPeriodType>singleTrip</ValidityPeriodType> <!-- matcher ikke db usageValidityType -->
+                                    <UsageTrigger>specifiedStartDate</UsageTrigger> 
+                                    <UsageEnd>standardDuration</UsageEnd>
+                                    <StandardDuration>PT1H</StandardDuration>
+                                </UsageValidityPeriod>
+                                <UsageValidityPeriod id="VOT:UsageValidityPeriod:ab819b85" version="VOT:Version:445561ce-64ad-4e40-864e-d415810445b8">
+                                    <ValidityPeriodType>singleTrip</ValidityPeriodType> <!-- matcher ikke db usageValidityType -->
+                                    <UsageTrigger>specifiedStartDate</UsageTrigger> 
+                                    <UsageEnd>standardDuration</UsageEnd>
+                                    <StandardDuration>PT1H30M</StandardDuration>
+                                </UsageValidityPeriod>
+                                <UsageValidityPeriod id="VOT:UsageValidityPeriod:e91af845" version="VOT:Version:445561ce-64ad-4e40-864e-d415810445b8">
+                                    <ValidityPeriodType>singleTrip</ValidityPeriodType> <!-- matcher ikke db usageValidityType -->
+                                    <UsageTrigger>specifiedStartDate</UsageTrigger> 
+                                    <UsageEnd>standardDuration</UsageEnd>
+                                    <StandardDuration>PT2H</StandardDuration>
+                                </UsageValidityPeriod>
+                                <!-- Resterende 97 UVP -->
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <IncludesGroupingType>OR</IncludesGroupingType>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </ValidableElement>
+            </validableElements>
+            
+            <fareProducts>
+                <PreassignedFareProduct id="VOT:PreassignedFareProduct:a01adca5" version="VOT:Version:f970df40-c49a-43b6-b69a-ab642049ba15">
+                    <Name>Enkeltbillett</Name>
+                    <ChargingMomentRef ref="VOT:ChargingMoment:009ed526"/>
+                    <ChargingMomentType>beforeTravel</ChargingMomentType> <!-- BØR bytte ut ChargingMoment med ChargingMomentType, denne er ikke i bruk i dag -->
+                    <!-- Burde ha med authorityref, hvem som eier produktet -->
+                    <!-- Kunne hatt med publikumsnavn, på bokmål, nynorsk, engelsk -->
+                    <!-- Burde ha med info om mva, viktig for å kunne gjøre salg -->
+                    <!-- Nice to have: ta i bruk productType -->
+                    <!-- Må ha med alle parametre på produktet, inkludert manuelt her -->
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:1a3ef855" version="VOT:Version:f970df40-c49a-43b6-b69a-ab642049ba15">
+                            <Name>Full refusjon inntil 4 timer før første bruk</Name>
+                            <!-- db charging_basis_type -->
+                            <ChargingBasis>normalFare</ChargingBasis>
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                            <limitations>
+                                <Refunding id="VOT:Refunding:25deed96" version="VOT:Version:719ef877-0e20-4fc8-9673-d9ce0cbd0d8e">
+                                    <Allowed>full</Allowed>
+                                    <UnusedTicketsOnly>true</UnusedTicketsOnly>
+                                    <OnlyAtCertainDistributionPoints>false</OnlyAtCertainDistributionPoints>
+                                    <ResellWhen>beforeStartOfValidity</ResellWhen> <!-- liten mismatch med db beforeStartOfValidityPeriod -->
+                                    <ExchangableFromAnyTime></ExchangableFromAnyTime> <!-- true i db -->
+                                    <ExchangableUntilAnyTime></ExchangableUntilAnyTime><!-- true i db -->
+                                </Refunding>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                            </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:d22a82da" version="VOT:Version:f970df40-c49a-43b6-b69a-ab642049ba15">
+                            <Name>Salgsperiode - enkeltbillett</Name>
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                            <limitations>
+                                <PurchaseWindow id="VOT:PurchaseWindow:88e574a0" version="VOT:Version:f92bdab6-7065-464c-b02a-37ab2d2f7152">
+                                    <PurchaseWhen>advanceOnly</PurchaseWhen>
+                                    <MaximumPeriodBeforeDeparture>PT2160H</MaximumPeriodBeforeDeparture>
+                                </PurchaseWindow>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:d15d55c8" version="VOT:Version:f970df40-c49a-43b6-b69a-ab642049ba15">
+                            <!-- db charging_basis_type -->
+                            <ChargingBasis>normalFare</ChargingBasis>
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                            <validityParameters>
+                                <FareClass>standardClass</FareClass> 
+                            </validityParameters>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                    <accessRightsInProduct>
+                        <AccessRightInProduct order="0" id="VOT:AccessRightInProduct:508815f7" version="VOT:Version:f970df40-c49a-43b6-b69a-ab642049ba15">
+                            <Name>Enkeltbillett</Name>
+                            <ValidableElementRef ref="VOT:ValidableElement:cfb8506d"/>
+                        </AccessRightInProduct>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+            </fareProducts>
+            <!-- fareTable burde ha ligget i egen fareFrame for å skille prisdata fra produktdata  -->
+            <fareTables>
+                <FareTable id="VOT:FareTable:82123e7c" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                    <Name/>
+                    <cells>
+                        <Cell order="0" id="VOT:Cell:ca109575" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:4f920a23" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_8110">
+                                <Name/>
+                                <Amount>35.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:52a11cf5"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:3cd3bfb5"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:26ac67bd" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:3b28b1d8" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_6433">
+                                <Name/>
+                                <Amount>21.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:6469488b"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:3cd3bfb5"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:1e5b64e6" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:27692495" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_1632">
+                                <Name/>
+                                <Amount>21.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:dd49f0f0"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:3cd3bfb5"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:c3bc53e4" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:8cf7bbd5" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_7919">
+                                <Name/>
+                                <Amount>21.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:ff25a93b"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:3cd3bfb5"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:223eb5ff" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:aa27c44a" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_7092">
+                                <Name/>
+                                <Amount>43.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:52a11cf5"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:1de248eb"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:e9cf1fdc" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:3cb4996f" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_4261">
+                                <Name/>
+                                <Amount>25.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:6469488b"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:1de248eb"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:da26f1f0" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:05389567" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_7868">
+                                <Name/>
+                                <Amount>25.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:dd49f0f0"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:1de248eb"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:e8029333" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:79f97724" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_6804">
+                                <Name/>
+                                <Amount>25.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:ff25a93b"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:1de248eb"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:7b6e2254" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:b45e7226" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_7519">
+                                <Name/>
+                                <Amount>51.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:52a11cf5"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:d4bb5cce"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:6ddb59c3" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:bb257608" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_6615">
+                                <Name/>
+                                <Amount>29.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:6469488b"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:d4bb5cce"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:a5962f6e" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:2b917e2f" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_9520">
+                                <Name/>
+                                <Amount>29.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:dd49f0f0"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:d4bb5cce"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:d27e617a" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:4e610b3e" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_2049">
+                                <Name/>
+                                <Amount>29.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:ff25a93b"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:d4bb5cce"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:d97f8bb6" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:590cb1d0" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_3317">
+                                <Name/>
+                                <Amount>59.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:52a11cf5"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:efc6c46b"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:4b1a773d" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:843c5d57" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_8981">
+                                <Name/>
+                                <Amount>33.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:6469488b"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:efc6c46b"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:b313f621" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:869b5c50" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_5834">
+                                <Name/>
+                                <Amount>33.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:dd49f0f0"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:efc6c46b"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:d6dd1d5b" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:e9f1c1b3" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_2537">
+                                <Name/>
+                                <Amount>33.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:ff25a93b"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:efc6c46b"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:2fdc56ff" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:1b9e0393" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_6770">
+                                <Name/>
+                                <Amount>35.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:087cc9c9"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:3cd3bfb5"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:59d10ad3" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:161cf5ed" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_5711">
+                                <Name/>
+                                <Amount>43.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:087cc9c9"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:1de248eb"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:7385d8a4" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:51273ca9" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_3038">
+                                <Name/>
+                                <Amount>51.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:087cc9c9"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:d4bb5cce"/>
+                        </Cell>
+                        <Cell order="0" id="VOT:Cell:b564ffec" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
+                            <Name/>
+                            <FareProductPrice id="VOT:FarePrice:bd56c90d" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4_6083">
+                                <Name/>
+                                <Amount>59.00</Amount>
+                                <!-- <DiscountingRule></DiscountingRule> -->
+                                <Currency>NOK</Currency>
+                            </FareProductPrice>
+                            <UserProfileRef ref="VOT:UserProfile:087cc9c9"/>
+                            <FareStructureElementRef ref="VOT:FareStructureElement:473ec687"/>
+                            <GeographicalIntervalRef ref="VOT:GeographicalInterval:efc6c46b"/>
+                        </Cell>
+                    </cells>
+                </FareTable>
+            </fareTables>
+            
+            <salesOfferPackages> 
+                <SalesOfferPackage id="VOT:SalesPackage:edb1c429" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                <Name>Enkeltbillett</Name>
+                <distributionAssignments>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:f8389012" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+                    </DistributionAssignment>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:c0933c26" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+                    </DistributionAssignment>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:bfcbca0e" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
+                    </DistributionAssignment>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:035fc8b5" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="NSB:DistributionChannel:Web"/>
+                    </DistributionAssignment>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:74525ec3" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="ENT:DistributionChannel:Web"/>
+                    </DistributionAssignment>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:6587a05f" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="NSB:DistributionChannel:Web"/>
+                    </DistributionAssignment>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:28bef923" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="NSB:DistributionChannel:App"/>
+                    </DistributionAssignment>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:bb98df42" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="NSB:DistributionChannel:App"/>
+                    </DistributionAssignment>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:f2f9715d" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="ENT:DistributionChannel:Web"/>
+                    </DistributionAssignment>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:ad01550e" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="ENT:DistributionChannel:App"/>
+                    </DistributionAssignment>
+                    <DistributionAssignment order="0" id="VOT:DistributionAssignment:f5898f2a" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionChannelRef ref="ENT:DistributionChannel:App"/>
+                    </DistributionAssignment>
+                </distributionAssignments>
+                <salesOfferPackageElements>
+                    <SalesOfferPackageElement order="0" id="VOT:SalesPackageElement:06bcd63e" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:a01adca5"/>
+                    </SalesOfferPackageElement>
+                </salesOfferPackageElements>
+            </SalesOfferPackage>
+            </salesOfferPackages>
+            
+        </FareFrame>
+    </dataObjects>
+</PublicationDelivery>
