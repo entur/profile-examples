@@ -8,7 +8,27 @@
     <ParticipantRef>ENT</ParticipantRef>
     <dataObjects>
         <FareFrame id="VOT:FareFrame:FareData" version="VOT:Version:FareFrame-1">
-            
+            <geographicalIntervals>
+                <GeographicalInterval id="VOT:GeographicalInterval:3cd3bfb5" version="VOT:Version:d3953636-244c-4f27-ab56-9dc4b54e52d2">
+                    <StartGeographicalValue>1</StartGeographicalValue>
+                    <EndGeographicalValue>2</EndGeographicalValue>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="VOT:GeographicalInterval:1de248eb" version="VOT:Version:d3953636-244c-4f27-ab56-9dc4b54e52d2">
+                    <StartGeographicalValue>2</StartGeographicalValue>
+                    <EndGeographicalValue>3</EndGeographicalValue>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="VOT:GeographicalInterval:d4bb5cce" version="VOT:Version:d3953636-244c-4f27-ab56-9dc4b54e52d2">
+                    <StartGeographicalValue>3</StartGeographicalValue>
+                    <EndGeographicalValue>4</EndGeographicalValue>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="VOT:GeographicalInterval:efc6c46b" version="VOT:Version:d3953636-244c-4f27-ab56-9dc4b54e52d2">
+                    <StartGeographicalValue>4</StartGeographicalValue>
+                    <EndGeographicalValue>22</EndGeographicalValue>
+                    <IntervalType>tariffZone</IntervalType></GeographicalInterval>
+            </geographicalIntervals>
             
             <fareStructureElements>
                 <FareStructureElement id="VOT:FareStructureElement:473ec687" version="VOT:Version:bea9e157-dfe5-49e0-92ca-6c4e112ff376">
@@ -487,36 +507,47 @@
                 <Name>Enkeltbillett</Name>
                 <distributionAssignments>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:f8389012" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>exchange</DistributionRights>
                         <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
                     </DistributionAssignment>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:c0933c26" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>refund</DistributionRights>
                         <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
                     </DistributionAssignment>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:bfcbca0e" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>sell</DistributionRights>
                         <DistributionChannelRef ref="ENT:DistributionChannel:SalesAndService"/>
                     </DistributionAssignment>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:035fc8b5" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>refund</DistributionRights>
                         <DistributionChannelRef ref="NSB:DistributionChannel:Web"/>
                     </DistributionAssignment>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:74525ec3" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>refund</DistributionRights>
                         <DistributionChannelRef ref="ENT:DistributionChannel:Web"/>
                     </DistributionAssignment>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:6587a05f" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>sell</DistributionRights>
                         <DistributionChannelRef ref="NSB:DistributionChannel:Web"/>
                     </DistributionAssignment>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:28bef923" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>refund</DistributionRights>
                         <DistributionChannelRef ref="NSB:DistributionChannel:App"/>
                     </DistributionAssignment>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:bb98df42" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>sell</DistributionRights>
                         <DistributionChannelRef ref="NSB:DistributionChannel:App"/>
                     </DistributionAssignment>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:f2f9715d" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>sell</DistributionRights>
                         <DistributionChannelRef ref="ENT:DistributionChannel:Web"/>
                     </DistributionAssignment>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:ad01550e" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>refund</DistributionRights>
                         <DistributionChannelRef ref="ENT:DistributionChannel:App"/>
                     </DistributionAssignment>
                     <DistributionAssignment order="0" id="VOT:DistributionAssignment:f5898f2a" version="VOT:Version:1ac5242a-95d1-4bba-b04f-d9931e127d3c">
+                        <DistributionRights>sell</DistributionRights>
                         <DistributionChannelRef ref="ENT:DistributionChannel:App"/>
                     </DistributionAssignment>
                 </distributionAssignments>
