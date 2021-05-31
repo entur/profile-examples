@@ -8,12 +8,21 @@
     <ParticipantRef>ENT</ParticipantRef>
     <dataObjects>
         <FareFrame id="VOT:FareFrame:FareData" version="VOT:Version:FareFrame-1">
+            
+            <fareSections>
+                <FareSection id="ENT:FareSection:HaukeliBykle" version="ENT:Version-FSE-HaukeliBykle-1">
+                    <JourneyPatternRef ref="ENT:JourneyPattern:HaukeliBykle"></JourneyPatternRef> <!-- TODO defineres i en ServiceFrame -->
+                    <FromPointInPatternRef ref="ENT:FarePointInPattern:HaukeliOnHB"></FromPointInPatternRef>
+                    <ToPointInPatternRef ref="ENT:FarePointInPattern:BykleOnHB"></ToPointInPatternRef>
+                </FareSection>
+            </fareSections>
+           
             <geographicalIntervals>
                 <GeographicalInterval id="VOT:GeographicalInterval:3cd3bfb5" version="VOT:Version:d3953636-244c-4f27-ab56-9dc4b54e52d2">
                     <StartGeographicalValue>1</StartGeographicalValue>
                     <EndGeographicalValue>2</EndGeographicalValue>
                     <IntervalType>tariffZone</IntervalType>
-                </GeographicalInterval>
+                   </GeographicalInterval>
                 <GeographicalInterval id="VOT:GeographicalInterval:1de248eb" version="VOT:Version:d3953636-244c-4f27-ab56-9dc4b54e52d2">
                     <StartGeographicalValue>2</StartGeographicalValue>
                     <EndGeographicalValue>3</EndGeographicalValue>
@@ -30,6 +39,17 @@
                     <IntervalType>tariffZone</IntervalType></GeographicalInterval>
             </geographicalIntervals>
             
+            <geographicalStructureFactors>
+                <GeographicalStructureFactor id="VOT:GeographicalStructureFactor:d80d66e0-d19a-421c-a51e-276482781e20" version="">
+                    <GeographicalIntervalRef ref="VOT:GeographicalInterval:3cd3bfb5"></GeographicalIntervalRef>
+                    <!-- todo alle GI har samme GSF, men det validerer ikke 
+                    <GeographicalIntervalRef ref="VOT:GeographicalInterval:1de248eb"></GeographicalIntervalRef>
+                    <GeographicalIntervalRef ref="VOT:GeographicalInterval:d4bb5cce"></GeographicalIntervalRef>
+                    <GeographicalIntervalRef ref="VOT:GeographicalInterval:efc6c46b"></GeographicalIntervalRef>
+                    -->
+                </GeographicalStructureFactor>
+            </geographicalStructureFactors>
+            
             <fareStructureElements>
                 <FareStructureElement id="VOT:FareStructureElement:473ec687" version="VOT:Version:bea9e157-dfe5-49e0-92ca-6c4e112ff376">
                     <Name>Sonetabell – enkeltbillett</Name>
@@ -44,51 +64,25 @@
                             <Name/>
                             <LimitationGroupingType>OR</LimitationGroupingType> <!-- BØR være XOR? -->
                             <limitations>
-                                <UserProfile id="VOT:UserProfile:52a11cf5"  version="VOT:Version:da4f2b82-6c8f-4684-982f-57c429f7311b">
-                                    <Name>Voksen</Name>
-                                    <UserType>adult</UserType>
-                                    <MinimumAge>18</MinimumAge>
-                                    <MaximumAge>66</MaximumAge>
-                                    <ProofRequired>noneRequired</ProofRequired>
-                                </UserProfile>
-                                <UserProfile id="VOT:UserProfile:6469488b"  version="cf122264-ecc6-43f8-9bdc-367b7018ac34">
-                                    <Name>Barn 6-17</Name>
-                                    <UserType>child</UserType>
-                                    <MinimumAge>6</MinimumAge>
-                                    <MaximumAge>17</MaximumAge>
-                                    <ProofRequired>noneRequired</ProofRequired>
-                                </UserProfile>
-                                <UserProfile id="VOT:UserProfile:53c8b925"  version="VOT:Version:bd87a9cc-3ef7-4310-bd57-1ebddf85ae3b">
-                                    <Name>spedbarn</Name>
-                                    <UserType>infant</UserType>
-                                    <MinimumAge>0</MinimumAge>
-                                    <MaximumAge>5</MaximumAge>
-                                    <ProofRequired>other</ProofRequired><!-- hvorfor other? -->
-                                </UserProfile>
-                                <UserProfile id="VOT:UserProfile:dd49f0f0"  version="VOT:Version:92b5f281-9a5c-4792-873c-25641ce24cc1">
-                                    <Name>Honnør</Name>
-                                    <UserType>senior</UserType><!-- BØR ha minimumAge -->
-                                    <ProofRequired>identityDocument</ProofRequired>
-                                </UserProfile>
-                                <UserProfile id="VOT:UserProfile:ff25a93b"  version="VOT:Version:2794c1a3-c002-44e5-87e7-e2d73176d248">
-                                    <Name>Militær</Name>
-                                    <UserType>military</UserType>
-                                    <ProofRequired>other</ProofRequired>
-                                </UserProfile>
-                            </limitations>
-                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                                <UserProfileRef ref="VOT:UserProfile:52a11cf5"></UserProfileRef>
+                                <UserProfileRef ref="VOT:UserProfile:6469488b"></UserProfileRef>
+                                <UserProfileRef ref="VOT:UserProfile:53c8b925"></UserProfileRef>
+                                <UserProfileRef ref="VOT:UserProfile:dd49f0f0"></UserProfileRef>
+                                <UserProfileRef ref="VOT:UserProfile:ff25a93b"></UserProfileRef>
+                                </limitations>
+                            <ValidityParameterAssignmentType> EQ</ValidityParameterAssignmentType>
                         </GenericParameterAssignment>
                         <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:967be541" version="VOT:Version:bea9e157-dfe5-49e0-92ca-6c4e112ff376">
                             <Name>Overgang er tillatt - gjennomgående prising</Name>
                             <limitations>
-                                <Interchanging id="VOT:Interchanging:5b4f5f3f" version="VOT:Version:858a7181-2455-4d58-9867-96c854438bd3">
-                                    <CanInterchange>true</CanInterchange> <!-- MÅ denne mangler i data, må legges til -->
-                                </Interchanging>
+                                <InterchangingRef ref="VOT:Interchanging:5b4f5f3f"></InterchangingRef>
                             </limitations>
                         </GenericParameterAssignment>
                     </validityParameterAssignments>
                 </FareStructureElement>
             </fareStructureElements>
+            
+            
             
             <validableElements>
                 <ValidableElement id="VOT:ValidableElement:cfb8506d" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
@@ -139,9 +133,7 @@
                         <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:8471bf1b" version="VOT:Version:c7f279f3-6eec-4284-a282-cedb90441158">
                             <Name>Ubegrenset</Name>
                             <limitations>
-                                <FrequencyOfUse id="VOT:FrequencyOfUse:d7d014e1" version="VOT:Version:5f825475-c017-490a-8cd9-3dfb2362baa0">
-                                    <FrequencyOfUseType>unlimited</FrequencyOfUseType>
-                                </FrequencyOfUse>
+                                <FrequencyOfUseRef ref="VOT:FrequencyOfUse:d7d014e1" ></FrequencyOfUseRef>
                             </limitations>
                             <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
                             </GenericParameterAssignment>
@@ -166,24 +158,9 @@
                             <!-- Konstruksjonen med mange UVP. Her er det helt opp til 50H30M, altså 100 UVP. Hvorfor er det lagt til så mange? Det er bare 18 buss-soner i VTFK. Maks reise ligger sannsynligvis rundt 10 soner -->
                             <LimitationGroupingType>XOR</LimitationGroupingType>
                             <limitations>
-                                <UsageValidityPeriod id="VOT:UsageValidityPeriod:e29ccce4" version="VOT:Version:445561ce-64ad-4e40-864e-d415810445b8">
-                                    <ValidityPeriodType>singleTrip</ValidityPeriodType> <!-- matcher ikke db usageValidityType -->
-                                    <UsageTrigger>specifiedStartDate</UsageTrigger> 
-                                    <UsageEnd>standardDuration</UsageEnd>
-                                    <StandardDuration>PT1H</StandardDuration>
-                                </UsageValidityPeriod>
-                                <UsageValidityPeriod id="VOT:UsageValidityPeriod:ab819b85" version="VOT:Version:445561ce-64ad-4e40-864e-d415810445b8">
-                                    <ValidityPeriodType>singleTrip</ValidityPeriodType> <!-- matcher ikke db usageValidityType -->
-                                    <UsageTrigger>specifiedStartDate</UsageTrigger> 
-                                    <UsageEnd>standardDuration</UsageEnd>
-                                    <StandardDuration>PT1H30M</StandardDuration>
-                                </UsageValidityPeriod>
-                                <UsageValidityPeriod id="VOT:UsageValidityPeriod:e91af845" version="VOT:Version:445561ce-64ad-4e40-864e-d415810445b8">
-                                    <ValidityPeriodType>singleTrip</ValidityPeriodType> <!-- matcher ikke db usageValidityType -->
-                                    <UsageTrigger>specifiedStartDate</UsageTrigger> 
-                                    <UsageEnd>standardDuration</UsageEnd>
-                                    <StandardDuration>PT2H</StandardDuration>
-                                </UsageValidityPeriod>
+                                <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:e29ccce4"></UsageValidityPeriodRef>
+                                <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:ab819b85"></UsageValidityPeriodRef>
+                                <UsageValidityPeriodRef ref="VOT:UsageValidityPeriod:e91af845"></UsageValidityPeriodRef>
                                 <!-- Resterende 97 UVP -->
                             </limitations>
                             <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
@@ -192,17 +169,89 @@
                     </validityParameterAssignments>
                 </ValidableElement>
             </validableElements>
+           
+            <usageParameters>
+                <FrequencyOfUse id="VOT:FrequencyOfUse:d7d014e1" version="VOT:Version:5f825475-c017-490a-8cd9-3dfb2362baa0">
+                    <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                </FrequencyOfUse>
+                <Interchanging id="VOT:Interchanging:5b4f5f3f" version="VOT:Version:858a7181-2455-4d58-9867-96c854438bd3">
+                    <CanInterchange>true</CanInterchange> <!-- MÅ denne mangler i data, må legges til -->
+                </Interchanging>
+                <UserProfile id="VOT:UserProfile:52a11cf5"  version="VOT:Version:da4f2b82-6c8f-4684-982f-57c429f7311b">
+                    <Name>Voksen</Name>
+                    <UserType>adult</UserType>
+                    <MinimumAge>18</MinimumAge>
+                    <MaximumAge>66</MaximumAge>
+                    <ProofRequired>noneRequired</ProofRequired>
+                </UserProfile>
+                <UserProfile id="VOT:UserProfile:6469488b"  version="cf122264-ecc6-43f8-9bdc-367b7018ac34">
+                    <Name>Barn 6-17</Name>
+                    <UserType>child</UserType>
+                    <MinimumAge>6</MinimumAge>
+                    <MaximumAge>17</MaximumAge>
+                    <ProofRequired>noneRequired</ProofRequired>
+                </UserProfile>
+                <UserProfile id="VOT:UserProfile:53c8b925"  version="VOT:Version:bd87a9cc-3ef7-4310-bd57-1ebddf85ae3b">
+                    <Name>spedbarn</Name>
+                    <UserType>infant</UserType>
+                    <MinimumAge>0</MinimumAge>
+                    <MaximumAge>5</MaximumAge>
+                    <ProofRequired>other</ProofRequired><!-- hvorfor other? -->
+                </UserProfile>
+                <UserProfile id="VOT:UserProfile:dd49f0f0"  version="VOT:Version:92b5f281-9a5c-4792-873c-25641ce24cc1">
+                    <Name>Honnør</Name>
+                    <UserType>senior</UserType><!-- BØR ha minimumAge -->
+                    <ProofRequired>identityDocument</ProofRequired>
+                </UserProfile>
+                <UserProfile id="VOT:UserProfile:ff25a93b"  version="VOT:Version:2794c1a3-c002-44e5-87e7-e2d73176d248">
+                    <Name>Militær</Name>
+                    <UserType>military</UserType>
+                    <ProofRequired>other</ProofRequired>
+                </UserProfile>
+                <UsageValidityPeriod id="VOT:UsageValidityPeriod:e29ccce4" version="VOT:Version:445561ce-64ad-4e40-864e-d415810445b8">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType> <!-- matcher ikke db usageValidityType -->
+                    <UsageTrigger>specifiedStartDate</UsageTrigger> 
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT1H</StandardDuration>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="VOT:UsageValidityPeriod:ab819b85" version="VOT:Version:445561ce-64ad-4e40-864e-d415810445b8">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType> <!-- matcher ikke db usageValidityType -->
+                    <UsageTrigger>specifiedStartDate</UsageTrigger> 
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT1H30M</StandardDuration>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="VOT:UsageValidityPeriod:e91af845" version="VOT:Version:445561ce-64ad-4e40-864e-d415810445b8">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType> <!-- matcher ikke db usageValidityType -->
+                    <UsageTrigger>specifiedStartDate</UsageTrigger> 
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT2H</StandardDuration>
+                </UsageValidityPeriod>
+                <!-- Resterende 97 UVP -->
+                <Refunding id="VOT:Refunding:25deed96" version="VOT:Version:719ef877-0e20-4fc8-9673-d9ce0cbd0d8e">
+                    <Allowed>full</Allowed>
+                    <UnusedTicketsOnly>true</UnusedTicketsOnly>
+                    <OnlyAtCertainDistributionPoints>false</OnlyAtCertainDistributionPoints>
+                    <ResellWhen>beforeStartOfValidity</ResellWhen> <!-- liten mismatch med db beforeStartOfValidityPeriod -->
+                    <ExchangableFromAnyTime></ExchangableFromAnyTime> <!-- true i db -->
+                    <ExchangableUntilAnyTime></ExchangableUntilAnyTime><!-- true i db -->
+                </Refunding>
+                <PurchaseWindow id="VOT:PurchaseWindow:88e574a0" version="VOT:Version:f92bdab6-7065-464c-b02a-37ab2d2f7152">
+                    <PurchaseWhen>advanceOnly</PurchaseWhen>
+                    <MaximumPeriodBeforeDeparture>PT2160H</MaximumPeriodBeforeDeparture>
+                </PurchaseWindow>
+            </usageParameters>
             
+           
             <fareProducts>
                 <PreassignedFareProduct id="VOT:PreassignedFareProduct:a01adca5" version="VOT:Version:f970df40-c49a-43b6-b69a-ab642049ba15">
                     <Name>Enkeltbillett</Name>
                     <ChargingMomentRef ref="VOT:ChargingMoment:009ed526"/>
                     <ChargingMomentType>beforeTravel</ChargingMomentType> <!-- BØR bytte ut ChargingMoment med ChargingMomentType, denne er ikke i bruk i dag -->
-                    <!-- Burde ha med authorityref, hvem som eier produktet -->
+                    <!-- Må? ha med authorityref, hvem som eier produktet -->
+                    <AuthorityRef ref="VOT:Authority:VTFK_ID"></AuthorityRef>
                     <!-- Kunne hatt med publikumsnavn, på bokmål, nynorsk, engelsk -->
-                    <!-- Burde ha med info om mva, viktig for å kunne gjøre salg -->
                     <!-- Nice to have: ta i bruk productType -->
-                    <!-- Må ha med alle parametre på produktet, inkludert manuelt her -->
+                    <!-- Må ha med alle parametre på produktet, dvs GPA med ref til UP / inlinet scoping -->
                     <validityParameterAssignments>
                         <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:1a3ef855" version="VOT:Version:f970df40-c49a-43b6-b69a-ab642049ba15">
                             <Name>Full refusjon inntil 4 timer før første bruk</Name>
@@ -210,14 +259,7 @@
                             <ChargingBasis>normalFare</ChargingBasis>
                             <LimitationGroupingType>OR</LimitationGroupingType>
                             <limitations>
-                                <Refunding id="VOT:Refunding:25deed96" version="VOT:Version:719ef877-0e20-4fc8-9673-d9ce0cbd0d8e">
-                                    <Allowed>full</Allowed>
-                                    <UnusedTicketsOnly>true</UnusedTicketsOnly>
-                                    <OnlyAtCertainDistributionPoints>false</OnlyAtCertainDistributionPoints>
-                                    <ResellWhen>beforeStartOfValidity</ResellWhen> <!-- liten mismatch med db beforeStartOfValidityPeriod -->
-                                    <ExchangableFromAnyTime></ExchangableFromAnyTime> <!-- true i db -->
-                                    <ExchangableUntilAnyTime></ExchangableUntilAnyTime><!-- true i db -->
-                                </Refunding>
+                                <RefundingRef ref="VOT:Refunding:25deed96"></RefundingRef>
                             </limitations>
                             <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
                             <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
@@ -226,10 +268,7 @@
                             <Name>Salgsperiode - enkeltbillett</Name>
                             <LimitationGroupingType>OR</LimitationGroupingType>
                             <limitations>
-                                <PurchaseWindow id="VOT:PurchaseWindow:88e574a0" version="VOT:Version:f92bdab6-7065-464c-b02a-37ab2d2f7152">
-                                    <PurchaseWhen>advanceOnly</PurchaseWhen>
-                                    <MaximumPeriodBeforeDeparture>PT2160H</MaximumPeriodBeforeDeparture>
-                                </PurchaseWindow>
+                                <PurchaseWindowRef ref="VOT:PurchaseWindow:88e574a0"></PurchaseWindowRef>
                             </limitations>
                             <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
                             <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
@@ -253,6 +292,7 @@
                     </accessRightsInProduct>
                 </PreassignedFareProduct>
             </fareProducts>
+            
             <!-- fareTable burde ha ligget i egen fareFrame for å skille prisdata fra produktdata  -->
             <fareTables>
                 <FareTable id="VOT:FareTable:82123e7c" version="VOT:Version:93e1f92b-f53d-434c-80f1-b5ee5409afe4">
