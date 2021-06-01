@@ -177,6 +177,26 @@
                 <Interchanging id="VOT:Interchanging:5b4f5f3f" version="VOT:Version:858a7181-2455-4d58-9867-96c854438bd3">
                     <CanInterchange>true</CanInterchange> <!-- MÅ denne mangler i data, må legges til -->
                 </Interchanging>
+                <CompanionProfile id="VOT:CompanionProfile:cfbdf4de" version="VOT:Version:da4f2b82-6c8f-4684-982f-57c429f7311b">
+                    <ParentRef ref="VOT:UserProfile:52a11cf5"></ParentRef>
+                    <UserProfileRef ref="VOT:UserProfile:53c8b925"></UserProfileRef>
+                    <DiscountBasis>free</DiscountBasis>
+                </CompanionProfile>
+                <CompanionProfile id="VOT:CompanionProfile:e5ca9385" version="VOT:Version:cf122264-ecc6-43f8-9bdc-367b7018ac34">
+                    <ParentRef ref="VOT:UserProfile:6469488b"></ParentRef>
+                    <UserProfileRef ref="VOT:UserProfile:53c8b925"></UserProfileRef>
+                    <DiscountBasis>free</DiscountBasis>
+                </CompanionProfile>
+                <CompanionProfile id="VOT:CompanionProfile:ae228b3d" version="VOT:Version:92b5f281-9a5c-4792-873c-25641ce24cc1">
+                    <ParentRef ref="VOT:UserProfile:dd49f0f0"></ParentRef>
+                    <UserProfileRef ref="VOT:UserProfile:53c8b925"></UserProfileRef>
+                    <DiscountBasis>free</DiscountBasis>
+                </CompanionProfile>
+                <CompanionProfile id="VOT:CompanionProfile:5bb34749" version="VOT:Version:2794c1a3-c002-44e5-87e7-e2d73176d248">
+                    <ParentRef ref="VOT:UserProfile:ff25a93b"></ParentRef>
+                    <UserProfileRef ref="VOT:UserProfile:53c8b925"></UserProfileRef>
+                    <DiscountBasis>free</DiscountBasis>
+                </CompanionProfile>
                 <UserProfile id="VOT:UserProfile:52a11cf5"  version="VOT:Version:da4f2b82-6c8f-4684-982f-57c429f7311b">
                     <Name>Voksen</Name>
                     <UserType>adult</UserType>
