@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- 
-    Sample XML for further Vestfold/Telemark fylkeskommune (VTFK) capping use-cases (based on VTFK "Best Price")
+    Sample XML for further generic capping use-cases
+    
+        Mostly based on Vestfold/Telemark fylkeskommune (VTFK) "Best Price" and train operator specific max price / reduced price tickets
     
     See also:
     https://enturas.atlassian.net/wiki/spaces/kb/pages/2556985467/User+stories+-+Capping
@@ -197,11 +199,10 @@
                         <AccessRightInProductRef ref="VOT:ValidableElement:30Days" version="1"/>
                     </accessRightsInProduct>
                 </PreassignedFareProduct>
-
-
-
                 
-
+                
+                
+                
                 
                 <PreassignedFareProduct id="VOT:PreassignedFareProduct:SingleTicketCapped" version="1">
                     <Name lang="eng">
@@ -239,6 +240,7 @@
                         <AccessRightInProductRef ref="VOT:ValidableElement:SingleTrip" version="1"/>
                     </accessRightsInProduct>
                     <ProductType>singleTrip</ProductType>
+                    
                 </PreassignedFareProduct>
                 
                 
@@ -309,13 +311,9 @@
                         </CappingRule>
                         
                         
-                        
                         <CappingRule id="VOT:CappingRule:2" version="1">
-                            
                             <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:7Days" version="1"/>
-                            
                         </CappingRule>
-                        
                         
                         <CappingRule id="VOT:CappingRule:3" version="1">
                             <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:30Days" version="1"/>
