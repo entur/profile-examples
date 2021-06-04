@@ -4,6 +4,8 @@
 <PublicationDelivery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.netex.org.uk/netex file:/Users/hegedreiem/sandboxes/NeTEx/xsd/NeTEx_publication.xsd"
     xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0">
+    
+    
     <PublicationTimestamp>2018-09-04T12:00:00</PublicationTimestamp>
     <ParticipantRef>ENT</ParticipantRef>
     <dataObjects>
@@ -43,6 +45,9 @@
                 <GeographicalStructureFactor id="VOT:GeographicalStructureFactor:d80d66e0-d19a-421c-a51e-276482781e20" version="">
                     <GeographicalIntervalRef ref="VOT:GeographicalInterval:3cd3bfb5"></GeographicalIntervalRef>
                     <!-- todo alle GI har samme GSF, men det validerer ikke 
+                        
+                        NEI, hver må wrappes i en GSF (for ordens skyld brukes ikke GSF i eksempelet
+                        
                     <GeographicalIntervalRef ref="VOT:GeographicalInterval:1de248eb"></GeographicalIntervalRef>
                     <GeographicalIntervalRef ref="VOT:GeographicalInterval:d4bb5cce"></GeographicalIntervalRef>
                     <GeographicalIntervalRef ref="VOT:GeographicalInterval:efc6c46b"></GeographicalIntervalRef>
@@ -63,6 +68,7 @@
                         <GenericParameterAssignment order="0" id="VOT:GenericParameterAssignment:cd2eab57" version="VOT:Version:bea9e157-dfe5-49e0-92ca-6c4e112ff376">
                             <Name/>
                             <LimitationGroupingType>OR</LimitationGroupingType> <!-- BØR være XOR? -->
+                            <!-- Ja, ser umiddelbart ut som XOR -->
                             <limitations>
                                 <UserProfileRef ref="VOT:UserProfile:52a11cf5"></UserProfileRef>
                                 <UserProfileRef ref="VOT:UserProfile:6469488b"></UserProfileRef>
