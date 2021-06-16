@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PublicationDelivery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex file:/Users/hegedreiem/sandboxes/NeTEx/xsd/NeTEx_publication.xsd"
+    xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0">
+    <PublicationTimestamp>2021-03-16T08:25:45.516</PublicationTimestamp>
+    <ParticipantRef>ATB</ParticipantRef>
+    <dataObjects>
+        <FareFrame id="ATB:FareFrame:ATB" version="any">
+            
+            
+            <geographicalIntervals>
+                <GeographicalInterval id="ATB:GeographicalInterval:17ee5f1a" version="">
+                    <StartGeographicalValue>1</StartGeographicalValue>
+                    <EndGeographicalValue>2</EndGeographicalValue>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="ATB:GeographicalInterval:e2ec8bed" version="">
+                    <StartGeographicalValue>2</StartGeographicalValue>
+                    <EndGeographicalValue>3</EndGeographicalValue>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="ATB:GeographicalInterval:9df8e41d" version="">
+                    <StartGeographicalValue>3</StartGeographicalValue>
+                    <EndGeographicalValue>4</EndGeographicalValue>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="ATB:GeographicalInterval:e2959460" version="">
+                    <StartGeographicalValue>4</StartGeographicalValue>
+                    <EndGeographicalValue>5</EndGeographicalValue>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+                <GeographicalInterval id="ATB:GeographicalInterval:bb54d619" version="">
+                    <StartGeographicalValue>5</StartGeographicalValue>
+                    <EndGeographicalValue>13</EndGeographicalValue>
+                    <IntervalType>tariffZone</IntervalType>
+                </GeographicalInterval>
+            </geographicalIntervals>
+            
+            <geographicalStructureFactors>
+                <GeographicalStructureFactor id="ATB:GeographicalStructureFactor:8e4da266-b092-4993-8c6f-7b8bb631d680" version="ATB:Version:2feab0dc-705a-448a-95d4-74a7a8fbd36c">
+                    <GeographicalIntervalRef ref="ATB:GeographicalInterval:17ee5f1a"/>
+                </GeographicalStructureFactor>
+            </geographicalStructureFactors>
+            
+            <fareStructureElements>
+                <FareStructureElement id="ATB:FareStructureElement:03dd4ae6" version="ATB:Version:5acd4fe9-c290-4b51-9a0b-b8e12f0dcc3d">
+                    <Name>Sonetabell – enkeltbillett buss/trikk</Name>
+                    <TariffBasis>zone</TariffBasis> <!-- Ta i bruk denne, gjør det lettere å forstå hva vi ser på -->
+                    <geographicalIntervals>
+                        <GeographicalIntervalRef ref="ATB:GeographicalInterval:17ee5f1a"/>
+                        <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2ec8bed"/>
+                        <GeographicalIntervalRef ref="ATB:GeographicalInterval:9df8e41d"/>
+                        <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2959460"/>
+                        <GeographicalIntervalRef ref="ATB:GeographicalInterval:bb54d619"/>
+                    </geographicalIntervals>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:16af2bf6" version="ATB:Version:5acd4fe9-c290-4b51-9a0b-b8e12f0dcc3d">
+                            <Name/>
+                            <limitations>
+                                <UserProfileRef ref="ATB:UserProfile:1ae560ba"></UserProfileRef>
+                                <UserProfileRef ref="ATB:UserProfile:416d8b61"></UserProfileRef>
+                                <UserProfileRef ref="ATB:UserProfile:fe550eb7"></UserProfileRef>
+                                <UserProfileRef ref="ATB:UserProfile:2832569f"></UserProfileRef>
+                                <UserProfileRef ref="ATB:UserProfile:8ee842e3"></UserProfileRef>
+                                <UserProfileRef ref="ATB:UserProfile:d3e4ec09"></UserProfileRef>
+                            </limitations>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:581a572e" version="ATB:Version:5acd4fe9-c290-4b51-9a0b-b8e12f0dcc3d">
+                            <Name/>
+                            <limitations>
+                                <InterchangingRef ref="ATB:Interchanging:b214b22d"/>
+                            </limitations>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </FareStructureElement>
+                <FareStructureElement id="ATB:FareStructureElement:129be878" version="ATB:Version:3e90f400-4869-408f-b0f3-c3f0c184b6d4">
+                    <Name>Natt1</Name>
+                    <fareTables>
+                        <FareTableRef ref="ATB:FareTable:9fac6b09"></FareTableRef>
+                    </fareTables>
+                    <TariffBasis>flat</TariffBasis>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:740abcf1" version="">
+                            <limitations>
+                                <InterchangingRef ref="ATB:Interchanging:7f87c0ae"></InterchangingRef>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:14f73646" version="">
+                            <limitations>
+                                <UserProfileRef ref="ATB:UserProfile:8ee842e3"></UserProfileRef>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </FareStructureElement>
+            </fareStructureElements>
+            
+            <tariffs>
+                <Tariff id="ATB:Tariff:e9365f2d" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+                    <validityConditions>
+                        <ValidBetween  id="ATB:ValidityCondition:a031d202" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+                            <FromDate>2021-01-18T13:03:55.000</FromDate>
+                            <ToDate>2022-01-19T13:03:55.000</ToDate>
+                        </ValidBetween>
+                    </validityConditions>
+                    <AuthorityRef ref="ATB:Authority:1"></AuthorityRef> <!-- OBS feil Authority -->
+                    <!-- Burde ha en navn/beskrivelse -->
+                    
+                </Tariff>
+            </tariffs>
+            
+            <validableElements>
+                <ValidableElement id="ATB:ValidableElement:KlippekortBuss" version="ATB:Version:VE-KlippekortBuss-1">
+                    <fareStructureElements>
+                        <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"></FareStructureElementRef>
+                    </fareStructureElements>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment id="ATB:GenericParameterAssignment:KlippekortBussScoping" version="ATB:Version:VE-KlippekortBuss-1">
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                            <IncludesGroupingType>AND</IncludesGroupingType>
+                            <includes>
+                                <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:KlippekortBussZoneScoping" version="ATB:Version:VE-KlippekortBuss-1">
+                                    <LimitationGroupingType>OR</LimitationGroupingType>
+                                    <ValidityParameterAssignmentType>LE</ValidityParameterAssignmentType>
+                                    <validityParameters>
+                                        <FareZoneRef ref="ATB:TariffZone:1"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:2"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:3"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:4"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:5"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:6"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:7"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:8"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:9"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:10"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:11"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:12"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:13"></FareZoneRef>
+                                    </validityParameters>
+                                </GenericParameterAssignment>
+                                <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:KlippekortBussLineScoping" version="ATB:Version:VE-KlippekortBuss-1">
+                                    <LimitationGroupingType>OR</LimitationGroupingType>
+                                    <ValidityParameterAssignmentType>NE</ValidityParameterAssignmentType>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <LineRef ref="ATB:Line:2_805"></LineRef>
+                                        <!-- 17 linjer til -->
+                                    </validityParameters>
+                                </GenericParameterAssignment>
+                            </includes>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:KlippekortBussUsageValidityPeriod-Klipp" version="ATB:Version:UVP-KlippekortBuss-Klipp-1">
+                            <limitations>
+                                <UsageValidityPeriodRef ref="ATB:UsageValidityPeriod:KlippekortBuss-Klipp"/>
+                            </limitations>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </ValidableElement>
+                <ValidableElement id="ATB:ValidableElement:37b3aa26" version="ATB:Version:5a74f0b3-e930-43b9-a9a8-63cfb85b2da3">
+                    <Name>Navn</Name>
+                    <fareStructureElements>
+                        <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+                    </fareStructureElements>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:1d1d01e8" version="ATB:Version:5a74f0b3-e930-43b9-a9a8-63cfb85b2da3">
+                            <Name/>
+                            <LimitationGroupingType>XOR</LimitationGroupingType>
+                            <limitations>
+                                <UsageValidityPeriodRef ref="ATB:UsageValidityPeriod:72a05229"></UsageValidityPeriodRef>
+                                <UsageValidityPeriodRef ref="ATB:UsageValidityPeriod:7cc43188"></UsageValidityPeriodRef>
+                                <UsageValidityPeriodRef ref="ATB:UsageValidityPeriod:15dedc66"></UsageValidityPeriodRef>
+                                <!-- resten av UVPene -->
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:5f680ac0" version="ATB:Version:5a74f0b3-e930-43b9-a9a8-63cfb85b2da3">
+                            <Name/>
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                            <limitations>
+                                <FrequencyOfUseRef ref="ATB:FrequencyOfUse:a2a7f8e3"></FrequencyOfUseRef>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:b1b84f6b" version="">
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <IncludesGroupingType>AND</IncludesGroupingType>
+                            <includes>
+                                <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:8b946304" version="ATB:Version:59935121-7ade-4398-9f33-547a88bcf5bf" >
+                                    <LimitationGroupingType>OR</LimitationGroupingType>
+                                    <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                                    <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="ATB:Authority:2"></AuthorityRef>
+                                        <AuthorityRef ref="ATB:Authority:1"></AuthorityRef>
+                                    </validityParameters>
+                                    
+                                </GenericParameterAssignment>
+                                <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:05528b5d" version="ATB:Version:59935121-7ade-4398-9f33-547a88bcf5bf">
+                                    
+                                    <LimitationGroupingType>OR</LimitationGroupingType>
+                                    <ValidityParameterAssignmentType>NE</ValidityParameterAssignmentType>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <LineRef ref="ATB:Line_2_855"></LineRef>
+                                        <!-- Flere linjer -->
+                                    </validityParameters>
+                                </GenericParameterAssignment>
+                                <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:8483cb54" version="ATB:Version:59935121-7ade-4398-9f33-547a88bcf5bf">
+                                    <LimitationGroupingType>OR</LimitationGroupingType>
+                                    <ValidityParameterAssignmentType>LE</ValidityParameterAssignmentType>
+                                    <validityParameters>
+                                        <FareZoneRef ref="ATB:TariffZone:1"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:2"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:3"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:4"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:5"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:6"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:7"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:8"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:9"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:10"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:11"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:12"></FareZoneRef>
+                                        <FareZoneRef ref="ATB:TariffZone:13"></FareZoneRef>
+                                    </validityParameters>
+                                </GenericParameterAssignment>
+                            </includes>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </ValidableElement>
+                <ValidableElement id="ATB:ValidableElement:783aaf79" version=""> <!-- Natt1 -->
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:02b2fcf1" version="">
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                            <limitations>
+                                <UsageValidityPeriodRef ref="ATB:UsageValidityPeriod:ab56723f"></UsageValidityPeriodRef>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:37fd5728" version="">
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                            <limitations>
+                                <FrequencyOfUseRef ref="ATB:FrequencyOfUse:4c0bfe7c"></FrequencyOfUseRef>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:76a52566" version="">
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                            <validityParameters>
+                            <!-- Midlertidig begrenset til Line, skal erstattes av TopographicPlace som vist her --> 
+                                <TopographicPlaceRef ref="KVE:TopographicPlace:5001" />
+                                <PlaceUse>restrictTo</PlaceUse>
+                            </validityParameters>
+                            <!-- Mangler begrensning til transportSubmode nightbus -->
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                    
+                </ValidableElement>
+            </validableElements>
+            
+            <usageParameters>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:KlippekortBuss-Klipp" version="ATB:Version:UVP-KlippekortBuss-Klipp-1">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType>
+                    <UsageTrigger>specifiedStartDate</UsageTrigger> <!-- Dette er galt definert, skulle være activation -->
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT1H30M</StandardDuration>
+                    <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- Tentativ, må legges til i data-->
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:KlippekortBuss-Produkt" version="ATB:Version:UVP-KlippekortBuss-Produkt-1">
+                    <ValidityPeriodType>carnet</ValidityPeriodType>
+                    <UsageTrigger>purchase</UsageTrigger>
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT4320H</StandardDuration>
+                    <ActivationMeans>noneRequired</ActivationMeans> <!-- Tentativ, må legges til i data-->
+                    <UsageStartConstraintType>fixed</UsageStartConstraintType>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:ab56723f" version="">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType>
+                    <UsageTrigger>specifiedStartDate</UsageTrigger>
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT1H30M</StandardDuration>
+                    <ActivationMeans>noneRequired</ActivationMeans> <!-- Tentativ, må legges til i data-->
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:72a05229" version="">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType>
+                    <UsageTrigger>purchase</UsageTrigger>
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT2H00M</StandardDuration>
+                    <ActivationMeans>noneRequired</ActivationMeans> <!-- Tentativ, må legges til i data-->
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:7cc43188" version="">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType>
+                    <UsageTrigger>purchase</UsageTrigger>
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT2H30M</StandardDuration>
+                    <ActivationMeans>noneRequired</ActivationMeans> <!-- Tentativ, må legges til i data-->
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:15dedc66" version="">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType>
+                    <UsageTrigger>purchase</UsageTrigger>
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT2H30M</StandardDuration>
+                    <ActivationMeans>noneRequired</ActivationMeans> <!-- Tentativ, må legges til i data-->
+                </UsageValidityPeriod>
+                <PurchaseWindow id="ATB:PurchaseWindow:StandardFromDuration" version="">
+                    <PurchaseWhen>advanceAndDayOfTravel</PurchaseWhen>
+                </PurchaseWindow>
+                <Refunding id="ATB:Refunding:aa5b0b9c" version="ATB:Version:5cf372bf-c25b-4c44-892f-60921216ac63">
+                    <RefundType>other</RefundType>
+                </Refunding> 
+                <FrequencyOfUse id="ATB:FrequencyOfUse:a2a7f8e3" version="ATB:Version:56fdd4d8-e973-48ea-a9be-36d53db555a5">
+                    <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                </FrequencyOfUse>
+                <FrequencyOfUse id="ATB:FrequencyOfUse:4c0bfe7c" version="">
+                    <FrequencyOfUseType>single</FrequencyOfUseType>
+                </FrequencyOfUse>
+                <Interchanging id="ATB:Interchanging:7f87c0ae" version="">
+                    <CanInterchange>false</CanInterchange>
+                </Interchanging>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:72a05229" version="ATB:Version:V1">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType>
+                    <UsageTrigger>purchase</UsageTrigger>
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT1H30M</StandardDuration>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:7cc43188" version="ATB:Version:V1">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType>
+                    <UsageTrigger>purchase</UsageTrigger>
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT2H</StandardDuration>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:15dedc66" version="ATB:Version:V1">
+                    <ValidityPeriodType>singleTrip</ValidityPeriodType>
+                    <UsageTrigger>purchase</UsageTrigger>
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>PT2H30M</StandardDuration>
+                </UsageValidityPeriod>
+                <!-- resten av UVPene -->
+            </usageParameters>
+            
+            <fareProducts>
+                <AmountOfPriceUnitProduct id="ATB:AmountOfPriceUnitProduct:KlippekortBuss" version="ATB:Version:AOPUP-KlippekortBuss-1" >
+                    <Name/>
+                    <ChargingMomentRef ref="ATB:ChargingMoment:Prepaid"/>
+                    <ChargingMomentType>beforeTravel</ChargingMomentType> <!-- BØR bytte ut ChargingMoment med ChargingMomentType, denne er ikke i bruk i dag -->
+                    <AuthorityRef ref="ATB:Authority:2"></AuthorityRef>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:KlippekortBussUsageValidityPeriod-Produkt" version="ATB:Version:UVP-KlippekortBuss-Produkt-1">
+                            <LimitationGroupingType>AND</LimitationGroupingType>
+                            <limitations>
+                                <UsageValidityPeriodRef ref="ATB:UsageValidityPeriod:KlippekortBuss-Produkt"></UsageValidityPeriodRef>
+                            </limitations>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:KlippekortBussEligibility" version="ATB:Version:AOPUP-KlippekortBuss-1">
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                            <limitations>
+                                <UserProfileRef ref="ATB:UsageProfile:Adult"></UserProfileRef>
+                                <UserProfileRef ref="ATB:UsageProfile:Child"></UserProfileRef>
+                                <UserProfileRef ref="ATB:UsageProfile:Senior"></UserProfileRef>
+                            </limitations>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:FrequencyOfUseKlippekortBuss" version="ATB:Version:AOPUP-KlippekortBuss-1">
+                            <LimitationGroupingType>AND</LimitationGroupingType>
+                            <limitations>
+                                <FrequencyOfUseRef ref="ATB:FrequencyOfUse:Single"></FrequencyOfUseRef> <!-- Virker galt, og burde ligget på VE? -->
+                            </limitations>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:PurchaseWindowKlippekortBuss" version="ATB:Version:AOPUP-KlippekortBuss-1">
+                            <LimitationGroupingType>AND</LimitationGroupingType>
+                            <limitations>
+                                <PurchaseWindowRef ref="ATB:PurchaseWindow:StandardFromDuration"></PurchaseWindowRef>
+                            </limitations>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:RefundingKlippekortBuss" version="ATB:Version:AOPUP-KlippekortBuss-1">
+                            <LimitationGroupingType>OR</LimitationGroupingType>
+                        <limitations>
+                            <RefundingRef ref="ATB:Refunding:aa5b0b9c"></RefundingRef>
+                        </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:KlippekortBussFareClass" version="ATB:Version:AOPUP-KlippekortBuss-1">
+                            <LimitationGroupingType>AND</LimitationGroupingType>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                            <validityParameters>
+                                <FareClass>standardClass</FareClass>
+                            </validityParameters>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                    <accessRightsInProduct>
+                        <AccessRightInProduct order="0" id="ATB:AccessRightInProduct:KlippekortBuss" version="ATB:Version:AOPUP-KlippekortBuss-1">
+                            <ValidableElementRef ref="ATB:ValidableElement:KlippekortBuss"></ValidableElementRef>
+                        </AccessRightInProduct>
+                    </accessRightsInProduct>
+                    <ProductType>tripCarnet</ProductType> 
+                </AmountOfPriceUnitProduct>
+                
+                <PreassignedFareProduct id="ATB:PreassignedFareProduct:8808c360" version="ATB:Version:d918f8e3-eb23-4d62-9626-a5cbd02a1dee">
+                    <Name>Enkeltbillett buss/trikk</Name>
+                    <ChargingMomentRef ref="ATB:ChargingMoment:8fbfd0ba"/>
+                    <ChargingMomentType>beforeTravel</ChargingMomentType> <!-- BØR bytte ut ChargingMoment med ChargingMomentType, denne er ikke i bruk i dag -->
+                    <accessRightsInProduct>
+                        <AccessRightInProduct order="0" id="ATB:AccessRightInProduct:de700c25" version="ATB:Version:d918f8e3-eb23-4d62-9626-a5cbd02a1dee">
+                            <Name>Enkeltbillett buss/trikk</Name>
+                            <ValidableElementRef ref="ATB:ValidableElement:37b3aa26"/>
+                        </AccessRightInProduct>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+                
+                <PreassignedFareProduct id="ATB:PreassignedFareProduct:8f351521" version="ATB:Version:fecb1f30-5b6a-473c-9987-d8ff1b649560">
+                    <!-- Billetten er ikke låst på geografi. Hverken sone eller kommune. Kjøper kunden Natt 1 er den gyldig på alle avganger. Hvor kunden går av håndteres via eventuell kontroll. -->
+                    <Name>Natt1</Name>     
+                    <ChargingMomentRef ref="ATB:ChargingMoment:709161f4"/>
+                    <ChargingMomentType>beforeTravel</ChargingMomentType> <!-- BØR bytte ut ChargingMoment med ChargingMomentType, denne er ikke i bruk i dag -->
+                    <AuthorityRef ref="ATB:Authority:2"></AuthorityRef>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:042b4989" version="ATB:Version:fecb1f30-5b6a-473c-9987-d8ff1b649560">
+                            <limitations>
+                                <PurchaseWindowRef ref="ATB:PurchaseWindow:8b768043"></PurchaseWindowRef>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:c1a09ca1" version="ATB:Version:fecb1f30-5b6a-473c-9987-d8ff1b649560">
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <validityParameters>
+                                <FareClass>standardClass</FareClass>
+                            </validityParameters>
+                         </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                    <accessRightsInProduct>
+                        <AccessRightInProduct order="0" id="ATB:AccessRightInProduct:3322efff" version="ATB:Version:94328245-7701-49a2-9236-9c343dea3358">
+                            <Name></Name>
+                            <ValidableElementRef ref="ATB:ValidableElement:783aaf79"/>
+                        </AccessRightInProduct>
+                    </accessRightsInProduct>
+                    
+                </PreassignedFareProduct>
+                
+            </fareProducts>
+       
+         <fareTables>
+            <FareTable id="ATB:FareTable:98f64e02" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+          <Name/>
+          <cells>
+            <Cell order="0" id="ATB:Cell:1a90117f" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:769393ee" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_2508">
+                <Name/>
+                <Amount>40.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:17ee5f1a"/>
+              <UserProfileRef ref="ATB:UserProfile:8ee842e3"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:9ddefc95" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:fb96dfdf" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_6261">
+                <Name/>
+                <Amount>20.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:17ee5f1a"/>
+              <UserProfileRef ref="ATB:UserProfile:d3e4ec09"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:124fb0d1" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:66bbbbf4" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_6534">
+                <Name/>
+                <Amount>20.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:17ee5f1a"/>
+              <UserProfileRef ref="ATB:UserProfile:2832569f"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:1bb7989c" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:1ece8bb4" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_6081">
+                <Name/>
+                <Amount>40.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:17ee5f1a"/>
+              <UserProfileRef ref="ATB:UserProfile:1ae560ba"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:58e5b138" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:166cf4ad" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_6118">
+                <Name/>
+                <Amount>40.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:17ee5f1a"/>
+              <UserProfileRef ref="ATB:UserProfile:fe550eb7"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:3419f8c6" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:3070a843" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_3452">
+                <Name/>
+                <Amount>20.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:17ee5f1a"/>
+              <UserProfileRef ref="ATB:UserProfile:416d8b61"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:92dd492d" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:8f032e72" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_5849">
+                <Name/>
+                <Amount>80.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2ec8bed"/>
+              <UserProfileRef ref="ATB:UserProfile:8ee842e3"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:ac32f426" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:7d770533" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_8553">
+                <Name/>
+                <Amount>40.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2ec8bed"/>
+              <UserProfileRef ref="ATB:UserProfile:d3e4ec09"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:887e666c" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:2bb3ad9d" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_1986">
+                <Name/>
+                <Amount>40.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2ec8bed"/>
+              <UserProfileRef ref="ATB:UserProfile:2832569f"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:2953fc64" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:6ac353c1" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_4164">
+                <Name/>
+                <Amount>80.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2ec8bed"/>
+              <UserProfileRef ref="ATB:UserProfile:1ae560ba"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:98d3ab86" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:e5704e40" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_8869">
+                <Name/>
+                <Amount>80.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2ec8bed"/>
+              <UserProfileRef ref="ATB:UserProfile:fe550eb7"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:f5ea382b" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:053f2a48" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_5777">
+                <Name/>
+                <Amount>40.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2ec8bed"/>
+              <UserProfileRef ref="ATB:UserProfile:416d8b61"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:0a63133c" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:a8a037f2" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_5371">
+                <Name/>
+                <Amount>120.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:9df8e41d"/>
+              <UserProfileRef ref="ATB:UserProfile:8ee842e3"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:e3a67dd2" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:abce5dc6" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_7642">
+                <Name/>
+                <Amount>60.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:9df8e41d"/>
+              <UserProfileRef ref="ATB:UserProfile:d3e4ec09"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:40295b90" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:32bfdcb6" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_6734">
+                <Name/>
+                <Amount>60.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:9df8e41d"/>
+              <UserProfileRef ref="ATB:UserProfile:2832569f"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:2444f608" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:e158cbaf" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_7109">
+                <Name/>
+                <Amount>80.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:9df8e41d"/>
+              <UserProfileRef ref="ATB:UserProfile:1ae560ba"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:df25e115" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:ab11bab3" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_5109">
+                <Name/>
+                <Amount>80.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:9df8e41d"/>
+              <UserProfileRef ref="ATB:UserProfile:fe550eb7"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:ba3c3040" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:bf27dfa7" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_2444">
+                <Name/>
+                <Amount>60.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:9df8e41d"/>
+              <UserProfileRef ref="ATB:UserProfile:416d8b61"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:e1e52227" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:9cdefaf2" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_5825">
+                <Name/>
+                <Amount>160.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2959460"/>
+              <UserProfileRef ref="ATB:UserProfile:8ee842e3"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:9e9939cf" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:099b39e8" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_3230">
+                <Name/>
+                <Amount>80.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2959460"/>
+              <UserProfileRef ref="ATB:UserProfile:d3e4ec09"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:83379585" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:db7ce61e" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_9187">
+                <Name/>
+                <Amount>80.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2959460"/>
+              <UserProfileRef ref="ATB:UserProfile:2832569f"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:c8a66d64" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:09d422e0" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_8732">
+                <Name/>
+                <Amount>80.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2959460"/>
+              <UserProfileRef ref="ATB:UserProfile:1ae560ba"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:007cd1ca" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:296c0720" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_9977">
+                <Name/>
+                <Amount>80.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2959460"/>
+              <UserProfileRef ref="ATB:UserProfile:fe550eb7"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:c81b1314" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:bd87a038" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_9640">
+                <Name/>
+                <Amount>80.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:e2959460"/>
+              <UserProfileRef ref="ATB:UserProfile:416d8b61"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:0e12aee0" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:b990a4e3" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_6722">
+                <Name/>
+                <Amount>200.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:bb54d619"/>
+              <UserProfileRef ref="ATB:UserProfile:8ee842e3"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:e72a8681" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:beb9787d" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_4500">
+                <Name/>
+                <Amount>100.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:bb54d619"/>
+              <UserProfileRef ref="ATB:UserProfile:d3e4ec09"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:ac653eec" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:e3de5e3f" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_9282">
+                <Name/>
+                <Amount>100.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:bb54d619"/>
+              <UserProfileRef ref="ATB:UserProfile:2832569f"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:2e306b8b" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:0ac70511" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_2929">
+                <Name/>
+                <Amount>100.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:bb54d619"/>
+              <UserProfileRef ref="ATB:UserProfile:1ae560ba"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:467ee19a" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:3cf20b19" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_2373">
+                <Name/>
+                <Amount>100.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:bb54d619"/>
+              <UserProfileRef ref="ATB:UserProfile:fe550eb7"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+            <Cell order="0" id="ATB:Cell:11d931c6" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba">
+              <Name/>
+              <FareProductPrice id="ATB:FarePrice:80afc852" version="ATB:Version:b3c285ba-f29d-4eac-bb54-ef9a5a4dfbba_8163">
+                <Name/>
+                <Amount>100.00</Amount>
+                <!-- <DiscountingRule></DiscountingRule> -->
+                <Currency>NOK</Currency>
+              </FareProductPrice>
+              <GeographicalIntervalRef ref="ATB:GeographicalInterval:bb54d619"/>
+              <UserProfileRef ref="ATB:UserProfile:416d8b61"/>
+              <FareStructureElementRef ref="ATB:FareStructureElement:03dd4ae6"/>
+            </Cell>
+          </cells>
+   
+            </FareTable>
+             <FareTable id="VOT:FareTable:82123e7c" version="">
+                 <cells>
+                     <Cell order="0" id="ATB:Cell:eecc8439" version="">
+                     <FareProductPrice id="ATB:FarePrice:7944bf89" version="">
+                         <Name/>
+                         <Amount>100.00</Amount>
+                         <!-- <DiscountingRule></DiscountingRule> -->
+                         <Currency>NOK</Currency>
+                     </FareProductPrice>
+                         <UserProfileRef ref="ATB:UserProfile:8ee842e3"/>
+                     </Cell>
+                 </cells>
+             </FareTable>
+         </fareTables>
+            
+        </FareFrame>
+    </dataObjects>
+</PublicationDelivery>
