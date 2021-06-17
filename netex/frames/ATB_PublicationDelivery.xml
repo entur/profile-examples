@@ -156,6 +156,12 @@
                                 <UsageValidityPeriodRef ref="ATB:UsageValidityPeriod:KlippekortBuss-Klipp"/>
                             </limitations>
                         </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:Klippekortinfo" version=""> <!-- Forsøk på parametre for billettering -->
+                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationStartTimePolicyAssignment"></TypeOfAccessRightAssignmentRef>
+                                <limitations>
+                                    <UsageValidityPeriodRef ref="ATB:UsageValidityPeriod:ticketActivationTimespan"/>
+                                </limitations>
+                            </GenericParameterAssignment>
                     </validityParameterAssignments>
                 </ValidableElement>
                 <ValidableElement id="ATB:ValidableElement:37b3aa26" version="ATB:Version:5a74f0b3-e930-43b9-a9a8-63cfb85b2da3">
@@ -270,10 +276,16 @@
             <usageParameters>
                 <UsageValidityPeriod id="ATB:UsageValidityPeriod:KlippekortBuss-Klipp" version="ATB:Version:UVP-KlippekortBuss-Klipp-1">
                     <ValidityPeriodType>singleTrip</ValidityPeriodType>
-                    <UsageTrigger>specifiedStartDate</UsageTrigger> <!-- Dette er galt definert, skulle være activation -->
+                    <UsageTrigger>activation</UsageTrigger> 
                     <UsageEnd>standardDuration</UsageEnd>
                     <StandardDuration>PT1H30M</StandardDuration>
-                    <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- Tentativ, må legges til i data-->
+                    <ActivationMeans>useOfMobileDevice</ActivationMeans> <!-- Trenger utvidelse for å få til liste slik at useOfValidator kommer med-->
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:ticketActivationTimespan" version="1"> <!-- For å beskrive at rettighetene må brukes innen 6m etter kjøp -->
+                    <TypeOfUsageParameterRef ref="ENT:TypeOfUsageParameter:TicketActivationTimespan"></TypeOfUsageParameterRef>
+                    <UsageTrigger>purchase</UsageTrigger> 
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>P6M</StandardDuration>
                 </UsageValidityPeriod>
                 <UsageValidityPeriod id="ATB:UsageValidityPeriod:KlippekortBuss-Produkt" version="ATB:Version:UVP-KlippekortBuss-Produkt-1">
                     <ValidityPeriodType>carnet</ValidityPeriodType>
