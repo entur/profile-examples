@@ -21,7 +21,13 @@
         -->
         
         <!-- Non-compliant organisation data included only for readability of example -->
-        <ResourceFrame id="SKY:ResourceFrame:1" version="1">
+        <ResourceFrame id="SKY:ResourceFrame:1" version="1" status="active">
+            <versions>
+                <Version id="ENT:Version:1" version="1" status="inactive">
+                    <Status>deprecated</Status>
+                    <VersionType>baseline</VersionType>
+                </Version>
+            </versions>
             <contentValidityConditions>
                 <!--ValidDuring >
                     <DaysOfWeek>Monday Friday</DaysOfWeek>
@@ -1143,7 +1149,7 @@
                                     </limitations>
                                     
                                     <temporalValidityParameters>
-                                        <TimebandRef ref="ext"/>
+                                        <!--TimebandRef ref="ext"/-->
                                         <GroupOfTimebandsRef ref="ext"/>
                                         <OperatingDayRef ref="ext"/>
                                     </temporalValidityParameters>
