@@ -20,7 +20,6 @@ REMARK: Currently very much a work in progress!
 
     <dataObjects>
         <ResourceFrame id="NOG:ResourceFrame:1" version="1">
-
             <!-- https://enturas.atlassian.net/wiki/spaces/PUBLIC/pages/637370434/List+of+current+Codespaces -->
             <codespaces>
                 <Codespace id="nog">
@@ -74,6 +73,59 @@ REMARK: Currently very much a work in progress!
                 </Codespace>
             </codespaces>
             
+            
+            <responsibilitySets>
+                <ResponsibilitySet id="NOG:ResponsibilitySet:InnsendingRutedata" version="1">
+                    <Name>Innsending av rutedata</Name>
+                    <roles>
+                        <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:11" version="1">
+                            <DataRoleType>creates</DataRoleType>
+                            <StakeholderRoleType>EntityLegalOwnership FareManagement</StakeholderRoleType>
+                            <ResponsibleOrganisationRef ref="NOG:Operator:VYT" version="1"/>
+                            <!--ResponsibleAreaRef ref="NOG:AdministrativeZone:Tog" version="1"/-->
+                        </ResponsibilityRoleAssignment>
+                        <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:12" version="1">
+                            <DataRoleType></DataRoleType>
+                            <ResponsibleOrganisationRef version="1" ref="NOG:Operator:GJB"/>
+                            <!--ResponsibleAreaRef ref="NOG:AdministrativeZone:GJB" version="1"/-->
+                        </ResponsibilityRoleAssignment>
+                        <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:13" version="1">
+                            <DataRoleType>creates</DataRoleType>
+                            <ResponsibleOrganisationRef version="1" ref="NOG:Operator:VYX"/>
+                            <!--ResponsibleAreaRef ref="NOG:AdministrativeZone:VYX" version="1"/-->
+                        </ResponsibilityRoleAssignment>
+                        <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:14" version="1">
+                            <DataRoleType>creates</DataRoleType>
+                            <ResponsibleOrganisationRef version="1" ref="NOG:Operator:VYB"/>
+                            <!--ResponsibleAreaRef ref="NOG:AdministrativeZone:VYB" version="1"/-->
+                        </ResponsibilityRoleAssignment>
+                    </roles>
+                </ResponsibilitySet>
+                
+                
+                <ResponsibilitySet id="NOG:ResponsibilitySet:Takstmyndighet" version="1">
+                    <Name>Takstmyndighet rutedata</Name>
+                    <roles>
+                        <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:21" version="1">
+                            <ResponsibilitySetRef ref=""></ResponsibilitySetRef>
+                        </ResponsibilityRoleAssignment>
+                    </roles>
+                </ResponsibilitySet>
+                
+                <!-- 
+                    <DataRoleType></DataRoleType>
+                    <StakeholderRoleType>EntityLegalOwnership</StakeholderRoleType>
+                    <ResponsibleOrganisationRef ref="NOG:Operator:VYT" version="1"/>
+                    <ResponsibleAreaRef ref="NOG:AdministrativeZone:Tog" />
+                -->
+                
+            </responsibilitySets>
+            
+            <typesOfValue>
+                <Branding id="NOG:Branding:1" version="1">
+                    <Name>Merkevarenavn</Name>
+                </Branding>
+            </typesOfValue>
             
             <organisations>                
 
@@ -163,33 +215,10 @@ REMARK: Currently very much a work in progress!
                         </OrganisationPart>
                     </parts>
                     
+                    
                     <ownResponsibilitySets>
-                        <ResponsibilitySet version="1" id="NOG:ResponsibilitySet:InnsendingRutedata">
-                            <Name>Innsending av rutedata for VY Gruppen</Name>
-                            <roles>
-                                <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:11" version="1">
-                                    <DataRoleType>aggregates</DataRoleType>
-                                    <StakeholderRoleType>EntityLegalOwnership</StakeholderRoleType>
-                                    <ResponsibleOrganisationRef ref="NOG:Operator:VYT" version="1"/>
-                                    <!--ResponsibleAreaRef ref="NOG:AdministrativeZone:Tog" version="1"/-->
-                                </ResponsibilityRoleAssignment>
-                                <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:12" version="1">
-                                    <DataRoleType>creates</DataRoleType>
-                                    <ResponsibleOrganisationRef version="1" ref="NOG:Operator:GJB"/>
-                                    <!--ResponsibleAreaRef ref="NOG:AdministrativeZone:GJB" version="1"/-->
-                                </ResponsibilityRoleAssignment>
-                                <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:13" version="1">
-                                    <DataRoleType>creates</DataRoleType>
-                                    <ResponsibleOrganisationRef version="1" ref="NOG:Operator:VYX"/>
-                                    <!--ResponsibleAreaRef ref="NOG:AdministrativeZone:VYX" version="1"/-->
-                                </ResponsibilityRoleAssignment>
-                                <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:14" version="1">
-                                    <DataRoleType>creates</DataRoleType>
-                                    <ResponsibleOrganisationRef version="1" ref="NOG:Operator:VYB"/>
-                                    <!--ResponsibleAreaRef ref="NOG:AdministrativeZone:VYB" version="1"/-->
-                                </ResponsibilityRoleAssignment>
-                            </roles>
-                        </ResponsibilitySet>
+                        <ResponsibilitySetRef ref="NOG:ResponsibilitySet:InnsendingRutedata" version="1"/>
+                        <ResponsibilitySetRef ref="NOG:ResponsibilitySet:Takstmyndighet" version="1"/>
                     </ownResponsibilitySets>
                 </GeneralOrganisation>
                 
@@ -203,6 +232,7 @@ REMARK: Currently very much a work in progress!
                     <ContactDetails>
                         <Url>https://www.vy.no/kundeservice/hjelp-og-kontakt?item=2699</Url>
                     </ContactDetails>
+                    <OrganisationType>authority</OrganisationType>
                     <Address>
                         <AddressLine1>Schweigaards gate 23</AddressLine1>
                         <Town>Oslo</Town>
@@ -279,6 +309,7 @@ REMARK: Currently very much a work in progress!
                     </Address>
                     <OperatorActivities>passenger</OperatorActivities>
                 </Operator>
+                
 
 
 
@@ -445,6 +476,7 @@ REMARK: Currently very much a work in progress!
                 
                 
                 <GeneralOrganisation id="NOG:GeneralOrganisation:DEMO" version="1">
+                    <BrandingRef ref="NOG:Branding:1" version="1"/>
                     <Name>Demo-organisation</Name>
                 </GeneralOrganisation>
                 
@@ -453,19 +485,24 @@ REMARK: Currently very much a work in progress!
                 </OtherOrganisation>
                 
                 
+                
                 <Operator id="ENT:Operator:DEMO" version="1" status="other" >
+                    <BrandingRef ref="NOG:Branding:1" version="1"/>
                     <Name>demo</Name>
                     <parts>
                         <Department id="ENT:Department:DEMO" version="1">
                             <Name>Demo-department</Name>
                         </Department>
                     </parts>
+                    <!-- Will be added to NeTEx by end of 2021 -->
+                    <!--
                     <relatedOrganisations>
                         <RelatedOrganisation id="ENT:RelatedOrganisation:DEMO" version="1">
                             <GeneralOrganisationRef ref="ref"></GeneralOrganisationRef>
                             <OrganisationRoleType>other</OrganisationRoleType>
                         </RelatedOrganisation>
                     </relatedOrganisations>
+                    -->
                 </Operator>
                 
 
