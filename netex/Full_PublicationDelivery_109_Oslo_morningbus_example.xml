@@ -261,9 +261,6 @@
 							</quays>
 						</StopPlace>
 					</stopPlaces>
-					
-
-					
 				</SiteFrame>
 				
 				
@@ -482,7 +479,7 @@
 						<JourneyPattern version="1" id="RUT:JourneyPattern:109">
 							<RouteRef version="1" ref="RUT:Route:109"/>
 							<pointsInSequence>
-								<!-- TODO: Legg inn korrekte holdeplasskoder -->
+							    <!-- TODO: Legg inn korrekte holdeplasskoder -->
 								<StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:helfyr_t" order="1">
 									<ScheduledStopPointRef version="1" ref="RUT:ScheduledStopPoint:helfyr_t"/>
 									<ForAlighting>false</ForAlighting>
