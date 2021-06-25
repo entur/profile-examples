@@ -107,7 +107,8 @@ REMARK: Currently very much a work in progress!
                     <Name>Takstmyndighet rutedata</Name>
                     <roles>
                         <ResponsibilityRoleAssignment id="NOG:ResponsibilityRoleAssignment:21" version="1">
-                            <ResponsibilitySetRef ref=""></ResponsibilitySetRef>
+                            <DataRoleType>aggregates collects</DataRoleType>
+                            <StakeholderRoleType>Control DataRegistrar</StakeholderRoleType>
                         </ResponsibilityRoleAssignment>
                     </roles>
                 </ResponsibilitySet>
