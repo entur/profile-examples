@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ResponsibilitySet / ResponsibilityRoles proof-of-concept eksempel, IKKE komplett eller i samsvar med Nordic NeTEx profile -->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  xmlns:siri="http://www.siri.org.uk/siri"
+  xmlns:gml="http://www.opengis.net/gml/3.2" 
+  xmlns:core="http://www.govtalk.gov.uk/core" 
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ifopt="http://www.ifopt.org.uk/ifopt" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <PublicationTimestamp>2016-05-30T12:00:00Z</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <Description>Generell PublicationDelivery</Description>
+
+    <!-- Relevante frames legges under dataObjects, bør legges inn i enklest mulig lesbar rekkefølge -->
+    <dataObjects>
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            
+            <!-- PROTOTYPE (utvidelse) / konseptuell test for strukturering av User/Role (pdd. ikke implementerbar) -->
+
+            <Extensions>
+                <users>
+                    <User id="ENT:User:1">
+                        <OrganisationRef ref="ENT:Authority:1" version="1"/> <!-- organisation a user primarliy belongs to -->
+                        <responsibilitySets>
+                            <ResponsibilitySetRef ref="ENT:ResponsibilitySet:BUSKERUD"/>
+                            <ResponsibilitySetRef ref="ENT:ResponsibilitySet:OSLO"/>
+                        </responsibilitySets>
+                    </User>
+                </users>
+            </Extensions>
+
+
+            <codespaces>
+                <!-- Codespace, f.eks. for Nasjonalt Stoppestedsregister -->
+                <Codespace id="nsr">
+                    <Xmlns>NSR</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+                </Codespace>
+                <Codespace id="ent">
+                    <Xmlns>ENT</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/ent</XmlnsUrl>
+                </Codespace>
+            </codespaces>
+            
+            
+            <responsibilitySets>
+                <ResponsibilitySet id="ENT:ResponsibilitySet:OSLO" version="1">
+                    <Name>Endre stoppesteder i OSLO</Name>
+                    <roles>
+                        <ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:1" version="1">
+                            <!--TypeOfResponsibilityRoleRef ref="ENT:TypeOfResponsibilityRole:editStops"/-->
+                            <DataRoleType></DataRoleType>
+                            <ResponsibleOrganisationRef version="1" ref="ENT:Authority:RUT"/>
+                            <ResponsibleAreaRef ref="ENT:AdministrativeZone:OSLO"/>
+                        </ResponsibilityRoleAssignment>
+                    </roles>
+                </ResponsibilitySet>
+                <ResponsibilitySet id="ENT:ResponsibilitySet:InnsendingRutedata" version="1">
+                    <Name>Innsending rutedata Oslo</Name>
+                    <roles>
+                        <ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:11" version="1">
+                            <TypeOfResponsibilityRoleRef ref="ENT:TypeOfEntity:editTimetableData"/>
+                            <ResponsibleOrganisationRef version="1" ref="ENT:Authority:RUT"/>
+                        </ResponsibilityRoleAssignment>
+                    </roles>
+                </ResponsibilitySet>
+                <ResponsibilitySet id="ENT:ResponsibilitySet:BUSKERUD" version="1">
+                    <Name>Endre stoppesteder i BUSKERUD</Name>
+                    <roles>
+                        <ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:2" version="1">
+                            
+                            <!-- PROTOTYPE (utvidelse) / konseptuell test for strukturering av EntityClassification (pdd. ikke implementerbar) -->
+                            
+                            <Extensions>
+                                <!-- StopPlaces av type onStreetBus -->
+                                <EntityTypeRef ref="ENT:TypeOfEntity:StopPlace">
+                                    <EntityClassification ref="ENT:TypeOfPoint:OnStreetBus"/>
+                                </EntityTypeRef>
+                                <EntityTypeRef ref="ENT:TypeOfEntity:StopPlace">
+                                    <EntityClassification ref="ENT:TypeOfPoint:TramStop"/>
+                                </EntityTypeRef>
+                            </Extensions>
+                            
+                            <!-- feil konsept / referansebruk? -->
+                            <TypeOfResponsibilityRoleRef ref="ENT:TypeOfResponsibilityRole:editStops" version="1"/>
+                            
+                            <ResponsibleOrganisationRef version="1" ref="ENT:Authority:BRA"/>
+                            <ResponsibleAreaRef ref="ENT:AdministrativeZone:BUSKERUD"/>
+                        </ResponsibilityRoleAssignment>
+                    </roles>
+                </ResponsibilitySet>
+            </responsibilitySets>
+            
+            
+            <typesOfValue>
+                <ValueSet id="ENT:ValueSet:EntityType" version="1">
+                    <values>
+                        <TypeOfEntity id="ENT:TypeOfEntity:StopPlace" version="1">
+                            <Name>Stoppesteder</Name>
+                            <PrivateCode>StopPlace</PrivateCode>
+                        </TypeOfEntity>
+                        <TypeOfEntity id="ENT:TypeOfEntity:PointOfInterest" version="1">
+                            <Name>PointOfInterest</Name>
+                        </TypeOfEntity>
+                    </values>
+                </ValueSet>
+                <ValueSet id="ENT:ValueSet:StopPlaceType" version="1">
+                    <values>
+                        <TypeOfPoint id="ENT:TypeOfPoint:OnStreetBus" version="1">
+                            <Name>Bus stop</Name>
+                            <PrivateCode>onStreetBus</PrivateCode>
+                            <!-- bruke samme som stopPlaceType -->
+                        </TypeOfPoint>
+                        <TypeOfPoint id="ENT:TypeOfPoint:Tram" version="1">
+                            <Name>Tram stop</Name>
+                            <PrivateCode>tramStop</PrivateCode>
+                            <!-- bruke samme som stopPlaceType -->
+                        </TypeOfPoint>
+                        <TypeOfPoint id="ENT:TypeOfPoint:Airport" version="1">
+                            <Name>Airport</Name>
+                        </TypeOfPoint>
+                        <TypeOfPoint id="ENT:TypeOfPoint:RailwayStation" version="1">
+                            <Name>Railway station</Name>
+                        </TypeOfPoint>
+                    </values>
+                </ValueSet>
+                <ValueSet id="PointofInterestType" version="1">
+                    <values>
+                        <TypeOfPoint id="ENT:TypeOfPoint:AnyPOI" version="1">
+                            <Name>Alle POI-typer</Name>
+                            <PrivateCode>*</PrivateCode>
+                            <!-- bruke samme som pointOfInterestType? -->
+                        </TypeOfPoint>
+                    </values>
+                </ValueSet>
+                <ValueSet id="ENT:ValueSet:LoginRoles" version="1">
+                    <values>
+                        <TypeOfResponsibilityRole id="ENT:TypeOfEntity:editTimetableData" version="1">
+                            <Name>Opplasting og redigering av rutedata</Name>
+                        </TypeOfResponsibilityRole>
+                        <TypeOfResponsibilityRole id="ENT:TypeOfEntity:viewTimetableData" version="1">
+                            <Name>Vise rutedata</Name>
+                        </TypeOfResponsibilityRole>
+                        <TypeOfResponsibilityRole id="ENT:TypeOfResponsibilityRole:editStops" version="1">
+                            <Name>Opplasting og redigering av stopp</Name>
+                        </TypeOfResponsibilityRole>
+                        <TypeOfResponsibilityRole id="ENT:TypeOfResponsibilityRole:adminStops" version="1">
+                            <Name>Admin-redigering av stopp</Name>
+                        </TypeOfResponsibilityRole>
+                        <TypeOfResponsibilityRole id="ENT:TypeOfResponsibilityRole:viewExports" version="1">
+                            <Name>Visning av eksporter</Name>
+                        </TypeOfResponsibilityRole>
+                        <TypeOfResponsibilityRole id="ENT:TypeOfResponsibilityRole:editExports" version="1">
+                            <Name>Opprettelse og redigering av eksporter</Name>
+                        </TypeOfResponsibilityRole>
+                    </values>
+                </ValueSet>
+            </typesOfValue>
+            
+
+            <organisations>
+                <Authority id="ENT:Authority:1" version="1">
+                    <CompanyNumber>NUMBER</CompanyNumber>
+                    <Name>Entur</Name>
+                    <OrganisationType>authority</OrganisationType>
+                    <parts>
+                        <OrganisationPart id="ENT:OrganisationPart:1" version="1">
+                            <Name>Rutebanken Admin Part</Name>
+                            <administrativeZones>
+                                <AdministrativeZone id="ENT:AdministrativeZone:OSLO-uten-OSLOS" version="1">
+                                    <Name>Oslo</Name>
+                                    <gml:Polygon gml:id="oslo_uten_oslos">
+                                        <!-- oslo -->
+                                        <gml:exterior>
+                                            <gml:LinearRing>
+                                                <gml:posList/>
+                                            </gml:LinearRing>
+                                        </gml:exterior>
+                                        <!-- oslo s, kan ha flere interior rings -->
+                                        <gml:interior>
+                                            <gml:LinearRing>
+                                                <gml:posList/> <!-- placeholder -->
+                                            </gml:LinearRing>
+                                        </gml:interior>
+                                    </gml:Polygon>
+                                </AdministrativeZone>
+                                <AdministrativeZone id="ENT:AdministrativeZone:OSLO" version="1">
+                                    <Name>Oslo</Name>
+                                    <gml:Polygon gml:id="oslo"/> <!-- placeholder -->
+                                </AdministrativeZone>
+                                <AdministrativeZone id="ENT:AdministrativeZone:BUSKERUD" version="1">
+                                    <Name>Buskerud</Name>
+                                    <gml:Polygon gml:id="buskerud"/> <!-- placeholder -->
+                                </AdministrativeZone>
+                                <AdministrativeZone id="ENT:AdministrativeZone:NORGE" version="1">
+                                    <Name>Norge</Name>
+                                    <gml:Polygon gml:id="norge"/> <!-- placeholder --> 
+                                </AdministrativeZone>
+                            </administrativeZones>
+                        </OrganisationPart>
+                    </parts>
+                </Authority>
+                <Authority id="ENT:Authority:RUT" version="1">
+                    <CompanyNumber>NUMBER</CompanyNumber>
+                    <Name>Ruter</Name>
+                    <OrganisationType>authority</OrganisationType>
+                </Authority>
+                <Authority id="ENT:Authority:BRA" version="1">
+                    <CompanyNumber>NUMBER</CompanyNumber>
+                    <Name>Brakar</Name>
+                    <OrganisationType>authority</OrganisationType>
+                </Authority>
+            </organisations>
+
+        </ResourceFrame>
+
+    </dataObjects>
+</PublicationDelivery>
