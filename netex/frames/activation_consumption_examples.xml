@@ -271,6 +271,11 @@
                             </crossConstraints>
                         </ElementConsumptionPolicy>
                     </elementConsumptionPolicies>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement order="0" id="xxx:SalesOfferPackageElement:HurtigbatTurRetur" version="1">
+                            <PreassignedFareProductRef ref="xxx:PreassignedFareProduct:HurtigbatTurRetur"></PreassignedFareProductRef>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
                 </SalesOfferPackage>
             </salesOfferPackages>
             
