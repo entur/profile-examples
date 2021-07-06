@@ -11,6 +11,12 @@
                 <TimeInterval id="xxx:TimeInterval:3months" version="1">
                     <Duration>P3M</Duration>
                 </TimeInterval>
+                <TimeInterval id="xxx:TimeInteval:overfartstidTrondheimVanvikan" version="1">
+                    <Duration>PT25M</Duration>
+                </TimeInterval>
+                <TimeInterval id="xxx:TimeInteval:overfartstidTrondheimBrekstad" version="1">
+                    <Duration>PT1H</Duration>
+                </TimeInterval>
             </timeIntervals>
                         
             <qualityStructureFactors>
@@ -33,6 +39,35 @@
                 </FareDemandFactor>
             </qualityStructureFactors>
             
+            <distanceMatrixElements>
+                <DistanceMatrixElement id="ATB:DistanceMatrixelement:TrondheimVanvikan" version="1">
+                    <StartStopPointRef ref="NSR:StopPlace:74006"></StartStopPointRef>
+                    <EndStopPointRef ref="NSR:StopPlace:61322"></EndStopPointRef>
+                </DistanceMatrixElement>
+                <DistanceMatrixElement id="ATB:DistanceMatrixelement:TrondheimBrekstad" version="1">
+                    <StartStopPointRef ref="NSR:StopPlace:74006"></StartStopPointRef>
+                    <EndStopPointRef ref="NSR:StopPlace:74008"></EndStopPointRef>
+                </DistanceMatrixElement>
+            </distanceMatrixElements>
+            
+            <fareStructureElements>
+                <FareStructureElement id="xxx:FareStructureElement:hurtigbat" version="1">
+                    <distanceMatrixElements>
+                        <DistanceMatrixElementRef ref="ATB:DistanceMatrixelement:TrondheimVanvikan"></DistanceMatrixElementRef>
+                    </distanceMatrixElements>
+                    <validityParameterAssignments>
+                        <!-- Inspirert av NK, denne må vi se mer på -->
+                        <GenericParameterAssignmentInContext>
+                            <DistanceMatrixElementRef ref="ATB:DistanceMatrixelement:TrondheimVanvikan"></DistanceMatrixElementRef>
+                            <TimeIntervalRef ref="xxx:TimeInteval:overfartstidTrondheimVanvikan"></TimeIntervalRef> 
+                        </GenericParameterAssignmentInContext>
+                        <GenericParameterAssignmentInContext>
+                            <DistanceMatrixElementRef ref="ATB:DistanceMatrixelement:TrondheimBrekstad"></DistanceMatrixElementRef>
+                            <TimeIntervalRef ref="xxx:TimeInteval:overfartstidTrondheimBrekstad"></TimeIntervalRef> 
+                        </GenericParameterAssignmentInContext>
+                    </validityParameterAssignments>
+                </FareStructureElement>
+            </fareStructureElements>
             
             <validableElements>
                 <ValidableElement id="xxx:ValidableElement:24h" version="1">
@@ -129,6 +164,7 @@
                         </GenericParameterAssignment>
                     </validityParameterAssignments>
                 </ValidableElement>
+                
                 <ValidableElement id="xxx:ValidableElement:hurtigbatUtreise" version="1">
                     <validityParameterAssignments>
                         <GenericParameterAssignment order="0" id="xxx:GPA:outboundTravel" version="1">
@@ -146,10 +182,12 @@
                                 </RoundTrip>
                             </limitations>
                         </GenericParameterAssignment>
+                        <GenericParameterAssignment order="0" id="xxx:GPA:mustSpecifyOutboundRide" version="1" >
+                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment"></TypeOfAccessRightAssignmentRef>
+                        </GenericParameterAssignment>
                     </validityParameterAssignments>
                 </ValidableElement>
                 <ValidableElement id="xxx:ValidableElement:hurtigbatRetur" version="1">
-                    <!-- Returreise må aktiveres eksplisitt av kunde (UsageValidityPeriod) og må aktiveres innen 24timer etter at utreise ble aktivert (ActivationPeriod eller PolicyAssignment)-->
                     <validityParameterAssignments>
                         <GenericParameterAssignment order="0" id="xxx:GPA:returnTravel" version="1">
                             <limitations>
@@ -157,9 +195,9 @@
                                     <FrequencyOfUseType>single</FrequencyOfUseType>
                                 </FrequencyOfUse>
                                 <UsageValidityPeriod id="xxx:UsageValidityPeriod:return" version="1">
-                                    <UsageTrigger>activation</UsageTrigger>
+                                    <UsageTrigger>startReturnRide</UsageTrigger>
                                     <UsageEnd>endOfRide</UsageEnd>
-                                    <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                    <ActivationMeans>noneRequired</ActivationMeans><!-- Returreise aktiveres automatisk samtidig med utreise-->
                                 </UsageValidityPeriod>
                                 <RoundTrip id="xxx:RoundTrip:return" version="1">
                                     <TripType>returnBack</TripType>
@@ -167,16 +205,22 @@
                                 </RoundTrip>
                             </limitations>
                         </GenericParameterAssignment>
-                        <GenericParameterAssignment order="1" id="xxx:GenericParameterAssignment:returnActivation" version="1">
-                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"></TypeOfAccessRightAssignmentRef>
+                        <GenericParameterAssignment order="2" id="xxx:GenericParameterAssignment:returnUsage" version="1">
+                            <!-- Returreise må forbrukes innen 24 timer fra utreise-->
+                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment"></TypeOfAccessRightAssignmentRef>
                             <limitations>
-                                <UsageValidityPeriod id="xxx:ActivationPeriod:activateOnOutboundRide" version="1">
-                                    <UsageTrigger>startOutboundRide</UsageTrigger>
+                                <UsageValidityPeriod id="xxx:UsageValidityPeriod:useWithin24h" version="1">
+                                    <UsageTrigger>endOutboundRide</UsageTrigger>
                                     <UsageEnd>standardDuration</UsageEnd>
                                     <StandardDuration>PT24H</StandardDuration>
                                 </UsageValidityPeriod>
                             </limitations>
+                        </GenericParameterAssignment> 
+                        <GenericParameterAssignment order="0" id="xxx:GPA:mustSpecifyReturnRide" version="1" >
+                            <!-- Returreise bør knyttes til en konkret avgang når den konsumeres-->
+                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment"></TypeOfAccessRightAssignmentRef>
                         </GenericParameterAssignment>
+                        
                     </validityParameterAssignments>
                 </ValidableElement>
             </validableElements>
@@ -226,6 +270,7 @@
                     </validityParameterAssignments>
                     <!-- access rights -->
                 </AmountOfPriceUnitProduct>
+                
                 <PreassignedFareProduct id="xxx:PreassignedFareProduct:HurtigbatTurRetur" version="1">
                     <accessRightsInProduct>
                         <AccessRightInProduct order="1" id="xxx:AccessRightInProduct:Utreise" version="1">
@@ -242,9 +287,10 @@
             
             
             <salesOfferPackages>
-                <SalesOfferPackage id="1" version="1">
+                <SalesOfferPackage id="xxx:SalesOfferPackage:HurtigbatTurRetur" version="1">
                     <elementConsumptionPolicies>
                         <ElementConsumptionPolicy>
+                            <!-- Aktivering av utreise skal medføre automatisk aktivering av retur -->
                             <consumptionRequirements>
                                 <AccessRightInProductConsumptionRequirement>
                                     <MarkedAs>activated</MarkedAs>
