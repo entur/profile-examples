@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PublicationDelivery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex file:/Users/hegedreiem/sandboxes/enturNeTEx/xsd/NeTEx_publication.xsd"
+    xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0">
+    <PublicationTimestamp>2021-03-16T08:25:45.516</PublicationTimestamp>
+    <ParticipantRef>ATB</ParticipantRef>
+    <dataObjects>
+        <FareFrame id="ATB:FareFrame:ATB" version="any">
+            <timeIntervals>
+                <TimeInterval id="xxx:TimeInterval:3months" version="1">
+                    <Duration>P3M</Duration>
+                </TimeInterval>
+            </timeIntervals>
+                        
+            <qualityStructureFactors>
+                <FareDemandFactor id="1" version="1">
+                    <validityConditions>
+                        <AvailabilityCondition id="1" version="1">
+                            <timebands>
+                                <Timeband id="1" version="1">
+                                    <StartTime>07:00:00</StartTime>
+                                    <EndTime>09:00:00</EndTime>
+                                </Timeband>
+                                <Timeband id="2" version="1">
+                                    <StartTime>15:00:00</StartTime>
+                                    <EndTime>17:00:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </AvailabilityCondition>
+                    </validityConditions>
+                    <FareDemandType>peak</FareDemandType>
+                </FareDemandFactor>
+            </qualityStructureFactors>
+            
+            
+            <validableElements>
+                <ValidableElement id="xxx:ValidableElement:24h" version="1">
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="xxx:GenericParameterAssignment:travelAndActivation" version="1">
+                            <limitations>
+                                <FrequencyOfUse id="xxx:FrequencyOfUse:unlimited24h" version="1">
+                                    <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                                </FrequencyOfUse>
+                                <UsageValidityPeriod id="xxx:UsageValidityPeriod:24h" version="1">
+                                    <ValidityPeriodType>dayPass</ValidityPeriodType>
+                                    <UsageTrigger>activation</UsageTrigger>
+                                    <UsageEnd>standardDuration</UsageEnd>
+                                    <StandardDuration>PT24H</StandardDuration>
+                                    <ActivationMeans>useOfValidator</ActivationMeans>
+                                 </UsageValidityPeriod>
+                                <UsageValidityPeriod id="xxx:ActivationPeriod:within1YearOfPurchase" version="1">
+                                    <UsageTrigger>purchase</UsageTrigger>
+                                    <UsageEnd>standardDuration</UsageEnd>
+                                    <StandardDuration>P1Y</StandardDuration>
+                                </UsageValidityPeriod>
+                                <UsageValidityPeriod id="xxx:ActivationPeriod:within3MonthsOfTariffChange" version="1">
+                                    <UsageTrigger>purchase</UsageTrigger>
+                                    <UsageEnd>endOfFarePeriod</UsageEnd>
+                                    <!--  <UsageEndOffsetIntervalRef ref="xxx:TimeInterval:3months"></UsageEndOffsetIntervalRef> -->
+                                </UsageValidityPeriod>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </ValidableElement>
+                <ValidableElement id="xxx:ValidableElement:CarnetWithActivationFrequency" version="1">
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="xxx:GenericParameterAssignment:travelAndActivationWithFrequency" version="1">
+                            <limitations>
+                                <FrequencyOfUse id="xxx:FrequencyOfUse:unlimitedTravel" version="1">
+                                    <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                                </FrequencyOfUse>
+                                <UsageValidityPeriod id="xxx:UsageValidityPeriod:24hours" version="1">
+                                    <ValidityPeriodType>dayPass</ValidityPeriodType>
+                                    <UsageTrigger>activation</UsageTrigger>
+                                    <UsageEnd>standardDuration</UsageEnd>
+                                    <StandardDuration>PT24H</StandardDuration>
+                                    <ActivationMeans>useOfValidator</ActivationMeans>
+                                </UsageValidityPeriod>
+                                <UsageValidityPeriod id="xxx:ActivationPeriod:min1max2PerMonthWithin6months" version="1">
+                                    <UsageTrigger>purchase</UsageTrigger>
+                                    <UsageEnd>standardDuration</UsageEnd>
+                                    <StandardDuration>P6M</StandardDuration>
+                                    <!-- <MaximalFrequency>2</MaximalFrequency>
+                                    <FrequencyInterval>P1M</FrequencyInterval> -->
+                                </UsageValidityPeriod>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </ValidableElement>
+                <ValidableElement  id="xxx:ValidableElement:7days" version="1">
+                    <validityParameterAssignments>
+                    <GenericParameterAssignment order="0" id="xxx:GenericParameterAssignment:travel" version="1">
+                        <limitations>
+                            <FrequencyOfUse id="xxx:FrequencyOfUse:unlimited7d" version="1">
+                                <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                            </FrequencyOfUse>
+                            <UsageValidityPeriod id="xxx:UsageValidityPeriod:7d" version="1">
+                                <ValidityPeriodType>weeklyPass</ValidityPeriodType>
+                                <UsageTrigger>activation</UsageTrigger>
+                                <UsageEnd>standardDuration</UsageEnd>
+                                <StandardDuration>P7D</StandardDuration>
+                                <ActivationMeans>useOfValidator</ActivationMeans>
+                            </UsageValidityPeriod>
+                        </limitations>
+                        <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                        <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                    </GenericParameterAssignment>
+                        <GenericParameterAssignment order="1" id="xxx:GenericParameterAssignment:activation" version="1">
+                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"></TypeOfAccessRightAssignmentRef>
+                            <limitations>
+                                <UsageValidityPeriod id="xxx:ActivationPeriod:within1YearOfPurchaseDate" version="1">
+                                    <UsageTrigger>purchase</UsageTrigger>
+                                    <UsageEnd>standardDuration</UsageEnd>
+                                    <StandardDuration>P1Y</StandardDuration>
+                                </UsageValidityPeriod>
+                                <UsageValidityPeriod id="xxx:ActivationPeriod:within3MonthsOfTariffChanges" version="1">
+                                    <UsageTrigger>purchase</UsageTrigger>
+                                    <UsageEnd>endOfFarePeriod</UsageEnd>
+                                    <!--  <UsageEndOffsetIntervalRef ref="xxx:TimeInterval:3months"></UsageEndOffsetIntervalRef> -->
+                                </UsageValidityPeriod>
+                            </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </ValidableElement>
+                <ValidableElement id="xxx:ValidableElement:hurtigbatUtreise" version="1">
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="xxx:GPA:outboundTravel" version="1">
+                            <limitations>
+                                <FrequencyOfUse id="xxx:FrequencyOfUse:single" version="1">
+                                    <FrequencyOfUseType>single</FrequencyOfUseType>
+                                </FrequencyOfUse>
+                                <UsageValidityPeriod id="xxx:UsageValidityPeriod:outbound" version="1">
+                                    <UsageTrigger>activation</UsageTrigger>
+                                    <UsageEnd>endOfRide</UsageEnd>
+                                    <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                </UsageValidityPeriod>
+                                <RoundTrip id="xxx:RoundTrip:outbound" version="1">
+                                    <TripType>returnOut</TripType>
+                                </RoundTrip>
+                            </limitations>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </ValidableElement>
+                <ValidableElement id="xxx:ValidableElement:hurtigbatRetur" version="1">
+                    <!-- Returreise må aktiveres eksplisitt av kunde (UsageValidityPeriod) og må aktiveres innen 24timer etter at utreise ble aktivert (ActivationPeriod eller PolicyAssignment)-->
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="xxx:GPA:returnTravel" version="1">
+                            <limitations>
+                                <FrequencyOfUse id="xxx:FrequencyOfUse:retur" version="1">
+                                    <FrequencyOfUseType>single</FrequencyOfUseType>
+                                </FrequencyOfUse>
+                                <UsageValidityPeriod id="xxx:UsageValidityPeriod:return" version="1">
+                                    <UsageTrigger>activation</UsageTrigger>
+                                    <UsageEnd>endOfRide</UsageEnd>
+                                    <ActivationMeans>useOfMobileDevice</ActivationMeans>
+                                </UsageValidityPeriod>
+                                <RoundTrip id="xxx:RoundTrip:return" version="1">
+                                    <TripType>returnBack</TripType>
+                                    <IsRequired>true</IsRequired>
+                                </RoundTrip>
+                            </limitations>
+                        </GenericParameterAssignment>
+                        <GenericParameterAssignment order="1" id="xxx:GenericParameterAssignment:returnActivation" version="1">
+                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"></TypeOfAccessRightAssignmentRef>
+                            <limitations>
+                                <UsageValidityPeriod id="xxx:ActivationPeriod:activateOnOutboundRide" version="1">
+                                    <UsageTrigger>startOutboundRide</UsageTrigger>
+                                    <UsageEnd>standardDuration</UsageEnd>
+                                    <StandardDuration>PT24H</StandardDuration>
+                                </UsageValidityPeriod>
+                            </limitations>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                </ValidableElement>
+            </validableElements>
+            
+            <usageParameters>
+                <UsageValidityPeriod id="ATB:UsageValidityPeriod:KlippekortBuss-Produkt" version="ATB:Version:UVP-KlippekortBuss-Produkt-1">
+                    <ValidityPeriodType>carnet</ValidityPeriodType>
+                    <UsageTrigger>fulfilment</UsageTrigger>
+                    <UsageEnd>standardDuration</UsageEnd>
+                    <StandardDuration>P1Y</StandardDuration>
+                    <ActivationMeans>noneRequired</ActivationMeans>
+                    <UsageStartConstraintType>fixed</UsageStartConstraintType>
+                </UsageValidityPeriod>
+                <FrequencyOfUse id="maxTwiceEachMonth" version="1">
+                    <FrequencyOfUseType>limited</FrequencyOfUseType>
+                    <MaximalFrequency>2</MaximalFrequency>
+                    <FrequencyInterval>P1M</FrequencyInterval>
+                </FrequencyOfUse>
+                <FrequencyOfUse id="CadenceMonth" version="1">
+                    <FrequencyOfUseType>limited</FrequencyOfUseType>
+                    <MinimalFrequency>1</MinimalFrequency>
+                    <MaximalFrequency>3</MaximalFrequency>
+                    <FrequencyInterval>P1M</FrequencyInterval>
+                </FrequencyOfUse>
+                <PurchaseWindow id="1" version="1">
+                    <MaximumPeriodBeforeDeparture>P90D</MaximumPeriodBeforeDeparture>
+                </PurchaseWindow>
+                <Refunding id="1" version="1">
+                    <ExchangableFromIntervalRef ref="xxx:TimeInterval:3months"></ExchangableFromIntervalRef>
+                </Refunding>
+            </usageParameters>
+            
+            <fareProducts>
+                <AmountOfPriceUnitProduct id="ATB:AmountOfPriceUnitProduct:KlippekortBuss" version="ATB:Version:AOPUP-KlippekortBuss-1">
+                    <Name/>
+                    <AuthorityRef ref="ATB:Authority:2"/>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment order="0" id="ATB:GenericParameterAssignment:KlippekortBussUsageValidityPeriod-Produkt" version="ATB:Version:UVP-KlippekortBuss-Produkt-1">
+                            <IsAllowed>true</IsAllowed>
+                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment"/>
+                            <limitations>
+                                <UsageValidityPeriodRef ref="ATB:UsageValidityPeriod:KlippekortBuss-Produkt"/>
+                            </limitations>
+                            
+                        </GenericParameterAssignment>
+                        <!-- flere GPA -->
+                    </validityParameterAssignments>
+                    <!-- access rights -->
+                </AmountOfPriceUnitProduct>
+                <PreassignedFareProduct id="xxx:PreassignedFareProduct:HurtigbatTurRetur" version="1">
+                    <accessRightsInProduct>
+                        <AccessRightInProduct order="1" id="xxx:AccessRightInProduct:Utreise" version="1">
+                            <IsFirstInSequence>true</IsFirstInSequence>
+                            <ValidableElementRef ref="xxx:ValidableElement:hurtigbatUtreise"></ValidableElementRef>
+                        </AccessRightInProduct>
+                        <AccessRightInProduct order="2" id="xxx:AccessRightInProduct:Retur" version="1">
+                            <IsLastInSequence>true</IsLastInSequence>
+                            <ValidableElementRef ref="xxx:ValidableElement:hurtigbatRetur"></ValidableElementRef>
+                        </AccessRightInProduct>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+            </fareProducts>
+            
+            
+            <salesOfferPackages>
+                <SalesOfferPackage id="1" version="1">
+                    <elementConsumptionPolicies>
+                        <ElementConsumptionPolicy>
+                            <consumptionRequirements>
+                                <AccessRightInProductConsumptionRequirement>
+                                    <MarkedAs>activated</MarkedAs>
+                                    <MarkedAsTemporalValidity>currentFuture</MarkedAsTemporalValidity>
+                                    <AccessRightInProductRef ref="xxx:AccessRightInProduct:Utreise"></AccessRightInProductRef>
+                                </AccessRightInProductConsumptionRequirement>
+                            </consumptionRequirements>
+                            <ConsumptionTriggerType>automatic</ConsumptionTriggerType>
+                            <elementConsumptions>
+                                <AccessRightInProductConsumption>
+                                    <AccessRightInProductRef ref="xxx:AccessRightInProduct:Retur"></AccessRightInProductRef>
+                                </AccessRightInProductConsumption>
+                            </elementConsumptions>
+                            <crossConstraints>
+                                <CrossConstraint>
+                                    <Constraint>
+                                        <DirectionConstraint>oppositeDirection</DirectionConstraint>
+                                    </Constraint>
+                                    <validityParameterAssignments>
+                                        <ValidityParameterAssignmentRef ref="xxx:GPA:outboundTravel"></ValidityParameterAssignmentRef>
+                                        <ValidityParameterAssignmentRef ref="xxx:GPA:returnTravel"></ValidityParameterAssignmentRef>
+                                    </validityParameterAssignments>
+                                </CrossConstraint>
+                            </crossConstraints>
+                        </ElementConsumptionPolicy>
+                    </elementConsumptionPolicies>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+            
+        </FareFrame>
+    </dataObjects>
+</PublicationDelivery>
