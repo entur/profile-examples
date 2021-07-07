@@ -5,9 +5,13 @@
   xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     
-    <AccommodationAccessList>reservation standing freeSeating</AccommodationAccessList>
-    <AccommodationFacilityList>unknown</AccommodationFacilityList>
-    <BoardingPermisssion>normal</BoardingPermisssion>
+    <AssistanceFacilityList>boardingAssistance personalAssistance</AssistanceFacilityList>
+    <AccessibilityToolList>umbrella</AccessibilityToolList>
+    <MobilityFacilityList>lowFloor suitableForWheelchairs</MobilityFacilityList>
+    <NuisanceFacilityList>mobilePhoneFreeZone noAnimals</NuisanceFacilityList>
+    <AccommodationAccessList>reservation standing freeSeating </AccommodationAccessList>
+    <AccommodationFacilityList>babyCompartment familyCarriage</AccommodationFacilityList>
+    <!--BoardingPermisssion>normal</BoardingPermisssion-->
     <BookingProcessFacilityList>bookableManuallly</BookingProcessFacilityList>
     <CouchetteFacilityList>unknown</CouchetteFacilityList>
     <GroupBookingFacility>unknown</GroupBookingFacility>
@@ -31,7 +35,7 @@
     <onboardStays>
         <OnboardStay>
             <FareClass>unknown</FareClass>
-            <BoardingPermisssion>overnightStayOnboardAllowed</BoardingPermisssion>
+            <!--BoardingPermisssion>overnightStayOnboardAllowed</BoardingPermisssion-->
             <Period>P2D</Period>
         </OnboardStay>
     </onboardStays>
