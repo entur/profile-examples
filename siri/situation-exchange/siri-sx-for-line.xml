@@ -25,8 +25,8 @@
                         <EndTime>2018-05-01T15:30:00</EndTime>
                     </ValidityPeriod>
                     <UndefinedReason/>
-                    <ReportType>general</ReportType>
                     <Severity>normal</Severity>
+                    <ReportType>general</ReportType>
                     <Summary>Ballong til alle som reiser med linje 11</Summary>
                     <Description>Vi feirer at det er 50 år siden linje 11 ble startet.</Description>
                     <Affects>
