@@ -28,6 +28,7 @@
                     <VersionType>baseline</VersionType>
                 </Version>
             </versions>
+            
             <contentValidityConditions>
                 <!--ValidDuring >
                     <DaysOfWeek>Monday Friday</DaysOfWeek>
@@ -77,7 +78,6 @@
                     <ToDate>2021-01-01T00:00:00</ToDate>
                     <Days>YYYYYNN</Days>
                 </ValidDuring>
-                
                 
                 <AvailabilityCondition id="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021-DEPRECATED" version="1">
                     <Name>Skolerute Bergen 2020-2021</Name>
@@ -145,6 +145,39 @@
                     </roles>
                 </ResponsibilitySet>
             </responsibilitySets>
+            
+            <typesOfValue>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:ExceptionFromVAT" version="1">
+                    <Name>ExceptionFromVAT</Name>
+                    <Description>Price exempt from VAT (currently 0%)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:LowVAT" version="1">
+                    <Name>LowVAT</Name>
+                    <Description>Price with low VAT as for e.g. public transport, entertainment (public broadcasting, cinemas, amusement parks, sports arrangements) and lodging (currently 6% until 2021-09-30, thereafter 12%)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:ReducedVAT" version="1">
+                    <Name>ReducedVAT</Name>
+                    <Description>Price with reduced VAT as calculated for 'Næringsmidler' such as food items (currently 15%)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:RegularVAT" version="1">
+                    <Name>RegularVAT</Name>
+                    <Description>Price with regular VAT (currently 25%)</Description>
+                </TypeOfAccessRightAssignment>
+                
+                
+                <!-- separate TypeOfValue -->
+                <ChargingMoment id="ENT:ChargingMoment:1" version="1">
+                    <Name>Charge!!</Name>
+                </ChargingMoment>
+                <!-- or value in a ValueSet -->
+                <ValueSet id="ENT:ValueSet:1" version="1">
+                    <values>
+                        <ChargingMoment id="ENT:ChargingMoment:2" version="1">
+                            <Name>Incrimitaion</Name>
+                        </ChargingMoment>
+                    </values>
+                </ValueSet>
+            </typesOfValue>
             
         </ResourceFrame>
         
@@ -369,6 +402,9 @@
                         <MethodName>Fritekst-uten-mellomrom</MethodName>
                         <Factor>666</Factor>
                     </PricingRule>
+                    <PricingRule id="ENT:PricingRule:TEST" version="1">
+
+                    </PricingRule>
                 </pricingRules>
                 
                 <pricingServices>
@@ -388,7 +424,7 @@
                 <GeographicalUnit id="ENT:GeographicalUnit:1" version="1">
                     <prices>
                         <GeographicalUnitPrice id="ENT:GeographicalUnitPrice:1" version="1">
-                            <Name>GeographicalUnitPrice</Name>
+                            <Amount>123</Amount>
                         </GeographicalUnitPrice>
                     </prices>
                 </GeographicalUnit>
@@ -743,19 +779,30 @@
                 <PreassignedFareProduct id="ENT:PreassignedFareProduct:1" version="1">
                     <Name>PreassignedFareProduct</Name>
                     <PrivateCode></PrivateCode>
+                    
                     <FareProductRef ref=""></FareProductRef> <!-- FAIL (kun en referanse tillatt) -->
                     <!--SaleDiscountRightRef ref="ENT:SaleDiscountRight:1" version="1"/ -->
                     <!-- SupplementProductRef ref="ENT:SupplementProduct:1" version="1"/ -->
+                    
+                    
                     <accessRightsInProduct>
                         <AccessRightInProduct id="BS" version="1" order="1">
                             <ValidableElementRef ref="test"/>
                             <SupplementProductRef ref="ref"/> <!-- preferably not referenced from here -->
                         </AccessRightInProduct>
                     </accessRightsInProduct>
+                    <prices>
+                        <FareProductPrice id="VYT:FareProductPrice:1" version="1">
+                            <Amount>549</Amount>
+                            <Currency>NOK</Currency>
+                        </FareProductPrice>
+                    </prices>
                 </PreassignedFareProduct>
                 
                 <PreassignedFareProduct id="ENT:PreassignedFareProduct:SingleTrip1Zone" version="1">
+                    
                     <Name lang="en">Single trip valid within one zone</Name>
+                    <TypeOfFareProductRef ref=""></TypeOfFareProductRef>
                     <accessRightsInProduct>
                         <AccessRightInProductRef ref="ENT:ValidableElement:1" version="1"/>
                     </accessRightsInProduct>
@@ -771,7 +818,13 @@
                 </PreassignedFareProduct>
                 
                 <SupplementProduct id="ENT:SupplementProduct:1" version="1">
-                    <SupplementProductType>animal</SupplementProductType>
+                    <prices>
+                        <FareProductPrice id="VYT:FareProductPrice:2" version="1">
+                            <Amount>549</Amount>
+                            <Currency>NOK</Currency>
+                        </FareProductPrice>
+                    </prices>
+                    <SupplementProductType>bicycle</SupplementProductType>
                 </SupplementProduct>
                 
                 <SaleDiscountRight id="ENT:SaleDiscountRight:1" version="1">
@@ -925,6 +978,13 @@
                 <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip1Zone" version="1">              
                     <Name lang="en">Single trip within one zone</Name>
                     <prices>
+                        <SalesOfferPackagePrice id="VTK:SalesOfferPackagePrice:1" version="1">
+                            <Amount>35</Amount>
+                            <Currency>NOK</Currency>
+                            <!--VATtype></VATtype--> <!-- Enumerations: 'exempt', 'low', 'reduced', 'regular' -->
+                            <!--AmountExVAT>33,02</AmountExVAT-->
+                            <!--VATpercentage>6</VATpercentage-->
+                        </SalesOfferPackagePrice>
                         <SalesOfferPackagePriceRef ref="ref"/>
                     </prices>
                     <salesOfferPackageElements>
