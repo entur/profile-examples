@@ -1,0 +1,130 @@
+1,EXCEPTION_FROM_VAT,NOR,00,0,Exception from vat,2018-01-01 00:00:00.000000,
+2,EXCEPTION_FROM_VAT,,00,0,No vat - border passing,2018-01-01 00:00:00.000000,
+3,GENERAL_VAT,NOR,03,25,General 25% Vat,2018-01-01 00:00:00.000000,
+4,GENERAL_VAT,,,0,General Vat with border passing,2018-01-01 00:00:00.000000,
+5,FOOD_VAT,NOR,31,15,Food (not serving) 15% Vat,2018-01-01 00:00:00.000000,
+6,FOOD_VAT,,,0,Food vat with border passing,2018-01-01 00:00:00.000000,
+9,TRANSPORT_AND_TICKETS_VAT,SWE,61,6,Person transport and tickets in Sweden,2018-01-01 00:00:00.000000,
+8,TRANSPORT_AND_TICKETS_VAT,,05,0,Transport Vat with border passing,2018-01-01 00:00:00.000000,
+7,TRANSPORT_AND_TICKETS_VAT,NOR,33,12,Person transport and tickets in Norway,2018-01-01 00:00:00.000000,2020-04-01 00:00:00.000000
+11,TRANSPORT_AND_TICKETS_VAT,NOR,33,12,Person transport and tickets in Norway,2021-10-01 00:00:00.000000,
+10,TRANSPORT_AND_TICKETS_VAT,NOR,33,6,Person transport and tickets in Norway during covid19,2020-04-01 00:00:00.000000,2021-10-01 00:00:00.000000
+
+
+
+
+
+
+<!-- EKSEMPEL - NYE DATAFELTER inkl pris inkl og ekskl moms (pris og VAT for samlet salg i SalesOfferPackage) -->
+<FareFrame id="VTK:FareFrame:VAT-VTK" version="1">
+    <Name>VKT bus single ticket</Name>
+    <fareProducts>
+        <PreassignedFareProduct id="VTK:PreassignedFareProduct:1" version="1">
+            <Name>Single ticket</Name>
+            <Description>Simplified dummy product for single trip</Description>
+            <ProductType>singleTrip</ProductType>
+        </PreassignedFareProduct>
+    </fareProducts>
+    
+    <salesOfferPackages>
+        <SalesOfferPackage id="VTK:SalesOfferPackage:1" version="1">
+            <Name>Single ticket</Name>
+            <prices>
+                <SalesOfferPackagePrice id="VTK:SalesOfferPackagePrice:1" version="1">
+                    <Amount>35</Amount>
+                    <Currency>NOK</Currency>
+                    <VATtype>low</VATtype> <!-- Enumerations 'exempt'/'zero', 'low', 'reduced', 'standard' eller trolig tekst-strenger definert i profil -->
+                    <AmountExVAT>33,02</AmountExVAT>
+                    <VATpercentage>6</VATpercentage>
+                </SalesOfferPackagePrice>
+            </prices>
+            <salesOfferPackageElements>
+                <SalesOfferPackageElement id="VTK:SalesOfferPackageElement:1" version="1" order="1">
+                    <Name>Single Ticket</Name>
+                    <PreassignedFareProductRef ref="VTK:PreassignedFareProduct:1" version="1"/>
+                </SalesOfferPackageElement>
+            </salesOfferPackageElements>
+        </SalesOfferPackage>
+    </SalesOfferPackage>
+</FareFrame>
+
+
+
+
+
+
+
+<!-- EKSEMPEL - NYE TYPEKODE-REFERANSE (pris med VAT-type per produkt) -->
+<ResourceFrame id="VYT:ResourceFrame:1" version="1" status="active">   
+    <typesOfValue>        
+        <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:ExceptionFromVAT" version="1">
+            <Name>ExceptionFromVAT</Name>
+            <Description>Price exempt from VAT (currently 0%)</Description>
+        </TypeOfAccessRightAssignment>
+        <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:LowVAT" version="1">
+            <Name>LowVAT</Name>
+            <Description>Price with low VAT as for e.g. public transport, entertainment (public broadcasting, cinemas, amusement parks, sports arrangements) and lodging (currently 6% until 2021-09-30, thereafter 12%)</Description>
+        </TypeOfAccessRightAssignment>
+        <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:ReducedVAT" version="1">
+            <Name>ReducedVAT</Name>
+            <Description>Price with reduced VAT as calculated for 'Næringsmidler' such as food items (currently 15%)</Description>
+        </TypeOfAccessRightAssignment>
+        <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:RegularVAT" version="1">
+            <Name>RegularVAT</Name>
+            <Description>Price with regular VAT (currently 25%)</Description>
+        </TypeOfAccessRightAssignment>
+    </typesOfValue>
+</ResourceFrame>
+
+<FareFrame id="VYT:FareFrame:VAT-VYT" version="1">
+    <Name>Vy point-to-point ticket including bicycle</Name>
+    <fareProducts>
+        <PreassignedFareProduct id="VYT:PreassignedFareProduct:1" version="1">
+            <Name>Adult Oslo - Bergen</Name>
+            <De
+            <TypeOfFareProductRef ref="ENT:TypeOfFareProduct:LowVAT" version="1"/>
+            <Description>Simplified product for illustration</Description>
+            <ProductType>singleTrip</ProductType>
+            <prices>
+                <FareProductPrice id="VYT:FareProductPrice:1" version="1">
+                    <Amount>549</Amount>
+                    <Currency>NOK</Currency>
+                </FareProductPrice>
+            </prices>
+        </PreassignedFareProduct>
+        
+        <SupplementProduct id="VYT:SupplementProduct:1" version="1">
+            <Name>Bicycle Oslo - Bergen as additional luggage ("sykkel, tilleggsprodukt")</Name>
+            <TypeOfFareProductRef ref="ENT:TypeOfFareProduct:RegularVAT" version="1"/>
+            <prices>
+                <FareProductPrice id="VYT:FareProductPrice:1" version="1">
+                    <Amount>229</Amount>
+                    <Currency>NOK</Currency>
+                </FareProductPrice>
+            </prices>
+            <SupplementProductType>bicycle</SupplementProductType>
+        </SupplementProduct>
+    </fareProducts>
+    
+    <salesOfferPackages>
+        <SalesOfferPackage id="VYT:SalesOfferPackage:1" version="1">
+            <Name>Adult Oslo - Bergen including bicycle</Name>
+            <prices>
+                <SalesOfferPackagePrice id="VYT:SalesOfferPackagePrice:1" version="1">
+                    <Amount>778</Amount>
+                    <Currency>NOK</Currency>
+                </SalesOfferPackagePrice>
+            </prices>
+            <salesOfferPackageElements>
+                <SalesOfferPackageElement id="VYT:SalesOfferPackageElement:1" version="1" order="1">
+                    <Name>Single Ticket</Name>
+                    <PreassignedFareProductRef ref="VYT:PreassignedFareProduct:1" version="1"/>
+                </SalesOfferPackageElement>
+                <SalesOfferPackageElement id="VYT:SalesOfferPackageElement:2" version="1" order="1">
+                    <Name>Single Ticket</Name>
+                    <PreassignedFareProductRef ref="VYT:SupplementProduct:1" version="1"/>
+                </SalesOfferPackageElement>
+            </salesOfferPackageElements>
+        </SalesOfferPackage>
+    </SalesOfferPackage>
+</FareFrame>
