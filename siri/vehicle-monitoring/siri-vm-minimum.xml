@@ -13,7 +13,7 @@
                 <RecordedAtTime>2018-08-17T15:13:20</RecordedAtTime>
                 <ValidUntilTime>2018-08-17T16:13:29</ValidUntilTime>
                 <MonitoredVehicleJourney>
-                    <LineRef>60</LineRef>
+                    <LineRef>ATB:Line:60</LineRef>
                     <FramedVehicleJourneyRef>
                         <DataFrameRef>2018-08-17</DataFrameRef>
                         <DatedVehicleJourneyRef>ATB:ServiceJourney:00600027</DatedVehicleJourneyRef>
