@@ -374,8 +374,7 @@
 <!-- EXAMPLE bus-for-rail -->
                             <TransportMode>rail</TransportMode>
                             <TransportSubmode>
-                                <RailSubmode>unknown</RailSubmode> 
-                                <!-- although a BusSubmode is technically doable for TransportMode "rail" this is not accepted according to profile -->
+                                <BusSubmode>railReplacementBus</BusSubmode>
                             </TransportSubmode>
                             <JourneyPatternRef ref="VYG:JourneyPattern:1" version="1"/>
                             <passingTimes>
@@ -547,87 +546,49 @@
 
 
                         <!-- Normal service -->
-                        <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:Test-1" >
-                            <dayTypes>
-                                <DayTypeRef ref="ref"/>
-                            </dayTypes>
-                            <TrainRef ref="ref" changed="2020-11-11T20:00:00"/>
-                            <!--<ServiceJourneyRef ref="ref"/>-->
-                        </DatedServiceJourney>
-
-                        <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:Test-2">
-                            <!--<VehicleJourneyRef ref="ref"/>-->
-                            
+                        <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-2020-01-01">
                             <ServiceAlteration>planned</ServiceAlteration>
-                            <dayTypes>
-                                <DayTypeRef ref=""></DayTypeRef>
-                            </dayTypes>
-                            <OperatingDayRef ref="ref"/>
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1" version="1"/>
+                            <OperatingDayRef ref="VYG:OperatingDay:2020-01-01" version="1"/>
                         </DatedServiceJourney>
-
-
-                        <DatedVehicleJourney version="1" id="VYG:DatedVehicleJourney:Test-3" >
-                            <VehicleJourneyRef ref="ref"/>
-                            
-                            <OperatingDayRef ref="ref"/>
-                            
-                        </DatedVehicleJourney>
-                        
-                        <DatedVehicleJourney version="1" id="VYG:DatedVehicleJourney:Test-4" >
-                            <dayTypes>
-                                <DayTypeRef ref="ref"/>
-                            </dayTypes>
-                            <OperatingDayRef ref="ref"/>
-                        </DatedVehicleJourney>
-                        
-                        
-                        <!-- dummy sample -->
-                        <NormalDatedVehicleJourney version="1" id="VYG:NormalDatedVehicleJourney:Test-5" >
-                            <dayTypes>
-                                <DayTypeRef ref="ref"/>
-                            </dayTypes>
-                            <OperatingDayRef ref="ref"/>
-                            <ServiceAlterationType>extraJourney</ServiceAlterationType>
-                        </NormalDatedVehicleJourney>
-                        
 
                         <!-- Cancelled service without replacement -->
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-2020-01-02">
                             <ServiceAlteration>cancellation</ServiceAlteration>
-                            <!--ServiceJourneyRef ref="VYG:ServiceJourney:1" version="1"/-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1" version="1"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-02" version="1"/>
                         </DatedServiceJourney>
 
                         <!-- Partially cancelled service (i.e. replaced with ServiceJourney with new JourneyPattern where Asker and Drammen is not serviced) -->
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-2020-01-03">
                             <ServiceAlteration>replaced</ServiceAlteration>
-                            <!--<ServiceJourneyRef ref="VYG:ServiceJourney:1"/>-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-03" version="1"/>
                         </DatedServiceJourney>
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-A-2020-01-03" derivedFromObjectRef="">
                             <ServiceAlteration>planned</ServiceAlteration>
-                            <!--<ServiceJourneyRef ref="VYG:ServiceJourney:1-A" version="1"/>-->
-                            <!--<DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-03" version="1"/>-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1-A" version="1"/>
+                            <DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-03" version="1"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-03" version="1"/>
                         </DatedServiceJourney>
 
                         <!-- Partially cancelled service including replacement bus, but only for Sandvika to Asker (i.e. Asker to Drammen is not serviced) -->
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-2020-01-04">
                             <ServiceAlteration>replaced</ServiceAlteration>
-                            <!--<ServiceJourneyRef ref="VYG:ServiceJourney:1" version="1"/>-->
-                            <!--<VehicleJourneyRef ref="ref"/>-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1" version="1"/>
+                            <VehicleJourneyRef ref="ref"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-04" version="1"/>
                         </DatedServiceJourney>
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-A-2020-01-04">
                             <ServiceAlteration>planned</ServiceAlteration>
-                            <!--<ServiceJourneyRef ref="VYG:ServiceJourney:1-A" version="1"/>-->
-                            <!--<DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-04" version="1"/>-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1-A" version="1"/>
+                            <DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-04" version="1"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-04" version="1"/>
                         </DatedServiceJourney>
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-B-2020-01-04">
                             <ServiceAlteration>planned</ServiceAlteration>
-                            <!--<ServiceJourneyRef ref="VYG:ServiceJourney:1-B" version="1"/>-->
-                            <!--<DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-04" version="1"/>-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1-B" version="1"/>
+                            <DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-04" version="1"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-04" version="1"/>
                         </DatedServiceJourney>
 
@@ -635,35 +596,54 @@
                         <!-- (B and C would normally be a combined JourneyPattern/ServiceJourney, but is split for examplification of combined replacement transport) -->
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-2020-01-05">
                             <ServiceAlteration>replaced</ServiceAlteration>
-                            <!--<ServiceJourneyRef ref="VYG:ServiceJourney:1" version="1"/>-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1" version="1"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-05" version="1"/>
                         </DatedServiceJourney>
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-A-2020-01-05">
                             <ServiceAlteration>planned</ServiceAlteration>
-                            <!--<ServiceJourneyRef ref="VYG:ServiceJourney:1-A" version="1"/>-->
-                            <!--<DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-05" version="1"/>-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1-A" version="1"/>
+                            <DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-05" version="1"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-05" version="1"/>
                         </DatedServiceJourney>
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-B-2020-01-05">
                             <ExternalVehicleJourneyRef ref=""/>
                             <ServiceAlteration>planned</ServiceAlteration>
-                            <!--<ServiceJourneyRef ref="VYG:ServiceJourney:1-B" version="1"/>-->
-                            <!--<DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-05" version="1"/>-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1-B" version="1"/>
+                            <DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-05" version="1"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-05" version="1"/>
                         </DatedServiceJourney>
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-C-2020-01-05">
                             <ServiceAlteration>planned</ServiceAlteration>
-                            <!--<ServiceJourneyRef ref="VYG:ServiceJourney:1-C" version="1"/>-->
-                            <!--<DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-05" version="1"/>-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1-C" version="1"/>
+                            <DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-05" version="1"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-05" version="1"/>
                         </DatedServiceJourney>
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-D-2020-01-05">
                             <ServiceAlteration>extraJourney</ServiceAlteration>
-                            <!--<ServiceJourneyRef ref="VYG:ServiceJourney:1-D" version="1"/>
-                            <DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-05" version="1"/>-->
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1-D" version="1"/>
+                            <DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-05" version="1"/>
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-05" version="1"/>
                         </DatedServiceJourney>
                         
+                        
+                        <!-- Supplementary sample of using journey <parts> in a dated service journey --> 
+                        <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-D-2022-01-05">
+                            <ServiceAlteration>extraJourney</ServiceAlteration>
+                            <parts>
+                                <JourneyPart id="ENT:JourneyPart:UnPartDuHakon" version="1">
+                                    <FromStopPointRef ref="VYG:ScheduledStopPoint:2" version="1"/>
+                                    <ToStopPointRef ref="VYG:ScheduledStopPoint:3" version="1"/>
+                                    <StartTime>11:11:11</StartTime>
+                                    <EndTime>13:37:00</EndTime>
+                                </JourneyPart>
+                            </parts>
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1-D" version="1"/>
+                            <DatedServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-05" version="1"/>
+                            <OperatingDayRef ref="VYG:OperatingDay:2020-01-05" version="1"/>
+                        </DatedServiceJourney>
+
+
+
 
                         <!--
               DEPRECATED COMMENT:
@@ -677,26 +657,27 @@
               derivedFromVersionRef (attribute) = version of the referred DatedServiceJourney
             -->
 
+
                         <!-- EXAMPLES -->
 
-                        <NormalDatedVehicleJourney id="VYG:NormalDatedVehicleJourney:Demo1" version="1">
+                        <NormalDatedVehicleJourney>
                             <VehicleJourneyRef ref="ref"/>
                             <OperatingDayRef ref="ref"/>
                             <ServiceAlterationType>planned</ServiceAlterationType>
                         </NormalDatedVehicleJourney>
 
-                        <DatedVehicleJourney id="VYG:DatedVehicleJourney:Demo1" version="1">
+                        <DatedVehicleJourney>
                             <dayTypes>
                                 <DayTypeRef ref="ref"/>
                             </dayTypes>
                             <TrainRef ref="ref" changed="2020-11-11T20:00:00"/>
                             <ServiceJourneyRef ref="ref"/>
-<!--                            <VehicleJourneyRef ref="ref"/>
+                            <ServiceJourneyRef ref="ref"/>
                             <DatedServiceJourneyRef ref="reg"/>
                             <DatedVehicleJourneyRef ref="ref"/>
                             <NormalDatedVehicleJourneyRef ref="ref"/>
                             <NormalDatedVehicleJourneyRef ref="ref"/>
--->                            <OperatingDayRef ref="ref"/>
+                            <OperatingDayRef ref="ref"/>
                         </DatedVehicleJourney>
                     </vehicleJourneys>
 

@@ -553,9 +553,12 @@
                     <TariffBasis>discount</TariffBasis>
                     <validityParameterAssignments>
                         <GenericParameterAssignment id="ENT:GenericParameterAssignment:1" version="1" order="0">
+                            <LimitationGroupingType>AND</LimitationGroupingType>
                             <limitations>
                                 <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1" version="1"/>
                             </limitations>
+                            <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                            <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                             <validityParameters>
                                 <AuthorityRef ref="ENT:Authority:Ruter" version="1"/>
                                 <TariffZoneRef ref="RUT:TariffZone:1" version="1"/>
@@ -1236,6 +1239,17 @@
             </customerPurchasePackages>
 
         </SalesTransactionFrame>
- 
+
+
+        <FareFrame id="ATB:FareFrame:ATB" version="any">
+            <versions>
+                <Version created="2021-04-19T12:48:54.192" modification="new" id="ATB:Version:2feab0dc-705a-448a-95d4-74a7a8fbd36c" changed="2021-04-19T13:01:56.453" version="any">
+                    <StartDate>2021-04-20T00:00:00</StartDate>
+                    <Status>versioned</Status>
+                    <VersionType>baseline</VersionType>
+                </Version>
+            </versions>
+        </FareFrame>
+
     </dataObjects>
 </PublicationDelivery>
