@@ -6,206 +6,235 @@
 
 -->
 
-<PublicationDelivery
-  xmlns="http://www.netex.org.uk/netex"
-  xmlns:gis="http://www.opengis.net/gml/3.2"
-  xmlns:siri="http://www.siri.org.uk/siri"
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  xmlns:gis="http://www.opengis.net/gml/3.2" 
+  xmlns:siri="http://www.siri.org.uk/siri" 
   version="1.10:NO-NeTEx-networktimetable:1.4">
 
-  <PublicationTimestamp>2020-12-16T11:11:11</PublicationTimestamp>
-  <ParticipantRef>ENT</ParticipantRef>
-  <Description>Materiell-eksempel</Description>
-  
-  <dataObjects>
-    <ResourceFrame id="ENT:ResourceFrame:1" version="1">
-      <vehicleTypes>
-        <Train id="ENT:Train-P-T:1:1" version="1">
-          <ReversingDirection>true</ReversingDirection>
-          <TypeOfFuel>electricity</TypeOfFuel>
-          <components>
-            <TrainComponent  id="ENT:Train-P-T-1:1" version="1" order="1">
-              <TrainElementRef ref="Engine-1"/>
-            </TrainComponent> 
-            <TrainComponent id="ENT:Train-P-T-2:1" version="1" order="2">
-              <TrainElementRef ref="B7-6"/>
-            </TrainComponent>
-            <TrainComponent id="ENT:Train-P-T-3:1" version="1" order="3">
-              <TrainElementRef ref="WLAB2"/>
-            </TrainComponent>
-          </components>
-        </Train>
-        <Train id="ENT:Train-X-T:1" version="1">
-          <components>
-            <TrainComponent id="ENT:Train-X-T-1:1" version="1" order="1">
-              <TrainElementRef ref="Engine-2"/>
-            </TrainComponent>
-            <TrainComponent id="ENT:Train-X-T-2:1" version="1" order="2"> 
-              <TrainElementRef ref="WLAB2"/>
-            </TrainComponent>
-          </components>
-        </Train>
-        <Train id="ENT:Train-Q-T:1" version="1">
-          <components>
-            <TrainComponent id="ENT:Train-Q-T-1:1" version="1" order="1">
-              <TrainElementRef ref="WLAB2"/>
-            </TrainComponent>
-          </components>
-        </Train>
-        <Train id="ENT:CompTrain-Q-R:1" version="1">
-          <components>
-            <TrainComponentRef ref="Train-P-T-1" order="1"/>
-            <TrainComponentRef ref="Train-P-T-2" order="2"/>
-            <TrainComponentRef ref="Train-P-T-3" order="3"/>
-            <TrainComponentRef ref="Train-Q-T-1" order="4"/>
-          </components>
-        </Train>
-        <Train id="ENT:CompTrain-R-T:1" version="1">
-          <components>
-            <TrainComponentRef ref="Train-P-T-1" order="1"/>
-            <TrainComponentRef ref="Train-P-T-2" order="2"/>
-            <TrainComponentRef ref="Train-P-T-3" order="3"/>
-            <TrainComponentRef ref="Train-Q-T-1" order="4"/>
-            <TrainComponentRef ref="Train-X-T-2" order="5"/>
-          </components>
-        </Train>
-        <Train id="ENT:CompTrain-S-T:1" version="1">
-          <components>
-            <TrainComponentRef ref="Train-P-T-2" order="1"/>
-            <TrainComponentRef ref="Train-P-T-3" order="2"/>
-            <TrainComponentRef ref="Train-Q-T-1" order="3"/>
-            <TrainComponentRef ref="Train-X-T-2" order="4"/>
-            <TrainComponentRef ref="Train-P-T-1" order="5"/>
-          </components>
-        </Train>
-      </vehicleTypes>
-    </ResourceFrame>
-    <VehicleScheduleFrame id="ENT:VehicleScheduleFrame:1" version="1">
-      <blocks>
-        <Block id="ENT:Block:EXAMPLE" version="1">
-          <coursesOfJourneys>
-            <CourseOfJourneys id="ENT:CourseOfJourneys:1" version="1">
-              <journeys>
-                <ServiceJourneyRef ref="ref"></ServiceJourneyRef>
-              </journeys>
-            </CourseOfJourneys>
-          </coursesOfJourneys>
-        </Block>
-        <TrainBlock id="ENT:TrainBlock:1" version="1">
-          <blockParts>
-            <TrainBlockPart id="ENT:P-Q:1" version="1">
-              <TrainRef ref="Train-P-T"/>
-            </TrainBlockPart>
-            <TrainBlockPart  id="ENT:Q-R:1" version="1">
-              <TrainRef ref="CompTrain-Q-R"/>
-            </TrainBlockPart>
-            <TrainBlockPart  id="ENT:X-R:1" version="1">
-              <TrainRef ref="Train-X-T"/>
-            </TrainBlockPart>
-            <TrainBlockPart id="ENT:R-S:1" version="1">
-              <TrainRef ref="CompTrain-R-T"/>
-            </TrainBlockPart>
-            <TrainBlockPart id="ENT:S-T:1" version="1">
-              <TrainRef ref="CompTrain-S-T"/>
-            </TrainBlockPart>
-          </blockParts>
-        </TrainBlock>
-      </blocks>
-    </VehicleScheduleFrame>
-    <TimetableFrame id="ENT:TimetableFrame:1" version="1">
-      <vehicleJourneys>
-        <ServiceJourney id="ENT:ServiceJourney:D1" version="1">
-          <parts>
-            <JourneyPart id="ENT:JourneyPart:D1-1" version="1">
-              <TrainBlockPartRef ref="P-Q"/>
-              <FromStopPointRef ref="P"/>
-              <ToStopPointRef ref="Q"/>
-              <StartTime>00:00:00</StartTime>
-              <EndTime>00:00:00</EndTime>
-              <VehicleOrientation>true</VehicleOrientation>
-            </JourneyPart>
-            <JourneyPart id="ENT:JourneyPart:D1-2" version="1">
-              <TrainBlockPartRef ref="Q-R"/>
-              <FromStopPointRef ref="Q"/>
-              <ToStopPointRef ref="R"/>
-              <StartTime>00:00:00</StartTime>
-              <EndTime>00:00:00</EndTime>
-              <VehicleOrientation>true</VehicleOrientation>
-            </JourneyPart>
-            <JourneyPart id="ENT:JourneyPart:D1-3" version="1">
-              <TrainBlockPartRef ref="R-S"/>
-              <FromStopPointRef ref="R"/>
-              <ToStopPointRef ref="S"/>
-              <StartTime>00:00:00</StartTime>
-              <EndTime>00:00:00</EndTime>
-              <VehicleOrientation>true</VehicleOrientation>
-            </JourneyPart>
-            <JourneyPart id="ENT:JourneyPart:D1-4" version="1">
-              <TrainBlockPartRef ref="S-T"/>
-              <FromStopPointRef ref="S"/>
-              <ToStopPointRef ref="T"/>
-              <StartTime>00:00:00</StartTime>
-              <EndTime>00:00:00</EndTime>
-              <VehicleOrientation>true</VehicleOrientation>
-            </JourneyPart>
-          </parts>
-        </ServiceJourney>
-        <ServiceJourney id="ENT:ServiceJourney:D2" version="1">
-          <parts>
-            <JourneyPart id="ENT:JourneyPart:D2-1" version="1">
-              <TrainBlockPartRef ref="X-R"/>
-              <FromStopPointRef ref="X"/>
-              <ToStopPointRef ref="R"/>
-              <StartTime>00:00:00</StartTime>
-              <EndTime>00:00:00</EndTime>
-              <VehicleOrientation>true</VehicleOrientation>
-            </JourneyPart>
-            <JourneyPart id="ENT:JourneyPart:D2-2" version="1">
-              <TrainBlockPartRef ref="R-S"/>
-              <FromStopPointRef ref="R"/>
-              <ToStopPointRef ref="S"/>
-              <StartTime>00:00:00</StartTime>
-              <EndTime>00:00:00</EndTime>
-              <VehicleOrientation>true</VehicleOrientation>
-            </JourneyPart>
-            <JourneyPart id="ENT:JourneyPart:D2-3" version="1">
-              <TrainBlockPartRef ref="S-T"/>
-              <FromStopPointRef ref="S"/>
-              <ToStopPointRef ref="T"/>
-              <StartTime>00:00:00</StartTime>
-              <EndTime>00:00:00</EndTime>
-              <VehicleOrientation>true</VehicleOrientation>
-            </JourneyPart>
-          </parts>
-        </ServiceJourney>
-      </vehicleJourneys>
-      <journeyPartCouples>
-        <JourneyPartCouple id="ENT:JourneyPartCouple:D1-D2" version="1" order="1">
-          <StartTime>00:00:00</StartTime>
-          <EndTime>00:00:00</EndTime>
-          <FromStopPointRef ref="R"/>
-          <ToStopPointRef ref="T"/>
-          <MainPartRef ref="R-S"/>
-          <journeyParts>
-            <JourneyPartRef ref="R-S"/>
-            <JourneyPartRef ref="S-T"/>
-          </journeyParts>
-        </JourneyPartCouple>
-      </journeyPartCouples>
-      <coupledJourneys>
-        <CoupledJourney id="ENT:CoupledJourney:1" version="1">
-          <journeys>
-            <VehicleJourneyRef ref="XXX:ServiceJourney:D1"/>
-            <VehicleJourneyRef ref="XXX:ServiceJourney:D2"/> 
-          </journeys>
-        </CoupledJourney>
-      </coupledJourneys>
-      <journeyMeetings>
-        <JourneyMeeting id="ENT:JourneyMeeting:1" version="1">
-          <AtStopPointRef ref="R"/>
-          <FromJourneyRef ref="XXX:ServiceJourney:D2"/>
-          <ToJourneyRef ref="XXX:ServiceJourney:D1"/>
-        </JourneyMeeting>
-        <!--
+    <PublicationTimestamp>2020-12-16T11:11:11</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <Description>Materiell-eksempel</Description>
+
+    <dataObjects>
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            <vehicleTypes>
+                <Train id="ENT:Train-P-T:1:1" version="1">
+                    <ReversingDirection>true</ReversingDirection>
+                    <TypeOfFuel>electricity</TypeOfFuel>
+                    <components>
+                        <TrainComponent id="ENT:Train-P-T-1:1" version="1" order="1">
+                            <TrainElementRef ref="Engine-1"/>
+                        </TrainComponent>
+                        <TrainComponent id="ENT:Train-P-T-2:1" version="1" order="2">
+                            <TrainElementRef ref="B7-6"/>
+                        </TrainComponent>
+                        <TrainComponent id="ENT:Train-P-T-3:1" version="1" order="3">
+                            <TrainElementRef ref="WLAB2"/>
+                        </TrainComponent>
+                    </components>
+                </Train>
+                <Train id="ENT:Train-X-T:1" version="1">
+                    <components>
+                        <TrainComponent id="ENT:Train-X-T-1:1" version="1" order="1">
+                            <TrainElementRef ref="Engine-2"/>
+                        </TrainComponent>
+                        <TrainComponent id="ENT:Train-X-T-2:1" version="1" order="2">
+                            <TrainElementRef ref="WLAB2"/>
+                        </TrainComponent>
+                    </components>
+                </Train>
+                <Train id="ENT:Train-Q-T:1" version="1">
+                    <components>
+                        <TrainComponent id="ENT:Train-Q-T-1:1" version="1" order="1">
+                            <TrainElementRef ref="WLAB2"/>
+                        </TrainComponent>
+                    </components>
+                </Train>
+                <Train id="ENT:CompTrain-Q-R:1" version="1">
+                    <components>
+                        <TrainComponentRef ref="Train-P-T-1" order="1"/>
+                        <TrainComponentRef ref="Train-P-T-2" order="2"/>
+                        <TrainComponentRef ref="Train-P-T-3" order="3"/>
+                        <TrainComponentRef ref="Train-Q-T-1" order="4"/>
+                    </components>
+                </Train>
+                <Train id="ENT:CompTrain-R-T:1" version="1">
+                    <components>
+                        <TrainComponentRef ref="Train-P-T-1" order="1"/>
+                        <TrainComponentRef ref="Train-P-T-2" order="2"/>
+                        <TrainComponentRef ref="Train-P-T-3" order="3"/>
+                        <TrainComponentRef ref="Train-Q-T-1" order="4"/>
+                        <TrainComponentRef ref="Train-X-T-2" order="5"/>
+                    </components>
+                </Train>
+                <Train id="ENT:CompTrain-S-T:1" version="1">
+                    <components>
+                        <TrainComponentRef ref="Train-P-T-2" order="1"/>
+                        <TrainComponentRef ref="Train-P-T-3" order="2"/>
+                        <TrainComponentRef ref="Train-Q-T-1" order="3"/>
+                        <TrainComponentRef ref="Train-X-T-2" order="4"/>
+                        <TrainComponentRef ref="Train-P-T-1" order="5"/>
+                    </components>
+                </Train>
+            </vehicleTypes>
+        </ResourceFrame>
+        <VehicleScheduleFrame id="ENT:VehicleScheduleFrame:1" version="1">
+            <blocks>
+                <Block id="ENT:Block:EXAMPLE" version="1">
+                    <coursesOfJourneys>
+                        <CourseOfJourneys id="ENT:CourseOfJourneys:1" version="1">
+                            <journeys>
+                                <ServiceJourneyRef ref="ref"/>
+                            </journeys>
+                        </CourseOfJourneys>
+                    </coursesOfJourneys>
+                </Block>
+                <TrainBlock id="ENT:TrainBlock:1" version="1">
+                    <blockParts>
+                        <TrainBlockPart id="ENT:P-Q:1" version="1" order="1">
+                            <TrainRef ref="Train-P-T"/>
+                        </TrainBlockPart>
+                        <TrainBlockPart id="ENT:Q-R:1" version="1">
+                            <TrainRef ref="CompTrain-Q-R"/>
+                        </TrainBlockPart>
+                        <TrainBlockPart id="ENT:X-R:1" version="1">
+                            <TrainRef ref="Train-X-T"/>
+                        </TrainBlockPart>
+                        <TrainBlockPart id="ENT:R-S:1" version="1">
+                            <TrainRef ref="CompTrain-R-T"/>
+                        </TrainBlockPart>
+                        <TrainBlockPart id="ENT:S-T:1" version="1">
+                            <TrainRef ref="CompTrain-S-T"/>
+                        </TrainBlockPart>
+                    </blockParts>
+                </TrainBlock>
+            </blocks>
+        </VehicleScheduleFrame>
+        <TimetableFrame id="ENT:TimetableFrame:1" version="1">
+            <vehicleJourneys>
+                <ServiceJourney id="ENT:ServiceJourney:D1" version="1">
+                    <parts>
+                        <JourneyPart id="ENT:JourneyPart:D1-1" version="1">
+                            <TrainNumberRef ref=""></TrainNumberRef>
+                            <TrainBlockPartRef ref="P-Q"/>
+                            <FromStopPointRef ref="P"/>
+                            <ToStopPointRef ref="Q"/>
+                            <StartTime>00:00:00</StartTime>
+                            <EndTime>00:00:00</EndTime>
+                            <VehicleOrientation>true</VehicleOrientation>
+                        </JourneyPart>
+                        <JourneyPart id="ENT:JourneyPart:D1-2" version="1">
+                            <TrainBlockPartRef ref="Q-R"/>
+                            <FromStopPointRef ref="Q"/>
+                            <ToStopPointRef ref="R"/>
+                            <StartTime>00:00:00</StartTime>
+                            <EndTime>00:00:00</EndTime>
+                            <VehicleOrientation>true</VehicleOrientation>
+                        </JourneyPart>
+                        <JourneyPart id="ENT:JourneyPart:D1-3" version="1">
+                            <TrainBlockPartRef ref="R-S"/>
+                            <FromStopPointRef ref="R"/>
+                            <ToStopPointRef ref="S"/>
+                            <StartTime>00:00:00</StartTime>
+                            <EndTime>00:00:00</EndTime>
+                            <VehicleOrientation>true</VehicleOrientation>
+                        </JourneyPart>
+                        <JourneyPart id="ENT:JourneyPart:D1-4" version="1">
+                            <TrainBlockPartRef ref="S-T"/>
+                            <FromStopPointRef ref="S"/>
+                            <ToStopPointRef ref="T"/>
+                            <StartTime>00:00:00</StartTime>
+                            <EndTime>00:00:00</EndTime>
+                            <VehicleOrientation>true</VehicleOrientation>
+                        </JourneyPart>
+                    </parts>
+                </ServiceJourney>
+                <ServiceJourney id="ENT:ServiceJourney:D2" version="1">
+                    <trainNumbers>
+                        <TrainNumberRef ref="ENT:TrainNumber:1" version="1"/>
+                        <TrainNumberRef ref="ENT:TrainNumber:2" version="1"/>
+                    </trainNumbers>
+                    <parts>
+                        <JourneyPart id="ENT:JourneyPart:D2-1" version="1">
+                            <TrainNumberRef ref="ENT:TrainNumber:1" version="1"/>
+                            <TrainBlockPartRef ref="X-R"/>
+                            <FromStopPointRef ref="X"/>
+                            <ToStopPointRef ref="R"/>
+                            <StartTime>00:00:00</StartTime>
+                            <EndTime>00:00:00</EndTime>
+                            <VehicleOrientation>true</VehicleOrientation>
+                        </JourneyPart>
+                        <JourneyPart id="ENT:JourneyPart:D2-2" version="1">
+                            <TrainBlockPartRef ref="R-S"/>
+                            <FromStopPointRef ref="R"/>
+                            <ToStopPointRef ref="S"/>
+                            <StartTime>00:00:00</StartTime>
+                            <EndTime>00:00:00</EndTime>
+                            <VehicleOrientation>true</VehicleOrientation>
+                        </JourneyPart>
+                        <JourneyPart id="ENT:JourneyPart:D2-3" version="1">
+                            <TrainNumberRef ref="ENT:TrainNumber:2" version="1"/>
+                            <TrainBlockPartRef ref="S-T"/>
+                            <FromStopPointRef ref="S"/>
+                            <ToStopPointRef ref="T"/>
+                            <StartTime>00:00:00</StartTime>
+                            <EndTime>00:00:00</EndTime>
+                            <VehicleOrientation>true</VehicleOrientation>
+                            <!--
+                            <journeyPartPositions>
+                                <JourneyPartPosition>
+                                    <ScheduledStopPointRef ref=""></ScheduledStopPointRef>
+                                    <PositionInTrain></PositionInTrain>
+                                </JourneyPartPosition>
+                            </journeyPartPositions>
+                            -->
+                        </JourneyPart>
+                    </parts>
+                </ServiceJourney>
+            </vehicleJourneys>
+            
+            <trainNumbers>
+                <TrainNumber id="ENT:TrainNumber:1" version="1">
+                    <ForAdvertisement>123</ForAdvertisement>
+                </TrainNumber>
+                <TrainNumber id="ENT:TrainNumber:2" version="1">
+                    <ForAdvertisement>248</ForAdvertisement>
+                </TrainNumber>
+                <TrainNumber id="ENT:TrainNumber:3" version="1">
+                    <ForAdvertisement>333</ForAdvertisement>
+                </TrainNumber>
+            </trainNumbers>
+
+            <journeyPartCouples>
+                <JourneyPartCouple id="ENT:JourneyPartCouple:D1-D2" version="1" order="1">
+                    <StartTime>00:00:00</StartTime>
+                    <EndTime>00:00:00</EndTime>
+                    <FromStopPointRef ref="R"/>
+                    <ToStopPointRef ref="T"/>
+                    <MainPartRef ref="R-S"/>
+                    <journeyParts>
+                        <JourneyPartRef ref="R-S"/>
+                        <JourneyPartRef ref="S-T"/>
+                    </journeyParts>
+                    <TrainNumberRef ref="ENT:TrainNumber:3" version="1"/>
+                </JourneyPartCouple>
+            </journeyPartCouples>
+            <coupledJourneys>
+                <CoupledJourney id="ENT:CoupledJourney:1" version="1">
+                    <journeys>
+                        <VehicleJourneyRef ref="XXX:ServiceJourney:D1"/>
+                        <VehicleJourneyRef ref="XXX:ServiceJourney:D2"/>
+                    </journeys>
+                </CoupledJourney>
+            </coupledJourneys>
+            <journeyMeetings>
+                <JourneyMeeting id="ENT:JourneyMeeting:1" version="1">
+                    <AtStopPointRef ref="R"/>
+                    <FromJourneyRef ref="XXX:ServiceJourney:D2"/>
+                    <ToJourneyRef ref="XXX:ServiceJourney:D1"/>
+                </JourneyMeeting>
+                <!--
                   <JourneyMeeting>
                       <AtStopPointRef ref="S"/>
                       <FromJourneyRef ref="XXX:ServiceJourney:D2"/>
@@ -213,17 +242,17 @@
                       <Reason>splitting</Reason>
                   </JourneyMeeting>
          -->
-      </journeyMeetings>
-      <journeyInterchanges>
-        <ServiceJourneyInterchange id="ENT:ServiceJourneyInterchange:1" version="1">
-          <StaySeated>true</StaySeated>
-          <ConnectionCertainty>guaranteed</ConnectionCertainty>
-          <FromPointRef ref="R"/>
-          <ToPointRef ref="R"/>
-          <FromJourneyRef ref="D2"/>
-          <ToJourneyRef ref="D1"/>
-        </ServiceJourneyInterchange>
-      </journeyInterchanges>
-    </TimetableFrame>
-  </dataObjects>
+            </journeyMeetings>
+            <journeyInterchanges>
+                <ServiceJourneyInterchange id="ENT:ServiceJourneyInterchange:1" version="1">
+                    <StaySeated>true</StaySeated>
+                    <ConnectionCertainty>guaranteed</ConnectionCertainty>
+                    <FromPointRef ref="R"/>
+                    <ToPointRef ref="R"/>
+                    <FromJourneyRef ref="D2"/>
+                    <ToJourneyRef ref="D1"/>
+                </ServiceJourneyInterchange>
+            </journeyInterchanges>
+        </TimetableFrame>
+    </dataObjects>
 </PublicationDelivery>
