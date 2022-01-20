@@ -42,7 +42,7 @@
                 </CappedDiscountRight>
 
                 <!-- The discount right that is the basis for calculating beste pris discounts, Grenland area -->
-                <CappedDiscountRight id="VOT:CappedDiscountRight:Grenland" version="1">
+                <CappedDiscountRight id="VOT:CappedDiscountRight:BestePrisGrenland" version="1">
                     <Name>BestPrice discount right for Grenland</Name>
                     <!-- Other details as well as rules omitted -->
                 </CappedDiscountRight>
