@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery version="1.08:NO-NeTEx-fares:1.0" xmlns="http://www.netex.org.uk/netex">
+    <PublicationTimestamp>2018-09-04T12:00:00</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <dataObjects>
+
+        <!-- Reference data START -->
+
+        <ResourceFrame id="VOT:ResourceFrame:1" version="1">
+            <organisations>
+                <Authority id="VOT:Authority:1" version="1">
+                    <Name>Vestfold og Telemark Fylkestrafikk</Name>
+                </Authority>
+            </organisations>
+        </ResourceFrame>
+
+        <FareFrame id="VOT:FareFrame:1" version="1">
+
+            <validableElements>
+                <ValidableElement id="VOT:ValidableElement:BestPrice" version="1">
+                    <Name>Beste pris</Name>
+                </ValidableElement>
+                <ValidableElement id="VOT:ValidableElement:SingleTripBus" version="1">
+                    <Name>Enkeltreise Buss</Name>
+                </ValidableElement>
+            </validableElements>
+
+
+            <usageParameters>
+                <UserProfile id="VOT:UserProfile:Adult" version="1">
+                    <Name lang="no">Adult</Name>
+                </UserProfile>
+            </usageParameters>
+
+
+            <fareProducts>
+
+                <!-- The discount right that is the basis for calculating beste pris discounts, Vestfold area -->
+                <CappedDiscountRight id="VOT:CappedDiscountRight:Vestfold" version="1">
+                    <Name>BestPrice discount right for Vestfold</Name>
+                    <!-- Other details as well as rules omitted -->
+                </CappedDiscountRight>
+
+                <!-- The discount right that is the basis for calculating beste pris discounts, Grenland area -->
+                <CappedDiscountRight id="VOT:CappedDiscountRight:Grenland" version="1">
+                    <Name>BestPrice discount right for Grenland</Name>
+                    <!-- Other details as well as rules omitted -->
+                </CappedDiscountRight>
+
+                <PreassignedFareProduct id="VOT:PreassignedFareProduct:SingleTrip" version="1">
+                    <Name lang="no">Enkelttur buss</Name>
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+            </fareProducts>
+
+
+            <salesOfferPackages>
+                <SalesOfferPackage id="VOT:SalesOfferPackage:EnrolmentBestPriceVestfold" version="1">
+                    <Name lang="no">Beste pris for Vestfold</Name>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="VOT:SalesOfferPackageElement:EnrolmentBestPriceVestfold" version="1" order="1">
+                            <Name lang="no">Beste pris for vestfold</Name>
+                            <CappedDiscountRightRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+                <SalesOfferPackage id="VOT:SalesOfferPackage:SingleTrip" version="1">
+                    <Name lang="no">Single trip bus</Name>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="VOT:SalesOfferPackageElement:SingleTrip" version="1" order="1">
+                            <Name lang="no">Single trip bus</Name>
+                            <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+
+        </FareFrame>
+
+
+        <SiteFrame id="VOT:SiteFrame:1" version="1">
+            <tariffZones>
+                <TariffZone id="VOT:TariffZone:1" version="1">
+                    <Name lang="no">Grenland</Name>
+                </TariffZone>
+                <TariffZone id="VOT:TariffZone:2" version="1">
+                    <Name lang="no">Sandefjord</Name>
+                </TariffZone>
+            </tariffZones>
+        </SiteFrame>
+
+        <!-- Reference data END -->
+
+
+        <!-- 
+            The following example has different SalesTransactionFrame to simulate a TIMELINE. 
+            The TIMELINE is the same as the order of events
+
+            Note that the version field of the data below will change in order to allow the XSD validator to validate the
+            document, but in reality they will stay the same
+            
+        -->
+
+
+        <!-- Creation of the FARE CONTRACT with the initial CappedDiscountRight product -->
+        <SalesTransactionFrame id="VOT:SalesTransactionFrame:InitialCreationOfCappingAgreement" version="1">
+            <fareContracts>
+                <FareContract id="VOT:FareContract:1" version="1">
+                    <Name>Beste pris-avtale Grenland</Name>
+                    <fareContractEntries>
+                        <!-- Initial installation of CappedDiscountRight done via SalesTransaction here - but could also (and possibly prefrably be done via CustomerPurchasePackageAddedEntry
+                        By using a SalesTransaction we can also log ie a cost that has occured for the traveller. Ie if the discount right has a cost up front (ie NOK 10 to enrol)-->
+                        <SalesTransaction version="1" id="VOT:SalesTransaction:1">
+                            <Name>Inngåelse avtale</Name>
+                            <Date>2022-01-06T07:05:00</Date>
+                            <Amount>0</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to the actual CPP added to the account -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:BestePrisAvtale" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                    </fareContractEntries>
+
+                </FareContract>
+            </fareContracts>
+
+
+            <customerPurchasePackages>
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:BestePrisAvtale" version="1">
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:EnrolmentBestPriceVestfold" version="1"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:BestePrisAvtale" version="1" order="1">
+                            <elementAccesses>
+                                <!-- Agreement is pre-activated here - if the agreenment somehow has to be activated later on then we could add another CPPA instead with activation information -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>used</MarkedAs>
+                                    <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:BestPrice" version="1"/>
+                                    <FareProductRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>
+            </customerPurchasePackages>
+
+
+        </SalesTransactionFrame>
+
+        <!-- First trip -->
+
+        <SalesTransactionFrame id="VOT:SalesTransactionFrame:FirstTrip" version="2">
+            <fareContracts>
+                <FareContract id="VOT:FareContract:1" version="2">
+                    <Name>Beste pris-avtale Grenland</Name>
+                    <fareContractEntries>
+                        <!-- Initial installation of CappedDiscountRight done via SalesTransaction here - but could also (and possibly prefrably be done via CustomerPurchasePackageAddedEntry
+                        By using a SalesTransaction we can also log ie a cost that has occured for the traveller. Ie if the discount right has a cost up front (ie NOK 10 to enrol)-->
+                        <SalesTransaction version="2" id="VOT:SalesTransaction:InitialCreationOfCappedDiscountRight">
+                            <Name>Inngåelse avtale</Name>
+                            <Date>2022-01-06T07:05:00</Date>
+                            <Amount>0</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to the actual CPP added to the account -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:BestePrisAvtale" version="2"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                        
+                        <!-- ADDED in this step -->
+                        <SalesTransaction version="1" id="VOT:SalesTransaction:FirstPurchase">
+                            <Name>First ticket purchase</Name>
+                            <Date>2022-01-07T07:05:00</Date>
+                            <Amount>40</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to the actual CPP added to the account -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:FirstTrip" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                        <!-- END added in this step -->
+                        
+                        
+                    </fareContractEntries>
+                    
+                </FareContract>
+            </fareContracts>
+            
+            
+            <customerPurchasePackages>
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:BestePrisAvtale" version="2">
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:EnrolmentBestPriceVestfold" version="1"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:BestePrisAvtale" version="2" order="1">
+                            <elementAccesses>
+                                <!-- Agreement is pre-activated here - if the agreenment somehow has to be activated later on then we could add another CPPA instead with activation information -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>used</MarkedAs>
+                                    <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="2" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:BestPrice" version="1"/>
+                                    <FareProductRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>
+                
+                <!-- ADDED in this step -->
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:FirstTrip" version="1">
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:FirstTrip" version="1" order="1">
+                            <!-- This trip  is preactivated -->
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- Actual travel validity, pre-calculated -->
+                                    <!-- Assuming 60 min validity -->
+                                    <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2022-01-06T08:05:00</EndOfValidity>
+                                    
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="2" id="VOT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
+                                    <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                <!-- no activation rule necessary since pre-activated -->
+                                
+                                <!-- validity rule (actual travel rights) here -->
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UserProfileRef ref="VOT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="VOT:Authority:1" version="1"/>
+                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                        
+                    </customerPurchasePackageElements>
+                    <prices>
+                        <CustomerPurchasePackagePrice>
+                            <Amount>40</Amount>
+                            <Currency>NOK</Currency>
+                            <!-- Could be more details here as ruleStepResults for separating VAT etc -->
+                        </CustomerPurchasePackagePrice>
+                    </prices>
+                </CustomerPurchasePackage>
+                <!-- END added in this step -->
+                
+            </customerPurchasePackages>
+            
+            
+        </SalesTransactionFrame>
+
+
+        <!-- Second trip -->
+
+        <SalesTransactionFrame id="VOT:SalesTransactionFrame:SecondTrip" version="1">
+            <fareContracts>
+                <FareContract id="VOT:FareContract:1" version="3">
+                    <Name>Beste pris-avtale Grenland</Name>
+                    <fareContractEntries>
+                        <!-- Initial installation of CappedDiscountRight done via SalesTransaction here - but could also (and possibly prefrably be done via CustomerPurchasePackageAddedEntry
+                        By using a SalesTransaction we can also log ie a cost that has occured for the traveller. Ie if the discount right has a cost up front (ie NOK 10 to enrol)-->
+                        <SalesTransaction version="3" id="VOT:SalesTransaction:InitialCreationOfCappedDiscountRight">
+                            <Name>Inngåelse avtale</Name>
+                            <Date>2022-01-06T07:05:00</Date>
+                            <Amount>0</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to the actual CPP added to the account -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:BestePrisAvtale" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                        
+                        <SalesTransaction version="3" id="VOT:SalesTransaction:FirstPurchase">
+                            <Name>First ticket purchase</Name>
+                            <Date>2022-01-07T07:05:00</Date>
+                            <Amount>34</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to the actual CPP added to the account -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:FirstTrip" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                        
+                        
+                        <!-- ADDED in this step -->
+                        <SalesTransaction version="3" id="VOT:SalesTransaction:SecondPurchase">
+                            <Name>First ticket purchase</Name>
+                            <Date>2022-01-07T07:05:00</Date>
+                            <Amount>34</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to the actual CPP added to the account -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:SecondTrip" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                        <!-- END added in this step -->
+                        
+                        
+                    </fareContractEntries>
+                    
+                </FareContract>
+            </fareContracts>
+            
+            
+            <customerPurchasePackages>
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:BestePrisAvtale" version="3">
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:EnrolmentBestPriceVestfold" version="1"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:BestePrisAvtale" version="3" order="1">
+                            <elementAccesses>
+                                <!-- Agreement is pre-activated here - if the agreenment somehow has to be activated later on then we could add another CPPA instead with activation information -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>used</MarkedAs>
+                                    <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="3" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:BestPrice" version="1"/>
+                                    <FareProductRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>
+                
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:FirstTrip" version="3">
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:FirstTrip" version="3" order="1">
+                            <!-- This trip  is preactivated -->
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- Actual travel validity, pre-calculated -->
+                                    <!-- Assuming 60 min validity -->
+                                    <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2022-01-06T08:05:00</EndOfValidity>
+                                    
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="3" id="VOT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
+                                    <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                <!-- no activation rule necessary since pre-activated -->
+                                
+                                <!-- validity rule (actual travel rights) here -->
+                                <CustomerPurchaseParameterAssignment version="3" id="ENT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UserProfileRef ref="VOT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="VOT:Authority:1" version="1"/>
+                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                        
+                    </customerPurchasePackageElements>
+                    <prices>
+                        <CustomerPurchasePackagePrice>
+                            <Amount>34</Amount>
+                            <Currency>NOK</Currency>
+                            <!-- Could be more details here as ruleStepResults for separating VAT etc -->
+                        </CustomerPurchasePackagePrice>
+                    </prices>
+                </CustomerPurchasePackage>
+                
+                <!-- ADDED in this step -->
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:SecondTrip" version="1">
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:SecondTrip" version="3" order="1">
+                            <!-- This trip  is preactivated -->
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- Actual travel validity, pre-calculated -->
+                                    <!-- Assuming 60 min validity -->
+                                    <StartOfValidity>2022-01-06T10:05:00</StartOfValidity>
+                                    <EndOfValidity>2022-01-06T11:05:00</EndOfValidity>
+                                    
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="3" id="VOT:CustomerPurchaseParameterAssignment:SecondTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
+                                    <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                <!-- no activation rule necessary since pre-activated -->
+                                
+                                <!-- validity rule (actual travel rights) here -->
+                                <CustomerPurchaseParameterAssignment version="3" id="ENT:CustomerPurchaseParameterAssignment:SecondTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UserProfileRef ref="VOT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="VOT:Authority:1" version="1"/>
+                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                        
+                    </customerPurchasePackageElements>
+                    <prices>
+                        <CustomerPurchasePackagePrice>
+                            <Amount>34</Amount>
+                            <Currency>NOK</Currency>
+                            <!-- Could be more details here as ruleStepResults for separating VAT etc -->
+                        </CustomerPurchasePackagePrice>
+                    </prices>
+                </CustomerPurchasePackage>
+                <!-- END added in this step -->
+                
+            </customerPurchasePackages>
+            
+            
+        </SalesTransactionFrame>
+        
+
+        <!-- Third trip, same day -> Capped to 24 hour pass -->
+
+        <SalesTransactionFrame id="VOT:SalesTransactionFrame:ThirdTrip" version="1">
+            <fareContracts>
+                <FareContract id="VOT:FareContract:1" version="4">
+                    <Name>Beste pris-avtale Grenland</Name>
+                    <fareContractEntries>
+                        <!-- Initial installation of CappedDiscountRight done via SalesTransaction here - but could also (and possibly prefrably be done via CustomerPurchasePackageAddedEntry
+                        By using a SalesTransaction we can also log ie a cost that has occured for the traveller. Ie if the discount right has a cost up front (ie NOK 10 to enrol)-->
+                        <SalesTransaction version="4" id="VOT:SalesTransaction:InitialCreationOfCappedDiscountRight">
+                            <Name>Inngåelse avtale</Name>
+                            <Date>2022-01-06T07:05:00</Date>
+                            <Amount>0</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to the actual CPP added to the account -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:BestePrisAvtale" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                        
+                        <SalesTransaction version="4" id="VOT:SalesTransaction:FirstPurchase">
+                            <Name>First ticket purchase</Name>
+                            <Date>2022-01-07T07:05:00</Date>
+                            <Amount>34</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to the actual CPP added to the account -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:FirstTrip" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                        
+                        
+                        <SalesTransaction version="4" id="VOT:SalesTransaction:SecondPurchase">
+                            <Name>Second ticket purchase</Name>
+                            <Date>2022-01-07T10:05:00</Date>
+                            <Amount>34</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to the actual CPP added to the account -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:SecondTrip" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                        
+                        <!-- ADDED in this step -->
+
+                        <SalesTransaction version="4" id="VOT:SalesTransaction:ThirdPurchase">
+                            <Name>Third ticket purchase</Name>
+                            <Date>2022-01-07T17:05:00</Date>
+                            <Amount>16</Amount> <!-- Assuming price of 24 hour ticket is 84, so 84 - 2x34 = 16 -->
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to the actual CPP added to the account -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:ThirdTrip" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                        
+                        <!-- END added in this step -->
+                        
+                        
+                    </fareContractEntries>
+                    
+                </FareContract>
+            </fareContracts>
+            
+            
+            <customerPurchasePackages>
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:BestePrisAvtale" version="4">
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:EnrolmentBestPriceVestfold" version="1"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:BestePrisAvtale" version="4" order="1">
+                            <elementAccesses>
+                                <!-- Agreement is pre-activated here - if the agreenment somehow has to be activated later on then we could add another CPPA instead with activation information -->
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>used</MarkedAs>
+                                    <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="4" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:BestPrice" version="1"/>
+                                    <FareProductRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>
+                
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:FirstTrip" version="4">
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:FirstTrip" version="4" order="1">
+                            <!-- This trip  is preactivated -->
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- Actual travel validity, pre-calculated -->
+                                    <!-- Assuming 60 min validity -->
+                                    <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2022-01-06T08:05:00</EndOfValidity>
+                                    
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="4" id="VOT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
+                                    <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                <!-- no activation rule necessary since pre-activated -->
+                                
+                                <!-- validity rule (actual travel rights) here -->
+                                <CustomerPurchaseParameterAssignment version="4" id="ENT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UserProfileRef ref="VOT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="VOT:Authority:1" version="1"/>
+                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                        
+                    </customerPurchasePackageElements>
+                    <prices>
+                        <CustomerPurchasePackagePrice>
+                            <Amount>34</Amount>
+                            <Currency>NOK</Currency>
+                            <!-- Could be more details here as ruleStepResults for separating VAT etc -->
+                        </CustomerPurchasePackagePrice>
+                    </prices>
+                </CustomerPurchasePackage>
+                
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:SecondTrip" version="4">
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:SecondTrip" version="4" order="1">
+                            <!-- This trip  is preactivated -->
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- Actual travel validity, pre-calculated -->
+                                    <!-- Assuming 60 min validity -->
+                                    <StartOfValidity>2022-01-06T10:05:00</StartOfValidity>
+                                    <EndOfValidity>2022-01-06T11:05:00</EndOfValidity>
+                                    
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="4" id="VOT:CustomerPurchaseParameterAssignment:SecondTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
+                                    <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                <!-- no activation rule necessary since pre-activated -->
+                                
+                                <!-- validity rule (actual travel rights) here -->
+                                <CustomerPurchaseParameterAssignment version="4" id="ENT:CustomerPurchaseParameterAssignment:SecondTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UserProfileRef ref="VOT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="VOT:Authority:1" version="1"/>
+                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                        
+                    </customerPurchasePackageElements>
+                    <prices>
+                        <CustomerPurchasePackagePrice>
+                            <Amount>34</Amount>
+                            <Currency>NOK</Currency>
+                            <!-- Could be more details here as ruleStepResults for separating VAT etc -->
+                        </CustomerPurchasePackagePrice>
+                    </prices>
+                </CustomerPurchasePackage>
+
+                <!-- ADDED in this step -->
+                
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:ThirdTrip" version="1">
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
+                    <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:ThirdTrip" version="4" order="1">
+                            <!-- This trip  is preactivated -->
+                            <elementAccesses>
+                                <CustomerPurchasePackageElementAccess>
+                                    <MarkedAs>used</MarkedAs>
+                                    <!-- Actual travel validity, pre-calculated -->
+                                    <!-- Start of validity would be purhase time, end of validity = first purchase time + 24 hours -->
+                                    <StartOfValidity>2022-01-06T17:05:00</StartOfValidity>
+                                    <EndOfValidity>2022-01-06T06:05:00</EndOfValidity>
+                                    
+                                </CustomerPurchasePackageElementAccess>
+                            </elementAccesses>
+                            
+                            <validityParameterAssignments>
+                                <CustomerPurchaseParameterAssignment version="4" id="VOT:CustomerPurchaseParameterAssignment:ThirdTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
+                                    <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                
+                                <!-- no activation rule necessary since pre-activated -->
+                                
+                                <!-- validity rule (actual travel rights) here -->
+                                <CustomerPurchaseParameterAssignment version="4" id="ENT:CustomerPurchaseParameterAssignment:ThirdTrip" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
+                                    <limitations>
+                                        <UserProfileRef ref="VOT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <AuthorityRef ref="VOT:Authority:1" version="1"/>
+                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                    </validityParameters>
+                                </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+                        
+                    </customerPurchasePackageElements>
+                    <prices>
+                        <CustomerPurchasePackagePrice>
+                            <Amount>16</Amount>
+                            <Currency>NOK</Currency>
+                            <!-- Could be more details here as ruleStepResults for separating VAT etc -->
+                        </CustomerPurchasePackagePrice>
+                    </prices>
+                </CustomerPurchasePackage>
+                <!-- END added in this step -->
+                
+            </customerPurchasePackages>
+            
+            
+        </SalesTransactionFrame>
+        
+        
+
+
+    </dataObjects>
+</PublicationDelivery>
