@@ -400,11 +400,13 @@
 
             <distributionAssignments>
                 <DistributionAssignment id="ENT:DistributionAssignment:EnturApp1ID" version="1" order="1">
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTripBundle" version="1"/>
                     <DistributionChannelRef ref="ENT:DistributionChannel:EnturApp" version="1"/>
                     <TicketingServiceFacilityList>purchase</TicketingServiceFacilityList>
                     <FulfilmentMethodRef ref="ENT:FulfilmentMethod:EnturApp-IdBasert" version="1"/>
                 </DistributionAssignment>
                 <DistributionAssignment id="ENT:DistributionAssignment:AtbApp1ID" version="1" order="1">
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTripBundle" version="1"/>
                     <DistributionChannelRef ref="ENT:DistributionChannel:AtbApp" version="1"/>
                     <TicketingServiceFacilityList>purchase</TicketingServiceFacilityList>
                     <FulfilmentMethodRef ref="ENT:FulfilmentMethod:AtbApp-IdBasert" version="1"/>
