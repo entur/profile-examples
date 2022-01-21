@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!-- 
   Example of scheduled journey being cancelled and replaced by a new journey
-  (not a full example, but highlighting the prominent aspects)
+  (not a full example, only highlighting of the most prominent aspects)
 -->
+
 <Siri 
-    xmlns="http://www.siri.org.uk/siri" 
-    xmlns:acsb="http://www.ifopt.org.uk/acsb" 
-    xmlns:ifopt="http://www.ifopt.org.uk/ifopt" 
-    xmlns:datex2="http://datex2.eu/schema/2_0RC1/2_0"
-    version="2.0">
+  xmlns="http://www.siri.org.uk/siri" 
+  xmlns:acsb="http://www.ifopt.org.uk/acsb" 
+  xmlns:ifopt="http://www.ifopt.org.uk/ifopt" 
+  xmlns:datex2="http://datex2.eu/schema/2_0RC1/2_0"
+  version="2.0">
+  
     <ServiceDelivery>
         <ResponseTimestamp>2020-02-20T21:22:33</ResponseTimestamp>
         <ProducerRef>RUT</ProducerRef>
@@ -37,13 +40,35 @@
                             <StopPointRef>NSR:StopPlace:6074</StopPointRef>
                             <Order>1</Order>
                             <StopPointName>Helsfyr</StopPointName>
+                            
+                            <Cancellation>true</Cancellation>
+                            
                             <RequestStop>false</RequestStop>
-                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
                             <AimedDepartureTime>2020-02-20T21:25:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2020-02-20T21:25:00</ExpectedDepartureTime>
-                            <DepartureBoardingActivity>boarding</DepartureBoardingActivity>
+                            
+                            <DepartureStatus>cancelled</DepartureStatus>
+                            <DepartureBoardingActivity>noBoarding</DepartureBoardingActivity>
+                            
                         </EstimatedCall>
+                        
                         <!-- etc ... -->
+                        
+                        <EstimatedCall>
+                            <StopPointRef>NSR:StopPlace:123</StopPointRef>
+                            <Order>9</Order>
+                            <StopPointName>Tjuvholmen</StopPointName>
+                            
+                            <Cancellation>true</Cancellation>
+                            
+                            <RequestStop>false</RequestStop>
+                            <AimedArrivalTime>2020-02-20T22:44:00</AimedArrivalTime>
+                            <ExpectedArrivalTime>2020-02-20T22:44:00</ExpectedArrivalTime>
+                            
+                            <ArrivalStatus>cancelled</ArrivalStatus>
+                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
+                            
+                        </EstimatedCall>
                     </EstimatedCalls>
                     <IsCompleteStopSequence>true</IsCompleteStopSequence>
                 </EstimatedVehicleJourney>
@@ -59,7 +84,7 @@
                     
                     <VehicleMode>bus</VehicleMode>
                     <OriginName>Helsfyr</OriginName>
-                    <DestinationName>Carl Berners Plass</DestinationName>
+                    <DestinationName>Tjuvholmen</DestinationName>
                     <OperatorRef>RUT</OperatorRef>
                     
                     <VehicleJourneyRef>RUT:ServiceJourney:21-1-1</VehicleJourneyRef>
@@ -70,13 +95,23 @@
                             <Order>1</Order>
                             <StopPointName>Helsfyr</StopPointName>
                             <RequestStop>false</RequestStop>
-                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
-                            <AimedDepartureTime>2020-02-20T21:27:00</AimedDepartureTime>
-                            <ExpectedDepartureTime>2020-02-20T21:27:00</ExpectedDepartureTime>
+                            <AimedDepartureTime>2020-02-20T22:34:00</AimedDepartureTime>
+                            <ExpectedDepartureTime>2020-02-20T22:34:00</ExpectedDepartureTime>
+                            <DepartureStatus>onTime</DepartureStatus>
                             <DepartureBoardingActivity>boarding</DepartureBoardingActivity>
                         </EstimatedCall>
+                        
                         <!-- etc ... -->
                         
+                        <EstimatedCall>
+                            <StopPointRef>NSR:StopPlace:123</StopPointRef>
+                            <Order>9</Order>
+                            <StopPointName>Tjuvholmen</StopPointName>
+                            <RequestStop>false</RequestStop>
+                            <AimedArrivalTime>2020-02-20T23:45:00</AimedArrivalTime>
+                            <ArrivalStatus>onTime</ArrivalStatus>
+                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
+                        </EstimatedCall>
                     </EstimatedCalls>
                     <IsCompleteStopSequence>true</IsCompleteStopSequence>
                 </EstimatedVehicleJourney>

@@ -19,7 +19,9 @@
                         <DataFrameRef>2018-04-18</DataFrameRef>
                         <DatedVehicleJourneyRef>NSB:ServiceJourney:1-2492-2343</DatedVehicleJourneyRef>
                     </FramedVehicleJourneyRef>
+                    
                     <Cancellation>true</Cancellation>
+                    
                     <VehicleMode>rail</VehicleMode>
                     <OriginName>Vinstra</OriginName>
                     <OperatorRef>NSB</OperatorRef>
@@ -33,7 +35,7 @@
                             <AimedDepartureTime>2018-04-18T13:05:00+02:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2018-04-18T13:05:00+02:00</ExpectedDepartureTime>
                             <DepartureStatus>cancelled</DepartureStatus>
-                            <DepartureBoardingActivity>boarding</DepartureBoardingActivity>
+                            <DepartureBoardingActivity>noBoarding</DepartureBoardingActivity>
                         </EstimatedCall>
                         <EstimatedCall>
                             <StopPointRef>NSR:Quay:1027</StopPointRef>
@@ -44,11 +46,11 @@
                             <AimedArrivalTime>2018-04-18T13:12:50+02:00</AimedArrivalTime>
                             <ExpectedArrivalTime>2018-04-18T13:12:50+02:00</ExpectedArrivalTime>
                             <ArrivalStatus>cancelled</ArrivalStatus>
-                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
+                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
                             <AimedDepartureTime>2018-04-18T13:13:00+02:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2018-04-18T13:13:00+02:00</ExpectedDepartureTime>
                             <DepartureStatus>cancelled</DepartureStatus>
-                            <DepartureBoardingActivity>boarding</DepartureBoardingActivity>
+                            <DepartureBoardingActivity>noBoarding</DepartureBoardingActivity>
                         </EstimatedCall>
                         <EstimatedCall>
                             <StopPointRef>NSR:Quay:10</StopPointRef>
@@ -59,11 +61,11 @@
                             <AimedArrivalTime>2018-04-18T13:27:00+02:00</AimedArrivalTime>
                             <ExpectedArrivalTime>2018-04-18T13:27:00+02:00</ExpectedArrivalTime>
                             <ArrivalStatus>cancelled</ArrivalStatus>
-                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
+                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
                             <AimedDepartureTime>2018-04-18T13:28:00+02:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2018-04-18T13:28:00+02:00</ExpectedDepartureTime>
                             <DepartureStatus>cancelled</DepartureStatus>
-                            <DepartureBoardingActivity>boarding</DepartureBoardingActivity>
+                            <DepartureBoardingActivity>noBoarding</DepartureBoardingActivity>
                         </EstimatedCall>
                         <EstimatedCall>
                             <StopPointRef>NSR:Quay:1067</StopPointRef>
@@ -74,11 +76,11 @@
                             <AimedArrivalTime>2018-04-18T13:51:50+02:00</AimedArrivalTime>
                             <ExpectedArrivalTime>2018-04-18T13:51:50+02:00</ExpectedArrivalTime>
                             <ArrivalStatus>cancelled</ArrivalStatus>
-                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
+                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
                             <AimedDepartureTime>2018-04-18T13:52:00+02:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2018-04-18T13:52:00+02:00</ExpectedDepartureTime>
                             <DepartureStatus>cancelled</DepartureStatus>
-                            <DepartureBoardingActivity>boarding</DepartureBoardingActivity>
+                            <DepartureBoardingActivity>noBoarding</DepartureBoardingActivity>
                         </EstimatedCall>
                         <EstimatedCall>
                             <StopPointRef>NSR:Quay:1059</StopPointRef>
@@ -89,11 +91,11 @@
                             <AimedArrivalTime>2018-04-18T14:02:00+02:00</AimedArrivalTime>
                             <ExpectedArrivalTime>2018-04-18T14:02:00+02:00</ExpectedArrivalTime>
                             <ArrivalStatus>cancelled</ArrivalStatus>
-                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
+                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
                             <AimedDepartureTime>2018-04-18T14:04:00+02:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2018-04-18T14:04:00+02:00</ExpectedDepartureTime>
                             <DepartureStatus>cancelled</DepartureStatus>
-                            <DepartureBoardingActivity>boarding</DepartureBoardingActivity>
+                            <DepartureBoardingActivity>noBoarding</DepartureBoardingActivity>
                         </EstimatedCall>
                         <EstimatedCall>
                             <StopPointRef>NSR:Quay:519</StopPointRef>
@@ -104,11 +106,11 @@
                             <AimedArrivalTime>2018-04-18T14:59:00+02:00</AimedArrivalTime>
                             <ExpectedArrivalTime>2018-04-18T14:59:00+02:00</ExpectedArrivalTime>
                             <ArrivalStatus>cancelled</ArrivalStatus>
-                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
+                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
                             <AimedDepartureTime>2018-04-18T15:02:00+02:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2018-04-18T15:02:00+02:00</ExpectedDepartureTime>
                             <DepartureStatus>cancelled</DepartureStatus>
-                            <DepartureBoardingActivity>boarding</DepartureBoardingActivity>
+                            <DepartureBoardingActivity>noBoarding</DepartureBoardingActivity>
                         </EstimatedCall>
                         <EstimatedCall>
                             <StopPointRef>NSR:Quay:982</StopPointRef>
@@ -119,11 +121,11 @@
                             <AimedArrivalTime>2018-04-18T15:49:30+02:00</AimedArrivalTime>
                             <ExpectedArrivalTime>2018-04-18T15:49:30+02:00</ExpectedArrivalTime>
                             <ArrivalStatus>cancelled</ArrivalStatus>
-                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
+                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
                             <AimedDepartureTime>2018-04-18T15:50:00+02:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2018-04-18T15:50:00+02:00</ExpectedDepartureTime>
                             <DepartureStatus>cancelled</DepartureStatus>
-                            <DepartureBoardingActivity>boarding</DepartureBoardingActivity>
+                            <DepartureBoardingActivity>noBoarding</DepartureBoardingActivity>
                         </EstimatedCall>
                         <EstimatedCall>
                             <StopPointRef>NSR:Quay:1078</StopPointRef>
@@ -134,7 +136,7 @@
                             <AimedArrivalTime>2018-04-18T14:32:00+02:00</AimedArrivalTime>
                             <ExpectedArrivalTime>2018-04-18T14:32:00+02:00</ExpectedArrivalTime>
                             <ArrivalStatus>cancelled</ArrivalStatus>
-                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
+                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
                         </EstimatedCall>
                     </EstimatedCalls>
                     <IsCompleteStopSequence>true</IsCompleteStopSequence>
