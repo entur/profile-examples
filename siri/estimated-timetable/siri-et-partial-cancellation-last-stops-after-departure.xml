@@ -72,7 +72,7 @@
                             <AimedArrivalTime>2018-04-18T14:02:00</AimedArrivalTime>
                             <ExpectedArrivalTime>2018-04-18T14:05:00</ExpectedArrivalTime>
                             <ArrivalStatus>onTime</ArrivalStatus>
-                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
+                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
                             <AimedDepartureTime>2018-04-18T14:04:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2018-04-18T14:04:00</ExpectedDepartureTime>
                             <DepartureStatus>cancelled</DepartureStatus>
