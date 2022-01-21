@@ -163,6 +163,7 @@ REMARK: Currently very much a work in progress!
                     <OrganisationType>other</OrganisationType>
                     <parts>
                         <OrganisationPart id="NOG:OrganizationPart:2" version="1">
+                            <PrivateCode type="ERA">0000</PrivateCode> <!-- P.O.C. for maintaining official ERA code -->
                             <OperatorRef ref="NOG:Operator:VYT" version="1"/>
                             <!-- define an adminstrative zone where whe can assign the codespace to use -->
                             <administrativeZones>
