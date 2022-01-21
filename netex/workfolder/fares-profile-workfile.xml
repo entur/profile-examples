@@ -605,12 +605,19 @@
                         <ValidityParameterSetSelectionType>allOfAllSets</ValidityParameterSetSelectionType>
                         
                         <temporalValidityParameters>
+                            <OperatingPeriodRef ref="ref"/>
                             <OperatingDayRef ref="ENT:OperatingDay:externalref"/>
+                            <OperatingPeriodRef ref="ref"/>
+                            <DayTypeRef ref="ref"/>
+                            <DayTypeRef ref="ref"/>
                         </temporalValidityParameters>
                         
                         <validityParameters>
                             <AuthorityRef ref="ENT:Authority:Ruter" version="1"/>
                             <TariffZoneRef ref="RUT:TariffZone:2V" version="1"/>
+                            <TariffZoneRef ref="reftest"/>
+                            <NetworkRef ref="ref"/>
+                            <NetworkRef ref="ref2"/>
                         </validityParameters>
                         
                         <TimeIntervalRef ref="ENT:TimeInterval:90min" version="1"/>
