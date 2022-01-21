@@ -43,6 +43,13 @@
                     <RouteRef>placeholder</RouteRef>
                     <ExternalLineRef>placeholder</ExternalLineRef>
                     <OriginName>placeholder</OriginName>
+                    <Via>
+                        <PlaceName>test</PlaceName>
+                    </Via>
+                    <Via>
+                        <PlaceName>test2</PlaceName>
+                        <ViaPriority>1</ViaPriority>
+                    </Via>
                     <DestinationName>placeholder</DestinationName>
                     <OperatorRef>31</OperatorRef>
                     <ServiceFeatureRef>placeholder</ServiceFeatureRef>
