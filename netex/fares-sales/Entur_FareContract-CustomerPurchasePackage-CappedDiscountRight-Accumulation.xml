@@ -82,12 +82,12 @@
 
         <SiteFrame id="VOT:SiteFrame:1" version="1">
             <tariffZones>
-                <TariffZone id="VOT:TariffZone:1" version="1">
+                <FareZone id="VOT:FareZone:XYZ" version="1">
                     <Name lang="no">Grenland</Name>
-                </TariffZone>
-                <TariffZone id="VOT:TariffZone:2" version="1">
+                </FareZone>
+                <FareZone id="VOT:FareZone:ABC" version="1">
                     <Name lang="no">Sandefjord</Name>
-                </TariffZone>
+                </FareZone>
             </tariffZones>
         </SiteFrame>
 
@@ -182,7 +182,7 @@
                         <SalesTransaction version="1" id="VOT:SalesTransaction:FirstPurchase">
                             <Name>First ticket purchase</Name>
                             <Date>2022-01-07T07:05:00</Date>
-                            <Amount>40</Amount>
+                            <Amount>34</Amount>
                             <Currency>NOK</Currency>
                             <PaymentMethod>debitCard</PaymentMethod>
                             <customerPurchasePackages>
@@ -219,6 +219,13 @@
                                     <FareProductRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
+                            <!-- Can be omitted if no prices involved -->
+                            <prices>
+                                <CustomerPurchasePackagePrice>
+                                    <Amount>0</Amount>
+                                    <Currency>NOK</Currency>
+                                </CustomerPurchasePackagePrice>
+                            </prices>
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>
                 </CustomerPurchasePackage>
@@ -259,16 +266,23 @@
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="VOT:Authority:1" version="1"/>
-                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                        <FareZoneRef ref="VOT:FareZone:Vestfold"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
+                            <!-- Can be omitted if no prices involved at this level -->
+                            <prices>
+                                <CustomerPurchasePackagePrice>
+                                    <Amount>34</Amount>
+                                    <Currency>NOK</Currency>
+                                </CustomerPurchasePackagePrice>
+                            </prices>
                         </CustomerPurchasePackageElement>
                         
                     </customerPurchasePackageElements>
                     <prices>
                         <CustomerPurchasePackagePrice>
-                            <Amount>40</Amount>
+                            <Amount>34</Amount>
                             <Currency>NOK</Currency>
                             <!-- Could be more details here as ruleStepResults for separating VAT etc -->
                         </CustomerPurchasePackagePrice>
@@ -357,8 +371,22 @@
                                     <FareProductRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
+                            <!-- Can be omitted if no prices involved at this level -->
+                            <prices>
+                                <CustomerPurchasePackagePrice>
+                                    <Amount>0</Amount>
+                                    <Currency>NOK</Currency>
+                                </CustomerPurchasePackagePrice>
+                            </prices>
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>
+                    <!-- Can be omitted if no prices involved at this level -->
+                    <prices>
+                        <CustomerPurchasePackagePrice>
+                            <Amount>0</Amount>
+                            <Currency>NOK</Currency>
+                        </CustomerPurchasePackagePrice>
+                    </prices>
                 </CustomerPurchasePackage>
                 
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:FirstTrip" version="3">
@@ -396,10 +424,17 @@
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="VOT:Authority:1" version="1"/>
-                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                        <FareZoneRef ref="VOT:FareZone:Vestfold"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
+                            <!-- Can be omitted if no prices involved at this level -->
+                            <prices>
+                                <CustomerPurchasePackagePrice>
+                                    <Amount>34</Amount>
+                                    <Currency>NOK</Currency>
+                                </CustomerPurchasePackagePrice>
+                            </prices>
                         </CustomerPurchasePackageElement>
                         
                     </customerPurchasePackageElements>
@@ -448,10 +483,17 @@
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="VOT:Authority:1" version="1"/>
-                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                        <FareZoneRef ref="VOT:FareZone:Vestfold"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
+                            <!-- Can be omitted if no prices involved at this level -->
+                            <prices>
+                                <CustomerPurchasePackagePrice>
+                                    <Amount>34</Amount>
+                                    <Currency>NOK</Currency>
+                                </CustomerPurchasePackagePrice>
+                            </prices>
                         </CustomerPurchasePackageElement>
                         
                     </customerPurchasePackageElements>
@@ -599,10 +641,17 @@
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="VOT:Authority:1" version="1"/>
-                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                        <FareZoneRef ref="VOT:FareZone:Vestfold"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
+                            <!-- Can be omitted if no prices involved at this level -->
+                            <prices>
+                                <CustomerPurchasePackagePrice>
+                                    <Amount>34</Amount>
+                                    <Currency>NOK</Currency>
+                                </CustomerPurchasePackagePrice>
+                            </prices>
                         </CustomerPurchasePackageElement>
                         
                     </customerPurchasePackageElements>
@@ -650,10 +699,17 @@
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="VOT:Authority:1" version="1"/>
-                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                        <FareZoneRef ref="VOT:FareZone:Vestfold"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
+                            <!-- Can be omitted if no prices involved at this level -->
+                            <prices>
+                                <CustomerPurchasePackagePrice>
+                                    <Amount>34</Amount>
+                                    <Currency>NOK</Currency>
+                                </CustomerPurchasePackagePrice>
+                            </prices>
                         </CustomerPurchasePackageElement>
                         
                     </customerPurchasePackageElements>
@@ -703,10 +759,17 @@
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
                                         <AuthorityRef ref="VOT:Authority:1" version="1"/>
-                                        <TariffZoneRef ref="VOT:TariffZone:Vestfold"/>
+                                        <FareZoneRef ref="VOT:FareZone:Vestfold"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
+                            <!-- Can be omitted if no prices involved at this level -->
+                            <prices>
+                                <CustomerPurchasePackagePrice>
+                                    <Amount>16</Amount>
+                                    <Currency>NOK</Currency>
+                                </CustomerPurchasePackagePrice>
+                            </prices>
                         </CustomerPurchasePackageElement>
                         
                     </customerPurchasePackageElements>
