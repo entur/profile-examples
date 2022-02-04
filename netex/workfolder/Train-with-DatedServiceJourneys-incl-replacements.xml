@@ -698,6 +698,13 @@
                             <NormalDatedVehicleJourneyRef ref="ref"/>
 -->                            <OperatingDayRef ref="ref"/>
                         </DatedVehicleJourney>
+                        
+                        <DatedServiceJourney id="VYG:DatedServiceJourney:Test1" version="1">
+                            <Name>Test 1</Name>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney id="VYG:DatedServiceJourney:Test2" version="1">
+                            <Name>Test 2</Name>
+                        </DatedServiceJourney>
                     </vehicleJourneys>
 
 
@@ -762,6 +769,13 @@
                             <NoticedObjectRef ref="VYG:ServiceJourney:1" version="1"/>
                         </NoticeAssignment>
                     </noticeAssignments>
+                    
+                    <journeyInterchanges>
+                        <ServiceJourneyInterchange id="interchange-test" version="1">
+                            <FromJourneyRef ref="VYG:DatedServiceJourney:Test1" version="1"/>
+                            <ToJourneyRef ref="VYG:DatedServiceJourney:Test2" version="1"/>
+                        </ServiceJourneyInterchange>
+                    </journeyInterchanges>
 
                 </TimetableFrame>
             </frames>
