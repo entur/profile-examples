@@ -59,9 +59,20 @@
                     <Advice xml:lang="EN">placeholder</Advice>
                     
                     <InfoLinks>
+                        <!-- Alternative A -->
                         <InfoLink>
-                            <Uri>http://www.entur.org/2</Uri>
-                            <Label>test</Label>
+                            <Uri>http://www.entur.org</Uri>
+                            <Label xml:lang="NO">Tekst</Label>
+                            <Label xml:lang="EN">Text</Label>
+                        </InfoLink>
+                        <!-- Alternative B -->
+                        <InfoLink>
+                            <Uri>http://www.entur.org/norwegian</Uri>
+                            <Label xml:lang="NO">Tekst</Label>
+                        </InfoLink>
+                        <InfoLink>
+                            <Uri>http://www.entur.org/english</Uri>
+                            <Label xml:lang="EN">Text</Label>
                         </InfoLink>
                     </InfoLinks>
                     <Affects>
