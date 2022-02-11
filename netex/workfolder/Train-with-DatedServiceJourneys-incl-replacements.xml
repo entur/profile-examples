@@ -549,7 +549,7 @@
                         <!-- Normal service -->
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:Test-1" >
                             <dayTypes>
-                                <DayTypeRef ref="ref"/>
+                                <DayTypeRef ref="VYG:DayType:External"/>
                             </dayTypes>
                             <TrainRef ref="ref" changed="2020-11-11T20:00:00"/>
                             <!--<ServiceJourneyRef ref="ref"/>-->
@@ -557,20 +557,17 @@
 
                         <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:Test-2">
                             <!--<VehicleJourneyRef ref="ref"/>-->
-                            
                             <ServiceAlteration>planned</ServiceAlteration>
                             <dayTypes>
-                                <DayTypeRef ref=""></DayTypeRef>
+                                <DayTypeRef ref="VYG:DayType:External"></DayTypeRef>
                             </dayTypes>
-                            <OperatingDayRef ref="ref"/>
+                            <OperatingDayRef ref="VYG:OperatingDay:External"/>
                         </DatedServiceJourney>
 
 
                         <DatedVehicleJourney version="1" id="VYG:DatedVehicleJourney:Test-3" >
                             <VehicleJourneyRef ref="ref"/>
-                            
                             <OperatingDayRef ref="ref"/>
-                            
                         </DatedVehicleJourney>
                         
                         <DatedVehicleJourney version="1" id="VYG:DatedVehicleJourney:Test-4" >
