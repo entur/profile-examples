@@ -16,7 +16,7 @@
 
     <dataObjects>
 
-        <CompositeFrame created="2022-02-15T13:37:49" version="1" id="RUT:CompositeFrame:1">
+        <CompositeFrame id="RUT:CompositeFrame:1" version="1" created="2022-02-15T13:37:49">
             <validityConditions>
                 <AvailabilityCondition version="1" id="RUT:AvailabilityCondition:1">
                     <FromDate>2022-01-01T00:00:00</FromDate>
@@ -24,7 +24,7 @@
                 </AvailabilityCondition>
             </validityConditions>
             <codespaces>
-                <Codespace id="ent">
+                <Codespace id="nsr">
                     <Xmlns>NSR</Xmlns>
                     <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
                     <Description>Nasjonalt Stoppestedsregister</Description>
@@ -45,36 +45,34 @@
 
             <frames>
                 
-                <GeneralFrame created="2022-02-15T13:37:49" version="1" id="RUT:GeneralFrame:1">
+                <GeneralFrame  version="1" id="RUT:GeneralFrame:1">
                     <!-- placeholder -->
                 </GeneralFrame>
-                
 
-                <ResourceFrame created="2022-02-15T13:37:49" version="1" id="RUT:ResourceFrame:1">
+                <ResourceFrame id="RUT:ResourceFrame:1" version="1">
                     <ValidBetween>
                         <FromDate>2019-09-11T00:00:00</FromDate>
                         <ToDate>2021-12-31T23:59:59</ToDate>
                     </ValidBetween>
 
-
                     <typesOfValue>
-                        <TypeOfEquipment version="1" id="RUT:TypeOfEquipment:PremiumSeating">
+                        <TypeOfEquipment id="RUT:TypeOfEquipment:PremiumSeating" version="1">
                             <PrivateCode>PremiumSeating</PrivateCode>
                         </TypeOfEquipment>
-                        <TypeOfEquipment version="1" id="RUT:TypeOfEquipment:RegularSeating">
+                        <TypeOfEquipment id="RUT:TypeOfEquipment:RegularSeating" version="1">
                             <PrivateCode>RegularSeating</PrivateCode>
                         </TypeOfEquipment>
                     </typesOfValue>
 
                     <equipments>
                         <!-- Proof-of-concept : Wheelchair information -->
-                        <AccessVehicleEquipment version="1" id="RUT:AccessVehicleEquipment:1">
+                        <AccessVehicleEquipment id="RUT:AccessVehicleEquipment:1" version="1">
                             <Hoist>true</Hoist>
                             <Ramp>true</Ramp>
                             <AssistanceNeeded>rampRequired</AssistanceNeeded>
                             <AssistedBoardingLocation>boardOnlyAtSpecifiedPositions</AssistedBoardingLocation>
                         </AccessVehicleEquipment>
-                        <WheelchairVehicleEquipment version="1" id="RUT:WheelchairVehicleEquipment:1">
+                        <WheelchairVehicleEquipment id="RUT:WheelchairVehicleEquipment:1" version="1">
                             <AccessVehicleEquipmentRef ref="RUT:AccessVehicleEquipment:1" version="1"/>
                             <HasWheelChairSpaces>true</HasWheelChairSpaces>
                             <NumberOfWheelchairAreas>5</NumberOfWheelchairAreas>
@@ -87,8 +85,14 @@
                     <vehicleTypes>
 
                         <!-- Generic VehicleType -->
-                        <VehicleType version="1" id="RUT:VehicleType:Buss">
+                        <VehicleType id="RUT:VehicleType:Buss" version="1">
                             <capacities>
+                                
+                                
+<!-- TODO: Fiks feil i NeTEx - validerer UTEN version! -->
+                                
+                                
+                                <!-- FIX ERROR -->
                                 <PassengerCapacity id="RUT:PassengerCapacity:Premium">
                                     <FareClass>premiumClass</FareClass>
                                     <SeatingCapacity>50</SeatingCapacity>
@@ -97,6 +101,7 @@
                                     <FareClass>standardClass</FareClass>
                                     <SeatingCapacity>250</SeatingCapacity>
                                 </PassengerCapacity>
+                                
                             </capacities>
                         </VehicleType>
 
@@ -291,25 +296,25 @@
 
                 <ServiceCalendarFrame version="1" id="RUT:ServiceCalendarFrame:1">
                     <dayTypes>
-                        <DayType version="1" id="RUT:DayType:2020-01-02"/>
-                        <DayType version="1" id="RUT:DayType:2020-01-03"/>
+                        <DayType version="1" id="RUT:DayType:2022-01-02"/>
+                        <DayType version="1" id="RUT:DayType:2022-01-03"/>
                     </dayTypes>
                     <operatingDays>
-                        <OperatingDay id="RUT:OperatingDay:2020-01-02" version="1">
+                        <OperatingDay id="RUT:OperatingDay:2022-01-02" version="1">
                             <CalendarDate>2020-01-02</CalendarDate>
                         </OperatingDay>
-                        <OperatingDay id="RUT:OperatingDay:2020-01-03" version="1">
+                        <OperatingDay id="RUT:OperatingDay:2022-01-03" version="1">
                             <CalendarDate>2020-01-03</CalendarDate>
                         </OperatingDay>
                     </operatingDays>
                     <dayTypeAssignments>
-                        <DayTypeAssignment id="RUT:DayTypeAssignment:2020-01-02" version="1" order="1">
+                        <DayTypeAssignment id="RUT:DayTypeAssignment:2022-01-02" version="1" order="1">
                             <Date>2020-01-02</Date>
-                            <DayTypeRef ref="RUT:DayType:2020-01-03" version="1"/>
+                            <DayTypeRef ref="RUT:DayType:2022-01-03" version="1"/>
                         </DayTypeAssignment>
-                        <DayTypeAssignment id="RUT:DayTypeAssignment:2020-01-03" version="1" order="2">
+                        <DayTypeAssignment id="RUT:DayTypeAssignment:2022-01-03" version="1" order="2">
                             <Date>2020-01-03</Date>
-                            <DayTypeRef ref="RUT:DayType:2020-01-03" version="1"/>
+                            <DayTypeRef ref="RUT:DayType:2022-01-03" version="1"/>
                             <isAvailable>false</isAvailable>
                         </DayTypeAssignment>
                     </dayTypeAssignments>
@@ -317,67 +322,12 @@
 
 
                 <ServiceFrame version="1" id="RUT:ServiceFrame:4145998">
-                    <routePoints>
-                        <RoutePoint version="1" id="RUT:RoutePoint:1">
-                            <projections>
-                                <PointProjection version="1" id="NSR:PointProjection:1">
-                                    <ProjectToPointRef version="1" ref="NSR:ScheduledStopPoint:1"/>
-                                </PointProjection>
-                            </projections>
-                        </RoutePoint>
-                        <RoutePoint version="1" id="RUT:RoutePoint:2">
-                            <projections>
-                                <PointProjection version="1" id="NSR:PointProjection:2">
-                                    <ProjectToPointRef version="1" ref="NSR:ScheduledStopPoint:1"/>
-                                </PointProjection>
-                            </projections>
-                        </RoutePoint>
-                    </routePoints>
-
-                    <routeLinks>
-                        <RouteLink version="1" id="NSR:RouteLink:1">
-                            <Distance>100</Distance>
-                            <FromPointRef ref="RUT:RoutePoint:1"/>
-                            <ToPointRef ref="RUT:RoutePoint:2"/>
-                        </RouteLink>
-                    </routeLinks>
-
-
                     <routes>
-                        <Route version="1" id="RUT:Route:1-1105">
+                        <!-- dummy placeholder -->
+                        <Route version="1" id="RUT:Route:1">
                             <Name>Oslo S - Drammen stasjon</Name>
                             <ShortName>Oslo S - Drammen stasjon</ShortName>
                             <LineRef ref="RUT:Line:41" version="1"/>
-                            <pointsInSequence>
-                                <PointOnRoute order="1" version="1" id="RUT:PointOnRoute:4144409">
-                                    <RoutePointRef ref="RUT:RoutePoint:760010003"/>
-                                </PointOnRoute>
-                                <PointOnRoute order="2" version="1" id="RUT:PointOnRoute:4144410">
-                                    <RoutePointRef ref="RUT:RoutePoint:760140801"/>
-                                </PointOnRoute>
-                                <PointOnRoute order="3" version="1" id="RUT:PointOnRoute:4144411">
-                                    <RoutePointRef ref="RUT:RoutePoint:760141301"/>
-                                </PointOnRoute>
-                                <PointOnRoute order="4" version="1" id="RUT:PointOnRoute:4144412">
-                                    <RoutePointRef ref="RUT:RoutePoint:760142105"/>
-                                </PointOnRoute>
-                            </pointsInSequence>
-                        </Route>
-
-                        <Route version="1" id="NSR:Route:Demo">
-                            <Name>Demo</Name>
-                            <Description>description</Description>
-                            <PrivateCode>privatecode</PrivateCode>
-                            <LineRef ref="RUT:Line:41" version="1"/>
-                            <DirectionType>outbound</DirectionType>
-                            <pointsInSequence>
-                                <PointOnRoute version="1" id="NSR:PointOnRoute:1" order="1">
-                                    <RoutePointRef version="1" ref="RUT:RoutePoint:1"/>
-                                </PointOnRoute>
-                                <PointOnRoute version="1" id="NSR:PointOnRoute:2" order="2">
-                                    <RoutePointRef version="1" ref="RUT:RoutePoint:2"/>
-                                </PointOnRoute>
-                            </pointsInSequence>
                         </Route>
                     </routes>
 
@@ -422,7 +372,7 @@
                     <journeyPatterns>
                         <JourneyPattern version="1" id="RUT:JourneyPattern:1-1105">
                             <Name>Oslo S - Drammen stasjon</Name>
-                            <RouteRef ref="RUT:Route:1-1105" version="1"/>
+                            <RouteRef ref="RUT:Route:1" version="1"/>
                             <pointsInSequence>
                                 <StopPointInJourneyPattern order="1" version="1" id="RUT:StopPointInJourneyPattern:1-1105-1">
                                     <ScheduledStopPointRef ref="RUT:ScheduledStopPoint:760010003"/>
@@ -512,9 +462,9 @@
 
                             <!-- XSD:choice allows for: -->
                             <!--
-              <VehicleTypeRef ref=""></VehicleTypeRef>
-              <TrainRef ref=""></TrainRef>
-              -->
+                              <VehicleTypeRef ref=""></VehicleTypeRef>
+                              <TrainRef ref=""></TrainRef>
+                              -->
 
                             <!-- VehicleTypeRef ref="RUT:Train:1" version="1"/ -->
                             <!-- ERROR -->
@@ -555,9 +505,9 @@
                                 <JourneyPart id="RUT:JourneyPart:1" version="1">
 
                                     <!-- TWO PROBLEMS with TrainNumber:
-                    1) Cannot add/refer TrainNumber (also) for a Train object
-                    2) There is no Train-to-TrainNumber assignment datatype, i.e. only Journey and JourneyPart can refer TrainNumber(s)
-                  -->
+                                        1) Cannot add/refer TrainNumber (also) for a Train object
+                                        2) There is no Train-to-TrainNumber assignment datatype, i.e. only Journey and JourneyPart can refer TrainNumber(s)
+                                      -->
                                     <TrainNumberRef ref="ref"/>
 
                                     <StartTime>08:46:00</StartTime>
@@ -600,7 +550,7 @@
                               </parts-->
 
                             <ServiceJourneyRef ref="RUT:ServiceJourney:1-3922-61"/>
-                            <OperatingDayRef ref="RUT:OperatingDay:2020-12-31"/>
+                            <OperatingDayRef ref="RUT:OperatingDay:2022-12-31"/>
                         </DatedServiceJourney>
 
 
