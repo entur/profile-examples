@@ -1,0 +1,637 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    POC Vehicle Ruter Tram
+-->
+
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  version="1.13:NO-NeTEx-networktimetable:1.5">
+
+    <PublicationTimestamp>2022-02-15T13:37:49</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <Description>Vehicle-Tram</Description>
+
+
+    <dataObjects>
+
+        <CompositeFrame created="2022-02-15T13:37:49" version="1" id="RUT:CompositeFrame:1">
+            <validityConditions>
+                <AvailabilityCondition version="1" id="RUT:AvailabilityCondition:1">
+                    <FromDate>2022-01-01T00:00:00</FromDate>
+                    <ToDate>2022-12-31T23:59:59</ToDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            <codespaces>
+                <Codespace id="ent">
+                    <Xmlns>NSR</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+                    <Description>Nasjonalt Stoppestedsregister</Description>
+                </Codespace>
+                <Codespace id="rut">
+                    <Xmlns>RUT</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/rut</XmlnsUrl>
+                    <Description>Ruter#</Description>
+                </Codespace>
+            </codespaces>
+            <FrameDefaults>
+                <DefaultLocale>
+                    <TimeZone>Europe/Oslo</TimeZone>
+                    <DefaultLanguage>no</DefaultLanguage>
+                </DefaultLocale>
+            </FrameDefaults>
+
+
+            <frames>
+                
+                <GeneralFrame created="2022-02-15T13:37:49" version="1" id="RUT:GeneralFrame:1">
+                    <!-- placeholder -->
+                </GeneralFrame>
+                
+
+                <ResourceFrame created="2022-02-15T13:37:49" version="1" id="RUT:ResourceFrame:1">
+                    <ValidBetween>
+                        <FromDate>2019-09-11T00:00:00</FromDate>
+                        <ToDate>2021-12-31T23:59:59</ToDate>
+                    </ValidBetween>
+
+
+                    <typesOfValue>
+                        <TypeOfEquipment version="1" id="RUT:TypeOfEquipment:PremiumSeating">
+                            <PrivateCode>PremiumSeating</PrivateCode>
+                        </TypeOfEquipment>
+                        <TypeOfEquipment version="1" id="RUT:TypeOfEquipment:RegularSeating">
+                            <PrivateCode>RegularSeating</PrivateCode>
+                        </TypeOfEquipment>
+                    </typesOfValue>
+
+                    <equipments>
+                        <!-- Proof-of-concept : Wheelchair information -->
+                        <AccessVehicleEquipment version="1" id="RUT:AccessVehicleEquipment:1">
+                            <Hoist>true</Hoist>
+                            <Ramp>true</Ramp>
+                            <AssistanceNeeded>rampRequired</AssistanceNeeded>
+                            <AssistedBoardingLocation>boardOnlyAtSpecifiedPositions</AssistedBoardingLocation>
+                        </AccessVehicleEquipment>
+                        <WheelchairVehicleEquipment version="1" id="RUT:WheelchairVehicleEquipment:1">
+                            <AccessVehicleEquipmentRef ref="RUT:AccessVehicleEquipment:1" version="1"/>
+                            <HasWheelChairSpaces>true</HasWheelChairSpaces>
+                            <NumberOfWheelchairAreas>5</NumberOfWheelchairAreas>
+                            <CompanionSeat>true</CompanionSeat>
+                        </WheelchairVehicleEquipment>
+                    </equipments>
+
+
+
+                    <vehicleTypes>
+
+                        <!-- Generic VehicleType -->
+                        <VehicleType version="1" id="RUT:VehicleType:Buss">
+                            <capacities>
+                                <PassengerCapacity id="RUT:PassengerCapacity:Premium">
+                                    <FareClass>premiumClass</FareClass>
+                                    <SeatingCapacity>50</SeatingCapacity>
+                                </PassengerCapacity>
+                                <PassengerCapacity id="RUT:PassengerCapacity:Standard">
+                                    <FareClass>standardClass</FareClass>
+                                    <SeatingCapacity>250</SeatingCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                        </VehicleType>
+
+
+                        <!-- VARELAGER revision 1 -->
+                        <VehicleType id="VYT:VehicleType:1" version="1">
+                            <Description>SETRA-S431DT-LOWER</Description>
+                            <PrivateCode>DOVREBUSSEN-LOWER</PrivateCode>
+                            <EuroClass>Fuel related UNECE based vehicle categories and/or EU defined passenger car categories, recommended usage in NeTEx not documented</EuroClass>
+                            <capacities>
+                                <PassengerCapacity id="VYT:PassengerCapacity:1" version="1">
+                                    <FareClass>any</FareClass>
+                                    <!-- DUMMY TEST DATA -->
+                                </PassengerCapacity>
+                            </capacities>
+                            <facilities>
+                                <ServiceFacilitySet id="VYT:ServiceFacilitySet" version="1">
+                                    <CateringFacilityList>foodVendingMachine</CateringFacilityList>
+                                    <accommodations>
+                                        <Accommodation id="x" version="y">
+                                            <Name>dummy</Name>
+                                        </Accommodation>
+                                    </accommodations>
+                                </ServiceFacilitySet>
+                            </facilities>
+                        </VehicleType>
+
+                        <VehicleType id="VYT:VehicleType:2" version="1">
+                            <Description>SETRA-S431DT-UPPER</Description>
+                            <PrivateCode>DOVREBUSSEN-UPPER</PrivateCode>
+                        </VehicleType>
+
+
+
+
+                        <!-- VARELAGER test-references -->
+
+                        <Train version="0" nameOfClass="Bus" id="RUT:Train:Dovrebussen">
+                            <components>
+                                <TrainComponent version="0" id="RUT:TrainComponent:DOVREBUSSEN-LOWER" order="1" created="2020-10-06T12:30:00" changed="2020-10-06T13:30:00">
+                                    <TrainElementRef ref="PEN:LogicalElement:SETRA-S431DT-LOWER" versionRef="2"/>
+                                </TrainComponent>
+                                <TrainComponent version="0" id="RUT:TrainComponent:DOVREBUSSEN-UPPER" order="2" created="2020-10-06T12:30:00" changed="2020-10-06T13:30:00">
+                                    <TrainElementRef ref="PEN:LogicalElement:SETRA-S431DT-UPPER" versionRef="3"/>
+                                </TrainComponent>
+                            </components>
+                        </Train>
+
+
+                        <Train id="RUT:Train:1" version="1">
+                            <!-- placeholder -->
+                        </Train>
+                        <VehicleType id="VehicleType:1" version="1">
+                            <!-- placeholder -->
+                        </VehicleType>
+
+
+                    </vehicleTypes>
+
+
+
+                    <vehicles>
+
+                        <Vehicle id="RUT:Vehicle:1" version="1">
+                            <TrainRef ref="ref"/>
+                            <!-- XSD:choice -->
+                            <!--
+                      <TrainRef ref="RUT:Train:Flirt" version="1"/>
+                      <VehicleTypeRef ref="ref"></VehicleTypeRef>
+                    -->
+                            <actualVehicleEquipments>
+                                <AccessEquipmentRef ref="EXT:AccessEquipment:ext"/>
+                                <AssistanceServiceRef ref="EXT:AssistanceService:ext"/>
+                                <CateringService id="RUT:CateringService:1" version="1">
+                                    <ServiceList>bar</ServiceList>
+                                </CateringService>
+                            </actualVehicleEquipments>
+                        </Vehicle>
+
+                        <TrainElement version="1" id="RUT:TrainElement:1">
+                            <FareClasses>premiumClass standardClass</FareClasses>
+
+                            <!-- capasity per element-->
+                            <capacities>
+                                <PassengerCapacity id="RUT:PassengerCapacity:Premium">
+                                    <FareClass>premiumClass</FareClass>
+                                    <SeatingCapacity>50</SeatingCapacity>
+                                </PassengerCapacity>
+                                <PassengerCapacity id="RUT:PassengerCapacity:Standard">
+                                    <FareClass>standardClass</FareClass>
+                                    <SeatingCapacity>250</SeatingCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+
+                            <!-- Accomodation related facilities: NeTEx part 3 - ﻿7.4.2.3 Fare Facility (page 111) -->
+                            <facilities>
+                                <ServiceFacilitySet id="RUT:ServiceFacilityList:1" version="1">
+                                    <CateringFacilityList>foodVendingMachine beverageVendingMachine</CateringFacilityList>
+                                    <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
+                                    <AccommodationFacilityList>seating</AccommodationFacilityList>
+                                    <!--accommodations>
+                                <Accommodation id="NSR:Accomodation:1" version="1">
+                                    <BerthFacility>both</BerthFacility>
+                                </Accommodation>
+                            </accommodations-->
+                                </ServiceFacilitySet>
+                            </facilities>
+
+
+                            <equipments>
+                                <!-- placeholder -->
+                            </equipments>
+
+                        </TrainElement>
+
+
+
+                        <!-- Dummy TrainElements for references from TrainComponents -->
+                        <TrainElement version="1" id="RUT:TrainElement:BPa74">
+                            <Name>Flirt</Name>
+                        </TrainElement>
+                        <TrainElement version="1" id="RUT:TrainElement:BMb74">
+                            <Name>Flirt</Name>
+                        </TrainElement>
+                        <TrainElement version="1" id="RUT:TrainElement:BPb74">
+                            <Name>Flirt</Name>
+                        </TrainElement>
+                        <TrainElement version="1" id="RUT:TrainElement:BCMU74">
+                            <Name>Flirt</Name>
+                        </TrainElement>
+                        <TrainElement version="1" id="RUT:TrainElement:BMa74">
+                            <Name>Flirt</Name>
+                        </TrainElement>
+
+
+
+                        <!-- VARELAGER revision 0 (added for completeness / XSD validation) -->
+                        <!-- Dummy TrainElements for references from TrainComponents -->
+                        <TrainElement id="VYT:TrainElement:SETRA-S431DT-LOWER" version="1">
+                            <Name>DOVREBUSSEN-LOWER</Name>
+                            <Description>SETRA-S431DT-LOWER</Description>
+                        </TrainElement>
+                        <TrainElement id="VYT:TrainElement:SETRA-S431DT-UPPER" version="1">
+                            <Name>DOVREBUSSEN-UPPER</Name>
+                            <Description>SETRA-S431DT-UPPER</Description>
+                        </TrainElement>
+
+                        <!-- VARELAGER revision 1 -->
+                        <Vehicle id="VYT:Vehicle:1" version="1">
+                            <PrivateCode>DOVREBUSSEN</PrivateCode>
+                            <VehicleTypeRef ref="VYT:VehicleType:1" version="1"/>
+                        </Vehicle>
+
+
+
+                        <Vehicle version="1" id="RUT:Vehicle:Flirt">
+                            <OperatorRef ref="NOG:Operator:0"/>
+
+                            <VehicleTypeRef version="1" ref="RUT:VehicleType:Buss"/>
+                        </Vehicle>
+                    </vehicles>
+
+
+                    <groupsOfEntities>
+                        <GeneralGroupOfEntities id="NSR:GeneralGroupOfEntities:1" version="1">
+                            <members>
+                                <VersionOfObjectRef ref="test"/>
+                            </members>
+                        </GeneralGroupOfEntities>
+                    </groupsOfEntities>
+
+                </ResourceFrame>
+
+                <VehicleScheduleFrame created="2022-02-15T13:37:49" version="1" id="RUT:VehicleScheduleFrame:1">
+                    <!-- placeholder -->
+                </VehicleScheduleFrame>
+
+
+
+
+                <SiteFrame version="1" id="NSR:SiteFrame:1">
+                    <stopPlaces>
+                        <StopPlace version="1" id="NSR:StopPlace:1">
+                            <Name>Demo</Name>
+                            <quays>
+                                <Quay version="1" id="NSR:Quay:1"/>
+                            </quays>
+                        </StopPlace>
+                    </stopPlaces>
+                </SiteFrame>
+
+
+                <ServiceCalendarFrame version="1" id="RUT:ServiceCalendarFrame:1">
+                    <dayTypes>
+                        <DayType version="1" id="RUT:DayType:2020-01-02"/>
+                        <DayType version="1" id="RUT:DayType:2020-01-03"/>
+                    </dayTypes>
+                    <operatingDays>
+                        <OperatingDay id="RUT:OperatingDay:2020-01-02" version="1">
+                            <CalendarDate>2020-01-02</CalendarDate>
+                        </OperatingDay>
+                        <OperatingDay id="RUT:OperatingDay:2020-01-03" version="1">
+                            <CalendarDate>2020-01-03</CalendarDate>
+                        </OperatingDay>
+                    </operatingDays>
+                    <dayTypeAssignments>
+                        <DayTypeAssignment id="RUT:DayTypeAssignment:2020-01-02" version="1" order="1">
+                            <Date>2020-01-02</Date>
+                            <DayTypeRef ref="RUT:DayType:2020-01-03" version="1"/>
+                        </DayTypeAssignment>
+                        <DayTypeAssignment id="RUT:DayTypeAssignment:2020-01-03" version="1" order="2">
+                            <Date>2020-01-03</Date>
+                            <DayTypeRef ref="RUT:DayType:2020-01-03" version="1"/>
+                            <isAvailable>false</isAvailable>
+                        </DayTypeAssignment>
+                    </dayTypeAssignments>
+                </ServiceCalendarFrame>
+
+
+                <ServiceFrame version="1" id="RUT:ServiceFrame:4145998">
+                    <routePoints>
+                        <RoutePoint version="1" id="RUT:RoutePoint:1">
+                            <projections>
+                                <PointProjection version="1" id="NSR:PointProjection:1">
+                                    <ProjectToPointRef version="1" ref="NSR:ScheduledStopPoint:1"/>
+                                </PointProjection>
+                            </projections>
+                        </RoutePoint>
+                        <RoutePoint version="1" id="RUT:RoutePoint:2">
+                            <projections>
+                                <PointProjection version="1" id="NSR:PointProjection:2">
+                                    <ProjectToPointRef version="1" ref="NSR:ScheduledStopPoint:1"/>
+                                </PointProjection>
+                            </projections>
+                        </RoutePoint>
+                    </routePoints>
+
+                    <routeLinks>
+                        <RouteLink version="1" id="NSR:RouteLink:1">
+                            <Distance>100</Distance>
+                            <FromPointRef ref="RUT:RoutePoint:1"/>
+                            <ToPointRef ref="RUT:RoutePoint:2"/>
+                        </RouteLink>
+                    </routeLinks>
+
+
+                    <routes>
+                        <Route version="1" id="RUT:Route:1-1105">
+                            <Name>Oslo S - Drammen stasjon</Name>
+                            <ShortName>Oslo S - Drammen stasjon</ShortName>
+                            <LineRef ref="RUT:Line:41" version="1"/>
+                            <pointsInSequence>
+                                <PointOnRoute order="1" version="1" id="RUT:PointOnRoute:4144409">
+                                    <RoutePointRef ref="RUT:RoutePoint:760010003"/>
+                                </PointOnRoute>
+                                <PointOnRoute order="2" version="1" id="RUT:PointOnRoute:4144410">
+                                    <RoutePointRef ref="RUT:RoutePoint:760140801"/>
+                                </PointOnRoute>
+                                <PointOnRoute order="3" version="1" id="RUT:PointOnRoute:4144411">
+                                    <RoutePointRef ref="RUT:RoutePoint:760141301"/>
+                                </PointOnRoute>
+                                <PointOnRoute order="4" version="1" id="RUT:PointOnRoute:4144412">
+                                    <RoutePointRef ref="RUT:RoutePoint:760142105"/>
+                                </PointOnRoute>
+                            </pointsInSequence>
+                        </Route>
+
+                        <Route version="1" id="NSR:Route:Demo">
+                            <Name>Demo</Name>
+                            <Description>description</Description>
+                            <PrivateCode>privatecode</PrivateCode>
+                            <LineRef ref="RUT:Line:41" version="1"/>
+                            <DirectionType>outbound</DirectionType>
+                            <pointsInSequence>
+                                <PointOnRoute version="1" id="NSR:PointOnRoute:1" order="1">
+                                    <RoutePointRef version="1" ref="RUT:RoutePoint:1"/>
+                                </PointOnRoute>
+                                <PointOnRoute version="1" id="NSR:PointOnRoute:2" order="2">
+                                    <RoutePointRef version="1" ref="RUT:RoutePoint:2"/>
+                                </PointOnRoute>
+                            </pointsInSequence>
+                        </Route>
+                    </routes>
+
+
+
+                    <lines>
+                        <Line version="1" id="RUT:Line:41">
+                            <Name>Bergensbanen</Name>
+                            <TransportMode>rail</TransportMode>
+                            <TransportSubmode>
+                                <RailSubmode>regionalRail</RailSubmode>
+                            </TransportSubmode>
+                            <PublicCode>41</PublicCode>
+                            <OperatorRef ref="RUT:Operator:503"/>
+                            <RepresentedByGroupRef ref="RUT:Network:1"/>
+                        </Line>
+                    </lines>
+
+                    <scheduledStopPoints>
+                        <ScheduledStopPoint version="1" id="NSR:ScheduledStopPoint:1"> </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="NSR:ScheduledStopPoint:2"/>
+                    </scheduledStopPoints>
+
+
+
+                    <stopAssignments>
+                        <PassengerStopAssignment version="1" id="NSR:PassengerStopAssignment:1" order="1">
+                            <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
+                            <StopPlaceRef version="1" ref="NSR:StopPlace:1"/>
+                            <QuayRef version="1" ref="NSR:Quay:1"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="1" id="NSR:PassengerStopAssignment:2" order="2">
+                            <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:2" version="1"/>
+                            <StopPlaceRef version="1" ref="NSR:StopPlace:1"/>
+                            <QuayRef version="1" ref="NSR:Quay:1"/>
+                        </PassengerStopAssignment>
+
+                    </stopAssignments>
+
+
+
+                    <journeyPatterns>
+                        <JourneyPattern version="1" id="RUT:JourneyPattern:1-1105">
+                            <Name>Oslo S - Drammen stasjon</Name>
+                            <RouteRef ref="RUT:Route:1-1105" version="1"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern order="1" version="1" id="RUT:StopPointInJourneyPattern:1-1105-1">
+                                    <ScheduledStopPointRef ref="RUT:ScheduledStopPoint:760010003"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <DestinationDisplayRef ref="RUT:DestinationDisplay:32"/>
+                                    <BookingArrangements>
+                                        <BookingContact>
+                                            <Phone>+47 407 05 070</Phone>
+                                            <Url>https://www.nettbuss.no</Url>
+                                        </BookingContact>
+                                        <BookingMethods>callOffice online</BookingMethods>
+                                        <BookingAccess>public</BookingAccess>
+                                        <BookWhen>advanceAndDayOfTravel</BookWhen>
+                                        <BuyWhen>onReservation</BuyWhen>
+                                        <MinimumBookingPeriod>PT10M</MinimumBookingPeriod>
+                                    </BookingArrangements>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="2" version="1" id="RUT:StopPointInJourneyPattern:1-1105-2">
+                                    <ScheduledStopPointRef ref="RUT:ScheduledStopPoint:760140801"/>
+                                    <ForAlighting>false</ForAlighting>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="3" version="1" id="RUT:StopPointInJourneyPattern:1-1105-3">
+                                    <ScheduledStopPointRef ref="RUT:ScheduledStopPoint:760141301"/>
+                                    <ForAlighting>false</ForAlighting>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="4" version="1" id="RUT:StopPointInJourneyPattern:1-1105-3">
+                                    <ScheduledStopPointRef ref="RUT:ScheduledStopPoint:760141301"/>
+                                    <ForAlighting>false</ForAlighting>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="4" version="1" id="RUT:StopPointInJourneyPattern:1-1105-4">
+                                    <ScheduledStopPointRef ref="RUT:ScheduledStopPoint:760142105"/>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                            <linksInSequence>
+                                <ServiceLinkInJourneyPattern order="1" version="1" id="RUT:ServiceLinkInJourneyPattern:4144971">
+                                    <ServiceLinkRef ref="RUT:ServiceLink:b50af5c2-867c-4d3f-a62b-69305d79088c"/>
+                                </ServiceLinkInJourneyPattern>
+                                <ServiceLinkInJourneyPattern order="2" version="1" id="RUT:ServiceLinkInJourneyPattern:4144973">
+                                    <ServiceLinkRef ref="RUT:ServiceLink:29e6ec71-da1c-4414-9e7d-b8fde38c552d"/>
+                                </ServiceLinkInJourneyPattern>
+                                <ServiceLinkInJourneyPattern order="3" version="1" id="RUT:ServiceLinkInJourneyPattern:4144975">
+                                    <ServiceLinkRef ref="RUT:ServiceLink:07f4d8af-86a3-4f24-935c-cb648e9f1b30"/>
+                                </ServiceLinkInJourneyPattern>
+                            </linksInSequence>
+                        </JourneyPattern>
+                    </journeyPatterns>
+                </ServiceFrame>
+
+
+
+                <TimetableFrame version="1" id="RUT:TimetableFrame:1">
+
+                    <vehicleJourneys>
+
+
+                        <ServiceJourney version="1" id="RUT:ServiceJourney:1">
+                            <keyList>
+                                <KeyValue>
+                                    <Key>Aksjonskort</Key>
+                                    <Value>[M]bus,rail[/M][T]-30[/T]</Value>
+                                </KeyValue>
+
+                                <!-- Unik operativt tognummer (en delstrekning betjent av et transportmiddel) -->
+                                <KeyValue>
+                                    <Key>OTN</Key>
+                                    <Value>61001</Value>
+                                </KeyValue>
+
+                                <!-- Strekning / ISIRKnr? -->
+
+                            </keyList>
+
+                            <Name>Bergen</Name>
+
+                            <!-- Avgangsidentifikator -->
+                            <PrivateCode>61</PrivateCode>
+                            <TransportMode>rail</TransportMode>
+                            <TransportSubmode>
+                                <RailSubmode>regionalRail</RailSubmode>
+                            </TransportSubmode>
+                            <ServiceAlteration>cancellation</ServiceAlteration>
+                            <dayTypes>
+                                <DayTypeRef ref="RUT:DayType:29"/>
+                            </dayTypes>
+                            <JourneyPatternRef ref="RUT:JourneyPattern:1-1105" version="1"/>
+
+                            <!-- XSD:choice allows for: -->
+                            <!--
+              <VehicleTypeRef ref=""></VehicleTypeRef>
+              <TrainRef ref=""></TrainRef>
+              -->
+
+                            <!-- VehicleTypeRef ref="RUT:Train:1" version="1"/ -->
+                            <!-- ERROR -->
+                            <TrainRef ref="RUT:Train:1" version="1"/>
+                            <!-- OK -->
+                            <!-- TrainRef ref="RUT:VehicleType:1" version="1"/ -->
+                            <!-- ERROR -->
+
+
+                            <OperatorRef ref="RUT:Operator:503"/>
+                            <LineRef ref="RUT:Line:41" version="1"/>
+
+
+                            <passingTimes>
+                                <TimetabledPassingTime version="1" id="RUT:TimetabledPassingTime:686e98f9-e0ea-46c8-a208-e0ebb80d9315">
+                                    <StopPointInJourneyPatternRef ref="RUT:StopPointInJourneyPattern:1-1105-1" version="1"/>
+                                    <DepartureTime>08:25:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="1" id="RUT:TimetabledPassingTime:592a9671-027e-42b6-aae3-c5938212ed5e">
+                                    <StopPointInJourneyPatternRef ref="RUT:StopPointInJourneyPattern:1-1105-2" version="1"/>
+                                    <ArrivalTime>08:38:00</ArrivalTime>
+                                    <DepartureTime>08:39:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="1" id="RUT:TimetabledPassingTime:119b896c-1054-4db1-9776-276d48e44431">
+                                    <StopPointInJourneyPatternRef ref="RUT:StopPointInJourneyPattern:1-1105-3" version="1"/>
+                                    <ArrivalTime>08:45:00</ArrivalTime>
+                                    <DepartureTime>08:46:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="1" id="RUT:TimetabledPassingTime:da2cb9d1-3efb-4928-9402-8bd02b489a19">
+                                    <StopPointInJourneyPatternRef ref="RUT:StopPointInJourneyPattern:1-1105-4" version="1"/>
+                                    <ArrivalTime>08:58:00</ArrivalTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+
+                            <parts>
+
+                                <!-- opprinnelig retning -->
+                                <JourneyPart id="RUT:JourneyPart:1" version="1">
+
+                                    <!-- TWO PROBLEMS with TrainNumber:
+                    1) Cannot add/refer TrainNumber (also) for a Train object
+                    2) There is no Train-to-TrainNumber assignment datatype, i.e. only Journey and JourneyPart can refer TrainNumber(s)
+                  -->
+                                    <TrainNumberRef ref="ref"/>
+
+                                    <StartTime>08:46:00</StartTime>
+                                    <EndTime>12:46:00</EndTime>
+                                    <!-- PROBLEM with VehicleOrientation: Single ServiceJourney requires ENGINE TrainElement to be left out of the Train (i.e. EXCLUDE engine TrainComponent) -->
+                                    <VehicleOrientation>true</VehicleOrientation>
+                                    <!-- true = forward -->
+                                </JourneyPart>
+
+                                <!-- snudd retning -->
+                                <JourneyPart id="RUT:JourneyPart:2" version="1">
+                                    <StartTime>12:46:00</StartTime>
+                                    <EndTime>16:46:00</EndTime>
+                                    <VehicleOrientation>false</VehicleOrientation>
+                                    <!-- true = forward -->
+                                </JourneyPart>
+
+                                <JourneyPart id="RUT:JourneyPart:demo" version="1">
+                                    <TrainNumberRef ref=""/>
+                                    <StartTime>00:00:00</StartTime>
+                                    <EndTime>00:00:00</EndTime>
+                                </JourneyPart>
+
+                            </parts>
+                        </ServiceJourney>
+
+
+                        <DatedServiceJourney version="1" id="RUT:DatedServiceJourney:1-3922-61-date-2020-12-31">
+                            <JourneyPatternRef ref="RUT:JourneyPattern:1-1105" version="1"/>
+
+                            <TrainRef ref="RUT:Train:Flirt-2"/>
+                            <!-- SJN just as a technical example due to defined within this file -->
+
+                            <!--parts>
+                                <JourneyPart >
+                                  <StartTime></StartTime>
+                                  <EndTime></EndTime>
+                                </JourneyPart>
+                                <JourneyPartRef ref="RUT:JourneyPart:1" version="1"/>
+                              </parts-->
+
+                            <ServiceJourneyRef ref="RUT:ServiceJourney:1-3922-61"/>
+                            <OperatingDayRef ref="RUT:OperatingDay:2020-12-31"/>
+                        </DatedServiceJourney>
+
+
+                        <ServiceJourney id="RUT:ServiceJourney:1-test" version="1">
+                            <TrainRef ref="GOA:Train:1-test"/>
+                            <parts>
+                                <!-- Changing direction mid journey (Kristiansand) -->
+                                <JourneyPart version="1" id="GOA:JourneyPart:X">
+                                    <MainPartRef ref="ref"/>
+                                    <StartTime>00:00:00</StartTime>
+                                    <EndTime>11:11:11</EndTime>
+                                </JourneyPart>
+                                <JourneyPart version="1" id="GOA:JourneyPart:Y">
+                                    <MainPartRef ref="ref"/>
+                                    <StartTime>11:11:11</StartTime>
+                                    <EndTime>23:59:59</EndTime>
+                                </JourneyPart>
+                                <JourneyPart version="1" id="GOA:JourneyPart:Z">
+                                    <MainPartRef ref="ref"/>
+                                    <StartTime>00:00:00</StartTime>
+                                    <EndTime>11:11:11</EndTime>
+                                    <VehicleOrientation>true</VehicleOrientation>
+                                </JourneyPart>
+                            </parts>
+                        </ServiceJourney>
+
+                    </vehicleJourneys>
+
+
+                </TimetableFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
