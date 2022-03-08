@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    POC Vehicle - Ruter# Tram 
+    
+    (NB: Some per profile required elements are left out for simplified readability)
+-->
+
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  version="1.13:NO-NeTEx-networktimetable:1.5">
+
+    <PublicationTimestamp>2022-03-01T13:37:49</PublicationTimestamp>
+    <ParticipantRef>RUT</ParticipantRef>
+    <Description>Vehicle-Tram</Description>
+
+
+    <dataObjects>
+
+        <CompositeFrame id="RUT:CompositeFrame:1" version="1" created="2022-03-01T13:37:49">
+            <validityConditions>
+                <AvailabilityCondition version="1" id="RUT:AvailabilityCondition:1">
+                    <FromDate>2022-01-01T00:00:00</FromDate>
+                    <ToDate>2022-12-31T23:59:59</ToDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            <codespaces>
+                <Codespace id="nsr">
+                    <Xmlns>NSR</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+                    <Description>Nasjonalt Stoppestedsregister</Description>
+                </Codespace>
+                <Codespace id="rut">
+                    <Xmlns>RUT</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/rut</XmlnsUrl>
+                    <Description>Ruter#</Description>
+                </Codespace>
+            </codespaces>
+            <FrameDefaults>
+                <DefaultLocale>
+                    <TimeZone>Europe/Oslo</TimeZone>
+                    <DefaultLanguage>no</DefaultLanguage>
+                </DefaultLocale>
+            </FrameDefaults>
+
+
+            <frames>
+                
+                <GeneralFrame id="RUT:GeneralFrame:1" version="1">
+                    <!-- placeholder -->
+                </GeneralFrame>
+                
+                
+                <VehicleScheduleFrame id="RUT:VehicleScheduleFrame:1" version="1">
+                    <!-- placeholder -->
+                </VehicleScheduleFrame>
+                
+                
+                <SiteFrame id="NSR:SiteFrame:1" version="1">
+                    <stopPlaces>
+                        <StopPlace id="NSR:StopPlace:1" version="1">
+                            <Name>Demo 1</Name>
+                            <quays>
+                                <Quay id="NSR:Quay:1" version="1"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace id="NSR:StopPlace:2" version="1">
+                            <Name>Demo 2</Name>
+                            <quays>
+                                <Quay id="NSR:Quay:2" version="1"/>
+                            </quays>
+                        </StopPlace>
+                    </stopPlaces>
+                </SiteFrame>
+                
+                
+                <ServiceCalendarFrame id="RUT:ServiceCalendarFrame:1" version="1">
+                    <dayTypes>
+                        <DayType id="RUT:DayType:2022-03-01" version="1"/>
+                    </dayTypes>
+                    <operatingDays>
+                        <OperatingDay id="RUT:OperatingDay:2022-03-01" version="1">
+                            <CalendarDate>2022-03-01</CalendarDate>
+                        </OperatingDay>
+                    </operatingDays>
+                    <dayTypeAssignments>
+                        <DayTypeAssignment id="RUT:DayTypeAssignment:2022-03-01" version="1" order="1">
+                            <Date>2022-03-01</Date>
+                            <DayTypeRef ref="RUT:DayType:2022-03-01" version="1"/>
+                        </DayTypeAssignment>
+                    </dayTypeAssignments>
+                </ServiceCalendarFrame>
+
+
+                <ResourceFrame id="RUT:ResourceFrame:1" version="1">
+                    <ValidBetween>
+                        <FromDate>2019-09-11T00:00:00</FromDate>
+                        <ToDate>2021-12-31T23:59:59</ToDate>
+                    </ValidBetween>
+
+                    <typesOfValue>
+                        <TypeOfEquipment id="RUT:TypeOfEquipment:PremiumSeating" version="1">
+                            <PrivateCode>PremiumSeating</PrivateCode>
+                        </TypeOfEquipment>
+                        <TypeOfEquipment id="RUT:TypeOfEquipment:RegularSeating" version="1">
+                            <PrivateCode>RegularSeating</PrivateCode>
+                        </TypeOfEquipment>
+                    </typesOfValue>
+
+
+                    <equipments>
+                        <!-- Example : Wheelchair information (not yet covered by profile) -->
+                        <AccessVehicleEquipment id="RUT:AccessVehicleEquipment:1" version="1">
+                            <Hoist>true</Hoist>
+                            <Ramp>true</Ramp>
+                            <AssistanceNeeded>rampRequired</AssistanceNeeded>
+                            <AssistedBoardingLocation>boardOnlyAtSpecifiedPositions</AssistedBoardingLocation>
+                        </AccessVehicleEquipment>
+                        <WheelchairVehicleEquipment id="RUT:WheelchairVehicleEquipment:1" version="1">
+                            <AccessVehicleEquipmentRef ref="RUT:AccessVehicleEquipment:1" version="1"/>
+                            <HasWheelChairSpaces>true</HasWheelChairSpaces>
+                            <NumberOfWheelchairAreas>5</NumberOfWheelchairAreas>
+                            <CompanionSeat>true</CompanionSeat>
+                        </WheelchairVehicleEquipment>
+                    </equipments>
+
+
+                    <vehicleTypes>
+                        <VehicleType id="RUT:VehicleType:SL18" version="1">
+                            <Name>Sporvogn Ledd bestilt i 2018</Name>
+                            <Description>Produsert av CAF Urbos</Description>
+                            <TypeOfFuel>electricity</TypeOfFuel>
+                            <capacities>
+                                <PassengerCapacity id="RUT:PassengerCapacity:SL18" version="1">
+                                    <TotalCapacity>220</TotalCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                            <LowFloor>true</LowFloor>
+                            <HasLiftOrRamp>false</HasLiftOrRamp>
+                            <Length>341.60</Length>
+                            <facilities>
+                                <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:1" version="1"/>
+                                <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:2" version="1"/>
+                                <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:3" version="1"/>
+                            </facilities>
+                        </VehicleType>
+                        
+                        <VehicleType id="RUT:VehicleType:SL95" version="1">
+                            <Name>Sporvogn Ledd bestilt i 1995</Name>
+                            <Description>Produsert av Ansaldo/Firema</Description>
+                            <TypeOfFuel>electricity</TypeOfFuel>
+                            <capacities>
+                                <PassengerCapacity id="RUT:PassengerCapacity:SL95" version="1">
+                                    <TotalCapacity>212</TotalCapacity>
+                                    <SeatingCapacity>88</SeatingCapacity>
+                                    <StandingCapacity>124</StandingCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                            <LowFloor>true</LowFloor>
+                            <HasLiftOrRamp>true</HasLiftOrRamp>
+                            <Length>331.20</Length>
+                            <facilities>
+                                <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:1" version="1"/>
+                                <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:2" version="1"/>
+                                <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:3" version="1"/>
+                            </facilities>
+                        </VehicleType>
+                        
+                        <VehicleType id="RUT:VehicleType:SL79" version="1">
+                            <Name>Sporvogn Ledd bestilt i 1979</Name>
+                            <Description>Produsert av Duewag, Düsseldorf / Strømmens Værksted (på lisens)</Description>
+                            <TypeOfFuel>electricity</TypeOfFuel>
+                            <capacities>
+                                <PassengerCapacity id="RUT:PassengerCapacity:SL79" version="1">
+                                    <TotalCapacity>138</TotalCapacity>
+                                    <SeatingCapacity>73</SeatingCapacity>
+                                    <StandingCapacity>65</StandingCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                            <LowFloor>false</LowFloor>
+                            <HasLiftOrRamp>false</HasLiftOrRamp>
+                            <Length>221.80</Length>
+                            <facilities>
+                                <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:1" version="1"/>
+                                <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:3" version="1"/>
+                            </facilities>
+                        </VehicleType>
+                    </vehicleTypes>
+                    
+
+                    <vehicles>
+                        <Vehicle id="RUT:Vehicle:SL18" version="1">
+                            <Name>SL18</Name>
+                            <OperatorRef ref="NOG:Operator:RUT"/> <!-- ext. -->
+                            <VehicleTypeRef ref="RUT:VehicleType:SL18" version="1"/>
+                            <actualVehicleEquipments>
+                                <!-- EXAMPLE (not yet supported by profile -->
+                                <AccessVehicleEquipmentRef ref="RUT:AccessVehicleEquipment:1" version="1"/>
+                            </actualVehicleEquipments>
+                        </Vehicle>
+
+                        <Vehicle id="RUT:Vehicle:SL95" version="1">
+                            <Name>SL95</Name>
+                            <OperatorRef ref="NOG:Operator:RUT"/> <!-- ext. -->
+                            <VehicleTypeRef ref="RUT:VehicleType:SL95" version="1"/>
+                        </Vehicle>
+
+                        <Vehicle id="RUT:Vehicle:SL79" version="1">
+                            <Name>SL79</Name>
+                            <OperatorRef ref="NOG:Operator:RUT"/> <!-- ext. -->
+                            <VehicleTypeRef ref="RUT:VehicleType:SL79" version="1"/>
+                        </Vehicle>
+                    </vehicles>
+                </ResourceFrame>
+
+
+                <TimetableFrame id="RUT:TimetableFrame:ServiceFacilityPlaceholder" version="1">
+                    <serviceFacilitySets>
+                        <ServiceFacilitySet id="RUT:ServiceFacilitySet:1" version="1">
+                            <AccommodationAccessList>freeSeating standing</AccommodationAccessList>
+                            <AccommodationFacilityList>seating foldingSeat standing</AccommodationFacilityList>
+                        </ServiceFacilitySet>
+                        <ServiceFacilitySet id="RUT:ServiceFacilitySet:2" version="1">
+                            <LuggageCarriageFacilityList>cyclesAllowed</LuggageCarriageFacilityList>
+                        </ServiceFacilitySet>
+                        <ServiceFacilitySet id="RUT:ServiceFacilitySet:3" version="1">
+                            <ServiceReservationFacilityList>noReservationsPossible</ServiceReservationFacilityList>
+                        </ServiceFacilitySet>
+                    </serviceFacilitySets>
+                </TimetableFrame>
+
+
+
+                <ServiceFrame version="1" id="RUT:ServiceFrame:1">
+                    <lines>
+                        <Line id="RUT:Line:1" version="1">
+                            <Name>Trikkelinje</Name>
+                            <TransportMode>tram</TransportMode>
+                            <TransportSubmode>
+                                <TramSubmode>cityTram</TramSubmode>
+                            </TransportSubmode>
+                            <PublicCode>11</PublicCode>
+                            <OperatorRef ref="NOG:Operator:RUT"/>
+                            <RepresentedByGroupRef ref="RUT:Network:1" version="1"/>
+                        </Line>
+                    </lines>
+
+                    <scheduledStopPoints>
+                        <ScheduledStopPoint id="NSR:ScheduledStopPoint:1" version="1"/> 
+                        <ScheduledStopPoint id="NSR:ScheduledStopPoint:2" version="1"/>
+                    </scheduledStopPoints>
+
+                    <stopAssignments>
+                        <PassengerStopAssignment version="1" id="NSR:PassengerStopAssignment:1" order="1">
+                            <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
+                            <StopPlaceRef ref="NSR:StopPlace:1" version="1"/>
+                            <QuayRef ref="NSR:Quay:1" version="1"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="1" id="NSR:PassengerStopAssignment:2" order="2">
+                            <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:2" version="1"/>
+                            <StopPlaceRef ref="NSR:StopPlace:1" version="1"/>
+                            <QuayRef ref="NSR:Quay:1" version="1"/>
+                        </PassengerStopAssignment>
+                    </stopAssignments>
+
+                    <journeyPatterns>
+                        <JourneyPattern id="RUT:JourneyPattern:1" version="1">
+                            <Name>Trikk</Name>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="RUT:StopPointInJourneyPattern:1" version="1" order="1">
+                                    <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
+                                    <ForAlighting>false</ForAlighting>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="RUT:StopPointInJourneyPattern:2" version="1" order="2">
+                                    <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </JourneyPattern>
+                    </journeyPatterns>
+                </ServiceFrame>
+
+
+                <TimetableFrame version="1" id="RUT:TimetableFrame:1">
+                    <vehicleJourneys>
+                        <ServiceJourney id="RUT:ServiceJourney:1" version="1">
+                            <ServiceAlteration>planned</ServiceAlteration>
+                            <dayTypes>
+                                <DayTypeRef ref="RUT:DayType:2022-03-01" version="1"/>
+                            </dayTypes>
+                            <VehicleTypeRef ref="RUT:VehicleType:SL18" version="1"/>
+                            <passingTimes>
+                                <TimetabledPassingTime id="RUT:TimetabledPassingTime:1" version="1">
+                                    <DepartureTime>13:37:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime id="RUT:TimetabledPassingTime:1" version="1">
+                                    <ArrivalTime>13:49:00</ArrivalTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                    </vehicleJourneys>
+                </TimetableFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
