@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <!--
-    POC Vehicle - Ruter# Tram 
+    Vehicle - Tram (Ruper Entur Varelager rolling stock
     
     (NB: Some per profile required elements are left out for simplified readability)
 -->
@@ -289,6 +289,7 @@
                             <dayTypes>
                                 <DayTypeRef ref="RUT:DayType:2022-03-01" version="1"/>
                             </dayTypes>
+                            <VehicleTypeRef ref="RUT:VehicleType:SL18" version="1"/>
                             <passingTimes>
                                 <TimetabledPassingTime id="RUT:TimetabledPassingTime:1" version="1">
                                     <DepartureTime>13:37:00</DepartureTime>
