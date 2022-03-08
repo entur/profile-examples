@@ -3,7 +3,10 @@
 <!--
     POC Vehicle - Ruter# Tram 
     
-    (NB: Some per profile required elements are left out for simplified readability)
+    NB #1: Some per profile required elements are left out for simplified readability
+    NB #2: For alignment with Material / Rolling Stock and vechicle scheduling (Blocks), 
+    vehicle type must be of Train datatype (with TrainBlock scheduling type)
+      - i.e. this example is conceptual and does NOT align with the Entur implementation!
 -->
 
 
