@@ -236,6 +236,13 @@
 
 
                 <ServiceFrame version="1" id="RUT:ServiceFrame:1">
+                    <routes>
+                        <Route id="RUT:Route:1" version="1">
+                            <LineRef ref="RUT:Line:1" version="1"/>
+                            <!-- pointsInSequence / PointOnRoute / Point(Ref) purposely left out -->
+                        </Route>
+                    </routes>
+                    
                     <lines>
                         <Line id="RUT:Line:1" version="1">
                             <Name>Trikkelinje</Name>
@@ -243,7 +250,6 @@
                             <TransportSubmode>
                                 <TramSubmode>cityTram</TramSubmode>
                             </TransportSubmode>
-                            <PublicCode>11</PublicCode>
                             <OperatorRef ref="NOG:Operator:RUT"/>
                             <RepresentedByGroupRef ref="RUT:Network:1" version="1"/>
                         </Line>
@@ -270,6 +276,7 @@
                     <journeyPatterns>
                         <JourneyPattern id="RUT:JourneyPattern:1" version="1">
                             <Name>Trikk</Name>
+                            <RouteRef ref="RUT:Route:1" version="1"/>
                             <pointsInSequence>
                                 <StopPointInJourneyPattern id="RUT:StopPointInJourneyPattern:1" version="1" order="1">
                                     <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
@@ -288,14 +295,17 @@
                 <TimetableFrame version="1" id="RUT:TimetableFrame:1">
                     <vehicleJourneys>
                         <ServiceJourney id="RUT:ServiceJourney:1" version="1">
+                            <!-- # Not necessary as already defined per Line (only relevant to add when overriding mode/submode) # -->
                             <TransportMode>tram</TransportMode>
                             <TransportSubmode>
                                 <TramSubmode>cityTram</TramSubmode>
                             </TransportSubmode>
+                            <!-- # -->
                             <ServiceAlteration>planned</ServiceAlteration>
                             <dayTypes>
                                 <DayTypeRef ref="RUT:DayType:2022-03-01" version="1"/>
                             </dayTypes>
+                            <JourneyPatternRef ref="RUT:JourneyPattern:1" version="1"/>
                             <VehicleTypeRef ref="RUT:VehicleType:SL18" version="1"/>
                             <passingTimes>
                                 <TimetabledPassingTime id="RUT:TimetabledPassingTime:1" version="1">
