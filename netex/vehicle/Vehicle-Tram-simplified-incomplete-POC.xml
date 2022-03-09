@@ -288,6 +288,10 @@
                 <TimetableFrame version="1" id="RUT:TimetableFrame:1">
                     <vehicleJourneys>
                         <ServiceJourney id="RUT:ServiceJourney:1" version="1">
+                            <TransportMode>tram</TransportMode>
+                            <TransportSubmode>
+                                <TramSubmode>cityTram</TramSubmode>
+                            </TransportSubmode>
                             <ServiceAlteration>planned</ServiceAlteration>
                             <dayTypes>
                                 <DayTypeRef ref="RUT:DayType:2022-03-01" version="1"/>
