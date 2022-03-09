@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Example of school period pass for VKT
+-->
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  version="1.10:NO-NeTEx-fares:0.9">
+
+    <PublicationTimestamp>2022-03-09T20:00:00</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+
+    <dataObjects>
+
+        <!-- Reference data START
+        
+       ************** NOTE: Included only for consistency of example ******************
+        
+        
+        ABBREVIATIONS:
+        
+        CPP = CustomerPurchasePackage
+        CPPE = CustomerPurchasePackageElement
+        CPPA = CustomerPurchaseParameterAssignment
+        CPPEA = CustomerPurchasePackageElementAccess (consumption i.e. activation/validation/usage)
+        
+        -->
+
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            <typesOfValue>
+                <!-- Assignment types (categorisation/flags) -->
+                
+                <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
+                <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
+                
+                <!-- Transition from MarkedAs=unused to MarkedAs=activated -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
+                    <Name>ActivationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to *activate* a validable element, generates CPPElementAccess with MarkedAs=activated (must be used with a corresponding ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAssignment" version="1">
+                    <Name>ActivationAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the validable element is activated (but not consumed)</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Transition from MarkedAs=activated to MarkedAs=used -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment" version="1">
+                    <Name>UsagePolicyAssignment</Name>
+                    <Description>Rule describing how to *consume* a validable element, generates CPPElementAccess with MarkedAs=used (the prerequisite is that the validable element is already MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsageAssignment" version="1">
+                    <Name>UsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is used, i.e. the acquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
+                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage is not required -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
+                    <Name>ActivationAndUsagePolicyAssignment</Name>
+                    <Description>Rule describing how to both *activate* and *consume* in the same operation, generates CPPElementAccess with MarkedAs=used directly (omits MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
+                    <Name>ActivationAndUsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the aquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
+                    <Name>RevalidationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to re-validate a validable element, generates CPPElementAccess with MarkedAs=marked</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Subrules to the various xxxPolicyAssignment -->
+                
+                <!-- Various specification requirements policies - depending on the type of element that must be provided -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment" version="1">
+                    <Name>SpecificationServiceJourneyPolicyAssignment</Name>
+                    <Description>Rule describing that a ServiceJourney must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationSeatPolicyAssignment" version="1">
+                    <Name>SpecificationSeatPolicyAssignment</Name>
+                    <Description>Rule describing that a PassengerSeat must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationTariffZonePolicyAssignment" version="1">
+                    <Name>SpecificationTariffZonePolicyAssignment</Name>
+                    <Description>Rule describing that a TariffZone must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Result of specification requirements -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1">
+                    <Name>SpecificationAssignment</Name>
+                    <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1">
+                    <Name>ExecutionTimePolicyAssignment</Name>
+                    <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule to ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment, ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment and ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Recording of place activation/consumption/marking happened. Recorded on CPPElementAccess/validityParameters -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
+                    <Name>AccessLogDetails</Name>
+                    <Description>CPPEAccess with information about an activation / consumption / re-validation</Description>
+                </TypeOfAccessRightAssignment>  
+                <!-- Common assignments that applies to all other assignments - to avoid repeating it for each CPPA -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment" version="1">
+                    <Name>CommonPolicyAssignment</Name>
+                    <Description>Assignments that applies to all other Assignments within the CPPE</Description>
+                </TypeOfAccessRightAssignment>  
+            </typesOfValue>
+            <organisations>
+                <Authority id="VOT:Authority:VOT" version="1">
+                    <Name>Vestfold Fylkestrafikk</Name>
+                </Authority>
+            </organisations>
+
+        </ResourceFrame>
+
+
+        <ServiceCalendarFrame version="1" id="VOT:Vestfold2021-2022">
+            <Name>Vestfold school calendars</Name>
+
+
+            <!-- Add extra ServiceCalendars for each school/district/level etc -->
+            <ServiceCalendar id="VOT:ServiceCalendar:Vestfold2021-2022-Barneskole" version="1">
+                <dayTypes>
+                    <!-- Definition of a school day. Dates are linked to this daytype below -->
+                    <FareDayType version="1" id="VOT:FareDayType:SchoolDayBarneskole">
+                        <properties>
+                            <PropertyOfDay>
+                                <!-- informative information -->
+                                <HolidayTypes>SchoolDay</HolidayTypes>
+                            </PropertyOfDay>
+                        </properties>
+                    </FareDayType>
+                </dayTypes>
+                <operatingPeriods>
+                    <!-- Bit mask type of operating period -->
+                    <UicOperatingPeriod version="1" id="VOT:UicOperatingPeriod:Vestfold2021-2022-Barneskole">
+                        
+                        <!-- First day represented by in calendar -->
+                        <FromDate>2021-08-17T00:00:00</FromDate>
+                        <!-- ToDate necessary to *validate* that enough validity bits are present -->
+                        <ToDate>2022-06-20T00:00:00</ToDate>
+                        
+                        <!-- 1 means included, 0 means not included -->
+                        <ValidDayBits> 
+                            1111100 <!-- week 33, monday through friday --> 
+                            1111100 <!-- week 34 --> 
+                            1111100 <!-- week 35 --> 
+                            1111100 <!-- week 36 --> 
+                            1111100 <!-- week 37 --> 
+                            1111100 <!-- week 38 -->
+                            1111100 <!-- week 39 --> 
+                            1111100 <!-- week 40 --> 
+                            1111100 <!-- week 41 --> 
+                            1111100 <!-- week 42 --> 
+                            1111100 <!-- week 43 -->
+                            1111100 <!-- week 44 --> 
+                            1111100 <!-- week 45 --> 
+                            1111100 <!-- week 46 --> 
+                            1111100 <!-- week 47 --> 
+                            1111100 <!-- week 48 -->
+                            1111100 <!-- week 49 --> 
+                            1111100 <!-- week 50 --> 
+                            1111100 <!-- week 51 --> 
+                            1111100 <!-- week 52  --> 
+                            1111100 <!-- week 1 2022  --> 
+                            1111100 <!-- week 2 --> 
+                            1111100 <!-- week 3 --> 
+                            1111100 <!-- week 4 --> 
+                            1111100 <!-- week 5 --> 
+                            1111100 <!-- week 6 --> 
+                            1111100 <!-- week 7 --> 
+                            1111100 <!-- week 8 --> 
+                            1111100 <!-- week 9 --> 
+                            1111100 <!-- week 10 --> 
+                            1111100 <!-- week 11 --> 
+                            1111100 <!-- week 12 --> 
+                            1111100 <!-- week 13 --> 
+                            1111100 <!-- week 14 --> 
+                            1111100 <!-- week 15 --> 
+                            1111100 <!-- week 16 --> 
+                            1111100 <!-- week 17 --> 
+                            1111100 <!-- week 18 --> 
+                            1111100 <!-- week 19 --> 
+                            1111100 <!-- week 20 --> 
+                            1111100 <!-- week 21 --> 
+                            1111100 <!-- week 22 --> 
+                            1111100 <!-- week 23 --> 
+                            1111100 <!-- week 24 (last day included is 19th of june  --> 
+                            
+                        </ValidDayBits>
+                    </UicOperatingPeriod>
+                </operatingPeriods>
+                <dayTypeAssignments>
+                    
+                    <!-- Linking of a daytype to a list of dates that applies (here using the operating period above) -->
+                    <DayTypeAssignment version="1" id="VOT:DayTypeAssignment:Vestfold2021-2022-Barneskole" order="1">
+                        <OperatingPeriodRef ref="VOT:UicOperatingPeriod:Vestfold2021-2022-Barneskole"/>
+                        <DayTypeRef version="1" ref="VOT:FareDayType:SchoolDayBarneskole"/>
+                    </DayTypeAssignment>
+                </dayTypeAssignments>
+            </ServiceCalendar>
+        </ServiceCalendarFrame>
+
+
+
+        <FareFrame id="VOT:FareFrame:1" version="1">
+            
+            <timeIntervals>
+                <TimeInterval id="VOT:TimeInterval:2Hours" version="1">
+                    <Duration>PT2H</Duration>
+                </TimeInterval>
+                <TimeInterval id="VOT:TimeInterval:SixToSix" version="1">
+                    <StartTime>06:00:00</StartTime>
+                    <EndTime>18:00:00</EndTime>
+                </TimeInterval>
+            </timeIntervals>
+            
+            <qualityStructureFactors>
+
+                <!-- Definition of a fare demand factor - also used for rush hour setups (in other words; valdidity during a single day) -->
+                <FareDemandFactor id="VOT:FareDemandFactor:TripToSchool" version="1">
+                    <validityConditions>
+                        <!-- using general availability condition -->
+                        <AvailabilityCondition id="ENT:AvailabilityCondition:SchoolMorning" version="1">
+                            <dayTypes>
+                                <!-- applies to the school day type -->
+                                <DayTypeRef ref="VOT:FareDayType:SchoolDayBarneskole"/>
+                            </dayTypes>
+                            
+                            <timebands>
+                                <!-- included period -->
+                                <Timeband id="ENT:Timeband:SixToSix" version="1">
+                                    <StartTime>06:00:00</StartTime>
+                                    <EndTime>18:00:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </AvailabilityCondition>
+                    </validityConditions>
+                </FareDemandFactor>
+            </qualityStructureFactors>
+
+
+    
+            <validableElements>
+                <!-- Empty validable elements for referencing, will contain all the product definition details in a product/sales/ticketing data exchange -->
+                
+                <!-- One for travel  school and one for travel BACK from school -->
+                <ValidableElement id="VOT:ValidableElement:SingleTripToSchool" version="1">
+                    <Name>Single trip to school</Name>
+                </ValidableElement>
+            </validableElements>
+
+
+            <usageParameters>
+             
+                <!-- User profile definition - will usually be specified in a reference data source -->
+                <UserProfile id="VOT:UserProfile:Pupil" version="1">
+                    <Name lang="no">Pupil</Name>
+                    <!-- Reqired to show a student card - or can be omitted if no documents must be showed in case of inspection -->
+                    <ProofRequired>studentCard</ProofRequired>
+                </UserProfile>
+            </usageParameters>
+
+
+            <fareProducts>
+                <!-- Product definiton of type AmountOfPriceUnit, consisting of a stored value of e.g. money, value card units, prepaid access rights or similar -->
+                <AmountOfPriceUnitProduct id="VOT:AmountOfPriceUnitProduct:SchoolCarnet" version="1">
+                    <Name lang="no">School transport with limited number of rides</Name>
+                    <accessRightsInProduct>
+                        <AccessRightInProduct version="1" id="ENT:AccessRightInProduct:ToSchool" order="1">
+                            <!-- 
+                                Actual number of use is defined later using MaximumNumberOfAccesses (380).
+                                For each of these validable element instances a CustomerPurchasePackageElement is created in the CPP
+                            -->
+                            <MaximumAccess>1</MaximumAccess>
+                            <!-- Trip TO school -->
+                            <ValidableElementRef ref="VOT:ValidableElement:SingleTripToSchool" version="1"/>
+                        </AccessRightInProduct>
+                    </accessRightsInProduct>
+                </AmountOfPriceUnitProduct>
+            </fareProducts>
+
+
+            <salesOfferPackages>
+                <!-- Dummy sales offer package added for fare/sales model completeness -->
+                <SalesOfferPackage id="ENT:SalesOfferPackage:SchoolCarnet" version="1">
+                    <Name lang="no">School transport Vestfold</Name>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="VOT:SalesOfferPackageElement:SchoolCarnet" version="1" order="1">
+                            <Name lang="no">School transport Municipality X</Name>
+                            <FareProductRef ref="VOT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+        </FareFrame>
+
+
+        <SalesTransactionFrame id="VOT:SalesTransactionFrame:Case1" version="1">
+
+            <customerAccounts>
+                <CustomerAccount id="VOT:CustomerAccount:1" version="1">
+                    <!-- Dummy data (unused placeholder) -->
+                </CustomerAccount>
+            </customerAccounts>
+
+            <fareContracts>
+                <FareContract id="VOT:FareContract:1" version="1">
+                    <Name>Skolekort Vestfold</Name>
+                    <StartDate>2020-09-06T01:07:00</StartDate>
+                    <EndDate>2021-09-07T01:07:00</EndDate>
+                    <fareContractEntries>
+                        <!-- Supplementary (dummy) data for including CustomerPurchasePackage in a FareContract / SalesTransaction -->
+                        <SalesTransaction version="1" id="VOT:SalesTransaction:1">
+                            <Name>Utstedt Skoleskyss</Name>
+                            <Date>2022-03-09T20:07:00</Date>
+                            <Amount>0</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Reference to customer purchase packages -->
+                                <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:SchoolCarnet" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                    </fareContractEntries>
+                </FareContract>
+            </fareContracts>
+
+
+
+            <!-- 
+                === SCHOOL TRANSPORT SAMPLE ===
+            -->
+            <customerPurchasePackages>
+
+                <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:SchoolCarnet" version="1">
+
+                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SchoolTransport"/>
+                    
+                    <travelSpecifications>
+                        <!-- When included, the TravelSpecifications (summary data) should be displayed to the traveller rather than data from the individual CPP elements -->
+                        <TravelSpecification id="VOT:TravelSpecification:SchoolCarnet" version="1">
+                            <Name>School Transport year 2021-2022</Name>
+                            <Description>Valid on school days twice a day between 06 and 18</Description>
+                            <Units>380</Units>  
+                            <StartOfValidity>2021-08-15T00:00:00</StartOfValidity>
+                            <EndOfValidity>2022-06-20T00:00:00</EndOfValidity>
+                        </TravelSpecification>
+                    </travelSpecifications>
+                    <customerPurchasePackageElements>
+
+                        <!-- 
+                            This is the CPPE for the trip to/from school
+                            Contains 1 rule with a subrule that defines WHEN the CPPE can be used and what details that applies to this usage
+                            Contains 1 rule that describes WHAT the access rights are for each usage
+                       -->
+                        <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:SchoolTransportTripToSchool" version="1" order="1">
+
+
+                            <!-- ***Example of logged usage***. ElementAccesses are the "log" of actual usage (activation, validation, inspection, revertion) -->
+                            <elementAccesses>
+                                <!-- Access no 1 (first ride to school) -->
+                                <CustomerPurchasePackageElementAccess created="2021-08-16T07:05:00">
+                                    <MarkedAs>used</MarkedAs>
+                                    <StartOfValidity>2021-08-16T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2021-08-16T09:05:00</EndOfValidity> 
+                                    <validityParameterAssignments>
+                                        
+                                        
+                                        <!-- NOTE: This section will look a bit different in reality, not updated for this example as it is not relevant -->
+                                        
+                                        <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:RideToSchool1" order="1">
+                                            <!-- 
+                                                Details about where usage took place 
+                                                If actual consumption was triggered on ie a mobile device there would be no details here 
+                                            -->
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1"/>
+                                            <ValidableElementRef ref="VOT:ValidableElement:SingleTripToSchool" version="1"/>
+                                            <validityParameters>
+                                                <!-- in case activation took place on the bus -->
+                                                <ServiceJourneyRef ref="VOT:ServiceJourney:JourneyXYZ"/>
+                                                <!-- If bus was on a stop when this happened -->
+                                                <StopPlaceRef ref="NSR:StopPlace:OsloS"/>
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
+                                        <!-- Reference to which xxxAssignment this ElementAccess is due to -->
+                                        <CustomerPurchaseParameterAssignmentRef ref="VOT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-3"/>
+                                        
+                                        <!-- END possibly outdated data -->
+                                        
+                                    </validityParameterAssignments>
+                             
+                                </CustomerPurchasePackageElementAccess>
+
+                                <!-- Access no 2 (second ride TO school) similar -->
+
+                            </elementAccesses>
+
+
+                            <validityParameterAssignments>
+ 
+                                <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:CommonForTripToSchool" order="1">
+                                    <!-- These values applies to all other CPPAs in this CPPE (optimisation to avoid having to reference it repeatedly in all other CPPAs) -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment" version="1"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:SingleTripToSchool" version="1"/>
+                                    <FareProductRef ref="VOT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
+                                </CustomerPurchaseParameterAssignment>                                    
+
+                                <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1">
+                                    <!-- Rule definining how the usage can be triggered and specification of the parameters that apply for this usage -->
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1"/>
+                                    <limitations>
+                                        <!-- Activated by trigger -->
+                                        <UsageValidityPeriod id="VOT:UsageValidityPeriod:RequirementsForUsage" version="1">
+                                            <UsageTrigger>activation</UsageTrigger>
+                                            <UsageEnd>standardDuration</UsageEnd>
+                                            <!-- valid means to consume -->
+                                             <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
+                                        </UsageValidityPeriod>
+                                    </limitations>
+                                    <!-- How long the consumption will be valid -->
+                                    <!-- Note could also be embedded instead of referring to an existing entity -->
+                                    <TimeIntervalRef ref="VOT:TimeInterval:2Hours" version="1"/>
+                                    <!-- Maximum possible total consumptions of the related ValidableElement -->
+                                    <MaximumNumberOfAccesses>
+                                        <Type>limited</Type>
+                                        <Value>380</Value>
+                                    </MaximumNumberOfAccesses>
+                                    <includes>
+                                        <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
+                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1"/>
+                                            <LimitationGroupingType>AND</LimitationGroupingType>
+                                            <limitations>
+                                                <FrequencyOfUse id="VOT:FrequencyOfUse:TwiceADay" version="1">
+                                                    <FrequencyOfUseType>twiceADay</FrequencyOfUseType> <!-- informative -->
+                                                    <MaximalFrequency>2</MaximalFrequency> <!-- actual number of times -->
+                                                    <TimeIntervalRef ref="VOT:TimeInterval:SixToSix" version="1"/> <!-- within this time interval (06-18) -->
+                                               </FrequencyOfUse>
+                                            </limitations>
+                                            <!-- The actual limiting to a ceritain fare demand factor: School days six to six
+                                            
+                                            Could also be embedded if not the same for all pupils
+                                            
+                                            -->
+                                            <FareDemandFactorRef ref="VOT:FareDemandFactor:TripToSchool" version="1"/>
+                                            
+                                        </CustomerPurchaseParameterAssignment>
+                                    </includes>
+                                </CustomerPurchaseParameterAssignment>
+
+                                <!-- The actual rights obtained WHEN consumption has been processed -->
+                                    
+                                <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-3" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1"/>
+                                    <limitations>
+                                       <!-- Must be pupil and can show appropriate documentation -->
+                                        <UserProfileRef ref="VOT:UserProfile:Pupil" version="1"/>
+                                    </limitations>
+                                    <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                                    <validityParameters>
+                                        <!-- Vestfold authority -->
+                                        <AuthorityRef ref="VOT:Authority:VOT" version="1"/>
+                                    </validityParameters>
+                                    
+                                    
+                                    <IncludesGroupingType>AND</IncludesGroupingType>
+                                    <includes>
+                                        
+                                        <CustomerPurchaseParameterAssignment id="VOT:CustomerPurchaseParameterAssigment:ZoneList" version="1" order="1">
+                                            <ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+                                            <validityParameters>
+                                                <!-- In order to refer to a group , a group must be defined (FUTURE)
+                                        
+                                        <GroupOfTariffZonesRef ref="VOT:GroupOfTariffZones:All"/>
+                                        
+                                        -->
+                                                
+                                                <!-- Not aware of such group yet, so *all* zones must be listed below. Note: List is incomplete but a few zones still listed
+                                        
+                                        ALSO note that the references are dummy data, real zone ids to be found in the National Stop Registry 
+                                        -->
+                                                
+                                                <FareZoneRef ref="VOT:TariffZone:100"/>
+                                                <FareZoneRef ref="VOT:TariffZone:200"/>
+                                                <FareZoneRef ref="VOT:TariffZone:300"/>
+                                                <FareZoneRef ref="VOT:TariffZone:400"/>
+                                                <FareZoneRef ref="VOT:TariffZone:500"/>
+                                                <FareZoneRef ref="VOT:TariffZone:600"/>
+                                                
+                                                <!--- and so on .... -->
+                                                
+                                            </validityParameters>
+                                        </CustomerPurchaseParameterAssignment>
+                                        
+                                    </includes>
+                                    
+                                 </CustomerPurchaseParameterAssignment>
+                            </validityParameterAssignments>
+                        </CustomerPurchasePackageElement>
+
+                    </customerPurchasePackageElements>
+                </CustomerPurchasePackage>
+            </customerPurchasePackages>
+        </SalesTransactionFrame>
+
+    </dataObjects>
+</PublicationDelivery>
