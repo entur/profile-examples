@@ -413,6 +413,9 @@
                                 <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1">
                                     <!-- Rule defining how the usage can be triggered and specification of the parameters that apply for this usage -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1"/>
+                                   
+                                    <!-- All limitations below must match in order for ticket to be activated -->
+                                    <LimitationGroupingType>AND</LimitationGroupingType>
                                     <limitations>
                                         <!-- Activated by trigger -->
                                         <UsageValidityPeriod id="VOT:UsageValidityPeriod:RequirementsForUsage" version="1">
@@ -421,6 +424,19 @@
                                             <!-- valid means to consume -->
                                              <ActivationMeans>useOfMobileDevice useOfValidator</ActivationMeans>
                                         </UsageValidityPeriod>
+                                        <!-- First frequency limiter says only once every 2 hours -->
+                                        <FrequencyOfUse id="VOT:FrequencyOfUse:SingleUseAtTheSameTime" version="1">
+                                            <FrequencyOfUseType>limited</FrequencyOfUseType> 
+                                            <MaximalFrequency>1</MaximalFrequency> <!-- actual number of times within this period-->
+                                            <FrequencyInterval>PT2H</FrequencyInterval>
+                                        </FrequencyOfUse>
+                                        <!-- Second frequency limiter says 2 between 06 and 18 -->
+                                        <FrequencyOfUse id="VOT:FrequencyOfUse:TwiceADay" version="1">
+                                            <FrequencyOfUseType>limited</FrequencyOfUseType> 
+                                            <MaximalFrequency>2</MaximalFrequency> <!-- actual number of times within this period-->
+                                            <TimeIntervalRef ref="VOT:TimeInterval:SixToSix" version="1"/> <!-- within this time interval (06-18) -->
+                                        </FrequencyOfUse>
+                                        
                                     </limitations>
                                     <!-- How long the consumption will be valid -->
                                     <!-- Note could also be embedded instead of referring to an existing entity -->
@@ -432,22 +448,9 @@
                                     </MaximumNumberOfAccesses>
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-1" order="1">
+                                            <!-- ExecutionTimeAccessRightAssignment says WHEN the operation (activation) can be performed (as in when the activation button is active -->
                                             <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1"/>
-                                            <LimitationGroupingType>AND</LimitationGroupingType>
-                                            <limitations>
-                                                <FrequencyOfUse id="VOT:FrequencyOfUse:TwiceADay" version="1">
-                                                    <FrequencyOfUseType>twiceADay</FrequencyOfUseType> <!-- informative -->
-                                                    <MaximalFrequency>2</MaximalFrequency> <!-- actual number of times -->
-                                                    <TimeIntervalRef ref="VOT:TimeInterval:SixToSix" version="1"/> <!-- within this time interval (06-18) -->
-                                               </FrequencyOfUse>
-                                            </limitations>
-                                            <!-- The actual limiting to a certain fare demand factor: School days six to six
-                                            
-                                            Could also be embedded if not the same for all pupils
-                                            
-                                            -->
                                             <FareDemandFactorRef ref="VOT:FareDemandFactor:TripToSchool" version="1"/>
-                                            
                                         </CustomerPurchaseParameterAssignment>
                                     </includes>
                                 </CustomerPurchaseParameterAssignment>
