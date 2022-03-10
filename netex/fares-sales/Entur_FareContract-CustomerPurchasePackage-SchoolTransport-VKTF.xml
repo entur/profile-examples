@@ -368,36 +368,7 @@
                                     <MarkedAs>used</MarkedAs>
                                     <StartOfValidity>2021-08-16T07:05:00</StartOfValidity>
                                     <EndOfValidity>2021-08-16T09:05:00</EndOfValidity> 
-                                    <validityParameterAssignments>
-                                        
-                                        
-                                        <!-- NOTE: This section will look a bit different in reality, not updated for this example as it is not relevant -->
-                                        
-                                        <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:RideToSchool1" order="1">
-                                            <!-- 
-                                                Details about where usage took place 
-                                                If actual consumption was triggered on ie a mobile device there would be no details here 
-                                            -->
-                                            <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1"/>
-                                            <ValidableElementRef ref="VOT:ValidableElement:SingleTripToSchool" version="1"/>
-                                            <validityParameters>
-                                                <!-- in case activation took place on the bus -->
-                                                <ServiceJourneyRef ref="VOT:ServiceJourney:JourneyXYZ"/>
-                                                <!-- If bus was on a stop when this happened -->
-                                                <StopPlaceRef ref="NSR:StopPlace:OsloS"/>
-                                            </validityParameters>
-                                        </CustomerPurchaseParameterAssignment>
-                                        <!-- Reference to which xxxAssignment this ElementAccess is due to -->
-                                        <CustomerPurchaseParameterAssignmentRef ref="VOT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-3"/>
-                                        
-                                        <!-- END possibly outdated data -->
-                                        
-                                    </validityParameterAssignments>
-                             
                                 </CustomerPurchasePackageElementAccess>
-
-                                <!-- Access no 2 (second ride TO school) similar -->
-
                             </elementAccesses>
 
 
@@ -436,6 +407,8 @@
                                             <MaximalFrequency>2</MaximalFrequency> <!-- actual number of times within this period-->
                                             <TimeIntervalRef ref="VOT:TimeInterval:SixToSix" version="1"/> <!-- within this time interval (06-18) -->
                                         </FrequencyOfUse>
+                                        
+                                        <!-- NOTE: In this example the start of validity cannot start later than 18:00. With 2 hours travel time the actual rights will be valid till 20:00 if activated at 18:00. -->
                                         
                                     </limitations>
                                     <!-- How long the consumption will be valid -->
