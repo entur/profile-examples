@@ -62,7 +62,7 @@
                 </TypeOfAccessRightAssignment>
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
                     <Name>ActivationAndUsageAssignment</Name>
-                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the aquired travel rights</Description>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the acquired travel rights</Description>
                 </TypeOfAccessRightAssignment>
                 
                 <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
@@ -76,15 +76,15 @@
                 <!-- Various specification requirements policies - depending on the type of element that must be provided -->
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment" version="1">
                     <Name>SpecificationServiceJourneyPolicyAssignment</Name>
-                    <Description>Rule describing that a ServiceJourney must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                    <Description>Rule describing that a ServiceJourney must be specified during *activation* or *consumption* or *revalidation*</Description>
                 </TypeOfAccessRightAssignment>
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationSeatPolicyAssignment" version="1">
                     <Name>SpecificationSeatPolicyAssignment</Name>
-                    <Description>Rule describing that a PassengerSeat must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                    <Description>Rule describing that a PassengerSeat must be specified during *activation* or *consumption* or *revalidation*</Description>
                 </TypeOfAccessRightAssignment>
                 <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationTariffZonePolicyAssignment" version="1">
                     <Name>SpecificationTariffZonePolicyAssignment</Name>
-                    <Description>Rule describing that a TariffZone must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                    <Description>Rule describing that a TariffZone must be specified during *activation* or *consumption* or *revalidation*</Description>
                 </TypeOfAccessRightAssignment>
                 
                 <!-- Result of specification requirements -->
@@ -104,8 +104,8 @@
                     <Description>CPPEAccess with information about an activation / consumption / re-validation</Description>
                 </TypeOfAccessRightAssignment>  
                 <!-- Common assignments that applies to all other assignments - to avoid repeating it for each CPPA -->
-                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment" version="1">
-                    <Name>CommonPolicyAssignment</Name>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:CommonAssignment" version="1">
+                    <Name>CommonAssignment</Name>
                     <Description>Assignments that applies to all other Assignments within the CPPE</Description>
                 </TypeOfAccessRightAssignment>  
             </typesOfValue>
@@ -221,7 +221,7 @@
             
             <qualityStructureFactors>
 
-                <!-- Definition of a fare demand factor - also used for rush hour setups (in other words; valdidity during a single day) -->
+                <!-- Definition of a fare demand factor - also used for rush hour setups (in other words; validity during a single day) -->
                 <FareDemandFactor id="VOT:FareDemandFactor:TripToSchool" version="1">
                     <validityConditions>
                         <!-- using general availability condition -->
@@ -260,14 +260,14 @@
                 <!-- User profile definition - will usually be specified in a reference data source -->
                 <UserProfile id="VOT:UserProfile:Pupil" version="1">
                     <Name lang="no">Pupil</Name>
-                    <!-- Reqired to show a student card - or can be omitted if no documents must be showed in case of inspection -->
+                    <!-- Required to show a student card - or can be omitted if no documents must be showed in case of inspection -->
                     <ProofRequired>studentCard</ProofRequired>
                 </UserProfile>
             </usageParameters>
 
 
             <fareProducts>
-                <!-- Product definiton of type AmountOfPriceUnit, consisting of a stored value of e.g. money, value card units, prepaid access rights or similar -->
+                <!-- Product definition of type AmountOfPriceUnit, consisting of a stored value of e.g. money, value card units, prepaid access rights or similar -->
                 <AmountOfPriceUnitProduct id="VOT:AmountOfPriceUnitProduct:SchoolCarnet" version="1">
                     <Name lang="no">School transport with limited number of rides</Name>
                     <accessRightsInProduct>
@@ -405,13 +405,13 @@
  
                                 <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:CommonForTripToSchool" order="1">
                                     <!-- These values applies to all other CPPAs in this CPPE (optimisation to avoid having to reference it repeatedly in all other CPPAs) -->
-                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment" version="1"/>
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonAssignment" version="1"/>
                                     <ValidableElementRef ref="VOT:ValidableElement:SingleTripToSchool" version="1"/>
                                     <FareProductRef ref="VOT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
                                 </CustomerPurchaseParameterAssignment>                                    
 
                                 <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1">
-                                    <!-- Rule definining how the usage can be triggered and specification of the parameters that apply for this usage -->
+                                    <!-- Rule defining how the usage can be triggered and specification of the parameters that apply for this usage -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1"/>
                                     <limitations>
                                         <!-- Activated by trigger -->
@@ -441,7 +441,7 @@
                                                     <TimeIntervalRef ref="VOT:TimeInterval:SixToSix" version="1"/> <!-- within this time interval (06-18) -->
                                                </FrequencyOfUse>
                                             </limitations>
-                                            <!-- The actual limiting to a ceritain fare demand factor: School days six to six
+                                            <!-- The actual limiting to a certain fare demand factor: School days six to six
                                             
                                             Could also be embedded if not the same for all pupils
                                             
