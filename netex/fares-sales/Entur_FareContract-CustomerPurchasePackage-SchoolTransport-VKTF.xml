@@ -272,6 +272,7 @@
                 <!-- Product definition of type AmountOfPriceUnit, consisting of a stored value of e.g. money, value card units, prepaid access rights or similar -->
                 <AmountOfPriceUnitProduct id="VOT:PreassignedFareProduct:2ab87993" version="1">
                     <Name lang="no">School transport with limited number of rides</Name>
+                    
                     <accessRightsInProduct>
                         <AccessRightInProduct version="1" id="ENT:AccessRightInProduct:ToSchool" order="1">
                             <!-- 
@@ -341,7 +342,7 @@
 
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:SchoolCarnet" version="1">
 
-                    <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SchoolTransport"/>
+                    <SalesOfferPackageRef ref="VOT:SalesPackage:6e51bd2d"/>
 
                     <travelSpecifications>
                         <!-- When included, the TravelSpecifications (summary data) should be displayed to the traveller rather than data from the individual CPP elements -->
@@ -370,6 +371,7 @@
                                     <MarkedAs>used</MarkedAs>
                                     <StartOfValidity>2021-08-16T07:05:00</StartOfValidity>
                                     <EndOfValidity>2021-08-16T09:05:00</EndOfValidity>
+                                   
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
 
@@ -418,7 +420,9 @@
                                     </limitations>
                                     <!-- How long the consumption will be valid -->
                                     <!-- Note could also be embedded instead of referring to an existing entity -->
+                                    
                                     <TimeIntervalRef ref="VOT:TimeInterval:2Hours" version="1"/>
+                                   
                                     <!-- Maximum possible total consumptions of the related ValidableElement -->
                                     <MaximumNumberOfAccesses>
                                         <Type>limited</Type>
