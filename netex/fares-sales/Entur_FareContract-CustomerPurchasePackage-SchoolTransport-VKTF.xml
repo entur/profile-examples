@@ -247,7 +247,7 @@
                 <!-- Empty validable elements for referencing, will contain all the product definition details in a product/sales/ticketing data exchange -->
 
                 <!-- One for travel  school and one for travel BACK from school -->
-                <ValidableElement id="VOT:ValidableElement:38a30f79" version="1">
+                <ValidableElement id="VOT:ValidableElement:Schooltrip" version="1">
                     <Name>Single trip to school</Name>
                 </ValidableElement>
             </validableElements>
@@ -260,7 +260,7 @@
                 NOTE: The given profile is the "student" user profile, a "pupil" user profile should be created and used instead (assuming this is different from the student profile)
                 
                 -->
-                <UserProfile id="VOT:UserProfile:ac84547e" version="1">
+                <UserProfile id="VOT:UserProfile:pupil" version="1">
                     <Name lang="no">Student</Name>
                     <!-- Required to show a student card - or can be omitted if no documents must be showed in case of inspection -->
                     <ProofRequired>studentCard</ProofRequired>
@@ -270,18 +270,18 @@
 
             <fareProducts>
                 <!-- Product definition of type AmountOfPriceUnit, consisting of a stored value of e.g. money, value card units, prepaid access rights or similar -->
-                <AmountOfPriceUnitProduct id="VOT:PreassignedFareProduct:2ab87993" version="1">
+                <AmountOfPriceUnitProduct id="VOT:AmountOfPriceUnitProduct:SchoolCarnet" version="1">
                     <Name lang="no">School transport with limited number of rides</Name>
                     
                     <accessRightsInProduct>
-                        <AccessRightInProduct version="1" id="ENT:AccessRightInProduct:ToSchool" order="1">
+                        <AccessRightInProduct version="1" id="VOT:AccessRightInProduct:SchoolTrip" order="1">
                             <!-- 
                                 Actual number of use is defined later using MaximumNumberOfAccesses (380).
                                 For each of these validable element instances a CustomerPurchasePackageElement is created in the CPP
                             -->
                             <MaximumAccess>1</MaximumAccess>
                             <!-- Trip TO school -->
-                            <ValidableElementRef ref="VOT:ValidableElement:38a30f79" version="1"/>
+                            <ValidableElementRef ref="VOT:ValidableElement:Schooltrip" version="1"/>
                         </AccessRightInProduct>
                     </accessRightsInProduct>
                 </AmountOfPriceUnitProduct>
@@ -290,12 +290,12 @@
 
             <salesOfferPackages>
                 <!-- Dummy sales offer package added for fare/sales model completeness -->
-                <SalesOfferPackage id="VOT:SalesPackage:6e51bd2d" version="1">
+                <SalesOfferPackage id="VOT:SalesPackage:SchoolTransport" version="1">
                     <Name lang="no">School transport Vestfold</Name>
                     <salesOfferPackageElements>
-                        <SalesOfferPackageElement id="VOT:SalesOfferPackageElement:SchoolCarnet" version="1" order="1">
+                        <SalesOfferPackageElement id="VOT:SalesOfferPackageElement:SchoolTrip" version="1" order="1">
                             <Name lang="no">School transport Municipality X</Name>
-                            <FareProductRef ref="VOT:PreassignedFareProduct:2ab87993" version="1"/>
+                            <FareProductRef ref="VOT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
                         </SalesOfferPackageElement>
                     </salesOfferPackageElements>
                 </SalesOfferPackage>
@@ -303,7 +303,7 @@
         </FareFrame>
 
 
-        <SalesTransactionFrame id="VOT:SalesTransactionFrame:Case1" version="1">
+        <SalesTransactionFrame id="VOT:SalesTransactionFrame:1" version="1">
 
             <customerAccounts>
                 <CustomerAccount id="VOT:CustomerAccount:1" version="1">
@@ -342,7 +342,7 @@
 
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:SchoolCarnet" version="1">
 
-                    <SalesOfferPackageRef ref="VOT:SalesPackage:6e51bd2d"/>
+                    <SalesOfferPackageRef ref="VOT:SalesPackage:SchoolTransport"/>
 
                     <travelSpecifications>
                         <!-- When included, the TravelSpecifications (summary data) should be displayed to the traveller rather than data from the individual CPP elements -->
@@ -381,8 +381,8 @@
                                 <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:CommonForTripToSchool" order="1">
                                     <!-- These values applies to all other CPPAs in this CPPE (optimisation to avoid having to reference it repeatedly in all other CPPAs) -->
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonAssignment" version="1"/>
-                                    <ValidableElementRef ref="VOT:ValidableElement:38a30f79" version="1"/>
-                                    <FareProductRef ref="VOT:PreassignedFareProduct:2ab87993" version="1"/>
+                                    <ValidableElementRef ref="VOT:ValidableElement:Schooltrip" version="1"/>
+                                    <FareProductRef ref="VOT:AmountOfPriceUnitProduct:SchoolCarnet" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
 
                                 <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2" order="1">
@@ -442,8 +442,9 @@
                                 <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:ForbrukGjennomSkoleårV2-3" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1"/>
                                     <limitations>
+                                        
                                         <!-- Must be pupil and can show appropriate documentation -->
-                                        <UserProfileRef ref="VOT:UserProfile:ac84547e" version="1"/>
+                                        <UserProfileRef ref="VOT:UserProfile:pupil" version="1"/>
                                     </limitations>
                                     <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                     <validityParameters>
