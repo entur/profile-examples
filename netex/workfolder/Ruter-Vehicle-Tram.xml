@@ -11,14 +11,14 @@
   xmlns="http://www.netex.org.uk/netex" 
   version="1.13:NO-NeTEx-networktimetable:1.5">
 
-    <PublicationTimestamp>2022-03-01T13:37:49</PublicationTimestamp>
+    <PublicationTimestamp>2022-04-01T13:37:49</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
     <Description>Vehicle-Tram</Description>
 
 
     <dataObjects>
 
-        <CompositeFrame id="RUT:CompositeFrame:1" version="1" created="2022-03-01T13:37:49">
+        <CompositeFrame id="RUT:CompositeFrame:1" version="1" created="2022-04-01T13:37:49">
             <validityConditions>
                 <AvailabilityCondition version="1" id="RUT:AvailabilityCondition:1">
                     <FromDate>2022-01-01T00:00:00</FromDate>
@@ -52,11 +52,6 @@
                 </GeneralFrame>
                 
                 
-                <VehicleScheduleFrame id="RUT:VehicleScheduleFrame:1" version="1">
-                    <!-- placeholder -->
-                </VehicleScheduleFrame>
-                
-                
                 <SiteFrame id="NSR:SiteFrame:1" version="1">
                     <stopPlaces>
                         <StopPlace id="NSR:StopPlace:1" version="1">
@@ -77,17 +72,17 @@
                 
                 <ServiceCalendarFrame id="RUT:ServiceCalendarFrame:1" version="1">
                     <dayTypes>
-                        <DayType id="RUT:DayType:2022-03-01" version="1"/>
+                        <DayType id="RUT:DayType:2022-04-01" version="1"/>
                     </dayTypes>
                     <operatingDays>
-                        <OperatingDay id="RUT:OperatingDay:2022-03-01" version="1">
-                            <CalendarDate>2022-03-01</CalendarDate>
+                        <OperatingDay id="RUT:OperatingDay:2022-04-01" version="1">
+                            <CalendarDate>2022-04-01</CalendarDate>
                         </OperatingDay>
                     </operatingDays>
                     <dayTypeAssignments>
-                        <DayTypeAssignment id="RUT:DayTypeAssignment:2022-03-01" version="1" order="1">
-                            <Date>2022-03-01</Date>
-                            <DayTypeRef ref="RUT:DayType:2022-03-01" version="1"/>
+                        <DayTypeAssignment id="RUT:DayTypeAssignment:2022-04-01" version="1" order="1">
+                            <Date>2022-04-01</Date>
+                            <DayTypeRef ref="RUT:DayType:2022-04-01" version="1"/>
                         </DayTypeAssignment>
                     </dayTypeAssignments>
                 </ServiceCalendarFrame>
@@ -300,21 +295,104 @@
                             <!-- # -->
                             <ServiceAlteration>planned</ServiceAlteration>
                             <dayTypes>
-                                <DayTypeRef ref="RUT:DayType:2022-03-01" version="1"/>
+                                <DayTypeRef ref="RUT:DayType:2022-04-01" version="1"/>
                             </dayTypes>
+                            
                             <JourneyPatternRef ref="RUT:JourneyPattern:1" version="1"/>
                             <VehicleTypeRef ref="RUT:VehicleType:SL18" version="1"/>
                             <passingTimes>
                                 <TimetabledPassingTime id="RUT:TimetabledPassingTime:1" version="1">
                                     <DepartureTime>13:37:00</DepartureTime>
                                 </TimetabledPassingTime>
-                                <TimetabledPassingTime id="RUT:TimetabledPassingTime:1" version="1">
+                                <TimetabledPassingTime id="RUT:TimetabledPassingTime:2" version="1">
                                     <ArrivalTime>13:49:00</ArrivalTime>
                                 </TimetabledPassingTime>
                             </passingTimes>
                         </ServiceJourney>
+                        
+                        
+                        
+                        
+                        <ServiceJourney version="1" id="RUT:ServiceJourney:3001_6651-R">
+                            <Name>3001</Name>
+                            <Description>3001 [04:53 : EGS-STV]</Description>
+                            <PrivateCode>3001</PrivateCode>
+                            <TransportMode>rail</TransportMode>
+                            <TransportSubmode>
+                                <RailSubmode>local</RailSubmode>
+                            </TransportSubmode>
+                            <JourneyPatternRef ref="RUT:JourneyPattern:1" version="1"/>
+                            <!--OperatorRef ref="RUT:Operator:GOA" /-->
+                            <LineRef ref="RUT:Line:1" version="1" />
+                            
+                            <passingTimes>
+                                <TimetabledPassingTime id="RUT:TimetabledPassingTime:3" version="1">
+                                    <StopPointInJourneyPatternRef ref="RUT:StopPointInJourneyPattern:1" version="1"/>
+                                    <DepartureTime>10:11:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime id="RUT:TimetabledPassingTime:4" version="1">
+                                    <StopPointInJourneyPatternRef ref="RUT:StopPointInJourneyPattern:2" version="1"/>
+                                    <ArrivalTime>12:34:00</ArrivalTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                            <parts>
+                                <JourneyPart id="RUT:JourneyPart:1" version="1">
+                                    <MainPartRef ref="RUT:JourneyPart:1" version="1" />
+                                    <TrainNumberRef ref="RUT:TrainNumber:1" version="1" />
+                                    <FromStopPointRef ref="RUT:ScheduledStopPoint:1" />
+                                    <ToStopPointRef ref="RUT:ScheduledStopPoint:2" />
+                                    <StartTime>10:11:00</StartTime>
+                                    <EndTime>12:34:00</EndTime>
+                                </JourneyPart>
+                            </parts>
+                        </ServiceJourney>
+                                
+                        <DatedServiceJourney id="RUT:DatedServiceJourney:1" version="1">
+                            <TrainBlockRef ref="RUT:TrainBlock:1" version="1"/>
+                            <ServiceJourneyRef ref="RUT:ServiceJourney:1" version="1"/>
+                            <OperatingDayRef ref="RUT:OperatingDay:2022-01-04" />
+                        </DatedServiceJourney>
                     </vehicleJourneys>
+                    
+                    <trainNumbers>
+                        <TrainNumber id="RUT:TrainNumber:1" version="1">
+                            <ForAdvertisement>1</ForAdvertisement>
+                            <ForProduction>1</ForProduction>
+                        </TrainNumber>
+                    </trainNumbers>
                 </TimetableFrame>
+                
+                
+                <VehicleScheduleFrame id="RUT:VehicleScheduleFrame:1" version="1">
+                    <blocks>
+                        <TrainBlock id="RUT:TrainBlock:1" version="1">
+                            <StartTime>13:37:00</StartTime>
+                            <EndTime>13:49:00</EndTime>
+                        </TrainBlock>
+                        
+                        <Block id="RUT:Block:1" version="1">
+                            <StartTime>13:37:00</StartTime>
+                            <EndTime>13:49:00</EndTime>
+                            <dayTypes>
+                                <DayTypeRef ref="RUT:DayType:2022-04-01" version="1"/>
+                            </dayTypes>
+                            <StartPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
+                            <EndPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
+                            <journeys>
+                                <ServiceJourneyRef ref="RUT:ServiceJourney:1" version="1"/>
+                            </journeys>
+                            <blockParts>
+                                <BlockPart id="RUT:BlockPart:1" version="1" order="1" >
+                                    <journeyParts>
+                                        <JourneyPartRef ref="RUT:JourneyPart:1" version="1" />
+                                    </journeyParts>
+                                </BlockPart>
+                            </blockParts>
+                        </Block>
+                    </blocks>
+                </VehicleScheduleFrame>
+                
+                
             </frames>
         </CompositeFrame>
     </dataObjects>
