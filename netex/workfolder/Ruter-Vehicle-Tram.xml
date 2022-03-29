@@ -102,6 +102,27 @@
                             <PrivateCode>RegularSeating</PrivateCode>
                         </TypeOfEquipment>
                     </typesOfValue>
+                    
+                    
+                    <organisations>
+                        <Authority id="RUT:Authority:1" version="1">
+                            <Name>Authority</Name>
+                            <ContactDetails>
+                                <Url>https://ruter.no/fa-hjelp/kontakt-oss</Url>
+                            </ContactDetails>
+                            <OrganisationType>authority</OrganisationType>
+                        </Authority>
+                        <Operator id="RUT:Operator:1" version="1">
+                            <Name>Operator</Name>
+                            <ContactDetails>
+                                <Url>https://ruter.no/fa-hjelp/kontakt-oss/kontaktskjema/</Url>
+                            </ContactDetails>
+                            <OrganisationType>operator</OrganisationType>
+                            <CustomerServiceContactDetails>
+                                <Url>https://ruter.no/fa-hjelp/kontakt-oss/kontaktskjema/</Url>
+                            </CustomerServiceContactDetails>
+                        </Operator>
+                    </organisations>
 
 
                     <equipments>
