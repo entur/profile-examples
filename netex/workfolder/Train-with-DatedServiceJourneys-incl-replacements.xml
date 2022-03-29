@@ -702,6 +702,20 @@
                         <DatedServiceJourney id="VYG:DatedServiceJourney:Test2" version="1">
                             <Name>Test 2</Name>
                         </DatedServiceJourney>
+                        
+                        
+                        <DatedServiceJourney id="ENT:DatedServiceJourney:WithCalls" version="1">
+                            <Name>Dated Service Journey with Call</Name>
+                            <calls>
+                                <Call id="ENT:Call:1" version="1" order="1">
+                                    <!-- insert call data here -->
+                                </Call>
+                                <DatedCall id="ENT:DatedCall:2" version="1" order="2">
+                                    <!-- insert call data here -->
+                                </DatedCall>
+                            </calls>
+                        </DatedServiceJourney>
+                        
                     </vehicleJourneys>
 
 
