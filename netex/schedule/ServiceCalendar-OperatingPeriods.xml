@@ -52,6 +52,8 @@
 					<operatingDays>
 						<OperatingDay version="1" id="NSR:OperatingDay:1">
 							<CalendarDate>2016-12-01</CalendarDate>
+						    <EarliestTime>01:23:45</EarliestTime>
+						    <DayLength>PT22H</DayLength>
 						</OperatingDay>
 					</operatingDays>
 					
@@ -89,9 +91,11 @@
 							<OperatingPeriodRef ref="NSR:OperatingPeriod:2"/>
 							<DayTypeRef version="1" ref="NSR:DayType:Weekdays"/>
 						</DayTypeAssignment>
-						<DayTypeAssignment version="1" order="1" id="test">
-							<OperatingDayRef ref="NSR:OperatingDay:1"/>
-							<DayTypeRef version="1" ref="NSR:DayType:Weekdays"/>
+					    
+					    <!-- date assignment sample -->
+					    <DayTypeAssignment version="1" order="1" id="ENT:DayTypeAssignment:2020-02-02">
+							<Date>2020-02-02</Date>
+							<DayTypeRef ref="NSR:DayType:2020-02-02"/>
 						</DayTypeAssignment>
 					</dayTypeAssignments>
 				</ServiceCalendarFrame>
