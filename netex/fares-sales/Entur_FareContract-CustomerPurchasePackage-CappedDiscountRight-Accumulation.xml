@@ -94,13 +94,13 @@
         <!-- Reference data END -->
 
 
-        <!-- 
-            The following example has different SalesTransactionFrame to simulate a TIMELINE. 
+        <!--
+            The following example has different SalesTransactionFrame to simulate a TIMELINE.
             The TIMELINE is the same as the order of events
 
             Note that the version field of the data below will change in order to allow the XSD validator to validate the
             document, but in reality they will stay the same
-            
+
         -->
 
 
@@ -135,18 +135,25 @@
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:BestePrisAvtale" version="1" order="1">
                             <elementAccesses>
-                                <!-- Agreement is pre-activated here - if the agreenment somehow has to be activated later on then we could add another CPPA instead with activation information -->
+                                <!-- Agreement is pre-activated here - if the agreement somehow has to be activated later on then we could add another CPPA instead with activation information -->
                                 <CustomerPurchasePackageElementAccess>
                                     <MarkedAs>used</MarkedAs>
                                     <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2023-01-06T07:05:00</EndOfValidity>
+                                    <validityParameterAssignments>
+                                        <!-- Reference to which xxxAssignment this ElementAccess is due to -->
+                                        <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment::BestePrisAvtale-assignment"/>
+                                    </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
 
                             <validityParameterAssignments>
-                                <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale" order="1">
+                                <CustomerPurchaseParameterAssignment version="1" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale-common" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
-                                    <ValidableElementRef ref="VOT:ValidableElement:BestPrice" version="1"/>
                                     <FareProductRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:BestePrisAvtale-assignment" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
@@ -177,7 +184,7 @@
                                 <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:BestePrisAvtale" version="2"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
-                        
+
                         <!-- ADDED in this step -->
                         <SalesTransaction version="1" id="VOT:SalesTransaction:FirstPurchase">
                             <Name>First ticket purchase</Name>
@@ -191,32 +198,39 @@
                             </customerPurchasePackages>
                         </SalesTransaction>
                         <!-- END added in this step -->
-                        
-                        
+
+
                     </fareContractEntries>
-                    
+
                 </FareContract>
             </fareContracts>
-            
-            
+
+
             <customerPurchasePackages>
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:BestePrisAvtale" version="2">
                     <SalesOfferPackageRef ref="VOT:SalesOfferPackage:EnrolmentBestPriceVestfold" version="1"/>
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:BestePrisAvtale" version="2" order="1">
                             <elementAccesses>
-                                <!-- Agreement is pre-activated here - if the agreenment somehow has to be activated later on then we could add another CPPA instead with activation information -->
+                                <!-- Agreement is pre-activated here - if the agreement somehow has to be activated later on then we could add another CPPA instead with activation information -->
                                 <CustomerPurchasePackageElementAccess>
                                     <MarkedAs>used</MarkedAs>
                                     <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2023-01-06T07:05:00</EndOfValidity>
+                                    <validityParameterAssignments>
+                                        <!-- Reference to which xxxAssignment this ElementAccess is due to -->
+                                        <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment::BestePrisAvtale-assignment"/>
+                                    </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
-                                <CustomerPurchaseParameterAssignment version="2" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale" order="1">
+                                <CustomerPurchaseParameterAssignment version="2" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale-common" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
-                                    <ValidableElementRef ref="VOT:ValidableElement:BestPrice" version="1"/>
                                     <FareProductRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                <CustomerPurchaseParameterAssignment version="2" id="ENT:CustomerPurchaseParameterAssignment:BestePrisAvtale-assignment" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                             <!-- Can be omitted if no prices involved -->
@@ -229,7 +243,7 @@
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>
                 </CustomerPurchasePackage>
-                
+
                 <!-- ADDED in this step -->
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:FirstTrip" version="1">
                     <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
@@ -243,19 +257,19 @@
                                     <!-- Assuming 60 min validity -->
                                     <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
                                     <EndOfValidity>2022-01-06T08:05:00</EndOfValidity>
-                                    
+
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="2" id="VOT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
                                     <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
                                     <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-                                
+
                                 <!-- no activation rule necessary since pre-activated -->
-                                
+
                                 <!-- validity rule (actual travel rights) here -->
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
@@ -278,7 +292,7 @@
                                 </CustomerPurchasePackagePrice>
                             </prices>
                         </CustomerPurchasePackageElement>
-                        
+
                     </customerPurchasePackageElements>
                     <prices>
                         <CustomerPurchasePackagePrice>
@@ -289,10 +303,10 @@
                     </prices>
                 </CustomerPurchasePackage>
                 <!-- END added in this step -->
-                
+
             </customerPurchasePackages>
-            
-            
+
+
         </SalesTransactionFrame>
 
 
@@ -316,7 +330,7 @@
                                 <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:BestePrisAvtale" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
-                        
+
                         <SalesTransaction version="3" id="VOT:SalesTransaction:FirstPurchase">
                             <Name>First ticket purchase</Name>
                             <Date>2022-01-07T07:05:00</Date>
@@ -328,8 +342,8 @@
                                 <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:FirstTrip" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
-                        
-                        
+
+
                         <!-- ADDED in this step -->
                         <SalesTransaction version="3" id="VOT:SalesTransaction:SecondPurchase">
                             <Name>First ticket purchase</Name>
@@ -343,32 +357,39 @@
                             </customerPurchasePackages>
                         </SalesTransaction>
                         <!-- END added in this step -->
-                        
-                        
+
+
                     </fareContractEntries>
-                    
+
                 </FareContract>
             </fareContracts>
-            
-            
+
+
             <customerPurchasePackages>
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:BestePrisAvtale" version="3">
                     <SalesOfferPackageRef ref="VOT:SalesOfferPackage:EnrolmentBestPriceVestfold" version="1"/>
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:BestePrisAvtale" version="3" order="1">
                             <elementAccesses>
-                                <!-- Agreement is pre-activated here - if the agreenment somehow has to be activated later on then we could add another CPPA instead with activation information -->
+                                <!-- Agreement is pre-activated here - if the agreement somehow has to be activated later on then we could add another CPPA instead with activation information -->
                                 <CustomerPurchasePackageElementAccess>
                                     <MarkedAs>used</MarkedAs>
                                     <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2023-01-06T07:05:00</EndOfValidity>
+                                    <validityParameterAssignments>
+                                        <!-- Reference to which xxxAssignment this ElementAccess is due to -->
+                                        <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment::BestePrisAvtale-assignment"/>
+                                    </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
-                                <CustomerPurchaseParameterAssignment version="3" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale" order="1">
+                                <CustomerPurchaseParameterAssignment version="3" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale-common" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
-                                    <ValidableElementRef ref="VOT:ValidableElement:BestPrice" version="1"/>
                                     <FareProductRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                <CustomerPurchaseParameterAssignment version="3" id="ENT:CustomerPurchaseParameterAssignment:BestePrisAvtale-assignment" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                             <!-- Can be omitted if no prices involved at this level -->
@@ -388,7 +409,7 @@
                         </CustomerPurchasePackagePrice>
                     </prices>
                 </CustomerPurchasePackage>
-                
+
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:FirstTrip" version="3">
                     <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
                     <customerPurchasePackageElements>
@@ -401,19 +422,19 @@
                                     <!-- Assuming 60 min validity -->
                                     <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
                                     <EndOfValidity>2022-01-06T08:05:00</EndOfValidity>
-                                    
+
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="3" id="VOT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
                                     <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
                                     <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-                                
+
                                 <!-- no activation rule necessary since pre-activated -->
-                                
+
                                 <!-- validity rule (actual travel rights) here -->
                                 <CustomerPurchaseParameterAssignment version="3" id="ENT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
@@ -436,7 +457,7 @@
                                 </CustomerPurchasePackagePrice>
                             </prices>
                         </CustomerPurchasePackageElement>
-                        
+
                     </customerPurchasePackageElements>
                     <prices>
                         <CustomerPurchasePackagePrice>
@@ -446,7 +467,7 @@
                         </CustomerPurchasePackagePrice>
                     </prices>
                 </CustomerPurchasePackage>
-                
+
                 <!-- ADDED in this step -->
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:SecondTrip" version="1">
                     <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
@@ -460,19 +481,19 @@
                                     <!-- Assuming 60 min validity -->
                                     <StartOfValidity>2022-01-06T10:05:00</StartOfValidity>
                                     <EndOfValidity>2022-01-06T11:05:00</EndOfValidity>
-                                    
+
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="3" id="VOT:CustomerPurchaseParameterAssignment:SecondTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
                                     <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
                                     <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-                                
+
                                 <!-- no activation rule necessary since pre-activated -->
-                                
+
                                 <!-- validity rule (actual travel rights) here -->
                                 <CustomerPurchaseParameterAssignment version="3" id="ENT:CustomerPurchaseParameterAssignment:SecondTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
@@ -495,7 +516,7 @@
                                 </CustomerPurchasePackagePrice>
                             </prices>
                         </CustomerPurchasePackageElement>
-                        
+
                     </customerPurchasePackageElements>
                     <prices>
                         <CustomerPurchasePackagePrice>
@@ -506,12 +527,12 @@
                     </prices>
                 </CustomerPurchasePackage>
                 <!-- END added in this step -->
-                
+
             </customerPurchasePackages>
-            
-            
+
+
         </SalesTransactionFrame>
-        
+
 
         <!-- Third trip, same day -> Capped to 24 hour pass -->
 
@@ -533,7 +554,7 @@
                                 <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:BestePrisAvtale" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
-                        
+
                         <SalesTransaction version="4" id="VOT:SalesTransaction:FirstPurchase">
                             <Name>First ticket purchase</Name>
                             <Date>2022-01-07T07:05:00</Date>
@@ -545,8 +566,8 @@
                                 <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:FirstTrip" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
-                        
-                        
+
+
                         <SalesTransaction version="4" id="VOT:SalesTransaction:SecondPurchase">
                             <Name>Second ticket purchase</Name>
                             <Date>2022-01-07T10:05:00</Date>
@@ -558,7 +579,7 @@
                                 <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:SecondTrip" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
-                        
+
                         <!-- ADDED in this step -->
 
                         <SalesTransaction version="4" id="VOT:SalesTransaction:ThirdPurchase">
@@ -572,40 +593,47 @@
                                 <CustomerPurchasePackageRef ref="VOT:CustomerPurchasePackage:ThirdTrip" version="1"/>
                             </customerPurchasePackages>
                         </SalesTransaction>
-                        
+
                         <!-- END added in this step -->
-                        
-                        
+
+
                     </fareContractEntries>
-                    
+
                 </FareContract>
             </fareContracts>
-            
-            
+
+
             <customerPurchasePackages>
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:BestePrisAvtale" version="4">
                     <SalesOfferPackageRef ref="VOT:SalesOfferPackage:EnrolmentBestPriceVestfold" version="1"/>
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="VOT:CustomerPurchasePackageElement:BestePrisAvtale" version="4" order="1">
                             <elementAccesses>
-                                <!-- Agreement is pre-activated here - if the agreenment somehow has to be activated later on then we could add another CPPA instead with activation information -->
+                                <!-- Agreement is pre-activated here - if the agreement somehow has to be activated later on then we could add another CPPA instead with activation information -->
                                 <CustomerPurchasePackageElementAccess>
                                     <MarkedAs>used</MarkedAs>
                                     <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
+                                    <EndOfValidity>2023-01-06T07:05:00</EndOfValidity>
+                                    <validityParameterAssignments>
+                                        <!-- Reference to which xxxAssignment this ElementAccess is due to -->
+                                        <CustomerPurchaseParameterAssignmentRef ref="ENT:CustomerPurchaseParameterAssignment::BestePrisAvtale-assignment"/>
+                                    </validityParameterAssignments>
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
-                                <CustomerPurchaseParameterAssignment version="4" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale" order="1">
+                                <CustomerPurchaseParameterAssignment version="4" id="VOT:CustomerPurchaseParameterAssignment:BestePrisAvtale-common" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
-                                    <ValidableElementRef ref="VOT:ValidableElement:BestPrice" version="1"/>
                                     <FareProductRef ref="VOT:CappedDiscountRight:Vestfold" version="1"/>
+                                </CustomerPurchaseParameterAssignment>
+                                <CustomerPurchaseParameterAssignment version="4" id="ENT:CustomerPurchaseParameterAssignment:BestePrisAvtale-assignment" order="1">
+                                    <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
                     </customerPurchasePackageElements>
                 </CustomerPurchasePackage>
-                
+
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:FirstTrip" version="4">
                     <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
                     <customerPurchasePackageElements>
@@ -618,19 +646,19 @@
                                     <!-- Assuming 60 min validity -->
                                     <StartOfValidity>2022-01-06T07:05:00</StartOfValidity>
                                     <EndOfValidity>2022-01-06T08:05:00</EndOfValidity>
-                                    
+
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="4" id="VOT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
                                     <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
                                     <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-                                
+
                                 <!-- no activation rule necessary since pre-activated -->
-                                
+
                                 <!-- validity rule (actual travel rights) here -->
                                 <CustomerPurchaseParameterAssignment version="4" id="ENT:CustomerPurchaseParameterAssignment:FirstTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
@@ -653,7 +681,7 @@
                                 </CustomerPurchasePackagePrice>
                             </prices>
                         </CustomerPurchasePackageElement>
-                        
+
                     </customerPurchasePackageElements>
                     <prices>
                         <CustomerPurchasePackagePrice>
@@ -663,7 +691,7 @@
                         </CustomerPurchasePackagePrice>
                     </prices>
                 </CustomerPurchasePackage>
-                
+
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:SecondTrip" version="4">
                     <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
                     <customerPurchasePackageElements>
@@ -676,19 +704,19 @@
                                     <!-- Assuming 60 min validity -->
                                     <StartOfValidity>2022-01-06T10:05:00</StartOfValidity>
                                     <EndOfValidity>2022-01-06T11:05:00</EndOfValidity>
-                                    
+
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="4" id="VOT:CustomerPurchaseParameterAssignment:SecondTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
                                     <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
                                     <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-                                
+
                                 <!-- no activation rule necessary since pre-activated -->
-                                
+
                                 <!-- validity rule (actual travel rights) here -->
                                 <CustomerPurchaseParameterAssignment version="4" id="ENT:CustomerPurchaseParameterAssignment:SecondTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment"/>
@@ -711,7 +739,7 @@
                                 </CustomerPurchasePackagePrice>
                             </prices>
                         </CustomerPurchasePackageElement>
-                        
+
                     </customerPurchasePackageElements>
                     <prices>
                         <CustomerPurchasePackagePrice>
@@ -723,7 +751,7 @@
                 </CustomerPurchasePackage>
 
                 <!-- ADDED in this step -->
-                
+
                 <CustomerPurchasePackage id="VOT:CustomerPurchasePackage:ThirdTrip" version="1">
                     <SalesOfferPackageRef ref="VOT:SalesOfferPackage:SingleTrip" version="1"/>
                     <customerPurchasePackageElements>
@@ -736,17 +764,17 @@
                                     <!-- Start of validity would be purhase time, end of validity = first purchase time + 24 hours -->
                                     <StartOfValidity>2022-01-06T17:05:00</StartOfValidity>
                                     <EndOfValidity>2022-01-06T06:05:00</EndOfValidity>
-                                    
+
                                 </CustomerPurchasePackageElementAccess>
                             </elementAccesses>
-                            
+
                             <validityParameterAssignments>
                                 <CustomerPurchaseParameterAssignment version="4" id="VOT:CustomerPurchaseParameterAssignment:ThirdTrip" order="1">
                                     <TypeOfAccessRightAssignmentRef ref="ENT:TypeOfAccessRightAssignment:CommonPolicyAssignment"/>
                                     <ValidableElementRef ref="VOT:ValidableElement:SingleTripBus" version="1"/>
                                     <PreassignedFareProductRef ref="VOT:PreassignedFareProduct:SingleTrip" version="1"/>
                                 </CustomerPurchaseParameterAssignment>
-                                
+
                                 <!-- no activation rule necessary since pre-activated -->
                                 
                                 <!-- validity rule (actual travel rights) here -->
@@ -771,7 +799,7 @@
                                 </CustomerPurchasePackagePrice>
                             </prices>
                         </CustomerPurchasePackageElement>
-                        
+
                     </customerPurchasePackageElements>
                     <prices>
                         <CustomerPurchasePackagePrice>
@@ -782,13 +810,13 @@
                     </prices>
                 </CustomerPurchasePackage>
                 <!-- END added in this step -->
-                
+
             </customerPurchasePackages>
-            
-            
+
+
         </SalesTransactionFrame>
-        
-        
+
+
 
 
     </dataObjects>
