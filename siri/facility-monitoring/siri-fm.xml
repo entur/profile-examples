@@ -8,7 +8,7 @@
     <ServiceDelivery>
         <ResponseTimestamp>2022-05-19T15:33:51.123+01:00</ResponseTimestamp>
         <ProducerRef>CODESPACE</ProducerRef>
-        <FacilityMonitoringDelivery>
+        <FacilityMonitoringDelivery version="2.1">
             <ResponseTimestamp>2022-05-19T15:33:51.123+01:00</ResponseTimestamp>
             <FacilityCondition>
                 <Facility>
