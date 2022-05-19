@@ -3,7 +3,7 @@
 
 <PublicationDelivery 
   xmlns="http://www.netex.org.uk/netex"
-  xmlns:gis="http://www.opengis.net/gml/3.2" 
+  xmlns:gml="http://www.opengis.net/gml/3.2" 
   xmlns:siri="http://www.siri.org.uk/siri"
   version="1.10:NO-NeTEx-fares:0.9">
     
@@ -147,6 +147,10 @@
             </responsibilitySets>
             
             <typesOfValue>
+                <Branding id="ENT:Branding:1" version="1">
+                    <Name>Branding</Name>
+                </Branding>
+                
                 <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:ExceptionFromVAT" version="1">
                     <Name>ExceptionFromVAT</Name>
                     <Description>Price exempt from VAT (currently 0%)</Description>
@@ -188,7 +192,7 @@
                     <Name>Customer account 1</Name>
                 </TypeOfCustomerAccount>
 
-                <Branding version="1" id="ENT:Branding:1">
+                <Branding id="ENT:Branding:2" version="1">
                     <Name>Test</Name>
                     <Url>http://url.com</Url>
                 </Branding>
@@ -206,7 +210,16 @@
                     </ContactDetails>
                     <OrganisationType>statutoryBody</OrganisationType>
                 </GeneralOrganisation>
+                <Operator id="ENT:Operator:1" version="1">
+                    <PrivateCode>123</PrivateCode>
+                    <Name>Unibuss</Name>
+                    <ContactDetails>
+                        <Url>https://www.unibuss.no/</Url>
+                    </ContactDetails>
+                    <OrganisationType>operator</OrganisationType>
+                </Operator>
                 <Authority id="ENT:Authority:Ruter" version="1">
+                    <PrivateCode></PrivateCode>
                     <Name>Ruter#</Name>
                     <ContactDetails>
                         <Url>https://www.ruter.no</Url>
@@ -218,7 +231,7 @@
                     <ContactDetails>
                         <Url>https://www.unibuss.no/</Url>
                     </ContactDetails>
-                    <OrganisationType>operator</OrganisationType>
+                    <OrganisationType>authority</OrganisationType>
                 </Authority>
             </organisations>
         </ResourceFrame>
@@ -255,16 +268,24 @@
                 <FareZone id="ENT:FareZone:2" version="1">
                     <Name>Child FareZone</Name>
                     <PrivateCode>1</PrivateCode>
-                    <gis:Polygon gis:id="testgis">
-                        <gis:exterior>
-                            <gis:LinearRing>
-                                <gis:pos>1</gis:pos>
-                                <gis:pos>2</gis:pos>
-                                <gis:pos>3</gis:pos>
-                                <gis:pos>4</gis:pos>
-                            </gis:LinearRing>
-                        </gis:exterior>
-                    </gis:Polygon>
+                    <gml:Polygon gml:id="testgis">
+                        <gml:exterior>
+                            <gml:LinearRing>
+                                <gml:pos>1</gml:pos>
+                                <gml:pos>2</gml:pos>
+                                <gml:pos>3</gml:pos>
+                                <gml:pos>4</gml:pos>
+                            </gml:LinearRing>
+                        </gml:exterior>
+                        <gml:interior>
+                            <gml:LinearRing>
+                                <gml:pos srsDimension="2">3.14159265358971 3.14159265358972</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358973 3.14159265358974</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358975 3.14159265358976</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358977 3.14159265358978</gml:pos>
+                            </gml:LinearRing>
+                        </gml:interior>
+                    </gml:Polygon>
                     
                     <ParentZoneRef ref="ENT:TopographicPlace:1" version="1"/>
                     <ParentFareZoneRef ref="ENT:FareZone:1" version="1"/>
@@ -656,6 +677,11 @@
 
             
             <usageParameters>
+                <UsageValidityPeriod id="ENT:UsageValidityPeriod:1" version="1">
+                    <startOnlyOn>
+                        <DayTypeRef ref="ref"/>
+                    </startOnlyOn>
+                </UsageValidityPeriod>
                 <UserProfile id="ENT:UserProfile:NormalFare" version="1">
                     <Name lang="no">Normal</Name>
                     <Description>Adult, Student, Youth</Description>
@@ -681,7 +707,7 @@
                         <CompanionProfileRef ref="ENT:CompanionProfile:1" version="1"/>
                     </companionProfiles>
                 </UserProfile>
-                <UsageValidityPeriod id="ENT:UsageValidityPeriod:1" version="1">
+                <UsageValidityPeriod id="ENT:UsageValidityPeriod:2" version="1">
                     <StartDate>2020-01-01</StartDate>
                     <StartTime>00:00:01</StartTime>
                     <EndDate>2022-12-31</EndDate>
@@ -701,6 +727,15 @@
                     <Name>Interchanging</Name>
                     <CanInterchange>true</CanInterchange>
                     <CanBreakJourney>true</CanBreakJourney>
+                </Interchanging>
+                <Interchanging id="RUT:Interchanging:2" version="1">
+                    <CanInterchange>true</CanInterchange>
+                    <FromMode>air</FromMode>
+                    <ToMode>air</ToMode>
+                    <MaximumNumberOfInterchanges>0</MaximumNumberOfInterchanges>
+                    <MaximumTimeToMakeATransfer>PT2M</MaximumTimeToMakeATransfer>
+                    <CanBreakJourney>true</CanBreakJourney>
+                    <CrossBorder>true</CrossBorder>
                 </Interchanging>
                 <LuggageAllowance id="ENT:LuggageAllowance:1" version="1">
                     <BaggageUseType>carryOn</BaggageUseType>

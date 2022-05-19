@@ -18,11 +18,11 @@
                     <LineRef>SKY:Line:985</LineRef>
                     <DirectionRef>0</DirectionRef>
                     
-                    <!--DatedVehicleJourneyRef>6671390_94170</DatedVehicleJourneyRef-->
-                    <FramedVehicleJourneyRef>
+                    <DatedVehicleJourneyRef>ref</DatedVehicleJourneyRef>                   
+                    <!--FramedVehicleJourneyRef>
                         <DataFrameRef>2020-12-12</DataFrameRef>
                         <DatedVehicleJourneyRef>ref</DatedVehicleJourneyRef>                        
-                    </FramedVehicleJourneyRef>
+                    </FramedVehicleJourneyRef-->
                     <!-- Cancellation>true</Cancellation -->
                     
                     
@@ -39,7 +39,7 @@
                     
                     <ExtraJourney>false</ExtraJourney>
                     <JourneyPatternRef>placeholder</JourneyPatternRef>
-                    <VehicleMode>bus</VehicleMode>
+                    <VehicleMode>air</VehicleMode>
                     <RouteRef>placeholder</RouteRef>
                     <ExternalLineRef>placeholder</ExternalLineRef>
                     <OriginName>placeholder</OriginName>
@@ -90,7 +90,10 @@
                         <DataFrameRef>placeholder</DataFrameRef>
                         <DatedVehicleJourneyRef>placeholder</DatedVehicleJourneyRef>
                     </AdditionalVehicleJourneyRef>
-                    
+                    <AdditionalVehicleJourneyRef>
+                        <DataFrameRef>placeholder</DataFrameRef>
+                        <DatedVehicleJourneyRef>placeholder</DatedVehicleJourneyRef>
+                    </AdditionalVehicleJourneyRef>                    
                     <!-- TRAIN -->
                     
                     <TrainElements>
@@ -161,13 +164,18 @@
                             <AimedArrivalTime>2020-11-07T12:03:00+01:00</AimedArrivalTime>
                             <ExpectedArrivalTime>2020-11-07T12:03:00+01:00</ExpectedArrivalTime>
                             <ActualArrivalTime>2020-11-07T12:03:00+01:00</ActualArrivalTime>
+                            <ArrivalStatus>onTime</ArrivalStatus>
+                            <ArrivalStopAssignment>
+                                <AimedQuayRef>NSR:Quay:1</AimedQuayRef>
+                                <ExpectedQuayRef>NSR:Quay:2</ExpectedQuayRef>
+                                <ActualQuayRef>NSR:Quay:3</ActualQuayRef>
+                            </ArrivalStopAssignment>
                             
                             <ArrivalFormationAssignment>
                                 <EntranceToVehicleRef>ref</EntranceToVehicleRef>
                                 <TrainStopAssignment>
                                     
                                     <ExpectedQuayName>id</ExpectedQuayName>
-                                    
                                     <ActualQuayRef>ref</ActualQuayRef>
                                 </TrainStopAssignment>
                             </ArrivalFormationAssignment>
@@ -176,6 +184,12 @@
                             <ExpectedDepartureTime>2020-11-07T12:03:00+01:00</ExpectedDepartureTime>
                             <ActualDepartureTime>2020-11-07T12:03:00+01:00</ActualDepartureTime>
                             <DepartureStatus>arrived</DepartureStatus>
+                            
+                            <DepartureStopAssignment>
+                                <AimedQuayRef>NSR:Quay:1</AimedQuayRef>
+                                <ExpectedQuayRef>NSR:Quay:2</ExpectedQuayRef>
+                                <ActualQuayRef>NSR:Quay:3</ActualQuayRef>
+                            </DepartureStopAssignment>
                             
                             <DepartureFormationAssignment>
                                 <TrainComponentRef>ref</TrainComponentRef>
@@ -284,10 +298,15 @@
                                 </TrainStopAssignment>
                             </ArrivalFormationAssignment>
                             
+                           
+                            
                             <ArrivalOperatorRefs>placeholder</ArrivalOperatorRefs>
                             <ArrivalOperatorRefs>placeholder</ArrivalOperatorRefs>
                             <AimedDepartureTime>2020-08-15T15:00:00+02:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2020-08-15T15:00:00+02:00</ExpectedDepartureTime>
+                            
+                            <AimedLatestPassengerAccessTime>2020-08-15T15:00:00+02:00</AimedLatestPassengerAccessTime>
+                            
                             <!-- <EarliestExpectedDepartureTime>2020-08-15T15:00:00+02:00</EarliestExpectedDepartureTime> -->
                             <DepartureStatus>cancelled</DepartureStatus>
                             <DepartureBoardingActivity>passThru</DepartureBoardingActivity>

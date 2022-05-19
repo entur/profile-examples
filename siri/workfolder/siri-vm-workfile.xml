@@ -222,7 +222,7 @@
                             </TrainStopAssignment>
                             <TrainStopAssignment>
                                 <AimedQuayName>name</AimedQuayName>
-                                <QuayType>boardingPosition</QuayType>
+                                <QuayType>platform</QuayType>
                             </TrainStopAssignment>
                         </ArrivalFormationAssignment>
                         
@@ -238,7 +238,7 @@
                         
                         <DepartureFormationAssignment>
                             <TrainRef>ref</TrainRef>
-                            <PositionOfTrainElement>2</PositionOfTrainElement>
+                            <!--PositionOfTrainElement>2</PositionOfTrainElement-->
                             <TrainStopAssignment>
                                 <AimedQuayName>id</AimedQuayName>
                                 <ExpectedQuayName>id</ExpectedQuayName>

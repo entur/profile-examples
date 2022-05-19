@@ -121,6 +121,13 @@
                             <CalendarDate>2020-01-06</CalendarDate>
                         </OperatingDay>
                     </operatingDays>
+                    <operatingPeriods>
+                        <UicOperatingPeriod id="tap:UicOperatingPeriod:2011-02-07/2011-08-26_111110011111001111100111110011111001111100111110011111001111100111110011111000111100011110011111001111100111110001111001111100111110011111001111100111110011111001111100111110011111001111100111110011111" version="any">
+                            <FromDate>2011-02-07T00:00:00</FromDate>
+                            <ToDate>2011-08-26T00:00:00</ToDate>
+                            <ValidDayBits>111110011111001111100111110011111001111100111110011111001111100111110011111000111100011110011111001111100111110001111001111100111110011111001111100111110011111001111100111110011111001111100111110011111</ValidDayBits>
+                        </UicOperatingPeriod>
+                    </operatingPeriods>
                     <dayTypeAssignments>
                         <DayTypeAssignment id="VYG:DayTypeAssignment:2020-01-01" version="1" order="2">
                             <Date>2020-01-01</Date>
@@ -149,6 +156,7 @@
                             <isAvailable>false</isAvailable>
                         </DayTypeAssignment>
                     </dayTypeAssignments>
+                    
                 </ServiceCalendarFrame>
 
 
@@ -532,6 +540,82 @@
 
 
 
+<!-- DUMMY SAMPLES (non-compliant to profile) FOR TESTING / POC / DISCUSSION -->
+                        
+                        <DatedServiceJourney id="VYG:DatedServiceJourney:1123" version="1">
+                            <ServiceAlteration>extraJourney</ServiceAlteration>
+                            <TrainBlockRef ref="VYG:TrainBlock:1" modification="delta"/>
+                            <OperatingDayRef ref="VYG:OperatingDay:2020-01-02" version="1"/>
+                        </DatedServiceJourney>   
+                        
+                        <DatedServiceJourney id="VYG:DatedServiceJourney:1-2022-01-02" version="1" derivedFromObjectRef="">
+                            <Extensions>
+                                <!-- VehicleJourneyRef ref="VYG:NormalDatedVehicleJourney:Test-5" version="1"></VehicleJourneyRef -->
+                                <VehicleJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-03" version="1"></VehicleJourneyRef>
+                                <ServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-03" version="1"></ServiceJourneyRef>
+                                <NormalDatedVehicleJourneyRef ref="VYG:NormalDatedVehicleJourney:Test-5" version="1"></NormalDatedVehicleJourneyRef>
+                                
+                                <!-- mangler key ref consistency check i NeTEx_publication.xsd -->
+                                <DatedVehicleJourneyRef ref="VYG:NormalDatedVehicleJourney:Test-5" version="2"></DatedVehicleJourneyRef>
+                            </Extensions>
+                            <ServiceAlteration></ServiceAlteration>
+                            <!--ServiceJourneyRef ref="VYG:ServiceJourney:1" version="1"/-->
+                            <OperatingDayRef ref="VYG:OperatingDay:2020-01-02" version="1"/>
+                        </DatedServiceJourney>                       
+                        
+                        <DatedVehicleJourney id="VYG:DatedVehicleJourney:1" version="1" created="2022-05-04T12:34:00" changed="2022-05-04T13:37:00" modification="revise">
+                            <Extensions>
+                                <DatedVehicleJourneyRef ref="VYG:DatedVehicleJourney:2" version="2" />
+                                <ServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-03" version="1" />
+                                <DatedServiceJourney id="VYG:DatedVehicleJourney:100" version="1">
+                                    <ServiceAlteration>extraJourney</ServiceAlteration>
+                                </DatedServiceJourney>
+                            </Extensions>
+                            <TrainBlockRef ref="VYG:TrainBlock:1" />
+                            <ServiceJourneyRef ref="VYG:DatedServiceJourney:1-2020-01-03" version="1" />
+                            <OperatingDayRef ref="VYG:OperatingDay:2020-01-02" version="1" />
+                        </DatedVehicleJourney>
+                        
+                        
+                        
+                        <!-- Per recommendations from Christophe -->
+                        <DatedVehicleJourney id="VYG:DatedVehicleJourney:2" version="1" modification="revise">
+                            <!--<ServiceAlteration>extraJourney</ServiceAlteration>-->  <!-- new element in VehicleJourney (similar to ServiceJouney/DatedServiceJourney) -->
+                            <TrainBlockRef ref="VYG:TrainBlock:1" />
+                            <ServiceJourneyRef ref="VYG:ServiceJourney:1-D" version="1" />
+                            <replacing>
+                                <DatedVehicleJourneyRef ref="VYG:DatedVehicleJourney:1" version="1" />
+                                <DatedVehicleJourneyRef ref="VYG:DatedVehicleJourney:2" version="1" />
+                            </replacing>
+                            <OperatingDayRef ref="VYG:OperatingDay:2020-01-02" version="1" />
+                        </DatedVehicleJourney> 
+                        
+                        <!-- Per recommendations from Christophe (extended alternative more in line with current model) -->
+                        <DatedVehicleJourney id="VYG:DatedVehicleJourney:2" version="1" derivedFromObjectRef="VYG:ServiceJourney:1-D" modification="revise">
+                            <TrainBlockRef ref="VYG:TrainBlock:1" />
+                            <DatedVehicleJourneyRef ref="VYG:DatedVehicleJourney:2" version="1" />
+                            <!--<replacing>
+                                <DatedVehicleJourneyRef ref="VYG:DatedVehicleJourney:1" version="1" />
+                                <DatedVehicleJourneyRef ref="VYG:DatedVehicleJourney:2" version="1" />
+                            </replacing>-->
+                            <OperatingDayRef ref="VYG:OperatingDay:2020-01-02" version="1" />
+                            <!--<ServiceAlterationType>extraJourney</ServiceAlterationType>-->  <!-- new element in VehicleJourney (similar to ServiceJouney/DatedServiceJourney) -->
+                        </DatedVehicleJourney> 
+                        
+                        
+                        
+                        <NormalDatedVehicleJourney version="1" id="VYG:NormalDatedVehicleJourney:Test-5">
+                            <dayTypes>
+                                <DayTypeRef ref="ref"/>
+                            </dayTypes>
+                            <OperatingDayRef ref="ref"/>
+                            <ServiceAlterationType>extraJourney</ServiceAlterationType>
+                        </NormalDatedVehicleJourney>
+                        
+<!-- END DUMMY SAMPLES -->
+
+
+
                         <!-- REMARK: 
               
               Each operating day (or daytype) must have its own DatedServiceJourney with a per codespace unique ID.
@@ -565,12 +649,12 @@
                         </DatedServiceJourney>
 
 
-                        <DatedVehicleJourney version="1" id="VYG:DatedVehicleJourney:Test-3" >
+                        <DatedVehicleJourney version="1" id="VYG:DatedVehicleJourney:Test-3">
                             <VehicleJourneyRef ref="ref"/>
                             <OperatingDayRef ref="ref"/>
                         </DatedVehicleJourney>
                         
-                        <DatedVehicleJourney version="1" id="VYG:DatedVehicleJourney:Test-4" >
+                        <DatedVehicleJourney version="1" id="VYG:DatedVehicleJourney:Test-4">
                             <dayTypes>
                                 <DayTypeRef ref="ref"/>
                             </dayTypes>
@@ -578,18 +662,8 @@
                         </DatedVehicleJourney>
                         
                         
-                        <!-- dummy sample -->
-                        <NormalDatedVehicleJourney version="1" id="VYG:NormalDatedVehicleJourney:Test-5" >
-                            <dayTypes>
-                                <DayTypeRef ref="ref"/>
-                            </dayTypes>
-                            <OperatingDayRef ref="ref"/>
-                            <ServiceAlterationType>extraJourney</ServiceAlterationType>
-                        </NormalDatedVehicleJourney>
-                        
-
                         <!-- Cancelled service without replacement -->
-                        <DatedServiceJourney version="1" id="VYG:DatedServiceJourney:1-2020-01-02">
+                        <DatedServiceJourney id="VYG:DatedServiceJourney:1-2020-01-02" version="1">
                             <ServiceAlteration>cancellation</ServiceAlteration>
                             <!--ServiceJourneyRef ref="VYG:ServiceJourney:1" version="1"/-->
                             <OperatingDayRef ref="VYG:OperatingDay:2020-01-02" version="1"/>
