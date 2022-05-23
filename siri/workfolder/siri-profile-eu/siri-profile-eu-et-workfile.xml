@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Siri 
+  xmlns="http://www.siri.org.uk/siri" 
+  xmlns:acsb="http://www.ifopt.org.uk/acsb" 
+  xmlns:ifopt="http://www.ifopt.org.uk/ifopt" 
+  xmlns:datex2="http://datex2.eu/schema/2_0RC1/2_0"
+  version="2.0">
+    <ServiceDelivery>
+        <ResponseTimestamp>2020-08-15T10:43:30.506+02:00</ResponseTimestamp>
+        <ProducerRef>CODESPACE</ProducerRef>
+        
+        <EstimatedTimetableDelivery version="2.0">
+            <ResponseTimestamp>2020-07-11T11:29:31</ResponseTimestamp>
+            <!--ValidUntil>2020-08-11T11:29:31.173+02:00</ValidUntil-->
+            <EstimatedJourneyVersionFrame>
+                <RecordedAtTime>2020-08-15T10:43:21.826+02:00</RecordedAtTime>
+                <EstimatedVehicleJourney>
+                    <LineRef>SKY:Line:985</LineRef>
+                    <DirectionRef>0</DirectionRef>
+                    
+                    <!--DatedVehicleJourneyRef>6671390_94170</DatedVehicleJourneyRef-->
+                    <FramedVehicleJourneyRef>
+                        <DataFrameRef>2020-12-12</DataFrameRef>
+                        <DatedVehicleJourneyRef>ref</DatedVehicleJourneyRef>                        
+                    </FramedVehicleJourneyRef>
+                    <!-- Cancellation>true</Cancellation -->
+                    
+                    
+                    
+                    <!-- Potensiell referanse til erstatningstransport (lagt på is, gir liten reell verdi med dagens semi-manuelle arbeidsflyt):
+                        - <Replacement(Transport)s>
+                            <Replacement(Transport)>
+                                <LineRef>
+                                <RouteRef>
+                                <OperatorRef>
+                                <(Dated)VehicleJourneyRef>
+                                <VehicleMode>
+                    -->
+                    
+                    <ExtraJourney>false</ExtraJourney>
+                    <JourneyPatternRef>placeholder</JourneyPatternRef>
+                    <VehicleMode>bus</VehicleMode>
+                    <RouteRef>placeholder</RouteRef>
+                    <ExternalLineRef>placeholder</ExternalLineRef>
+                    <OriginName>placeholder</OriginName>
+                    <DestinationName>placeholder</DestinationName>
+                    <OperatorRef>31</OperatorRef>
+                    <ServiceFeatureRef>placeholder</ServiceFeatureRef>
+                    
+                    <JourneyNote>x</JourneyNote>
+                    
+                    <PublicContact>
+                        <PhoneNumber>00000000</PhoneNumber>
+                        <Url>http://www.placeholder.net</Url>
+                    </PublicContact>
+                    <SituationRef>
+                        <SituationSimpleRef>placeholder</SituationSimpleRef>
+                    </SituationRef>
+                    <SituationRef>
+                        <SituationSimpleRef>placeholder</SituationSimpleRef>
+                    </SituationRef>
+                    <Monitored>false</Monitored>
+                    <InCongestion>false</InCongestion>
+                    <PredictionInaccurate>false</PredictionInaccurate>
+                    <DataSource>ENT</DataSource>
+                    <ConfidenceLevel>reliable</ConfidenceLevel>
+                    <Occupancy>full</Occupancy>
+                    
+                    <!--  UTGÅR !
+                    <SectionOccupancy>
+                        <SectionName>xsd:string</SectionName>
+                        <SectionName>xsd:string</SectionName>
+                        <SeatingCapacity>xsd:integer</SeatingCapacity>
+                        <StandingCapacity>xsd:integer</StandingCapacity>
+                        <RegisteredPassenger>xsd:integer</RegisteredPassenger>
+                    </SectionOccupancy>
+                    -->
+                    
+                    <!-- BlockRef>86</BlockRef -->
+                    <VehicleJourneyRef>placeholder</VehicleJourneyRef>
+                    <VehicleRef>placeholder</VehicleRef>
+                    <AdditionalVehicleJourneyRef>
+                        <DataFrameRef>placeholder</DataFrameRef>
+                        <DatedVehicleJourneyRef>placeholder</DatedVehicleJourneyRef>
+                    </AdditionalVehicleJourneyRef>
+                    
+                    <!-- TRAIN -->
+                    
+                    <TrainElements>
+                        <TrainElement>
+                            <TrainElementCode>1</TrainElementCode>
+                            <HasLiftOrRamp>true</HasLiftOrRamp>
+                            <Length>123</Length>
+                            <Facilities>
+                                <Facility>
+                                    <Features>
+                                        <Feature>
+                                            <SanitaryFacility>toilet</SanitaryFacility>
+                                        </Feature>
+                                        <Feature>
+                                            <SanitaryFacility>wheelchairAcccessToilet</SanitaryFacility>
+                                        </Feature>
+                                        <Feature>
+                                            <SanitaryFacility>babyChange</SanitaryFacility>
+                                        </Feature>
+                                    </Features>
+                                </Facility>
+                            </Facilities>
+                        </TrainElement>
+                        <TrainElement>
+                            <TrainElementCode>2</TrainElementCode>
+                            <HasLiftOrRamp>false</HasLiftOrRamp>
+                            <Length>123</Length>
+                            <Facilities>
+                                <Facility>
+                                    <Features>
+                                        <Feature>
+                                            <LuggageFacility>bikeCarriage</LuggageFacility>
+                                        </Feature>
+                                    </Features>
+                                </Facility>
+                            </Facilities>
+                        </TrainElement>
+                    </TrainElements>
+                    
+                    <Trains>
+                        <Train>
+                            <HasLiftOrRamp>true</HasLiftOrRamp>
+                            <Length>123</Length>
+                            <NumberOfCars>2</NumberOfCars>
+                            <TrainComponents>
+                                <TrainComponent>
+                                    <TrainComponentCode>TrainComponent-1</TrainComponentCode>
+                                    <Order>1</Order>
+                                    <TrainElementRef>1</TrainElementRef>
+                                </TrainComponent>
+                                <TrainComponent>
+                                    <TrainComponentCode>TrainComponent-2</TrainComponentCode>
+                                    <Order>2</Order>
+                                    <TrainElementRef>2</TrainElementRef>
+                                </TrainComponent>
+                            </TrainComponents>
+                        </Train>
+                    </Trains>
+                    
+                    
+                    <RecordedCalls>
+                        <RecordedCall>
+                            <StopPointRef>NSR:Quay:52930</StopPointRef>
+                            <Order>1</Order>
+                            <ExtraCall>true</ExtraCall>
+                            <Occupancy>full</Occupancy>
+                            
+                            <AimedArrivalTime>2020-11-07T12:03:00+01:00</AimedArrivalTime>
+                            <ExpectedArrivalTime>2020-11-07T12:03:00+01:00</ExpectedArrivalTime>
+                            <ActualArrivalTime>2020-11-07T12:03:00+01:00</ActualArrivalTime>
+                            
+                            <ArrivalFormationAssignment>
+                                <EntranceToVehicleRef>ref</EntranceToVehicleRef>
+                                <TrainStopAssignment>
+                                    
+                                    <ExpectedQuayName>id</ExpectedQuayName>
+                                    
+                                    <ActualQuayRef>ref</ActualQuayRef>
+                                </TrainStopAssignment>
+                            </ArrivalFormationAssignment>
+                            
+                            <AimedDepartureTime>2020-11-07T12:03:00+01:00</AimedDepartureTime>
+                            <ExpectedDepartureTime>2020-11-07T12:03:00+01:00</ExpectedDepartureTime>
+                            <ActualDepartureTime>2020-11-07T12:03:00+01:00</ActualDepartureTime>
+                            <DepartureStatus>arrived</DepartureStatus>
+                            
+                            <DepartureFormationAssignment>
+                                <TrainComponentRef>ref</TrainComponentRef>
+                                <EntranceToVehicleRef>ref</EntranceToVehicleRef>
+                                <TrainStopAssignment>
+                                    <AimedQuayName>id</AimedQuayName>
+                                    <ExpectedQuayName>id</ExpectedQuayName>
+                                    <ActualQuayRef>ref</ActualQuayRef>
+                                </TrainStopAssignment>
+                            </DepartureFormationAssignment>
+                            
+                            <RecordedDepartureOccupancy>
+                                <TrainComponentRef>ref</TrainComponentRef>
+                                <OccupancyLevel>fewSeatsAvailable</OccupancyLevel>
+                                <TotalNumberOfReservedSeats>0</TotalNumberOfReservedSeats>
+                            </RecordedDepartureOccupancy>
+                            <RecordedDepartureOccupancy>
+                                <TrainComponentRef>ref</TrainComponentRef>
+                                <OccupancyLevel>fewSeatsAvailable</OccupancyLevel>
+                                <TotalNumberOfReservedSeats>0</TotalNumberOfReservedSeats>
+                            </RecordedDepartureOccupancy>
+                            
+                        </RecordedCall>
+                    </RecordedCalls>
+                    
+                    <EstimatedCalls>
+                        <EstimatedCall>
+                            <StopPointRef>0</StopPointRef>
+                            <Order>1</Order>
+                            <ExtraCall>true</ExtraCall>
+                            <PredictionInaccurate>false</PredictionInaccurate>
+                            
+                            <!-- ConfidenceLevel>reliable</ConfidenceLevel --> <!-- MANGLER I EstimatedCall -->
+                            
+                            <Occupancy>full</Occupancy>
+                            
+                            <RequestStop>true</RequestStop>
+                            <DestinationDisplay>placeholder</DestinationDisplay>
+                            
+                            <!--
+                            <FacilityConditionElement>
+                                <FacilityRef>placeholder</FacilityRef>
+                                <FacilityStatus>
+                                    <Status>notAvailable</Status>
+                                </FacilityStatus>
+                                <SituationRef>
+                                    <SituationSimpleRef>placeholder</SituationSimpleRef>
+                                </SituationRef>
+                                <Remedy>
+                                    <RemedyType>otherLocation</RemedyType>
+                                </Remedy>
+                            </FacilityConditionElement>
+                            -->
+                            <FacilityChangeElement>
+                                <EquipmentAvailability>
+                                    <EquipmentRef>placeholder</EquipmentRef>
+                                    <ValidityPeriod>
+                                        <StartTime>2020-06-28T12:32:05.9987717+02:00</StartTime>
+                                        <EndTime>2020-06-28T12:32:05.9987717+02:00</EndTime>
+                                    </ValidityPeriod>
+                                    <EquipmentStatus>notAvailable</EquipmentStatus>
+                                </EquipmentAvailability>
+                                <SituationRef>
+                                    <SituationSimpleRef></SituationSimpleRef>
+                                </SituationRef>
+                                <MobilityDisruption>
+                                    <MobilityImpairedAccess>true</MobilityImpairedAccess>
+                                    <AccessFacility>lift</AccessFacility>
+                                    <AccessFacility>barrier</AccessFacility>
+                                    <AccessFacility>escalator</AccessFacility>
+                                </MobilityDisruption>
+                            </FacilityChangeElement>
+                            
+                            <SituationRef>
+                                <SituationSimpleRef>placeholder</SituationSimpleRef>
+                            </SituationRef>
+                            <SituationRef>
+                                <SituationSimpleRef>placeholder</SituationSimpleRef>
+                            </SituationRef>
+                            <AimedArrivalTime>2020-08-15T15:00:00+02:00</AimedArrivalTime>
+                            <ExpectedArrivalTime>2020-08-15T15:00:01+02:00</ExpectedArrivalTime>
+                            <ArrivalStatus>arrived</ArrivalStatus>
+                            <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
+                            
+                            <ArrivalStopAssignment>
+                                <AimedQuayRef>placeholder</AimedQuayRef>
+                                <ExpectedQuayRef>placeholder</ExpectedQuayRef>
+                                <ActualQuayRef>placeholder</ActualQuayRef>
+                            </ArrivalStopAssignment>
+                            
+                            <ArrivalFormationAssignment>
+                                <TrainRef>ref</TrainRef>
+                                <EntranceToVehicleRef>ref</EntranceToVehicleRef>
+                                <TrainStopAssignment>
+                                    <AimedQuayName>id</AimedQuayName>
+                                    <ExpectedQuayName>id</ExpectedQuayName>
+                                    <ActualQuayRef>ref</ActualQuayRef>
+                                </TrainStopAssignment>
+                            </ArrivalFormationAssignment>
+                            <ArrivalFormationAssignment>
+                                <TrainComponentRef>ref</TrainComponentRef>
+                                <TrainStopAssignment>
+                                    <AimedQuayName>id</AimedQuayName>
+                                    <ExpectedQuayName>id</ExpectedQuayName>
+                                    <ActualQuayRef>ref</ActualQuayRef>
+                                </TrainStopAssignment>
+                            </ArrivalFormationAssignment>
+                            
+                            <ArrivalOperatorRefs>placeholder</ArrivalOperatorRefs>
+                            <ArrivalOperatorRefs>placeholder</ArrivalOperatorRefs>
+                            <AimedDepartureTime>2020-08-15T15:00:00+02:00</AimedDepartureTime>
+                            <ExpectedDepartureTime>2020-08-15T15:00:00+02:00</ExpectedDepartureTime>
+                            <!-- <EarliestExpectedDepartureTime>2020-08-15T15:00:00+02:00</EarliestExpectedDepartureTime> -->
+                            <DepartureStatus>cancelled</DepartureStatus>
+                            <DepartureBoardingActivity>passThru</DepartureBoardingActivity>
+                            
+                            <DepartureStopAssignment>
+                                <AimedQuayRef>placeholder</AimedQuayRef>
+                                <ExpectedQuayRef>placeholder</ExpectedQuayRef>
+                                <ActualQuayRef>placeholder</ActualQuayRef>
+                            </DepartureStopAssignment>
+                            
+                            <DepartureFormationAssignment>
+                                <TrainRef>ref</TrainRef>
+                                <!-- PositionOfTrainElement>2</PositionOfTrainElement --> <!-- CURRENTLY REMOVED PER https://3.basecamp.com/3256016/buckets/9672657/messages/3021493475#__recording_3022264789 -->
+                                <TrainStopAssignment>
+                                    <AimedQuayName>id</AimedQuayName>
+                                    <ExpectedQuayName>id</ExpectedQuayName>
+                                    <ActualQuayRef>ref</ActualQuayRef>
+                                </TrainStopAssignment>
+                            </DepartureFormationAssignment>
+                            
+                            <ExpectedDepartureOccupancy>
+                                <OccupancyLevel>full</OccupancyLevel>
+                                <TotalNumberOfReservedSeats>0</TotalNumberOfReservedSeats>
+                            </ExpectedDepartureOccupancy>
+                            
+                            <ExpectedDepartureOccupancy>
+                                <TrainComponentRef>TrainComponent-1</TrainComponentRef>
+                                <EntranceToVehicleRef>ref2</EntranceToVehicleRef>
+                                <OccupancyLevel>manySeatsAvailable</OccupancyLevel>
+                                <TotalNumberOfReservedSeats>0</TotalNumberOfReservedSeats>
+                            </ExpectedDepartureOccupancy>
+                            
+                            <ExpectedDepartureCapacities>
+                                <TrainComponentRef>TrainComponent-1</TrainComponentRef>
+                                <EntranceToVehicleRef>entranceref</EntranceToVehicleRef>
+                                <SeatingCapacity>100</SeatingCapacity>
+                            </ExpectedDepartureCapacities>
+                            
+                            <DepartureOperatorRefs>placeholder</DepartureOperatorRefs>
+                            <DepartureOperatorRefs>placeholder</DepartureOperatorRefs>
+                            <AimedHeadwayInterval>PT5M</AimedHeadwayInterval>
+                            <ExpectedHeadwayInterval>PT12M</ExpectedHeadwayInterval>
+                            <!--DistanceFromStop>500</DistanceFromStop>
+                            <NumberOfStopsAway>1</NumberOfStopsAway-->
+                        </EstimatedCall>
+                    </EstimatedCalls>
+                    
+                    <IsCompleteStopSequence>true</IsCompleteStopSequence>
+                    
+                    <JourneyRelations>
+                        <JourneyRelation>
+                            <JourneyRelationType>ReplacedByJourney</JourneyRelationType>
+                            <CallInfo>
+                                <StopPointRef>NSR:ScheduledStopPoint:IDX</StopPointRef>
+                            </CallInfo>
+                            <RelatedJourney>
+                                <LineRef>RUT:Line:ID</LineRef>
+                            </RelatedJourney>
+                        </JourneyRelation>
+                        <JourneyRelation>
+                            <JourneyRelationType>ReplacedByJourney</JourneyRelationType>
+                            <CallInfo>
+                                <StopPointRef>NSR:ScheduledStopPoint:IDY</StopPointRef>
+                            </CallInfo>
+                            <RelatedJourney>
+                                <OperatorRef>RUT:OperatorUNI</OperatorRef>
+                            </RelatedJourney>
+                        </JourneyRelation>
+                        <JourneyRelation>
+                            <JourneyRelationType>ReplacedByJourney</JourneyRelationType>
+                            <CallInfo>
+                                <StopPointRef>NSR:ScheduledStopPoint:IDZ</StopPointRef>
+                            </CallInfo>
+                            <RelatedJourney>
+                                <FramedVehicleJourneyRef>
+                                    <DataFrameRef>2020-12-12</DataFrameRef>
+                                    <DatedVehicleJourneyRef>VYT:DatedVehicleJourney:Next-Departure</DatedVehicleJourneyRef>
+                                </FramedVehicleJourneyRef>
+                            </RelatedJourney>
+                        </JourneyRelation>
+                    </JourneyRelations>
+
+                </EstimatedVehicleJourney>
+                
+            </EstimatedJourneyVersionFrame>
+        </EstimatedTimetableDelivery>
+    </ServiceDelivery>
+</Siri>
