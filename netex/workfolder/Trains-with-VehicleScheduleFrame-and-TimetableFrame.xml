@@ -77,6 +77,13 @@
                         <TrainComponentRef ref="Train-P-T-1" order="5"/>
                     </components>
                 </Train>
+                
+                <!-- Generic example (REMARK: Entur Material / Rolling Stock uses Train for all vehicle types) -->
+                <VehicleType id="ENT:VehicleType:1" version="1">
+                    <Name>BusyBus</Name>
+                    <ReversingDirection>false</ReversingDirection>
+                    <FuelType>petrol</FuelType>
+                </VehicleType>
             </vehicleTypes>
         </ResourceFrame>
         <VehicleScheduleFrame id="ENT:VehicleScheduleFrame:1" version="1">

@@ -397,7 +397,13 @@
 
 
 
-        <FareFrame id="slettemg" version="slettmeg">
+        <FareFrame id="test" version="1">
+            <notices>
+                <Notice id="ENT:Notice:1" version="1">
+                    <Text>text</Text>
+                    <TypeOfNoticeRef ref="ConditionSummary"/>
+                </Notice>
+            </notices>
             <fareZones>
                 <FareZone id="ENT:FareZone:100" version="1">
                     <Name>Temporary construction for ID tickets (will be moved to SiteFrame once the Nordic NeTEx profile update is approved)</Name>
@@ -822,13 +828,20 @@
             <fareProducts>
 
                 <PreassignedFareProduct id="ENT:PreassignedFareProduct:1" version="1">
+                    <BrandingRef ref="ENT:Branding:1" version="1"/>
                     <Name>PreassignedFareProduct</Name>
+                    <noticeAssignments>
+                        <NoticeAssignment id="ENT:NoticeAssignment:1" version="1" order="1">
+                            <NoticeRef ref="ENT:Notice:1" version="1"></NoticeRef>
+                        </NoticeAssignment>
+                    </noticeAssignments>
                     <PrivateCode></PrivateCode>
-                    
+                    <ConditionSummary>
+                        <HasNotices>true</HasNotices>
+                    </ConditionSummary>
                     <FareProductRef ref=""></FareProductRef> <!-- FAIL (kun en referanse tillatt) -->
                     <!--SaleDiscountRightRef ref="ENT:SaleDiscountRight:1" version="1"/ -->
                     <!-- SupplementProductRef ref="ENT:SupplementProduct:1" version="1"/ -->
-                    
                     
                     <accessRightsInProduct>
                         <AccessRightInProduct id="BS" version="1" order="1">

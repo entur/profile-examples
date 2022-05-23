@@ -271,6 +271,10 @@
                             </SituationRef>
                             <AimedArrivalTime>2020-08-15T15:00:00+02:00</AimedArrivalTime>
                             <ExpectedArrivalTime>2020-08-15T15:00:01+02:00</ExpectedArrivalTime>
+                            <LatestExpectedArrivalTime>2020-08-15T15:00:01+02:00</LatestExpectedArrivalTime>
+                            <ExpectedArrivalPredictionQuality>
+                            <PredictionLevel>certain</PredictionLevel>
+                            </ExpectedArrivalPredictionQuality>
                             <ArrivalStatus>arrived</ArrivalStatus>
                             <ArrivalBoardingActivity>noAlighting</ArrivalBoardingActivity>
                             
