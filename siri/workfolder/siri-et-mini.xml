@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Siri 
+  xmlns="http://www.siri.org.uk/siri" 
+  xmlns:acsb="http://www.ifopt.org.uk/acsb" 
+  xmlns:ifopt="http://www.ifopt.org.uk/ifopt" 
+  xmlns:datex2="http://datex2.eu/schema/2_0RC1/2_0"
+  version="2.0">
+    
+    <ServiceDelivery>
+    
+        <ResponseTimestamp>2020-08-15T10:43:30.506+02:00</ResponseTimestamp>
+        
+        
+        <ProducerRef>CODESPACE</ProducerRef>
+        
+        
+        
+        <EstimatedTimetableDelivery version="2.0">
+            
+            <ResponseTimestamp>2020-07-11T11:29:31</ResponseTimestamp>
+            
+            
+            
+            
+            <EstimatedJourneyVersionFrame>
+                <RecordedAtTime>2020-08-15T10:43:21.826+02:00</RecordedAtTime>
+            
+                <EstimatedVehicleJourney>
+                    <LineRef>SKY:Line:985</LineRef>
+                    <DirectionRef>0</DirectionRef>
+                    
+                    <FramedVehicleJourneyRef>
+                        <DataFrameRef>2020-12-12</DataFrameRef>
+                        <DatedVehicleJourneyRef>ref</DatedVehicleJourneyRef>                        
+                    </FramedVehicleJourneyRef>
+                    
+                    <TrainElements>
+                        <TrainElement>
+                            <TrainElementCode>1</TrainElementCode>
+                            <HasLiftOrRamp>true</HasLiftOrRamp>
+                            <Length>123</Length>
+                            <Facilities>
+                                <Facility>
+                                    <Features>
+                                        <Feature>
+                                            <SanitaryFacility>toilet</SanitaryFacility>
+                                        </Feature>
+                                        <Feature>
+                                            <SanitaryFacility>wheelchairAcccessToilet</SanitaryFacility>
+                                        </Feature>
+                                        <Feature>
+                                            <SanitaryFacility>babyChange</SanitaryFacility>
+                                        </Feature>
+                                    </Features>
+                                </Facility>
+                            </Facilities>
+                        </TrainElement>
+                        <TrainElement>
+                            <TrainElementCode>2</TrainElementCode>
+                            <HasLiftOrRamp>false</HasLiftOrRamp>
+                            <Length>123</Length>
+                            <Facilities>
+                                <Facility>
+                                    <Features>
+                                        <Feature>
+                                            <LuggageFacility>bikeCarriage</LuggageFacility>
+                                        </Feature>
+                                    </Features>
+                                </Facility>
+                            </Facilities>
+                        </TrainElement>
+                    </TrainElements>
+                    
+                    <Trains>
+                        <Train>
+                            <HasLiftOrRamp>true</HasLiftOrRamp>
+                            <Length>123</Length>
+                            <NumberOfCars>2</NumberOfCars>
+                            <TrainComponents>
+                                <TrainComponent>
+                                    <TrainComponentCode>TrainComponent-1</TrainComponentCode>
+                                    <Order>1</Order>
+                                    <TrainElementRef>1</TrainElementRef>
+                                </TrainComponent>
+                                <TrainComponent>
+                                    <TrainComponentCode>TrainComponent-2</TrainComponentCode>
+                                    <Order>2</Order>
+                                    <TrainElementRef>2</TrainElementRef>
+                                </TrainComponent>
+                            </TrainComponents>
+                        </Train>
+                    </Trains>
+                    
+                    
+                </EstimatedVehicleJourney>
+                
+                
+            </EstimatedJourneyVersionFrame>
+        </EstimatedTimetableDelivery>
+        
+    </ServiceDelivery>
+</Siri>
