@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex" 
+  xmlns:gis="http://www.opengis.net/gml/3.2" 
+  xmlns:siri="http://www.siri.org.uk/siri" 
+  version="1.10:NO-NeTEx-networktimetable:1.4">
+
+
+  <!--
+    Simplified dated journey XML as POC for NeTEx CR/PR
+  -->
+
+
+    <PublicationTimestamp>2022-06-02T12:34:56</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <Description>POC</Description>
+    <dataObjects>
+
+        <GeneralFrame version="1" id="ENT:GeneralFrame:1">
+            <!-- placeholder -->
+        </GeneralFrame>
+
+
+        <ResourceFrame version="1" id="ENT:ResourceFrame:145997" derivedFromObjectRef="">
+            <!-- placeholder -->
+        </ResourceFrame>
+
+
+        <CompositeFrame version="1" id="ENT:CompositeFrame:145997">
+            <validityConditions>
+                <AvailabilityCondition version="1" id="ENT:AvailabilityCondition:144408">
+                    <FromDate>2022-01-01T00:00:00</FromDate>
+                    <ToDate>2022-12-31T23:59:59</ToDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            <codespaces>
+                <Codespace id="nsr">
+                    <Xmlns>NSR</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+                </Codespace>
+                <Codespace id="ent">
+                    <Xmlns>ENT</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.org/ns/ent</XmlnsUrl>
+                </Codespace>
+            </codespaces>
+            <FrameDefaults>
+                <DefaultLocale>
+                    <TimeZone>Europe/Oslo</TimeZone>
+                    <DefaultLanguage>no</DefaultLanguage>
+                </DefaultLocale>
+            </FrameDefaults>
+
+
+            <frames>
+                <SiteFrame version="1" id="NSR:SiteFrame:1">
+                    <!-- placeholder -->
+                </SiteFrame>
+
+
+                <ServiceCalendarFrame version="1" id="ENT:ServiceCalendarFrame:1">
+                    <dayTypes>
+                        <DayType version="1" id="ENT:DayType:2022-06-06"/>
+                        <DayType version="1" id="ENT:DayType:2022-06-12"/>
+                    </dayTypes>
+                    <operatingDays>
+                        <OperatingDay id="ENT:OperatingDay:2022-06-06" version="1">
+                            <CalendarDate>2022-06-06</CalendarDate>
+                        </OperatingDay>
+                        <OperatingDay id="ENT:OperatingDay:2022-06-12" version="1">
+                            <CalendarDate>2022-06-12</CalendarDate>
+                        </OperatingDay>
+                    </operatingDays>
+                    
+                    <operatingPeriods>
+                        <UicOperatingPeriod id="tap:UicOperatingPeriod:2011-02-07/2011-08-26_111110011111001111100111110011111001111100111110011111001111100111110011111000111100011110011111001111100111110001111001111100111110011111001111100111110011111001111100111110011111001111100111110011111" version="any">
+                            <FromDate>2011-02-07T00:00:00</FromDate>
+                            <ToDate>2011-08-26T00:00:00</ToDate>
+                            <ValidDayBits>111110011111001111100111110011111001111100111110011111001111100111110011111000111100011110011111001111100111110001111001111100111110011111001111100111110011111001111100111110011111001111100111110011111</ValidDayBits>
+                        </UicOperatingPeriod>
+                    </operatingPeriods>
+                    
+                    <dayTypeAssignments>
+                        <DayTypeAssignment id="ENT:DayTypeAssignment:2022-06-06" version="1" order="2">
+                            <Date>2022-06-06</Date>
+                            <DayTypeRef ref="ENT:DayType:2022-06-06" version="1"/>
+                        </DayTypeAssignment>
+                        <DayTypeAssignment id="ENT:DayTypeAssignment:2022-06-12" version="1" order="2">
+                            <Date>2022-06-12</Date>
+                            <DayTypeRef ref="ENT:DayType:2022-06-12" version="1"/>
+                        </DayTypeAssignment>
+                    </dayTypeAssignments>
+                </ServiceCalendarFrame>
+
+
+                <ServiceFrame id="ENT:ServiceFrame:1" version="1">
+                    <!-- placeholder -->
+                </ServiceFrame>
+
+
+                <TimetableFrame version="1" id="ENT:TimetableFrame:1">
+                    <vehicleJourneys>
+                        <!-- reference journey -->
+                        <ServiceJourney id="ENT:ServiceJourney:1" version="1">
+                            <ServiceAlteration>cancellation</ServiceAlteration>
+                            <!-- JourneyPatternRef ref="ENT:JourneyPattern:1" version="1"/-->
+                            <parts>
+                                <JourneyPart id="ENT:JourneyPart:1" version="1">
+                                    <MainPartRef ref="ref"/>
+                                    <StartTime>11:11:11</StartTime>
+                                    <EndTime>11:11:11</EndTime>
+                                </JourneyPart>
+                            </parts>
+                        </ServiceJourney>
+                        
+                        
+                        <!-- REFERENCE EXAMPLE for current Nordic POC implementation -->
+                        <DatedServiceJourney id="ENT:DatedServiceJourney:1" version="1">
+                            <ServiceAlteration>planned</ServiceAlteration>
+                            <TrainBlockRef ref="ENT:TrainBlock:1" />
+                            <!--<ServiceJourneyRef ref="ENT:ServiceJourney:1" version="1"/>-->
+                            <!--<DatedServiceJourneyRef ref="ENT:DatedServiceJourney:2" version="1"/>-->
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-06" version="1"/>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney id="ENT:DatedServiceJourney:2" version="1">
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-12" version="1"/>
+                        </DatedServiceJourney>
+                        
+                        <!-- DEPRECATED SAMPLE PROPOSAL -->
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:1" version="1" created="2022-05-04T12:34:00" changed="2022-05-04T13:37:00" modification="revise">
+                            <Extensions>
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="2" />
+                                <ServiceJourneyRef ref="ENT:DatedServiceJourney:1" version="1" />
+                                <DatedServiceJourney id="ENT:DatedVehicleJourney:100" version="1">
+                                    <ServiceAlteration>extraJourney</ServiceAlteration>
+                                </DatedServiceJourney>
+                            </Extensions>
+                            <TrainBlockRef ref="ENT:TrainBlock:1" />
+                            <ServiceJourneyRef ref="ENT:DatedServiceJourney:1" version="1" />
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-12" version="1" />
+                        </DatedVehicleJourney>
+                        
+                        
+                        <!-- proposal by from Christophe -->
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:2" version="1" modification="revise">
+                            <!--<ServiceAlteration>extraJourney</ServiceAlteration>-->  <!-- new element in VehicleJourney (similar to ServiceJouney/DatedServiceJourney) -->
+                            <TrainBlockRef ref="ENT:TrainBlock:1" />
+                            <ServiceJourneyRef ref="ENT:ServiceJourney:1" version="1" />
+                            <!--replacing>
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:1" version="1" />
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="1" />
+                            </replacing-->
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-12" version="1" />
+                        </DatedVehicleJourney>
+                        
+                        
+                        <!-- proposal by Kristian after workshop (extended alternative more in line with current model) -->
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:2" version="1" derivedFromObjectRef="ENT:ServiceJourney:1" modification="revise">
+                            <TrainBlockRef ref="ENT:TrainBlock:1" />
+                            <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="1" />
+                            <!--<replacing>
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:1" version="1" />
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="1" />
+                            </replacing>-->
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-12" version="1" />
+                            <!--<ServiceAlterationType>extraJourney</ServiceAlterationType>-->  <!-- new element in VehicleJourney (similar to ServiceJouney/DatedServiceJourney) -->
+                        </DatedVehicleJourney> 
+                        
+                        
+                        <!-- proposal by Mike (Slack May 9th 08:39) -->
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:2" version="1" modification="revise">
+                            <!--<ServiceAlteration>extraJourney</ServiceAlteration>-->  <!-- must be added -->
+                            <TrainBlockRef ref="ENT:TrainBlock:1" />
+                            <!--services>
+                                <ServiceJourneyRef ref="ENT:ServiceJourney:1" version="1" />
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:1" version="1" modification="replaced" />
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="1" modification="replaced" />
+                            </services>-->
+                            <!--<crews>
+                                <DriverTripRef id="ref" />
+                            </crews>-->
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-06" version="1" />
+                        </DatedVehicleJourney> 
+                        
+                        
+                        <!-- proposal by Håkon (Slack May 9th 12:07) -->
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:2" version="1" changed="2022-05-09T12:13:03" modification="revise" >
+                            <!--<ServiceAlteration>replacing</ServiceAlteration>-->  <!-- must be added -->
+                            <TrainBlockRef ref="ENT:TrainBlock:1" />
+                            <ServiceJourneyRef ref="ENT:ServiceJourney:1" version="1" />
+                            <!--<serviceDerivation>
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:1" version="1" modification="replaced" />
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="1" modification="replaced" />
+                            </serviceDerivation>-->
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-06" version="1" />
+                        </DatedVehicleJourney>
+                        
+                        
+                        <!-- PLENARY PROPOSAL after workshop June 2nd 2022 -->
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:2" version="1" changed="2022-05-09T12:13:03" modification="revise">
+                            <TrainBlockRef ref="ENT:TrainBlock:1" />
+                            <ServiceJourneyRef ref="ENT:ServiceJourney:1" version="1" />
+                            <!--<replacedJourneys>
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:1" version="1" />
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="1" />
+                                ... only references to NormalDatedVehicleJourney and DatedVehicleJourney types ...
+                            </replacedJourneys>-->
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-06" version="1" />
+                            <!--<ServiceAlterationType>replacing</ServiceAlterationType>-->  <!-- must be added as aligned with NormalDatedVehicleJourney-->
+                        </DatedVehicleJourney>
+                    </vehicleJourneys>
+<!-- 
+ServiceAlterationEnumeration
+
+<xsd:enumeration value="extraJourney"/>
+<xsd:enumeration value="cancellation"/>
+<xsd:enumeration value="planned"/>
+<xsd:enumeration value="replaced"/>
+add "provisional"
+-->
+                        
+<!-- 
+                            
+ModificationEnumeration
+
+<xsd:enumeration value="new">
+<xsd:enumeration value="revise">
+<xsd:enumeration value="delete">
+<xsd:enumeration value="unchanged">
+<xsd:enumeration value="delta">
+
+
+replacing
+supplementing
+
+
+ADDITIONS NOT TO BE CHANGE REQUESTED AT THE MOMENT:
+
+strengthened (as in an additional unit or coach added)
+reduced (as in a unit or coach removed)
+reversed
+substituted (as in a BM75 instead of a BM74)
+-->
+
+
+
+
+
+                    <trainNumbers>
+                        <TrainNumber id="ENT:TrainNumber:1" version="1">
+                            <ForAdvertisement>1A</ForAdvertisement>
+                            <ForProduction>1P</ForProduction>
+                        </TrainNumber>
+                    </trainNumbers>
+                    
+                    
+                    <journeyInterchanges>
+                        <ServiceJourneyInterchange id="ENT:ServiceJourneyInterchange:1" version="1">
+                            <FromJourneyRef ref="ENT:DatedServiceJourney:1" version="1"/>
+                            <ToJourneyRef ref="ENT:DatedServiceJourney:2" version="1"/>
+                        </ServiceJourneyInterchange>
+                    </journeyInterchanges>
+
+                </TimetableFrame>
+                
+                
+                <VehicleScheduleFrame version="1" id="ENT:VehicleScheduleFrame:145997">
+                    <!-- placeholder -->
+                    <blocks>
+                        <TrainBlock id="ENT:TrainBlock:1" version="">
+                            <!-- placeholder -->
+                        </TrainBlock>
+                    </blocks>
+                </VehicleScheduleFrame>
+                
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
