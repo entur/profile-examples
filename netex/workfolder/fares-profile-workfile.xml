@@ -858,7 +858,6 @@
                 </PreassignedFareProduct>
                 
                 <PreassignedFareProduct id="ENT:PreassignedFareProduct:SingleTrip1Zone" version="1">
-                    
                     <Name lang="en">Single trip valid within one zone</Name>
                     <TypeOfFareProductRef ref=""></TypeOfFareProductRef>
                     <accessRightsInProduct>
