@@ -114,22 +114,39 @@
                         </ServiceJourney>
                         
                         
-                        <!-- REFERENCE EXAMPLE for current Nordic POC implementation -->
+                        <!-- REFERENCE EXAMPLE DSJs for current Nordic POC implementation -->
                         <DatedServiceJourney id="ENT:DatedServiceJourney:1" version="1">
                             <ServiceAlteration>planned</ServiceAlteration>
                             <TrainBlockRef ref="ENT:TrainBlock:1" />
-                            <!--<ServiceJourneyRef ref="ENT:ServiceJourney:1" version="1"/>-->
-                            <!--<DatedServiceJourneyRef ref="ENT:DatedServiceJourney:2" version="1"/>-->
+                            <!-- <ServiceJourneyRef ref="ENT:ServiceJourney:1" version="1"/> -->
+                            <!-- <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:2" version="1"/> -->
                             <OperatingDayRef ref="ENT:OperatingDay:2022-06-06" version="1"/>
                         </DatedServiceJourney>
+                        
                         <DatedServiceJourney id="ENT:DatedServiceJourney:2" version="1">
                             <OperatingDayRef ref="ENT:OperatingDay:2022-06-12" version="1"/>
                         </DatedServiceJourney>
                         
+                        
+                        <!-- REFERENCE EXAMPLE NDVJ for current Nordic POC implementation -->
+                        <NormalDatedVehicleJourney id="ENT:NormalDatedVehicleJourney:1" version="1">
+                            <!--ServiceAlteration>planned</ServiceAlteration-->
+                            <TrainBlockRef ref="ENT:TrainBlock:1" />
+                            <!--<ServiceJourneyRef ref="ENT:ServiceJourney:1" version="1"/>-->
+                            <!--<DatedServiceJourneyRef ref="ENT:DatedServiceJourney:2" version="1"/>-->
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-06" version="1"/>
+                            <ServiceAlterationType>extraJourney</ServiceAlterationType>
+                        </NormalDatedVehicleJourney>
+                        
+                        <NormalDatedVehicleJourney id="ENT:NormalDatedVehicleJourney:2" version="1">
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-12" version="1"/>
+                        </NormalDatedVehicleJourney>
+                        
+                        
                         <!-- DEPRECATED SAMPLE PROPOSAL -->
                         <DatedVehicleJourney id="ENT:DatedVehicleJourney:1" version="1" created="2022-05-04T12:34:00" changed="2022-05-04T13:37:00" modification="revise">
                             <Extensions>
-                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="2" />
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="1" />
                                 <ServiceJourneyRef ref="ENT:DatedServiceJourney:1" version="1" />
                                 <DatedServiceJourney id="ENT:DatedVehicleJourney:100" version="1">
                                     <ServiceAlteration>extraJourney</ServiceAlteration>
@@ -155,7 +172,7 @@
                         
                         
                         <!-- proposal by Kristian after workshop (extended alternative more in line with current model) -->
-                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:2" version="1" derivedFromObjectRef="ENT:ServiceJourney:1" modification="revise">
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:3" version="1" derivedFromObjectRef="ENT:ServiceJourney:1" modification="revise">
                             <TrainBlockRef ref="ENT:TrainBlock:1" />
                             <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="1" />
                             <!--<replacing>
@@ -168,7 +185,7 @@
                         
                         
                         <!-- proposal by Mike (Slack May 9th 08:39) -->
-                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:2" version="1" modification="revise">
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:4" version="1" modification="revise">
                             <!--<ServiceAlteration>extraJourney</ServiceAlteration>-->  <!-- must be added -->
                             <TrainBlockRef ref="ENT:TrainBlock:1" />
                             <!--services>
@@ -184,7 +201,7 @@
                         
                         
                         <!-- proposal by Håkon (Slack May 9th 12:07) -->
-                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:2" version="1" changed="2022-05-09T12:13:03" modification="revise" >
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:5" version="1" changed="2022-05-09T12:13:03" modification="revise" >
                             <!--<ServiceAlteration>replacing</ServiceAlteration>-->  <!-- must be added -->
                             <TrainBlockRef ref="ENT:TrainBlock:1" />
                             <ServiceJourneyRef ref="ENT:ServiceJourney:1" version="1" />
@@ -197,16 +214,22 @@
                         
                         
                         <!-- PLENARY PROPOSAL after workshop June 2nd 2022 -->
-                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:2" version="1" changed="2022-05-09T12:13:03" modification="revise">
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:6" version="1" changed="2022-05-09T12:13:03" modification="revise">
                             <TrainBlockRef ref="ENT:TrainBlock:1" />
                             <ServiceJourneyRef ref="ENT:ServiceJourney:1" version="1" />
-                            <!--<replacedJourneys>
-                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:1" version="1" />
-                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="1" />
-                                ... only references to NormalDatedVehicleJourney and DatedVehicleJourney types ...
-                            </replacedJourneys>-->
+                            <replacedJourneys>
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:1" version="1"/>
+                                <DatedVehicleJourneyRef ref="ENT:DatedVehicleJourney:2" version="1"/>
+                                <NormalDatedVehicleJourneyRef ref="ENT:NormalDatedVehicleJourney:1" version="1"/>
+                                <NormalDatedVehicleJourneyRef ref="ENT:NormalDatedVehicleJourney:2" version="1"/>
+                                <!-- ... only references to NormalDatedVehicleJourney and DatedVehicleJourney types ... -->
+                            </replacedJourneys>
                             <OperatingDayRef ref="ENT:OperatingDay:2022-06-06" version="1" />
-                            <!--<ServiceAlterationType>replacing</ServiceAlterationType>-->  <!-- must be added as aligned with NormalDatedVehicleJourney-->
+                            <ServiceAlterationType>replaced</ServiceAlterationType>  <!-- added (aligned with NormalDatedVehicleJourney) -->
+                        </DatedVehicleJourney>
+                        
+                        <DatedVehicleJourney id="ENT:DatedVehicleJourney:7" version="1" changed="2022-05-09T12:13:03" modification="revise">
+                            <OperatingDayRef ref="ENT:OperatingDay:2022-06-06" version="1" />
                         </DatedVehicleJourney>
                     </vehicleJourneys>
 <!-- 
