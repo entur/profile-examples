@@ -219,7 +219,8 @@
                     <OrganisationType>operator</OrganisationType>
                 </Operator>
                 <Authority id="ENT:Authority:Ruter" version="1">
-                    <PrivateCode></PrivateCode>
+                    <PublicCode></PublicCode>
+                    <PrivateCode>test</PrivateCode>
                     <Name>Ruter#</Name>
                     <ContactDetails>
                         <Url>https://www.ruter.no</Url>
@@ -246,7 +247,6 @@
             </validityConditions>
             <Description>https://ruter.no/en/buying-tickets/zones/</Description>
             
-            
             <!-- DEMO OBJECTS -->
             <topographicPlaces>
                 <TopographicPlace id="ENT:TopographicPlace:1" version="1">
@@ -255,6 +255,13 @@
                     </Descriptor>
                 </TopographicPlace>
             </topographicPlaces>
+            
+            <stopPlaces>
+                <StopPlace id="ENT:StopPlace:1" version="1">
+                    <PrivateCode>1</PrivateCode>
+                    <PublicCode>1</PublicCode>
+                </StopPlace>
+            </stopPlaces>
             
             
             <tariffZones>
@@ -309,8 +316,9 @@
                 
                 <TariffZone id="ENT:TariffZone:1" version="1">
                     <Name>Demo TariffZone</Name>
-                    <PrivateCode>1</PrivateCode>
+                    <PrivateCode>My-private-code</PrivateCode>
                     <ParentZoneRef ref="ENT:TopographicPlace:1" version="1"/>
+                    <!--PublicCode>My-public-code</PublicCode--> <!-- TO BE ADDED -->
                 </TariffZone>
                 
                 

@@ -159,7 +159,7 @@
                         </DatedVehicleJourney>
                         
                         
-                        <!-- proposal by from Christophe -->
+                        <!-- proposal from workshop with Christophe -->
                         <DatedVehicleJourney id="ENT:DatedVehicleJourney:2" version="1" modification="revise">
                             <!--<ServiceAlteration>extraJourney</ServiceAlteration>-->  <!-- new element in VehicleJourney (similar to ServiceJouney/DatedServiceJourney) -->
                             <TrainBlockRef ref="ENT:TrainBlock:1" />
