@@ -20,12 +20,20 @@
                         <SourceType>directReport</SourceType>
                     </Source>
                     <Progress>open</Progress>
+                    
                     <ValidityPeriod>
                         <StartTime>2021-12-11T11:29:31</StartTime>
                         <EndTime>2021-12-31T23:59:59</EndTime>
                     </ValidityPeriod>
-                    <UndefinedReason/>
+                    
+                    <AlertCause>accident</AlertCause>
+                    <PublicEventReason>agriculturalShow</PublicEventReason>
+                    <ReasonName>Name</ReasonName>
+                    <ReasonName>halp</ReasonName>
                     <Severity>normal</Severity>
+                    <Priority>1</Priority>
+                    <ReportType>general</ReportType>
+                    <Planned>true</Planned>
                     <Summary>No stop at Stortorvet</Summary>
                     <Description>Stop at Stortorvet (Oslo) daffected for all services until further notice.</Description>
                     <Advice>While ongoing roadside work, please use alternative stop places e.g. Jernbanetorget and Tinghuset.</Advice>

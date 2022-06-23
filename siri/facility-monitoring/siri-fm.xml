@@ -13,7 +13,7 @@
             <FacilityCondition>
                 <Facility>
                     <FacilityCode>73</FacilityCode>
-                    <FacilityClass>site</FacilityClass>
+                    <FacilityClass>reservedArea</FacilityClass>
                 </Facility>
                 <FacilityStatus>
                     <Status>partiallyAvailable</Status>

@@ -241,9 +241,9 @@ ServiceAlterationEnumeration
 <xsd:enumeration value="replaced"/>
 add "provisional"
 -->
-                        
-<!-- 
-                            
+
+          
+<!--
 ModificationEnumeration
 
 <xsd:enumeration value="new">
@@ -252,21 +252,17 @@ ModificationEnumeration
 <xsd:enumeration value="unchanged">
 <xsd:enumeration value="delta">
 
-
-replacing
-supplementing
-
+SHOULD BE ASSESSED AS POSSIBLE ADDITIONS:
+  replacing
+  supplementing
+BUT IS CURRENTLY MANAGED WITH "revise"
 
 ADDITIONS NOT TO BE CHANGE REQUESTED AT THE MOMENT:
-
-strengthened (as in an additional unit or coach added)
-reduced (as in a unit or coach removed)
-reversed
-substituted (as in a BM75 instead of a BM74)
+  strengthened (as in an additional unit or coach added)
+  reduced (as in a unit or coach removed)
+  reversed
+  substituted (as in a BM75 instead of a BM74)
 -->
-
-
-
 
 
                     <trainNumbers>

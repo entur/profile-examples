@@ -584,7 +584,7 @@
                 
                 <!-- RECOMMENDATION: -->
                 <!-- Either as separate GenericParamaterAssignment(s) -->
-                <FareStructureElement id="ENT:FareStructureElement:1" version="1" derivedFromObjectRef="">
+                <FareStructureElement id="ENT:FareStructureElement:1" version="1">
                     <TariffBasis>discount</TariffBasis>
                     <validityParameterAssignments>
                         <GenericParameterAssignment id="ENT:GenericParameterAssignment:1" version="1" order="0">

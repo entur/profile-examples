@@ -39,6 +39,7 @@
                     
                     <ExtraJourney>false</ExtraJourney>
                     <JourneyPatternRef>placeholder</JourneyPatternRef>
+                    <VehicleMode>air</VehicleMode>
                     <VehicleMode>bus</VehicleMode>
                     <RouteRef>placeholder</RouteRef>
                     <ExternalLineRef>placeholder</ExternalLineRef>
