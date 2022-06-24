@@ -156,6 +156,11 @@
                             <ExpectedArrivalTime>2020-11-07T12:03:00+01:00</ExpectedArrivalTime>
                             <ActualArrivalTime>2020-11-07T12:03:00+01:00</ActualArrivalTime>
                             
+                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
+                            <ArrivalStopAssignment>
+                                <AimedQuayRef>ref</AimedQuayRef>
+                            </ArrivalStopAssignment>
+                            
                             <ArrivalFormationAssignment>
                                 <EntranceToVehicleRef>ref</EntranceToVehicleRef>
                                 <TrainStopAssignment>
@@ -171,6 +176,11 @@
                             <ActualDepartureTime>2020-11-07T12:03:00+01:00</ActualDepartureTime>
                             <DepartureStatus>arrived</DepartureStatus>
                             
+                            <DepartureBoardingActivity>boarding</DepartureBoardingActivity>
+                            <DepartureStopAssignment>
+                                <AimedQuayRef>ref</AimedQuayRef>
+                            </DepartureStopAssignment>
+                            
                             <DepartureFormationAssignment>
                                 <TrainComponentRef>ref</TrainComponentRef>
                                 <EntranceToVehicleRef>ref</EntranceToVehicleRef>
@@ -180,15 +190,22 @@
                                     <ActualQuayRef>ref</ActualQuayRef>
                                 </TrainStopAssignment>
                             </DepartureFormationAssignment>
+                            <DepartureFormationAssignment>
+                                <TrainStopAssignment></TrainStopAssignment>
+                            </DepartureFormationAssignment>
+                            
+                            <RecordedDepartureOccupancy>
+                                <FareClass>businessClass</FareClass>
+                            </RecordedDepartureOccupancy>
                             
                             <RecordedDepartureOccupancy>
                                 <TrainComponentRef>ref</TrainComponentRef>
+                                <PassengerCategory>blah</PassengerCategory>
                                 <OccupancyLevel>fewSeatsAvailable</OccupancyLevel>
-                                <TotalNumberOfReservedSeats>0</TotalNumberOfReservedSeats>
-                            </RecordedDepartureOccupancy>
-                            <RecordedDepartureOccupancy>
-                                <TrainComponentRef>ref</TrainComponentRef>
-                                <OccupancyLevel>fewSeatsAvailable</OccupancyLevel>
+                                <OccupancyPercentage>50</OccupancyPercentage>
+                                <AlightingCount>55</AlightingCount>
+                                <BoardingCount>44</BoardingCount>
+                                <OnboardCount>1234</OnboardCount>
                                 <TotalNumberOfReservedSeats>0</TotalNumberOfReservedSeats>
                             </RecordedDepartureOccupancy>
                             
@@ -280,6 +297,7 @@
                             
                             <ArrivalOperatorRefs>placeholder</ArrivalOperatorRefs>
                             <ArrivalOperatorRefs>placeholder</ArrivalOperatorRefs>
+                            
                             <AimedDepartureTime>2020-08-15T15:00:00+02:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2020-08-15T15:00:00+02:00</ExpectedDepartureTime>
                             <!-- <EarliestExpectedDepartureTime>2020-08-15T15:00:00+02:00</EarliestExpectedDepartureTime> -->
