@@ -603,7 +603,9 @@
                             <QualityStructureFactorRef ref="ref"/>
                             <IncludesGroupingType>XOR</IncludesGroupingType>
                             <includes>
-                                <GenericParameterAssignmentInContext/>
+                                <GenericParameterAssignmentInContext>
+                                    <BrandingRef ref="demoref"></BrandingRef>
+                                </GenericParameterAssignmentInContext>
                             </includes>
                         </GenericParameterAssignment>
                     </validityParameterAssignments>
@@ -641,10 +643,6 @@
                         
                         <temporalValidityParameters>
                             <OperatingPeriodRef ref="ref"/>
-                            <OperatingDayRef ref="ENT:OperatingDay:externalref"/>
-                            <OperatingPeriodRef ref="ref"/>
-                            <DayTypeRef ref="ref"/>
-                            <DayTypeRef ref="ref"/>
                         </temporalValidityParameters>
                         
                         <validityParameters>
@@ -1042,6 +1040,9 @@
             <salesOfferPackages>
                 <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip1Zone" version="1">              
                     <Name lang="en">Single trip within one zone</Name>
+                    <distributionAssignments>
+                        <DistributionAssignmentRef ref="ref"/>
+                    </distributionAssignments>
                     <prices>
                         <SalesOfferPackagePrice id="VTK:SalesOfferPackagePrice:1" version="1">
                             <Amount>35</Amount>
@@ -1052,6 +1053,29 @@
                         </SalesOfferPackagePrice>
                         <SalesOfferPackagePriceRef ref="ref"/>
                     </prices>
+                    
+                    <!-- XYZ -->
+                    <elementConsumptionPolicies>
+                        <ElementConsumptionPolicy>
+                            <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
+                            <consumptionRequirements>
+                                <AccessRightInProductConsumptionRequirement>
+                                    <MarkedAs>activated</MarkedAs>
+                                    <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
+                                    <AccessRightInProductRef ref=""></AccessRightInProductRef>
+                                </AccessRightInProductConsumptionRequirement>
+                                <CustomerPurchasePackageElementConsumptionRequirement>
+                                    <MarkedAs>activated</MarkedAs>
+                                    <MarkedAsTemporalValidity>current</MarkedAsTemporalValidity>
+                                    <CustomerPurchasePackageElementRef ref=""></CustomerPurchasePackageElementRef>
+                                </CustomerPurchasePackageElementConsumptionRequirement>
+                            </consumptionRequirements>
+                            <ConsumptionTriggerType>automatic</ConsumptionTriggerType> <!-- MANDATORY -->
+                            <ElementConsumptionGroupingType>AND</ElementConsumptionGroupingType>
+                        </ElementConsumptionPolicy>
+                    </elementConsumptionPolicies>
+                    
+                    
                     <salesOfferPackageElements>
                         <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip1Zone" version="1" order="1">
                             <Name lang="en">Single trip valid within one fare zone valid for one hour</Name>
@@ -1067,6 +1091,7 @@
                             </validityParameterAssignments>
                         </SalesOfferPackageElement>
                     </salesOfferPackageElements>
+                    
                 </SalesOfferPackage>
                 <SalesOfferPackage id="ENT:SalesOfferPackageElement:SingleTrip2Zones" version="1">
                     <Name lang="en">Single trip valid within two zones</Name>
@@ -1174,6 +1199,16 @@
             <!-- (ikke i bruk pdd.) -->
             <travelSpecifications>
                 <TravelSpecification id="ENT:TravelSpecification:1" version="1">
+                    <specificParameterAssignments>
+                        <SpecificParameterAssignment id="ENT:SpecificParameterAssignment:11" version="1" order="0">
+                            <TypeOfAccessRightAssignmentRef ref="ref"/>
+                            <limitations>
+                                <TransferabilityRef ref="ENT:Transferability:1" version="1"/>
+                                <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1" version="1"/>
+                            </limitations>
+                            <QualityStructureFactorRef ref="ENT:QualityStructureFactor:1" version="1"/>
+                        </SpecificParameterAssignment>
+                    </specificParameterAssignments>
                 </TravelSpecification>
             </travelSpecifications>
             
@@ -1214,6 +1249,9 @@
                                             <AirSubmode>airshipService</AirSubmode>
                                         </TransportSubmode>
                                     </validityParameters>
+                                    <includes>
+                                        <CustomerPurchaseParameterAssignmentRef ref="ref"/>
+                                    </includes>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
                         </CustomerPurchasePackageElement>
