@@ -168,6 +168,7 @@
                             <ExpectedArrivalTime>2020-11-07T12:03:00+01:00</ExpectedArrivalTime>
                             <ActualArrivalTime>2020-11-07T12:03:00+01:00</ActualArrivalTime>
                             <ArrivalStatus>onTime</ArrivalStatus>
+                            <ArrivalBoardingActivity>alighting</ArrivalBoardingActivity>
                             <ArrivalStopAssignment>
                                 <AimedQuayRef>NSR:Quay:1</AimedQuayRef>
                                 <ExpectedQuayRef>NSR:Quay:2</ExpectedQuayRef>
@@ -186,8 +187,8 @@
                             <AimedDepartureTime>2020-11-07T12:03:00+01:00</AimedDepartureTime>
                             <ExpectedDepartureTime>2020-11-07T12:03:00+01:00</ExpectedDepartureTime>
                             <ActualDepartureTime>2020-11-07T12:03:00+01:00</ActualDepartureTime>
-                            <DepartureStatus>arrived</DepartureStatus>
-
+                            <DepartureStatus>departed</DepartureStatus>
+                            <DepartureBoardingActivity>noBoarding</DepartureBoardingActivity>
                             <DepartureStopAssignment>
                                 <AimedQuayRef>NSR:Quay:1</AimedQuayRef>
                                 <ExpectedQuayRef>NSR:Quay:2</ExpectedQuayRef>
@@ -203,11 +204,10 @@
                                     <ActualQuayRef>ref</ActualQuayRef>
                                 </TrainStopAssignment>
                             </DepartureFormationAssignment>
-
-
                             <RecordedDepartureOccupancy>
                                 <TrainComponentRef>ref</TrainComponentRef>
                                 <OccupancyLevel>fewSeatsAvailable</OccupancyLevel>
+                                <OccupancyPercentage>75</OccupancyPercentage>
                                 <TotalNumberOfReservedSeats>0</TotalNumberOfReservedSeats>
                             </RecordedDepartureOccupancy>
                             <RecordedDepartureOccupancy>
@@ -215,7 +215,12 @@
                                 <OccupancyLevel>fewSeatsAvailable</OccupancyLevel>
                                 <TotalNumberOfReservedSeats>0</TotalNumberOfReservedSeats>
                             </RecordedDepartureOccupancy>
-
+                            <RecordedDepartureCapacities>
+                                <PramPlaceCapacity>1</PramPlaceCapacity>
+                            </RecordedDepartureCapacities>
+                            <RecordedDepartureCapacities>
+                                <PushchairCapacity>5</PushchairCapacity>
+                            </RecordedDepartureCapacities>
                         </RecordedCall>
                         <RecordedCall>
                             <StopPointRef>fjas</StopPointRef>
@@ -318,8 +323,6 @@
                                 </TrainStopAssignment>
                             </ArrivalFormationAssignment>
 
-
-
                             <ArrivalOperatorRefs>placeholder</ArrivalOperatorRefs>
                             <ArrivalOperatorRefs>placeholder</ArrivalOperatorRefs>
                             <AimedDepartureTime>2020-08-15T15:00:00+02:00</AimedDepartureTime>
@@ -364,6 +367,9 @@
                                 <TrainComponentRef>TrainComponent-1</TrainComponentRef>
                                 <EntranceToVehicleRef>entranceref</EntranceToVehicleRef>
                                 <SeatingCapacity>100</SeatingCapacity>
+                            </ExpectedDepartureCapacities>
+                            <ExpectedDepartureCapacities>
+                                <SeatingCapacity>150</SeatingCapacity>
                             </ExpectedDepartureCapacities>
 
                             <DepartureOperatorRefs>placeholder</DepartureOperatorRefs>
@@ -418,14 +424,7 @@
                                     </JourneyPartInfo>
                                 </JourneyParts>
                             </RelatedJourney>
-                            
                         </JourneyRelation>
-
-
-                        
-
-
-
                         <JourneyRelation>
                             <JourneyRelationType>ReplacedByJourney</JourneyRelationType>
                             <JourneyParts>
@@ -468,14 +467,9 @@
                                 </JourneyParts>
                             </RelatedJourney>
                         </JourneyRelation>
-
-
-
-
                     </JourneyRelations>
 
                 </EstimatedVehicleJourney>
-
 
             </EstimatedJourneyVersionFrame>
         </EstimatedTimetableDelivery>

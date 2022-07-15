@@ -44,7 +44,7 @@
                     <Affects>
                         <StopPlaces>
                             <AffectedStopPlace>
-                                <StopPointRef>NSR:StopPlace:337</StopPointRef>
+                                <StopPlaceRef>NSR:StopPlace:337</StopPlaceRef>
                             </AffectedStopPlace>
                         </StopPlaces>
                     </Affects>
