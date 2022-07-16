@@ -1062,16 +1062,58 @@
                                 <AccessRightInProductConsumptionRequirement>
                                     <MarkedAs>activated</MarkedAs>
                                     <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
-                                    <AccessRightInProductRef ref=""></AccessRightInProductRef>
+                                    <AccessRightInProductRef ref="ref"/>
                                 </AccessRightInProductConsumptionRequirement>
                                 <CustomerPurchasePackageElementConsumptionRequirement>
                                     <MarkedAs>activated</MarkedAs>
                                     <MarkedAsTemporalValidity>current</MarkedAsTemporalValidity>
-                                    <CustomerPurchasePackageElementRef ref=""></CustomerPurchasePackageElementRef>
+                                    <CustomerPurchasePackageElementRef ref="ref"/>
                                 </CustomerPurchasePackageElementConsumptionRequirement>
                             </consumptionRequirements>
                             <ConsumptionTriggerType>automatic</ConsumptionTriggerType> <!-- MANDATORY -->
                             <ElementConsumptionGroupingType>AND</ElementConsumptionGroupingType>
+                            <elementConsumptions>
+                                <AccessRightInProductConsumption>
+                                    <FromMarkedAs>activated</FromMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
+                                    <AccessRightInProductRef ref="ref"/>
+                                </AccessRightInProductConsumption>
+                                <CustomerPurchasePackageElementConsumption>
+                                    <FromMarkedAs>activated</FromMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
+                                    <CustomerPurchasePackageElementRef ref="ref"/>
+                                </CustomerPurchasePackageElementConsumption>
+                            </elementConsumptions>
+                            <crossConstraints>
+                                <CrossConstraint>
+                                    <Constraint>
+                                        <PeriodConstraint>different</PeriodConstraint>
+                                        <OriginConstraint>different</OriginConstraint>
+                                        <DestinationConstraint>different</DestinationConstraint>
+                                        <TariffZoneConstraint>different</TariffZoneConstraint>
+                                        <RouteConstraint>different</RouteConstraint>
+                                        <DirectionConstraint>different</DirectionConstraint>
+                                        <OperatorConstraint>different</OperatorConstraint>
+                                        <TypeOfProductCategoryConstraint>different</TypeOfProductCategoryConstraint>
+                                        <ClassOfUseConstraint>different</ClassOfUseConstraint>
+                                        <TypeOfTravelDocumentConstraint>different</TypeOfTravelDocumentConstraint>
+                                        <JourneyConstraint>different</JourneyConstraint>
+                                        <UserConstraint>anyOne</UserConstraint>
+                                        <specificToProfiles>
+                                            <UserProfileRef ref="ref"/>
+                                            <CompanionProfileRef ref="ref"/>
+                                            <UserProfileRef ref="ref"/>
+                                            <CompanionProfileRef ref="ref"/>
+                                        </specificToProfiles>
+                                    </Constraint>
+                                    <validityParameterAssignments>
+                                        <ValidityParameterAssignmentRef ref="ref"/>
+                                    </validityParameterAssignments>
+                                </CrossConstraint>
+                            </crossConstraints>
+                            <MaximumNumberOfAccesses>
+                                <Type>limited</Type>
+                            </MaximumNumberOfAccesses>
                         </ElementConsumptionPolicy>
                     </elementConsumptionPolicies>
                     
