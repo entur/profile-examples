@@ -517,23 +517,51 @@
                     <Factor>trips</Factor>
                     <Value>2</Value>
                 </QualityStructureFactor>
-            </qualityStructureFactors>     
+                <FareDemandFactor id="1" version="1">
+                    <validityConditions>
+                        <AvailabilityCondition id="1" version="1">
+                            <timebands>
+                                <Timeband id="1" version="1">
+                                    <StartTime>07:00:00</StartTime>
+                                    <EndTime>09:00:00</EndTime>
+                                </Timeband>
+                                <Timeband id="2" version="1">
+                                    <StartTime>15:00:00</StartTime>
+                                    <EndTime>17:00:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </AvailabilityCondition>
+                    </validityConditions>
+                    <FareDemandType>peak</FareDemandType>
+                    <TimeDemandTypeRef ref="ref"/>
+                    <StopUseConstraint>passingThrough</StopUseConstraint>
+                    <startTimesAtStopPoints>
+                        <StartTimeAtStopPoint>
+                            <ScheduledStopPointRef ref="NRS:ScheduledStopPoint:123"/>
+                            <StartTime>06:06:06</StartTime>
+                            <EndTime>12:34:56</EndTime>
+                            <DayOffset>0</DayOffset>
+                        </StartTimeAtStopPoint>
+                    </startTimesAtStopPoints>
+                </FareDemandFactor>
+            </qualityStructureFactors>
             
             
             
             <!-- 
-            NB: See NeTEx part 3 ﻿
+            NB: See NeTEx part 3
                 7.5.3.1.1 Simple Space-based Factors (page 122): 
                 
-            ﻿Some fare structure systems will use arbitrary fare distances between the origin and the destination of a
+            Some fare structure systems will use arbitrary fare distances between the origin and the destination of a
             FARE STRUCTURE ELEMENT. This is typically the case when a zone-matrix fare system is used. Some
             TARIFF ZONEs (usually a few) are defined and a specific fare distance parameter is defined for each
             possible origin/destination pair of TARIFF ZONEs. Such parameter values are likely to differ from an exact
-            calculation based on the covered distance. These values are stored in the entity DISTANCE MATRIX
-            ELEMENT.
+            calculation based on the covered distance. These values are stored in the entity DISTANCE MATRIX ELEMENT.
+            
             In a similar way, the fare distance between SCHEDULED STOP POINTs may not be derived from the line
             description but stored with specific values. In such a case, a DISTANCE MATRIX ELEMENT will store the
             chosen value between each origin/destination pair of SCHEDULED STOP POINTs.
+            
             Therefore, a DISTANCE MATRIX ELEMENT will relate either two TARIFF ZONEs or two STOP POINTs.
             -->
             
@@ -815,17 +843,40 @@
                 </CommercialProfile>
                 
                 
+                
+                
+                
+                
                 <!-- 
                     TODO
                 -->
                 
-                <EntitlementGiven id="test" version="1">
+                
+                <EntitlementGiven id="ENT:EntitlementGiven:1" version="1">
                     <PreassignedFareProductRef ref="ref"/>
                 </EntitlementGiven>
                 
-                <EntitlementRequired id="test" version="1">
+                <EntitlementRequired id="ENT:EntitlementRequired:1" version="1">
                     <ServiceAccessRightRef ref="ref"/>
                 </EntitlementRequired>
+                
+
+                
+                <Reverting id="ENT:Reverting:1" version="1">
+                    <TypeOfResponsibilityRoleRef ref=""></TypeOfResponsibilityRoleRef>
+                    <AllowedAfterControl>true</AllowedAfterControl>
+                </Reverting>
+                
+                <OnboardValidity id="ENT:OnboardValidity:1" version="1">
+                    <OnboardValidityType>validAtBoardingTime</OnboardValidityType>
+                </OnboardValidity>
+                
+                <SecurityPolicy id="ENT:SeCurityPolicy:1" version="1">
+                    <MinimumAccountSecurityLevel>-5</MinimumAccountSecurityLevel>
+                </SecurityPolicy>
+                
+                
+
                 
             </usageParameters>
             
@@ -843,7 +894,42 @@
                     </noticeAssignments>
                     <PrivateCode></PrivateCode>
                     <ConditionSummary>
-                        <HasNotices>true</HasNotices>
+                        <FareStructureType>cappedFlatFare</FareStructureType>
+                        <TariffBasis>discount</TariffBasis>
+                        <HasNotices>false</HasNotices>
+                        <ProvidesCard>false</ProvidesCard>
+                        <IsPersonal>false</IsPersonal>
+                        <RequiresPhoto>false</RequiresPhoto>
+                        <MustCarry>false</MustCarry>
+                        <RequiresAccount>false</RequiresAccount>
+                        <IsSupplement>false</IsSupplement>
+                        <RequiresEntitlement>false</RequiresEntitlement>
+                        <GivesEntitlement>false</GivesEntitlement>
+                        <HasOperatorRestrictions>restricted</HasOperatorRestrictions>
+                        <HasTravelTimeRestrictions>false</HasTravelTimeRestrictions>
+                        <HasRouteRestrictions>false</HasRouteRestrictions>
+                        <TrainRestrictions>restricted</TrainRestrictions>
+                        <HasZoneRestrictions>false</HasZoneRestrictions>
+                        <CanBreakJourney>true</CanBreakJourney>
+                        <ReturnTripsOnly>true</ReturnTripsOnly>
+                        <NightTrain>true</NightTrain>
+                        <CanChangeClass>true</CanChangeClass>
+                        <IsRefundable></IsRefundable>
+                        <IsExchangable>true</IsExchangable>
+                        <HasExchangeFee>true</HasExchangeFee>
+                        <HasDiscountedFares>true</HasDiscountedFares>
+                        <AllowAdditionalDiscounts>true</AllowAdditionalDiscounts>
+                        <AllowCompanionDiscounts>true</AllowCompanionDiscounts>
+                        <HasMinimumPrice>true</HasMinimumPrice>
+                        <RequiresPositiveBalance>true</RequiresPositiveBalance>
+                        <HasPurchaseConditions>true</HasPurchaseConditions>
+                        <HasDynamicPricing>true</HasDynamicPricing>
+                        <RequiresReservation>true</RequiresReservation>
+                        <HasReservationFee>true</HasReservationFee>
+                        <HasQuota>true</HasQuota>
+                        <!-- BUG: This group was NOT referenced in CEN/NeTEx, see [https://github.com/NeTEx-CEN/NeTEx/pull/382] for pull requested fix -->
+                        <!--PenaltyIfWithoutTicket>true</PenaltyIfWithoutTicket>
+                        <AvailableOnSubscription>true</AvailableOnSubscription-->
                     </ConditionSummary>
                     <FareProductRef ref=""></FareProductRef> <!-- FAIL (kun en referanse tillatt) -->
                     <!--SaleDiscountRightRef ref="ENT:SaleDiscountRight:1" version="1"/ -->
@@ -1040,6 +1126,10 @@
             <salesOfferPackages>
                 <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip1Zone" version="1">              
                     <Name lang="en">Single trip within one zone</Name>
+                    <PrivateCode>X</PrivateCode>
+                    <ConditionSummary>
+                        <HasDynamicPricing>true</HasDynamicPricing>
+                    </ConditionSummary>
                     <distributionAssignments>
                         <DistributionAssignmentRef ref="ref"/>
                     </distributionAssignments>
@@ -1063,6 +1153,7 @@
                                     <MarkedAs>activated</MarkedAs>
                                     <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
                                     <AccessRightInProductRef ref="ref"/>
+                                    <AccessNumber>1</AccessNumber>
                                 </AccessRightInProductConsumptionRequirement>
                                 <CustomerPurchasePackageElementConsumptionRequirement>
                                     <MarkedAs>activated</MarkedAs>
@@ -1077,6 +1168,7 @@
                                     <FromMarkedAs>activated</FromMarkedAs>
                                     <ToMarkedAs>used</ToMarkedAs>
                                     <AccessRightInProductRef ref="ref"/>
+                                    <AccessNumber>1</AccessNumber>
                                 </AccessRightInProductConsumption>
                                 <CustomerPurchasePackageElementConsumption>
                                     <FromMarkedAs>activated</FromMarkedAs>
