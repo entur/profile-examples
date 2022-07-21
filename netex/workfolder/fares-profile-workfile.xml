@@ -567,8 +567,8 @@
             
             <distanceMatrixElements>
                 
-                <DistanceMatrixElement id="i" version="x">
-                    <Name>test</Name>
+                <DistanceMatrixElement id="ENT:DistanceMatrixElement:1" version="1">
+                    <Name>Distance Matrix Element</Name>
                 </DistanceMatrixElement>
                 
                 <DistanceMatrixElement id="ENT:DistanceMatrixElement:StopPoints" version="1">
@@ -718,9 +718,19 @@
             
             <usageParameters>
                 <UsageValidityPeriod id="ENT:UsageValidityPeriod:1" version="1">
-                    <startOnlyOn>
-                        <DayTypeRef ref="ref"/>
-                    </startOnlyOn>
+                    <StandardDuration>PT24H</StandardDuration>
+                    <StartDate>2020-01-01</StartDate>
+                    <StartTime>00:00:01</StartTime>
+                    <EndDate>2022-12-31</EndDate>
+                    <EndTime>23:59:59</EndTime>
+                </UsageValidityPeriod>
+                <UsageValidityPeriod id="ENT:UsageValidityPeriod:2" version="1">
+                    <SteppedDuration>
+                        <InitialStepDuration>PT2H</InitialStepDuration>
+                        <SubsequentStepsDuration>PT1H</SubsequentStepsDuration>
+                        <MaximumDuration>PT5H</MaximumDuration>
+                        <StepUnit>zones</StepUnit>
+                    </SteppedDuration>
                 </UsageValidityPeriod>
                 <UserProfile id="ENT:UserProfile:NormalFare" version="1">
                     <Name lang="no">Normal</Name>
@@ -747,12 +757,7 @@
                         <CompanionProfileRef ref="ENT:CompanionProfile:1" version="1"/>
                     </companionProfiles>
                 </UserProfile>
-                <UsageValidityPeriod id="ENT:UsageValidityPeriod:2" version="1">
-                    <StartDate>2020-01-01</StartDate>
-                    <StartTime>00:00:01</StartTime>
-                    <EndDate>2022-12-31</EndDate>
-                    <EndTime>23:59:59</EndTime>
-                </UsageValidityPeriod>
+                
                 <Suspending id="ENT:Suspending:1" version="1">
                     <SuspensionPolicy>forAnyReason</SuspensionPolicy>
                 </Suspending>
@@ -782,6 +787,10 @@
                     <BaggageType>bicycle</BaggageType>
                     <LuggageAllowanceType>singleBag</LuggageAllowanceType>
                     <MaximumNumberItems>1</MaximumNumberItems>
+                    <MaximumBagHeight>1</MaximumBagHeight>
+                    <MaximumBagWidth>0.5</MaximumBagWidth>
+                    <MaximumBagDepth>0.3</MaximumBagDepth>
+                    <MaximumBagWeight>22</MaximumBagWeight>
                     <TotalWeight>0.5</TotalWeight>
                     <LuggageChargingBasis>free</LuggageChargingBasis>
                 </LuggageAllowance>
@@ -791,9 +800,16 @@
                 </PurchaseWindow>
                 <Reserving id="ENT:Reserving:1" version="1">
                     <Name>Reserving</Name>
+                    <ReservingRequirements>unknown</ReservingRequirements>
+                    <BookingArrangements>
+                        <BookingMethods>online</BookingMethods>
+                    </BookingArrangements>
                 </Reserving>
                 <Cancelling id="ENT:Cancelling:1" version="1">
                     <Name>Cancelling</Name>
+                    <BookingArrangements>
+                        <BookingMethods>online</BookingMethods>
+                    </BookingArrangements>
                 </Cancelling>
                 <Refunding id="ENT:Refunding:1" version="1">
                     <Name>Refunding</Name>
@@ -805,15 +821,22 @@
                     <HasTransferFee>false</HasTransferFee>
                     <SharedUsage>singleUser</SharedUsage>
                 </Transferability>
+                <Reselling id="ENT:Reselling:1" version="1">
+                    <Allowed>slidingScale</Allowed>
+                    <UnusedTicketsOnly>false</UnusedTicketsOnly>
+                    <ResellWhen>anyTime</ResellWhen>
+                    <ExchangableFromDuration>PT24H</ExchangableFromDuration>
+                    <ExchangableUntilDuration>PT6H</ExchangableUntilDuration>
+                    <HasFee>true</HasFee>
+                    <RefundBasis>perOffer</RefundBasis>
+                </Reselling>
                 <Exchanging id="ENT:Exchanging:1" version="1">
                     <Name>Exchanging</Name>
                     <NumberOfExchangesAllowed>1</NumberOfExchangesAllowed>
                     <ToFareClass>any</ToFareClass>
                     <ExchangableTo>anyProduct</ExchangableTo>
                 </Exchanging>
-                <Replacing id="ENT:Replacing:1" version="1">
-                    <Name>Replacing</Name>
-                </Replacing>
+
                 <ChargingPolicy id="ENT:ChargingPolicy:1" version="1">
                     <CreditPolicy>allowTravel</CreditPolicy>
                     <BillingPolicy>billAsYouGo</BillingPolicy>
@@ -842,25 +865,9 @@
                     <Name>CommercialProfile</Name>
                 </CommercialProfile>
                 
-                
-                
-                
-                
-                
-                <!-- 
-                    TODO
-                -->
-                
-                
-                <EntitlementGiven id="ENT:EntitlementGiven:1" version="1">
-                    <PreassignedFareProductRef ref="ref"/>
-                </EntitlementGiven>
-                
-                <EntitlementRequired id="ENT:EntitlementRequired:1" version="1">
-                    <ServiceAccessRightRef ref="ref"/>
-                </EntitlementRequired>
-                
-
+                <Replacing id="ENT:Replacing:1" version="1">
+                    <Name>Replacing</Name>
+                </Replacing>
                 
                 <Reverting id="ENT:Reverting:1" version="1">
                     <TypeOfResponsibilityRoleRef ref=""></TypeOfResponsibilityRoleRef>
@@ -875,8 +882,62 @@
                     <MinimumAccountSecurityLevel>-5</MinimumAccountSecurityLevel>
                 </SecurityPolicy>
                 
+                <EntitlementGiven id="ENT:EntitlementGiven:1" version="1">
+                    <PreassignedFareProductRef ref="ref"/>
+                    <MinimumQualificationPeriod>PT1M</MinimumQualificationPeriod>
+                    <EntitlementConstraint>
+                        <PeriodConstraint>different</PeriodConstraint>
+                        <OriginConstraint>different</OriginConstraint>
+                        <DestinationConstraint>different</DestinationConstraint>
+                        <TariffZoneConstraint>different</TariffZoneConstraint>
+                        <RouteConstraint>different</RouteConstraint>
+                        <DirectionConstraint>different</DirectionConstraint>
+                        <OperatorConstraint>different</OperatorConstraint>
+                        <TypeOfProductCategoryConstraint>different</TypeOfProductCategoryConstraint>
+                        <ClassOfUseConstraint>different</ClassOfUseConstraint>
+                        <TypeOfTravelDocumentConstraint>different</TypeOfTravelDocumentConstraint>
+                        <JourneyConstraint>different</JourneyConstraint>
+                        <UserConstraint>anyOne</UserConstraint>
+                        <specificToProfiles>
+                            <CompanionProfileRef ref="ref"/>
+                            <CompanionProfileRef ref="ref"/>
+                            <UserProfileRef ref="ref"/>
+                            <UserProfileRef ref="ref"/>
+                        </specificToProfiles>
+                    </EntitlementConstraint>
+                    <EntitlementType>none</EntitlementType>
+                </EntitlementGiven>
+                <EntitlementGiven id="ENT:EntitlementGiven:2" version="1">
+                    <ServiceAccessRightRef ref="ref"/>
+                </EntitlementGiven>
                 
-
+                <EntitlementRequired id="ENT:EntitlementRequired:1" version="1">
+                    <ServiceAccessRightRef ref="ref"/>
+                    <MinimumQualificationPeriod>PT1M</MinimumQualificationPeriod>
+                    <EntitlementConstraint>
+                        <PeriodConstraint>different</PeriodConstraint>
+                        <OriginConstraint>different</OriginConstraint>
+                        <DestinationConstraint>different</DestinationConstraint>
+                        <TariffZoneConstraint>different</TariffZoneConstraint>
+                        <RouteConstraint>different</RouteConstraint>
+                        <DirectionConstraint>different</DirectionConstraint>
+                        <OperatorConstraint>different</OperatorConstraint>
+                        <TypeOfProductCategoryConstraint>different</TypeOfProductCategoryConstraint>
+                        <ClassOfUseConstraint>different</ClassOfUseConstraint>
+                        <TypeOfTravelDocumentConstraint>different</TypeOfTravelDocumentConstraint>
+                        <JourneyConstraint>different</JourneyConstraint>
+                        <UserConstraint>anyOne</UserConstraint>
+                        <specificToProfiles>
+                            <CompanionProfileRef ref="ref"/>
+                            <CompanionProfileRef ref="ref"/>
+                            <UserProfileRef ref="ref"/>
+                            <UserProfileRef ref="ref"/>
+                        </specificToProfiles>
+                    </EntitlementConstraint>
+                </EntitlementRequired>
+                <EntitlementRequired id="ENT:EntitlementRequired:2" version="1">
+                    <PreassignedFareProductRef ref="ref"/>
+                </EntitlementRequired>
                 
             </usageParameters>
             
@@ -983,6 +1044,15 @@
                 
                 <ThirdPartyProduct id="ENT:ThirdPartyProduct:1" version="1">
                     <Name>ThirdPartyProduct</Name>
+                    <PreassignedFareProductRef ref="ref"/>
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="ref"/>
+                    </accessRightsInProduct>
+                    <prices>
+                        <FareProductPrice id="ENT:FareProductPrice:1" version="1">
+                            <Amount>123</Amount>
+                        </FareProductPrice>
+                    </prices>
                 </ThirdPartyProduct>
                 
                 <!-- Alternative structure: -->
@@ -1292,47 +1362,69 @@
                 </Customer> 
             </customers>
             
+            
             <customerAccounts>
-                
-                <CustomerAccount id="ENT:CustomerAccount:Test" version="1">
-                    <!--TODO-->
-                </CustomerAccount>
                 
                 <CustomerAccount id="ENT:CustomerAccount:1" version="1">
                     <Name>Customer Account</Name>
+                    <StartDate>2022-02-02T12:34:56</StartDate>
+                    <EndDate>2028-12-31T23:59:59</EndDate>
+                    <CustomerRef ref="ENT:Customer:1" version="1"/>
+                    <TypeOfCustomerAccountRef ref="ENT:TypeOfCustomerAccount:PhysicalMediaAuditAccount"/>
+                    <CustomerAccountStatusType>active</CustomerAccountStatusType>
+                    
                     <fareContracts>
                         <FareContractRef ref="ENT:FareContract:1" version="1"/>
                     </fareContracts>
                     
+                    <customerPurchasePackages>
+                        <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:1" version="1"/>
+                    </customerPurchasePackages>
                     
-                    
-                    <!--customerAccountEntries>
-                        <CustomerAccountEntryRef ref="generic"/>
-                        <CustomerRegistration id="ENT:CustomerRegistration:1" version="1">
-                            <Name>data</Name>
+                    <customerAccountEntries>
+                        <CustomerRegistration>
+                            <IsValid>true</IsValid>
+                            <TypeOfCustomerAccountEntryRef ref="UNKNOWN_TYPEOF_SPECIFIATION"/>
                         </CustomerRegistration>
-                        <CustomerDeregistration id="ENT:CustomerDeregistration:1" version="1">
-                            <Name>data</Name>
+                        <CustomerDeregistration>
+                            <IsValid>false</IsValid>
                         </CustomerDeregistration>
-                    </customerAccountEntries-->
+                        <NoAccessRightsOnAccount>
+                            <StopPlaceRef ref="ref"/>
+                            <ServiceJourneyRef ref="ref"/>
+                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElement:1" version="1"/>
+                        </NoAccessRightsOnAccount>
+                        <InsufficientAccessRightsOnAccount>
+                            <StopPlaceRef ref="ref"/>
+                            <ServiceJourneyRef ref="ref"/>
+                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElement:1" version="1"/>
+                        </InsufficientAccessRightsOnAccount>
+                    </customerAccountEntries>
                 </CustomerAccount>
+                
             </customerAccounts>
             
             
             <fareContracts>
+                
                 <FareContract id="ENT:FareContract:1" version="1">
                     <Name lang="en">Full price single mobile ticket for travel within one zone</Name>
+                    <Description>Description</Description>
                     <StartDate>2020-07-22T11:00:00</StartDate>
                     <EndDate>2020-07-22T12:00:00</EndDate>
                     <fareContractEntries>
                         <SalesTransactionRef ref="ENT:SalesTransaction:1" version="1"/>
                     </fareContractEntries>
+                    
                 </FareContract>
             </fareContracts>
             
-            <!-- (ikke i bruk pdd.) -->
+            
+            
             <travelSpecifications>
                 <TravelSpecification id="ENT:TravelSpecification:1" version="1">
+                    <Name>Travel Specification</Name>
+                    <Description>Description</Description>
                     <specificParameterAssignments>
                         <SpecificParameterAssignment id="ENT:SpecificParameterAssignment:11" version="1" order="0">
                             <TypeOfAccessRightAssignmentRef ref="ref"/>
@@ -1346,6 +1438,7 @@
                 </TravelSpecification>
             </travelSpecifications>
             
+            
             <salesTransactions>
                 <SalesTransaction id="ENT:SalesTransaction:1" version="1">
                     <Name lang="en">Purchase of full price single mobile ticket for travel within one zone</Name>
@@ -1353,13 +1446,18 @@
                     <Amount>37</Amount>
                     <Currency>NOK</Currency>
                     <PaymentMethod>mobilePhone</PaymentMethod>
+                    <travelSpecifications>
+                        <TravelSpecificationRef ref="ENT:TravelSpecification:1" version="1"/>
+                        <RequestedTravelSpecificationRef ref="ENT:TravelSpecification:1" version="1"/>
+                        <OfferedTravelSpecificationRef ref="ENT:TravelSpecification:1" version="1"/>
+                    </travelSpecifications>
                     <customerPurchasePackages>
                         <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:SingleTrip1ZoneActivated" version="1"/>
                     </customerPurchasePackages>
                 </SalesTransaction>
             </salesTransactions>
             
-            <!-- (ikke i bruk pdd.) -->
+            
             <travelDocuments>
                 <TravelDocument id="ENT:TravelDocument:1" version="1">
                     <TypeOfTravelDocumentRef ref="ENT:TypeOfTravelDocument:AppRuterBillett" version="1"/>
