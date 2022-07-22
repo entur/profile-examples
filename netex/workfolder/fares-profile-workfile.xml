@@ -718,6 +718,8 @@
             
             <usageParameters>
                 <UsageValidityPeriod id="ENT:UsageValidityPeriod:1" version="1">
+                    <ValidityPeriodType>openEnded</ValidityPeriodType>
+                    <UsageTrigger>activation</UsageTrigger>
                     <StandardDuration>PT24H</StandardDuration>
                     <StartDate>2020-01-01</StartDate>
                     <StartTime>00:00:01</StartTime>
@@ -1214,7 +1216,6 @@
                         <SalesOfferPackagePriceRef ref="ref"/>
                     </prices>
                     
-                    <!-- XYZ -->
                     <elementConsumptionPolicies>
                         <ElementConsumptionPolicy>
                             <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
@@ -1222,14 +1223,9 @@
                                 <AccessRightInProductConsumptionRequirement>
                                     <MarkedAs>activated</MarkedAs>
                                     <MarkedAsTemporalValidity>any</MarkedAsTemporalValidity>
-                                    <AccessRightInProductRef ref="ref"/>
+                                    <AccessRightInProductRef ref="ENT:AccessRightInProduct:1" version="1"/>
                                     <AccessNumber>1</AccessNumber>
                                 </AccessRightInProductConsumptionRequirement>
-                                <CustomerPurchasePackageElementConsumptionRequirement>
-                                    <MarkedAs>activated</MarkedAs>
-                                    <MarkedAsTemporalValidity>current</MarkedAsTemporalValidity>
-                                    <CustomerPurchasePackageElementRef ref="ref"/>
-                                </CustomerPurchasePackageElementConsumptionRequirement>
                             </consumptionRequirements>
                             <ConsumptionTriggerType>automatic</ConsumptionTriggerType> <!-- MANDATORY -->
                             <ElementConsumptionGroupingType>AND</ElementConsumptionGroupingType>
@@ -1237,14 +1233,9 @@
                                 <AccessRightInProductConsumption>
                                     <FromMarkedAs>activated</FromMarkedAs>
                                     <ToMarkedAs>used</ToMarkedAs>
-                                    <AccessRightInProductRef ref="ref"/>
+                                    <AccessRightInProductRef ref="ENT:AccessRightInProduct:1" version="1"/>
                                     <AccessNumber>1</AccessNumber>
                                 </AccessRightInProductConsumption>
-                                <CustomerPurchasePackageElementConsumption>
-                                    <FromMarkedAs>activated</FromMarkedAs>
-                                    <ToMarkedAs>used</ToMarkedAs>
-                                    <CustomerPurchasePackageElementRef ref="ref"/>
-                                </CustomerPurchasePackageElementConsumption>
                             </elementConsumptions>
                             <crossConstraints>
                                 <CrossConstraint>
@@ -1297,6 +1288,8 @@
                     </salesOfferPackageElements>
                     
                 </SalesOfferPackage>
+                
+                
                 <SalesOfferPackage id="ENT:SalesOfferPackageElement:SingleTrip2Zones" version="1">
                     <Name lang="en">Single trip valid within two zones</Name>
                     <salesOfferPackageElements>
@@ -1399,6 +1392,7 @@
                             <ServiceJourneyRef ref="ref"/>
                             <DistanceMatrixElementRef ref="ENT:DistanceMatrixElement:1" version="1"/>
                         </InsufficientAccessRightsOnAccount>
+                        
                     </customerAccountEntries>
                 </CustomerAccount>
                 
@@ -1412,16 +1406,56 @@
                     <Description>Description</Description>
                     <StartDate>2020-07-22T11:00:00</StartDate>
                     <EndDate>2020-07-22T12:00:00</EndDate>
-                    <fareContractEntries>
-                        <SalesTransactionRef ref="ENT:SalesTransaction:1" version="1"/>
-                    </fareContractEntries>
+                    <Status>Status</Status>
                     
+                    <fareContractEntries>
+                        
+                        <SalesTransactionRef ref="ENT:SalesTransaction:1" version="1"/>
+                        
+                        <RequestedTravelSpecification>
+                            <IsValid>false</IsValid>
+                        </RequestedTravelSpecification>
+                        
+                        <SalesTransaction id="ENT:SalesTransaction:123" version="1">
+                            <IsValid>false</IsValid>
+                        </SalesTransaction>
+                        
+                        <OfferedTravelSpecification>
+                            <IsValid>false</IsValid>
+                            <TypeOfFareContractEntryRef ref="ref"/>
+                            <FareContractRef ref="ref"/>
+                        </OfferedTravelSpecification>
+                        
+                        <PurchaseFulfilmentEntry id="ENT:PurchaseFulfilmentEntry:1" version="1">
+                            <IsValid>true</IsValid>
+                        </PurchaseFulfilmentEntry>
+                        
+                        <PassengerValidateTravelEntry id="ENT:PassengerValidateTravelEntry:1" version="1">
+                            <StopPlaceRef ref="ref"/>
+                            <QuayRef ref="ref"/>
+                            <ServiceJourneyRef ref="ref"/>
+                            <TicketValidatorEquipmentRef ref="ref"/>
+                        </PassengerValidateTravelEntry>
+                        
+                        <PassengerUsedSameStopEntry id="ENT:PassengerUsedSameStop:1" version="1">
+                            <StopPlaceRef ref="ref"/>
+                            <QuayRef ref="ref"/>
+                            <ServiceJourneyRef ref="ref"/>
+                            <TicketValidatorEquipmentRef ref="ref"/>
+                        </PassengerUsedSameStopEntry>
+                        
+                        <MappingFulfilmentEntry id="ENT:MappingFulfilmentEntry:1" version="1">
+                            <IsValid>true</IsValid>
+                        </MappingFulfilmentEntry>
+                        
+                    </fareContractEntries>
                 </FareContract>
+                
             </fareContracts>
             
             
-            
             <travelSpecifications>
+                
                 <TravelSpecification id="ENT:TravelSpecification:1" version="1">
                     <Name>Travel Specification</Name>
                     <Description>Description</Description>
@@ -1436,13 +1470,16 @@
                         </SpecificParameterAssignment>
                     </specificParameterAssignments>
                 </TravelSpecification>
+                
             </travelSpecifications>
             
             
             <salesTransactions>
+                
                 <SalesTransaction id="ENT:SalesTransaction:1" version="1">
                     <Name lang="en">Purchase of full price single mobile ticket for travel within one zone</Name>
                     <Date>2020-07-22T11:00:00</Date>
+                    <IsValid>true</IsValid>
                     <Amount>37</Amount>
                     <Currency>NOK</Currency>
                     <PaymentMethod>mobilePhone</PaymentMethod>
@@ -1455,6 +1492,7 @@
                         <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:SingleTrip1ZoneActivated" version="1"/>
                     </customerPurchasePackages>
                 </SalesTransaction>
+                
             </salesTransactions>
             
             
@@ -1500,9 +1538,71 @@
                     <CustomerRef ref="ref"/>
                     <CustomerAccountRef ref="ref"/>
                     
+                    <CustomerPurchasePackageStatus>activated</CustomerPurchasePackageStatus>
+                    
+                    <travelSpecifications>
+                        <TravelSpecificationRef ref="ref"/>
+                    </travelSpecifications>
+                    
+                    <elementConsumptionPolicies>
+                        <ElementConsumptionPolicy>
+                            <ConsumptionRequirementGroupingType>AND</ConsumptionRequirementGroupingType>
+                            <consumptionRequirements>
+                                <CustomerPurchasePackageElementConsumptionRequirement>
+                                    <MarkedAs>activated</MarkedAs>
+                                    <MarkedAsTemporalValidity>current</MarkedAsTemporalValidity>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:1" version="1"/>
+                                </CustomerPurchasePackageElementConsumptionRequirement>
+                            </consumptionRequirements>
+                            <ConsumptionTriggerType>automatic</ConsumptionTriggerType> <!-- MANDATORY -->
+                            <ElementConsumptionGroupingType>AND</ElementConsumptionGroupingType>
+                            <elementConsumptions>
+                                <CustomerPurchasePackageElementConsumption>
+                                    <FromMarkedAs>activated</FromMarkedAs>
+                                    <ToMarkedAs>used</ToMarkedAs>
+                                    <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:1" version="1"/>
+                                </CustomerPurchasePackageElementConsumption>
+                            </elementConsumptions>
+                            <crossConstraints>
+                                <CrossConstraint>
+                                    <Constraint>
+                                        <PeriodConstraint>different</PeriodConstraint>
+                                        <OriginConstraint>different</OriginConstraint>
+                                        <DestinationConstraint>different</DestinationConstraint>
+                                        <TariffZoneConstraint>different</TariffZoneConstraint>
+                                        <RouteConstraint>different</RouteConstraint>
+                                        <DirectionConstraint>different</DirectionConstraint>
+                                        <OperatorConstraint>different</OperatorConstraint>
+                                        <TypeOfProductCategoryConstraint>different</TypeOfProductCategoryConstraint>
+                                        <ClassOfUseConstraint>different</ClassOfUseConstraint>
+                                        <TypeOfTravelDocumentConstraint>different</TypeOfTravelDocumentConstraint>
+                                        <JourneyConstraint>different</JourneyConstraint>
+                                        <UserConstraint>anyOne</UserConstraint>
+                                        <specificToProfiles>
+                                            <UserProfileRef ref="ref"/>
+                                            <CompanionProfileRef ref="ref"/>
+                                            <UserProfileRef ref="ref"/>
+                                            <CompanionProfileRef ref="ref"/>
+                                        </specificToProfiles>
+                                    </Constraint>
+                                    <validityParameterAssignments>
+                                        <ValidityParameterAssignmentRef ref="ref"/>
+                                    </validityParameterAssignments>
+                                </CrossConstraint>
+                            </crossConstraints>
+                            <MaximumNumberOfAccesses>
+                                <Type>limited</Type>
+                                <Value>1</Value>
+                            </MaximumNumberOfAccesses>
+                        </ElementConsumptionPolicy>
+                    </elementConsumptionPolicies>
+                    
                     <customerPurchasePackageElements>
+                        <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:1" version="1" order="0">
+                            <Name>Demo CustomerPurchasePackageElement</Name>
+                        </CustomerPurchasePackageElement>
+                        
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchasePackageElement:SingleTrip1ZoneActivated" version="1" order="1">
-                            
                             
                             <SalesOfferPackageElementRef ref="ENT:SalesOfferPackageElement:SingleTrip1Zone" version="1"/>
                             
@@ -1510,7 +1610,6 @@
                             
                             <elementAccesses>
                                 <CustomerPurchasePackageElementAccess id="ENT:CustomerPurchasePackageElementAccess:1" version="1" created="2020-07-22T11:00:00">
-                                    
                                     <MarkedAs>activated</MarkedAs>
                                     <validityParameterAssignments>
                                         <CustomerPurchaseParameterAssignment id="ENT:CustomerPurchasePackageElementAccess:1" version="1" order="1">
@@ -1561,27 +1660,24 @@
                         
                     </customerPurchasePackageElements>
                     
+                    <salesTransactions>
+                        <SalesTransactionRef ref="ref"/>
+                    </salesTransactions>
+                    
                     <prices>
                         <CustomerPurchasePackagePrice id="ENT:CustomerPurchasePackagePrice:1" version="1">
                             <Amount>10</Amount>
                         </CustomerPurchasePackagePrice>
                     </prices>
                     
+                    <travelDocuments>
+                        <TravelDocumentRef ref="ref"/>
+                    </travelDocuments>
+                    
                 </CustomerPurchasePackage>
             </customerPurchasePackages>
 
         </SalesTransactionFrame>
-
-
-        <FareFrame id="ATB:FareFrame:ATB" version="any">
-            <versions>
-                <Version created="2021-04-19T12:48:54.192" modification="new" id="ATB:Version:2feab0dc-705a-448a-95d4-74a7a8fbd36c" changed="2021-04-19T13:01:56.453" version="any">
-                    <StartDate>2021-04-20T00:00:00</StartDate>
-                    <Status>versioned</Status>
-                    <VersionType>baseline</VersionType>
-                </Version>
-            </versions>
-        </FareFrame>
 
     </dataObjects>
 </PublicationDelivery>
