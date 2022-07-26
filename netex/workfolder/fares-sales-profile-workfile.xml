@@ -21,7 +21,7 @@
         -->
         
         <!-- Non-compliant organisation data included only for readability of example -->
-        <ResourceFrame id="SKY:ResourceFrame:1" version="1" status="active">
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1" status="active">
             <versions>
                 <Version id="ENT:Version:1" version="1" status="inactive">
                     <Status>deprecated</Status>
@@ -34,7 +34,7 @@
                     <DaysOfWeek>Monday Friday</DaysOfWeek>
                 </ValidDuring-->
                 
-                <AvailabilityCondition id="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021" version="1">
+                <AvailabilityCondition id="ENT:AvailabilityCondition:SchoolCalendarBergen2020-2021" version="1">
                     <Name>Gyldighet Skolerute Bergen 2020-2021</Name>
                     <!-- Start date of validity bits, first bit represents this date -->
                     <FromDate>2020-08-17T00:00:00</FromDate>
@@ -65,7 +65,7 @@
                     </ValidDayBits>
                     <timebands>
                         <!-- Could also be 2 timebands - morning and afternoon -->
-                        <Timeband id="SKY:Timeband:SchoolHours" version="1">
+                        <Timeband id="ENT:Timeband:SchoolHours" version="1">
                             <StartTime>06:30:00</StartTime>
                             <EndTime>18:30:00</EndTime>
                         </Timeband>
@@ -79,11 +79,11 @@
                     <Days>YYYYYNN</Days>
                 </ValidDuring>
                 
-                <AvailabilityCondition id="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021-DEPRECATED" version="1">
+                <AvailabilityCondition id="ENT:AvailabilityCondition:SchoolCalendarBergen2020-2021-DEPRECATED" version="1">
                     <Name>Skolerute Bergen 2020-2021</Name>
-                    <WithConditionRef ref="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021-EnkeltdagerUnntatt" version="1"/>
+                    <WithConditionRef ref="ENT:AvailabilityCondition:SchoolCalendarBergen2020-2021-EnkeltdagerUnntatt" version="1"/>
                     <dayTypes>
-                        <DayType id="SKY:DayType:PRE-GeneralSchoolDay" version="1">
+                        <DayType id="ENT:DayType:PRE-GeneralSchoolDay" version="1">
                             <properties>
                                 <!-- Multiple PropertyOfDay(s) are ORed together -->
                                 <PropertyOfDay>
@@ -91,7 +91,7 @@
                                 </PropertyOfDay>
                             </properties>
                             <timebands>
-                                <Timeband id="SKY:Timeband:SchoolHours2" version="1">
+                                <Timeband id="ENT:Timeband:SchoolHours2" version="1">
                                     <StartTime>06:30:00</StartTime>
                                     <EndTime>18:30:00</EndTime>
                                 </Timeband>
@@ -99,36 +99,36 @@
                         </DayType>
                     </dayTypes>
                     <!--operatingPeriods>
-                        <OperatingPeriod id="SKY:OperatingPeriod:SommerTilHoest" version="1">
+                        <OperatingPeriod id="ENT:OperatingPeriod:SommerTilHoest" version="1">
                             <FromDate>2020-08-17T00:00:00</FromDate>
                             <ToDate>2020-10-03T00:00:00</ToDate>
                         </OperatingPeriod>
-                        <OperatingPeriod id="SKY:OperatingPeriod:HoestTilJul" version="1">
+                        <OperatingPeriod id="ENT:OperatingPeriod:HoestTilJul" version="1">
                             <FromDate>2020-10-12T00:00:00</FromDate>
                             <ToDate>2020-12-22T00:00:00</ToDate>
                         </OperatingPeriod>
-                        <OperatingPeriod id="SKY:OperatingPeriod:JulTilVintererie" version="1">
+                        <OperatingPeriod id="ENT:OperatingPeriod:JulTilVintererie" version="1">
                             <FromDate>2021-01-02T00:00:00</FromDate>
                             <ToDate>2021-03-01T00:00:00</ToDate>
                         </OperatingPeriod>
-                        <OperatingPeriod id="SKY:OperatingPeriod:VinterferieTilPaaske" version="1">
+                        <OperatingPeriod id="ENT:OperatingPeriod:VinterferieTilPaaske" version="1">
                             <FromDate>2020-03-07T00:00:00</FromDate>
                             <ToDate>2020-03-29T00:00:00</ToDate>
                         </OperatingPeriod>
-                        <OperatingPeriod id="SKY:OperatingPeriod:PaaskeTilSommerferie" version="1">
+                        <OperatingPeriod id="ENT:OperatingPeriod:PaaskeTilSommerferie" version="1">
                             <FromDate>2020-04-06T00:00:00</FromDate>
                             <ToDate>2020-06-19T00:00:00</ToDate>
                         </OperatingPeriod>
                     </operatingPeriods-->
                 </AvailabilityCondition>
-                <AvailabilityCondition id="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021-EnkeltdagerUnntatt" version="1">
+                <AvailabilityCondition id="ENT:AvailabilityCondition:SchoolCalendarBergen2020-2021-EnkeltdagerUnntatt" version="1">
                     <IsAvailable>false</IsAvailable>
                     <operatingDays>
                         <!-- include all excluded single days here, list is partial -->
-                        <OperatingDay id="SKY:OperatingDay:2020-09-07" version="1">
+                        <OperatingDay id="ENT:OperatingDay:2020-09-07" version="1">
                             <CalendarDate>2020-09-07</CalendarDate>
                         </OperatingDay>
-                        <OperatingDay id="SKY:OperatingDay:2021-05-17" version="1">
+                        <OperatingDay id="ENT:OperatingDay:2021-05-17" version="1">
                             <CalendarDate>2021-05-17</CalendarDate>
                         </OperatingDay>
                     </operatingDays>
@@ -224,7 +224,7 @@
                 <Authority id="ENT:Authority:Ruter" version="1">
                     <PublicCode></PublicCode>
                     <PrivateCode>test</PrivateCode>
-                    <Name>Ruter#</Name>
+                    <Name>Oslo</Name>
                     <ContactDetails>
                         <Url>https://www.ruter.no</Url>
                     </ContactDetails>
@@ -243,9 +243,9 @@
 
         
 
-        <SiteFrame id="RUT:SiteFrame:1" version="1">
+        <SiteFrame id="ENT:SiteFrame:1" version="1">
             <validityConditions>
-                <AvailabilityCondition id="RUT:AvailabilityCondition:2" version="1">
+                <AvailabilityCondition id="ENT:AvailabilityCondition:2" version="1">
                     <FromDate>2020-01-26T00:00:00</FromDate>
                 </AvailabilityCondition>
             </validityConditions>
@@ -302,7 +302,6 @@
                     <ParentFareZoneRef ref="ENT:FareZone:1" version="1"/>
                     <OperatorRef ref=""></OperatorRef>
                     
-                    
                     <neighbours>
                         <FareZoneRef ref="ENT:FareZone:3" version="1"/>
                         <FareZoneRef ref="ENT:FareZone:4" version="1"/>
@@ -317,34 +316,31 @@
                     <Name>Demo FareZone</Name>
                 </FareZone>
                 
-                
-                <TariffZone id="ENT:TariffZone:1" version="1">
+                <TariffZone id="ENT:TariffZone:0" version="1">
                     <Name>Demo TariffZone</Name>
                     <PrivateCode>My-private-code</PrivateCode>
                     <ParentZoneRef ref="ENT:TopographicPlace:1" version="1"/>
                     <!--PublicCode>My-public-code</PublicCode--> <!-- TO BE ADDED -->
                 </TariffZone>
                 
-                
-                
-                <!-- EXAMPLE: Ruter# zones -->
-                <TariffZone id="RUT:TariffZone:1" version="1">
-                    <Name lang="en">Ruter# tariff zone 1 (sentral Oslo region)</Name>
+                <!-- EXAMPLE: Oslo zones -->
+                <TariffZone id="ENT:TariffZone:1" version="1">
+                    <Name lang="en">Oslo tariff zone 1 (sentral Oslo region)</Name>
                 </TariffZone>
-                <TariffZone id="RUT:TariffZone:2V" version="1">
-                    <Name lang="en">Ruter# tariff zone 2V (west incl Asker)</Name>                 
+                <TariffZone id="ENT:TariffZone:2V" version="1">
+                    <Name lang="en">Oslo tariff zone 2V (west incl Asker)</Name>                 
                 </TariffZone>
-                <TariffZone id="RUT:TariffZone:3V" version="1">
-                    <Name lang="en">Ruter# tariff zone 3V (west incl Slemmestad)</Name>                 
+                <TariffZone id="ENT:TariffZone:3V" version="1">
+                    <Name lang="en">Oslo tariff zone 3V (west incl Slemmestad)</Name>                 
                 </TariffZone>
-                <TariffZone id="RUT:TariffZone:4V" version="1">
-                    <Name lang="en">Ruter# tariff zone 4V (west incl Tofte)</Name>         
+                <TariffZone id="ENT:TariffZone:4V" version="1">
+                    <Name lang="en">Oslo tariff zone 4V (west incl Tofte)</Name>         
                 </TariffZone>
-                <TariffZone id="RUT:TariffZone:2S" version="1">
-                    <Name lang="en">Ruter# tariff zone 2S (south incl Ski)</Name> 
+                <TariffZone id="ENT:TariffZone:2S" version="1">
+                    <Name lang="en">Oslo tariff zone 2S (south incl Ski)</Name> 
                 </TariffZone>
-                <TariffZone id="RUT:TariffZone:3S" version="1">
-                    <Name lang="en">Ruter# tariff zone 3S (south incl Son)</Name>                 
+                <TariffZone id="ENT:TariffZone:3S" version="1">
+                    <Name lang="en">Oslo tariff zone 3S (south incl Son)</Name>                 
                 </TariffZone>
             </tariffZones>
 
@@ -353,7 +349,8 @@
         
         <ServiceFrame id="ENT:ServiceFrame:1" version="1">
             <tariffZones>
-                <TariffZone id="fdasjkhfdsa" version="fsda">
+                <TariffZone id="ENT:TariffZone:11" version="1">
+                    <Name>Example of Tariff Zone defined in context of ServiceFrame</Name>
                 </TariffZone>
             </tariffZones>
             <!-- only included as NeTEx frame structure reference -->
@@ -424,7 +421,7 @@
         </FareFrame>
 
 
-        <!-- Fare data for Ruter# codespace "RUT" (greater Oslo region) -->
+        <!-- Fare data for Oslo codespace "RUT" (greater Oslo region) -->
 
         <FareFrame id="ENT:FareFrame:1" version="1">
             <validityConditions>
@@ -519,10 +516,10 @@
                         </QualityStructureFactorPrice>
                     </prices>
                 </QualityStructureFactor>
-                <QualityStructureFactor id="SKY:QualityStructureFactor:180" version="1">
+                <QualityStructureFactor id="ENT:QualityStructureFactor:180" version="1">
                     <Name>180 validations per year</Name>
                 </QualityStructureFactor>
-                <QualityStructureFactor id="SKY:QualityStructureFactor:10" version="1">
+                <QualityStructureFactor id="ENT:QualityStructureFactor:10" version="1">
                     <Name>2 trips per day</Name>
                     <Factor>trips</Factor>
                     <Value>2</Value>
@@ -591,11 +588,11 @@
                     </prices>
                 </DistanceMatrixElement>
                 
-                <DistanceMatrixElement id="ENT:DistanceMatrixElemRUT:TariffZones" version="1">
+                <DistanceMatrixElement id="ENT:DistanceMatrixElemENT:TariffZones" version="1">
                     <Name>TariffZone based DistanceMatrixElement</Name>
                     <InverseAllowed>true</InverseAllowed>
-                    <StartTariffZoneRef ref="RUT:TariffZone:1" version="1"/>
-                    <EndTariffZoneRef ref="RUT:TariffZone:2V" version="1"/>
+                    <StartTariffZoneRef ref="ENT:TariffZone:1" version="1"/>
+                    <EndTariffZoneRef ref="ENT:TariffZone:2V" version="1"/>
                     <prices>
                         <DistanceMatrixElementPriceRef ref="ENT:DistanceMatrixElementPrice:2_80" version="1"/>
                     </prices>
@@ -634,7 +631,7 @@
                             <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                             <validityParameters>
                                 <AuthorityRef ref="ENT:Authority:Ruter" version="1"/>
-                                <TariffZoneRef ref="RUT:TariffZone:1" version="1"/>
+                                <TariffZoneRef ref="ENT:TariffZone:1" version="1"/>
                             </validityParameters>
                             <TimeIntervalRef ref="ENT:TimeInterval:60min" version="1"/>
                             <GeographicalIntervalRef ref="ref"/>
@@ -680,12 +677,16 @@
                         <ValidityParameterSetSelectionType>allOfAllSets</ValidityParameterSetSelectionType>
                         
                         <temporalValidityParameters>
+                            <DayTypeRef ref="ref"/>
+                            <TimebandRef ref="ref"/>
+                            <OperatingDayRef ref="ref"/>
                             <OperatingPeriodRef ref="ref"/>
+                            <ValidityTriggerRef ref=""></ValidityTriggerRef>
                         </temporalValidityParameters>
                         
                         <validityParameters>
                             <AuthorityRef ref="ENT:Authority:Ruter" version="1"/>
-                            <TariffZoneRef ref="RUT:TariffZone:2V" version="1"/>
+                            <TariffZoneRef ref="ENT:TariffZone:2V" version="1"/>
                             <TariffZoneRef ref="reftest"/>
                             <NetworkRef ref="ref"/>
                             <NetworkRef ref="ref2"/>
@@ -785,7 +786,7 @@
                     <CanInterchange>true</CanInterchange>
                     <CanBreakJourney>true</CanBreakJourney>
                 </Interchanging>
-                <Interchanging id="RUT:Interchanging:2" version="1">
+                <Interchanging id="ENT:Interchanging:2" version="1">
                     <CanInterchange>true</CanInterchange>
                     <FromMode>air</FromMode>
                     <ToMode>air</ToMode>
@@ -857,7 +858,7 @@
                     <PenaltyPolicyType>noTicket</PenaltyPolicyType>
                 </PenaltyPolicy>
                 <GroupTicket id="ENT:GroupTicket:1" version="1">
-                    <Name>RUT:TariffZone</Name>
+                    <Name>ENT:TariffZone</Name>
                     <MinimumNumberOfCardHolders>1</MinimumNumberOfCardHolders>
                     <companionProfiles>
                         <CompanionProfileRef ref="ENT:CompanionProfile:1" version="1"/>
@@ -1042,6 +1043,7 @@
                 </PreassignedFareProduct>
                 
                 <SupplementProduct id="ENT:SupplementProduct:1" version="1">
+                    <PricingServiceRef ref=""></PricingServiceRef>
                     <prices>
                         <FareProductPrice id="VYT:FareProductPrice:2" version="1">
                             <Amount>549</Amount>
@@ -1099,7 +1101,7 @@
                         <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:2_80" version="1">
                             <Amount>2.80</Amount>
                             <!-- ALTERNATIVELY: The FareTable refers the fare structure it prices -->
-                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElemRUT:TariffZones" version="1"/>
+                            <DistanceMatrixElementRef ref="ENT:DistanceMatrixElemENT:TariffZones" version="1"/>
                         </DistanceMatrixElementPrice>
                         <DistanceMatrixElementPrice id="ENT:DistanceMatrixElementPrice:3_20" version="1">
                             <Amount>3.20</Amount>
@@ -1187,13 +1189,13 @@
                 </TypeOfTravelDocument>
                 <TypeOfTravelDocument id="ENT:TypeOfTravelDocument:Travelcard" version="1">
                     <Name>Travelcard</Name>
-                    <Description>Per Railway Directorate handbook compatible electronic travel card, e.g. Ruter#, Vy</Description>
+                    <Description>Per Railway Directorate handbook compatible electronic travel card, e.g. Oslo, Vy</Description>
                     <MediaType>card</MediaType>
                     <MachineReadable>nfc</MachineReadable>
                 </TypeOfTravelDocument>
                 <TypeOfTravelDocument id="ENT:TypeOfTravelDocument:SingleUseElectronicTicket" version="1">
                     <Name>Single use electronic ticet</Name>
-                    <Description>Ruter# disposable travel card compatible electronic ticket</Description>
+                    <Description>Oslo disposable travel card compatible electronic ticket</Description>
                     <MediaType>card</MediaType>
                     <MachineReadable>nfc</MachineReadable>
                 </TypeOfTravelDocument>  
@@ -1214,6 +1216,9 @@
                     <ConditionSummary>
                         <HasDynamicPricing>true</HasDynamicPricing>
                     </ConditionSummary>
+                    <validityParameterAssignments>
+                        <GenericParameterAssignmentInContext></GenericParameterAssignmentInContext>
+                    </validityParameterAssignments>
                     <distributionAssignments>
                         <DistributionAssignmentRef ref="ref"/>
                     </distributionAssignments>
@@ -1316,6 +1321,12 @@
                                     </limitations>
                                     <validityParameters>
                                         <VehicleModes>air bus</VehicleModes>
+                                        <TransportMode>all</TransportMode>
+                                        <TransportMode>cableway</TransportMode>
+                                        <VehicleModes>cableway</VehicleModes>
+                                        <TransportSubmode>
+                                            <AirSubmode>SchengenAreaFlight</AirSubmode>
+                                        </TransportSubmode>
                                     </validityParameters>
                                 </GenericParameterAssignment>
                             </validityParameterAssignments>
@@ -1343,7 +1354,7 @@
 
 
 
-        <!-- SalesTransaction data for Ruter# Zone 1 and Zone 2V single tickets (random selection of variants) -->
+        <!-- SalesTransaction data for Oslo Zone 1 and Zone 2V single tickets (random selection of variants) -->
         <!-- REMARK: 
             Use cases are split into individual SalesTransactionFrames for containing/highlighting each dataset.
             However, as long as the ValidityConditions are the same (which they inherently are in these examples),
@@ -1509,16 +1520,21 @@
             
             
             <travelDocuments>
+                
                 <TravelDocument id="ENT:TravelDocument:1" version="1">
                     <TypeOfTravelDocumentRef ref="ENT:TypeOfTravelDocument:AppRuterBillett" version="1"/>
                     <MarkedAs>activated</MarkedAs>
                 </TravelDocument>
+                
             </travelDocuments>
             
             
             <customerPurchasePackages>
                 
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:1" version="1">
+                    <travelSpecifications>
+                        <TravelSpecificationRef ref="ENT:TravelSpecification:1" version="1"/>
+                    </travelSpecifications>
                     <customerPurchasePackageElements>
                         <CustomerPurchasePackageElement id="ENT:CustomerPurchacePackageElement:1" version="1" order="1">
                             <Name>TODO xxx TODO</Name>
@@ -1543,7 +1559,7 @@
                 
                 <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:SingleTrip1ZoneActivated" version="1">
                     <validityConditions>
-                        <AvailabilityConditionRef ref="SKY:AvailabilityCondition:SchoolCalendarBergen2020-2021" version="1"/>
+                        <AvailabilityConditionRef ref="ENT:AvailabilityCondition:SchoolCalendarBergen2020-2021" version="1"/>
                     </validityConditions>
                     
                     <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip1Zone" version="1"/>
@@ -1633,7 +1649,11 @@
                                             </limitations>
                                             <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
                                             <temporalValidityParameters>
-                                                
+                                                <DayTypeRef ref="ref"/>
+                                                <TimebandRef ref="ref"/>
+                                                <OperatingDayRef ref="ref"/>
+                                                <OperatingPeriodRef ref="ref"/>
+                                                <AvailabilityConditionRef ref="ref"/>
                                             </temporalValidityParameters>
                                             <validityParameters>
                                                 <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" />
@@ -1655,9 +1675,11 @@
                                     </limitations>
                                     
                                     <temporalValidityParameters>
-                                        <!--TimebandRef ref="ext"/-->
-                                        <GroupOfTimebandsRef ref="ext"/>
-                                        <OperatingDayRef ref="ext"/>
+                                        <DayTypeRef ref="ref"/>
+                                        <TimebandRef ref="ref"/>
+                                        <OperatingDayRef ref="ref"/>
+                                        <OperatingPeriodRef ref="ref"/>
+                                        <AvailabilityConditionRef ref="ref"/>
                                     </temporalValidityParameters>
                                     
                                     <validityParameters>
@@ -1679,6 +1701,9 @@
                     <prices>
                         <CustomerPurchasePackagePrice id="ENT:CustomerPurchasePackagePrice:1" version="1">
                             <Amount>10</Amount>
+                            <IsAllowed>true</IsAllowed>
+                            <PricingServiceRef ref="ref"/>
+                            <CanBeCumulative>true</CanBeCumulative>
                         </CustomerPurchasePackagePrice>
                     </prices>
                     
