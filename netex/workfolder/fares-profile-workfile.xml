@@ -168,6 +168,25 @@
                     <Description>Price with regular VAT (currently 25%)</Description>
                 </TypeOfAccessRightAssignment>
                 
+                <TypeOfCustomerAccount id="ENT:TypeOfCustomerAccount:Ordinary" version="1">
+                    <Name>Ordinary</Name>
+                    <Description>Ordinary account based ticketing account</Description>
+                </TypeOfCustomerAccount>
+                
+                <TypeOfFareContract id="ENT:TypeOfFareContract:Ordinary" version="1">
+                    <Name>Ordinary</Name>
+                    <Description>Ordinary fare contract for account based ticketing</Description>
+                </TypeOfFareContract>
+                
+                <TypeOfResponsibilityRole id="ENT:TypeOfResponsibilityRole:Conductor" version="1">
+                    <Name>Conductor</Name>
+                    <Description>Type of responsibility role for conductor</Description>
+                </TypeOfResponsibilityRole>
+                
+                <TypeOfConcession id="dfsa" version="1">
+                    
+                </TypeOfConcession>
+                
                 
                 <!-- separate TypeOfValue -->
                 <ChargingMoment id="ENT:ChargingMoment:1" version="1">
@@ -181,23 +200,7 @@
                         </ChargingMoment>
                     </values>
                 </ValueSet>
-            </typesOfValue>
-            
-        </ResourceFrame>
-        
-        
-        <ResourceFrame id="ENT:ResourceFrame:2" version="1">
-            <typesOfValue>
-                <TypeOfCustomerAccount id="ENT:TypeOfCustomerAccount:1" version="1">
-                    <Name>Customer account 1</Name>
-                </TypeOfCustomerAccount>
-
-                <Branding id="ENT:Branding:2" version="1">
-                    <Name>Test</Name>
-                    <Url>http://url.com</Url>
-                </Branding>
-
-            </typesOfValue> 
+            </typesOfValue>            
             
             
             <organisations>
@@ -235,6 +238,7 @@
                     <OrganisationType>authority</OrganisationType>
                 </Authority>
             </organisations>
+            
         </ResourceFrame>
 
         
@@ -508,6 +512,12 @@
                     <BrandingRef ref="ENT:Branding:1" changed="2020-12-08T10:00:00"/>
                     <Factor>trips</Factor>
                     <Value>2</Value>
+                    <prices>
+                        <QualityStructureFactorPrice id="ENT:QualityStructureFactorPrice:1" version="1">
+                            <Amount>123</Amount>
+                            <Currency>NOK</Currency>
+                        </QualityStructureFactorPrice>
+                    </prices>
                 </QualityStructureFactor>
                 <QualityStructureFactor id="SKY:QualityStructureFactor:180" version="1">
                     <Name>180 validations per year</Name>
@@ -955,7 +965,9 @@
                             <NoticeRef ref="ENT:Notice:1" version="1"></NoticeRef>
                         </NoticeAssignment>
                     </noticeAssignments>
-                    <PrivateCode></PrivateCode>
+                    <PrivateCode>CODE</PrivateCode>
+                    <ChargingMomentType>anyTime</ChargingMomentType>
+                    <TypeOfFareProductRef ref="ref"/>
                     <ConditionSummary>
                         <FareStructureType>cappedFlatFare</FareStructureType>
                         <TariffBasis>discount</TariffBasis>
@@ -994,7 +1006,7 @@
                         <!--PenaltyIfWithoutTicket>true</PenaltyIfWithoutTicket>
                         <AvailableOnSubscription>true</AvailableOnSubscription-->
                     </ConditionSummary>
-                    <FareProductRef ref=""></FareProductRef> <!-- FAIL (kun en referanse tillatt) -->
+                    <FareProductRef ref="ref"/> <!-- FAIL (kun en referanse tillatt) -->
                     <!--SaleDiscountRightRef ref="ENT:SaleDiscountRight:1" version="1"/ -->
                     <!-- SupplementProductRef ref="ENT:SupplementProduct:1" version="1"/ -->
                     
