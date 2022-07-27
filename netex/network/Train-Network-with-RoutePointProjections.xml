@@ -1,0 +1,668 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex"
+  xmlns:gis="http://www.opengis.net/gml/3.2" 
+  xmlns:siri="http://www.siri.org.uk/siri"
+  version="1.09:NO-NeTEx-networktimetable:1.4">
+
+
+  <PublicationTimestamp>2020-01-09T15:00:00</PublicationTimestamp>
+  <ParticipantRef>SJN</ParticipantRef>
+  <Description>EXAMPLE</Description>
+  <dataObjects>
+
+
+    <VehicleScheduleFrame created="2020-01-09T15:00:00" version="0" id="SJN:VehicleScheduleFrame:4145997"> 
+      <!-- placeholder -->
+    </VehicleScheduleFrame>
+
+
+    <GeneralFrame created="2020-01-09T15:00:00" version="0" id="SJN:GeneralFrame:4145997">
+      <!-- placeholder -->
+    </GeneralFrame>
+
+
+    <ResourceFrame created="2020-01-09T15:00:00" version="0" id="SJN:ResourceFrame:4145997" derivedFromObjectRef=""> 
+      <!-- placeholder -->
+    </ResourceFrame>
+
+
+    <CompositeFrame created="2020-01-09T15:00:00" version="0" id="SJN:CompositeFrame:4145997">
+      <validityConditions>
+        <AvailabilityCondition version="0" id="SJN:AvailabilityCondition:4144408">
+          <FromDate>2020-01-01T00:00:00</FromDate>
+          <ToDate>2020-12-31T23:59:59</ToDate>
+        </AvailabilityCondition>
+      </validityConditions>
+      <codespaces>
+        <Codespace id="nsr">
+          <Xmlns>NSR</Xmlns>
+          <XmlnsUrl>http://www.rutebanken.org/ns/nsr</XmlnsUrl>
+        </Codespace>
+        <Codespace id="ent">
+          <Xmlns>ENT</Xmlns>
+          <XmlnsUrl>http://www.rutebanken.org/ns/ent</XmlnsUrl>
+        </Codespace>
+        <Codespace id="SJN">
+          <Xmlns>SJN</Xmlns>
+          <XmlnsUrl>http://www.rutebanken.org/ns/sjn</XmlnsUrl>
+        </Codespace>
+      </codespaces>
+      <FrameDefaults>
+        <DefaultLocale>
+          <TimeZone>Europe/Oslo</TimeZone>
+          <DefaultLanguage>no</DefaultLanguage>
+        </DefaultLocale>
+      </FrameDefaults>
+          
+      
+      <frames>
+        <SiteFrame version="0" id="NSR:SiteFrame:1">
+          <stopPlaces>
+            <StopPlace version="0" id="NSR:StopPlace:for-quay-1078">
+              <Name>Quay-1078</Name>
+              <quays>
+                <Quay version="0" id="NSR:Quay:1078"/>
+              </quays>
+            </StopPlace>
+            <StopPlace version="0" id="NSR:StopPlace:for-quay-1079">
+              <Name>Quay-1079</Name>
+              <quays>
+                <Quay version="0" id="NSR:Quay:1079"/>
+              </quays>
+            </StopPlace>
+            <StopPlace version="0" id="NSR:StopPlace:for-quay-1080">
+              <Name>Quay-1080</Name>
+              <quays>
+                <Quay version="0" id="NSR:Quay:1080"/>
+              </quays>
+            </StopPlace>
+            <StopPlace version="0" id="NSR:StopPlace:for-quay-1081">
+              <Name>Quay-1081</Name>
+              <quays>
+                <Quay version="0" id="NSR:Quay:1081"/>
+              </quays>
+            </StopPlace>
+            <StopPlace version="0" id="NSR:StopPlace:for-quay-1082">
+              <Name>Quay-1082</Name>
+              <quays>
+                <Quay version="0" id="NSR:Quay:1082"/>
+              </quays>
+            </StopPlace>
+            <StopPlace version="0" id="NSR:StopPlace:for-quay-1083">
+              <Name>Quay-1083</Name>
+              <quays>
+                <Quay version="0" id="NSR:Quay:1083"/>
+              </quays>
+            </StopPlace>
+            <StopPlace version="0" id="NSR:StopPlace:for-quay-100530">
+              <Name>Quay-100530</Name>
+              <quays>
+                <Quay version="0" id="NSR:Quay:100530"/>
+              </quays>
+            </StopPlace>
+            <StopPlace version="0" id="NSR:StopPlace:for-quay-100531">
+              <Name>Quay-100531</Name>
+              <quays>
+                <Quay version="0" id="NSR:Quay:100531"/>
+              </quays>
+            </StopPlace>
+            <StopPlace version="0" id="NSR:StopPlace:for-quay-100529">
+              <Name>Quay-100529</Name>
+              <quays>
+                <Quay version="0" id="NSR:Quay:100529"/>
+              </quays>
+            </StopPlace>
+            <StopPlace version="0" id="NSR:StopPlace:for-quay-99726">
+              <Name>Quay-99726</Name>
+              <quays>
+                <Quay version="0" id="NSR:Quay:99726"/>
+              </quays>
+            </StopPlace>
+          </stopPlaces>
+        </SiteFrame>
+        
+        
+        <ServiceFrame version="0" id="SJN:ServiceFrame:4145998">
+          <routePoints>
+            <RoutePoint version="0" id="SJN:RoutePoint:TND">
+              <!-- Trondheim S -->
+              <!-- StopAreas -->
+              <projections>
+                <PointProjection version="0" id="SJN:PointProjection:TND-1">
+                  <!-- Spor 1 -->
+                  <ProjectedPointRef ref="SJN:ScheduledStopPoint:TND-1" version="0"/>
+                  <!-- NSR:Quay:1078 -->
+                </PointProjection>
+                <PointProjection version="0" id="SJN:PointProjection:TND-2">
+                  <!-- Spor 2 -->
+                  <ProjectedPointRef ref="SJN:ScheduledStopPoint:TND-2" version="0"/>
+                  <!-- NSR:Quay:1079 -->
+                </PointProjection>
+                <PointProjection version="0" id="SJN:PointProjection:TND-3">
+                  <!-- Spor 3 -->
+                  <ProjectedPointRef ref="SJN:ScheduledStopPoint:TND-3" version="0"/>
+                  <!-- NSR:Quay:1080 -->
+                </PointProjection>
+                <PointProjection version="0" id="SJN:PointProjection:TND-4">
+                  <!-- Spor 4 -->
+                  <ProjectedPointRef ref="SJN:ScheduledStopPoint:TND-4" version="0"/>
+                  <!-- NSR:Quay:1081 -->
+                </PointProjection>
+                <PointProjection version="0" id="SJN:PointProjection:TND-5">
+                  <!-- Spor 5 -->
+                  <ProjectedPointRef ref="SJN:ScheduledStopPoint:TND-5" version="0"/>
+                  <!-- NSR:Quay:1082 -->
+                </PointProjection>
+                <PointProjection version="0" id="SJN:PointProjection:TND-6">
+                  <!-- Spor 6 -->
+                  <ProjectedPointRef ref="SJN:ScheduledStopPoint:TND-6" version="0"/>
+                  <!-- NSR:Quay:1083 -->
+                </PointProjection>
+                <PointProjection version="0" id="SJN:PointProjection:TND-21">
+                  <!-- Spor 21 -->
+                  <ProjectedPointRef ref="SJN:ScheduledStopPoint:TND-21" version="0"/>
+                  <!-- NSR:Quay:100530 -->
+                </PointProjection>
+                <PointProjection version="0" id="SJN:PointProjection:TND-22">
+                  <!-- Spor 22 -->
+                  <ProjectedPointRef ref="SJN:ScheduledStopPoint:TND-22" version="0"/>
+                  <!-- NSR:Quay:100531 -->
+                </PointProjection>
+                <PointProjection version="0" id="SJN:PointProjection:TND-23">
+                  <!-- Spor 23 -->
+                  <ProjectedPointRef ref="SJN:ScheduledStopPoint:TND-23" version="0"/>
+                  <!-- NSR:Quay:100529 -->
+                </PointProjection>
+                <PointProjection version="0" id="SJN:PointProjection:TND-30">
+                  <!-- Alternativ transport -->
+                  <ProjectedPointRef ref="SJN:ScheduledStopPoint:TND-30" version="0"/>
+                  <!-- NSR:Quay:99726 -->
+                </PointProjection>
+              </projections>
+            </RoutePoint>
+          </routePoints>
+          
+          
+          <routes>
+            <Route id="SJN:Route:412" version="2019-11-13-122500">
+              <Name>Trondheim S - Hamar</Name>
+              <PrivateCode>412</PrivateCode>
+              <LineRef ref="SJN:Line:25"/>
+              <DirectionRef ref="SJN:Direction:1"/>
+              <pointsInSequence>
+                <PointOnRoute id="SJN:PointOnRoute:412-1" version="2019-11-13-122500" order="1">
+                  <RoutePointRef ref="SJN:RoutePoint:TND"/>
+                  <!-- Trondheim S -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-2" version="2019-11-13-122500" order="2">
+                  <RoutePointRef ref="SJN:RoutePoint:SKS"/>
+                  <!-- Skansen -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-3" version="2019-11-13-122500" order="3">
+                  <RoutePointRef ref="SJN:RoutePoint:SVN"/>
+                  <!-- Marienborg -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-4" version="2019-11-13-122500" order="4">
+                  <RoutePointRef ref="SJN:RoutePoint:SLB"/>
+                  <!-- Selsbakk -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-5" version="2019-11-13-122500" order="5">
+                  <RoutePointRef ref="SJN:RoutePoint:HMD"/>
+                  <!-- Heimdal -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-6" version="2019-11-13-122500" order="6">
+                  <RoutePointRef ref="SJN:RoutePoint:MSK"/>
+                  <!-- Melhus Skysstasjon -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-7" version="2019-11-13-122500" order="7">
+                  <RoutePointRef ref="SJN:RoutePoint:SØB"/>
+                  <!-- Søberg (Run through) -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-8" version="2019-11-13-122500" order="8">
+                  <RoutePointRef ref="SJN:RoutePoint:KVÅ"/>
+                  <!-- Kvål -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-9" version="2019-11-13-122500" order="9">
+                  <RoutePointRef ref="SJN:RoutePoint:LER"/>
+                  <!-- Ler -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-10" version="2019-11-13-122500" order="10">
+                  <RoutePointRef ref="SJN:RoutePoint:LMO"/>
+                  <!-- Lundamo -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-11" version="2019-11-13-122500" order="11">
+                  <RoutePointRef ref="SJN:RoutePoint:HOI"/>
+                  <!-- Hovin -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-12" version="2019-11-13-122500" order="12">
+                  <RoutePointRef ref="SJN:RoutePoint:STØ"/>
+                  <!-- Støren -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-13" version="2019-11-13-122500" order="13">
+                  <RoutePointRef ref="SJN:RoutePoint:RGN"/>
+                  <!-- Rognes -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-14" version="2019-11-13-122500" order="14">
+                  <RoutePointRef ref="SJN:RoutePoint:KOT"/>
+                  <!-- Kotsøy -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-15" version="2019-11-13-122500" order="15">
+                  <RoutePointRef ref="SJN:RoutePoint:SIN"/>
+                  <!-- Singsås -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-16" version="2019-11-13-122500" order="16">
+                  <RoutePointRef ref="SJN:RoutePoint:LLE"/>
+                  <!-- Langlete -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-17" version="2019-11-13-122500" order="17">
+                  <RoutePointRef ref="SJN:RoutePoint:HDE"/>
+                  <!-- Haltdalen -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-18" version="2019-11-13-122500" order="18">
+                  <RoutePointRef ref="SJN:RoutePoint:ÅLN"/>
+                  <!-- Ålen -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-19" version="2019-11-13-122500" order="19">
+                  <RoutePointRef ref="SJN:RoutePoint:REI"/>
+                  <!-- Reitan -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-20" version="2019-11-13-122500" order="20">
+                  <RoutePointRef ref="SJN:RoutePoint:GOS"/>
+                  <!-- Glåmos -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-21" version="2019-11-13-122500" order="21">
+                  <RoutePointRef ref="SJN:RoutePoint:ROS"/>
+                  <!-- Røros -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-22" version="2019-11-13-122500" order="22">
+                  <RoutePointRef ref="SJN:RoutePoint:OS"/>
+                  <!-- Os -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-23" version="2019-11-13-122500" order="23">
+                  <RoutePointRef ref="SJN:RoutePoint:TOL"/>
+                  <!-- Tolga -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-24" version="2019-11-13-122500" order="24">
+                  <RoutePointRef ref="SJN:RoutePoint:TYN"/>
+                  <!-- Tynset -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-25" version="2019-11-13-122500" order="25">
+                  <RoutePointRef ref="SJN:RoutePoint:AUM"/>
+                  <!-- Auma -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-26" version="2019-11-13-122500" order="26">
+                  <RoutePointRef ref="SJN:RoutePoint:ALV"/>
+                  <!-- Alvdal -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-27" version="2019-11-13-122500" order="27">
+                  <RoutePointRef ref="SJN:RoutePoint:BMO"/>
+                  <!-- Bellingmo -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-28" version="2019-11-13-122500" order="28">
+                  <RoutePointRef ref="SJN:RoutePoint:HAN"/>
+                  <!-- Hanestad -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-29" version="2019-11-13-122500" order="29">
+                  <RoutePointRef ref="SJN:RoutePoint:ATN"/>
+                  <!-- Atna -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-30" version="2019-11-13-122500" order="30">
+                  <RoutePointRef ref="SJN:RoutePoint:KOP"/>
+                  <!-- Koppang -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-31" version="2019-11-13-122500" order="31">
+                  <RoutePointRef ref="SJN:RoutePoint:STA"/>
+                  <!-- Stai -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-32" version="2019-11-13-122500" order="32">
+                  <RoutePointRef ref="SJN:RoutePoint:EVE"/>
+                  <!-- Eventstad -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-33" version="2019-11-13-122500" order="33">
+                  <RoutePointRef ref="SJN:RoutePoint:OPH"/>
+                  <!-- Opphus -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-34" version="2019-11-13-122500" order="34">
+                  <RoutePointRef ref="SJN:RoutePoint:SNV"/>
+                  <!-- Steinvik -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-35" version="2019-11-13-122500" order="35">
+                  <RoutePointRef ref="SJN:RoutePoint:REN"/>
+                  <!-- Rena -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-36" version="2019-11-13-122500" order="36">
+                  <RoutePointRef ref="SJN:RoutePoint:ELV"/>
+                  <!-- Elverum -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-37" version="2019-11-13-122500" order="37">
+                  <RoutePointRef ref="SJN:RoutePoint:LØT"/>
+                  <!-- Løten -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-38" version="2019-11-13-122500" order="38">
+                  <RoutePointRef ref="SJN:RoutePoint:ILS"/>
+                  <!-- Ilseng -->
+                </PointOnRoute>
+                <PointOnRoute id="SJN:PointOnRoute:412-39" version="2019-11-13-122500" order="39">
+                  <RoutePointRef ref="SJN:RoutePoint:HMR"/>
+                  <!-- Hamar -->
+                </PointOnRoute>
+              </pointsInSequence>
+            </Route>
+          </routes>
+          
+          
+          
+          <!-- Test of General Section for use with TEN distancing -->
+          <generalSections>
+            <GeneralSection id="ENT:GeneralSection:1" version="1">
+              <Name>Genral section test</Name>
+              <pointsOnSection>
+                <PointOnSection id="ENT:PointOnSection:1" version="1" order="1">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-1" version="0"/>
+                </PointOnSection>
+                <PointOnLineSection id="ENT:PointOnLineSection:1" version="1">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-3" version="0"/>
+                </PointOnLineSection>
+              </pointsOnSection>
+              
+              <linksOnSection>
+                <LinkOnSection id="ENT:LinkOnSection:1" version="1" order="1">
+                  <RailwayLinkRef ref="ref"/>
+                </LinkOnSection>
+
+              </linksOnSection>
+            </GeneralSection>
+          </generalSections>
+          
+          
+          <lines>
+            <Line version="0" id="SJN:Line:25">
+              <Name>Trondheim S - Hamar</Name>
+              <TransportMode>rail</TransportMode>
+              <TransportSubmode>
+                <RailSubmode>regionalRail</RailSubmode>
+              </TransportSubmode>
+              <PublicCode>25</PublicCode>
+              <OperatorRef ref="SJN:Operator:1"/>
+              <RepresentedByGroupRef ref="SJN:Network:1"/>
+            </Line>
+          </lines>
+          
+          
+          <scheduledStopPoints>  
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TND-2" version="0"/>
+            <!-- Further stoppoints for Trondheim (TND), currently not in use: -->
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TND-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TND-3" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TND-4" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TND-5" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TND-6" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TND-21" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TND-22" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TND-23" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TND-30" version="0"/>
+            
+            <!-- Other ScheduledStopPoints for the current JourneyPatterns -->
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:SKS-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:SVN-7" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:SLB-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:HMD-2" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:MSK-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:KVÅ-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:LER-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:LMO-2" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:HOI-2" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:STØ-2" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:RGN-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:KOT-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:SIN-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:LLE-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:HDN-2" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:ÅLN-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:REI-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:GOS-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:ROS-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TOL-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:TYN-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:AUM-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:ALV-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:BMO-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:HAN-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:ATN-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:KOP-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:STA-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:EVE-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:OPH-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:SNV-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:REN-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:ELV-4" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:LØT-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:ILS-1" version="0"/>
+            <ScheduledStopPoint id="SJN:ScheduledStopPoint:HMR-2" version="0"/>
+          </scheduledStopPoints>
+          
+
+          <stopAssignments> 
+            <PassengerStopAssignment id="SJN:PassengerStopAssignment:TND-2" version="0" order="2">
+              <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-2" version="0"/>
+              <QuayRef ref="NSR:Quay:1079" version="0"/>
+            </PassengerStopAssignment>
+            <!-- Potential StopAssignments for Trondheim (TND), currently not in use -->
+            <!--
+            <PassengerStopAssignment id="SJN:PassengerStopAssignment:TND-1" version="0" order="1">
+              <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-1" version="0"/>
+              <QuayRef ref="NSR:Quay:1078" version="0"/>
+            </PassengerStopAssignment>
+            <PassengerStopAssignment id="SJN:PassengerStopAssignment:TND-3" version="0" order="3">
+              <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-3" version="0"/>
+              <QuayRef ref="NSR:Quay:1080" version="0"/>
+            </PassengerStopAssignment>
+            <PassengerStopAssignment id="SJN:PassengerStopAssignment:TND-4" version="0" order="4">
+              <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-4" version="0"/>
+              <QuayRef ref="NSR:Quay:1081" version="0"/>
+            </PassengerStopAssignment>
+            <PassengerStopAssignment id="SJN:PassengerStopAssignment:TND-5" version="0" order="5">
+              <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-5" version="0"/>
+              <QuayRef ref="NSR:Quay:1082" version="0"/>
+            </PassengerStopAssignment>
+            <PassengerStopAssignment id="SJN:PassengerStopAssignment:TND-6" version="0" order="6">
+              <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-6" version="0"/>
+              <QuayRef ref="NSR:Quay:1083" version="0"/>
+            </PassengerStopAssignment>
+            <PassengerStopAssignment id="SJN:PassengerStopAssignment:TND-21" version="0" order="21">
+              <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-21" version="0"/>
+              <QuayRef ref="NSR:Quay:100530" version="0"/>
+            </PassengerStopAssignment>
+            <PassengerStopAssignment id="SJN:PassengerStopAssignment:TND-22" version="0" order="22">
+              <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-22" version="0"/>
+              <QuayRef ref="NSR:Quay:100531" version="0"/>
+            </PassengerStopAssignment>
+            <PassengerStopAssignment id="SJN:PassengerStopAssignment:TND-23" version="0" order="23">
+              <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-23" version="0"/>
+              <QuayRef ref="NSR:Quay:100529" version="0"/>
+            </PassengerStopAssignment>
+            <PassengerStopAssignment id="SJN:PassengerStopAssignment:TND-30" version="0" order="30">
+              <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-30" version="0"/>
+              <QuayRef ref="NSR:Quay:99726" version="0"/>
+            </PassengerStopAssignment>
+            -->
+          </stopAssignments>
+          
+          
+          <journeyPatterns>
+            <JourneyPattern id="SJN:JourneyPattern:412-O" version="0">
+              <RouteRef ref="SJN:Route:412" version="2019-11-13-122500"/>
+              <pointsInSequence>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-1" version="0" order="1">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TND-2" version="0"/>
+                  <ForAlighting>false</ForAlighting>
+                  <DestinationDisplayRef ref="SJN:DestinationDisplay:HMR_V_ROS"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-2" version="0" order="2">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:SKS-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-3" version="0" order="3">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:SVN-7" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-4" version="0" order="4">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:SLB-1" version="0"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-5" version="0" order="5">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:HMD-2" version="0"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-6" version="0" order="6">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:MSK-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-7" version="0" order="7">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:KVÅ-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-8" version="0" order="8">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:LER-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-9" version="0" order="9">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:LMO-2" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-10" version="0" order="10">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:HOI-2" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-11" version="0" order="11">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:STØ-2" version="0"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-12" version="0" order="12">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:RGN-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-13" version="0" order="13">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:KOT-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-14" version="0" order="14">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:SIN-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-15" version="0" order="15">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:LLE-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-16" version="0" order="16">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:HDN-2" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-17" version="0" order="17">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:ÅLN-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-18" version="0" order="18">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:REI-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-19" version="0" order="19">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:GOS-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-704-20" version="0" order="20">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:ROS-1" version="0"/>
+                  <ForBoarding>false</ForBoarding>
+                </StopPointInJourneyPattern>
+              </pointsInSequence>
+            </JourneyPattern>
+            
+            <JourneyPattern id="SJN:JourneyPattern:1-489" version="0">
+              <RouteRef ref="SJN:Route:412" version="2019-11-13-122500"/>
+              <pointsInSequence>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-1" version="0" order="1">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:ROS-1" version="0"/>
+                  <ForAlighting>false</ForAlighting>
+                  <DestinationDisplayRef ref="SJN:DestinationDisplay:37"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-2" version="0" order="2">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:OS-1"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-3" version="0" order="3">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TOL-1" version="0"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-4" version="0" order="4">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:TYN-1" version="0"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-5" version="0" order="5">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:AUM-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-6" version="0" order="6">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:ALV-1" version="0"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-7" version="0" order="7">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:BMO-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-8" version="0" order="8">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:HAN-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-9" version="0" order="9">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:ATN-1" version="0"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-10" version="0" order="10">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:KOP-1" version="0"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-11" version="0" order="11">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:STA-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-12" version="0" order="12">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:EVE-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-13" version="0" order="13">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:OPH-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-14" version="0" order="14">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:SNV-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-15" version="0" order="15">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:REN-1" version="0"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-16" version="0" order="16">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:ELV-4" version="0"/>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-17" version="0" order="17">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:LØT-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-18" version="0" order="18">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:ILS-1" version="0"/>
+                  <RequestStop>true</RequestStop>
+                </StopPointInJourneyPattern>
+                <StopPointInJourneyPattern id="SJN:StopPointInJourneyPattern:1-489-19" version="0" order="19">
+                  <ScheduledStopPointRef ref="SJN:ScheduledStopPoint:HMR-2" version="0"/>
+                  <ForBoarding>false</ForBoarding>
+                </StopPointInJourneyPattern>
+              </pointsInSequence>
+            </JourneyPattern>
+          </journeyPatterns>
+ 
+        </ServiceFrame>
+        
+        
+        <ServiceCalendarFrame version="0" id="SJN:ServiceCalendarFrame:1">
+          <!-- placeholder -->
+        </ServiceCalendarFrame>
+        
+        <TimetableFrame version="0" id="SJN:TimetableFrame:1">
+          <!-- placeholder -->
+        </TimetableFrame>
+        
+      </frames>
+    </CompositeFrame>
+  </dataObjects>
+</PublicationDelivery>
