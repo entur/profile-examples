@@ -1,9 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <!--
-    Vehicle - Tram (Ruper Entur Varelager rolling stock
+    POC Vehicle - Tram (Ruter#)
     
-    (NB: Some per profile required elements are left out for simplified readability)
+    NB #1: Some per profile required elements are left out for simplified readability
+    
+    NB #2: For alignment with Material / Rolling Stock and vechicle scheduling (Blocks), 
+    vehicle type must be - due to current shortcomings in NeTEx - of Train datatype 
+    with TrainBlock scheduling type even when material is of other physical type
+    (e.g. TransportMode "tram")
+    
+    Meaning this example is only conceptual and must be further aligned with the Entur implementation!
 -->
 
 
@@ -143,7 +150,7 @@
 
 
                     <vehicleTypes>
-                        <VehicleType id="RUT:VehicleType:SL18" version="1">
+                        <Train id="RUT:Train:SL18" version="1">
                             <Name>Sporvogn Ledd bestilt i 2018</Name>
                             <Description>Produsert av CAF Urbos</Description>
                             <TypeOfFuel>electricity</TypeOfFuel>
@@ -160,9 +167,9 @@
                                 <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:2" version="1"/>
                                 <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:3" version="1"/>
                             </facilities>
-                        </VehicleType>
+                        </Train>
                         
-                        <VehicleType id="RUT:VehicleType:SL95" version="1">
+                        <Train id="RUT:Train:SL95" version="1">
                             <Name>Sporvogn Ledd bestilt i 1995</Name>
                             <Description>Produsert av Ansaldo/Firema</Description>
                             <TypeOfFuel>electricity</TypeOfFuel>
@@ -181,9 +188,9 @@
                                 <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:2" version="1"/>
                                 <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:3" version="1"/>
                             </facilities>
-                        </VehicleType>
+                        </Train>
                         
-                        <VehicleType id="RUT:VehicleType:SL79" version="1">
+                        <Train id="RUT:Train:SL79" version="1">
                             <Name>Sporvogn Ledd bestilt i 1979</Name>
                             <Description>Produsert av Duewag, Düsseldorf / Strømmens Værksted (på lisens)</Description>
                             <TypeOfFuel>electricity</TypeOfFuel>
@@ -201,7 +208,7 @@
                                 <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:1" version="1"/>
                                 <ServiceFacilitySetRef ref="RUT:ServiceFacilitySet:3" version="1"/>
                             </facilities>
-                        </VehicleType>
+                        </Train>
                     </vehicleTypes>
                     
 
@@ -209,7 +216,7 @@
                         <Vehicle id="RUT:Vehicle:SL18" version="1">
                             <Name>SL18</Name>
                             <OperatorRef ref="NOG:Operator:RUT"/> <!-- ext. -->
-                            <VehicleTypeRef ref="RUT:VehicleType:SL18" version="1"/>
+                            <TrainRef ref="RUT:Train:SL18" version="1"/>
                             <actualVehicleEquipments>
                                 <!-- EXAMPLE (not yet supported by profile -->
                                 <AccessVehicleEquipmentRef ref="RUT:AccessVehicleEquipment:1" version="1"/>
@@ -219,13 +226,13 @@
                         <Vehicle id="RUT:Vehicle:SL95" version="1">
                             <Name>SL95</Name>
                             <OperatorRef ref="NOG:Operator:RUT"/> <!-- ext. -->
-                            <VehicleTypeRef ref="RUT:VehicleType:SL95" version="1"/>
+                            <TrainRef ref="RUT:Train:SL95" version="1"/>
                         </Vehicle>
 
                         <Vehicle id="RUT:Vehicle:SL79" version="1">
                             <Name>SL79</Name>
                             <OperatorRef ref="NOG:Operator:RUT"/> <!-- ext. -->
-                            <VehicleTypeRef ref="RUT:VehicleType:SL79" version="1"/>
+                            <TrainRef ref="RUT:Train:SL79" version="1"/>
                         </Vehicle>
                     </vehicles>
                 </ResourceFrame>
@@ -320,7 +327,7 @@
                             </dayTypes>
                             
                             <JourneyPatternRef ref="RUT:JourneyPattern:1" version="1"/>
-                            <VehicleTypeRef ref="RUT:VehicleType:SL18" version="1"/>
+                            <TrainRef ref="RUT:Train:SL18" version="1"/>
                             <passingTimes>
                                 <TimetabledPassingTime id="RUT:TimetabledPassingTime:1" version="1">
                                     <DepartureTime>13:37:00</DepartureTime>
