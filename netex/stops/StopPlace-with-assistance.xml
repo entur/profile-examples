@@ -7,9 +7,9 @@
 <PublicationDelivery 
   xmlns="http://www.netex.org.uk/netex"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  version="1.11:NO-NeTEx-stops:1:14">
+  version="1.11:NO-NeTEx-stops:1:15">
 
-	<PublicationTimestamp>2020-11-25T09:11:00</PublicationTimestamp>
+	<PublicationTimestamp>2022-11-25T09:11:00</PublicationTimestamp>
 	<ParticipantRef>NSR</ParticipantRef>
 	
 	<dataObjects>
@@ -18,7 +18,7 @@
 
 				<StopPlace id="NSR:StopPlace:59872" version="3">
 					<ValidBetween>
-						<FromDate>2019-06-17T09:31:27</FromDate>
+						<FromDate>2022-06-17T09:31:27</FromDate>
 					</ValidBetween>
 					<Name lang="no">Oslo S</Name>
 					<Description lang="no">Parent StopPlace for area Oslo Sentralstasjon (all available transport modes)</Description>
@@ -43,7 +43,8 @@
 					<facilities>
 						<SiteFacilitySetRef ref="NSR:SiteFacilitySet:1" version="1"/>
 						<SiteFacilitySet id="NSR:SiteFacilitySet:2-embedded-copy" version="1">
-							<AssistanceFacilityList>personalAssistance boardingAssistance wheechairAssistance unaccompaniedMinorAssistance information</AssistanceFacilityList>
+							<!--AssistanceFacilityList>personalAssistance boardingAssistance wheechairAssistance unaccompaniedMinorAssistance information</AssistanceFacilityList-->
+						    <AssistanceFacilityList>boardingAssistance conductor</AssistanceFacilityList>
 						</SiteFacilitySet>
 					</facilities>
 					
@@ -70,19 +71,20 @@
 								<!-- felter listet i profil for booking av fleksibel transport -->
 								<BookingMethods>callOffice online</BookingMethods>
 								<BookWhen>advanceOnly</BookWhen>
-								<!-- <BuyWhen></BuyWhen> Neppe relevant -->
+								<!-- BuyWhen></BuyWhen -->  <!-- Neppe relevant -->
 								<LatestBookingTime>01:23:45</LatestBookingTime>
 								<MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
 								<BookingNote>Fritekst kan heller her enn i egen Notice</BookingNote>
 							</BookingArrangements>
 							<VehicleMode>all</VehicleMode> <!-- relevant? -->
-							<OperatorRef ref="ref"/> <!-- relevant med operator-spesifikk? -->
+							<OperatorRef ref="NOG:Operator:VYG"/> <!-- relevant med operator-spesifikk? -->
 							<!-- Fritekst-Notice (neppe relevant i denne omgang) -->
 							<noticeAssignments>
 								<NoticeAssignment id="NSR:NoticeAssignment:1" version="1" order="1">
 									<Notice id="NSR:Notice:1" version="1">
 										<Text>Fritekst</Text>
 									</Notice>
+								    <NoticedObjectRef ref="NSR:StopPlace:59872" version="3"/>
 								</NoticeAssignment>
 							</noticeAssignments>
 						</AssistanceBookingService>
@@ -155,7 +157,8 @@
 			
 			<siteFacilitySets>
 				<SiteFacilitySet id="NSR:SiteFacilitySet:1" version="1">
-					<AssistanceFacilityList>personalAssistance boardingAssistance wheechairAssistance unaccompaniedMinorAssistance information</AssistanceFacilityList>
+					<!--AssistanceFacilityList>personalAssistance boardingAssistance wheechairAssistance unaccompaniedMinorAssistance information</AssistanceFacilityList-->
+				    
 				</SiteFacilitySet>
 			</siteFacilitySets>
 			
