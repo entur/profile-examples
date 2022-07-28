@@ -4,23 +4,17 @@
   xmlns:acsb="http://www.ifopt.org.uk/acsb" 
   xmlns:ifopt="http://www.ifopt.org.uk/ifopt" 
   xmlns:datex2="http://datex2.eu/schema/2_0RC1/2_0"
-  version="2.0">
+  version="2.1">
     
     <ServiceDelivery>
     
         <ResponseTimestamp>2020-08-15T10:43:30.506+02:00</ResponseTimestamp>
         
-        
         <ProducerRef>CODESPACE</ProducerRef>
         
-        
-        
-        <EstimatedTimetableDelivery version="2.0">
+        <EstimatedTimetableDelivery version="2.1">
             
-            <ResponseTimestamp>2020-07-11T11:29:31</ResponseTimestamp>
-            
-            
-            
+            <ResponseTimestamp>2020-07-11T11:29:31</ResponseTimestamp>  
             
             <EstimatedJourneyVersionFrame>
                 <RecordedAtTime>2020-08-15T10:43:21.826+02:00</RecordedAtTime>
@@ -91,9 +85,7 @@
                         </Train>
                     </Trains>
                     
-                    
                 </EstimatedVehicleJourney>
-                
                 
             </EstimatedJourneyVersionFrame>
         </EstimatedTimetableDelivery>
