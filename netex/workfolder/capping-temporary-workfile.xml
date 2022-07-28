@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Simple capping / capping rule example
+    
+    TODO: Remove all unecessary objects!
+-->
+
+
+<PublicationDelivery 
+  xmlns="http://www.netex.org.uk/netex"
+  xmlns:gis="http://www.opengis.net/gml/3.2" 
+  xmlns:siri="http://www.siri.org.uk/siri"
+  version="1.14:NO-NeTEx-fares:0.9">
+    
+    <PublicationTimestamp>2022-10-23T11:30:00</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <dataObjects>
+        
+        
+        <!-- Non-compliant organisation data included only for readability of example -->
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+            <organisations>
+                <Authority id="ENT:Authority:1" version="1">
+                    <Name>Entur</Name>
+                    <ContactDetails>
+                        <Url>https://www.entur.org</Url>
+                    </ContactDetails>
+                    <OrganisationType>authority</OrganisationType>
+                </Authority>
+            </organisations>
+        </ResourceFrame>
+
+        
+
+        <SiteFrame id="ENT:SiteFrame:1" version="1">
+            <validityConditions>
+                <AvailabilityCondition id="ENT:AvailabilityCondition:2" version="1">
+                    <FromDate>2022-01-01T00:00:00</FromDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            <Description>https://ruter.no/en/buying-tickets/zones/</Description>
+            <tariffZones>
+                <TariffZone id="ENT:TariffZone:1" version="1">
+                    <Name lang="en">Tariff zone example</Name>
+                </TariffZone>
+            </tariffZones>
+        </SiteFrame>
+        
+        
+        <ServiceFrame id="ENT:ServiceFrame:1" version="1">
+            <!-- only included as NeTEx frame structure reference -->
+        </ServiceFrame>
+        
+        
+        <TimetableFrame id="ENT:TimetableFrame:1" version="1">
+            <!-- only included as NeTEx frame structure reference -->
+        </TimetableFrame>
+
+
+
+
+        <!-- Fare data based on Ruter# for greater Oslo region using replacement codespace "ENT" within this example -->
+
+        <FareFrame id="ENT:FareFrame:1" version="1">
+            <validityConditions>
+                <AvailabilityCondition id="ENT:AvailabilityCondition:1" version="1">
+                    <FromDate>2022-01-26T00:00:00</FromDate>
+                </AvailabilityCondition>
+            </validityConditions>
+            
+            <Description>https://ruter.no/en/buying-tickets/tickets-and-fares/</Description>
+            
+            
+            <PricingParameterSet id="ENT:PricingParameterSet:1" version="1">
+                
+                <pricingRules>
+                    <LimitingRule id="ENT:LimitingRule:MaxPerDayAdult" version="1">
+                        <MaximumLimitPrice>80</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="ENT:LimitingRule:MaxPer7DaysAdult" version="1">
+                        <MaximumLimitPrice>240</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="ENT:LimitingRule:MaxPer30DaysAdult" version="1">
+                        <MaximumLimitPrice>740</MaximumLimitPrice>
+                    </LimitingRule>
+                    <LimitingRule id="ENT:LimitingRule:MaxPer180DaysAdult" version="1">
+                        <MaximumLimitPrice>3700</MaximumLimitPrice>
+                    </LimitingRule>
+                </pricingRules>
+                
+                
+                <pricingServices>
+                    <PricingService id="ENT:PricingService:PoP" version="1">
+                        <Name>PoP (Pris og Produkt)</Name>
+                        <OrganisationRef ref="ENT:Authority:1" version="1"/>
+                        <Url>https://pop.entur.org/</Url>
+                    </PricingService>
+                </pricingServices>
+
+            </PricingParameterSet>
+            
+            
+            
+            <timeIntervals>
+                <TimeInterval id="ENT:TimeInterval:60min" version="1">
+                    <Description>Duration for single zone ticket</Description>
+                    <Duration>PT1H</Duration>
+                </TimeInterval>
+                <TimeInterval id="ENT:TimeInterval:90min" version="1">
+                    <Description>Duration for dual zone ticket</Description>
+                    <Duration>PT1H30M</Duration>
+                </TimeInterval>
+            </timeIntervals>
+            
+            
+            
+            <fareStructureElements>
+                
+                <!-- RECOMMENDATION: -->
+                <!-- Either as separate GenericParamaterAssignment(s) -->
+                <FareStructureElement id="ENT:FareStructureElement:1" version="1">
+                    <TariffBasis>discount</TariffBasis>
+                    <fareStructureElementsInSequence>
+                        <FareStructureElementInSequence></FareStructureElementInSequence>
+                    </fareStructureElementsInSequence>                    
+                    <validityParameterAssignments>
+                        <GenericParameterAssignment id="ENT:GenericParameterAssignment:1" version="1" order="0">
+                            <limitations>
+                                <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1" version="1"/>
+                            </limitations>
+                            <validityParameters>
+                                <AuthorityRef ref="ENT:Authority:1" version="1"/>
+                                <TariffZoneRef ref="ENT:TariffZone:1" version="1"/>
+                            </validityParameters>
+                            <TimeIntervalRef ref="ENT:TimeInterval:60min" version="1"/>
+                            <QualityStructureFactorRef ref="ref"/>
+                        </GenericParameterAssignment>
+                    </validityParameterAssignments>
+                    <prices>
+                        <FareStructureElementPrice id="ENT:FareStructureElementPrice:1" version="1">
+                            <Name>FareStructureElementPrice</Name>
+                        </FareStructureElementPrice>
+                    </prices>
+                </FareStructureElement>
+                
+                
+                <!-- completed sample -->
+                <FareStructureElement id="ENT:FareStructureElement:2" version="1">
+                    <GenericParameterAssignment id="ENT:GenericParameterAssignment:3" version="1" order="0">
+                        <LimitationGroupingType>AND</LimitationGroupingType>
+                        <LimitationSetSelectionType>oneOfAnyOneSet</LimitationSetSelectionType>
+                        <limitations>
+                            <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1" version="1"/>
+                        </limitations>
+                        <ValidityParameterAssignmentType>EQ</ValidityParameterAssignmentType>
+                        <ValidityParameterGroupingType>AND</ValidityParameterGroupingType>
+                        <ValidityParameterSetSelectionType>allOfAllSets</ValidityParameterSetSelectionType>
+                        
+                        <temporalValidityParameters>
+                            <OperatingDayRef ref="ENT:OperatingDay:externalref"/>
+                        </temporalValidityParameters>
+                        
+                        <validityParameters>
+                            <AuthorityRef ref="ENT:Authority:1" version="1"/>
+                            <TariffZoneRef ref="ENT:TariffZone:1" version="1"/>
+                        </validityParameters>
+                        
+                        <TimeIntervalRef ref="ENT:TimeInterval:90min" version="1"/>
+                        <IncludesGroupingType>AND</IncludesGroupingType>
+                        <includes>
+                            <GenericParameterAssignmentInContext>
+                                <FareQuotaFactorRef ref="external"></FareQuotaFactorRef>
+                            </GenericParameterAssignmentInContext>
+                        </includes>
+                    </GenericParameterAssignment>
+                </FareStructureElement>
+            </fareStructureElements>
+            
+            
+            
+            <validableElements>
+                
+                <ValidableElement id="ENT:ValidableElement:SingleTrip" version="1">
+                    <Name>Single trip within one zone</Name>
+                    <fareStructureElements>
+                        <FareStructureElementRef ref="ENT:FareStructureElement:1" version="1"/>
+                    </fareStructureElements>
+                </ValidableElement>
+                
+                <ValidableElement id="ENT:ValidableElement:1" version="1">
+                    <Name>Multiple trips within one zone</Name>
+                    <fareStructureElements>
+                        <FareStructureElementRef ref="ENT:FareStructureElement:1" version="1"/>
+                    </fareStructureElements>
+                </ValidableElement>
+                <ValidableElement id="ENT:ValidableElement:2" version="1">
+                    <Name> two zones</Name>
+                    <fareStructureElements>
+                        <FareStructureElementRef ref="ENT:FareStructureElement:2" version="1"/>
+                    </fareStructureElements>
+                </ValidableElement>
+            </validableElements>
+
+            
+            <usageParameters>
+                <UserProfile id="ENT:UserProfile:Adult" version="1">
+                    <Name lang="no">Normal</Name>
+                    <Description>Adult, Student, Youth</Description>
+                    <UserType>anyone</UserType>
+                    <DiscountBasis>none</DiscountBasis>
+                </UserProfile>
+ 
+                <UsageValidityPeriod id="ENT:UsageValidityPeriod:24Hours" version="1">
+                    <Name>UsageValidityPeriod</Name>
+                </UsageValidityPeriod>
+                
+                <FrequencyOfUse id="ENT:FrequencyOfUse:1" version="1">
+                    <Name>FrequencyOfUse</Name>
+                </FrequencyOfUse>
+ 
+            </usageParameters>
+            
+            
+            
+            <fareProducts>
+                <PreassignedFareProduct id="ENT:PreassignedFareProduct:24Timers" version="1">
+                    <Name lang="en">Single trip valid within one zone</Name>
+                    <FareProductRef ref=""></FareProductRef> <!-- FAIL (kun en referanse tillatt) -->
+                    <!--SaleDiscountRightRef ref="ENT:SaleDiscountRight:1" version="1"/ -->
+                    <!-- SupplementProductRef ref="ENT:SupplementProduct:1" version="1"/ -->
+                    <accessRightsInProduct>
+                        <AccessRightInProduct id="BS" version="1" order="1">
+                            <ValidableElementRef ref="test"/>
+                            <SupplementProductRef ref="ref"/> <!-- preferably not referenced from here -->
+                        </AccessRightInProduct>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+                
+                <PreassignedFareProduct id="ENT:PreassignedFareProduct:7DayTicket" version="1">
+                    <Name lang="en">Single trip valid within one zone</Name>
+                    <accessRightsInProduct>
+                        <AccessRightInProductRef ref="ENT:ValidableElement:1" version="1"/>
+                    </accessRightsInProduct>
+                    <!--prices>
+                        <FareProductPrice></FareProductPrice>
+                    </prices-->
+                </PreassignedFareProduct>
+
+                
+                
+                <!--
+                    ### CAPPING ###
+                -->
+                
+                <CappedDiscountRight id="ENT:CappedDiscountRight:1" version="1">
+                    <Name lang="nob">Bestepris Vestfold</Name>
+                    <!-- The Capped discount right that is included/added to the account when a 
+                        new capping scheme is started(?) -->
+                    
+                    <cappingRules>
+                        
+                        <!-- How to describe?
+                            1) Capping based on amount
+                            2) Capping based on number of purchases of (one or more) specific PreassignedFareProducts 
+                        -->
+                        
+                        <CappingRule id="ENT:CappingRule:1" version="1">
+                            <Name>Makspris pr 24 timer</Name>
+                            <!-- Limit on how much money to spend in this rule before moving to next (?) -->
+                            <LimitingRuleRef ref="ENT:LimitingRule:MaxPerDayAdult" version="1"/>
+                            <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            
+                            <CappingPeriod>day</CappingPeriod>
+                            
+                            <!-- Is this the product that has a cap on cost ?-->
+                            <!-- PREASSIGNED FARE PRODUCT whose prices set cap for this product.-->
+                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:24Timers" version="1"/>
+                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment order="1" id="ENT:GenericParameterAssignment:11" version="1">
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:24Hours" version="1"/>
+                                        <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </CappingRule>
+                        <CappingRule id="ENT:CappingRule:2" version="1">
+                            <Name>Makspris pr 7 dager</Name>
+                            <!-- Limit on how much money to spend in this rule before moving to next (?) -->
+                            <LimitingRuleRef ref="ENT:LimitingRule:MaxPer7DaysAdult" version="1"/>
+                            <!-- Cap per day, how is this linked to the UsageValidityPeriod in the validityParameter->GPA->Limitation below? -->
+                            <CappingPeriod>week</CappingPeriod>
+                            <!-- Is this the product that has a cap on cost -->
+                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:7DayTicket" version="1"/>
+                            <ValidableElementRef ref="ENT:ValidableElement:SingleTrip" version="1"/>
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment order="1" id="ENT:GenericParameterAssignment:12" version="1">
+                                    <CappedDiscountRightRef ref=""></CappedDiscountRightRef>
+                                    <limitations>
+                                        <UsageValidityPeriodRef ref="ENT:UsageValidityPeriod:24Hours" version="1"/>
+                                        <UserProfileRef ref="ENT:UserProfile:Adult" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </CappingRule>
+                    </cappingRules>
+                    
+                    
+                </CappedDiscountRight>
+                
+            </fareProducts>
+
+            
+            
+            <salesOfferPackages>
+                <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip1Zone" version="1">              
+                    <Name lang="en">Single trip within one zone</Name>
+                    <prices>
+                        <SalesOfferPackagePriceRef ref="ref"/>
+                    </prices>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip1Zone" version="1" order="1">
+                            <Name lang="en">Single trip valid within one fare zone valid for one hour</Name>
+                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:24Timers" version="1"/>
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment id="ENT:GenericParameterAssignment:10" version="1" order="0">
+                                    <limitations>
+                                        <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+                <SalesOfferPackage id="ENT:SalesOfferPackageElement:SingleTrip2Zones" version="1">
+                    <Name lang="en">Single trip valid within two zones</Name>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip2Zones" version="1" order="1">
+                            <Name lang="en">Single trip valid within two fare zones valid for one and a halv hours</Name>
+                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:7DayTicket" version="1"/>
+                            <validityParameterAssignments>
+                                <GenericParameterAssignment id="ENT:GenericParameterAssignment:111" version="1" order="0">
+                                    <limitations>
+                                        <FrequencyOfUseRef ref="ENT:FrequencyOfUse:1" version="1"/>
+                                    </limitations>
+                                </GenericParameterAssignment>
+                            </validityParameterAssignments>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+            
+            
+            <groupsOfSalesOfferPackages>
+                <GroupOfSalesOfferPackages id="ENT:GroupOfSalesOfferPackages:1" version="1">
+                    <Name>GroupOfSalesOfferPackages</Name>
+                </GroupOfSalesOfferPackages>
+            </groupsOfSalesOfferPackages>
+            
+            <distributionAssignments>
+                <DistributionAssignment id="ENT:DistributionAssignment:1" version="1" order="1">
+                    <Name>test</Name>
+                    <DistributionChannelType>mobileDevice</DistributionChannelType>
+                    <AllowedInChannel>false</AllowedInChannel>
+                </DistributionAssignment>
+            </distributionAssignments>
+        </FareFrame>
+
+    </dataObjects>
+</PublicationDelivery>
