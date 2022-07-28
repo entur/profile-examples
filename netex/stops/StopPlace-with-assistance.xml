@@ -9,11 +9,12 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   version="1.11:NO-NeTEx-stops:1:15">
 
-	<PublicationTimestamp>2022-11-25T09:11:00</PublicationTimestamp>
+    <PublicationTimestamp>2022-06-17T09:11:00</PublicationTimestamp>
 	<ParticipantRef>NSR</ParticipantRef>
 	
 	<dataObjects>
 		<SiteFrame version="1" id="NSR:SiteFrame:1">
+		    
 			<stopPlaces>
 
 				<StopPlace id="NSR:StopPlace:59872" version="3">
@@ -38,22 +39,61 @@
 							<Name lang="eng">Oslo Central Station</Name>
 						</AlternativeName>
 					</alternativeNames>
+				    
+				    <!-- 
+				        ##################
+				        === ASSISTANCE ===
+				        ##################
+				    -->
 					
-					<!-- General listing of available AssistanceFacilities (see bottom of XML for reusable set) -->
+					<!-- 
+					    ALTERNATIVE A) General listing of AssistanceFacilityList within an available SiteFacilitiySet
+					    
+					    (see bottom of XML for reusable set of AssitanceFacilityList) 
+					-->
 					<facilities>
-						<SiteFacilitySetRef ref="NSR:SiteFacilitySet:1" version="1"/>
-						<SiteFacilitySet id="NSR:SiteFacilitySet:2-embedded-copy" version="1">
-							<!--AssistanceFacilityList>personalAssistance boardingAssistance wheechairAssistance unaccompaniedMinorAssistance information</AssistanceFacilityList-->
-						    <AssistanceFacilityList>boardingAssistance conductor</AssistanceFacilityList>
-						</SiteFacilitySet>
+					    
+					    <!-- Alternative 1: Embeding the dataset -->
+					    <SiteFacilitySet id="NSR:SiteFacilitySet:1" version="1">
+					        <AssistanceFacilityList>information wheelchairUse</AssistanceFacilityList>
+					    </SiteFacilitySet>
+					    
+					    <!-- Alternative 2: Referencing a SiteFacilitySet defined outside of this context -->
+					    <SiteFacilitySetRef ref="NSR:SiteFacilitySet:10" version="1"/>
+
 					</facilities>
 					
 					<TopographicPlaceRef ref="KVE:TopographicPlace:0301"/>
 					
 					<!-- Available (bookable) assistance service -->
 					<localServices>
+					    <AssistanceService id="NSR:AssistanceService:1" version="1">
+					        
+					        <!--
+					            ALTERNATIVE B) Specific listing as an AssistanceService
+					        -->
+					        <AssistanceFacilityList>information wheelchairUse</AssistanceFacilityList>
+					        <AssistanceAvailability>availableAtCertainTimes</AssistanceAvailability>
+					        <Staffing>partTime</Staffing>
+					        <AccessibilityToolList>wheelchair buggy</AccessibilityToolList>
+					        
+					    </AssistanceService>
+					    
+					    
 						<AssistanceBookingService id="NSR:AssistanceBookingService:1" version="1">
-							<OutOfService>false</OutOfService> <!-- unnecessary? -->
+						    <validityConditions>
+						        <!-- If only available within specific timebands (e.g. opening hours) -->
+						        <!-- Can also specify FromDate/ToDate incl. ValidDayBits, dayTypes or any other relevant construction -->
+						        <AvailabilityCondition id="ENT:AvailabilityCondition:1" version="1">    
+						            <timebands>
+						                <Timeband id="ENT:Timeband:1" version="1">
+						                    <StartTime>09:00:00</StartTime>
+						                    <EndTime>16:00:00</EndTime>
+						                </Timeband>
+						            </timebands>
+						        </AvailabilityCondition>
+						    </validityConditions>
+						    
 							<AssistanceAvailability>availableIfBooked</AssistanceAvailability>
 							<WheelchairBookingRequired>true</WheelchairBookingRequired> <!-- redundant -->
 							<!-- alle felter i BookingContact er gyldige iht profil -->
@@ -66,7 +106,8 @@
 							</BookingContact>
 							<BookingArrangements>
 								<BookingContact>
-									<!-- TROLIG MER RIKTIG Å LEGGE DEN HER DERSOM MAN _ALLTID_ SKAL KREVE BOOKING-->
+									<!-- ALTERNATIVT LEGGE BookingContact information  HER DERSOM DET _ALLTID_ ER PÅKREVET (også for andre typer services) -->
+								    <ContactPerson>...</ContactPerson>
 								</BookingContact>
 								<!-- felter listet i profil for booking av fleksibel transport -->
 								<BookingMethods>callOffice online</BookingMethods>
@@ -76,8 +117,11 @@
 								<MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
 								<BookingNote>Fritekst kan heller her enn i egen Notice</BookingNote>
 							</BookingArrangements>
-							<VehicleMode>all</VehicleMode> <!-- relevant? -->
-							<OperatorRef ref="NOG:Operator:VYG"/> <!-- relevant med operator-spesifikk? -->
+						    
+							<VehicleMode>all</VehicleMode>
+						    <OperatorRef ref="NOG:Operator:VYG"/>
+						    <LineRef ref="ENT:Line:1"/>
+						    
 							<!-- Fritekst-Notice (neppe relevant i denne omgang) -->
 							<noticeAssignments>
 								<NoticeAssignment id="NSR:NoticeAssignment:1" version="1" order="1">
@@ -89,6 +133,12 @@
 							</noticeAssignments>
 						</AssistanceBookingService>
 					</localServices>
+				    
+				    
+				    <!-- 
+				        ##################
+				    -->
+					
 					
 					<tariffZones>
 						<TariffZoneRef ref="HED:TariffZone:2100"/>
@@ -148,18 +198,60 @@
 					<TransportMode>rail</TransportMode>
 					<StopPlaceType>railStation</StopPlaceType>
 					<Weighting>preferredInterchange</Weighting>
-					<!-- 
-					<quays>...</quays>
-					-->
+				    
+				    <quays>
+				        <Quay version="1" id="NSR:Quay:12345679">
+				            <Centroid>
+				                <Location>
+				                    <Longitude>59.9139819</Longitude>
+				                    <Latitude>10.8247039</Latitude>
+				                </Location>
+				            </Centroid>
+				            <Lighting>poorlyLit</Lighting>
+				            <facilities>
+				                <!-- either embedded -->
+				                <SiteFacilitySet id="NSR:SiteFacilitySet:3" version="1">
+				                    <AssistanceFacilityList>conductor boardingAssistance</AssistanceFacilityList>
+				                </SiteFacilitySet>
+				            </facilities>
+				            <PublicCode>Southbound</PublicCode>
+				            <CompassBearing>200</CompassBearing>
+				        </Quay>
+				        
+				        <Quay version="1" id="NSR:Quay:12345670">
+				            <Centroid>
+				                <Location>
+				                    <Longitude>59.9138612</Longitude>
+				                    <Latitude>10.8244793</Latitude>
+				                </Location>
+				            </Centroid>
+				            <Lighting>wellLit</Lighting>
+				            <facilities>
+				                <!-- or referenced -->
+				                <SiteFacilitySetRef ref="NSR:SiteFacilitySet:11" version="1"/>
+				            </facilities>
+				            <PublicCode>Northbound</PublicCode>
+				            <CompassBearing>020</CompassBearing>
+				        </Quay>
+				    </quays>
 				</StopPlace>
 
 			</stopPlaces>
-			
+		    
+		    
+		    
 			<siteFacilitySets>
-				<SiteFacilitySet id="NSR:SiteFacilitySet:1" version="1">
-					<!--AssistanceFacilityList>personalAssistance boardingAssistance wheechairAssistance unaccompaniedMinorAssistance information</AssistanceFacilityList-->
-				    
+			    
+			    <!-- AssistanceFacilityList for the entire StopPlace (see referencing in the <facilities> dataset above) -->
+				<SiteFacilitySet id="NSR:SiteFacilitySet:10" version="1">
+				    <AssistanceFacilityList>unaccompaniedMinorAssistance personalAssistance</AssistanceFacilityList>
 				</SiteFacilitySet>
+			    
+			    <!-- AssistanceFacilityList for e.g. a specific Quay (see referencing in the <facilities> dataset above) -->
+			    <SiteFacilitySet id="NSR:SiteFacilitySet:11" version="1">
+			        <AssistanceFacilityList>conductor boardingAssistance</AssistanceFacilityList>
+			    </SiteFacilitySet>
+			    
 			</siteFacilitySets>
 			
 		</SiteFrame>
