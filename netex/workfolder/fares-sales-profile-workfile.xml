@@ -141,62 +141,176 @@
                         <ResponsibilityRoleAssignment id="ENT:ResponsibilityRoleAssignment:1" version="1">
                             <DataRoleType>owns</DataRoleType>
                             <StakeholderRoleType>FareManagement</StakeholderRoleType>
+                            <TypeOfResponsibilityRoleRef ref=""></TypeOfResponsibilityRoleRef>
                         </ResponsibilityRoleAssignment>
                     </roles>
                 </ResponsibilitySet>
             </responsibilitySets>
             
+            
             <typesOfValue>
+                
+                <!-- 
+                    See definition sett for ID ticketing: 
+                    
+                    https://github.com/entur/abt-referencedata/blob/develop/src/test/resources/static_reference_data/type_of_values.xml
+                -->
+                
+                <!-- Account Based Ticketing related CustomerAccount and FareContract type definitions -->
+                <TypeOfCustomerAccount id="ENT:TypeOfCustomerAccount:Ordinary" version="1">
+                    <Name lang="eng">Ordinary</Name>
+                    <Description lang="eng">Ordinary account based ticketing account</Description>
+                </TypeOfCustomerAccount>
+                <TypeOfCustomerAccount id="ENT:TypeOfCustomerAccount:PhysicalMediaAuditAccount" version="1">
+                    <Name lang="eng">Physical media inspection audit account</Name>
+                    <Description lang="eng">Audit account for storing results from inspection of tickets on physical media. Read only after creation.</Description>
+                </TypeOfCustomerAccount>
+                <TypeOfFareContract id="ENT:TypeOfFareContract:Ordinary" version="1">
+                    <Name lang="eng">Ordinary</Name>
+                    <Description lang="eng">Ordinary fare contract for account based ticketing</Description>
+                </TypeOfFareContract>
+                <TypeOfFareContract id="ENT:TypeOfFareContract:OrdinaryV2" version="1">
+                    <Name lang="eng">Ordinary</Name>
+                    <Description lang="eng">Ordinary fare contract for account based ticketing. Version 2 with new consumption modelling</Description>
+                </TypeOfFareContract>
+                <TypeOfFareContract id="ENT:TypeOfFareContract:PhysicalMediaAuditFareContract" version="1">
+                    <Name lang="eng">Physical media inspection audit fare contract</Name>
+                    <Description lang="eng">Audit copy of access rights stored on physical media. Will be created as a read only fare contract on a PhysicalMediaAuditAccount</Description>
+                </TypeOfFareContract>
+                <TypeOfFareContract id="ENT:TypeOfFareContract:PhysicalMediaAuditFareContractV2" version="1">
+                    <Name lang="eng">Physical media inspection audit fare contract</Name>
+                    <Description lang="eng">Audit copy of access rights stored on physical media. Will be created as a read only fare contract on a PhysicalMediaAuditAccount. Version 2 with new consumption modelling</Description>
+                </TypeOfFareContract>
+                
+                <!-- Transition from MarkedAs=unused to MarkedAs=activated -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
+                    <Name lang="eng">ActivationPolicyAssignment</Name>
+                    <Description lang="eng">Rule describing how and when to *activate* a validable element, generates CPPElementAccess with MarkedAs=activated (must be used with a corresponding ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAssignment" version="1">
+                    <Name lang="eng">ActivationAssignment</Name>
+                    <Description lang="eng">Rule describing limitations and parameters applicable when the validable element is activated (but not consumed)</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Transition from MarkedAs=activated to MarkedAs=used -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment" version="1">
+                    <Name lang="eng">UsagePolicyAssignment</Name>
+                    <Description lang="eng">Rule describing how to *consume* a validable element, generates CPPElementAccess with MarkedAs=used (the prerequisite is that the validable element is already MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsageAssignment" version="1">
+                    <Name lang="eng">UsageAssignment</Name>
+                    <Description lang="eng">Rule describing limitations and parameters applicable when the ValidableElement is used, i.e. the acquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
+                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage is not required -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
+                    <Name lang="eng">ActivationAndUsagePolicyAssignment</Name>
+                    <Description lang="eng">Rule describing how to both *activate* and *consume* in the same operation, generates CPPElementAccess with MarkedAs=used directly (omits MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
+                    <Name lang="eng">ActivationAndUsageAssignment</Name>
+                    <Description lang="eng">Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the aquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
+                    <Name lang="eng">RevalidationPolicyAssignment</Name>
+                    <Description lang="eng">Rule describing how and when to re-validate a validable element, generates CPPElementAccess with MarkedAs=marked</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Subrules to the various xxxPolicyAssignment -->
+                
+                <!-- Various specification requirements policies - depending on the type of element that must be provided -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment" version="1">
+                    <Name lang="eng">SpecificationServiceJourneyPolicyAssignment</Name>
+                    <Description lang="eng">Rule describing that a ServiceJourney must be specified during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationSeatPolicyAssignment" version="1">
+                    <Name lang="eng">SpecificationSeatPolicyAssignment</Name>
+                    <Description lang="eng">Rule describing that a PassengerSeat must be specified during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationTariffZonePolicyAssignment" version="1">
+                    <Name lang="eng">SpecificationTariffZonePolicyAssignment</Name>
+                    <Description lang="eng">Rule describing that a TariffZone must be specified during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationStartTimePolicyAssignment" version="1">
+                    <Name lang="eng">SpecificationStartTimePolicyAssignment</Name>
+                    <Description lang="eng">Rule describing that a StartTime must be specified during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1">
+                    <Name lang="eng">ExecutionTimePolicyAssignment</Name>
+                    <Description lang="eng">
+                        Rule describing when a usage validity period may be activated or consumed, used as a subrule to
+                        ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment,
+                        ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment and ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment
+                    </Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Common assignments for a CustomerPurchasePackageElement. ValidableElementRef, ProductRef, ++ -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:CommonAssignment" version="1">
+                    <Name lang="eng">CommonAssignment</Name>
+                    <Description lang="eng">Assignment describing common parameters applicable to all xxxPolicyAssignment and xxxAssignment</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Recording of place activation/consumption/marking happened. Recorded on CPPElementAccess/validityParameters -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
+                    <Name lang="eng">AccessLogDetails</Name>
+                    <Description lang="eng">CPPAccess with information about an activation / consumption / re-validation</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Result of specification requirements -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1">
+                    <Name lang="eng">SpecificationAssignment</Name>
+                    <Description lang="eng">Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
+                </TypeOfAccessRightAssignment>
+                <!-- Type of responsibility role for conductor -->
+                <TypeOfResponsibilityRole id="ENT:TypeOfResponsibilityRole:Conductor" version="1">
+                    <Name lang="eng">Conductor</Name>
+                    <Description lang="eng">
+                        Type of responsibility role for conductor
+                    </Description>
+                </TypeOfResponsibilityRole>
+                <!-- Type of responsibility role for customer service -->
+                <TypeOfResponsibilityRole id="ENT:TypeOfResponsibilityRole:CustomerService" version="1">
+                    <Name lang="eng">CustomerService</Name>
+                    <Description lang="eng">
+                        Type of responsibility role for customer service
+                    </Description>
+                </TypeOfResponsibilityRole>
+                <!-- Type of responsibility role for self service -->
+                <TypeOfResponsibilityRole id="ENT:TypeOfResponsibilityRole:SelfService" version="1">
+                    <Name lang="eng">SelfService</Name>
+                    <Description lang="eng">
+                        Type of responsibility role for self service
+                    </Description>
+                </TypeOfResponsibilityRole>
+                
+                
+                <!-- OTHER value types -->
+                
                 <Branding id="ENT:Branding:1" version="1">
                     <Name>Branding</Name>
                 </Branding>
                 
-                <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:ExceptionFromVAT" version="1">
-                    <Name>ExceptionFromVAT</Name>
-                    <Description>Price exempt from VAT (currently 0%)</Description>
-                </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:LowVAT" version="1">
-                    <Name>LowVAT</Name>
-                    <Description>Price with low VAT as for e.g. public transport, entertainment (public broadcasting, cinemas, amusement parks, sports arrangements) and lodging (currently 6% until 2021-09-30, thereafter 12%)</Description>
-                </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:ReducedVAT" version="1">
-                    <Name>ReducedVAT</Name>
-                    <Description>Price with reduced VAT as calculated for 'Næringsmidler' such as food items (currently 15%)</Description>
-                </TypeOfAccessRightAssignment>
-                <TypeOfAccessRightAssignment id="ENT:TypeOfFareProduct:RegularVAT" version="1">
-                    <Name>RegularVAT</Name>
-                    <Description>Price with regular VAT (currently 25%)</Description>
-                </TypeOfAccessRightAssignment>
-                
-                <TypeOfCustomerAccount id="ENT:TypeOfCustomerAccount:Ordinary" version="1">
-                    <Name>Ordinary</Name>
-                    <Description>Ordinary account based ticketing account</Description>
-                </TypeOfCustomerAccount>
-                
-                <TypeOfFareContract id="ENT:TypeOfFareContract:Ordinary" version="1">
-                    <Name>Ordinary</Name>
-                    <Description>Ordinary fare contract for account based ticketing</Description>
-                </TypeOfFareContract>
-                
-                <TypeOfResponsibilityRole id="ENT:TypeOfResponsibilityRole:Conductor" version="1">
-                    <Name>Conductor</Name>
-                    <Description>Type of responsibility role for conductor</Description>
-                </TypeOfResponsibilityRole>
-                
-                <TypeOfConcession id="dfsa" version="1">
-                    
+                <TypeOfConcession id="ENT:TypeOfConcession:1" version="1">
+                    <Name>Concession</Name>
                 </TypeOfConcession>
                 
-                
-                <!-- separate TypeOfValue -->
                 <ChargingMoment id="ENT:ChargingMoment:1" version="1">
                     <Name>Charge!!</Name>
                 </ChargingMoment>
-                <!-- or value in a ValueSet -->
+                
+                
+                <!-- can also be grouped as value in a ValueSet -->
                 <ValueSet id="ENT:ValueSet:1" version="1">
                     <values>
                         <ChargingMoment id="ENT:ChargingMoment:2" version="1">
                             <Name>Incrimitaion</Name>
+                        </ChargingMoment>
+                        <ChargingMoment id="ENT:ChargingMoment:3" version="1">
+                            <Name>Discharge</Name>
                         </ChargingMoment>
                     </values>
                 </ValueSet>
@@ -207,6 +321,7 @@
                 <GeneralOrganisation id="ENT:GeneralOrganisation:Entur" version="1">
                     <PublicCode>ENT</PublicCode>
                     <PrivateCode>ENT01</PrivateCode>
+                    <CompanyNumber>1234567</CompanyNumber>
                     <Name>Entur</Name>
                     <ContactDetails>
                         <Url>https://www.entur.org</Url>
@@ -215,6 +330,7 @@
                 </GeneralOrganisation>
                 <Operator id="ENT:Operator:1" version="1">
                     <PrivateCode>123</PrivateCode>
+                    <CompanyNumber>2345678</CompanyNumber>
                     <Name>Unibuss</Name>
                     <ContactDetails>
                         <Url>https://www.unibuss.no/</Url>
@@ -224,6 +340,7 @@
                 <Authority id="ENT:Authority:Ruter" version="1">
                     <PublicCode></PublicCode>
                     <PrivateCode>test</PrivateCode>
+                    <CompanyNumber>9876543</CompanyNumber>
                     <Name>Oslo</Name>
                     <ContactDetails>
                         <Url>https://www.ruter.no</Url>
@@ -231,6 +348,8 @@
                     <OrganisationType>authority</OrganisationType>
                 </Authority>
                 <Authority id="ENT:Operator:Unibuss" version="1">
+                    <PrivateCode>UNIB</PrivateCode>
+                    <CompanyNumber>5557777</CompanyNumber>
                     <Name>Unibuss</Name>
                     <ContactDetails>
                         <Url>https://www.unibuss.no/</Url>
