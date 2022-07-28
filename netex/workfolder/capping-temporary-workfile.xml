@@ -117,8 +117,6 @@
             
             <fareStructureElements>
                 
-                <!-- RECOMMENDATION: -->
-                <!-- Either as separate GenericParamaterAssignment(s) -->
                 <FareStructureElement id="ENT:FareStructureElement:1" version="1">
                     <TariffBasis>discount</TariffBasis>
                     <fareStructureElementsInSequence>
@@ -145,7 +143,6 @@
                 </FareStructureElement>
                 
                 
-                <!-- completed sample -->
                 <FareStructureElement id="ENT:FareStructureElement:2" version="1">
                     <GenericParameterAssignment id="ENT:GenericParameterAssignment:3" version="1" order="0">
                         <LimitationGroupingType>AND</LimitationGroupingType>
@@ -334,7 +331,8 @@
                         </SalesOfferPackageElement>
                     </salesOfferPackageElements>
                 </SalesOfferPackage>
-                <SalesOfferPackage id="ENT:SalesOfferPackageElement:SingleTrip2Zones" version="1">
+                
+                <SalesOfferPackage id="ENT:SalesOfferPackage:SingleTrip2Zones" version="1">
                     <Name lang="en">Single trip valid within two zones</Name>
                     <salesOfferPackageElements>
                         <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:SingleTrip2Zones" version="1" order="1">
@@ -356,12 +354,16 @@
             <groupsOfSalesOfferPackages>
                 <GroupOfSalesOfferPackages id="ENT:GroupOfSalesOfferPackages:1" version="1">
                     <Name>GroupOfSalesOfferPackages</Name>
+                    <members>
+                        <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip1Zone" version="1"/>
+                        <SalesOfferPackageRef ref="ENT:SalesOfferPackage:SingleTrip2Zones" version="1"/>
+                    </members>
                 </GroupOfSalesOfferPackages>
             </groupsOfSalesOfferPackages>
             
             <distributionAssignments>
                 <DistributionAssignment id="ENT:DistributionAssignment:1" version="1" order="1">
-                    <Name>test</Name>
+                    <Name>DistributionAssignment</Name>
                     <DistributionChannelType>mobileDevice</DistributionChannelType>
                     <AllowedInChannel>false</AllowedInChannel>
                 </DistributionAssignment>
