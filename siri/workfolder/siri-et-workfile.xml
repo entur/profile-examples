@@ -19,7 +19,7 @@
                 <RecordedAtTime>2020-08-15T10:43:21.826+02:00</RecordedAtTime>
                 <EstimatedVehicleJourney>
                     <LineRef>SKY:Line:985</LineRef>
-                    <DirectionRef>0</DirectionRef>
+                    <DirectionRef>SKY:Direction:Outbound-Klepp</DirectionRef>
 
                     <DatedVehicleJourneyRef>ref</DatedVehicleJourneyRef>
                     <!--FramedVehicleJourneyRef>

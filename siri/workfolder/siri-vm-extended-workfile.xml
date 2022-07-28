@@ -19,7 +19,7 @@
                 </ProgressBetweenStops>
                 <MonitoredVehicleJourney>
                     <LineRef>RUT:Line:1</LineRef>
-                    <DirectionRef>2</DirectionRef>
+                    <DirectionRef>RUT:Direction:Inbound-OsloCityCentre</DirectionRef>
                     <FramedVehicleJourneyRef>
                         <DataFrameRef>2020-08-07</DataFrameRef>
                         <DatedVehicleJourneyRef>placeholder</DatedVehicleJourneyRef>
