@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  ==== Simplified example stop with TopographicPlace and GroupOfStopPlace ======
+-->
+
+<PublicationDelivery
+  version="1.1:NO-NeTEx-stops:1.5" 
+  xmlns="http://www.netex.org.uk/netex"
+  xmlns:gml="http://www.opengis.net/gml/3.2" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <PublicationTimestamp>2022-07-28T12:34:56</PublicationTimestamp>
+    <ParticipantRef>NSR</ParticipantRef>
+    <dataObjects>
+        
+        <!-- Fristilt Zone - Merk at konstruksjon IKKE i henhold til NeTEx profil Norge -->
+        <GeneralFrame version="1" id="NSR:GeneralFrame:1">
+            <members>
+                <Zone version="1" id="NSR:Zone:1">
+                    <!-- merk at GML er eksternt definert datatype med andre tekniske krav til ID en NeTEx profil Norge -->
+                    <gml:Polygon gml:id="NSR-Zone-Polygon">
+                        <gml:exterior>
+                            <gml:LinearRing>
+                                <gml:pos srsDimension="2">3.14159265358971 3.14159265358972</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358973 3.14159265358974</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358975 3.14159265358976</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358977 3.14159265358978</gml:pos>
+                            </gml:LinearRing>
+                        </gml:exterior>
+                    </gml:Polygon>
+                </Zone>
+            </members>
+        </GeneralFrame>
+        
+        
+        <SiteFrame version="1" id="NSR:SiteFrame:1">
+            
+            <topographicPlaces>
+                <TopographicPlace id="NSR:TopographicPlace:1" version="1">
+                    <Name>Test</Name>
+                    <gml:Polygon gml:id="NSR-TopographicPlace-Polygon">
+                        <!-- merk at GML er eksternt definert datatype med andre tekniske krav til ID en NeTEx profil Norge -->
+                        <gml:exterior>
+                            <gml:LinearRing>
+                                <gml:pos srsDimension="2">3.14159265358971 3.14159265358972</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358973 3.14159265358974</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358975 3.14159265358976</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358977 3.14159265358978</gml:pos>
+                            </gml:LinearRing>
+                        </gml:exterior>
+                    </gml:Polygon>
+                    <IsoCode>ISO</IsoCode>
+                    <Descriptor>
+                        <Name>Demo TopographicPlace</Name>
+                        <Qualify>
+                            <QualifierName></QualifierName>
+                            <TopographicPlaceRef ref=""></TopographicPlaceRef>
+                        </Qualify>
+                    </Descriptor>
+                    <TopographicPlaceType>area</TopographicPlaceType>
+                </TopographicPlace>
+            </topographicPlaces>
+            
+            
+            <groupsOfStopPlaces>
+                <GroupOfStopPlaces version="1" id="NSR:GroupOfStopPlaces:1">
+                    <Name>Sample-group</Name>
+                    <Description>Description-text</Description>
+                    <PurposeOfGroupingRef ref="NSR:PurposeOfGrouping:generalization"/>
+                    <members>
+                        <StopPlaceRef ref="NSR:StopPlace:999"/>
+                        <StopPlaceRef ref="NSR:StopPlace:888"/>
+                        <StopPlaceRef ref="NSR:StopPlace:777"/>
+                    </members>
+                    <Centroid>
+                        <Location>
+                            <Longitude>3.14159265358975</Longitude>
+                            <Latitude>3.14159265358976</Latitude>
+                        </Location>
+                    </Centroid>
+                    <gml:Polygon gml:id="NSR-GroupOfStopPlace-Polygon">
+                        <!-- merk at GML er eksternt definert datatype med andre tekniske krav til ID en NeTEx profil Norge -->
+                        <gml:exterior>
+                            <gml:LinearRing>
+                                <gml:pos srsDimension="2">3.14159265358971 3.14159265358972</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358973 3.14159265358974</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358975 3.14159265358976</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358977 3.14159265358978</gml:pos>
+                            </gml:LinearRing>
+                        </gml:exterior>
+                    </gml:Polygon>
+                </GroupOfStopPlaces>
+            </groupsOfStopPlaces>
+            
+            
+            <stopPlaces>
+                <!-- ===Stop=== -->
+                <!-- Nasjonal ID fra stoppestedsregisteret -->
+                <StopPlace version="1" id="NSR:StopPlace:10000000">
+                    <Name>Sample-stop</Name>
+                    
+                    <!-- Eksempler på mulig konstruksjon av omriss, vil normalt ikke benyttes -->
+                    <gml:Polygon gml:id="NSR-StopPlace-Polygon">
+                        <!-- merk at GML er eksternt definert datatype med andre tekniske krav til ID en NeTEx profil Norge -->
+                        <gml:exterior>
+                            <gml:LinearRing>
+                                <gml:pos srsDimension="2">3.14159265358971 3.14159265358972</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358973 3.14159265358974</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358975 3.14159265358976</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358977 3.14159265358978</gml:pos>
+                            </gml:LinearRing>
+                        </gml:exterior>
+                        <!-- interior tas kun med hvis relevant -->
+                        <gml:interior>
+                            <gml:LinearRing>
+                                <gml:pos srsDimension="2">3.14159265358971 3.14159265358972</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358973 3.14159265358974</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358975 3.14159265358976</gml:pos>
+                                <gml:pos srsDimension="2">3.14159265358977 3.14159265358978</gml:pos>
+                            </gml:LinearRing>
+                        </gml:interior>
+                    </gml:Polygon>
+
+                    <TransportMode>bus</TransportMode>
+                    <StopPlaceType>busStation</StopPlaceType>
+
+                    <quays>
+                        <Quay id="NSR:Quay:1" version="1">
+                            <Centroid>
+                                <!-- WGS84 -->
+                                <Location srsName="WGS84">
+                                    <Longitude>11.034508</Longitude>
+                                    <Latitude>59.931081</Latitude>
+                                </Location>
+                            </Centroid>
+                            <PublicCode>2</PublicCode>
+                        </Quay>
+                    </quays>
+                </StopPlace>
+            </stopPlaces>
+
+        </SiteFrame>
+    </dataObjects>
+</PublicationDelivery>
