@@ -422,6 +422,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
 
                 <TrainElement version="1" id="NMR:TrainElement:1">
                     <PrivateCode>TG1</PrivateCode>
+                    <TrainElementType>carriage</TrainElementType>
                     <FareClasses>premiumClass standardClass</FareClasses>
                     
                     <!-- capasity per element-->
