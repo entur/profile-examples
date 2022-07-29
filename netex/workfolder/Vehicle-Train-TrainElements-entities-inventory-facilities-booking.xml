@@ -11,7 +11,7 @@ Vehicle(Type) and/or Train should be referenced from Journey:
   Vehicle/ServiceJourney -> either TrainRef or VehicleTypeRef
 
 
-  TEMPORARY COMMENT:
+  TEMPORARY COMMNSB:
      Should add VehicleRef, at lest in Dated[type]Journey
 
      Current implementation does not make much sence, as VehicleType disables the ability to link a (set of) journey(s) to an actual vehicle,
@@ -391,6 +391,9 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                 <Train id="NSB:Train:1" version="1">
                     <!-- placeholder -->
                 </Train>
+                <Train id="NSB:Train:2" version="1">
+                    <!-- placeholder -->
+                </Train>
                 
                 <VehicleType id="VehicleType:1" version="1">
                     <!-- placeholder -->
@@ -444,7 +447,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                             <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
                             <AccommodationFacilityList>seating</AccommodationFacilityList>
                             <accommodations>
-                                <Accommodation id="ENT:Accomodation:1" version="1">
+                                <Accommodation id="NSB:Accomodation:1" version="1">
                                   <BerthFacility>both</BerthFacility>
                                 </Accommodation>
                             </accommodations>
@@ -516,7 +519,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
 
 
             <groupsOfEntities>
-                <GeneralGroupOfEntities id="ENT:GeneralGroupOfEntities:1" version="1">
+                <GeneralGroupOfEntities id="NSB:GeneralGroupOfEntities:1" version="1">
                     <members>
                         <VersionOfObjectRef ref="test"/>
                     </members>
@@ -596,14 +599,14 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                     <routePoints>
                         <RoutePoint version="1" id="NSB:RoutePoint:1">
                             <projections>
-                                <PointProjection version="1" id="ENT:PointProjection:1">
+                                <PointProjection version="1" id="NSB:PointProjection:1">
                                     <ProjectToPointRef version="1" ref="NSR:ScheduledStopPoint:1"/>
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
                         <RoutePoint version="1" id="NSB:RoutePoint:2">
                             <projections>
-                                <PointProjection version="1" id="ENT:PointProjection:2">
+                                <PointProjection version="1" id="NSB:PointProjection:2">
                                     <ProjectToPointRef version="1" ref="NSR:ScheduledStopPoint:1"/>
                                 </PointProjection>
                             </projections>
@@ -611,7 +614,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                     </routePoints>
 
                     <routeLinks>
-                        <RouteLink version="1" id="ENT:RouteLink:1">
+                        <RouteLink version="1" id="NSB:RouteLink:1">
                             <Distance>100</Distance>
                             <FromPointRef ref="NSB:RoutePoint:1"/>
                             <ToPointRef ref="NSB:RoutePoint:2"/>
@@ -639,17 +642,17 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                             </pointsInSequence>
                         </Route>
 
-                        <Route version="1" id="ENT:Route:Demo">
+                        <Route version="1" id="NSB:Route:Demo">
                             <Name>Demo</Name>
                             <Description>description</Description>
                             <PrivateCode>privatecode</PrivateCode>
                             <LineRef ref="NSB:Line:41" version="1"/>
                             <DirectionType>outbound</DirectionType>
                             <pointsInSequence>
-                                <PointOnRoute version="1" id="ENT:PointOnRoute:1" order="1">
+                                <PointOnRoute version="1" id="NSB:PointOnRoute:1" order="1">
                                     <RoutePointRef version="1" ref="NSB:RoutePoint:1"/>
                                 </PointOnRoute>
-                                <PointOnRoute version="1" id="ENT:PointOnRoute:2" order="2">
+                                <PointOnRoute version="1" id="NSB:PointOnRoute:2" order="2">
                                     <RoutePointRef version="1" ref="NSB:RoutePoint:2"/>
                                 </PointOnRoute>
                             </pointsInSequence>
@@ -676,12 +679,12 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                     
                     
                     <stopAssignments>
-                        <PassengerStopAssignment version="1" id="ENT:PassengerStopAssignment:1" order="1">
+                        <PassengerStopAssignment version="1" id="NSB:PassengerStopAssignment:1" order="1">
                             <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
                             <StopPlaceRef version="1" ref="NSR:StopPlace:1"/>
                             <QuayRef version="1" ref="NSR:Quay:1"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment version="1" id="ENT:PassengerStopAssignment:2" order="2">
+                        <PassengerStopAssignment version="1" id="NSB:PassengerStopAssignment:2" order="2">
                             <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:2" version="1"/>
                             <StopPlaceRef version="1" ref="NSR:StopPlace:1"/>
                             <QuayRef version="1" ref="NSR:Quay:1"/>
@@ -689,14 +692,14 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
 
                         <!-- TrainComponentAssignment -->
                         <!-- 1) Assignment of specific TrainComponent -->
-                        <TrainStopAssignment id="ENT:TrainStopAssignment:1" version="1" order="1">
+                        <TrainStopAssignment id="NSB:TrainStopAssignment:1" version="1" order="1">
                             <BoardingUse>false</BoardingUse>
                             <AlightingUse>false</AlightingUse>
                             <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
                             <TrainComponentRef ref="NMR:TrainComponent:BMb74" version="1"/>
                         </TrainStopAssignment>
                         <!-- 2) Assignment of specific TrainComponent in specific Train -->
-                        <TrainStopAssignment id="ENT:TrainStopAssignment:2" version="1" order="2">
+                        <TrainStopAssignment id="NSB:TrainStopAssignment:2" version="1" order="2">
                             <BoardingUse>false</BoardingUse>
                             <AlightingUse>false</AlightingUse>
                             <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
@@ -704,14 +707,14 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                             <TrainComponentRef ref="NMR:TrainComponent:BMb74" version="1"/>
                         </TrainStopAssignment>
                         <!-- 3) Assignment of whole Train -->
-                        <TrainStopAssignment id="ENT:TrainStopAssignment:3" version="1" order="3">
+                        <TrainStopAssignment id="NSB:TrainStopAssignment:3" version="1" order="3">
                             <BoardingUse>false</BoardingUse>
                             <AlightingUse>false</AlightingUse>
                             <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
                             <TrainRef ref="NMR:Train:Flirt-1" version="1"/>
                         </TrainStopAssignment>
                         <!-- 4) Assignment of specific TrainInCompoundTrain (which in itself has the reference the Train/VehicleType) -->
-                        <TrainStopAssignment id="ENT:TrainStopAssignment:4" version="1" order="4">
+                        <TrainStopAssignment id="NSB:TrainStopAssignment:4" version="1" order="4">
                             <BoardingUse>false</BoardingUse>
                             <AlightingUse>false</AlightingUse>
                             <ScheduledStopPointRef ref="NSR:ScheduledStopPoint:1" version="1"/>
@@ -955,7 +958,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                                 </JourneyPart>
                             </parts>
                         </ServiceJourney>
-
+                        
                     </vehicleJourneys>
 
 
@@ -999,8 +1002,45 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                         </CoupledJourney>
                     </coupledJourneys>
 
-
                 </TimetableFrame>
+                
+                
+                
+                <VehicleScheduleFrame id="NSB:VehicleScheduleFrame:1" version="1">
+                    
+                    <blocks>
+                        <Block id="NSB:Block:1" version="1">
+                            <coursesOfJourneys>
+                                <CourseOfJourneys id="NSB:CourseOfJourneys:1" version="1">
+                                    <journeys>
+                                        <ServiceJourneyRef ref="NSB:ServiceJourney:1-test" version="1"/>
+                                    </journeys>
+                                </CourseOfJourneys>
+                            </coursesOfJourneys>
+                            <blockParts>
+                                <BlockPart id="NSB:BlockPart:1" version="1" order="1">
+                                    <TrainRef ref="NSB:Train:1" version="1"/>
+                                </BlockPart>
+                                <BlockPart id="NSB:BlockPart:2" version="1" order="2">
+                                    <TrainRef ref="NSB:Train:2" version="1"/>
+                                </BlockPart>
+                            </blockParts>
+                        </Block>
+                        
+                        <TrainBlock id="NSB:TrainBlock:1" version="1">
+                            <blockParts>
+                                <TrainBlockPart id="NSB:TrainBlockPart:1" version="1" order="1">
+                                    <TrainRef ref="NSB:Train:1" version="1"/>
+                                </TrainBlockPart>
+                                <TrainBlockPart id="NSB:TrainBlockPart:2" version="1" order="2">
+                                    <TrainRef ref="NSB:Train:2" version="1"/>
+                                </TrainBlockPart>
+                            </blockParts>
+                        </TrainBlock>
+                    </blocks>
+                    
+                </VehicleScheduleFrame>
+                
             </frames>
         </CompositeFrame>
     </dataObjects>
