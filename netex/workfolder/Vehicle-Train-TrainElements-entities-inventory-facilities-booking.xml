@@ -152,7 +152,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
             </typesOfValue>
 
 
-            <!-- SeatingEquipment: NeTEx part 1 - ﻿8.4.8.7.3.5 SeatingEquipment – Model Element (page 776) -->
+            <!-- SeatingEquipment: NeTEx part 1 - 8.4.8.7.3.5 SeatingEquipment – Model Element (page 776) -->
 
 
             <equipments>
@@ -365,7 +365,8 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                             <ReversedOrientation>true</ReversedOrientation>
 
                             <!-- NB: Må definere ekstremt entydig i profil hva disse kombinasjonene skal bety,
-                i dette tilfellet et train med alle TrainComponent: backwards, deretter hele Train har ReversedOrientation "true" -->
+                                i dette tilfellet et train med alle TrainComponent: backwards, 
+                                deretter hele Train har ReversedOrientation "true" -->
 
                         </TrainInCompoundTrain>
                     </components>
@@ -401,6 +402,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
             <vehicles>
 
                 <Vehicle id="NMR:Vehicle:1" version="1">
+                    <Name>Name</Name>
                     <PrivateCode>1</PrivateCode>
                     <TrainRef ref="ref"/>
                     <!-- XSD:choice -->
@@ -417,17 +419,10 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                     </actualVehicleEquipments>
                 </Vehicle>
 
-                <Vehicle id="test" version="1">
-                    <Name/>
-                    <RegistrationNumber/>
-                    <OperationalNumber/>
-                    <PrivateCode/>
-                    <OperatorRef ref=""/>
-                </Vehicle>
 
                 <TrainElement version="1" id="NMR:TrainElement:1">
                     <FareClasses>premiumClass standardClass</FareClasses>
-
+                    
                     <!-- capasity per element-->
                     <capacities>
                         <PassengerCapacity id="NMR:PassengerCapacity:Premium">
@@ -440,7 +435,7 @@ I.e. have found now way to define a Vehicle/VehicleType to be double-deck. Not e
                         </PassengerCapacity>
                     </capacities>
 
-                    <!-- Accomodation related facilities: NeTEx part 3 - ﻿7.4.2.3 Fare Facility (page 111) -->
+                    <!-- Accomodation related facilities: NeTEx part 3 - 7.4.2.3 Fare Facility (page 111) -->
                     <facilities>
                         <ServiceFacilitySet id="NMR:ServiceFacilityList:1" version="1">
                             <CateringFacilityList>foodVendingMachine beverageVendingMachine</CateringFacilityList>
