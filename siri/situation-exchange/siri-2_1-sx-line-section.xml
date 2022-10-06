@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Siri version="2.1" xmlns="http://www.siri.org.uk/siri" xmlns:ns2="http://www.ifopt.org.uk/acsb" xmlns:ns3="http://www.ifopt.org.uk/ifopt" xmlns:ns4="http://datex2.eu/schema/2_0RC1/2_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ServiceDelivery>
+		<ResponseTimestamp>2022-08-22T08:07:35.864742884+02:00</ResponseTimestamp>
+		<ProducerRef>ENT</ProducerRef>
+		<MoreData>false</MoreData>
+		<SituationExchangeDelivery>
+			<ResponseTimestamp>2022-10-06T08:00:00+02:00</ResponseTimestamp>
+			<Situations>
+				<PtSituationElement>
+					<CreationTime>2022-10-06T08:00:00+02:00</CreationTime>
+					<ParticipantRef>ENT</ParticipantRef>
+					<SituationNumber>ENT:SituationNumber:1234</SituationNumber>
+					<Source>
+						<SourceType>directReport</SourceType>
+					</Source>
+					<VersionedAtTime>2022-10-06T08:00:00+02:00</VersionedAtTime>
+					<Progress>open</Progress>
+					<ValidityPeriod>
+						<StartTime>2022-10-06T08:00:00+02:00</StartTime>
+						<EndTime>22022-10-07T08:00:00+02:00</EndTime>
+					</ValidityPeriod>
+					<UndefinedReason/>
+					<Severity>noImpact</Severity>
+					<Priority>3</Priority>
+					<ReportType>general</ReportType>
+					<Planned>false</Planned>
+					<Summary>Ballong til alle som reiser med linje 1234</Summary>
+					<Description>Vi feirer at det er 50 år siden linje 1234 ble startet.</Description>
+					<Affects>
+
+
+						<!--
+
+							Work in progress
+
+						-->
+
+
+
+						
+						<!-- Line - with section -->
+						<Networks>
+							<AffectedNetwork>
+								<AffectedLine>
+									<LineRef>ENT:Line:1234</LineRef>
+									<Sections>
+										<AffectedSection>
+											<IndirectSectionRef>
+												<FirstQuayRef>NSR:Quay:123</FirstQuayRef>
+												<LastQuayRef>NSR:Quay:234</LastQuayRef>
+											</IndirectSectionRef>
+										</AffectedSection>
+									</Sections>
+								</AffectedLine>
+							</AffectedNetwork>
+						</Networks>
+					</Affects>
+				</PtSituationElement>
+			</Situations>
+		</SituationExchangeDelivery>
+	</ServiceDelivery>
+</Siri>
