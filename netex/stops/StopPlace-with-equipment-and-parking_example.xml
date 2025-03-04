@@ -120,7 +120,7 @@
                             <TicketingFacilityList>ticketOffice ticketMachines</TicketingFacilityList>
                             <PaymentMethods>cashAndCard</PaymentMethods>
                             <TicketTypesAvailable>standard travelCard group</TicketTypesAvailable>
-                            <ScopeOfTicketsAvailable>ticketMachines</ScopeOfTicketsAvailable>
+                            <ScopeOfTicketsAvailable>localTicket</ScopeOfTicketsAvailable>
                             <WheelchairSuitable>true</WheelchairSuitable>
                         </TicketingEquipment>
                         <TicketingEquipment id="ENT:TicketingEquipment:102" version="1">
@@ -130,7 +130,7 @@
                             <TicketingFacilityList>ticketOffice ticketMachines</TicketingFacilityList>
                             <PaymentMethods>cashAndCard</PaymentMethods>
                             <TicketTypesAvailable>standard travelCard group</TicketTypesAvailable>
-                            <ScopeOfTicketsAvailable>ticketMachines</ScopeOfTicketsAvailable>
+                            <ScopeOfTicketsAvailable>localTicket</ScopeOfTicketsAvailable>
                             <WheelchairSuitable>true</WheelchairSuitable>
                         </TicketingEquipment>
                         <!-- etc. -->
@@ -153,10 +153,10 @@
                             <!-- TODO: Remove 'Gender' element, only required for validation against old version of XSD -->
                             <Gender>both</Gender>
                             <SanitaryFacilityList>toilet
-                                wheelChairAccessToilet</SanitaryFacilityList>
+                                wheelchairAccessToilet</SanitaryFacilityList>
                         </SanitaryEquipment>
 
-                        <CycleStorageEquipment id="NSR:CycleStorageEquipment:1">
+                        <CycleStorageEquipment id="NSR:CycleStorageEquipment:1" version="1">
                             <NumberOfSpaces>15</NumberOfSpaces>
                             <CycleStorageType>racks</CycleStorageType>
                         </CycleStorageEquipment>

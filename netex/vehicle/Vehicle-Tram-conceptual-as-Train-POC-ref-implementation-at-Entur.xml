@@ -142,7 +142,7 @@
                         </AccessVehicleEquipment>
                         <WheelchairVehicleEquipment id="RUT:WheelchairVehicleEquipment:1" version="1">
                             <AccessVehicleEquipmentRef ref="RUT:AccessVehicleEquipment:1" version="1"/>
-                            <HasWheelChairSpaces>true</HasWheelChairSpaces>
+                            <HasWheelchairSpaces>true</HasWheelchairSpaces>
                             <NumberOfWheelchairAreas>5</NumberOfWheelchairAreas>
                             <CompanionSeat>true</CompanionSeat>
                         </WheelchairVehicleEquipment>
