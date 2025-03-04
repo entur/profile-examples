@@ -10,13 +10,13 @@
                 <EstimatedVehicleJourney>
                     <LineRef>NSB:Line:21</LineRef>
                     <DirectionRef>1</DirectionRef>
-                    <DestinationName>Trondheim</DestinationName>
                     <FramedVehicleJourneyRef>
                         <DataFrameRef>2019-08-16</DataFrameRef>
                         <DatedVehicleJourneyRef>NSB:ServiceJourney:1-2492-2343</DatedVehicleJourneyRef>
                     </FramedVehicleJourneyRef>
                     <VehicleMode>rail</VehicleMode>
                     <OriginName>Oppdal</OriginName>
+                    <DestinationName>Trondheim</DestinationName>
                     <OperatorRef>NSB</OperatorRef>
                     <EstimatedCalls>
                         <EstimatedCall>
