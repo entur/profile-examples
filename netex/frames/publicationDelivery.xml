@@ -33,7 +33,7 @@
                 <ResourceFrame id="NSR:ResourceFrame:NUMBER" version="1">
                     <FrameDefaults>
                         <!-- All elements with an id-attribute are prefixed with this codespace (in this case "RUT"). -->
-                        <DefaultCodespaceRef ref="NSR"/>
+                        <DefaultCodespaceRef ref="nsr"/>
                         <DefaultLocale>
                             <TimeZone>CET</TimeZone>
                             <SummerTimeZone>CEST</SummerTimeZone>

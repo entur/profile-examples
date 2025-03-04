@@ -32,7 +32,7 @@
 
             <FrameDefaults>
                 <!-- All elements with id-attributes are prefixed with this codespace (in this case RUT) -->
-                <DefaultCodespaceRef ref="ruter"/>
+                <DefaultCodespaceRef ref="rut"/>
                 <DefaultLocale>
                     <TimeZone>CET</TimeZone>
                     <SummerTimeZone>CEST</SummerTimeZone>

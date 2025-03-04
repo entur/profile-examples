@@ -122,7 +122,7 @@
 						</timebands>
 						
 						<operatingPeriods>
-							<UicOperatingPeriod>
+							<UicOperatingPeriod id="ENT:UicOperatingPeriod:0" version="1">
 								<!-- Start date of validity bits, first bit represents this date -->
 								<FromDate>2020-08-17T00:00:00</FromDate>
 								<!-- Only necessary to validate that enough validity bits are present -->
