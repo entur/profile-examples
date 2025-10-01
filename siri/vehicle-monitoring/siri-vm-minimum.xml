@@ -24,7 +24,7 @@
                         <Latitude>63.43613</Latitude>
                     </VehicleLocation>
                     <Delay>PT0S</Delay>
-                    <IsCompleteStopSequence>false</IsCompleteStopSequence>
+                    <VehicleRef>12345</VehicleRef>
                 </MonitoredVehicleJourney>
             </VehicleActivity>
         </VehicleMonitoringDelivery>
