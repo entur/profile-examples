@@ -258,6 +258,28 @@
             <parkings>
                 <!-- ParkAndRide -->
                 <Parking id="NSR:Parking:1" version="1">
+                    <!-- Opening hours: open 06:00-22:00 on business days and Saturdays, closed on Sundays. -->
+                    <validityConditions>
+                        <AvailabilityCondition id="NSR:AvailabilityCondition:1" version="1">
+                            <IsAvailable>true</IsAvailable>
+                            <dayTypes>
+                                <DayTypeRef ref="NSR:DayType:BusinessDay"/>
+                                <DayTypeRef ref="NSR:DayType:Saturday"/>
+                            </dayTypes>
+                            <timebands>
+                                <Timeband id="NSR:Timeband:1" version="1">
+                                    <StartTime>06:00:00</StartTime>
+                                    <EndTime>22:00:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </AvailabilityCondition>
+                        <AvailabilityCondition id="NSR:AvailabilityCondition:2" version="1">
+                            <IsAvailable>false</IsAvailable>
+                            <dayTypes>
+                                <DayTypeRef ref="NSR:DayType:Sunday"/>
+                            </dayTypes>
+                        </AvailabilityCondition>
+                    </validityConditions>
                     <levels>
                         <Level id="NSR:Level:1" version="1">
                             <Name>1</Name>
