@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery version="1.08:NO-NeTEx-fares:1.0" xmlns="http://www.netex.org.uk/netex">
+    <PublicationTimestamp>2018-09-04T12:00:00</PublicationTimestamp>
+    <ParticipantRef>ENT</ParticipantRef>
+    <dataObjects>
+
+
+        <!-- 
+            This example shows a period pass with 3 different setups
+            - pre-activated
+            - activation necessary before use
+            - Non-activated period pass that must be activaed as well as requires validation on each ride
+            
+            The current period is 30 days, but setting this ie to 90 minutes will yield valid examples for typical 
+            single tickets as well -->
+
+        <!-- Reference data START -->
+
+        <ResourceFrame id="ENT:ResourceFrame:1" version="1">
+
+            <typesOfValue>
+                <!-- Assignment types (categorisation/flags) -->
+                
+                <!-- xxPolicyAssignment = assignment rule describing the policy of an AccessRightAssignment, i.e. how to activate/consume the AccessRight -->
+                <!-- xxAssignment = assignment rule describing the detailed parameters (limitations / validityParameters) and utilization thereof, applicable for the CPPElement upon activation/consumption -->
+                
+                <!-- Transition from MarkedAs=unused to MarkedAs=activated -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment" version="1">
+                    <Name>ActivationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to *activate* a validable element, generates CPPElementAccess with MarkedAs=activated (must be used with a corresponding ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAssignment" version="1">
+                    <Name>ActivationAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the validable element is activated (but not consumed)</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Transition from MarkedAs=activated to MarkedAs=used -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment" version="1">
+                    <Name>UsagePolicyAssignment</Name>
+                    <Description>Rule describing how to *consume* a validable element, generates CPPElementAccess with MarkedAs=used (the prerequisite is that the validable element is already MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:UsageAssignment" version="1">
+                    <Name>UsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is used, i.e. the acquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Transition directly from MarkedAs=unused to MarkedAs=used -->
+                <!-- This can be seen as a rule combining Activation(Policy)Assignment and Usage(Policy)Assignment when separate activation and usage is not required -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment" version="1">
+                    <Name>ActivationAndUsagePolicyAssignment</Name>
+                    <Description>Rule describing how to both *activate* and *consume* in the same operation, generates CPPElementAccess with MarkedAs=used directly (omits MarkedAs=activated)</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ActivationAndUsageAssignment" version="1">
+                    <Name>ActivationAndUsageAssignment</Name>
+                    <Description>Rule describing limitations and parameters applicable when the ValidableElement is both activated and used in the same operation, i.e. the aquired travel rights</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Requirements for retransition from MarkedAs=used to MarkedAs=marked -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:RevalidationPolicyAssignment" version="1">
+                    <Name>RevalidationPolicyAssignment</Name>
+                    <Description>Rule describing how and when to re-validate a validable element, generates CPPElementAccess with MarkedAs=marked</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Subrules to the various xxxPolicyAssignment -->
+                
+                <!-- Various specification requirements policies - depending on the type of element that must be provided -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationServiceJourneyPolicyAssignment" version="1">
+                    <Name>SpecificationServiceJourneyPolicyAssignment</Name>
+                    <Description>Rule describing that a ServiceJourney must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationSeatPolicyAssignment" version="1">
+                    <Name>SpecificationSeatPolicyAssignment</Name>
+                    <Description>Rule describing that a PassengerSeat must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationTariffZonePolicyAssignment" version="1">
+                    <Name>SpecificationTariffZonePolicyAssignment</Name>
+                    <Description>Rule describing that a TariffZone must be specificed during *activation* or *consumption* or *revalidation*</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Result of specification requirements -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:SpecificationAssignment" version="1">
+                    <Name>SpecificationAssignment</Name>
+                    <Description>Rule describing specified access rights as a result of *activation* or *consumption* or *revalidation*, e.g. specified (selected) service journey or seat</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:ExecutionTimePolicyAssignment" version="1">
+                    <Name>ExecutionTimePolicyAssignment</Name>
+                    <Description>Rule describing when a usage validity period may be activated or consumed, used as a subrule to ENT:TypeOfAccessRightAssignment:ActivationAndUsagePolicyAssignment, ENT:TypeOfAccessRightAssignment:ActivationPolicyAssignment and ENT:TypeOfAccessRightAssignment:UsagePolicyAssignment</Description>
+                </TypeOfAccessRightAssignment>
+                
+                <!-- Recording of place activation/consumption/marking happened. Recorded on CPPElementAccess/validityParameters -->
+                <TypeOfAccessRightAssignment id="ENT:TypeOfAccessRightAssignment:AccessLogDetails" version="1">
+                    <Name>AccessLogDetails</Name>
+                    <Description>CPPAccess with information about an activation / consumption / re-validation</Description>
+                </TypeOfAccessRightAssignment>  
+            </typesOfValue>
+            <organisations>
+                <Authority id="ENT:Authority:ENT" version="1">
+                    <Name>Entur Transport Service Inc</Name>
+                </Authority>
+            </organisations>
+
+        </ResourceFrame>
+
+        <FareFrame id="ENT:FareFrame:1" version="1">
+
+            <timeIntervals>
+                <TimeInterval id="ENT:TimeInterval:30Days" version="1">
+                    <Duration>P30D</Duration>
+                </TimeInterval>
+            </timeIntervals>
+
+            <qualityStructureFactors>
+                <QualityStructureFactor id="ENT:QualityStructureFactor:1" version="1">
+                    <Name>Single activation</Name>
+                    <Factor>activation</Factor>
+                    <Value>1</Value>
+                </QualityStructureFactor>
+                <QualityStructureFactor id="ENT:QualityStructureFactor:Unlimited" version="1">
+                    <Name>Multiple validation</Name>
+                    <Factor>validation</Factor>
+                    <Value>-1</Value>
+                </QualityStructureFactor>
+
+            </qualityStructureFactors>
+
+
+            <validableElements>
+                <ValidableElement id="ENT:ValidableElement:PeriodPass" version="1">
+                    <Name>Enkelttur Entur</Name>
+                </ValidableElement>
+            </validableElements>
+
+
+            <usageParameters>
+                <UserProfile id="ENT:UserProfile:Adult" version="1">
+                    <Name lang="no">Adult</Name>
+                </UserProfile>
+                <Interchanging id="ENT:Interchanging:StandardAllowed" version="1">
+                    <CanInterchange>true</CanInterchange>
+                </Interchanging>
+            </usageParameters>
+
+
+            <fareProducts>
+                <PreassignedFareProduct id="ENT:PreassignedFareProduct:PeriodPass" version="1">
+                    <Name lang="no">Månedskort 30 dager</Name>
+                    <accessRightsInProduct>
+                        <AccessRightInProduct id="ENT:AccessRightInProduct:Legs" version="1" order="1">
+                            <ValidableElementRef ref="ENT:ValidableElement:PeriodPass" version="1"/>
+                        </AccessRightInProduct>
+                    </accessRightsInProduct>
+                </PreassignedFareProduct>
+            </fareProducts>
+
+
+            <salesOfferPackages>
+                <SalesOfferPackage id="ENT:SalesOfferPackage:PeriodPass" version="1">
+                    <Name lang="no">Period pass Bergen</Name>
+                    <salesOfferPackageElements>
+                        <SalesOfferPackageElement id="ENT:SalesOfferPackageElement:PeriodPass" version="1" order="1">
+                            <Name lang="no">Period pass</Name>
+                            <PreassignedFareProductRef ref="ENT:PreassignedFareProduct:PeriodPass" version="1"/>
+                        </SalesOfferPackageElement>
+                    </salesOfferPackageElements>
+                </SalesOfferPackage>
+            </salesOfferPackages>
+
+        </FareFrame>
+
+
+        <SalesTransactionFrame id="ENT:SalesTransactionFrame:Case1" version="1">
+
+            <customerAccounts>
+                <CustomerAccount id="ENT:CustomerAccount:1" version="1"> </CustomerAccount>
+            </customerAccounts>
+
+            <fareContracts>
+                <FareContract id="ENT:FareContract:1" version="1">
+                    <Name>Skolekort Bergen</Name>
+                    <StartDate>2020-09-06T01:07:00</StartDate>
+                    <EndDate>2021-09-07T01:07:00</EndDate>
+                    <fareContractEntries>
+                        <SalesTransaction version="1" id="ENT:SalesTransaction:1">
+                            <Name>Kjøp Månedskort</Name>
+                            <Date>2018-09-06T01:07:00</Date>
+                            <Amount>999</Amount>
+                            <Currency>NOK</Currency>
+                            <PaymentMethod>debitCard</PaymentMethod>
+                            <customerPurchasePackages>
+                                <!-- Referanse til customer purchase packages -->
+                                <CustomerPurchasePackageRef ref="ENT:CustomerPurchasePackage:PeriodPassPreactivatedNoValidation" version="1"/>
+                            </customerPurchasePackages>
+                        </SalesTransaction>
+                        
+                        
+                      
+                    </fareContractEntries>
+
+                </FareContract>
+            </fareContracts>
+
+
+            <customerPurchasePackages>
+
+
+                <!-- Example 1: Pre-activated period pass. No activation nor validation required -->
+
+                <CustomerPurchasePackage id="ENT:CustomerPurchasePackage:PeriodPassPreactivatedNoValidation" version="1">
+
+                    <!-- Only spatial validity, NOT temporal (must be read from elementAccesses) -->
+
+                    <!-- Example #1: Point to point view  -->
+                    <TravelSummary>
+                        <PointToPointSummary> <!-- TODO define fixed types of entries? - make it easier for clients to implement -->
+                            
+                            
+                            <Title>Sales package title, ie "Ruter single ticket"</Title>
+                            
+                            <!-- Optional description with textual information -->
+                            <Description>Also valid for travel on local trains</Description>
+                            
+                            <!-- Link to web page where all necessary details can be described -->
+                            <InfoLink>https://www.skyss.no/billett-og-pris/Billettar/ungdomsbillett/</InfoLink> 
+                            
+                            <!-- Authorities that may be used for travelling -->
+                            <AuthorityRef ref="ENT:Authority:1"/> <!-- REPEATED -->
+                            <AuthorityRef ref="ENT:Authority:2"/>
+                            
+                            <!-- Any OperatorRef if limited to any specific -->
+                            <OperatorRef ref="ENT:Operatur:1"/> <!-- REPEATED -->
+                            
+                            <!-- Main product sold -->
+                            <FareProductRef ref="ENT:PreassignedFareProduct:123"/>
+                            
+                            <!-- If limited to a set of transport modes -->
+                            <TransportMode>bus</TransportMode> <!-- REPEATED IN PAIR with approriate submode (optional)-->
+                            <BusSubMode>schoolBus</BusSubMode>
+                            
+                            <!-- Either UserProfileRef or GroupTicketRef must be present -->
+                            <UserProfileRef ref="ENT:UserProfile:Voksen"/> <!-- TODO: Name on ticket -->    
+                            <GroupTicketRef ref="ENT:GroupTicket:MyGroup"/> <!-- Optional must refer to GroupTicket in CPPE or external -->    
+                            
+                            
+                            <!-- If seat reservation is included - optional -->
+                            <SeatRef ref="ENT:SeatingReservation:ABXSZF"/>
+                            <Origin>
+                                <FareZoneRef ref="ENT:FareZone:1"/>
+                            </Origin>
+                            <Via>
+                                <FareZoneRef ref="ENT:FareZone:3"/>
+                            </Via>
+                            <Destination>
+                                <FareZoneRef ref="ENT:FareZone:2"/>
+                            </Destination>
+                            <Direction>forward</Direction> <!-- Optional, defaults to forward -->
+                            <EntitlementRequired ref="ENT:Entitlement:Personalbillett"/> <!-- Optional -->
+                            
+                            <!-- Reference to the actual CPPE where more details can be found - including validity time -->
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:CPPEWhereMoreDetailsCanBeFound"/>
+                        </PointToPointSummary>
+                        
+                        
+                    </TravelSummary>
+                    
+                    
+                    <!-- Example #2: Single zone validity, Ruter -->
+                    <TravelSummary>
+                        <FlatZoneValidityEntry>
+                            <InfoLink>https://ruter.no/kjop-billett/billetter-og-priser/enkeltbillett/</InfoLink> <!-- Detailed information link -->
+                            <!-- Authorities that may be used for travelling -->
+                            <AuthorityRef ref="RUT:Authority:1"/> 
+                            <!-- Main product sold -->
+                            <FareProductRef ref="RUT:PreassignedFareProduct:Enkeltbillett"/>
+                            <UserProfileRef ref="ENT:UserProfile:Voksen"/> 
+                            <FlatValidity>
+                                <FareZoneRef ref="ENT:FareZone:1"/>
+                            </FlatValidity>
+                            <!-- overall validity - see elementAccess for actual validity when activated -->
+                            <Duration>PT90M</Duration>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:CPPEWhereMoreDetailsCanBeFound"/>
+                        </FlatZoneValidityEntry>
+                        
+                    </TravelSummary>
+                    
+                    <!-- Example #3: Point to point  -->
+                    <TravelSummary>
+                        <FlatZoneValidityEntry>
+                            <InfoLink>https://ruter.no/kjop-billett/billetter-og-priser/enkeltbillett/</InfoLink> <!-- Detailed information link -->
+                            <!-- Authorities that may be used for travelling -->
+                            <AuthorityRef ref="RUT:Authority:1"/> 
+                            <!-- Main product sold -->
+                            <FareProductRef ref="RUT:PreassignedFareProduct:Enkeltbillett"/>
+                            <UserProfileRef ref="ENT:UserProfile:Voksen"/> 
+                            <FlatValidity>
+                                <FareZoneRef ref="ENT:FareZone:1"/>
+                            </FlatValidity>
+                            <CustomerPurchasePackageElementRef ref="ENT:CustomerPurchasePackageElement:CPPEWhereMoreDetailsCanBeFound"/>
+                        </FlatZoneValidityEntry>
+                        
+                    </TravelSummary>
+                    
+                    
+                    
+                  
+
+                    <SalesOfferPackageRef ref="ENT:SalesOfferPackage:PeriodPass"/>
+                
+                      
+
+                </CustomerPurchasePackage>
+
+
+           
+        </customerPurchasePackages>
+        </SalesTransactionFrame>
+
+
+    </dataObjects>
+</PublicationDelivery>
