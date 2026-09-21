@@ -587,7 +587,7 @@
                                     <validityParameters>
                                         <AuthorityRef ref="VYT:Authority:VYT" version="1"/>
                                         <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" version="1">3/24</PassengerSeatRef>
-                                        <DatedServiceJourneyRef ref="VYT:DatedServiceJourney:1" version="1"/>
+                                        <DatedVehicleJourneyRef ref="VYT:DatedServiceJourney:1" version="1"/>
                                         <!-- NOT DOCUMENTED -->
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
@@ -784,7 +784,7 @@
                                     <validityParameters>
                                         <AuthorityRef ref="VYT:Authority:VYT" version="1"/>
 
-                                        <DatedServiceJourneyRef ref="VYT:DatedServiceJourney:DrammenOslo" version="1"/>
+                                        <DatedVehicleJourneyRef ref="VYT:DatedServiceJourney:DrammenOslo" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:4" order="1">
@@ -804,7 +804,7 @@
                                     <validityParameters>
                                         <AuthorityRef ref="VYT:Authority:VYT" version="1"/>
 
-                                        <DatedServiceJourneyRef ref="VYT:DatedServiceJourney:OsloRakkestad" version="1"/>
+                                        <DatedVehicleJourneyRef ref="VYT:DatedServiceJourney:OsloRakkestad" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
@@ -889,7 +889,7 @@
 
                                         <PassengerSeatRef ref="VYT:PassengerSeat:XYZ3" version="1">3/24</PassengerSeatRef>
                                         <!-- NOT DOCUMENTED -->
-                                        <DatedServiceJourneyRef ref="VYT:DatedServiceJourney:StavangerOslo" version="1"/>
+                                        <DatedVehicleJourneyRef ref="VYT:DatedServiceJourney:StavangerOslo" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                                 <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:7" order="1">
@@ -908,7 +908,7 @@
                                     <validityParameters>
                                         <AuthorityRef ref="VYT:Authority:VYT" version="1"/>
 
-                                        <DatedServiceJourneyRef ref="GJB:DatedServiceJourney:OsloNittedal" version="1"/>
+                                        <DatedVehicleJourneyRef ref="GJB:DatedServiceJourney:OsloNittedal" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
@@ -993,7 +993,7 @@
                                     </limitations>
                                     <validityParameters>
                                         <AuthorityRef ref="VYT:Authority:VYT" version="1"/>
-                                        <DatedServiceJourneyRef ref="VYT:DatedServiceJourney:ArendalOslo" version="1"/>
+                                        <DatedVehicleJourneyRef ref="VYT:DatedServiceJourney:ArendalOslo" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
@@ -1038,7 +1038,7 @@
                                     </limitations>
                                     <validityParameters>
                                         <AuthorityRef ref="VYT:Authority:VYT" version="1"/>
-                                        <DatedServiceJourneyRef ref="VYT:DatedServiceJourney:ArendalOslo" version="1"/>
+                                        <DatedVehicleJourneyRef ref="VYT:DatedServiceJourney:ArendalOslo" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
@@ -1082,7 +1082,7 @@
                                     </limitations>
                                     <validityParameters>
                                         <AuthorityRef ref="VYT:Authority:VYT" version="1"/>
-                                        <DatedServiceJourneyRef ref="VYT:DatedServiceJourney:ArendalOslo" version="1"/>
+                                        <DatedVehicleJourneyRef ref="VYT:DatedServiceJourney:ArendalOslo" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>
@@ -1435,13 +1435,13 @@
                                     <includes>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:119" order="1">
                                             <validityParameters>
-                                                <DatedServiceJourneyRef ref="VYT:DatedServiceJourney:ArendalOslo" version="1"/> <!-- Either this departure -->
+                                                <DatedVehicleJourneyRef ref="VYT:DatedServiceJourney:ArendalOslo" version="1"/> <!-- Either this departure -->
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
                                         <CustomerPurchaseParameterAssignment version="1" id="ENT:CustomerPurchaseParameterAssignment:120" order="1">
                                             <validityParameters>
                                                 <!-- Authority is implicit since the journey is linked to a authority in the timetable data -->
-                                                <DatedServiceJourneyRef ref="VYT:DatedServiceJourney:Osloexpressen" /> <!-- Or this departure -->
+                                                <DatedVehicleJourneyRef ref="VYT:DatedServiceJourney:Osloexpressen" /> <!-- Or this departure -->
                                             </validityParameters>
                                         </CustomerPurchaseParameterAssignment>
                                     </includes>
@@ -1536,7 +1536,7 @@
                                     </limitations>
                                     <validityParameters>
                                         <AuthorityRef ref="VYT:Authority:VYT" version="1"/>
-                                        <DatedServiceJourneyRef ref="VYT:DatedServiceJourney:ArendalOslo" version="1"/>
+                                        <DatedVehicleJourneyRef ref="VYT:DatedServiceJourney:ArendalOslo" version="1"/>
                                     </validityParameters>
                                 </CustomerPurchaseParameterAssignment>
                             </validityParameterAssignments>

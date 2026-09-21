@@ -667,17 +667,23 @@
             <!-- ====================== Operating days for the bus KBG-1 ====================== -->
             <DatedServiceJourney id="ENT:DatedServiceJourney:KBG-1_771-2020-09-29" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:KBG-1_771_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-29" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-29" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-09-29"/>
             </DatedServiceJourney>
             <DatedServiceJourney id="ENT:DatedServiceJourney:KBG-1_771-2020-09-30" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:KBG-1_771_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-30" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-30" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-09-30"/>
             </DatedServiceJourney>
             <DatedServiceJourney id="ENT:DatedServiceJourney:KBG-1_771-2020-05-01" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:KBG-1_771_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-05-01" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-05-01" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-05-01"/>
             </DatedServiceJourney>
             <!-- ====================== Direct bus KBG-2 ====================== -->
@@ -713,17 +719,23 @@
             <!-- ====================== Operating days for the bus KBG-2 ====================== -->
             <DatedServiceJourney id="ENT:DatedServiceJourney:KBG-2_771-2020-09-29" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:KBG-2_771_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-29" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-29" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-09-29"/>
             </DatedServiceJourney>
             <DatedServiceJourney id="ENT:DatedServiceJourney:KBG-2_771-2020-09-30" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:KBG-2_771_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-30" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-30" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-09-30"/>
             </DatedServiceJourney>
             <DatedServiceJourney id="ENT:DatedServiceJourney:KBG-2_771-2020-05-01" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:KBG-2_771_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-05-01" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-05-01" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-05-01"/>
             </DatedServiceJourney>
             <!-- ====================== Direct bus KBG-3 only friday ====================== -->
@@ -759,7 +771,9 @@
             <!-- ====================== Operating days for the bus KBG-3 ====================== -->
             <DatedServiceJourney id="ENT:DatedServiceJourney:KBG-3_771-2020-05-01" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:KBG-3_771_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-05-01" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-05-01" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-05-01"/>
             </DatedServiceJourney>
             <!-- ====================== Milk round bus KBG-4 ====================== -->
@@ -807,17 +821,23 @@
             <!-- ====================== Operating days for the bus KBG-4 ====================== -->
             <DatedServiceJourney id="ENT:DatedServiceJourney:KBG-4_771-2020-09-29" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:KBG-4_771_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-29" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-29" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-09-29"/>
             </DatedServiceJourney>
             <DatedServiceJourney id="ENT:DatedServiceJourney:KBG-4_771-2020-09-30" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:KBG-4_771_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-30" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-30" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-09-30"/>
             </DatedServiceJourney>
             <DatedServiceJourney id="ENT:DatedServiceJourney:KBG-4_771-2020-05-01" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:KBG-4_771_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-05-01" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-05-01" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-05-01"/>
             </DatedServiceJourney>
             <ServiceJourney version="0" id="ENT:ServiceJourney:80771_771-KBG-STV_XYZ1234">
@@ -961,17 +981,23 @@
             </ServiceJourney>
             <DatedServiceJourney id="ENT:DatedServiceJourney:80771-2020-09-29" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:80771_771-KBG-STV_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-29" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-29" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-09-29"/>
             </DatedServiceJourney>
             <DatedServiceJourney id="ENT:DatedServiceJourney:80771-2020-09-30" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:80771_771-KBG-STV_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-30" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-09-30" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-09-30"/>
             </DatedServiceJourney>
             <DatedServiceJourney id="ENT:DatedServiceJourney:80771-2020-05-01" version="0">
               <ServiceJourneyRef ref="ENT:ServiceJourney:80771_771-KBG-STV_XYZ1234" version="0"/>
-              <DatedServiceJourneyRef ref="ENT:DatedServiceJourney:771-2020-05-01" version="0"/>
+              <replacedJourneys>
+                <DatedVehicleJourneyRef ref="ENT:DatedServiceJourney:771-2020-05-01" version="0"/>
+              </replacedJourneys>
               <OperatingDayRef ref="ENT:OperatingDay:2020-05-01"/>
             </DatedServiceJourney>
           </vehicleJourneys>
